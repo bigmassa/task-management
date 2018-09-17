@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -7,7 +8,7 @@ class JobRelationship(models.Model):
         on_delete=models.CASCADE
     )
     user = models.ForeignKey(
-        'authentication.User',
+        settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
     relationship = models.ForeignKey(

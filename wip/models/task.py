@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -27,7 +28,7 @@ class Task(models.Model):
         related_name='tasks'
     )
     assignees = models.ManyToManyField(
-        'authentication.User',
+        settings.AUTH_USER_MODEL,
         blank=True
     )
     priority = models.ForeignKey(

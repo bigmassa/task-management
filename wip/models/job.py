@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 from wip.fields import ColorField
@@ -44,7 +45,7 @@ class Job(models.Model):
         blank=True
     )
     relationships = models.ManyToManyField(
-        'authentication.User',
+        settings.AUTH_USER_MODEL,
         through='wip.JobRelationship',
         blank=True
     )
