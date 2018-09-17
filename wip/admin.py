@@ -18,3 +18,12 @@ admin.site.register(Job, JobAdmin)
 admin.site.register(JobStatus)
 admin.site.register(JobType)
 admin.site.register(Relationship)
+
+
+class TaskAdmin(admin.ModelAdmin):
+    filter_horizontal = ('assignees',)
+
+
+admin.site.register(Task, TaskAdmin)
+admin.site.register(TaskPriority)
+admin.site.register(TaskStatus)
