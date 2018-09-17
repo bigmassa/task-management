@@ -1,7 +1,7 @@
 from django.db import models
 
-from client.models import Client
 from tests.test_case import AppTestCase
+from wip.models import Client
 
 
 class ModelTests(AppTestCase):

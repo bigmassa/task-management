@@ -3,6 +3,9 @@ from django.contrib import admin
 from wip.models import *
 
 
+admin.site.register(Client)
+
+
 class JobRelationshipAdmin(admin.TabularInline):
     model = JobRelationship
     extra = 0

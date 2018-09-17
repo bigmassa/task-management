@@ -15,7 +15,7 @@ class Job(models.Model):
         auto_now_add=True
     )
     client = models.ForeignKey(
-        'client.Client',
+        'wip.Client',
         on_delete=models.PROTECT,
         related_name='jobs'
     )

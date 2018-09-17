@@ -26,7 +26,6 @@ INSTALLED_APPS = [
 
     'app',
     'authentication',
-    'client',
     'wip',
 
     'storages',

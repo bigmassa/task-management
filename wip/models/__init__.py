@@ -1,3 +1,4 @@
+from .client import Client
 from .job import Job
 from .job_relationship import JobRelationship
 from .job_status import JobStatus

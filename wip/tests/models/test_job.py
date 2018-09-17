@@ -1,10 +1,9 @@
 from django.db import models
 
 from authentication.models import User
-from client.models import Client
 from tests.test_case import AppTestCase
 from wip.fields import ColorField
-from wip.models import Job, JobStatus, JobType
+from wip.models import Client, Job, JobStatus, JobType
 
 
 class ModelTests(AppTestCase):
