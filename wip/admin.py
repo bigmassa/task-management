@@ -52,4 +52,5 @@ class TaskAdmin(admin.ModelAdmin):
 
 admin.site.register(Task, TaskAdmin)
 admin.site.register(TaskStatus)
+admin.site.register(TimeDailySignoff)
 admin.site.register(TimeEntry)
