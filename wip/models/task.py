@@ -29,12 +29,15 @@ class Task(models.Model):
     )
     assignees = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
+        through='wip.TaskAssignee',
         blank=True
     )
-    priority = models.ForeignKey(
-        'wip.TaskPriority',
-        on_delete=models.PROTECT,
-        related_name='tasks'
+    target_date = models.DateField(
+        null=True,
+        blank=True
+    )
+    closed = models.BooleanField(
+        default=False
     )
 
     class Meta:

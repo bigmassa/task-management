@@ -20,6 +20,11 @@ class Job(models.Model):
         on_delete=models.PROTECT,
         related_name='jobs'
     )
+    type = models.ForeignKey(
+        'wip.JobType',
+        on_delete=models.PROTECT,
+        related_name='jobs'
+    )
     estimated_hours = models.DecimalField(
         max_digits=10,
         decimal_places=2,
@@ -32,11 +37,6 @@ class Job(models.Model):
     )
     status = models.ForeignKey(
         'wip.JobStatus',
-        on_delete=models.PROTECT,
-        related_name='jobs'
-    )
-    type = models.ForeignKey(
-        'wip.JobType',
         on_delete=models.PROTECT,
         related_name='jobs'
     )

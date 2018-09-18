@@ -2,7 +2,7 @@ from django.db import models
 
 from authentication.models import User
 from tests.test_case import AppTestCase
-from wip.models import Job, Task, TaskPriority, TaskStatus
+from wip.models import Job, Task, TaskStatus
 
 
 class TestModel(AppTestCase):
@@ -43,9 +43,14 @@ class TestModel(AppTestCase):
         self.assertEqual(field.remote_field.model, User)
         self.assertTrue(field.blank)
 
-    def test_priority(self):
-        field = Task._meta.get_field('priority')
-        self.assertModelPKField(field, TaskPriority, on_delete=models.PROTECT, related_name='tasks')
+    def test_target_date(self):
+        field = Task._meta.get_field('target_date')
+        self.assertModelField(field, models.DateField, null=True, blank=True)
+
+    def test_closed(self):
+        field = Task._meta.get_field('closed')
+        self.assertModelField(field, models.BooleanField)
+        self.assertFalse(field.default)
 
     # meta
 

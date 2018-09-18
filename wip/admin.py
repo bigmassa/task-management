@@ -13,8 +13,16 @@ class JobRelationshipAdmin(admin.TabularInline):
     verbose_name_plural = 'relationships'
 
 
+class JobNoteAdmin(admin.StackedInline):
+    model = JobNote
+    extra = 0
+    readonly_fields = ('user', 'created_at', 'updated_at')
+    verbose_name = 'note'
+    verbose_name_plural = 'notes'
+
+
 class JobAdmin(admin.ModelAdmin):
-    inlines = [JobRelationshipAdmin]
+    inlines = [JobRelationshipAdmin, JobNoteAdmin]
 
 
 admin.site.register(Job, JobAdmin)
@@ -23,10 +31,24 @@ admin.site.register(JobType)
 admin.site.register(Relationship)
 
 
+class TaskAssigneeAdmin(admin.TabularInline):
+    model = TaskAssignee
+    extra = 0
+    verbose_name = 'assignee'
+    verbose_name_plural = 'assignees'
+
+
+class TaskNoteAdmin(admin.StackedInline):
+    model = TaskNote
+    extra = 0
+    readonly_fields = ('user', 'created_at', 'updated_at')
+    verbose_name = 'note'
+    verbose_name_plural = 'notes'
+
+
 class TaskAdmin(admin.ModelAdmin):
-    filter_horizontal = ('assignees',)
+    inlines = [TaskAssigneeAdmin, TaskNoteAdmin]
 
 
 admin.site.register(Task, TaskAdmin)
-admin.site.register(TaskPriority)
 admin.site.register(TaskStatus)
