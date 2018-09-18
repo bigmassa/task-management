@@ -52,3 +52,4 @@ class TaskAdmin(admin.ModelAdmin):
 
 admin.site.register(Task, TaskAdmin)
 admin.site.register(TaskStatus)
+admin.site.register(TimeEntry)
