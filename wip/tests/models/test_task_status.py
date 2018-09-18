@@ -14,10 +14,15 @@ class ModelTests(AppTestCase):
         self.assertEqual(field.max_length, 50)
         self.assertTrue(field.unique)
 
+    def test_order(self):
+        field = TaskStatus._meta.get_field('order')
+        self.assertModelField(field, models.PositiveIntegerField)
+        self.assertEqual(field.default, 0)
+
     # meta
 
     def test_ordering(self):
-        self.assertEqual(TaskStatus._meta.ordering, ['title'])
+        self.assertEqual(TaskStatus._meta.ordering, ['order'])
 
     # properties
 

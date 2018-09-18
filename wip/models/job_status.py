@@ -6,9 +6,12 @@ class JobStatus(models.Model):
         max_length=50,
         unique=True
     )
+    order = models.PositiveIntegerField(
+        default=0
+    )
 
     class Meta:
-        ordering = ['title']
+        ordering = ['order']
         verbose_name_plural = 'job statuses'
 
     def __str__(self):
