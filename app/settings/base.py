@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'wip',
 
     'storages',
+    'taggit',
 ]
 
 MIDDLEWARE = [

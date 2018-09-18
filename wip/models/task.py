@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
 
+from taggit.managers import TaggableManager
+
 
 class Task(models.Model):
     title = models.CharField(
@@ -39,6 +41,8 @@ class Task(models.Model):
     closed = models.BooleanField(
         default=False
     )
+
+    tags = TaggableManager()
 
     class Meta:
         ordering = ['title']

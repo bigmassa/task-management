@@ -1,6 +1,7 @@
 boto3
 django
 django-storages
+django-taggit
 pillow
 psycopg2-binary
 raven

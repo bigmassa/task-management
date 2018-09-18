@@ -1,5 +1,7 @@
 from django.db import models
 
+from taggit.managers import TaggableManager
+
 from authentication.models import User
 from tests.test_case import AppTestCase
 from wip.models import Job, Task, TaskStatus
@@ -51,6 +53,10 @@ class TestModel(AppTestCase):
         field = Task._meta.get_field('closed')
         self.assertModelField(field, models.BooleanField)
         self.assertFalse(field.default)
+
+    def test_tags(self):
+        field = Task._meta.get_field('tags')
+        self.assertTrue(isinstance(field, TaggableManager))
 
     # meta
 
