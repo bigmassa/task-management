@@ -925,14 +925,14 @@ main {
 }
 
 a {
-  color: #33c3f0;
+  color: #1e75a8;
   text-decoration: none;
   background-color: transparent;
   transition: color linear 250ms;
 }
 
 a:hover {
-  color: #10aee0;
+  color: #16577d;
   text-decoration: none;
 }
 
@@ -1006,38 +1006,38 @@ button,
 
 .button.button-primary {
   color: white;
-  background-color: #33c3f0;
-  border-color: #1bbcee;
+  background-color: #1e75a8;
+  border-color: #1a6692;
 }
 
 .button.button-primary:hover, .button.button-primary:focus {
   color: white;
-  background-color: #10aee0;
-  border-color: #0f9cc8;
+  background-color: #16577d;
+  border-color: #124867;
   outline: 0;
 }
 
 .button.button-outline.button-primary {
-  color: #33c3f0;
+  color: #1e75a8;
   background-color: transparent;
-  border-color: #33c3f0;
+  border-color: #1e75a8;
 }
 
 .button.button-outline.button-primary:hover, .button.button-outline.button-primary:focus {
-  color: #10aee0;
+  color: #16577d;
   background-color: transparent;
-  border-color: #10aee0;
+  border-color: #16577d;
   outline: 0;
 }
 
 .button.button-clear.button-primary {
-  color: #33c3f0;
+  color: #1e75a8;
   background-color: transparent;
   border-color: transparent;
 }
 
 .button.button-clear.button-primary:hover, .button.button-clear.button-primary:focus {
-  color: #10aee0;
+  color: #16577d;
   background-color: transparent;
   border-color: transparent;
   outline: 0;
@@ -1146,7 +1146,7 @@ input[type="date"], input[type="datetime"], input[type="datetime-local"], input[
 
 input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="week"]:focus {
   background: white;
-  border-color: #33c3f0;
+  border-color: #1e75a8;
   outline: 0;
 }
 
@@ -1215,7 +1215,7 @@ textarea {
 
 textarea:focus {
   background: white;
-  border-color: #33c3f0;
+  border-color: #1e75a8;
   outline: 0;
 }
 
@@ -1239,7 +1239,7 @@ select {
 
 select:focus {
   background: white;
-  border-color: #33c3f0;
+  border-color: #1e75a8;
   outline: 0;
 }
 
@@ -1529,6 +1529,25 @@ sup {
   color: #ff4136;
 }
 
+header {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+header .nav {
+  list-style-type: none;
+  margin: 0;
+}
+
+header .nav li {
+  display: inline-block;
+}
+
+header .nav li a {
+  display: block;
+  padding: 1rem 2rem;
+}
+
 /* karma-css utilities */
 .align-top {
   vertical-align: top;
@@ -1569,11 +1588,11 @@ sup {
 }
 
 .b-primary {
-  background-color: #33c3f0;
+  background-color: #1e75a8;
 }
 
 .c-primary {
-  color: #33c3f0;
+  color: #1e75a8;
 }
 
 .b-secondary {

@@ -1,0 +1,21 @@
+// Header
+// -----------------------------------------
+
+header {
+  margin-bottom: $generic-margin-bottom;
+  padding: 1.5rem 0;
+}
+
+header .nav {
+  list-style-type: none;
+  margin: 0;
+
+  li {
+    display: inline-block;
+  }
+
+  li a {
+    display: block;
+    padding: 1rem 2rem;
+  }
+}
