@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block page_title %}Clients{% endblock %}
+{% block body_class %}{% endblock %}
+{% block inner_content %}
+    <div class="main">
+        <div class="container">
+            {% include 'wip/partials/object_intro_header.html' with delete=True %}
+        </div>
+        <div class="container">
+            {% if protected %}
+            <p>{% blocktrans with ob=object %}Deleting <em>"{{ ob }}"</em> would first require deleting the following protected related objects:{% endblocktrans %}</p>
+            <ul>
+                {% for item in protected %}
+                    <li>{{ item.verbose_name|capfirst }}: <a href="{{ item.object.get_absolute_url }}">{{ item.object }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>{% blocktrans with ob=object %}Please confirm you wish to delete <em>"{{ ob }}"</em>{% endblocktrans %}</p>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {{ form }}
+                <a class="button" href="{{ object.get_absolute_url }}">{% trans 'Cancel' %}</a>
+                <button class="button button-primary" type="submit">{% trans 'Delete' %}</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block page_title %}Clients{% endblock %}
+{% block body_class %}{% endblock %}
+{% block inner_content %}
+    <div class="container">
+        <h2>{% trans 'Clients' %}</h2>
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>{% trans 'Name' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in object_list %}
+                    <tr>
+                        <td><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td>{% trans 'No clients have been created,' %} <a class="strong" href="{% url 'wip:client-create' %}">{% trans 'create one now.' %}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
