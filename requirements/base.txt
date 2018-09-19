@@ -1,5 +1,6 @@
 boto3
 django
+django-pyodbc-azure
 django-storages
 django-taggit
 pillow
