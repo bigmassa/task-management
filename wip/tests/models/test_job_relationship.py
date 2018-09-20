@@ -11,7 +11,7 @@ class ModelTests(AppTestCase):
 
     def test_job(self):
         field = JobRelationship._meta.get_field('job')
-        self.assertModelPKField(field, Job, on_delete=models.CASCADE)
+        self.assertModelPKField(field, Job, on_delete=models.CASCADE, related_name='relationships')
 
     def test_user(self):
         field = JobRelationship._meta.get_field('user')

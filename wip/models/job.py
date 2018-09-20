@@ -45,11 +45,6 @@ class Job(models.Model):
         null=True,
         blank=True
     )
-    relationships = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
-        through='wip.JobRelationship',
-        blank=True
-    )
 
     class Meta:
         ordering = ['title']

@@ -5,7 +5,8 @@ from django.db import models
 class TaskAssignee(models.Model):
     task = models.ForeignKey(
         'wip.Task',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='assignees'
     )
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,

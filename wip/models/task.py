@@ -1,7 +1,19 @@
-from django.conf import settings
 from django.db import models
 
 from taggit.managers import TaggableManager
+
+
+class TaskManager(models.Manager):
+    def get_queryset(self):
+        """ Returns the base queryset with additional properties """
+
+        qs = super().get_queryset()
+
+        qs = qs.annotate(
+            qs_allocated_hours=models.Sum('assignees__allocated_hours')
+        )
+
+        return qs
 
 
 class Task(models.Model):
@@ -20,19 +32,10 @@ class Task(models.Model):
         on_delete=models.PROTECT,
         related_name='tasks'
     )
-    allocated_hours = models.DecimalField(
-        max_digits=10,
-        decimal_places=2
-    )
     status = models.ForeignKey(
         'wip.TaskStatus',
         on_delete=models.PROTECT,
         related_name='tasks'
-    )
-    assignees = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
-        through='wip.TaskAssignee',
-        blank=True
     )
     target_date = models.DateField(
         null=True,
@@ -42,10 +45,19 @@ class Task(models.Model):
         default=False
     )
 
-    tags = TaggableManager()
+    objects = TaskManager()
+    tags = TaggableManager(blank=True)
 
     class Meta:
         ordering = ['title']
 
     def __str__(self):
         return self.title
+
+    @property
+    def allocated_hours(self):
+        """ returns the sum of the allocated hours for all assignees """
+
+        if hasattr(self, 'qs_allocated_hours'):
+            return getattr(self, 'qs_allocated_hours')
+        return 0

@@ -51,12 +51,6 @@ class ModelTests(AppTestCase):
         field = Job._meta.get_field('billed_to')
         self.assertModelField(field, models.DateField, null=True, blank=True)
 
-    def test_relationships(self):
-        field = Job._meta.get_field('relationships')
-        self.assertEqual(field.__class__, models.ManyToManyField)
-        self.assertEqual(field.remote_field.model, User)
-        self.assertTrue(field.blank)
-
     # meta
 
     def test_ordering(self):

@@ -1,13 +1,16 @@
+from decimal import Decimal
+
 from django.db import models
 
 from taggit.managers import TaggableManager
 
-from authentication.models import User
 from tests.test_case import AppTestCase
 from wip.models import Job, Task, TaskStatus
+from wip.models.task import TaskManager
 
 
 class TestModel(AppTestCase):
+    fixtures = ['wip/tests/fixtures/test.yaml']
 
     # fields
 
@@ -29,21 +32,9 @@ class TestModel(AppTestCase):
         field = Task._meta.get_field('job')
         self.assertModelPKField(field, Job, on_delete=models.PROTECT, related_name='tasks')
 
-    def test_allocated_hours(self):
-        field = Task._meta.get_field('allocated_hours')
-        self.assertModelField(field, models.DecimalField)
-        self.assertEqual(field.max_digits, 10)
-        self.assertEqual(field.decimal_places, 2)
-
     def test_status(self):
         field = Task._meta.get_field('status')
         self.assertModelPKField(field, TaskStatus, on_delete=models.PROTECT, related_name='tasks')
-
-    def test_assignees(self):
-        field = Task._meta.get_field('assignees')
-        self.assertEqual(field.__class__, models.ManyToManyField)
-        self.assertEqual(field.remote_field.model, User)
-        self.assertTrue(field.blank)
 
     def test_target_date(self):
         field = Task._meta.get_field('target_date')
@@ -58,6 +49,10 @@ class TestModel(AppTestCase):
         field = Task._meta.get_field('tags')
         self.assertTrue(isinstance(field, TaggableManager))
 
+    # manager
+    def test_default_manager(self):
+        self.assertTrue(isinstance(Task._default_manager, TaskManager))
+
     # meta
 
     def test_ordering(self):
@@ -67,3 +62,7 @@ class TestModel(AppTestCase):
 
     def test_str(self):
         self.assertEqual(str(Task(title='Foo')), 'Foo')
+
+    def test_allocated_hours(self):
+        task = Task.objects.get(pk=1)
+        self.assertEqual(task.allocated_hours, Decimal('10.00'))

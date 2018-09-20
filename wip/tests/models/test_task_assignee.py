@@ -11,7 +11,7 @@ class ModelTests(AppTestCase):
 
     def test_task(self):
         field = TaskAssignee._meta.get_field('task')
-        self.assertModelPKField(field, Task, on_delete=models.CASCADE)
+        self.assertModelPKField(field, Task, on_delete=models.CASCADE, related_name='assignees')
 
     def test_user(self):
         field = TaskAssignee._meta.get_field('user')
