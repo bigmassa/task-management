@@ -1,6 +1,15 @@
 // Form
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+input[type="color"] {
+    border: $input-border-width solid $input-border-color;
+    border-radius: $input-border-radius;
+    height: $input-height;
+    margin-bottom: $input-margin-bottom;
+    padding: 0 .1rem;
+    width: 10rem;
+}
+
 .errorlist {
     list-style-type: none;
     color: color("red");

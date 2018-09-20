@@ -5,6 +5,9 @@ from .client import (
     ClientUpdate
 )
 from .job import (
+    JobCreate,
+    JobDelete,
     JobDetail,
-    JobList
+    JobList,
+    JobUpdate
 )

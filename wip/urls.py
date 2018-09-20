@@ -12,4 +12,7 @@ urlpatterns = [
     path('clients/<int:pk>/delete/', views.ClientDelete.as_view(), name='client-delete'),
     path('jobs/', views.JobList.as_view(), name='job-list'),
     path('jobs/<int:pk>/', views.JobDetail.as_view(), name='job-detail'),
+    path('jobs/create/', views.JobCreate.as_view(), name='job-create'),
+    path('jobs/<int:pk>/update/', views.JobUpdate.as_view(), name='job-update'),
+    path('jobs/<int:pk>/delete/', views.JobDelete.as_view(), name='job-delete'),
 ]

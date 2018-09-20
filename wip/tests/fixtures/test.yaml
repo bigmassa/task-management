@@ -18,7 +18,7 @@
     fields: {
       name: "Accent Design Group",
       phone_number: "01603 766062",
-      email_address: "nquiries@accentdesign.co.uk",
+      email_address: "enquiries@accentdesign.co.uk",
       website: "https://accentdesign.co.uk",
       notes: "Some notes"
     }
