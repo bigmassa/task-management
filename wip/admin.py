@@ -21,13 +21,22 @@ class JobNoteAdmin(admin.StackedInline):
     verbose_name_plural = 'notes'
 
 
+class JobRecurringCostAdmin(admin.TabularInline):
+    model = JobRecurringCost
+    extra = 0
+    verbose_name = 'recurring cost'
+    verbose_name_plural = 'recurring costs'
+
+
 class JobAdmin(admin.ModelAdmin):
-    inlines = [JobRelationshipAdmin, JobNoteAdmin]
+    inlines = [JobRelationshipAdmin, JobRecurringCostAdmin, JobNoteAdmin]
 
 
 admin.site.register(Job, JobAdmin)
 admin.site.register(JobStatus)
 admin.site.register(JobType)
+admin.site.register(PaymentOption)
+admin.site.register(RecurringCostType)
 admin.site.register(Relationship)
 
 
