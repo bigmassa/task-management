@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% block page_title %}Clients{% endblock %}
+{% block page_title %}Jobs{% endblock %}
 {% block body_class %}{% endblock %}
 {% block inner_content %}
     <div class="container">
         <div class="page-header">
-            <h2>{% trans 'Clients' %}</h2>
-            <a class="button button-primary" href="{% url 'wip:client-create' %}">{% trans 'Create' %}</a>
+            <h2>{% trans 'Jobs' %}</h2>
         </div>
     </div>
     <div class="container">
@@ -14,17 +13,19 @@
             <table class="margin-zero">
                 <thead>
                     <tr>
-                        <th>{% trans 'Name' %}</th>
+                        <th>{% trans 'Title' %}</th>
+                        <th>{% trans 'ID' %}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for object in object_list %}
                         <tr>
-                            <td><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></td>
+                            <td><a href="{{ object.get_detail_url }}">{{ object.title }}</a></td>
+                            <td>{{ object.pk }}</td>
                         </tr>
                     {% empty %}
                         <tr>
-                            <td>{% trans 'No clients have been created,' %} <a class="strong" href="{% url 'wip:client-create' %}">{% trans 'create one now.' %}</a></td>
+                            <td>{% trans 'No jobs have been created,' %} <a class="strong" href="">{% trans 'create one now.' %}</a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

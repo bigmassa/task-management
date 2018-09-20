@@ -2,6 +2,7 @@
 // -----------------------------------------
 
 header {
+  background: color("primary");
   margin-bottom: $generic-margin-bottom;
   padding: 1.5rem 0;
 }
@@ -15,6 +16,7 @@ header .nav {
   }
 
   li a {
+    color: color("white");
     display: block;
     padding: 1rem 2rem;
   }

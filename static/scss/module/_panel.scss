@@ -1,0 +1,12 @@
+// Panel
+// -----------------------------------------
+
+.panel {
+  background: color("white");
+  border: 1px solid $border-color;
+  margin-bottom: $generic-margin-bottom;
+}
+
+.panel.padded {
+  padding: 1.5rem;
+}

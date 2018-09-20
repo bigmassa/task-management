@@ -8,9 +8,17 @@ $code-font-family:              'Inconsolata', monospace;
 
 // Colours
 $colors: (
+        "white":                rgb(255, 255, 255),
         "primary":              rgb(30, 117, 168),
+        "danger":               rgb(221, 75, 57),
 );
+$body-background:               rgb(236, 240, 241);
 
+
+// buttons
+$buttons: (
+        danger:                 map-get($colors, "danger") map-get($colors, "white")
+);
 
 // forms
 $input-use-full-width:          true;

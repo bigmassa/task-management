@@ -917,7 +917,7 @@ body {
   font-size: 15px;
   font-weight: 400;
   color: #3e3e3e;
-  background: white;
+  background: #ecf0f1;
 }
 
 main {
@@ -1077,6 +1077,45 @@ button,
 
 .button.button-clear.button-secondary:hover, .button.button-clear.button-secondary:focus {
   color: #d7d7d7;
+  background-color: transparent;
+  border-color: transparent;
+  outline: 0;
+}
+
+.button.button-danger {
+  color: white;
+  background-color: #dd4b39;
+  border-color: #d73925;
+}
+
+.button.button-danger:hover, .button.button-danger:focus {
+  color: white;
+  background-color: #c23321;
+  border-color: #ac2d1e;
+  outline: 0;
+}
+
+.button.button-outline.button-danger {
+  color: #dd4b39;
+  background-color: transparent;
+  border-color: #dd4b39;
+}
+
+.button.button-outline.button-danger:hover, .button.button-outline.button-danger:focus {
+  color: #c23321;
+  background-color: transparent;
+  border-color: #c23321;
+  outline: 0;
+}
+
+.button.button-clear.button-danger {
+  color: #dd4b39;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.button.button-clear.button-danger:hover, .button.button-clear.button-danger:focus {
+  color: #c23321;
   background-color: transparent;
   border-color: transparent;
   outline: 0;
@@ -1530,6 +1569,7 @@ sup {
 }
 
 header {
+  background: #1e75a8;
   margin-bottom: 1.5rem;
   padding: 1.5rem 0;
 }
@@ -1544,8 +1584,28 @@ header .nav li {
 }
 
 header .nav li a {
+  color: white;
   display: block;
   padding: 1rem 2rem;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+  display: inline-block;
+  margin: 0 1.5rem 0 0;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #e6e6e6;
+  margin-bottom: 1.5rem;
+}
+
+.panel.padded {
+  padding: 1.5rem;
 }
 
 /* karma-css utilities */
@@ -1769,6 +1829,14 @@ header .nav li a {
 
 .c-pinterest {
   color: #bd081c;
+}
+
+.b-danger {
+  background-color: #dd4b39;
+}
+
+.c-danger {
+  color: #dd4b39;
 }
 
 .disabled {
