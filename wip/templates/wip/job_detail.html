@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block page_title %}Jobs{% endblock %}
+{% block body_class %}{% endblock %}
+{% block inner_content %}
+    <div class="container">
+        {% include 'wip/partials/object_intro_header.html' with detail=True %}
+    </div>
+    <div class="container">
+        <table class="table-headed">
+            <thead>
+                <tr>
+                    <th>{% trans 'Detail' %}</th>
+                    <th class="text-right"><a href="">{% trans 'Edit' %}</a></th>
+                </tr>
+            </thead>
+            <tboby>
+                <tr>
+                    <td>{% trans 'ID' %}</td>
+                    <td>{{ object.pk }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Title' %}</td>
+                    <td>{{ object.title }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Decription' %}</td>
+                    <td>{{ object.description|linebreaksbr }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Client' %}</td>
+                    <td>{{ object.client }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Type' %}</td>
+                    <td>{{ object.type }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Colour' %}</td>
+                    <td>{{ object.colour }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Status' %}</td>
+                    <td>{{ object.status }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Billed To' %}</td>
+                    <td>{{ object.billed_to|default_if_none:'-' }}</td>
+                </tr>
+            </tboby>
+        </table>
+        <h3>{% trans 'Relationships' %}</h3>
+        <table class="table-headed">
+            <thead>
+                <tr>
+                    <th>{% trans 'User' %}</th>
+                    <th>{% trans 'Relationship' %}</th>
+                    <th class="text-right"><a href="">{% trans 'Add' %}</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for relationship in object.jobrelationship_set.all %}
+                <tr>
+                    <td>{{ relationship.user.get_full_name }}</td>
+                    <td>{{ relationship.relationship }}</td>
+                    <td class="text-right"><a href="">{% trans 'Edit' %}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>{% trans 'Recurring Costs' %}</h3>
+        <table class="table-headed">
+            <thead>
+                <tr>
+                    <th>{% trans 'Type' %}</th>
+                    <th>{% trans 'Last Invoiced Date' %}</th>
+                    <th>{% trans 'Billing Frequency' %}</th>
+                    <th>{% trans 'Payment Option' %}</th>
+                    <th class="text-right"><a href="">{% trans 'Add' %}</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cost in object.recurring_costs.all %}
+                <tr>
+                    <td>{{ cost.type }}</td>
+                    <td>{{ cost.last_invoiced_date|default_if_none:'-' }}</td>
+                    <td>{{ cost.billing_frequency_text }}</td>
+                    <td>{{ cost.payment_option }}</td>
+                    <td class="text-right"><a href="">{% trans 'Edit' %}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>{% trans 'Notes' %}</h3>
+        <table class="table-headed">
+            <thead>
+                <tr>
+                    <th>{% trans 'Created' %}</th>
+                    <th>{% trans 'Note' %}</th>
+                    <th class="text-right"><a href="">{% trans 'Add' %}</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for note in object.notes.all %}
+                <tr>
+                    <td class="nowrap">{{ note.user.get_full_name }}<br/>{{ note.created_at }}</td>
+                    <td>{{ note.note|linebreaksbr }}</td>
+                    <td class="text-right"><a href="">{% trans 'Edit' %}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}

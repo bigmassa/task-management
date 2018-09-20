@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.urls import reverse_lazy
 
 from wip.fields import ColorField
 
@@ -55,3 +56,6 @@ class Job(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_detail_url(self):
+        return reverse_lazy('wip:job-detail', kwargs={'pk': self.pk})

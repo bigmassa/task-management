@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from authentication.models import User
 from tests.test_case import AppTestCase
@@ -65,3 +66,8 @@ class ModelTests(AppTestCase):
 
     def test_str(self):
         self.assertEqual(str(Job(title='Foo')), 'Foo')
+
+    def test_get_detail_url(self):
+        obj = Job(pk=10)
+        expected_url = reverse('wip:job-detail', kwargs={'pk': obj.pk})
+        self.assertEqual(obj.get_detail_url(), expected_url)

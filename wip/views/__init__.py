@@ -4,3 +4,6 @@ from .client import (
     ClientList,
     ClientUpdate
 )
+from .job import (
+    JobDetail
+)

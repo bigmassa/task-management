@@ -1,0 +1,104 @@
+-
+    model: authentication.user
+    pk: 1
+    fields: {
+      email: "test-user@example.com",
+      first_name: "Test",
+      last_name: "User",
+      password: "pbkdf2_sha256$120000$Lm5F44xHBZBt$jWh6JwAVoU4A0iwpOxmwKVdo7hWqxtxzalBWkWa/hd0=",
+      is_active: true,
+      date_joined: "2018-01-01T00:00:00.000Z"
+    }
+
+-
+    model: wip.client
+    pk: 1
+    fields: {
+      name: "Accent Design Group",
+      phone_number: "01603 766062",
+      email_address: "nquiries@accentdesign.co.uk",
+      website: "https://accentdesign.co.uk",
+      notes: "Some notes"
+    }
+
+-
+    model: wip.jobtype
+    pk: 1
+    fields: {
+      title: "Web",
+    }
+
+-
+    model: wip.jobstatus
+    pk: 1
+    fields: {
+      title: "Live",
+    }
+
+-
+    model: wip.job
+    pk: 1
+    fields: {
+      title: "Studio Research",
+      description: "",
+      created_at: "2018-01-01T00:00:00.000Z",
+      client: 1,
+      type: 1,
+      estimated_hours: 0,
+      colour: "#000000",
+      status: 1,
+      billed_to: "2018-01-01"
+    }
+
+-
+    model: wip.relationship
+    pk: 1
+    fields: {
+      title: "Project Manager",
+    }
+
+-
+    model: wip.jobrelationship
+    pk: 1
+    fields: {
+      job: 1,
+      user: 1,
+      relationship: 1
+    }
+
+-
+    model: wip.recurringcosttype
+    pk: 1
+    fields: {
+      title: "Hosting",
+    }
+
+-
+    model: wip.paymentoption
+    pk: 1
+    fields: {
+      title: "In Arrears",
+    }
+
+-
+    model: wip.jobrecurringcost
+    pk: 1
+    fields: {
+      job: 1,
+      type: 1,
+      last_invoiced_date: "2018-01-01",
+      billing_interval: 1,
+      billing_frequency: 1,
+      payment_option: 1
+    }
+
+-
+    model: wip.jobnote
+    pk: 1
+    fields: {
+      job: 1,
+      user: 1,
+      created_at: "2018-01-01T00:00:00.000Z",
+      updated_at: "2018-01-01T00:00:00.000Z",
+      note: "Some notes"
+    }

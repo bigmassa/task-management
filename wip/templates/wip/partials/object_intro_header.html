@@ -2,6 +2,8 @@
 <h2>
     {% if object and delete %}
         {% trans 'Delete' %} <small class="muted">{{ object }}</small>
+    {% elif object and detail %}
+        {% trans 'Detail' %} <small class="muted">{{ object }}</small>
     {% elif object %}
         {% trans 'Update' %} <small class="muted">{{ object }}</small>
     {% else %}
