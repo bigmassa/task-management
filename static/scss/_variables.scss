@@ -3,22 +3,45 @@
 
 
 // Typography
+$base-font-family:              "Noto Sans", sans-serif;
 $code-font-family:              'Inconsolata', monospace;
+
+
+// Base font
+$base-font-size:                14px;
 
 
 // Colours
 $colors: (
         "white":                rgb(255, 255, 255),
         "primary":              rgb(30, 117, 168),
+        "secondary":            rgb(170, 170, 170),
         "danger":               rgb(221, 75, 57),
 );
 $body-background:               rgb(236, 240, 241);
 
 
 // buttons
-$buttons: (
-        danger:                 map-get($colors, "danger") map-get($colors, "white")
-);
+$buttons: ();
+$button-padding-y:              .4rem;
+$button-padding-x:              1rem;
+$button-font-size:              1.4rem;
+
 
 // forms
 $input-use-full-width:          true;
+$input-font-size:               1.4rem;
+
+
+
+// tables
+$table-border-color:            rgb(236, 240, 241);
+$table-cell-padding:            1rem 1rem;
+$table-headed-color:            rgb(236, 240, 241);
+$table-hover-color:             rgb(254, 249, 232);
+
+
+// z-indexes
+$z-layers: (
+  "tabs": 10
+);

@@ -8,7 +8,7 @@ class TestView(AppTestCase):
 
     def setUp(self):
         self.object = Client.objects.create(name='Test Client')
-        self.url = self.object.get_absolute_url()
+        self.url = self.object.get_update_url()
         self.user = self.create_user()
 
     def test_login_required(self):
@@ -30,7 +30,7 @@ class TestView(AppTestCase):
         response = self.client.post(self.url, data)
 
         # test redirected after
-        self.assertRedirects(response, reverse('wip:client-list'), 302, 200)
+        self.assertRedirects(response, self.object.get_absolute_url(), 302, 200)
 
         # test updated
         Client.objects.get(pk=self.object.pk, **data)

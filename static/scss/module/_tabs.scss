@@ -1,0 +1,29 @@
+// Tabs
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.tabs {
+  list-style-type: none;
+  margin: 0;
+  z-index: zindex("tabs");
+
+  li {
+    border: 1px solid $border-color;
+    border-bottom: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background: color-a("primary", .14);
+  }
+
+  li:not(.active) a {
+    color: $font-color;
+  }
+
+  li.active {
+    background: color("white");
+  }
+
+  + .panel {
+    margin-top: -1px;
+  }
+}

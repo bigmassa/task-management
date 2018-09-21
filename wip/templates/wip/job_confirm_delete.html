@@ -1,33 +1,31 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block page_title %}Jobs{% endblock %}
-{% block body_class %}{% endblock %}
-{% block inner_content %}
-    <div class="main">
+{% block body_class %}focus-on-update{% endblock %}
+{% block full_outer_content %}
+    <form method="post" novalidate>
+        {% csrf_token %}
         <div class="container">
             <div class="page-header">
-                {% include 'wip/partials/object_intro_header.html' with delete=True %}
+                <h2>{% trans 'Delete Job' %}</h2>
+                <div class="page-header-actions">
+                    <button class="button button-primary" type="submit">{% trans 'Delete' %}</button>
+                    <a class="button button-primary button-clear" href="{{ object.get_absolute_url }}">{% trans 'Cancel' %}</a>
+                </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="panel padded">
+            <div class="panel">
                 {% if protected %}
-                <p>{% blocktrans with ob=object %}Deleting <em>"{{ ob }}"</em> would first require deleting the following protected related objects:{% endblocktrans %}</p>
-                <ul>
+                    <p>{% blocktrans with ob=object %}The following objects need to be deleted first:{% endblocktrans %}</p>
+                    <ul class="margin-zero">
                     {% for item in protected %}
                         <li>{{ item.verbose_name|capfirst }}: <a href="{{ item.object.get_absolute_url }}">{{ item.object }}</a></li>
                     {% endfor %}
-                </ul>
+                    </ul>
                 {% else %}
-                <p>{% blocktrans with ob=object %}Please confirm you wish to delete <em>"{{ ob }}"</em>{% endblocktrans %}</p>
-                <form method="post" novalidate>
-                    {% csrf_token %}
-                    {{ form }}
-                    <a class="button button-primary button-outline" href="{{ object.get_absolute_url }}">{% trans 'Cancel' %}</a>
-                    <button class="button button-danger" type="submit">{% trans 'Delete' %}</button>
-                </form>
+                    <p class="margin-zero">{% blocktrans with ob=object %}Please confirm you wish to delete <em>"{{ ob }}"</em>{% endblocktrans %}</p>
+                {{ form }}
                 {% endif %}
             </div>
         </div>
-    </div>
+    </form>
 {% endblock %}

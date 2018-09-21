@@ -3,11 +3,18 @@
 
 header {
   background: color("primary");
-  margin-bottom: $generic-margin-bottom;
-  padding: 1.5rem 0;
+  margin-bottom: $generic-margin-bottom * 2;
+  padding: .5rem 0;
+}
+
+header .nav-home {
+  color: color("white");
+  display: inline-block;
+  padding: 1rem 6rem 1rem 0;
 }
 
 header .nav {
+  display: inline-block;
   list-style-type: none;
   margin: 0;
 

@@ -1,35 +1,38 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
-from django.views.generic import DetailView, ListView, CreateView, UpdateView, DeleteView
+from django.shortcuts import get_object_or_404
+from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 
-from wip.models import Job
+from wip.forms import JobForm
+from wip.models import Client, Job
 from wip.views.mixins import ProtectedDeleteMixin
 
 
 class JobCreate(LoginRequiredMixin, CreateView):
-    fields = '__all__'
+    form_class = JobForm
     model = Job
+    template_name = 'wip/job_add.html'
 
-    def get_success_url(self):
-        return self.object.get_detail_url()
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        client = get_object_or_404(Client, pk=self.kwargs['pk'])
+        kwargs.update({
+            'instance': Job(client=client)
+        })
+        return kwargs
 
 
 class JobDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteView):
     model = Job
-    success_url = reverse_lazy('wip:job-list')
+
+    def get_success_url(self):
+        return self.object.client.get_absolute_url()
 
 
 class JobDetail(LoginRequiredMixin, DetailView):
     model = Job
 
 
-class JobList(LoginRequiredMixin, ListView):
-    model = Job
-
-
 class JobUpdate(LoginRequiredMixin, UpdateView):
-    fields = '__all__'
+    form_class = JobForm
     model = Job
-
-    def get_success_url(self):
-        return self.object.get_detail_url()
+    template_name = 'wip/job_update.html'

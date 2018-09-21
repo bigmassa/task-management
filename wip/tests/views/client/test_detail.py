@@ -1,12 +1,15 @@
 from django.urls import reverse
 
 from tests.test_case import AppTestCase
+from wip.models import Client
 
 
 class TestView(AppTestCase):
+    fixtures = ['wip/tests/fixtures/test.yaml']
 
     def setUp(self):
-        self.url = reverse('wip:job-list')
+        self.object = Client.objects.first()
+        self.url = self.object.get_absolute_url()
         self.user = self.create_user()
 
     def test_login_required(self):

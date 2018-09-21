@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+{% block page_title %}Clients{% endblock %}
+{% block body_class %}{% endblock %}
+{% block inner_content %}
+    <div class="container">
+        <div class="page-header">
+            <h2>{{ object.name }}</h2>
+            <div class="page-header-actions">
+                <a class="button button-primary" href="{{ object.get_update_url }}">{% trans 'Edit' %}</a>
+                <a class="button button-primary button-clear" href="{% url 'wip:client-delete' object.pk %}">{% trans 'Delete' %} <i class="icon-trash"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <p>{% trans 'Email' %}</p>
+                <p><a href="mailto://{{ object.email_address }}">{{ object.email_address }}</a></p>
+                <hr/>
+                <p>{% trans 'Phone Number' %}</p>
+                <p><a href="tel:{{ object.phone_number }}">{{ object.phone_number }}</a></p>
+                <hr/>
+                <p>{% trans 'Website' %}</p>
+                <p><a href="{{ object.website }}">{{ object.website }}</a></p>
+            </div>
+            <div class="col-lg-9">
+                <ul class="tabs">
+                    <li data-tab-id="jobs" class="active">{% trans 'Jobs' %}</li>
+                    <li data-tab-id="contacts">{% trans 'Contacts' %}</li>
+                </ul>
+                <div class="panel">
+                    <div data-tab="jobs">
+                        <div class="panel-actions">
+                            <a class="button button-secondary button-outline" href="{% url 'wip:job-create' object.pk %}">{% trans 'Add' %}</a>
+                        </div>
+                        <table class="table-hover margin-zero">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'ID' %}</th>
+                                    <th>{% trans 'Title' %}</th>
+                                    <th>{% trans 'Status' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for job in object.jobs.all %}
+                                    <tr data-url="{{ job.get_absolute_url }}">
+                                        <td>{{ job.pk }}</td>
+                                        <td>{{ job.title }}</td>
+                                        <td>{{ job.status }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div data-tab="contacts" class="d-hidden"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script src="{% static 'dist/js/tabs.js' %}"></script>
+    <script>$('.tabs').tabs();</script>
+{% endblock %}

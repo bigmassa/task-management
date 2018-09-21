@@ -32,4 +32,7 @@ class Client(models.Model):
         return self.name
 
     def get_absolute_url(self):
+        return reverse_lazy('wip:client-detail', kwargs={'pk': self.pk})
+
+    def get_update_url(self):
         return reverse_lazy('wip:client-update', kwargs={'pk': self.pk})

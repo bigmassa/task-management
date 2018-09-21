@@ -1,11 +1,9 @@
 {% load i18n %}
 <header>
     <div class="container">
+        <a class="nav-home" href="/">{% trans 'WIP' %}</a>
         <ul class="nav">
-            <li><a href="/">{% trans 'Home' %}</a></li>
             <li><a href="{% url 'wip:client-list' %}">{% trans 'Clients' %}</a></li>
-            <li><a href="{% url 'wip:job-list' %}">{% trans 'Jobs' %}</a></li>
-            <li class="pull-right"><a href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
         </ul>
     </div>
 </header>

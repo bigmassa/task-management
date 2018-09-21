@@ -6,21 +6,25 @@
     <div class="container">
         <div class="page-header">
             <h2>{% trans 'Clients' %}</h2>
-            <a class="button button-primary" href="{% url 'wip:client-create' %}">{% trans 'Create' %}</a>
+            <div class="page-header-actions">
+                <a class="button button-primary" href="{% url 'wip:client-create' %}">{% trans 'Add Client' %}</a>
+            </div>
         </div>
-    </div>
-    <div class="container">
         <div class="panel">
-            <table class="margin-zero">
+            <table class="table-headed table-hover margin-zero">
                 <thead>
                     <tr>
                         <th>{% trans 'Name' %}</th>
+                        <th>{% trans 'Email' %}</th>
+                        <th>{% trans 'Tel' %}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for object in object_list %}
-                        <tr>
-                            <td><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></td>
+                        <tr data-url="{{ object.get_absolute_url }}">
+                            <td>{{ object.name }}</td>
+                            <td>{{ object.email_address }}</td>
+                            <td>{{ object.phone_number }}</td>
                         </tr>
                     {% empty %}
                         <tr>

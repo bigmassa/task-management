@@ -53,7 +53,7 @@ class Job(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse_lazy('wip:job-update', kwargs={'pk': self.pk})
-
-    def get_detail_url(self):
         return reverse_lazy('wip:job-detail', kwargs={'pk': self.pk})
+
+    def get_update_url(self):
+        return reverse_lazy('wip:job-update', kwargs={'pk': self.pk})

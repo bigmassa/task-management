@@ -9,7 +9,7 @@ class TestView(AppTestCase):
 
     def setUp(self):
         self.object = Job.objects.first()
-        self.url = self.object.get_absolute_url()
+        self.url = self.object.get_update_url()
         self.user = self.create_user()
 
     def test_login_required(self):
@@ -45,4 +45,4 @@ class TestView(AppTestCase):
         self.assertEqual(self.object.status_id, data['status'])
 
         # test redirected after
-        self.assertRedirects(response, self.object.get_detail_url(), 302, 200)
+        self.assertRedirects(response, self.object.get_absolute_url(), 302, 200)

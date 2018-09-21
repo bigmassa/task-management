@@ -9,7 +9,7 @@ class TestView(AppTestCase):
 
     def setUp(self):
         self.object = Job.objects.first()
-        self.url = self.object.get_detail_url()
+        self.url = self.object.get_absolute_url()
         self.user = self.create_user()
 
     def test_login_required(self):

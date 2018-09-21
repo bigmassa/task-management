@@ -24,7 +24,6 @@ class TestView(AppTestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_can_delete(self):
-        # TODO: need to decide what will allow a job to be deleted
         # delete tasks as currently protected
         self.object.tasks.all().delete()
 
@@ -33,7 +32,7 @@ class TestView(AppTestCase):
         response = self.client.post(self.url, {})
 
         # test redirected after
-        self.assertRedirects(response, reverse('wip:job-list'), 302, 200)
+        self.assertRedirects(response, self.object.client.get_absolute_url(), 302, 200)
 
         # test updated
         with self.assertRaises(ObjectDoesNotExist):

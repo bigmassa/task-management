@@ -16,7 +16,7 @@
     model: wip.client
     pk: 1
     fields: {
-      name: "Accent Design Group",
+      name: "Accent Design",
       phone_number: "01603 766062",
       email_address: "enquiries@accentdesign.co.uk",
       website: "https://accentdesign.co.uk",
@@ -41,8 +41,8 @@
     model: wip.job
     pk: 1
     fields: {
-      title: "Studio Research",
-      description: "",
+      title: "Website Updates",
+      description: "Lorem ipsum dolor sit amet, doctus accommodare vix et. Qui falli splendide te, solum ipsum novum ei qui, mea ei nisl sanctus quaestio. Ludus graece officiis has et, quis fierent salutandi nam ut. Probo dolorum definiebas per ex, utamur euismod repudiare cu quo. Ei quo tractatos elaboraret, id eros sapientem vim, ad voluptua fabellas perfecto est.",
       created_at: "2018-01-01T00:00:00.000Z",
       client: 1,
       type: 1,
@@ -117,7 +117,7 @@
     pk: 1
     fields: {
       job: 1,
-      title: "Docker",
+      title: "Update some bits and bobs.",
       created_at: "2018-01-01T00:00:00.000Z",
       description: "",
       status: 1,

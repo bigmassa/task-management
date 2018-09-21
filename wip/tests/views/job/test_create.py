@@ -1,14 +1,15 @@
 from django.urls import reverse
 
 from tests.test_case import AppTestCase
-from wip.models import Job
+from wip.models import Client, Job
 
 
 class TestView(AppTestCase):
     fixtures = ['wip/tests/fixtures/test.yaml']
 
     def setUp(self):
-        self.url = reverse('wip:job-create')
+        self.client_obj = Client.objects.first()
+        self.url = reverse('wip:job-create', kwargs={'pk': self.client_obj.pk})
         self.user = self.create_user()
 
     def test_login_required(self):
@@ -26,7 +27,6 @@ class TestView(AppTestCase):
 
         data = {
             'title': "New Job",
-            'client': 1,
             'type': 1,
             'estimated_hours': 0,
             'colour': "#000000",
@@ -36,11 +36,11 @@ class TestView(AppTestCase):
 
         # test exists
         job = Job.objects.get(title=data['title'])
-        self.assertEqual(job.client_id, data['client'])
+        self.assertEqual(job.client, self.client_obj)
         self.assertEqual(job.type_id, data['type'])
         self.assertEqual(job.estimated_hours, data['estimated_hours'])
         self.assertEqual(job.colour, data['colour'])
         self.assertEqual(job.status_id, data['status'])
 
         # test redirected after
-        self.assertRedirects(response, job.get_detail_url(), 302, 200)
+        self.assertRedirects(response, job.get_absolute_url(), 302, 200)

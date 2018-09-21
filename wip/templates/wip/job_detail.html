@@ -1,153 +1,150 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load i18n static %}
 {% block page_title %}Jobs{% endblock %}
 {% block body_class %}{% endblock %}
 {% block inner_content %}
     <div class="container">
         <div class="page-header">
-            {% include 'wip/partials/object_intro_header.html' with detail=True %}
+            <span class="job-color-indicator" style="background: {{ object.colour }}"></span>
+            <h2>{{ object.pk }} : {{ object.client }} / {{ object.title }}</h2>
+            <div class="page-header-actions">
+                <a class="button button-primary" href="{{ object.get_update_url }}">{% trans 'Edit' %}</a>
+                <a class="button button-primary button-clear" href="{% url 'wip:job-delete' object.pk %}">{% trans 'Delete' %} <i class="icon-trash"></i></a>
+            </div>
         </div>
     </div>
     <div class="container">
-        <div class="panel">
-            <table class="margin-zero">
-                <thead>
-                    <tr>
-                        <th>{% trans 'Detail' %}</th>
-                        <th class="text-right"><a href="{{ object.get_absolute_url }}">{% trans 'Edit' %}</a></th>
-                    </tr>
-                </thead>
-                <tboby>
-                    <tr>
-                        <td>{% trans 'ID' %}</td>
-                        <td>{{ object.pk }}</td>
-                    </tr>
-                    <tr>
-                        <td>{% trans 'Title' %}</td>
-                        <td>{{ object.title }}</td>
-                    </tr>
-                    <tr>
-                        <td>{% trans 'Decription' %}</td>
-                        <td>{{ object.description|linebreaksbr }}</td>
-                    </tr>
-                    <tr>
-                        <td>{% trans 'Client' %}</td>
-                        <td>{{ object.client }}</td>
-                    </tr>
-                    <tr>
-                        <td>{% trans 'Type' %}</td>
-                        <td>{{ object.type }}</td>
-                    </tr>
-                    <tr>
-                        <td>{% trans 'Colour' %}</td>
-                        <td>{{ object.colour }}</td>
-                    </tr>
-                    <tr>
-                        <td>{% trans 'Status' %}</td>
-                        <td>{{ object.status }}</td>
-                    </tr>
-                    <tr>
-                        <td>{% trans 'Billed To' %}</td>
-                        <td>{{ object.billed_to|default_if_none:'-' }}</td>
-                    </tr>
-                </tboby>
-            </table>
+        <div class="row">
+            <div class="col">
+                <p class="strong">{% trans 'Description' %}</p>
+                {{ object.description|default:'-'|linebreaks }}
+            </div>
         </div>
-        <h3>{% trans 'Relationships' %}</h3>
-        <div class="panel">
-            <table class="margin-zero">
-                <thead>
-                    <tr>
-                        <th>{% trans 'User' %}</th>
-                        <th>{% trans 'Relationship' %}</th>
-                        <th class="text-right"><a href="">{% trans 'Add' %}</a></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for relationship in object.relationships.all %}
-                    <tr>
-                        <td>{{ relationship.user.get_full_name }}</td>
-                        <td>{{ relationship.relationship }}</td>
-                        <td class="text-right"><a href="">{% trans 'Edit' %}</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <div class="row">
+            <div class="col-lg-6 col-xl-3">
+                <div class="panel text-center">
+                    <p class="strong">{% trans 'Time Spent (hours)' %}</p>
+                    <p>-</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-3">
+                <div class="panel text-center">
+                    <p class="strong">{% trans 'Type' %}</p>
+                    <p>{{ object.type }}</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-3">
+                <div class="panel text-center">
+                    <p class="strong">{% trans 'Status' %}</p>
+                    <p>{{ object.status }}</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-3">
+                <div class="panel text-center">
+                    <p class="strong">{% trans 'Billed To' %}</p>
+                    <p>{{ object.billed_to|default_if_none:'-' }}</p>
+                </div>
+            </div>
         </div>
-        <h3>{% trans 'Recurring Costs' %}</h3>
-        <div class="panel">
-            <table class="margin-zero">
-                <thead>
-                    <tr>
-                        <th>{% trans 'Type' %}</th>
-                        <th>{% trans 'Last Invoiced Date' %}</th>
-                        <th>{% trans 'Billing Frequency' %}</th>
-                        <th>{% trans 'Payment Option' %}</th>
-                        <th class="text-right"><a href="">{% trans 'Add' %}</a></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for cost in object.recurring_costs.all %}
-                    <tr>
-                        <td>{{ cost.type }}</td>
-                        <td>{{ cost.last_invoiced_date|default_if_none:'-' }}</td>
-                        <td>{{ cost.billing_frequency_text }}</td>
-                        <td>{{ cost.payment_option }}</td>
-                        <td class="text-right"><a href="">{% trans 'Edit' %}</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <h3>{% trans 'Notes' %}</h3>
-        <div class="panel">
-            <table class="margin-zero">
-                <thead>
-                    <tr>
-                        <th>{% trans 'Created' %}</th>
-                        <th>{% trans 'Note' %}</th>
-                        <th class="text-right"><a href="">{% trans 'Add' %}</a></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for note in object.notes.all %}
-                    <tr>
-                        <td class="nowrap">{{ note.user.get_full_name }}<br/>{{ note.created_at }}</td>
-                        <td>{{ note.note|linebreaksbr }}</td>
-                        <td class="text-right"><a href="">{% trans 'Edit' %}</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <h3>{% trans 'Tasks' %}</h3>
-        <div class="panel">
-            <table class="margin-zero">
-                <thead>
-                    <tr>
-                        <th>{% trans 'Title' %}</th>
-                        <th>{% trans 'Status' %}</th>
-                        <th>{% trans 'Allocated Hours' %}</th>
-                        <th>{% trans 'Time Spent' %}</th>
-                        <th>{% trans 'Target Date' %}</th>
-                        <th>{% trans 'Closed' %}</th>
-                        <th class="text-right"><a href="">{% trans 'Add' %}</a></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for task in object.tasks.all %}
-                    <tr>
-                        <td>{{ task.title }}</td>
-                        <td>{{ task.status }}</td>
-                        <td>{{ task.allocated_hours }}</td>
-                        <td>-</td>
-                        <td>{{ task.target_date|default_if_none:'-' }}</td>
-                        <td>{{ task.closed|yesno }}</td>
-                        <td class="text-right"><a href="">{% trans 'Edit' %}</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <div class="row">
+            <div class="col">
+                <ul class="tabs">
+                    <li data-tab-id="tasks" class="active">{% trans 'Tasks' %}</li>
+                    <li data-tab-id="relationships">{% trans 'Relationships' %}</li>
+                    <li data-tab-id="recurring_costs">{% trans 'Recurring Costs' %}</li>
+                    <li data-tab-id="notes">{% trans 'Notes' %}</li>
+                </ul>
+                <div class="panel">
+                    <div data-tab="tasks">
+                        <table class="table-hover margin-zero">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'Title' %}</th>
+                                    <th>{% trans 'Status' %}</th>
+                                    <th>{% trans 'Allocated Hours' %}</th>
+                                    <th>{% trans 'Time Spent' %}</th>
+                                    <th>{% trans 'Target Date' %}</th>
+                                    <th>{% trans 'Closed' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for task in object.tasks.all %}
+                                <tr>
+                                    <td>{{ task.title }}</td>
+                                    <td>{{ task.status }}</td>
+                                    <td>{{ task.allocated_hours }}</td>
+                                    <td>-</td>
+                                    <td>{{ task.target_date|default_if_none:'-' }}</td>
+                                    <td>{{ task.closed|yesno }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div data-tab="relationships" class="d-hidden">
+                        <table class="table-hover margin-zero">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'User' %}</th>
+                                    <th>{% trans 'Relationship' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for relationship in object.relationships.all %}
+                                <tr>
+                                    <td>{{ relationship.user.get_full_name }}</td>
+                                    <td>{{ relationship.relationship }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div data-tab="recurring_costs" class="d-hidden">
+                        <table class="table-hover margin-zero">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'Type' %}</th>
+                                    <th>{% trans 'Last Invoiced Date' %}</th>
+                                    <th>{% trans 'Billing Frequency' %}</th>
+                                    <th>{% trans 'Payment Option' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for cost in object.recurring_costs.all %}
+                                <tr>
+                                    <td>{{ cost.type }}</td>
+                                    <td>{{ cost.last_invoiced_date|default_if_none:'-' }}</td>
+                                    <td>{{ cost.billing_frequency_text }}</td>
+                                    <td>{{ cost.payment_option }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div data-tab="notes" class="d-hidden">
+                        <table class="table-hover margin-zero">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'Created' %}</th>
+                                    <th>{% trans 'Note' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for note in object.notes.all %}
+                                <tr>
+                                    <td class="nowrap">{{ note.user.get_full_name }}<br/>{{ note.created_at }}</td>
+                                    <td>{{ note.note|linebreaksbr }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+{% endblock %}
+{% block extra_js %}
+    <script src="{% static 'dist/js/tabs.js' %}"></script>
+    <script>$('.tabs').tabs();</script>
 {% endblock %}

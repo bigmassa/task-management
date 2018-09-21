@@ -63,10 +63,10 @@ class ModelTests(AppTestCase):
 
     def test_get_absolute_url(self):
         obj = Job(pk=10)
-        expected_url = reverse('wip:job-update', kwargs={'pk': obj.pk})
+        expected_url = reverse('wip:job-detail', kwargs={'pk': obj.pk})
         self.assertEqual(obj.get_absolute_url(), expected_url)
 
-    def test_get_detail_url(self):
+    def test_get_update_url(self):
         obj = Job(pk=10)
-        expected_url = reverse('wip:job-detail', kwargs={'pk': obj.pk})
-        self.assertEqual(obj.get_detail_url(), expected_url)
+        expected_url = reverse('wip:job-update', kwargs={'pk': obj.pk})
+        self.assertEqual(obj.get_update_url(), expected_url)

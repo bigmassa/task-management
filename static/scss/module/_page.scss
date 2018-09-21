@@ -1,11 +1,20 @@
 // page
 // -----------------------------------------
 
+body.focus-on-update {
+  padding-top: 3rem;
+}
+
 .page-header {
-  margin-bottom: $generic-margin-bottom;
+  display: flex;
+  align-items: center;
+  margin-bottom: $generic-margin-bottom * 2;
+
+  .page-header-actions {
+    margin-left: auto;
+  }
 
   h2 {
-    display: inline-block;
-    margin: 0 1.5rem 0 0;
+    margin: 0;
   }
 }

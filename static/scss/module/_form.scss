@@ -10,6 +10,10 @@ input[type="color"] {
     width: 10rem;
 }
 
+.field-wrapper {
+    margin-bottom: 1.5rem;
+}
+
 .errorlist {
     list-style-type: none;
     color: color("red");

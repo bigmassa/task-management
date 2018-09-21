@@ -1,0 +1,10 @@
+// Table
+// -----------------------------------------
+
+tbody tr:last-child {
+  border-bottom: $table-border-width solid $table-border-color;
+}
+
+tbody tr[data-url] {
+  cursor: pointer;
+}
