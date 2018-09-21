@@ -30,7 +30,7 @@ class TestModel(AppTestCase):
 
     def test_job(self):
         field = Task._meta.get_field('job')
-        self.assertModelPKField(field, Job, on_delete=models.PROTECT, related_name='tasks')
+        self.assertModelPKField(field, Job, on_delete=models.CASCADE, related_name='tasks')
 
     def test_status(self):
         field = Task._meta.get_field('status')

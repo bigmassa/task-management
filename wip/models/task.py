@@ -29,7 +29,7 @@ class Task(models.Model):
     )
     job = models.ForeignKey(
         'wip.Job',
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         related_name='tasks'
     )
     status = models.ForeignKey(
