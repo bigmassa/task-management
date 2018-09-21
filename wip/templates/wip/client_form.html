@@ -19,7 +19,7 @@
     </div>
     {% if object.pk %}
     <div class="container">
-        <a class="button button-danger" href="{% url 'wip:client-delete' object.pk %}">{% trans 'Delete' %}</a>
+        <a class="button button-c" href="{% url 'wip:client-delete' object.pk %}">{% trans 'Delete' %}</a>
     </div>
     {% endif %}
 {% endblock %}

@@ -24,7 +24,7 @@
                     {% csrf_token %}
                     {{ form }}
                     <a class="button button-primary button-outline" href="{{ object.get_absolute_url }}">{% trans 'Cancel' %}</a>
-                    <button class="button button-primary" type="submit">{% trans 'Delete' %}</button>
+                    <button class="button button-danger" type="submit">{% trans 'Delete' %}</button>
                 </form>
                 {% endif %}
             </div>
