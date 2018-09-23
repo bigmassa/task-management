@@ -7,6 +7,9 @@
 @import "node_modules/karma-css/scss/variables";
 @import "node_modules/karma-css/scss/import";
 
+/* components */
+@import "node_modules/karma-css-components/scss/components/checkbox";
+
 /* add your custom modules here */
 @import "fontello/css/fontello";
 @import "module/form";

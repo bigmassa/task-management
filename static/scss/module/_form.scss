@@ -10,6 +10,13 @@ input[type="color"] {
     width: 10rem;
 }
 
+.checkbox {
+    margin-bottom: $input-margin-bottom;
+    input {
+        position: relative;
+    }
+}
+
 .field-wrapper {
     margin-bottom: 1.5rem;
 }

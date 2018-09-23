@@ -11,3 +11,9 @@ from .job import (
     JobDetail,
     JobUpdate
 )
+from .task import (
+    TaskCreate,
+    TaskDelete,
+    TaskDetail,
+    TaskUpdate
+)

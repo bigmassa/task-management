@@ -33,7 +33,6 @@ $input-use-full-width:          true;
 $input-font-size:               1.4rem;
 
 
-
 // tables
 $table-border-color:            rgb(236, 240, 241);
 $table-cell-padding:            1rem 1rem;
@@ -45,3 +44,16 @@ $table-hover-color:             rgb(254, 249, 232);
 $z-layers: (
   "tabs": 10
 );
+
+
+// Components
+// --------------------------------------
+
+
+// checkboxes and radios
+
+$checkbox-checked-color:        map-get($colors, "primary");
+$checkbox-font-weight:          400;
+$checkbox-size:                 2.4rem;
+$checkbox-tick-width:           .3rem;
+$radio-dot-spacing:             .4rem;

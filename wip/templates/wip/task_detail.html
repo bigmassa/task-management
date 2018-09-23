@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+{% block page_title %}Tasks{% endblock %}
+{% block body_class %}{% endblock %}
+{% block inner_content %}
+    <div class="container">
+        <div class="page-header">
+            <span class="job-color-indicator" style="background: {{ object.job.colour }}"></span>
+            <h2>{{ object.job.pk }} : {{ object.job.client }} / {{ object.job }} / {{ object.title }}</h2>
+            <div class="page-header-actions">
+                <a class="button button-primary" href="{{ object.get_update_url }}">{% trans 'Edit' %}</a>
+                <a class="button button-primary button-clear" href="{% url 'wip:task-delete' object.pk %}">{% trans 'Delete' %} <i class="icon-trash"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <p>{% trans 'Description' %}</p>
+                {{ object.description|default:'-'|linebreaks }}
+                <hr/>
+                <p>{% trans 'Status' %}</p>
+                <p>{{ object.status }}</p>
+                <hr/>
+                <p>{% trans 'Target Date' %}</p>
+                <p>{{ object.target_date }}</p>
+                <hr/>
+                <p>{% trans 'Closed' %}</p>
+                <p>{{ object.closed|yesno }}</p>
+            </div>
+            <div class="col-lg-9">
+                <ul class="tabs">
+                    <li data-tab-id="assignees" class="active">{% trans 'Assignees' %}</li>
+                    <li data-tab-id="notes">{% trans 'Notes' %}</li>
+                </ul>
+                <div class="panel">
+                    <div data-tab="assignees">
+                        <table class="table-hover margin-zero">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'User' %}</th>
+                                    <th>{% trans 'Allocated Hours' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for assignee in object.assignees.all %}
+                                <tr>
+                                    <td>{{ assignee.user.get_full_name }}</td>
+                                    <td>{{ assignee.allocated_hours }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div data-tab="notes" class="d-hidden">
+                        <table class="table-hover margin-zero">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'Created' %}</th>
+                                    <th>{% trans 'Note' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for note in object.notes.all %}
+                                <tr>
+                                    <td class="nowrap">{{ note.user.get_full_name }}<br/>{{ note.created_at }}</td>
+                                    <td>{{ note.note|linebreaksbr }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script src="{% static 'dist/js/tabs.js' %}"></script>
+    <script>$('.tabs').tabs();</script>
+{% endblock %}

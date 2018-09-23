@@ -56,6 +56,9 @@
                 </ul>
                 <div class="panel">
                     <div data-tab="tasks">
+                        <div class="panel-actions">
+                            <a class="button button-secondary button-outline" href="{% url 'wip:task-create' object.pk %}">{% trans 'Add' %}</a>
+                        </div>
                         <table class="table-hover margin-zero">
                             <thead>
                                 <tr>
@@ -69,7 +72,7 @@
                             </thead>
                             <tbody>
                                 {% for task in object.tasks.all %}
-                                <tr>
+                                <tr data-url="{{ task.get_absolute_url }}">
                                     <td>{{ task.title }}</td>
                                     <td>{{ task.status }}</td>
                                     <td>{{ task.allocated_hours }}</td>
