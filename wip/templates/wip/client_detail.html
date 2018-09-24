@@ -34,20 +34,20 @@
                         <div class="panel-actions">
                             <a class="button button-secondary button-outline" href="{% url 'wip:job-create' object.pk %}">{% trans 'Add' %}</a>
                         </div>
-                        <table class="table-hover margin-zero">
+                        <table class="table-hover table-headed margin-zero">
                             <thead>
                                 <tr>
-                                    <th>{% trans 'ID' %}</th>
+                                    <th class="keep-min-width">{% trans 'ID' %}</th>
                                     <th>{% trans 'Title' %}</th>
-                                    <th>{% trans 'Status' %}</th>
+                                    <th class="keep-min-width">{% trans 'Status' %}</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for job in object.jobs.all %}
                                     <tr data-url="{{ job.get_absolute_url }}">
-                                        <td>{{ job.pk }}</td>
+                                        <td class="keep-min-width">{{ job.pk }}</td>
                                         <td>{{ job.title }}</td>
-                                        <td>{{ job.status }}</td>
+                                        <td class="keep-min-width">{{ job.status }}</td>
                                     </tr>
                                 {% endfor %}
                             </tbody>

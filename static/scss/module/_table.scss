@@ -8,3 +8,9 @@ tbody tr:last-child {
 tbody tr[data-url] {
   cursor: pointer;
 }
+
+th.keep-min-width,
+td.keep-min-width {
+  width: 1%;
+  white-space: nowrap;
+}

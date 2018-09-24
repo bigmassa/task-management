@@ -42,7 +42,7 @@
     pk: 1
     fields: {
       title: "Website Updates",
-      description: "Lorem ipsum dolor sit amet, doctus accommodare vix et. Qui falli splendide te, solum ipsum novum ei qui, mea ei nisl sanctus quaestio. Ludus graece officiis has et, quis fierent salutandi nam ut. Probo dolorum definiebas per ex, utamur euismod repudiare cu quo. Ei quo tractatos elaboraret, id eros sapientem vim, ad voluptua fabellas perfecto est.",
+      description: "Lorem ipsum dolor sit amet, doctus accommodare vix et. Qui falli splendide te, solum ipsum novum ei qui, mea ei nisl sanctus quaestio.",
       created_at: "2018-01-01T00:00:00.000Z",
       client: 1,
       type: 1,
@@ -117,9 +117,9 @@
     pk: 1
     fields: {
       job: 1,
-      title: "Update some bits and bobs.",
+      title: "Update some bits and bobs",
       created_at: "2018-01-01T00:00:00.000Z",
-      description: "",
+      description: "Lorem ipsum dolor sit amet, doctus accommodare vix et. Qui falli splendide te, solum ipsum novum ei qui, mea ei nisl sanctus quaestio.",
       status: 1,
       target_date: "2018-01-01",
       closed: false

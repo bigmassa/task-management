@@ -42,7 +42,7 @@
             <div class="col-lg-6 col-xl-3">
                 <div class="panel text-center">
                     <p class="strong">{% trans 'Billed To' %}</p>
-                    <p>{{ object.billed_to|default_if_none:'-' }}</p>
+                    <p>{{ object.billed_to|date:'d/m/Y'|default:'-' }}</p>
                 </div>
             </div>
         </div>
@@ -59,33 +59,33 @@
                         <div class="panel-actions">
                             <a class="button button-secondary button-outline" href="{% url 'wip:task-create' object.pk %}">{% trans 'Add' %}</a>
                         </div>
-                        <table class="table-hover margin-zero">
+                        <table class="table-hover table-headed margin-zero">
                             <thead>
                                 <tr>
                                     <th>{% trans 'Title' %}</th>
-                                    <th>{% trans 'Status' %}</th>
-                                    <th>{% trans 'Allocated Hours' %}</th>
-                                    <th>{% trans 'Time Spent' %}</th>
-                                    <th>{% trans 'Target Date' %}</th>
-                                    <th>{% trans 'Closed' %}</th>
+                                    <th class="keep-min-width">{% trans 'Status' %}</th>
+                                    <th class="keep-min-width">{% trans 'Allocated Hours' %}</th>
+                                    <th class="keep-min-width">{% trans 'Time Spent' %}</th>
+                                    <th class="keep-min-width">{% trans 'Target Date' %}</th>
+                                    <th class="keep-min-width">{% trans 'Closed' %}</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for task in object.tasks.all %}
                                 <tr data-url="{{ task.get_absolute_url }}">
                                     <td>{{ task.title }}</td>
-                                    <td>{{ task.status }}</td>
-                                    <td>{{ task.allocated_hours }}</td>
-                                    <td>-</td>
-                                    <td>{{ task.target_date|default_if_none:'-' }}</td>
-                                    <td>{{ task.closed|yesno }}</td>
+                                    <td class="keep-min-width">{{ task.status }}</td>
+                                    <td class="keep-min-width">{{ task.allocated_hours }}</td>
+                                    <td class="keep-min-width">-</td>
+                                    <td class="keep-min-width">{{ task.target_date|date:'d/m/Y'|default:'-' }}</td>
+                                    <td class="keep-min-width">{{ task.closed|yesno }}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
                     </div>
                     <div data-tab="relationships" class="d-hidden">
-                        <table class="table-hover margin-zero">
+                        <table class="table-hover table-headed margin-zero">
                             <thead>
                                 <tr>
                                     <th>{% trans 'User' %}</th>
@@ -103,7 +103,7 @@
                         </table>
                     </div>
                     <div data-tab="recurring_costs" class="d-hidden">
-                        <table class="table-hover margin-zero">
+                        <table class="table-hover table-headed margin-zero">
                             <thead>
                                 <tr>
                                     <th>{% trans 'Type' %}</th>
@@ -116,7 +116,7 @@
                                 {% for cost in object.recurring_costs.all %}
                                 <tr>
                                     <td>{{ cost.type }}</td>
-                                    <td>{{ cost.last_invoiced_date|default_if_none:'-' }}</td>
+                                    <td>{{ cost.last_invoiced_date|date:'d/m/Y'|default:'-' }}</td>
                                     <td>{{ cost.billing_frequency_text }}</td>
                                     <td>{{ cost.payment_option }}</td>
                                 </tr>
@@ -125,17 +125,17 @@
                         </table>
                     </div>
                     <div data-tab="notes" class="d-hidden">
-                        <table class="table-hover margin-zero">
+                        <table class="table-hover table-headed margin-zero">
                             <thead>
                                 <tr>
-                                    <th>{% trans 'Created' %}</th>
+                                    <th class="keep-min-width">{% trans 'Created' %}</th>
                                     <th>{% trans 'Note' %}</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for note in object.notes.all %}
                                 <tr>
-                                    <td class="nowrap">{{ note.user.get_full_name }}<br/>{{ note.created_at }}</td>
+                                    <td class="keep-min-width">{{ note.user.get_full_name }}<br/>{{ note.created_at|date:'d/m/Y'|default:'-' }}</td>
                                     <td>{{ note.note|linebreaksbr }}</td>
                                 </tr>
                                 {% endfor %}

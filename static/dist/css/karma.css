@@ -1719,6 +1719,7 @@ body.focus-on-update {
 }
 
 .panel .panel-actions {
+  margin-bottom: 1.5rem;
   text-align: right;
 }
 
@@ -1728,6 +1729,12 @@ tbody tr:last-child {
 
 tbody tr[data-url] {
   cursor: pointer;
+}
+
+th.keep-min-width,
+td.keep-min-width {
+  width: 1%;
+  white-space: nowrap;
 }
 
 .tabs {

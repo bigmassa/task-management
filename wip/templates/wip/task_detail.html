@@ -23,7 +23,7 @@
                 <p>{{ object.status }}</p>
                 <hr/>
                 <p>{% trans 'Target Date' %}</p>
-                <p>{{ object.target_date }}</p>
+                <p>{{ object.target_date|date:'d/m/Y'|default:'-' }}</p>
                 <hr/>
                 <p>{% trans 'Closed' %}</p>
                 <p>{{ object.closed|yesno }}</p>
@@ -35,7 +35,7 @@
                 </ul>
                 <div class="panel">
                     <div data-tab="assignees">
-                        <table class="table-hover margin-zero">
+                        <table class="table-hover table-headed margin-zero">
                             <thead>
                                 <tr>
                                     <th>{% trans 'User' %}</th>
@@ -53,17 +53,17 @@
                         </table>
                     </div>
                     <div data-tab="notes" class="d-hidden">
-                        <table class="table-hover margin-zero">
+                        <table class="table-hover table-headed margin-zero">
                             <thead>
                                 <tr>
-                                    <th>{% trans 'Created' %}</th>
+                                    <th class="keep-min-width">{% trans 'Created' %}</th>
                                     <th>{% trans 'Note' %}</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for note in object.notes.all %}
                                 <tr>
-                                    <td class="nowrap">{{ note.user.get_full_name }}<br/>{{ note.created_at }}</td>
+                                    <td class="keep-min-width">{{ note.user.get_full_name }}<br/>{{ note.created_at|date:'d/m/Y'|default:'-' }}</td>
                                     <td>{{ note.note|linebreaksbr }}</td>
                                 </tr>
                                 {% endfor %}
