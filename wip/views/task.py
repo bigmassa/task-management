@@ -1,9 +1,10 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 
 from wip.forms.task import TaskForm
-from wip.models import Job, Task
+from wip.models import Job, Task, TaskAssignee, TaskNote
 from wip.views.mixins import ProtectedDeleteMixin
 
 
@@ -30,6 +31,25 @@ class TaskDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteView):
 
 class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task
+
+    def get_queryset(self):
+        return (
+            super().get_queryset()
+            .select_related(
+                'job__client',
+                'status'
+            )
+            .prefetch_related(
+                Prefetch(
+                    'assignees',
+                    TaskAssignee.objects.select_related('user')
+                ),
+                Prefetch(
+                    'notes',
+                    TaskNote.objects.select_related('user')
+                )
+            )
+        )
 
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):

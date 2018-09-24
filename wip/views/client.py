@@ -1,8 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Prefetch
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
-from wip.models import Client
+from wip.models import Client, Job
 from wip.views.mixins import ProtectedDeleteMixin
 
 
@@ -20,6 +21,17 @@ class ClientDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteView):
 
 class ClientDetail(LoginRequiredMixin, DetailView):
     model = Client
+
+    def get_queryset(self):
+        return (
+            super().get_queryset()
+            .prefetch_related(
+                Prefetch(
+                    'jobs',
+                    Job.objects.select_related('status')
+                )
+            )
+        )
 
 
 class ClientList(LoginRequiredMixin, ListView):
