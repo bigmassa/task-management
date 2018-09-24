@@ -26,6 +26,14 @@ input[type="color"] {
     color: color("red");
 }
 
+.formset-empty {
+    display: none;
+}
+
+.formset-deleted {
+    opacity: .7;
+}
+
 // select2 - django auto complete
 
 .select2-container--default {

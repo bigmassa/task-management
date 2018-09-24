@@ -16,6 +16,9 @@ from .job_note import (
     JobNoteDelete,
     JobNoteUpdate
 )
+from .job_relationship import (
+    JobRelationshipUpdate
+)
 from .tags import (
     TagsAutocomplete
 )

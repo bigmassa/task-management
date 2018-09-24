@@ -89,7 +89,10 @@
                         </table>
                     </div>
                     <div data-tab="relationships" class="d-hidden">
-                        <table class="table-hover table-headed margin-zero">
+                        <div class="panel-actions">
+                            <a class="button button-primary" href="{% url 'wip:jobrelationship-update' object.pk %}">{% trans 'Edit' %}</a>
+                        </div>
+                        <table class="table-headed margin-zero">
                             <thead>
                                 <tr>
                                     <th>{% trans 'User' %}</th>

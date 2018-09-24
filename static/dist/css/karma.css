@@ -1702,6 +1702,14 @@ input[type="color"] {
   color: #ff4136;
 }
 
+.formset-empty {
+  display: none;
+}
+
+.formset-deleted {
+  opacity: .7;
+}
+
 .select2-container--default {
   margin-bottom: 1.5rem !important;
 }
@@ -1835,6 +1843,12 @@ th.keep-min-width,
 td.keep-min-width {
   width: 1%;
   white-space: nowrap;
+}
+
+td input,
+td select,
+td textarea {
+  margin-bottom: 0;
 }
 
 .tabs {
