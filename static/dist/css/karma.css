@@ -1848,7 +1848,7 @@ td.keep-min-width {
 td input,
 td select,
 td textarea {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .tabs {

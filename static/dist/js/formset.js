@@ -28,7 +28,7 @@ $.fn.formset = function (options) {
         $($original).before($copy);
 
         // reinit jquery datepickers
-        $copy.find('.datepicker').each(function() {
+        $copy.find('.flatpickr').each(function() {
             $(this).flatpickr({'dateFormat': 'd/m/Y'});
         });
     });

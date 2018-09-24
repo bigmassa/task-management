@@ -16,6 +16,9 @@ from .job_note import (
     JobNoteDelete,
     JobNoteUpdate
 )
+from .job_recurring_cost import (
+    JobRecurringCostUpdate
+)
 from .job_relationship import (
     JobRelationshipUpdate
 )
