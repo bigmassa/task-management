@@ -17,7 +17,7 @@
     pk: 1
     fields: {
       name: "Accent Design",
-      colour: "#000000",
+      colour: "#bed600",
       phone_number: "01603 766062",
       email_address: "enquiries@accentdesign.co.uk",
       website: "https://accentdesign.co.uk",
@@ -48,7 +48,7 @@
       client: 1,
       type: 1,
       estimated_hours: 0,
-      colour: "#000000",
+      colour: "#bed600",
       status: 1,
       billed_to: "2018-01-01"
     }
