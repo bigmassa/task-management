@@ -1,12 +1,15 @@
 from django.db import models
 from django.urls import reverse_lazy
 
+from wip.fields import ColorField
+
 
 class Client(models.Model):
     name = models.CharField(
         max_length=255,
         unique=True
     )
+    colour = ColorField()
     phone_number = models.CharField(
         max_length=50,
         null=True,

@@ -17,6 +17,7 @@
     pk: 1
     fields: {
       name: "Accent Design",
+      colour: "#000000",
       phone_number: "01603 766062",
       email_address: "enquiries@accentdesign.co.uk",
       website: "https://accentdesign.co.uk",

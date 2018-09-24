@@ -8,29 +8,41 @@ $code-font-family:              'Inconsolata', monospace;
 
 
 // Base font
-$base-font-size:                14px;
+$base-font-size:                13px;
+
+
+// The font sizes for h1-h6.
+$h1-font-size:                  1.8rem;
+$h2-font-size:                  1.6rem;
 
 
 // Colours
 $colors: (
         "white":                rgb(255, 255, 255),
-        "primary":              rgb(30, 117, 168),
+        "primary":              rgb(41, 44, 54),
+        "arsenic":              rgb(57, 61, 72),
         "secondary":            rgb(170, 170, 170),
         "danger":               rgb(221, 75, 57),
 );
-$body-background:               rgb(236, 240, 241);
+$body-background:               rgb(240, 240, 241);
+
+
+// links
+$link-color:                    rgb(51, 195, 240);
 
 
 // buttons
-$buttons: ();
+$buttons: (
+        "white":                map_get($colors, "white") map_get($colors, "primary")
+);
 $button-padding-y:              .4rem;
-$button-padding-x:              1rem;
-$button-font-size:              1.4rem;
+$button-padding-x:              2rem;
+$button-font-size:              1.3rem;
 
 
 // forms
 $input-use-full-width:          true;
-$input-font-size:               1.4rem;
+$input-font-size:               1.3rem;
 
 
 // tables

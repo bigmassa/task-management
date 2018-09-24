@@ -1,20 +1,48 @@
 // page
 // -----------------------------------------
 
-body.focus-on-update {
-  padding-top: 3rem;
-}
-
 .page-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: $generic-margin-bottom * 2;
+  background: color("primary");
+
+  .h1,
+  .h2 {
+    color: color("white");
+    margin-bottom: 0;
+  }
+
+  .h1 {
+    margin-top: 1rem;
+  }
 
   .page-header-actions {
     margin-left: auto;
   }
 
-  h2 {
-    margin: 0;
+  .page-header-tab-title {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background: $body-background;
   }
+
+  .padded {
+    padding: 2rem 0;
+  }
+}
+
+.inner-content {
+  margin-top: 5rem;
+
+  .inner-header {
+    padding: 1rem 0;
+
+    .h1,
+    .h2 {
+      margin-bottom: 0;
+    }
+
+    .inner-header-actions {
+      margin-left: auto;
+    }
+  }
+
 }

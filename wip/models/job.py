@@ -32,10 +32,7 @@ class Job(models.Model):
         null=True,
         blank=True
     )
-    colour = ColorField(
-        null=True,
-        blank=True
-    )
+    colour = ColorField()
     status = models.ForeignKey(
         'wip.JobStatus',
         on_delete=models.PROTECT,

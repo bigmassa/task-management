@@ -17,7 +17,7 @@ class JobCreate(LoginRequiredMixin, CreateView):
         kwargs = super().get_form_kwargs()
         client = get_object_or_404(Client, pk=self.kwargs['pk'])
         kwargs.update({
-            'instance': Job(client=client)
+            'instance': Job(client=client, colour=client.colour)
         })
         return kwargs
 

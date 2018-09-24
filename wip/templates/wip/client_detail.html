@@ -3,16 +3,17 @@
 {% block page_title %}Clients{% endblock %}
 {% block body_class %}{% endblock %}
 {% block inner_content %}
-    <div class="container">
-        <div class="page-header">
-            <h2>{{ object.name }}</h2>
+    <div class="page-header py-2">
+        <div class="container d-flex align-items-center">
+            <span class="color-indicator" style="background: {{ object.colour }}"></span>
+            <div class="h2">{{ object.name }}</div>
             <div class="page-header-actions">
-                <a class="button button-primary" href="{{ object.get_update_url }}">{% trans 'Edit' %}</a>
-                <a class="button button-primary button-clear" href="{% url 'wip:client-delete' object.pk %}">{% trans 'Delete' %} <i class="icon-trash"></i></a>
+                <a class="button button-white" href="{{ object.get_update_url }}">{% trans 'Edit' %}</a>
+                <a class="button button-white button-clear" href="{% url 'wip:client-delete' object.pk %}">{% trans 'Delete' %} <i class="icon-trash"></i></a>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container inner-content">
         <div class="row">
             <div class="col-lg-3">
                 <p>{% trans 'Email' %}</p>
@@ -32,7 +33,7 @@
                 <div class="panel">
                     <div data-tab="jobs">
                         <div class="panel-actions">
-                            <a class="button button-secondary button-outline" href="{% url 'wip:job-create' object.pk %}">{% trans 'Add' %}</a>
+                            <a class="button button-primary" href="{% url 'wip:job-create' object.pk %}">{% trans 'Add' %}</a>
                         </div>
                         <table class="table-hover table-headed margin-zero">
                             <thead>

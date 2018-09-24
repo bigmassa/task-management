@@ -5,10 +5,10 @@
 {% block inner_content %}
     <form method="post" novalidate>
         {% csrf_token %}
-        <div class="container">
-            <div class="page-header">
-                <h2>{% trans 'Add Client' %}</h2>
-                <div class="page-header-actions">
+        <div class="container inner-content">
+            <div class="inner-header d-flex align-items-center">
+                <div class="h1">{% trans 'Add Client' %}</div>
+                <div class="inner-header-actions">
                     <button class="button button-primary" type="submit">{% trans 'Add' %}</button>
                 </div>
             </div>

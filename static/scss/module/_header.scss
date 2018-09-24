@@ -2,23 +2,22 @@
 // -----------------------------------------
 
 header {
-  background: color("primary");
-  margin-bottom: $generic-margin-bottom * 2;
-  padding: .5rem 0;
+  background: color("arsenic");
 }
 
 header .nav-home {
   color: color("white");
   display: inline-block;
-  padding: 1rem 6rem 1rem 0;
+  margin-right: 6rem;
 }
 
 header .nav {
   display: inline-block;
   list-style-type: none;
-  margin: 0;
+  margin: 1rem 0 0 0;
 
   li {
+    background: color("primary");
     display: inline-block;
   }
 

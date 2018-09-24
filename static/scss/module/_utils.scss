@@ -2,9 +2,33 @@
 // -----------------------------------------
 
 
-.job-color-indicator {
+.color-indicator {
+  border: 1px solid color("white");
   border-radius: 50%;
-  height: 1em;
-  width: 1em;
+  height: 1.5rem;
+  width: 1.5rem;
   margin-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.pt-2 {
+  padding-top: 2rem;
+}
+
+.pb-2 {
+  padding-bottom: 2rem;
+}
+
+.comment {
+  background: color-a("primary", .08);
+  margin-bottom: $generic-margin-bottom;
+  padding: 1.5rem;
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
 }

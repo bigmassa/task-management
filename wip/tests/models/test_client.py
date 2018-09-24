@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 from tests.test_case import AppTestCase
+from wip.fields import ColorField
 from wip.models import Client
 
 
@@ -14,6 +15,10 @@ class ModelTests(AppTestCase):
         self.assertModelField(field, models.CharField)
         self.assertEqual(field.max_length, 255)
         self.assertTrue(field.unique)
+
+    def test_colour(self):
+        field = Client._meta.get_field('colour')
+        self.assertModelField(field, ColorField)
 
     def test_phone_number(self):
         field = Client._meta.get_field('phone_number')

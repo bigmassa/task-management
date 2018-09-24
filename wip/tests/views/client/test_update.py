@@ -25,7 +25,8 @@ class TestView(AppTestCase):
         self.client.force_login(self.user)
 
         data = {
-            'name': 'Test Client - Updated'
+            'name': 'Test Client - Updated',
+            'colour': '#000000'
         }
         response = self.client.post(self.url, data)
 

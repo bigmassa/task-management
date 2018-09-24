@@ -37,7 +37,7 @@ class ModelTests(AppTestCase):
 
     def test_colour(self):
         field = Job._meta.get_field('colour')
-        self.assertModelField(field, ColorField, null=True, blank=True)
+        self.assertModelField(field, ColorField)
 
     def test_status(self):
         field = Job._meta.get_field('status')
