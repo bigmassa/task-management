@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% block page_title %}Jobs{% endblock %}
+{% block page_title %}Job Notes{% endblock %}
 {% block body_class %}{% endblock %}
 {% block full_outer_content %}
     <form method="post" novalidate>
         {% csrf_token %}
         <div class="page-header">
             <div class="container d-flex align-items-center py-2">
-                <span class="color-indicator" style="background: {{ object.colour }}"></span>
+                <span class="color-indicator" style="background: {{ object.job.colour }}"></span>
                 <div class="h2">
-                    <b>{{ object.pk }}</b> :
-                    <a href="{{ object.client.get_absolute_url }}">{{ object.client.name }}</a> /
-                    <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+                    <b>{{ object.job.pk }}</b> :
+                    <a href="{{ object.job.client.get_absolute_url }}">{{ object.job.client.name }}</a> /
+                    <a href="{{ object.job.get_absolute_url }}">{{ object.job.title }}</a>
                 </div>
                 <div class="page-header-actions">
                     {% if not protected %}
                         <button class="button button-white" type="submit">{% trans 'Delete' %}</button>
                     {% endif %}
-                    <a class="button button-white button-clear" href="{{ object.get_absolute_url }}">{% trans 'Cancel' %}</a>
+                    <a class="button button-white button-clear" href="{{ object.job.get_absolute_url }}">{% trans 'Cancel' %}</a>
                 </div>
             </div>
         </div>

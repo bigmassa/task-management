@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.urls import reverse_lazy
 
 from authentication.middleware.current_user import get_current_user
 
@@ -26,3 +27,6 @@ class JobNote(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+
+    def get_update_url(self):
+        return reverse_lazy('wip:jobnote-update', kwargs={'pk': self.pk})

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block page_title %}Job Notes{% endblock %}
+{% block body_class %}{% endblock %}
+{% block full_outer_content %}
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="page-header">
+            <div class="container d-flex align-items-center py-2">
+                <span class="color-indicator" style="background: {{ object.job.colour }}"></span>
+                <div class="h2">
+                    <b>{{ object.job.pk }}</b> :
+                    <a href="{{ object.job.client.get_absolute_url }}">{{ object.job.client.name }}</a> /
+                    <a href="{{ object.job.get_absolute_url }}">{{ object.job.title }}</a>
+                </div>
+                <div class="page-header-actions">
+                    <button class="button button-white" type="submit">{% trans 'Update' %}</button>
+                    <a class="button button-white button-clear" href="{{ object.job.get_absolute_url }}">{% trans 'Cancel' %}</a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="page-header-tab-title">{% trans 'Notes' %}</div>
+            </div>
+        </div>
+        <div class="container inner-content">
+            {% for field in form %}
+                <div class="row field-wrapper">
+                    <div class="col-lg-2">{{ field.label_tag }}</div>
+                    <div class="col-lg-10">{{ field }}{{ field.errors }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </form>
+{% endblock %}
+{% block extra_js %}
+    {{ form.media }}
+{% endblock %}
