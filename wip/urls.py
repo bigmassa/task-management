@@ -16,6 +16,7 @@ urlpatterns = [
     path('jobs/<int:pk>/update/', views.JobUpdate.as_view(), name='job-update'),
     path('jobs/<int:pk>/delete/', views.JobDelete.as_view(), name='job-delete'),
     path('jobs/<int:pk>/tasks/create/', views.TaskCreate.as_view(), name='task-create'),
+    path('tags/autocomplete/', views.TagsAutocomplete.as_view(), name='tag-autocomplete'),
     path('tasks/<int:pk>/', views.TaskDetail.as_view(), name='task-detail'),
     path('tasks/<int:pk>/update/', views.TaskUpdate.as_view(), name='task-update'),
     path('tasks/<int:pk>/delete/', views.TaskDelete.as_view(), name='task-delete'),

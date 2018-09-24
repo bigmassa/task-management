@@ -1663,6 +1663,31 @@ input[type="color"] {
   color: #ff4136;
 }
 
+.select2-container--default {
+  margin-bottom: 1.5rem !important;
+}
+
+.select2-container--default .select2-selection--multiple {
+  background-color: white !important;
+  border: solid 1px #e6e6e6 !important;
+  border-radius: 0.25rem !important;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  background: white !important;
+  border-color: #1e75a8 !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  border: solid 1px #e6e6e6 !important;
+  border-radius: 0.25rem !important;
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+  margin: .5rem .5rem 0 .5rem;
+  height: 2.5rem;
+}
+
 header {
   background: #1e75a8;
   margin-bottom: 3rem;

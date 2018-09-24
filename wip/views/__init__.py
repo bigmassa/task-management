@@ -11,6 +11,9 @@ from .job import (
     JobDetail,
     JobUpdate
 )
+from .tags import (
+    TagsAutocomplete
+)
 from .task import (
     TaskCreate,
     TaskDelete,

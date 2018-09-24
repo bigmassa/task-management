@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'authentication',
     'wip',
 
+    'dal',
+    'dal_select2',
     'storages',
     'taggit',
 ]
