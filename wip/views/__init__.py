@@ -25,3 +25,8 @@ from .task import (
     TaskDetail,
     TaskUpdate
 )
+from .task_note import (
+    TaskNoteCreate,
+    TaskNoteDelete,
+    TaskNoteUpdate
+)

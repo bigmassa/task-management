@@ -64,10 +64,13 @@
                         </table>
                     </div>
                     <div data-tab="notes" class="d-hidden">
+                        <div class="panel-actions">
+                            <a class="button button-primary" href="{% url 'wip:tasknote-create' object.pk %}">{% trans 'Add' %}</a>
+                        </div>
                         {% for note in object.notes.all %}
                             <p>{{ note.user.get_full_name }} - {{ note.created_at }}</p>
                             <div class="comment">{{ note.note|linebreaks }}</td></div>
-                            <a href="">{% trans 'Edit' %}</a>
+                            <a href="{{ note.get_update_url }}">{% trans 'Edit' %}</a> | <a href="{% url 'wip:tasknote-delete' note.pk %}">{% trans 'Delete' %}</a>
                             {% if not forloop.last %}<hr>{% endif %}
                         {% endfor %}
                     </div>
