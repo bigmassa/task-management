@@ -1715,12 +1715,16 @@ body.focus-on-update {
   background: white;
   border: 1px solid #e6e6e6;
   margin-bottom: 3rem;
-  padding: 3rem;
+  padding: 1.5rem;
 }
 
 .panel .panel-actions {
   margin-bottom: 1.5rem;
   text-align: right;
+}
+
+.panel > *:last-child {
+  margin-bottom: 0;
 }
 
 tbody tr:last-child {

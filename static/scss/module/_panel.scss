@@ -5,11 +5,15 @@
   background: color("white");
   border: 1px solid $border-color;
   margin-bottom: 3rem;
-  padding: 3rem;
+  padding: 1.5rem;
 
   .panel-actions {
     margin-bottom: $generic-margin-bottom;
     text-align: right;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
   }
 
 }
