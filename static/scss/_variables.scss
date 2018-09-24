@@ -21,7 +21,7 @@ $colors: (
         "white":                rgb(255, 255, 255),
         "primary":              rgb(41, 44, 54),
         "arsenic":              rgb(57, 61, 72),
-        "secondary":            rgb(170, 170, 170),
+        "solitude":             rgb(236, 240, 241),
         "danger":               rgb(221, 75, 57),
 );
 $body-background:               rgb(240, 240, 241);
@@ -46,9 +46,9 @@ $input-font-size:               1.3rem;
 
 
 // tables
-$table-border-color:            rgb(236, 240, 241);
+$table-border-color:            map_get($colors, "solitude");
 $table-cell-padding:            1rem 1rem;
-$table-headed-color:            rgb(236, 240, 241);
+$table-headed-color:            map_get($colors, "solitude");
 $table-hover-color:             rgb(254, 249, 232);
 
 

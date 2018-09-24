@@ -1,0 +1,15 @@
+// Tags
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.tags {
+  list-style-type: none;
+
+  .tag {
+    background: color-a("primary", .14);
+    border: 1px solid $border-color;
+    border-radius: $global-radius;
+    display: inline-block;
+    margin-right: .3rem;
+    padding: .3rem .5rem;
+  }
+}

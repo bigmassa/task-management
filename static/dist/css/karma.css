@@ -1045,38 +1045,38 @@ button,
 
 .button.button-secondary {
   color: #111111;
-  background-color: #aaaaaa;
-  border-color: #9d9d9d;
+  background-color: #f0f0f0;
+  border-color: #e3e3e3;
 }
 
 .button.button-secondary:hover, .button.button-secondary:focus {
   color: #111111;
-  background-color: #919191;
-  border-color: #848484;
+  background-color: #d7d7d7;
+  border-color: #cacaca;
   outline: 0;
 }
 
 .button.button-outline.button-secondary {
-  color: #aaaaaa;
+  color: #f0f0f0;
   background-color: transparent;
-  border-color: #aaaaaa;
+  border-color: #f0f0f0;
 }
 
 .button.button-outline.button-secondary:hover, .button.button-outline.button-secondary:focus {
-  color: #919191;
+  color: #d7d7d7;
   background-color: transparent;
-  border-color: #919191;
+  border-color: #d7d7d7;
   outline: 0;
 }
 
 .button.button-clear.button-secondary {
-  color: #aaaaaa;
+  color: #f0f0f0;
   background-color: transparent;
   border-color: transparent;
 }
 
 .button.button-clear.button-secondary:hover, .button.button-clear.button-secondary:focus {
-  color: #919191;
+  color: #d7d7d7;
   background-color: transparent;
   border-color: transparent;
   outline: 0;
@@ -1856,6 +1856,19 @@ td.keep-min-width {
   margin-top: -1px;
 }
 
+.tags {
+  list-style-type: none;
+}
+
+.tags .tag {
+  background: rgba(41, 44, 54, 0.14);
+  border: 1px solid #e6e6e6;
+  border-radius: 0.25rem;
+  display: inline-block;
+  margin-right: .3rem;
+  padding: .3rem .5rem;
+}
+
 .color-indicator {
   border: 1px solid white;
   border-radius: 50%;
@@ -1935,11 +1948,11 @@ td.keep-min-width {
 }
 
 .b-secondary {
-  background-color: #aaaaaa;
+  background-color: #f0f0f0;
 }
 
 .c-secondary {
-  color: #aaaaaa;
+  color: #f0f0f0;
 }
 
 .b-aqua {
@@ -2116,6 +2129,14 @@ td.keep-min-width {
 
 .c-arsenic {
   color: #393d48;
+}
+
+.b-solitude {
+  background-color: #ecf0f1;
+}
+
+.c-solitude {
+  color: #ecf0f1;
 }
 
 .b-danger {

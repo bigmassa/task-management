@@ -78,7 +78,7 @@
                                     <td class="keep-min-width">{{ task.allocated_hours }}</td>
                                     <td class="keep-min-width">-</td>
                                     <td class="keep-min-width">{{ task.target_date|date:'d/m/Y'|default:'-' }}</td>
-                                    <td class="keep-min-width">{{ task.closed|yesno }}</td>
+                                    <td class="keep-min-width">{{ task.closed|yesno:'Yes,-,-' }}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
