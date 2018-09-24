@@ -45,6 +45,9 @@ class Task(models.Model):
     closed = models.BooleanField(
         default=False
     )
+    not_chargeable = models.BooleanField(
+        default=False
+    )
 
     objects = TaskManager()
     tags = TaggableManager(blank=True)

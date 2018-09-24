@@ -15,5 +15,6 @@ class TaskForm(forms.ModelForm):
         exclude = ['job']
         model = Task
         widgets = {
-            'closed': Checkbox
+            'closed': Checkbox,
+            'not_chargeable': Checkbox
         }

@@ -46,6 +46,11 @@ class TestModel(AppTestCase):
         self.assertModelField(field, models.BooleanField)
         self.assertFalse(field.default)
 
+    def test_not_chargeable(self):
+        field = Task._meta.get_field('not_chargeable')
+        self.assertModelField(field, models.BooleanField)
+        self.assertFalse(field.default)
+
     def test_tags(self):
         field = Task._meta.get_field('tags')
         self.assertTrue(isinstance(field, TaggableManager))

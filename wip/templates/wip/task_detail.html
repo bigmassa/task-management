@@ -26,7 +26,10 @@
                 <p>{{ object.target_date|date:'d/m/Y'|default:'-' }}</p>
                 <hr/>
                 <p>{% trans 'Closed' %}</p>
-                <p>{{ object.closed|yesno }}</p>
+                <p>{{ object.closed|yesno:'Yes,-,-' }}</p>
+                <hr/>
+                <p>{% trans 'Not Chargeable' %}</p>
+                <p>{{ object.not_chargeable|yesno:'Yes,-,-' }}</p>
             </div>
             <div class="col-lg-9">
                 <ul class="tabs">
