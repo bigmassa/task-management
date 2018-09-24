@@ -8,7 +8,9 @@
         <div class="page-header">
             <div class="container d-flex align-items-center py-2">
                 <span class="color-indicator" style="background: {{ form.instance.client.colour }}"></span>
-                <div class="h2">{{ form.instance.client }}</div>
+                <div class="h2">
+                    <a href="{{ form.instance.client.get_absolute_url }}">{{ form.instance.client.name }}</a>
+                </div>
                 <div class="page-header-actions">
                     <button class="button button-white" type="submit">{% trans 'Add' %}</button>
                     <a class="button button-white button-clear" href="{{ form.instance.client.get_absolute_url }}">{% trans 'Cancel' %}</a>

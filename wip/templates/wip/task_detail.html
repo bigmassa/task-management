@@ -6,7 +6,11 @@
     <div class="page-header py-2">
         <div class="container d-flex align-items-center">
             <span class="color-indicator" style="background: {{ object.job.colour }}"></span>
-            <div class="h2"><b>{{ object.job.pk }}</b> : {{ object.job.client }} / {{ object.job }}</div>
+            <div class="h2">
+                <b>{{ object.job.pk }}</b> :
+                <a href="{{ object.job.client.get_absolute_url }}">{{ object.job.client.name }}</a> /
+                <a href="{{ object.job.get_absolute_url }}">{{ object.job.title }}</a>
+            </div>
             <div class="page-header-actions">
                 <a class="button button-white" href="{{ object.get_update_url }}">{% trans 'Edit' %}</a>
                 <a class="button button-white button-clear" href="{% url 'wip:task-delete' object.pk %}">{% trans 'Delete' %} <i class="icon-trash"></i></a>

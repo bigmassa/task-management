@@ -8,7 +8,11 @@
         <div class="page-header">
             <div class="container d-flex align-items-center py-2">
                 <span class="color-indicator" style="background: {{ form.instance.job.colour }}"></span>
-                <div class="h2"><b>{{ form.instance.job.pk }}</b> : {{ form.instance.job.client }} / {{ form.instance.job }}</div>
+                <div class="h2">
+                    <b>{{ form.instance.job.pk }}</b> :
+                    <a href="{{ form.instance.job.client.get_absolute_url }}">{{ form.instance.job.client.name }}</a> /
+                    <a href="{{ form.instance.job.get_absolute_url }}">{{ form.instance.job.title }}</a>
+                </div>
                 <div class="page-header-actions">
                     <button class="button button-white" type="submit">{% trans 'Add' %}</button>
                     <a class="button button-white button-clear" href="{{ form.instance.job.get_absolute_url }}">{% trans 'Cancel' %}</a>

@@ -1768,6 +1768,14 @@ header .nav li a {
   margin-top: 1rem;
 }
 
+.page-header a {
+  color: white;
+}
+
+.page-header a:hover {
+  color: white;
+}
+
 .page-header .page-header-actions {
   margin-left: auto;
 }

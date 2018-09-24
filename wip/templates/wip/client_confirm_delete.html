@@ -8,7 +8,9 @@
         <div class="page-header py-2">
             <div class="container d-flex align-items-center">
                 <span class="color-indicator" style="background: {{ object.colour }}"></span>
-                <div class="h2">{{ object.name }}</div>
+                <div class="h2">
+                    <a href="{{ object.get_absolute_url }}">{{ object.name }}</a>
+                </div>
                 <div class="page-header-actions">
                     <button class="button button-white" type="submit">{% trans 'Delete' %}</button>
                     <a class="button button-white button-clear" href="{{ object.get_absolute_url }}">{% trans 'Cancel' %}</a>

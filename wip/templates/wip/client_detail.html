@@ -6,7 +6,9 @@
     <div class="page-header py-2">
         <div class="container d-flex align-items-center">
             <span class="color-indicator" style="background: {{ object.colour }}"></span>
-            <div class="h2">{{ object.name }}</div>
+            <div class="h2">
+                <a href="{{ object.get_absolute_url }}">{{ object.name }}</a>
+            </div>
             <div class="page-header-actions">
                 <a class="button button-white" href="{{ object.get_update_url }}">{% trans 'Edit' %}</a>
                 <a class="button button-white button-clear" href="{% url 'wip:client-delete' object.pk %}">{% trans 'Delete' %} <i class="icon-trash"></i></a>
