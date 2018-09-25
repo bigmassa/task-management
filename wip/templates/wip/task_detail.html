@@ -21,25 +21,25 @@
     <div class="container inner-content">
         <div class="row">
             <div class="col-lg-3">
-                <p>{% trans 'Description' %}</p>
+                <p class="strong">{% trans 'Description' %}</p>
                 {{ object.description|default:'-'|linebreaks }}
                 <hr/>
-                <p>{% trans 'Time Spent (hrs)' %}</p>
+                <p class="strong">{% trans 'Time Spent (hrs)' %}</p>
                 <p>{{ object.time_spent_hours }} of {{ object.allocated_hours }}</p>
                 <hr/>
-                <p>{% trans 'Status' %}</p>
+                <p class="strong">{% trans 'Status' %}</p>
                 <p>{{ object.status }}</p>
                 <hr/>
-                <p>{% trans 'Target Date' %}</p>
+                <p class="strong">{% trans 'Target Date' %}</p>
                 <p>{{ object.target_date|date:'d/m/Y'|default:'-' }}</p>
                 <hr/>
-                <p>{% trans 'Closed' %}</p>
+                <p class="strong">{% trans 'Closed' %}</p>
                 <p>{{ object.closed|yesno:'Yes,-,-' }}</p>
                 <hr/>
-                <p>{% trans 'Not Chargeable' %}</p>
+                <p class="strong">{% trans 'Not Chargeable' %}</p>
                 <p>{{ object.not_chargeable|yesno:'Yes,-,-' }}</p>
                 <hr/>
-                <p>{% trans 'Tags' %}</p>
+                <p class="strong">{% trans 'Tags' %}</p>
                 <ul class="tags">{% for tag in object.tags.all %}<li class="tag">{{ tag }}</li>{% empty %}<li>-</li>{% endfor %}</ul>
             </div>
             <div class="col-lg-9">

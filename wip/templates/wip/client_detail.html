@@ -18,13 +18,13 @@
     <div class="container inner-content">
         <div class="row">
             <div class="col-lg-3">
-                <p>{% trans 'Email' %}</p>
+                <p class="strong">{% trans 'Email' %}</p>
                 <p><a href="mailto://{{ object.email_address }}">{{ object.email_address }}</a></p>
                 <hr/>
-                <p>{% trans 'Phone Number' %}</p>
+                <p class="strong">{% trans 'Phone Number' %}</p>
                 <p><a href="tel:{{ object.phone_number }}">{{ object.phone_number }}</a></p>
                 <hr/>
-                <p>{% trans 'Website' %}</p>
+                <p class="strong">{% trans 'Website' %}</p>
                 <p><a href="{{ object.website }}">{{ object.website }}</a></p>
             </div>
             <div class="col-lg-9">
