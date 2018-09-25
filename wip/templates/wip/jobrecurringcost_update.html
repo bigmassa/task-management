@@ -25,7 +25,7 @@
         <div class="container inner-content">
             {{ formset.management_form }}
             <div class="formsets" data-formset-prefix="recurring_costs">
-                <table>
+                <table class="table-headed">
                     <thead>
                         <tr>
                             <th>{% trans 'Type' %}</th>
@@ -64,7 +64,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="3"><a class="button button-primary formset-add">{% trans 'Add' %}</a></td>
+                            <td colspan="6"><a class="button button-primary formset-add">{% trans 'Add' %}</a></td>
                         </tr>
                     </tfoot>
                 </table>

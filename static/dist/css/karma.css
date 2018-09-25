@@ -1388,15 +1388,15 @@ td {
   padding: 1rem 1rem;
   text-align: left;
   vertical-align: top;
-  border-top: 1px solid #ecf0f1;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .table-bordered {
-  border: solid 1px #ecf0f1;
+  border: solid 1px rgba(0, 0, 0, 0.12);
 }
 
 .table-headed th {
-  background-color: #ecf0f1;
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .table-striped tbody tr:nth-child(odd) {
@@ -1832,7 +1832,7 @@ header .nav li a {
 }
 
 tbody tr:last-child {
-  border-bottom: 1px solid #ecf0f1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 tbody tr[data-url] {

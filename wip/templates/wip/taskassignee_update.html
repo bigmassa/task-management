@@ -1,35 +1,36 @@
 {% extends 'base.html' %}
 {% load i18n static %}
-{% block page_title %}Jobs{% endblock %}
+{% block page_title %}Tasks{% endblock %}
 {% block body_class %}{% endblock %}
 {% block full_outer_content %}
     <form method="post" novalidate>
         {% csrf_token %}
         <div class="page-header">
-            <div class="container d-flex align-items-center py-2">
-                <span class="color-indicator" style="background: {{ object.colour }}"></span>
+            <div class="container d-flex align-items-center pt-2">
+                <span class="color-indicator" style="background: {{ object.job.colour }}"></span>
                 <div class="h2">
-                    <b>{{ object.pk }}</b> :
-                    <a href="{{ object.client.get_absolute_url }}">{{ object.client.name }}</a> /
-                    <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+                    <b>{{ object.job.pk }}</b> :
+                    <a href="{{ object.job.client.get_absolute_url }}">{{ object.job.client.name }}</a> /
+                    <a href="{{ object.job.get_absolute_url }}">{{ object.job.title }}</a>
                 </div>
                 <div class="page-header-actions">
                     <button class="button button-white" type="submit">{% trans 'Update' %}</button>
-                <a class="button button-white button-clear" href="{{ object.get_absolute_url }}">{% trans 'Cancel' %}</a>
+                    <a class="button button-white button-clear" href="{{ object.get_absolute_url }}">{% trans 'Cancel' %}</a>
                 </div>
             </div>
+            <div class="container pb-2"><div class="h1">{{ object.title }}</div></div>
             <div class="container">
-                <div class="page-header-tab-title">{% trans 'Relationships' %}</div>
+                <div class="page-header-tab-title">{% trans 'Assignees' %}</div>
             </div>
         </div>
         <div class="container inner-content">
             {{ formset.management_form }}
-            <div class="formsets" data-formset-prefix="relationships">
+            <div class="formsets" data-formset-prefix="assignees">
                 <table class="table-headed">
                     <thead>
                         <tr>
                             <th>{% trans 'User' %}</th>
-                            <th>{% trans 'Relationship' %}</th>
+                            <th>{% trans 'Allocated Hours' %}</th>
                             <th>{% trans 'Delete' %}</th>
                         </tr>
                     </thead>
@@ -40,7 +41,7 @@
                                 {% for field in form.hidden_fields %}{{ field }}{% endfor %}
                                 {{ form.user }}{{ form.user.errors }}
                             </td>
-                            <td>{{ form.relationship }}{{ form.relationship.errors }}</td>
+                            <td>{{ form.allocated_hours }}{{ form.allocated_hours.errors }}</td>
                             <td>{{ form.DELETE }}</td>
                         </tr>
                         {% endfor %}
@@ -49,7 +50,7 @@
                                 {% for field in formset.empty_form.hidden_fields %}{{ field }}{% endfor %}
                                 {{ formset.empty_form.user }}{{ formset.empty_form.user.errors }}
                             </td>
-                            <td>{{ formset.empty_form.relationship }}{{ formset.empty_form.relationship.errors }}</td>
+                            <td>{{ formset.empty_form.allocated_hours }}{{ formset.empty_form.allocated_hours.errors }}</td>
                             <td>{{ formset.empty_form.DELETE }}</td>
                         </tr>
                     </tbody>

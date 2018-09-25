@@ -31,6 +31,9 @@ from .task import (
     TaskDetail,
     TaskUpdate
 )
+from .task_assignee import (
+    TaskAssigneeUpdate
+)
 from .task_note import (
     TaskNoteCreate,
     TaskNoteDelete,

@@ -46,9 +46,9 @@ $input-font-size:               1.3rem;
 
 
 // tables
-$table-border-color:            map_get($colors, "solitude");
+$table-border-color:            rgba(0, 0, 0, .12);
 $table-cell-padding:            1rem 1rem;
-$table-headed-color:            map_get($colors, "solitude");
+$table-headed-color:            rgba(0, 0, 0, .12);
 $table-hover-color:             rgb(254, 249, 232);
 
 
