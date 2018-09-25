@@ -16,3 +16,6 @@ class JobRelationship(models.Model):
         'wip.Relationship',
         on_delete=models.PROTECT
     )
+
+    class Meta:
+        ordering = ['user']

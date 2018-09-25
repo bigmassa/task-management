@@ -16,3 +16,6 @@ class TaskAssignee(models.Model):
         max_digits=10,
         decimal_places=2
     )
+
+    class Meta:
+        ordering = ['user']

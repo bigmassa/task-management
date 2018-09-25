@@ -22,3 +22,8 @@ class ModelTests(AppTestCase):
         self.assertModelField(field, models.DecimalField)
         self.assertEqual(field.max_digits, 10)
         self.assertEqual(field.decimal_places, 2)
+
+    # meta
+
+    def test_ordering(self):
+        self.assertEqual(TaskAssignee._meta.ordering, ['user'])

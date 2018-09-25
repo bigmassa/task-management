@@ -20,3 +20,8 @@ class ModelTests(AppTestCase):
     def test_relationship(self):
         field = JobRelationship._meta.get_field('relationship')
         self.assertModelPKField(field, Relationship, on_delete=models.PROTECT)
+
+    # meta
+
+    def test_ordering(self):
+        self.assertEqual(JobRelationship._meta.ordering, ['user'])
