@@ -11,6 +11,10 @@ from .job import (
     JobDetail,
     JobUpdate
 )
+from .job_file import (
+    JobFileDelete,
+    JobFileUpload
+)
 from .job_note import (
     JobNoteCreate,
     JobNoteDelete,

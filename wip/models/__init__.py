@@ -1,5 +1,6 @@
 from .client import Client
 from .job import Job
+from .job_file import JobFile
 from .job_note import JobNote
 from .job_recurring_cost import JobRecurringCost
 from .job_relationship import JobRelationship

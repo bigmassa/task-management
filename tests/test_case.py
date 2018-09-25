@@ -1,5 +1,10 @@
+from io import BytesIO
+
+from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
 from django.test import TestCase
+
+from PIL import Image
 
 from authentication.models import User
 
@@ -41,3 +46,15 @@ class AppTestCase(TestCase):
 
         if related_name:
             self.assertEqual(field.remote_field.related_name, related_name)
+
+    # test helpers
+
+    def get_temporary_image(self):
+        io = BytesIO()
+        size = (100, 100)
+        color = (255, 0, 0)
+        image = Image.new("RGB", size, color)
+        image.save(io, format='PNG')
+        image_file = InMemoryUploadedFile(io, None, 'foo.png', 'png', io.__sizeof__(), None)
+        image_file.seek(0)
+        return image_file

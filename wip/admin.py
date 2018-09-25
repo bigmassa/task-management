@@ -4,62 +4,19 @@ from wip.models import *
 
 
 admin.site.register(Client)
-
-
-class JobRelationshipAdmin(admin.TabularInline):
-    model = JobRelationship
-    extra = 0
-    verbose_name = 'relationship'
-    verbose_name_plural = 'relationships'
-
-
-class JobNoteAdmin(admin.StackedInline):
-    model = JobNote
-    extra = 0
-    readonly_fields = ('user', 'created_at', 'updated_at')
-    verbose_name = 'note'
-    verbose_name_plural = 'notes'
-
-
-class JobRecurringCostAdmin(admin.TabularInline):
-    model = JobRecurringCost
-    extra = 0
-    verbose_name = 'recurring cost'
-    verbose_name_plural = 'recurring costs'
-
-
-class JobAdmin(admin.ModelAdmin):
-    inlines = [JobRelationshipAdmin, JobRecurringCostAdmin, JobNoteAdmin]
-
-
-admin.site.register(Job, JobAdmin)
+admin.site.register(Job)
+admin.site.register(JobFile)
+admin.site.register(JobNote)
+admin.site.register(JobRecurringCost)
+admin.site.register(JobRelationship)
 admin.site.register(JobStatus)
 admin.site.register(JobType)
 admin.site.register(PaymentOption)
 admin.site.register(RecurringCostType)
 admin.site.register(Relationship)
-
-
-class TaskAssigneeAdmin(admin.TabularInline):
-    model = TaskAssignee
-    extra = 0
-    verbose_name = 'assignee'
-    verbose_name_plural = 'assignees'
-
-
-class TaskNoteAdmin(admin.StackedInline):
-    model = TaskNote
-    extra = 0
-    readonly_fields = ('user', 'created_at', 'updated_at')
-    verbose_name = 'note'
-    verbose_name_plural = 'notes'
-
-
-class TaskAdmin(admin.ModelAdmin):
-    inlines = [TaskAssigneeAdmin, TaskNoteAdmin]
-
-
-admin.site.register(Task, TaskAdmin)
+admin.site.register(Task)
+admin.site.register(TaskAssignee)
+admin.site.register(TaskNote)
 admin.site.register(TaskStatus)
 admin.site.register(TimeDailySignoff)
 admin.site.register(TimeEntry)

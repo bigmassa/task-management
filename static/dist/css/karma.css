@@ -1676,6 +1676,36 @@ ul.radios input[type=radio] + span:after {
 }
 
 /* '' */
+.dropzone {
+  border: dashed 1px #e6e6e6 !important;
+  min-height: 120px !important;
+  padding: 10px !important;
+}
+
+.dropzone input[type=file] {
+  display: none;
+}
+
+.dropzone .dz-preview {
+  margin: 10px !important;
+}
+
+.dropzone .dz-message {
+  color: #aaaaaa !important;
+  font-size: 2rem !important;
+  margin: 2.4rem 0 !important;
+  padding: 2rem 0 !important;
+}
+
+.dropzone .dz-image {
+  background: #f0f0f0 !important;
+  border-radius: 0.25rem !important;
+}
+
+.dropzone .dz-size {
+  font-size: 1.4rem !important;
+}
+
 input[type="color"] {
   border: 1px solid #e6e6e6;
   border-radius: 0.25rem;
