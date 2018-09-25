@@ -66,6 +66,7 @@
                         <table class="table-hover table-headed margin-zero">
                             <thead>
                                 <tr>
+                                    <th class="keep-min-width">{% trans 'ID' %}</th>
                                     <th>{% trans 'Title' %}</th>
                                     <th class="keep-min-width">{% trans 'Status' %}</th>
                                     <th class="keep-min-width">{% trans 'Allocated Hours' %}</th>
@@ -77,6 +78,7 @@
                             <tbody>
                                 {% for task in object.tasks.all %}
                                 <tr data-url="{{ task.get_absolute_url }}">
+                                    <td class="keep-min-width">{{ task.pk }}</td>
                                     <td>{{ task.title }}</td>
                                     <td class="keep-min-width">{{ task.status }}</td>
                                     <td class="keep-min-width">{{ task.allocated_hours }}</td>
