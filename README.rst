@@ -45,6 +45,10 @@ Run python migrations manually::
     python manage.py migrate
 
 
+Or load the test data including the above user (password=password)::
+
+    python manage.py loaddata wip/tests/fixtures/test.yaml
+
 Ready!!
 *******
 
