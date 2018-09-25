@@ -27,3 +27,15 @@ header .nav {
     padding: 1rem 2rem;
   }
 }
+
+header .avatar {
+  background: color("white");
+  color: color("primary");
+  display: inline-block;
+  font-weight: 700;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}

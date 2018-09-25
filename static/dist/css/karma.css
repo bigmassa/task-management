@@ -1836,6 +1836,18 @@ header .nav li a {
   padding: 1rem 2rem;
 }
 
+header .avatar {
+  background: white;
+  color: #292c36;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
 .page-header {
   background: #292c36;
 }

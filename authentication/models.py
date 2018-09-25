@@ -76,3 +76,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_short_name(self):
         return self.first_name
+
+    def get_initials(self):
+        letters = [word[0] for word in self.get_full_name().split()]
+        return ''.join(letters).upper()

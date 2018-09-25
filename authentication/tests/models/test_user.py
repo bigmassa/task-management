@@ -82,6 +82,10 @@ class ModelTests(AppTestCase):
         user = User(first_name='Admin', last_name='User')
         self.assertEqual(user.get_short_name(), 'Admin')
 
+    def test_get_initials(self):
+        user = User(first_name='Some Admin', last_name='Pal')
+        self.assertEqual(user.get_initials(), 'SAP')
+
 
 class ModelManagerTests(AppTestCase):
 

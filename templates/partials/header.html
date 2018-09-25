@@ -5,5 +5,8 @@
         <ul class="nav">
             <li><a href="{% url 'wip:client-list' %}">{% trans 'Clients' %}</a></li>
         </ul>
+        <div class="ml-auto">
+            <a class="avatar" href="{% url 'logout' %}">{{ user.get_initials }}</a>
+        </div>
     </div>
 </header>
