@@ -27,7 +27,8 @@ class TestView(AppTestCase):
 
         data = {
             'title': "New Task",
-            'status': 1
+            'status': 1,
+            'order': 0
         }
         response = self.client.post(self.url, data)
 

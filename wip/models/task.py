@@ -48,12 +48,15 @@ class Task(models.Model):
     not_chargeable = models.BooleanField(
         default=False
     )
+    order = models.PositiveIntegerField(
+        default=0
+    )
 
     objects = TaskManager()
     tags = TaggableManager(blank=True)
 
     class Meta:
-        ordering = ['title']
+        ordering = ['order']
 
     def __str__(self):
         return self.title

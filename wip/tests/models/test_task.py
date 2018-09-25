@@ -51,6 +51,11 @@ class TestModel(AppTestCase):
         self.assertModelField(field, models.BooleanField)
         self.assertFalse(field.default)
 
+    def test_order(self):
+        field = Task._meta.get_field('order')
+        self.assertModelField(field, models.PositiveIntegerField)
+        self.assertEqual(field.default, 0)
+
     def test_tags(self):
         field = Task._meta.get_field('tags')
         self.assertTrue(isinstance(field, TaggableManager))
@@ -62,7 +67,7 @@ class TestModel(AppTestCase):
     # meta
 
     def test_ordering(self):
-        self.assertEqual(Task._meta.ordering, ['title'])
+        self.assertEqual(Task._meta.ordering, ['order'])
 
     # properties
 

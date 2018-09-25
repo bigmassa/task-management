@@ -124,7 +124,8 @@
       status: 1,
       target_date: "2018-01-01",
       closed: false,
-      not_chargeable: false
+      not_chargeable: false,
+      order: 0
     }
 
 -
