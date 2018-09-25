@@ -20,6 +20,7 @@ $h2-font-size:                  1.6rem;
 $colors: (
         "white":                rgb(255, 255, 255),
         "primary":              rgb(41, 44, 54),
+        "shadylady":            rgb(151, 151, 151),
         "arsenic":              rgb(57, 61, 72),
         "solitude":             rgb(236, 240, 241),
         "danger":               rgb(221, 75, 57),
@@ -33,7 +34,8 @@ $link-color:                    rgb(51, 195, 240);
 
 // buttons
 $buttons: (
-        "white":                map_get($colors, "white") map_get($colors, "primary")
+        "white":                map_get($colors, "white") map_get($colors, "primary"),
+        "shadylady":            map_get($colors, "shadylady") map_get($colors, "white")
 );
 $button-padding-y:              .4rem;
 $button-padding-x:              2rem;
@@ -47,7 +49,8 @@ $input-font-size:               1.3rem;
 
 // tables
 $table-border-color:            rgba(0, 0, 0, .12);
-$table-cell-padding:            1rem 1rem;
+$table-cell-padding:            1.5rem 1rem;
+$table-font-size:               100%;
 $table-headed-color:            rgba(0, 0, 0, .12);
 $table-hover-color:             rgb(254, 249, 232);
 

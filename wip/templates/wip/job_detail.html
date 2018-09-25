@@ -77,7 +77,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for task in object.tasks.all %}
+                                {% for task in object.tasks.open %}
                                 <tr data-url="{{ task.get_absolute_url }}">
                                     <td class="keep-min-width">{{ task.pk }}</td>
                                     <td>{{ task.title }}</td>
@@ -89,7 +89,20 @@
                                 </tr>
                                 {% endfor %}
                             </tbody>
+                            <tbody class="closed-task">
+                                {% for task in object.tasks.closed %}
+                                <tr data-url="{{ task.get_absolute_url }}">
+                                    <td></td>
+                                    <td colspan="6" class="muted"><i class="icon-ok"></i> {{ task.title }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
                         </table>
+                        {% if object.tasks.closed %}
+                        <div class="text-center pt-2">
+                            <a class="button button-shadylady button-outline toggle-closed-tasks">{% trans 'Show Closed' %}</a>
+                        </div>
+                        {% endif %}
                     </div>
                     <div data-tab="relationships" class="d-hidden">
                         <div class="panel-actions">

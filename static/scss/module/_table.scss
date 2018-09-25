@@ -9,6 +9,10 @@ tbody tr[data-url] {
   cursor: pointer;
 }
 
+tbody.closed-task {
+  display: none;
+}
+
 th.keep-min-width,
 td.keep-min-width {
   width: 1%;
