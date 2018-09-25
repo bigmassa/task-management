@@ -1,13 +1,17 @@
+from decimal import Decimal
+
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 from authentication.models import User
 from tests.test_case import AppTestCase
 from wip.fields import ColorField
-from wip.models import Client, Job, JobStatus, JobType
+from wip.models import Client, Job, JobStatus, JobType, Task, TimeEntry
 
 
 class ModelTests(AppTestCase):
+    fixtures = ['wip/tests/fixtures/test.yaml']
 
     # fields
 
@@ -70,3 +74,27 @@ class ModelTests(AppTestCase):
         obj = Job(pk=10)
         expected_url = reverse('wip:job-update', kwargs={'pk': obj.pk})
         self.assertEqual(obj.get_update_url(), expected_url)
+
+    def test_allocated_hours(self):
+        job = Job.objects.get(pk=1)
+        self.assertEqual(job.allocated_hours, Decimal('10.00'))
+
+    def test_time_spent_hours(self):
+        user = self.create_user()
+        job = Job.objects.get(pk=1)
+        TimeEntry.objects.create(
+            task=job.tasks.first(),
+            started_at=timezone.datetime(2018, 1, 1, 9, 0, 0),
+            ended_at=timezone.datetime(2018, 1, 1, 9, 15, 0),
+            user=user
+        )
+        TimeEntry.objects.create(
+            task=job.tasks.first(),
+            started_at=timezone.datetime(2018, 1, 2, 9, 0, 0),
+            ended_at=timezone.datetime(2018, 1, 2, 9, 15, 0),
+            user=user
+        )
+
+        job = Job.objects.get(pk=1)
+
+        self.assertEqual(job.time_spent_hours, Decimal('0.50'))

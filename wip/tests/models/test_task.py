@@ -2,11 +2,12 @@ from decimal import Decimal
 
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 from taggit.managers import TaggableManager
 
 from tests.test_case import AppTestCase
-from wip.models import Job, Task, TaskStatus
+from wip.models import Job, Task, TaskStatus, TimeEntry
 from wip.models.task import TaskManager
 
 
@@ -87,3 +88,23 @@ class TestModel(AppTestCase):
     def test_allocated_hours(self):
         task = Task.objects.get(pk=1)
         self.assertEqual(task.allocated_hours, Decimal('10.00'))
+
+    def test_time_spent_hours(self):
+        user = self.create_user()
+        task = Task.objects.get(pk=1)
+        TimeEntry.objects.create(
+            task=task,
+            started_at=timezone.datetime(2018, 1, 1, 9, 0, 0),
+            ended_at=timezone.datetime(2018, 1, 1, 9, 15, 0),
+            user=user
+        )
+        TimeEntry.objects.create(
+            task=task,
+            started_at=timezone.datetime(2018, 1, 2, 9, 0, 0),
+            ended_at=timezone.datetime(2018, 1, 2, 9, 15, 0),
+            user=user
+        )
+
+        task = Task.objects.get(pk=1)
+
+        self.assertEqual(task.time_spent_hours, Decimal('0.50'))

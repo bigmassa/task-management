@@ -3,6 +3,7 @@
 
 .tags {
   list-style-type: none;
+  margin-bottom: 0;
 
   .tag {
     background: color-a("primary", .14);
@@ -10,6 +11,6 @@
     border-radius: $global-radius;
     display: inline-block;
     margin-right: .3rem;
-    padding: .3rem .5rem;
+    padding: .1rem .5rem;
   }
 }

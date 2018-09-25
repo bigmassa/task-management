@@ -24,6 +24,9 @@
                 <p>{% trans 'Description' %}</p>
                 {{ object.description|default:'-'|linebreaks }}
                 <hr/>
+                <p>{% trans 'Time Spent (hrs)' %}</p>
+                <p>{{ object.time_spent_hours }} of {{ object.allocated_hours }}</p>
+                <hr/>
                 <p>{% trans 'Status' %}</p>
                 <p>{{ object.status }}</p>
                 <hr/>
