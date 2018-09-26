@@ -37,9 +37,10 @@ $buttons: (
         "white":                map_get($colors, "white") map_get($colors, "primary"),
         "shadylady":            map_get($colors, "shadylady") map_get($colors, "white")
 );
-$button-padding-y:              .4rem;
+$button-padding-y:              1rem;
 $button-padding-x:              2rem;
 $button-font-size:              1.3rem;
+$button-border-radius:          .1rem;
 
 
 // forms

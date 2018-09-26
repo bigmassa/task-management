@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load i18n static %}
 {% block page_title %}Login{% endblock %}
 {% block body_class %}login-page{% endblock %}
 {% block full_outer_content %}
     <div class="full-visual-height d-flex align-items-center">
         <div class="container">
             <div class="row">
-            <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-                <a class="h1 d-block c-primary" href="/">{% trans 'Example.com' %}</a>
-                {% block box_content %}{% endblock %}
-            </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <p><img src="{% static 'dist/img/task-management-logo.svg' %}" width="70" height="70"></p>
+                    {% block box_content %}{% endblock %}
+                </div>
             </div>
         </div>
     </div>
