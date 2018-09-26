@@ -26,6 +26,9 @@
                 <hr/>
                 <p class="strong">{% trans 'Website' %}</p>
                 <p><a href="{{ object.website }}" class="underline-dotted">{{ object.website }}</a></p>
+                <hr/>
+                <p class="strong">{% trans 'Address' %}</p>
+                {{ object.address|linebreaks }}
             </div>
             <div class="col-lg-9">
                 <ul class="tabs">

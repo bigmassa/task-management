@@ -23,6 +23,10 @@ class Client(models.Model):
         null=True,
         blank=True
     )
+    address = models.TextField(
+        null=True,
+        blank=True
+    )
     notes = models.TextField(
         null=True,
         blank=True

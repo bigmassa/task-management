@@ -33,6 +33,10 @@ class ModelTests(AppTestCase):
         field = Client._meta.get_field('website')
         self.assertModelField(field, models.URLField, null=True, blank=True)
 
+    def test_address(self):
+        field = Client._meta.get_field('address')
+        self.assertModelField(field, models.TextField, null=True, blank=True)
+
     def test_notes(self):
         field = Client._meta.get_field('notes')
         self.assertModelField(field, models.TextField, null=True, blank=True)
