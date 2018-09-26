@@ -1760,7 +1760,6 @@ ul.radios input[type=radio] + span:after {
 input[type="color"] {
   width: 10rem;
   height: calc(3.55rem + 2px);
-  padding: 0 .1rem;
   margin-bottom: 1.5rem;
   border: 1px solid #e6e6e6;
   border-radius: 0.25rem;
