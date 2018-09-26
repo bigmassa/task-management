@@ -56,3 +56,24 @@ class TestView(AppTestCase):
 
         # test redirected after
         self.assertRedirects(response, self.object.get_absolute_url(), 302, 200)
+
+    def test_success_message_in_response(self):
+        self.client.force_login(self.user)
+        cost_type = RecurringCostType.objects.first()
+        payment_option = PaymentOption.objects.first()
+        data = {
+            'recurring_costs-TOTAL_FORMS': '1',
+            'recurring_costs-INITIAL_FORMS': '1',
+            'recurring_costs-MIN_NUM_FORMS': '0',
+            'recurring_costs-MAX_NUM_FORMS': '10',
+            'recurring_costs-0-id': 1,
+            'recurring_costs-0-job': self.object.pk,
+            'recurring_costs-0-type': cost_type.pk,
+            'recurring_costs-0-last_invoiced_date': '12/01/2018',
+            'recurring_costs-0-billing_interval': 1,
+            'recurring_costs-0-billing_frequency': 0,
+            'recurring_costs-0-payment_option': payment_option.pk
+        }
+        content = self.client.post(self.url, data, follow=True).content
+
+        self.assertIn('toastr["success"]("Updated successfully", "Success");', str(content))

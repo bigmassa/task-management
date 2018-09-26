@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
@@ -8,9 +9,10 @@ from wip.models import Client, Job, JobRelationship, Task, JobRecurringCost, Job
 from wip.views.mixins import ProtectedDeleteMixin
 
 
-class JobCreate(LoginRequiredMixin, CreateView):
+class JobCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class = JobForm
     model = Job
+    success_message = "Created successfully"
     template_name = 'wip/job_add.html'
 
     def get_form_kwargs(self):
@@ -61,7 +63,8 @@ class JobDetail(LoginRequiredMixin, DetailView):
         )
 
 
-class JobUpdate(LoginRequiredMixin, UpdateView):
+class JobUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     form_class = JobForm
     model = Job
+    success_message = "Updated successfully"
     template_name = 'wip/job_update.html'

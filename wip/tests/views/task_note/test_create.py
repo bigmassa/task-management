@@ -36,3 +36,13 @@ class TestView(AppTestCase):
 
         # test redirected after
         self.assertRedirects(response, note.task.get_absolute_url(), 302, 200)
+
+    def test_success_message_in_response(self):
+        self.client.force_login(self.user)
+
+        data = {
+            'note': "Some note"
+        }
+        content = self.client.post(self.url, data, follow=True).content
+
+        self.assertIn('toastr["success"]("Created successfully", "Success");', str(content))

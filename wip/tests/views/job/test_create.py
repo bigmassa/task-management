@@ -44,3 +44,17 @@ class TestView(AppTestCase):
 
         # test redirected after
         self.assertRedirects(response, job.get_absolute_url(), 302, 200)
+
+    def test_success_message_in_response(self):
+        self.client.force_login(self.user)
+
+        data = {
+            'title': "New Job",
+            'type': 1,
+            'estimated_hours': 0,
+            'colour': "#000000",
+            'status': 1
+        }
+        content = self.client.post(self.url, data, follow=True).content
+
+        self.assertIn('toastr["success"]("Created successfully", "Success");', str(content))
