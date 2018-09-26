@@ -1,0 +1,19 @@
+{% extends 'base-fs.html' %}
+{% load i18n static %}
+{% block page_title %}Home{% endblock %}
+{% block body_class %}{% endblock %}
+{% block inner_content %}
+
+    <div class="full-visual-height d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p><img src="{% static 'dist/img/task-management-logo-error.svg' %}"></p>
+                    <p class="c-white"><strong>500</strong></p>
+                    <p class="c-white muted">That's it, man. Game over, man ...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,6 +1,12 @@
 // page
 // -----------------------------------------
 
+.page-fs {
+  background-image: url("/static/dist/img/task-management-logo-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .page-header {
   background: color("primary");
 

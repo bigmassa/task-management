@@ -1898,6 +1898,12 @@ header .avatar:hover .avatar-close {
   color: white;
 }
 
+.page-fs {
+  background-image: url("/static/dist/img/task-management-logo-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .page-header {
   background: #292c36;
 }
