@@ -157,6 +157,7 @@ AWS_S3_CUSTOM_DOMAIN = None  # Add for cloudfront etc
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
+AWS_QUERYSTRING_AUTH = False
 AWS_QUERYSTRING_EXPIRE = 3600
 AWS_S3_FILE_OVERWRITE = False
 AWS_IS_GZIPPED = True
