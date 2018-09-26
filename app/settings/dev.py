@@ -60,6 +60,10 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = []
 
 
+# Email
+
+EMAIL_USE_TLS = False
+
 # static
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
