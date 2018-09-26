@@ -44,11 +44,22 @@
             </div>
             <div class="col-lg-9">
                 <ul class="tabs">
-                    <li data-tab-id="assignees" class="active">{% trans 'Assignees' %}</li>
-                    <li data-tab-id="notes">{% trans 'Notes' %}</li>
+                    <li data-tab-id="notes" class="active">{% trans 'Notes' %}</li>
+                    <li data-tab-id="assignees">{% trans 'Assignees' %}</li>
                 </ul>
                 <div class="panel">
-                    <div data-tab="assignees">
+                    <div data-tab="notes">
+                        <div class="panel-actions">
+                            <a class="button button-primary" href="{% url 'wip:tasknote-create' object.pk %}">{% trans 'Add' %}</a>
+                        </div>
+                        {% for note in object.notes.all %}
+                            <p>{{ note.user.get_full_name }} - {{ note.created_at }}</p>
+                            <div class="comment">{{ note.note|linebreaks }}</td></div>
+                            <a href="{{ note.get_update_url }}">{% trans 'Edit' %}</a> | <a href="{% url 'wip:tasknote-delete' note.pk %}">{% trans 'Delete' %}</a>
+                            {% if not forloop.last %}<hr>{% endif %}
+                        {% endfor %}
+                    </div>
+                    <div data-tab="assignees" class="d-hidden">
                         <div class="panel-actions">
                             <a class="button button-primary" href="{% url 'wip:taskassignee-update' object.pk %}">{% trans 'Edit' %}</a>
                         </div>
@@ -68,17 +79,6 @@
                                 {% endfor %}
                             </tbody>
                         </table>
-                    </div>
-                    <div data-tab="notes" class="d-hidden">
-                        <div class="panel-actions">
-                            <a class="button button-primary" href="{% url 'wip:tasknote-create' object.pk %}">{% trans 'Add' %}</a>
-                        </div>
-                        {% for note in object.notes.all %}
-                            <p>{{ note.user.get_full_name }} - {{ note.created_at }}</p>
-                            <div class="comment">{{ note.note|linebreaks }}</td></div>
-                            <a href="{{ note.get_update_url }}">{% trans 'Edit' %}</a> | <a href="{% url 'wip:tasknote-delete' note.pk %}">{% trans 'Delete' %}</a>
-                            {% if not forloop.last %}<hr>{% endif %}
-                        {% endfor %}
                     </div>
                 </div>
             </div>

@@ -54,10 +54,10 @@
             <div class="col">
                 <ul class="tabs">
                     <li data-tab-id="tasks" class="active">{% trans 'Tasks' %}</li>
-                    <li data-tab-id="relationships">{% trans 'Relationships' %}</li>
-                    <li data-tab-id="files">{% trans 'Files' %}</li>
-                    <li data-tab-id="recurring_costs">{% trans 'Recurring Costs' %}</li>
                     <li data-tab-id="notes">{% trans 'Notes' %}</li>
+                    <li data-tab-id="files">{% trans 'Files' %}</li>
+                    <li data-tab-id="relationships">{% trans 'Relationships' %}</li>
+                    <li data-tab-id="recurring_costs">{% trans 'Recurring Costs' %}</li>
                 </ul>
                 <div class="panel">
                     <div data-tab="tasks">
@@ -108,26 +108,16 @@
                         </div>
                         {% endif %}
                     </div>
-                    <div data-tab="relationships" class="d-hidden">
+                    <div data-tab="notes" class="d-hidden">
                         <div class="panel-actions">
-                            <a class="button button-primary" href="{% url 'wip:jobrelationship-update' object.pk %}">{% trans 'Edit' %}</a>
+                            <a class="button button-primary" href="{% url 'wip:jobnote-create' object.pk %}">{% trans 'Add' %}</a>
                         </div>
-                        <table class="table-headed margin-zero">
-                            <thead>
-                                <tr>
-                                    <th>{% trans 'User' %}</th>
-                                    <th>{% trans 'Relationship' %}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for relationship in object.relationships.all %}
-                                <tr>
-                                    <td>{{ relationship.user.get_full_name }}</td>
-                                    <td>{{ relationship.relationship }}</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
+                        {% for note in object.notes.all %}
+                            <p>{{ note.user.get_full_name }} - {{ note.created_at }}</p>
+                            <div class="comment">{{ note.note|linebreaks }}</td></div>
+                            <a href="{{ note.get_update_url }}">{% trans 'Edit' %}</a> | <a href="{% url 'wip:jobnote-delete' note.pk %}">{% trans 'Delete' %}</a>
+                            {% if not forloop.last %}<hr>{% endif %}
+                        {% endfor %}
                     </div>
                     <div data-tab="files" class="d-hidden">
                         <form id="files-dropzone" method="post" action="{% url 'wip:jobfile-upload' object.pk %}" enctype="multipart/form-data" class="dropzone">
@@ -148,6 +138,27 @@
                                     <td><a href="{{ file.file.url }}" target="_blank">{{ file }}</a></td>
                                     <td class="keep-min-width">{{ file.size_mb }}</td>
                                     <td class="keep-min-width text-right"><a href="{% url 'wip:jobfile-delete' file.pk %}"><i class="icon-trash"></i></a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div data-tab="relationships" class="d-hidden">
+                        <div class="panel-actions">
+                            <a class="button button-primary" href="{% url 'wip:jobrelationship-update' object.pk %}">{% trans 'Edit' %}</a>
+                        </div>
+                        <table class="table-headed margin-zero">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'User' %}</th>
+                                    <th>{% trans 'Relationship' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for relationship in object.relationships.all %}
+                                <tr>
+                                    <td>{{ relationship.user.get_full_name }}</td>
+                                    <td>{{ relationship.relationship }}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
@@ -177,17 +188,6 @@
                                 {% endfor %}
                             </tbody>
                         </table>
-                    </div>
-                    <div data-tab="notes" class="d-hidden">
-                        <div class="panel-actions">
-                            <a class="button button-primary" href="{% url 'wip:jobnote-create' object.pk %}">{% trans 'Add' %}</a>
-                        </div>
-                        {% for note in object.notes.all %}
-                            <p>{{ note.user.get_full_name }} - {{ note.created_at }}</p>
-                            <div class="comment">{{ note.note|linebreaks }}</td></div>
-                            <a href="{{ note.get_update_url }}">{% trans 'Edit' %}</a> | <a href="{% url 'wip:jobnote-delete' note.pk %}">{% trans 'Delete' %}</a>
-                            {% if not forloop.last %}<hr>{% endif %}
-                        {% endfor %}
                     </div>
                 </div>
             </div>
