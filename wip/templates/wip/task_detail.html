@@ -8,8 +8,8 @@
             <span class="color-indicator" style="background: {{ object.job.colour }}"></span>
             <div class="h2">
                 <b>{{ object.job.pk }}</b> :
-                <a href="{{ object.job.client.get_absolute_url }}">{{ object.job.client.name }}</a> /
-                <a href="{{ object.job.get_absolute_url }}">{{ object.job.title }}</a>
+                <a href="{{ object.job.client.get_absolute_url }}" class="underline-dotted">{{ object.job.client.name }}</a> /
+                <a href="{{ object.job.get_absolute_url }}" class="underline-dotted">{{ object.job.title }}</a>
             </div>
             <div class="page-header-actions">
                 <a class="button button-white" href="{{ object.get_update_url }}">{% trans 'Edit' %}</a>
@@ -55,7 +55,10 @@
                         {% for note in object.notes.all %}
                             <p>{{ note.user.get_full_name }} - {{ note.created_at }}</p>
                             <div class="comment">{{ note.note|linebreaks }}</td></div>
-                            <a href="{{ note.get_update_url }}">{% trans 'Edit' %}</a> | <a href="{% url 'wip:tasknote-delete' note.pk %}">{% trans 'Delete' %}</a>
+                            <span class="small muted">
+                                <a href="{{ note.get_update_url }}" class="underline-dotted">{% trans 'Edit' %}</a> |
+                                <a href="{% url 'wip:tasknote-delete' note.pk %}" class="underline-dotted">{% trans 'Delete' %}</a>
+                            </span>
                             {% if not forloop.last %}<hr>{% endif %}
                         {% endfor %}
                     </div>

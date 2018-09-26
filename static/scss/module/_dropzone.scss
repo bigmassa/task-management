@@ -1,12 +1,14 @@
 // dropzone
 // ------------------------------------------
 
+/* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
+
 .dropzone {
-  border: dashed 1px $border-color !important;
   min-height: 120px !important;
   padding: 10px !important;
+  border: dashed 1px $border-color !important;
 
-  input[type=file] {
+  input[type="file"] {
     display: none;
   }
 
@@ -15,28 +17,19 @@
   }
 
   .dz-message {
-    color: color("gray") !important;
-    font-size: 2rem !important;
-    margin: 2.4rem 0 !important;
     padding: 2rem 0 !important;
+    margin: 2.4rem 0 !important;
+    font-size: 2rem !important;
+    color: color("gray") !important;
   }
 
   .dz-image {
     background: color("secondary") !important;
     border-radius: $global-radius !important;
-    //z-index: zindex("dropzone") !important;
-  }
-
-  .dz-details {
-    //z-index: zindex("dropzone") !important;
   }
 
   .dz-size {
     font-size: 1.4rem !important;
   }
 
-  .dz-success-mark,
-  .dz-error-mark {
-    //z-index: zindex("dropzone") !important;
-  }
 }

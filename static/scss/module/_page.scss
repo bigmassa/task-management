@@ -1,13 +1,19 @@
 // page
 // -----------------------------------------
 
+.page-fs {
+  background-image: url("/static/dist/img/task-management-logo-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .page-header {
   background: color("primary");
 
   .h1,
   .h2 {
-    color: color("white");
     margin-bottom: 0;
+    color: color("white");
   }
 
   .h1 {
@@ -18,7 +24,7 @@
     color: color("white");
 
     &:hover {
-      color: color("white")
+      color: color("white");
     }
   }
   .page-header-actions {

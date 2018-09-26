@@ -2,13 +2,21 @@
 {% load i18n %}
 {% block page_title %}Login{% endblock %}
 {% block box_content %}
-    <p>{% trans 'Login to get started' %}</p>
-    <form class="form" method="post"novalidate>
+    <form class="form" method="post" novalidate>
         {% csrf_token %}
         {{ form }}
-        <input type="submit" class="button button-primary" value="Login">
+
+        <div class="row mt-1">
+            <div class="col-6">
+                <input type="submit" class="button button-primary" value="Login">
+            </div>
+            <div class="col-12 col-md-6 text-right">
+                <a href="{% url 'password_reset' %}" class="c-white">{% trans 'Forgotten password?' %}</a>
+            </div>
+        </div>
+
     </form>
     <div>
-        <a href="{% url 'password_reset' %}">{% trans 'Forgot your password?' %}</a>
+
     </div>
 {% endblock %}

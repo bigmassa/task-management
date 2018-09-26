@@ -1,0 +1,25 @@
+// links
+// -----------------------------------------
+
+.underline-dotted {
+  border-bottom: 1px dotted color("primary");
+
+  &:hover {
+    border-bottom: 0;
+  }
+}
+
+.page-header .underline-dotted {
+  border-color: color("white");
+}
+
+
+@each $name, $color in $colors {
+
+  a.c-#{$name} {
+    color: $color;
+    &:hover {
+      color: darken($color, $darken-hover-percent);
+    }
+  }
+}

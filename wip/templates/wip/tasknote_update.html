@@ -10,8 +10,8 @@
                 <span class="color-indicator" style="background: {{ object.task.job.colour }}"></span>
                 <div class="h2">
                     <b>{{ form.instance.task.job.pk }}</b> :
-                    <a href="{{ object.task.job.client.get_absolute_url }}">{{ object.task.job.client.name }}</a> /
-                    <a href="{{ object.task.job.get_absolute_url }}">{{ object.task.job.title }}</a>
+                    <a href="{{ object.task.job.client.get_absolute_url }}" class="underline-dotted">{{ object.task.job.client.name }}</a> /
+                    <a href="{{ object.task.job.get_absolute_url }}" class="underline-dotted">{{ object.task.job.title }}</a>
                 </div>
                 <div class="page-header-actions">
                     <button class="button button-white" type="submit">{% trans 'Update' %}</button>

@@ -1,18 +1,20 @@
 // Tabs
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+/* stylelint-disable selector-no-qualifying-type  */
+
 .tabs {
-  list-style-type: none;
-  margin: 0;
   z-index: zindex("tabs");
+  margin: 0;
+  list-style-type: none;
 
   li {
-    border: 1px solid $border-color;
-    border-bottom: 0;
-    cursor: pointer;
     display: inline-block;
     padding: 1rem 1.5rem;
+    cursor: pointer;
     background: color-a("primary", .14);
+    border: 1px solid $border-color;
+    border-bottom: 0;
   }
 
   li:not(.active) a {

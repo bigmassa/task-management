@@ -1,6 +1,8 @@
 // Table
 // -----------------------------------------
 
+/* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
+
 tbody tr:last-child {
   border-bottom: $table-border-width solid $table-border-color;
 }

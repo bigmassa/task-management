@@ -3,8 +3,8 @@
 
 
 // Typography
-$base-font-family:              "Noto Sans", sans-serif;
-$code-font-family:              'Inconsolata', monospace;
+$base-font-family:              "Nunito", sans-serif;
+$code-font-family:              "Inconsolata", monospace;
 
 
 // Base font
@@ -12,34 +12,39 @@ $base-font-size:                13px;
 
 
 // The font sizes for h1-h6.
-$h1-font-size:                  1.8rem;
+$h1-font-size:                  2.4rem;
 $h2-font-size:                  1.6rem;
 
 
 // Colours
 $colors: (
-        "white":                rgb(255, 255, 255),
-        "primary":              rgb(41, 44, 54),
-        "shadylady":            rgb(151, 151, 151),
-        "arsenic":              rgb(57, 61, 72),
-        "solitude":             rgb(236, 240, 241),
-        "danger":               rgb(221, 75, 57),
+  "white":                rgb(255, 255, 255),
+  "primary":              rgb(41, 44, 54),
+  "shadylady":            rgb(151, 151, 151),
+  "arsenic":              rgb(57, 61, 72),
+  "solitude":             rgb(236, 240, 241),
+  "danger":               rgb(221, 75, 57),
+  "dodgerblue":           rgb(51, 191, 255),
 );
-$body-background:               rgb(240, 240, 241);
+$body-background:         rgb(240, 240, 241);
 
 
 // links
-$link-color:                    rgb(51, 195, 240);
+$link-color:              rgb(41, 44, 54);
+
+
+$darken-hover-percent:    20%;
 
 
 // buttons
 $buttons: (
-        "white":                map_get($colors, "white") map_get($colors, "primary"),
-        "shadylady":            map_get($colors, "shadylady") map_get($colors, "white")
+  "white":                map_get($colors, "white") map_get($colors, "primary"),
+  "shadylady":            map_get($colors, "shadylady") map_get($colors, "white")
 );
-$button-padding-y:              .4rem;
-$button-padding-x:              2rem;
+$button-padding-y:              .5rem;
+$button-padding-x:              1rem;
 $button-font-size:              1.3rem;
+$button-border-radius:          .1rem;
 
 
 // forms

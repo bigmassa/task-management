@@ -10,8 +10,8 @@
                 <span class="color-indicator" style="background: {{ form.instance.job.colour }}"></span>
                 <div class="h2">
                     <b>{{ form.instance.job.pk }}</b> :
-                    <a href="{{ form.instance.job.client.get_absolute_url }}">{{ form.instance.job.client.name }}</a> /
-                    <a href="{{ form.instance.job.get_absolute_url }}">{{ form.instance.job.title }}</a>
+                    <a href="{{ form.instance.job.client.get_absolute_url }}" class="underline-dotted">{{ form.instance.job.client.name }}</a> /
+                    <a href="{{ form.instance.job.get_absolute_url }}" class="underline-dotted">{{ form.instance.job.title }}</a>
                 </div>
                 <div class="page-header-actions">
                     <button class="button button-white" type="submit">{% trans 'Add' %}</button>
