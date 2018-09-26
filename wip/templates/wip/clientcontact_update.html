@@ -9,7 +9,7 @@
             <div class="container d-flex align-items-center py-2">
                 <span class="color-indicator" style="background: {{ object.client.colour }}"></span>
                 <div class="h2">
-                    <a href="{{ object.client.get_absolute_url }}">{{ object.client.name }}</a>
+                    <a href="{{ object.client.get_absolute_url }}" class="underline-dotted">{{ object.client.name }}</a>
                 </div>
                 <div class="page-header-actions">
                     <button class="button button-white" type="submit">{% trans 'Update' %}</button>
