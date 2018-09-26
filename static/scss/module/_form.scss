@@ -1,62 +1,64 @@
 // Form
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+/* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
+
 input[type="color"] {
-    border: $input-border-width solid $input-border-color;
-    border-radius: $input-border-radius;
-    height: $input-height;
-    margin-bottom: $input-margin-bottom;
-    padding: 0 .1rem;
-    width: 10rem;
+  width: 10rem;
+  height: $input-height;
+  padding: 0 .1rem;
+  margin-bottom: $input-margin-bottom;
+  border: $input-border-width solid $input-border-color;
+  border-radius: $input-border-radius;
 }
 
 .checkbox {
-    margin-bottom: $input-margin-bottom;
-    input {
-        position: relative;
-    }
+  margin-bottom: $input-margin-bottom;
+  input {
+    position: relative;
+  }
 }
 
 .field-wrapper {
-    margin-bottom: $input-margin-bottom;
+  margin-bottom: $input-margin-bottom;
 }
 
 .errorlist {
-    list-style-type: none;
-    color: color("red");
+  color: color("red");
+  list-style-type: none;
 }
 
 .formset-empty {
-    display: none;
+  display: none;
 }
 
 .formset-deleted {
-    opacity: .7;
+  opacity: .7;
 }
 
 // select2 - django auto complete
 
 .select2-container--default {
-    margin-bottom: $input-margin-bottom !important;
+  margin-bottom: $input-margin-bottom !important;
 }
 
 .select2-container--default .select2-selection--multiple {
-    background-color: $input-background !important;
-    border: solid $input-border-width $input-border-color !important;
-    border-radius: $input-border-radius !important;
+  background-color: $input-background !important;
+  border: solid $input-border-width $input-border-color !important;
+  border-radius: $input-border-radius !important;
 }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
-    background: $input-background-focus !important;
-    border-color: $input-border-color-focus !important;
+  background: $input-background-focus !important;
+  border-color: $input-border-color-focus !important;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
-    border: solid $input-border-width $input-border-color !important;
-    border-radius: $input-border-radius !important;
+  border: solid $input-border-width $input-border-color !important;
+  border-radius: $input-border-radius !important;
 }
 
 .select2-container--default .select2-search--inline .select2-search__field {
-    margin: .5rem .5rem 0 .5rem;
-    height: 2.5rem;
+  height: 2.5rem;
+  margin: .5rem .5rem 0 .5rem;
 }

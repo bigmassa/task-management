@@ -5,42 +5,43 @@ header {
   background: color("arsenic");
 }
 
-header .nav-home {
-  color: color("white");
+.nav-home {
   display: inline-block;
   margin-right: 6rem;
+  color: color("white");
 }
 
-header .nav {
+.nav {
   display: inline-block;
-  list-style-type: none;
   margin: 1rem 0 0 0;
+  list-style-type: none;
 
   li {
-    background: color("primary");
     display: inline-block;
+    background: color("primary");
   }
 
   li a {
-    color: color("white");
     display: block;
     padding: 1rem 2rem;
+    color: color("white");
   }
 }
 
+
 header .avatar {
-  background: color("dodgerblue");
   display: inline-block;
-  line-height: 3rem;
-  text-align: center;
   width: 3rem;
   height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  background: color("dodgerblue");
   border-radius: 50%;
 
   .avatar-text {
+    font-size: 1.2rem;
     font-weight: 700;
     color: color("white");
-    font-size: 1.2rem;
   }
   .avatar-close {
     display: none;
@@ -52,11 +53,11 @@ header .avatar {
     background: color("white");
 
     .avatar-text {
-        display: none;
+      display: none;
     }
 
     .avatar-close {
-        display: block;
+      display: block;
     }
 
   }

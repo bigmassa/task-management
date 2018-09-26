@@ -1,13 +1,12 @@
 // utils
 // -----------------------------------------
 
-
 .color-indicator {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
   border: 1px solid color("white");
   border-radius: 50%;
-  height: 1.5rem;
-  width: 1.5rem;
-  margin-right: 1rem;
 }
 
 .py-2 {
@@ -24,13 +23,13 @@
 }
 
 .mt-1 {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .comment {
-  background: color-a("primary", .08);
-  margin-bottom: $generic-margin-bottom;
   padding: 1.5rem;
+  margin-bottom: $generic-margin-bottom;
+  background: color-a("primary", .08);
 
   & > *:last-child {
     margin-bottom: 0;

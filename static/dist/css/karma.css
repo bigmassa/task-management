@@ -1725,13 +1725,14 @@ ul.radios input[type=radio] + span:after {
 }
 
 /* '' */
+/* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
 .dropzone {
-  border: dashed 1px #e6e6e6 !important;
   min-height: 120px !important;
   padding: 10px !important;
+  border: dashed 1px #e6e6e6 !important;
 }
 
-.dropzone input[type=file] {
+.dropzone input[type="file"] {
   display: none;
 }
 
@@ -1740,10 +1741,10 @@ ul.radios input[type=radio] + span:after {
 }
 
 .dropzone .dz-message {
-  color: #aaaaaa !important;
-  font-size: 2rem !important;
-  margin: 2.4rem 0 !important;
   padding: 2rem 0 !important;
+  margin: 2.4rem 0 !important;
+  font-size: 2rem !important;
+  color: #aaaaaa !important;
 }
 
 .dropzone .dz-image {
@@ -1755,13 +1756,14 @@ ul.radios input[type=radio] + span:after {
   font-size: 1.4rem !important;
 }
 
+/* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
 input[type="color"] {
+  width: 10rem;
+  height: calc(3.55rem + 2px);
+  padding: 0 .1rem;
+  margin-bottom: 1.5rem;
   border: 1px solid #e6e6e6;
   border-radius: 0.25rem;
-  height: calc(3.55rem + 2px);
-  margin-bottom: 1.5rem;
-  padding: 0 .1rem;
-  width: 10rem;
 }
 
 .checkbox {
@@ -1777,8 +1779,8 @@ input[type="color"] {
 }
 
 .errorlist {
-  list-style-type: none;
   color: #ff4136;
+  list-style-type: none;
 }
 
 .formset-empty {
@@ -1810,51 +1812,51 @@ input[type="color"] {
 }
 
 .select2-container--default .select2-search--inline .select2-search__field {
-  margin: .5rem .5rem 0 .5rem;
   height: 2.5rem;
+  margin: .5rem .5rem 0 .5rem;
 }
 
 header {
   background: #393d48;
 }
 
-header .nav-home {
-  color: white;
+.nav-home {
   display: inline-block;
   margin-right: 6rem;
-}
-
-header .nav {
-  display: inline-block;
-  list-style-type: none;
-  margin: 1rem 0 0 0;
-}
-
-header .nav li {
-  background: #292c36;
-  display: inline-block;
-}
-
-header .nav li a {
   color: white;
+}
+
+.nav {
+  display: inline-block;
+  margin: 1rem 0 0 0;
+  list-style-type: none;
+}
+
+.nav li {
+  display: inline-block;
+  background: #292c36;
+}
+
+.nav li a {
   display: block;
   padding: 1rem 2rem;
+  color: white;
 }
 
 header .avatar {
-  background: #33bfff;
   display: inline-block;
-  line-height: 3rem;
-  text-align: center;
   width: 3rem;
   height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  background: #33bfff;
   border-radius: 50%;
 }
 
 header .avatar .avatar-text {
+  font-size: 1.2rem;
   font-weight: 700;
   color: white;
-  font-size: 1.2rem;
 }
 
 header .avatar .avatar-close {
@@ -1902,8 +1904,8 @@ header .avatar:hover .avatar-close {
 
 .page-header .h1,
 .page-header .h2 {
-  color: white;
   margin-bottom: 0;
+  color: white;
 }
 
 .page-header .h1 {
@@ -1950,10 +1952,10 @@ header .avatar:hover .avatar-close {
 }
 
 .panel {
+  padding: 3rem;
+  margin-bottom: 3rem;
   background: white;
   border: 1px solid #e6e6e6;
-  margin-bottom: 3rem;
-  padding: 3rem;
 }
 
 .panel .panel-actions {
@@ -1965,6 +1967,7 @@ header .avatar:hover .avatar-close {
   margin-bottom: 0;
 }
 
+/* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
 tbody tr:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
@@ -1989,19 +1992,20 @@ td textarea {
   margin-bottom: 0 !important;
 }
 
+/* stylelint-disable selector-no-qualifying-type  */
 .tabs {
-  list-style-type: none;
-  margin: 0;
   z-index: 10;
+  margin: 0;
+  list-style-type: none;
 }
 
 .tabs li {
-  border: 1px solid #e6e6e6;
-  border-bottom: 0;
-  cursor: pointer;
   display: inline-block;
   padding: 1rem 1.5rem;
+  cursor: pointer;
   background: rgba(41, 44, 54, 0.14);
+  border: 1px solid #e6e6e6;
+  border-bottom: 0;
 }
 
 .tabs li:not(.active) a {
@@ -2017,17 +2021,17 @@ td textarea {
 }
 
 .tags {
-  list-style-type: none;
   margin-bottom: 0;
+  list-style-type: none;
 }
 
 .tags .tag {
+  display: inline-block;
+  padding: .1rem .5rem;
+  margin-right: .3rem;
   background: rgba(41, 44, 54, 0.14);
   border: 1px solid #e6e6e6;
   border-radius: 0.25rem;
-  display: inline-block;
-  margin-right: .3rem;
-  padding: .1rem .5rem;
 }
 
 .h1 {
@@ -2035,11 +2039,11 @@ td textarea {
 }
 
 .color-indicator {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
   border: 1px solid white;
   border-radius: 50%;
-  height: 1.5rem;
-  width: 1.5rem;
-  margin-right: 1rem;
 }
 
 .py-2 {
@@ -2060,9 +2064,9 @@ td textarea {
 }
 
 .comment {
-  background: rgba(41, 44, 54, 0.08);
-  margin-bottom: 1.5rem;
   padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: rgba(41, 44, 54, 0.08);
 }
 
 .comment > *:last-child {

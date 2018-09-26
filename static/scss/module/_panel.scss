@@ -2,10 +2,10 @@
 // -----------------------------------------
 
 .panel {
+  padding: 3rem;
+  margin-bottom: 3rem;
   background: color("white");
   border: 1px solid $border-color;
-  margin-bottom: 3rem;
-  padding: 3rem;
 
   .panel-actions {
     margin-bottom: $generic-margin-bottom;
@@ -17,4 +17,3 @@
   }
 
 }
-

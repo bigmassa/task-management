@@ -2,13 +2,13 @@
 // -----------------------------------------
 
 .underline-dotted {
-    border-bottom: 1px dotted color("primary");
+  border-bottom: 1px dotted color("primary");
 
-    &:hover {
-        border-bottom: 0;
-    }
+  &:hover {
+    border-bottom: 0;
+  }
 }
 
 .page-header .underline-dotted {
-    border-color: color("white");
+  border-color: color("white");
 }

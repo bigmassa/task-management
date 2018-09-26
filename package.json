@@ -5,8 +5,9 @@
   "keywords": [],
   "license": "MIT",
   "scripts": {
-    "css": "npm-run-all css-compile* --sequential css-prefix* css-minify* fontello-dist*",
+    "css": "npm-run-all css-lint* css-compile* --sequential css-prefix* css-minify* fontello-dist*",
     "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 static/scss/karma.scss static/dist/css/karma.css",
+    "css-lint": "stylelint --syntax scss \"static/scss/**/*.scss\"",
     "css-prefix": "postcss --config postcss.config.js --replace \"static/dist/css/*.css\" \"!static/dist/css/*.min.css\"",
     "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output static/dist/css/karma.min.css static/dist/css/karma.css",
     "fontello-dist": "cpy 'static/scss/fontello/font/*' static/dist/font",
@@ -25,7 +26,12 @@
     "node-sass": "^4.7.2",
     "nodemon": "^1.14.11",
     "npm-run-all": "^4.1.2",
-    "postcss-cli": "^4.1.1"
+    "postcss-cli": "^4.1.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-recommended-scss": "^3.0.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-order": "^0.8.0",
+    "stylelint-scss": "^2.2.0"
   },
   "browserslist": [
     "last 1 major version",
