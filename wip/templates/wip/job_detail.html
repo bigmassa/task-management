@@ -8,8 +8,8 @@
             <span class="color-indicator" style="background: {{ object.colour }}"></span>
             <div class="h2">
                 <b>{{ object.pk }}</b> :
-                <a href="{{ object.client.get_absolute_url }}">{{ object.client.name }}</a> /
-                <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+                <a href="{{ object.client.get_absolute_url }}" class="underline-dotted">{{ object.client.name }}</a> /
+                <a href="{{ object.get_absolute_url }}" class="underline-dotted">{{ object.title }}</a>
             </div>
             <div class="page-header-actions">
                 <a class="button button-white" href="{{ object.get_update_url }}">{% trans 'Edit' %}</a>

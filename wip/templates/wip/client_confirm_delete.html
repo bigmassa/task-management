@@ -9,7 +9,7 @@
             <div class="container d-flex align-items-center">
                 <span class="color-indicator" style="background: {{ object.colour }}"></span>
                 <div class="h2">
-                    <a href="{{ object.get_absolute_url }}">{{ object.name }}</a>
+                    <a href="{{ object.get_absolute_url }}" class="underline-dotted">{{ object.name }}</a>
                 </div>
                 <div class="page-header-actions">
                     {% if not protected %}

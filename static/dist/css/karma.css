@@ -925,14 +925,14 @@ main {
 }
 
 a {
-  color: #33c3f0;
+  color: #292c36;
   text-decoration: none;
   background-color: transparent;
   transition: color linear 250ms;
 }
 
 a:hover {
-  color: #10aee0;
+  color: #131419;
   text-decoration: none;
 }
 
@@ -951,7 +951,7 @@ button,
 .button {
   box-sizing: border-box;
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   overflow: visible;
   font-family: inherit;
   font-size: 1.3rem;
@@ -1465,7 +1465,7 @@ h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small, h4 small, .h4 sma
 h1,
 .h1 {
   margin: 0 0 1.5rem;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -1848,6 +1848,18 @@ header .avatar {
   border-radius: 50%;
 }
 
+.underline-dotted {
+  border-bottom: 1px dotted #292c36;
+}
+
+.underline-dotted:hover {
+  border-bottom: 0;
+}
+
+.page-header .underline-dotted {
+  border-color: white;
+}
+
 .login-page {
   background-color: #393d48;
 }
@@ -1990,6 +2002,10 @@ td textarea {
   display: inline-block;
   margin-right: .3rem;
   padding: .1rem .5rem;
+}
+
+.h1 {
+  font-weight: 400;
 }
 
 .color-indicator {

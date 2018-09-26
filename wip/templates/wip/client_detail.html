@@ -7,7 +7,7 @@
         <div class="container d-flex align-items-center">
             <span class="color-indicator" style="background: {{ object.colour }}"></span>
             <div class="h2">
-                <a href="{{ object.get_absolute_url }}">{{ object.name }}</a>
+                <a href="{{ object.get_absolute_url }}" class="underline-dotted">{{ object.name }}</a>
             </div>
             <div class="page-header-actions">
                 <a class="button button-white" href="{{ object.get_update_url }}">{% trans 'Edit' %}</a>
@@ -19,13 +19,13 @@
         <div class="row">
             <div class="col-lg-3">
                 <p class="strong">{% trans 'Email' %}</p>
-                <p><a href="mailto://{{ object.email_address }}">{{ object.email_address }}</a></p>
+                <p><a href="mailto://{{ object.email_address }}" class="underline-dotted">{{ object.email_address }}</a></p>
                 <hr/>
                 <p class="strong">{% trans 'Phone Number' %}</p>
-                <p><a href="tel:{{ object.phone_number }}">{{ object.phone_number }}</a></p>
+                <p><a href="tel:{{ object.phone_number }}" class="underline-dotted">{{ object.phone_number }}</a></p>
                 <hr/>
                 <p class="strong">{% trans 'Website' %}</p>
-                <p><a href="{{ object.website }}">{{ object.website }}</a></p>
+                <p><a href="{{ object.website }}" class="underline-dotted">{{ object.website }}</a></p>
             </div>
             <div class="col-lg-9">
                 <ul class="tabs">

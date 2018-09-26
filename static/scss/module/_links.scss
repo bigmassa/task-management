@@ -1,0 +1,14 @@
+// links
+// -----------------------------------------
+
+.underline-dotted {
+    border-bottom: 1px dotted color("primary");
+
+    &:hover {
+        border-bottom: 0;
+    }
+}
+
+.page-header .underline-dotted {
+    border-color: color("white");
+}

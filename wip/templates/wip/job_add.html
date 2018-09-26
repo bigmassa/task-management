@@ -9,7 +9,7 @@
             <div class="container d-flex align-items-center py-2">
                 <span class="color-indicator" style="background: {{ form.instance.client.colour }}"></span>
                 <div class="h2">
-                    <a href="{{ form.instance.client.get_absolute_url }}">{{ form.instance.client.name }}</a>
+                    <a href="{{ form.instance.client.get_absolute_url }}" class="underline-dotted">{{ form.instance.client.name }}</a>
                 </div>
                 <div class="page-header-actions">
                     <button class="button button-white" type="submit">{% trans 'Add' %}</button>

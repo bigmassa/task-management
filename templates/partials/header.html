@@ -1,7 +1,7 @@
-{% load i18n %}
+{% load i18n static %}
 <header>
     <div class="container d-flex align-items-center">
-        <a class="nav-home" href="/">{% trans 'WIP' %}</a>
+        <a class="nav-home mt-1 " href="/"><img src="{% static 'dist/img/task-management-logo.svg' %}" width="35" height="35"></a>
         <ul class="nav">
             <li><a href="{% url 'wip:client-list' %}">{% trans 'Clients' %}</a></li>
         </ul>

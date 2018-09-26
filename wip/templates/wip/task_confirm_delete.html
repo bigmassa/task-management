@@ -10,8 +10,8 @@
                 <span class="color-indicator" style="background: {{ object.job.colour }}"></span>
                 <div class="h2">
                     <b>{{ object.job.pk }}</b> :
-                    <a href="{{ object.job.client.get_absolute_url }}">{{ object.job.client.name }}</a> /
-                    <a href="{{ object.job.get_absolute_url }}">{{ object.job.title }}</a>
+                    <a href="{{ object.job.client.get_absolute_url }}" class="underline-dotted">{{ object.job.client.name }}</a> /
+                    <a href="{{ object.job.get_absolute_url }}" class="underline-dotted">{{ object.job.title }}</a>
                 </div>
                 <div class="page-header-actions">
                     {% if not protected %}
