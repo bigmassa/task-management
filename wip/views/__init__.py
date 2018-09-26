@@ -5,6 +5,11 @@ from .client import (
     ClientList,
     ClientUpdate
 )
+from .client_contact import (
+    ClientContactCreate,
+    ClientContactDelete,
+    ClientContactUpdate
+)
 from .job import (
     JobCreate,
     JobDelete,

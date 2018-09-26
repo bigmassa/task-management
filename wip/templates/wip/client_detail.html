@@ -56,7 +56,37 @@
                             </tbody>
                         </table>
                     </div>
-                    <div data-tab="contacts" class="d-hidden"></div>
+                    <div data-tab="contacts" class="d-hidden">
+                        <div class="panel-actions">
+                            <a class="button button-primary" href="{% url 'wip:clientcontact-create' object.pk %}">{% trans 'Add' %}</a>
+                        </div>
+                        <table class="table-hover table-headed margin-zero">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'Name' %}</th>
+                                    <th>{% trans 'Email' %}</th>
+                                    <th>{% trans 'Tel' %}</th>
+                                    <th>{% trans 'Mobile' %}</th>
+                                    <th>{% trans 'Position' %}</th>
+                                    <th class="keep-min-width"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for contact in object.contacts.all %}
+                                    <tr data-url="{{ contact.get_update_url }}">
+                                        <td>{{ contact.get_full_name }}</td>
+                                        <td>{{ contact.email_address }}</td>
+                                        <td>{{ contact.phone_number }}</td>
+                                        <td>{{ contact.mobile_number }}</td>
+                                        <td>{{ contact.position }}</td>
+                                        <td class="keep-min-width text-right">
+                                            <a href="{% url 'wip:clientcontact-delete' contact.pk %}"><i class="icon-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

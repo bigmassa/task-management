@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse_lazy
 from taggit.managers import TaggableManager
 
 
@@ -54,3 +55,6 @@ class ClientContact(models.Model):
     def get_full_name(self):
         full_name = '%s %s' % (self.first_name, self.last_name)
         return full_name.strip()
+
+    def get_update_url(self):
+        return reverse_lazy('wip:clientcontact-update', kwargs={'pk': self.pk})

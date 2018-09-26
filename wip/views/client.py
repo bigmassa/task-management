@@ -26,6 +26,7 @@ class ClientDetail(LoginRequiredMixin, DetailView):
         return (
             super().get_queryset()
             .prefetch_related(
+                'contacts__position',
                 Prefetch(
                     'jobs',
                     Job.objects.select_related('status')
