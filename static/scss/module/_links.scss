@@ -12,3 +12,14 @@
 .page-header .underline-dotted {
   border-color: color("white");
 }
+
+
+@each $name, $color in $colors {
+
+  a.c-#{$name} {
+    color: $color;
+    &:hover {
+      color: darken($color, $darken-hover-percent);
+    }
+  }
+}
