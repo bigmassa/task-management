@@ -170,3 +170,36 @@
       updated_at: "2018-01-01T00:00:00.000Z",
       note: "Lorem ipsum dolor sit amet, no magna vidisse vix. Eu novum error maiestatis duo, no ubique alienum usu, vim graeco vituperatoribus no. Postulant tractatos argumentum ad pro, nibh modus liberavisse no nec. Persius rationibus et sit, primis periculis cum ne. Habeo ponderum ius te, tation neglegentur usu ex. Te unum habeo vituperata vix. Eos ex magna denique accusata, nam modus conclusionemque no."
     }
+
+-
+    model: taggit.tag
+    pk: 1
+    fields: {
+      name: "contact",
+      slug: "contact"
+    }
+
+-
+    model: taggit.tag
+    pk: 2
+    fields: {
+      name: "task",
+      slug: "task"
+    }
+
+-
+    model: taggit.taggeditem
+    pk: 1
+    fields: {
+      tag: 1,
+      content_type: [wip, clientcontact],
+      object_id: 1
+    }
+
+- model: taggit.taggeditem
+  pk: 2
+  fields: {
+    tag: 2,
+    content_type: [wip, task],
+    object_id: 1
+  }
