@@ -1,5 +1,4 @@
 from django.db import models
-from django.urls import reverse
 
 from authentication.middleware.current_user import get_current_user
 from authentication.models import User

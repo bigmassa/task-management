@@ -25,6 +25,28 @@
     }
 
 -
+    model: wip.position
+    pk: 1
+    fields: {
+      title: "Tech Guru",
+    }
+
+-
+    model: wip.clientcontact
+    pk: 1
+    fields: {
+      client: 1,
+      first_name: "Dave",
+      last_name: "Fuller",
+      phone_number: "01603 766062",
+      mobile_number: "07449 966184",
+      email_address: "dave@accentdesign.co.uk",
+      address: "Adam & Eve Yard\n94b St Benedicts Street\nNorwich\nNR2 4AB",
+      position: 1,
+      notes: "Is a good ole boy!"
+    }
+
+-
     model: wip.jobtype
     pk: 1
     fields: {

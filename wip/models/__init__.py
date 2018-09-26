@@ -1,4 +1,5 @@
 from .client import Client
+from .client_contact import ClientContact
 from .job import Job
 from .job_file import JobFile
 from .job_note import JobNote
@@ -7,6 +8,7 @@ from .job_relationship import JobRelationship
 from .job_status import JobStatus
 from .job_type import JobType
 from .payment_option import PaymentOption
+from .position import Position
 from .recurring_cost_type import RecurringCostType
 from .relationship import Relationship
 from .task import Task
