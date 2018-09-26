@@ -6,7 +6,10 @@
             <li><a href="{% url 'wip:client-list' %}">{% trans 'Clients' %}</a></li>
         </ul>
         <div class="ml-auto">
-            <a class="avatar" href="{% url 'logout' %}">{{ user.get_initials }}</a>
+            <a class="avatar" href="{% url 'logout' %}">
+                <span class="avatar-text">{{ user.get_initials }}</span>
+                <i class="avatar-close icon-cancel"></i>
+            </a>
         </div>
     </div>
 </header>
