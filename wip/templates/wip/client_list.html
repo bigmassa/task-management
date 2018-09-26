@@ -26,10 +26,6 @@
                             <td>{{ object.email_address }}</td>
                             <td>{{ object.phone_number }}</td>
                         </tr>
-                    {% empty %}
-                        <tr>
-                            <td>{% trans 'No clients have been created,' %} <a class="strong" href="{% url 'wip:client-create' %}">{% trans 'create one now.' %}</a></td>
-                        </tr>
                     {% endfor %}
                 </tbody>
             </table>
