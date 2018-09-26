@@ -43,7 +43,7 @@ class JobDetail(LoginRequiredMixin, DetailView):
             .prefetch_related(
                 Prefetch(
                     'tasks',
-                    Task.objects.select_related('status')
+                    Task.objects.all().select_related('status').prefetch_related('assignees__user', 'tags')
                 ),
                 Prefetch(
                     'relationships',

@@ -46,12 +46,6 @@ class TaskManager(models.Manager):
 
         return qs
 
-    def open(self):
-        return self.get_queryset().filter(closed=False)
-
-    def closed(self):
-        return self.get_queryset().filter(closed=True)
-
 
 class Task(models.Model):
     title = models.CharField(

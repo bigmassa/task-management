@@ -77,24 +77,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for task in object.tasks.open %}
-                                <tr data-url="{{ task.get_absolute_url }}">
-                                    <td class="keep-min-width">{{ task.pk }}</td>
-                                    <td>{{ task.title }}</td>
-                                    <td class="keep-min-width"><ul class="tags">{% for tag in task.tags.all %}<li class="tag">{{ tag }}</li>{% empty %}<li>-</li>{% endfor %}</ul></td>
-                                    <td class="keep-min-width">{% for assignee in task.assignees.all %}{{ assignee.user.get_short_name }}{% if not forloop.last %}, {% endif %}{% empty %}-{% endfor %}</td>
-                                    <td class="keep-min-width">{{ task.time_spent_hours }} of {{ task.allocated_hours }}</td>
-                                    <td class="keep-min-width">{{ task.target_date|date:'d/m/Y'|default:'-' }}</td>
-                                    <td class="keep-min-width">{{ task.status }}</td>
-                                </tr>
+                                {% for task in object.tasks.all %}
+                                    {% if not task.closed %}
+                                        <tr data-url="{{ task.get_absolute_url }}">
+                                            <td class="keep-min-width">{{ task.pk }}</td>
+                                            <td>{{ task.title }}</td>
+                                            <td class="keep-min-width"><ul class="tags">{% for tag in task.tags.all %}<li class="tag">{{ tag }}</li>{% empty %}<li>-</li>{% endfor %}</ul></td>
+                                            <td class="keep-min-width">{% for assignee in task.assignees.all %}{{ assignee.user.get_short_name }}{% if not forloop.last %}, {% endif %}{% empty %}-{% endfor %}</td>
+                                            <td class="keep-min-width">{{ task.time_spent_hours }} of {{ task.allocated_hours }}</td>
+                                            <td class="keep-min-width">{{ task.target_date|date:'d/m/Y'|default:'-' }}</td>
+                                            <td class="keep-min-width">{{ task.status }}</td>
+                                        </tr>
+                                    {% endif %}
                                 {% endfor %}
                             </tbody>
                             <tbody class="closed-task">
-                                {% for task in object.tasks.closed %}
-                                <tr data-url="{{ task.get_absolute_url }}">
-                                    <td></td>
-                                    <td colspan="6" class="muted"><i class="icon-ok"></i> {{ task.title }}</td>
-                                </tr>
+                                {% for task in object.tasks.all %}
+                                    {% if task.closed %}
+                                        <tr data-url="{{ task.get_absolute_url }}">
+                                            <td></td>
+                                            <td colspan="6" class="muted"><i class="icon-ok"></i> {{ task.title }}</td>
+                                        </tr>
+                                    {% endif %}
                                 {% endfor %}
                             </tbody>
                         </table>
