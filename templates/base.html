@@ -6,11 +6,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>WIP | {% block page_title %}{% endblock %}</title>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-        <link rel="stylesheet" href="{% static 'dist/css/karma.min.css' %}">
+        <link href="{% static 'dist/vendor/toastr/toastr.min.css' %}" type="text/css" rel="stylesheet">
+        <link href="{% static 'dist/css/karma.min.css' %}" type="text/css" rel="stylesheet">
         {% block extra_css %}{% endblock %}
-        <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script type="text/javascript" src="{% static 'dist/vendor/jquery/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'dist/vendor/toastr/toastr.min.js' %}"></script>
     </head>
     <body class="{% block body_class %}{% endblock %}">
         {% block full_outer_content %}
@@ -19,7 +19,7 @@
             {% include 'partials/footer.html' %}
         {% endblock %}
         {% include 'partials/messages.html' %}
-        <script src="{% static 'dist/js/site.js' %}"></script>
+        <script type="text/javascript" src="{% static 'dist/js/site.js' %}"></script>
         {% block extra_js %}{% endblock %}
     </body>
 </html>

@@ -20,7 +20,9 @@
     "autoprefixer": "^7.2.5",
     "clean-css-cli": "^4.1.10",
     "cpy-cli": "^1.0.1",
+    "flatpickr": "^4.5.2",
     "fontello-cli": "^0.4.0",
+    "jquery": "^3.3.1",
     "karma-css": "git+https://git@github.com/accentdesign/karma-css.git",
     "karma-css-components": "git+https://git@github.com/accentdesign/karma-css-components.git",
     "node-sass": "^4.7.2",
@@ -31,7 +33,8 @@
     "stylelint-config-recommended-scss": "^3.0.0",
     "stylelint-config-standard": "^18.0.0",
     "stylelint-order": "^0.8.0",
-    "stylelint-scss": "^2.2.0"
+    "stylelint-scss": "^2.2.0",
+    "toastr": "^2.1.4"
   },
   "browserslist": [
     "last 1 major version",
