@@ -57,7 +57,17 @@ class User(AbstractBaseUser, PermissionsMixin):
         ),
     )
     date_joined = models.DateTimeField(
-        auto_now_add=True)
+        auto_now_add=True
+    )
+    gradwell_token = models.CharField(
+        null=True,
+        blank=True,
+        max_length=100
+    )
+    gradwell_extension = models.IntegerField(
+        null=True,
+        blank=True
+    )
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name']
