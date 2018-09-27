@@ -34,3 +34,14 @@ class TestView(AppTestCase):
 
         # test exists
         Client.objects.get(**data)
+
+    def test_success_message_in_response(self):
+        self.client.force_login(self.user)
+
+        data = {
+            'name': 'Test Client',
+            'colour': '#000000'
+        }
+        content = self.client.post(self.url, data, follow=True).content
+
+        self.assertIn('toastr["success"]("Created successfully", "Success");', str(content))

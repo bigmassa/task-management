@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.views.generic import UpdateView
@@ -10,6 +11,7 @@ class TaskAssigneeUpdate(LoginRequiredMixin, UpdateView):
     fields = []
     formset_class = TaskAssigneeFormSet
     model = Task
+    success_message = "Updated successfully"
     template_name = 'wip/taskassignee_update.html'
 
     def get_formset(self, **kwargs):
@@ -32,7 +34,7 @@ class TaskAssigneeUpdate(LoginRequiredMixin, UpdateView):
     def form_valid(self, formset):
         formset.instance = self.object
         formset.save()
-
+        messages.success(self.request, self.success_message)
         return HttpResponseRedirect(self.get_success_url())
 
     def form_invalid(self, formset):

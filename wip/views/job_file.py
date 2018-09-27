@@ -8,10 +8,10 @@ from django.views.generic import DeleteView
 from django.views.generic.base import View
 
 from wip.models import Job, JobFile
-from wip.views.mixins import ProtectedDeleteMixin
+from wip.views.mixins import ProtectedDeleteMixin, DeleteMessageMixin
 
 
-class JobFileDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteView):
+class JobFileDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteMessageMixin, DeleteView):
     model = JobFile
 
     def get_success_url(self):

@@ -35,3 +35,14 @@ class TestView(AppTestCase):
 
         # test updated
         Client.objects.get(pk=self.object.pk, **data)
+
+    def test_success_message_in_response(self):
+        self.client.force_login(self.user)
+
+        data = {
+            'name': 'Test Client - Updated',
+            'colour': '#000000'
+        }
+        content = self.client.post(self.url, data, follow=True).content
+
+        self.assertIn('toastr["success"]("Updated successfully", "Success");', str(content))

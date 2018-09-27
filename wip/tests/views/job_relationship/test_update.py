@@ -47,3 +47,20 @@ class TestView(AppTestCase):
 
         # test redirected after
         self.assertRedirects(response, self.object.get_absolute_url(), 302, 200)
+
+    def test_success_message_in_response(self):
+        self.client.force_login(self.user)
+        relationship = Relationship.objects.first()
+        data = {
+            'relationships-TOTAL_FORMS': '1',
+            'relationships-INITIAL_FORMS': '1',
+            'relationships-MIN_NUM_FORMS': '0',
+            'relationships-MAX_NUM_FORMS': '10',
+            'relationships-0-id': 1,
+            'relationships-0-job': self.object.pk,
+            'relationships-0-user': self.user.pk,
+            'relationships-0-relationship': relationship.pk
+        }
+        content = self.client.post(self.url, data, follow=True).content
+
+        self.assertIn('toastr["success"]("Updated successfully", "Success");', str(content))

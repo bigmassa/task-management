@@ -37,3 +37,10 @@ class TestView(AppTestCase):
         # test updated
         with self.assertRaises(ObjectDoesNotExist):
             self.object.refresh_from_db()
+
+    def test_success_message_in_response(self):
+        self.client.force_login(self.user)
+
+        content = self.client.post(self.url, {}, follow=True).content
+
+        self.assertIn('toastr["success"]("Deleted successfully", "Success");', str(content))

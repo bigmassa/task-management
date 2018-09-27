@@ -1,20 +1,22 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import Prefetch
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
 from wip.models import Client, Job
-from wip.views.mixins import ProtectedDeleteMixin
+from wip.views.mixins import ProtectedDeleteMixin, DeleteMessageMixin
 
 
-class ClientCreate(LoginRequiredMixin, CreateView):
+class ClientCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     fields = '__all__'
     model = Client
+    success_message = "Created successfully"
     success_url = reverse_lazy('wip:client-list')
     template_name = 'wip/client_add.html'
 
 
-class ClientDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteView):
+class ClientDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteMessageMixin, DeleteView):
     model = Client
     success_url = reverse_lazy('wip:client-list')
 
@@ -39,7 +41,8 @@ class ClientList(LoginRequiredMixin, ListView):
     model = Client
 
 
-class ClientUpdate(LoginRequiredMixin, UpdateView):
+class ClientUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     fields = '__all__'
     model = Client
+    success_message = "Updated successfully"
     template_name = 'wip/client_update.html'

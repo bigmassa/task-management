@@ -1,16 +1,18 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import Prefetch
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 
 from wip.forms.task import TaskForm
 from wip.models import Job, Task, TaskAssignee, TaskNote
-from wip.views.mixins import ProtectedDeleteMixin
+from wip.views.mixins import ProtectedDeleteMixin, DeleteMessageMixin
 
 
-class TaskCreate(LoginRequiredMixin, CreateView):
+class TaskCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class = TaskForm
     model = Task
+    success_message = "Created successfully"
     template_name = 'wip/task_add.html'
 
     def get_form_kwargs(self):
@@ -22,7 +24,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
         return kwargs
 
 
-class TaskDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteView):
+class TaskDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteMessageMixin, DeleteView):
     model = Task
 
     def get_success_url(self):
@@ -52,7 +54,8 @@ class TaskDetail(LoginRequiredMixin, DetailView):
         )
 
 
-class TaskUpdate(LoginRequiredMixin, UpdateView):
+class TaskUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     form_class = TaskForm
     model = Task
+    success_message = "Updated successfully"
     template_name = 'wip/task_update.html'

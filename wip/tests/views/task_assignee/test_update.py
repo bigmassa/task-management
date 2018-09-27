@@ -46,3 +46,19 @@ class TestView(AppTestCase):
 
         # test redirected after
         self.assertRedirects(response, self.object.get_absolute_url(), 302, 200)
+
+    def test_success_message_in_response(self):
+        self.client.force_login(self.user)
+        data = {
+            'assignees-TOTAL_FORMS': '1',
+            'assignees-INITIAL_FORMS': '1',
+            'assignees-MIN_NUM_FORMS': '0',
+            'assignees-MAX_NUM_FORMS': '10',
+            'assignees-0-id': 1,
+            'assignees-0-task': self.object.pk,
+            'assignees-0-user': self.user.pk,
+            'assignees-0-allocated_hours': '100.00'
+        }
+        content = self.client.post(self.url, data, follow=True).content
+
+        self.assertIn('toastr["success"]("Updated successfully", "Success");', str(content))
