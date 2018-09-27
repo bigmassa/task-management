@@ -22,6 +22,7 @@
     "cpy-cli": "^1.0.1",
     "flatpickr": "^4.5.2",
     "fontello-cli": "^0.4.0",
+    "fullcalendar": "^3.9.0",
     "jquery": "^3.3.1",
     "karma-css": "git+https://git@github.com/accentdesign/karma-css.git",
     "karma-css-components": "git+https://git@github.com/accentdesign/karma-css-components.git",

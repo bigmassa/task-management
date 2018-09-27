@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load i18n static %}
 {% block page_title %}Cloc{% endblock %}
 {% block body_class %}{% endblock %}
 {% block inner_content %}
@@ -8,4 +8,51 @@
             <div class="h1">{% trans 'Cloc' %}</div>
         </div>
     </div>
+    <div class="container">
+        <div class="cloc"></div>
+    </div>
+{% endblock %}
+
+{% block extra_css %}
+    <link href="{% static 'dist/vendor/fullcalendar/fullcalendar.min.css' %}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'dist/vendor/moment/moment.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/vendor/fullcalendar/fullcalendar.min.js' %}"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.cloc').fullCalendar({
+                defaultView: 'agendaWeek',
+                header: { center: 'agendaDay,agendaWeek'},
+                allDaySlot: false,
+                nowIndicator: true,
+                slotEventOverlap: false,
+                slotDuration: '00:10:00',
+                editable: true,
+                eventOverlap: false,
+                eventDrop: function(event, delta, revertFunc) {
+                    console.log('eventDrop', event, delta, revertFunc);
+                },
+                events: [
+                    {
+                        title : 'Event 1',
+                        start : '2018-09-27T12:30:00',
+                        end : '2018-09-27T13:30:00',
+                        allDay : false,
+                        color: '#bed600',
+                        textColor: 'black',
+                    },
+                    {
+                        title : 'Event 2',
+                        start : '2018-09-27T13:30:00',
+                        end : '2018-09-27T14:30:00',
+                        allDay : false,
+                        color: 'res',
+                        textColor: 'white',
+                    }
+                ]
+            })
+        });
+    </script>
 {% endblock %}
