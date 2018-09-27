@@ -5,7 +5,7 @@ from django.views.generic import CreateView, UpdateView, DeleteView
 
 from wip.forms.client_contact import ClientContactForm
 from wip.models import Client, ClientContact
-from wip.views.mixins import ProtectedDeleteMixin
+from wip.views.mixins import ProtectedDeleteMixin, DeleteMessageMixin
 
 
 class ClientContactCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -26,7 +26,7 @@ class ClientContactCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return self.object.client.get_absolute_url()
 
 
-class ClientContactDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteView):
+class ClientContactDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteMessageMixin, DeleteView):
     model = ClientContact
 
     def get_success_url(self):

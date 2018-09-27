@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import CreateView, UpdateView, DeleteView
 
 from wip.models import Job, JobNote
-from wip.views.mixins import ProtectedDeleteMixin
+from wip.views.mixins import ProtectedDeleteMixin, DeleteMessageMixin
 
 
 class JobNoteCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -25,7 +25,7 @@ class JobNoteCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return self.object.job.get_absolute_url()
 
 
-class JobNoteDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteView):
+class JobNoteDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteMessageMixin, DeleteView):
     model = JobNote
 
     def get_success_url(self):

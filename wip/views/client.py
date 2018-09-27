@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
 from wip.models import Client, Job
-from wip.views.mixins import ProtectedDeleteMixin
+from wip.views.mixins import ProtectedDeleteMixin, DeleteMessageMixin
 
 
 class ClientCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -16,7 +16,7 @@ class ClientCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = 'wip/client_add.html'
 
 
-class ClientDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteView):
+class ClientDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteMessageMixin, DeleteView):
     model = Client
     success_url = reverse_lazy('wip:client-list')
 

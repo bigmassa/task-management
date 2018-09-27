@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import CreateView, UpdateView, DeleteView
 
 from wip.models import Task, TaskNote
-from wip.views.mixins import ProtectedDeleteMixin
+from wip.views.mixins import ProtectedDeleteMixin, DeleteMessageMixin
 
 
 class TaskNoteCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -25,7 +25,7 @@ class TaskNoteCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return self.object.task.get_absolute_url()
 
 
-class TaskNoteDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteView):
+class TaskNoteDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteMessageMixin, DeleteView):
     model = TaskNote
 
     def get_success_url(self):

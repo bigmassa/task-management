@@ -6,7 +6,7 @@ from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 
 from wip.forms import JobForm
 from wip.models import Client, Job, JobRelationship, Task, JobRecurringCost, JobNote
-from wip.views.mixins import ProtectedDeleteMixin
+from wip.views.mixins import ProtectedDeleteMixin, DeleteMessageMixin
 
 
 class JobCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -24,7 +24,7 @@ class JobCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return kwargs
 
 
-class JobDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteView):
+class JobDelete(LoginRequiredMixin, ProtectedDeleteMixin, DeleteMessageMixin, DeleteView):
     model = Job
 
     def get_success_url(self):

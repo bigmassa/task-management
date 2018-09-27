@@ -1,8 +1,24 @@
+from django.contrib import messages
 from django.contrib.admin.utils import NestedObjects
 from django.db import router
+from django.http import HttpResponseRedirect
+
+
+class DeleteMessageMixin:
+    """ Adds a message upon successful deletion. """
+
+    success_message = 'Deleted successfully'
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        success_url = self.get_success_url()
+        self.object.delete()
+        messages.success(self.request, self.success_message)
+        return HttpResponseRedirect(success_url)
 
 
 class ProtectedDeleteMixin:
+    """ Collects any entities that prevents this from being deleted. """
 
     def _get_protected(self):
         using = router.db_for_write(self.object)
