@@ -1,0 +1,27 @@
+<script>
+    $("[data-make-call-url]").click(function (evt) {
+
+        evt.preventDefault();
+
+        toastr.options = {
+          "closeButton": true,
+          "progressBar": true,
+          "positionClass": "toast-bottom-right",
+          "timeOut": "5000",
+        };
+
+        $.ajax({
+            url: $(this).data("make-call-url"),
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+            },
+            method: "POST",
+            success: function (data) {
+                toastr["success"](data.message, "Success");
+            },
+            error: function (data) {
+                toastr["error"](data.responseJSON.message, "Error", {"timeOut": "10000"});
+            },
+        });
+    });
+</script>

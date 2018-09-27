@@ -1663,11 +1663,54 @@ ul.radios input[type=radio] + span:after {
   border-radius: 50%;
 }
 
+.input-group {
+  max-width: 100%;
+  width: 100%;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-bottom: 1.5rem;
+}
+
+.input-group > *,
+.input-group > .icon-input > * {
+  border-radius: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.input-group > input,
+.input-group > select {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  position: relative;
+  width: 1%;
+}
+
+.input-group .input-group-addon {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 1rem;
+  white-space: nowrap;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.input-group > *:first-child,
+.input-group > *:first-child.icon-input > input {
+  border-top-left-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+}
+
+.input-group > *:last-child,
+.input-group > *:last-child.icon-input > input {
+  border-top-right-radius: 0.25rem !important;
+  border-bottom-right-radius: 0.25rem !important;
+}
+
 /* add your custom modules here */
 @font-face {
   font-family: 'fontello';
-  src: url("../font/fontello.eot?87378927");
-  src: url("../font/fontello.eot?87378927#iefix") format("embedded-opentype"), url("../font/fontello.woff2?87378927") format("woff2"), url("../font/fontello.woff?87378927") format("woff"), url("../font/fontello.ttf?87378927") format("truetype"), url("../font/fontello.svg?87378927#fontello") format("svg");
+  src: url("../font/fontello.eot?1686188");
+  src: url("../font/fontello.eot?1686188#iefix") format("embedded-opentype"), url("../font/fontello.woff2?1686188") format("woff2"), url("../font/fontello.woff?1686188") format("woff"), url("../font/fontello.ttf?1686188") format("truetype"), url("../font/fontello.svg?1686188#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1678,7 +1721,7 @@ ul.radios input[type=radio] + span:after {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?87378927#fontello') format('svg');
+    src: url('../font/fontello.svg?1686188#fontello') format('svg');
   }
 }
 */
@@ -1720,6 +1763,11 @@ ul.radios input[type=radio] + span:after {
 }
 
 /* '' */
+.icon-phone:before {
+  content: '\e802';
+}
+
+/* '' */
 .icon-trash:before {
   content: '\f1f8';
 }

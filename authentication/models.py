@@ -90,3 +90,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_initials(self):
         letters = [word[0] for word in self.get_full_name().split()]
         return ''.join(letters).upper()
+
+    @property
+    def is_gradwell_enabled(self):
+        return bool(self.gradwell_extension) and bool(self.gradwell_extension)

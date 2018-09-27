@@ -1,3 +1,6 @@
+from .make_call import (
+    MakeCall
+)
 from .client import (
     ClientCreate,
     ClientDelete,

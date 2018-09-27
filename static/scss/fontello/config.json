@@ -23,6 +23,12 @@
       "css": "cancel",
       "code": 59393,
       "src": "fontawesome"
+    },
+    {
+      "uid": "9f7e588c66cfd6891f6f507cf6f6596b",
+      "css": "phone",
+      "code": 59394,
+      "src": "fontawesome"
     }
   ]
 }
