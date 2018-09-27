@@ -13,6 +13,9 @@ from .client_contact import (
     ClientContactDelete,
     ClientContactUpdate
 )
+from .cloc import (
+    Cloc
+)
 from .job import (
     JobCreate,
     JobDelete,

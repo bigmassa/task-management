@@ -4,6 +4,7 @@
         <a class="nav-home mt-1 " href="/"><img src="{% static 'dist/img/task-management-logo.svg' %}" width="35" height="35"></a>
         <ul class="nav">
             <li><a href="{% url 'wip:client-list' %}">{% trans 'Clients' %}</a></li>
+            <li><a href="{% url 'wip:cloc' %}">{% trans 'Cloc' %}</a></li>
         </ul>
         <div class="ml-auto">
             <a class="avatar" href="{% url 'logout' %}">
