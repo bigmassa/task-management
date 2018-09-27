@@ -33,7 +33,9 @@ $body-background:         rgb(240, 240, 241);
 $link-color:              rgb(41, 44, 54);
 
 
+// misc
 $darken-hover-percent:    20%;
+$generic-margin-bottom:   1.5rem;
 
 
 // buttons
@@ -50,6 +52,7 @@ $button-border-radius:          .1rem;
 // forms
 $input-use-full-width:          true;
 $input-font-size:               1.3rem;
+$input-margin-bottom:           $generic-margin-bottom;
 
 
 // tables
@@ -77,3 +80,9 @@ $checkbox-font-weight:          400;
 $checkbox-size:                 2.4rem;
 $checkbox-tick-width:           .3rem;
 $radio-dot-spacing:             .4rem;
+
+
+// Input Groups
+
+$input-group-addon-y-padding:   1rem;
+$input-group-margin-bottom:     $input-margin-bottom;

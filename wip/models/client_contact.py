@@ -1,3 +1,4 @@
+from django.core.validators import RegexValidator
 from django.db import models
 from django.urls import reverse_lazy
 from taggit.managers import TaggableManager
@@ -18,12 +19,14 @@ class ClientContact(models.Model):
     phone_number = models.CharField(
         max_length=50,
         null=True,
-        blank=True
+        blank=True,
+        validators=[RegexValidator('^[0-9 ]+$')]
     )
     mobile_number = models.CharField(
         max_length=50,
         null=True,
-        blank=True
+        blank=True,
+        validators=[RegexValidator('^[0-9 ]+$')]
     )
     email_address = models.EmailField(
         null=True,

@@ -15,6 +15,7 @@ class UserAdmin(BaseUserAdmin):
         ('Personal info', {'fields': ('first_name', 'last_name', )}),
         ('Important dates', {'fields': ('last_login', )}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', )}),
+        ('Gradwell', {'fields': ('gradwell_token', 'gradwell_extension', )}),
     )
     add_fieldsets = (
         (None, {'fields': ('email', 'password1', 'password2', )}),

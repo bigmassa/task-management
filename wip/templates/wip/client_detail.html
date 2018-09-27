@@ -22,7 +22,14 @@
                 <p><a href="mailto://{{ object.email_address }}" class="underline-dotted">{{ object.email_address }}</a></p>
                 <hr/>
                 <p class="strong">{% trans 'Phone Number' %}</p>
-                <p><a href="tel:{{ object.phone_number }}" class="underline-dotted">{{ object.phone_number }}</a></p>
+                <p>
+                    {% if object.phone_number %}
+                        <a href="tel:{{ object.phone_number }}" class="underline-dotted">{{ object.phone_number }}</a>
+                        {% if user.is_gradwell_enabled %}
+                            <a href="" data-make-call-url="{% url 'wip:make-call' object.phone_number|cut:" " %}"><i class="icon-phone c-red"></i></a>
+                        {% endif %}
+                    {% endif %}
+                </p>
                 <hr/>
                 <p class="strong">{% trans 'Website' %}</p>
                 <p><a href="{{ object.website }}" class="underline-dotted">{{ object.website }}</a></p>
@@ -96,6 +103,7 @@
     </div>
 {% endblock %}
 {% block extra_js %}
+    {% include 'partials/make_call_js.html' %}
     <script src="{% static 'dist/js/tabs.js' %}"></script>
     <script>$('.tabs').tabs();</script>
 {% endblock %}

@@ -1,3 +1,4 @@
+from django.core.validators import RegexValidator
 from django.db import models
 from django.urls import reverse
 
@@ -24,6 +25,7 @@ class ModelTests(AppTestCase):
         field = Client._meta.get_field('phone_number')
         self.assertModelField(field, models.CharField, null=True, blank=True)
         self.assertEqual(field.max_length, 50)
+        self.assertIn(RegexValidator('^[0-9 ]+$'), field.validators)
 
     def test_email_address(self):
         field = Client._meta.get_field('email_address')

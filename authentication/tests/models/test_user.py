@@ -1,5 +1,6 @@
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.models import PermissionsMixin
+from django.db import models
 
 from authentication.models import User, UserManager
 from tests.test_case import AppTestCase
@@ -46,6 +47,15 @@ class ModelTests(AppTestCase):
     def test_date_joined(self):
         field = User._meta.get_field('date_joined')
         self.assertEqual(field.auto_now_add, True)
+
+    def test_gradwell_token(self):
+        field = User._meta.get_field('gradwell_token')
+        self.assertModelField(field, models.CharField, null=True, blank=True)
+        self.assertEqual(field.max_length, 100)
+
+    def test_gradwell_extension(self):
+        field = User._meta.get_field('gradwell_extension')
+        self.assertModelField(field, models.IntegerField, null=True, blank=True)
 
     ##################################
     # auth only specifics            #

@@ -164,6 +164,11 @@ AWS_IS_GZIPPED = True
 AWS_AUTO_CREATE_BUCKET = True
 
 
+# Gradwell
+
+GRADWELL_API_URL = 'https://call-api.gradwell.com/0.9.3/call?auth={}&extension={}&destination={}'
+
+
 # Sentry - if its installed and we have a dsn in the environment
 
 try:

@@ -22,14 +22,39 @@
         </div>
         <div class="container inner-content">
             {% for field in form %}
-                <div class="row field-wrapper">
-                    <div class="col-lg-2">{{ field.label_tag }}</div>
-                    <div class="col-lg-10">{{ field }}{{ field.errors }}</div>
-                </div>
+                {% if user.is_gradwell_enabled %}
+                    {% if field.name == 'phone_number' or field.name == 'mobile_number' %}
+                        <div class="row field-wrapper">
+                            <div class="col-lg-2">{{ field.label_tag }}</div>
+                            <div class="col-lg-10">
+                                <div class="input-group">
+                                    {{ field }}
+                                    {% if field.value %}
+                                        <div class="input-group-addon">
+                                            <a href="" data-make-call-url="{% url 'wip:make-call' field.value|cut:" " %}"><i class="icon-phone c-red"></i></a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                {{ field.errors }}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="row field-wrapper">
+                            <div class="col-lg-2">{{ field.label_tag }}</div>
+                            <div class="col-lg-10">{{ field }}{{ field.errors }}</div>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <div class="row field-wrapper">
+                        <div class="col-lg-2">{{ field.label_tag }}</div>
+                        <div class="col-lg-10">{{ field }}{{ field.errors }}</div>
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </form>
 {% endblock %}
 {% block extra_js %}
     {{ form.media }}
+    {% include 'partials/make_call_js.html' %}
 {% endblock %}

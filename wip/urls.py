@@ -6,6 +6,7 @@ from wip import views
 app_name = 'wip'
 
 urlpatterns = [
+    path('make-call/<telephone_number>/', views.MakeCall.as_view(), name='make-call'),
     path('clients/', views.ClientList.as_view(), name='client-list'),
     path('clients/<int:pk>/', views.ClientDetail.as_view(), name='client-detail'),
     path('clients/create/', views.ClientCreate.as_view(), name='client-create'),
