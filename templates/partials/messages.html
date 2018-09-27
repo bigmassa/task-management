@@ -3,7 +3,7 @@
 {% if messages %}
 <script>
     toastr.options = {
-      "closeButton": false,
+      "closeButton": true,
       "debug": false,
       "newestOnTop": false,
       "progressBar": true,
@@ -20,7 +20,11 @@
       "hideMethod": "fadeOut"
     };
     {% for message in messages %}
-    toastr["{{ message.tags }}"]("{{ message }}", "{{ message.tags|capfirst }}");
+        {% if 'error' in message.tags %}
+            toastr["{{ message.tags }}"]("{{ message }}", "{{ message.tags|capfirst }}", {"timeOut": "10000"});
+        {% else %}
+            toastr["{{ message.tags }}"]("{{ message }}", "{{ message.tags|capfirst }}");
+        {% endif %}
     {% endfor %}
 </script>
 {% endif %}
