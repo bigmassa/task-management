@@ -1,11 +1,19 @@
-from django.urls import path
+from django.urls import path, include
 
-from wip import views
+from wip import api, routers, views
 
 
+# API
+API_TITLE = 'WIP API'
+API_DESCRIPTION = 'WIP API Documentation'
+
+router = routers.DefaultRouter()
+router.register(r'time-entries', api.TimeEntryViewSet)
+
+# DESKTOP
 app_name = 'wip'
-
 urlpatterns = [
+    path('api/', include(router.urls)),
     path('make-call/<telephone_number>/', views.MakeCall.as_view(), name='make-call'),
     path('clients/', views.ClientList.as_view(), name='client-list'),
     path('clients/<int:pk>/', views.ClientDetail.as_view(), name='client-detail'),
