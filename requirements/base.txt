@@ -2,6 +2,7 @@ boto3
 coreapi
 django
 django-autocomplete-light
+django-filter
 django-pyodbc-azure
 django-storages
 django-taggit

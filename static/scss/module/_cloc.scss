@@ -1,0 +1,48 @@
+// Cloc
+// ------------------------------
+
+.client-list,
+.client-list ul {
+  margin-left: 0;
+  list-style-type: none;
+}
+
+.client-list .client {
+  display: block;
+  padding: 1rem 1rem;
+  margin-bottom: .3rem;
+  background: color("shadylady");
+  border-bottom: 1px solid $border-color;
+}
+
+.client-list .job {
+  display: block;
+  padding: 1rem 1rem;
+  margin-bottom: .3rem;
+  border-bottom: 1px solid $border-color;
+}
+
+.client-list .task {
+  padding: 1rem 1rem;
+  margin-bottom: .3rem;
+  cursor: move;
+  border-radius: .25rem;
+}
+
+.cloc-event-overlay {
+  @include position($right: 25px, $bottom: 25px);
+  z-index: 10;
+  display: none;
+  width: 400px;
+  padding: 1.5rem;
+  background: color("white");
+}
+
+.cloc-event-overlay.in {
+  display: block;
+}
+
+.cloc-event-overlay .close {
+  @include position($right: 15px);
+  cursor: pointer;
+}

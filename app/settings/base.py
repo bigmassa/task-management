@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     'dal',
     'dal_select2',
+    'django_filters',
     'rest_framework',
     'storages',
     'taggit',
@@ -170,6 +171,9 @@ AWS_AUTO_CREATE_BUCKET = True
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
     ),
     'DEFAULT_METADATA_CLASS': 'rest_framework.metadata.SimpleMetadata',
     'DEFAULT_PARSER_CLASSES': (

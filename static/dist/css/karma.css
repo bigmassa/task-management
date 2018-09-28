@@ -1773,6 +1773,60 @@ ul.radios input[type=radio] + span:after {
 }
 
 /* '' */
+.client-list,
+.client-list ul {
+  margin-left: 0;
+  list-style-type: none;
+}
+
+.client-list .client {
+  display: block;
+  padding: 1rem 1rem;
+  margin-bottom: .3rem;
+  background: #979797;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.client-list .job {
+  display: block;
+  padding: 1rem 1rem;
+  margin-bottom: .3rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.client-list .task {
+  padding: 1rem 1rem;
+  margin-bottom: .3rem;
+  cursor: move;
+  border-radius: .25rem;
+}
+
+.cloc-event-overlay {
+  position: absolute;
+  top: auto;
+  right: 25px;
+  bottom: 25px;
+  left: auto;
+  z-index: 10;
+  display: none;
+  width: 400px;
+  padding: 1.5rem;
+  background: white;
+}
+
+.cloc-event-overlay.in {
+  display: block;
+}
+
+.cloc-event-overlay .close {
+  position: absolute;
+  top: auto;
+  right: 15px;
+  bottom: auto;
+  left: auto;
+  cursor: pointer;
+}
+
 /* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
 .dropzone {
   min-height: 120px !important;

@@ -9,7 +9,27 @@
         </div>
     </div>
     <div class="container">
-        <div class="cloc"></div>
+        <div class="row">
+            <div class="col-3">
+                <input type="text" placeholder="Search">
+                <div class="client-list-wrapper"></div>
+            </div>
+            <div class="col-9 relative">
+                <div class="cloc"></div>
+                <div class="cloc-event-overlay">
+                    <a class="close"><i class="icon-cancel"></i></a>
+                    <h2 class="title">Title</h2>
+                    <form>
+                        <label>Comments</label>
+                        <textarea name="comments" rows="5"></textarea>
+                        <div class="text-right">
+                            <button type="submit" class="button button-primary">{% trans 'Update' %}</button>
+                            <a class="delete button button-primary button-clear">{% trans 'Delete' %} <i class="icon-trash"></i></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
@@ -18,40 +38,282 @@
 {% endblock %}
 
 {% block extra_js %}
+    <script type="text/javascript" src="{% static 'dist/vendor/jqueryui/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'dist/vendor/moment/moment.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'dist/vendor/fullcalendar/fullcalendar.min.js' %}"></script>
     <script type="text/javascript">
         $(function() {
+            var clientData = [{% for client in clients.all %}
+                {
+                    pk: {{ client.pk }},
+                    name: "{{ client.name}}",
+                    jobs: [{% for job in client.jobs.all %}
+                        {
+                            pk: {{ job.pk }},
+                            title: "{{ job.title}}",
+                            colour: "{{ job.colour }}",
+                            tasks: [{% for task in job.tasks.all %}
+                                {
+                                    pk: {{ task.pk}},
+                                    title: "{{ task.title }}"
+                                },{% endfor %}
+                            ]
+                        },{% endfor %}
+                    ]
+                }{% endfor %}
+            ];
+            var slotDuration = { minutes: 5 };
+            var listUrl = "{% url 'wip:timeentry-list' %}";
+            var updateUrl = "{% url 'wip:timeentry-detail' 0 %}";
+            var overlay = $('.cloc-event-overlay');
+            var user = {{ user.pk }};
+            var headers = {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            };
+
+            function redrawTaskList() {
+                var clientTree = $("<ul></ul>");
+                clientTree.addClass("client-list");
+                $.each(clientData, function(index, client) {
+                    var clientNode = $("<li></li>");
+                    clientTree.append(clientNode);
+                    var clientLink = $("<a></a>");
+                    clientLink.addClass("client").text(client.name);
+                    clientNode.append(clientLink);
+                    if (client.jobs.length > 0) {
+                        var jobTree = $("<ul></ul>");
+                        $.each(client.jobs, function(index, job) {
+                            var jobNode = $("<li></li>");
+                            jobTree.append(jobNode);
+                            var jobLink = $("<a></a>");
+                            jobNode.append(jobLink);
+                            jobLink.addClass("job").text(job.title);
+                            if (job.tasks.length > 0) {
+                                var taskTree = $("<ul></ul>");
+                                $.each(job.tasks, function(index, task) {
+                                    var taskNode = $("<li></li>");
+                                    taskTree.append(taskNode);
+                                    taskNode.addClass("task");
+                                    taskNode.text(task.title);
+                                    taskNode.data("id", task.pk);
+                                    taskNode.data("title", task.title);
+                                    taskNode.css("background", job.colour);
+                                    taskNode.draggable({
+                                        zIndex: 100,
+                                        revert: true,
+                                        revertDuration: 0
+                                    });
+                                });
+                                jobNode.append(taskTree);
+                            }
+                        });
+                        clientNode.append(jobTree);
+                    }
+                });
+                $(".client-list-wrapper").append(clientTree);
+            }
+
+            redrawTaskList();
+
             $('.cloc').fullCalendar({
                 defaultView: 'agendaWeek',
-                header: { center: 'agendaDay,agendaWeek'},
+                header: {center: 'agendaDay,agendaWeek'},
                 allDaySlot: false,
+                // height: 'parent',
                 nowIndicator: true,
                 slotEventOverlap: false,
-                slotDuration: '00:10:00',
+                slotDuration: slotDuration,
+                defaultTimedEventDuration: slotDuration,
+                scrollTime: moment().format('HH:MM:SS'),
                 editable: true,
+                droppable: true,
                 eventOverlap: false,
-                eventDrop: function(event, delta, revertFunc) {
-                    console.log('eventDrop', event, delta, revertFunc);
+                events: function (start, end, timezone, callback) {
+                    $.ajax({
+                        type: "GET",
+                        url: listUrl,
+                        data: {
+                            user: user,
+                            started_at_after: start.format("YYYY-MM-DD"),
+                            started_at_before: end.format("YYYY-MM-DD")
+                        },
+                        success: function (data) {
+                            var events = [];
+                            var obj = data;
+                            $(obj).each(function () {
+                                events.push({
+                                    title: $(this).attr('title'),
+                                    start: $(this).attr('started_at'),
+                                    end: $(this).attr('ended_at'),
+                                    id: $(this).attr('id'),
+                                    task: $(this).attr('task'),
+                                    comments: $(this).attr('comments'),
+                                    color: $(this).attr('colour'),
+                                    textColor: 'black',
+                                });
+                            });
+                            if (callback) callback(events);
+                        }
+                    });
                 },
-                events: [
-                    {
-                        title : 'Event 1',
-                        start : '2018-09-27T12:30:00',
-                        end : '2018-09-27T13:30:00',
-                        allDay : false,
-                        color: '#bed600',
-                        textColor: 'black',
-                    },
-                    {
-                        title : 'Event 2',
-                        start : '2018-09-27T13:30:00',
-                        end : '2018-09-27T14:30:00',
-                        allDay : false,
-                        color: 'res',
-                        textColor: 'white',
+                drop: function(date, jsEvent) {
+                    $.ajax({
+                        type: "POST",
+                        url: listUrl,
+                        data: JSON.stringify({
+                            task: $(jsEvent.target).data('id'),
+                            user: user,
+                            started_at: date.toISOString(),
+                            ended_at: date.clone().add(slotDuration.minutes, 'minutes').toISOString()
+                        }),
+                        headers: headers,
+                        success: function (data) {
+                            var event = {
+                                title: $(data).attr('title'),
+                                start: $(data).attr('started_at'),
+                                end: $(data).attr('ended_at'),
+                                id: $(data).attr('id'),
+                                task: $(data).attr('task'),
+                                comments: $(data).attr('comments'),
+                                color: $(data).attr('colour'),
+                                textColor: '#000',
+                            };
+                            $('.cloc').fullCalendar('renderEvent', event, false);
+                        },
+                        error: function (err) {
+                            console.log(err);
+                        }
+                    });
+                },
+                eventDrop: function(event, delta, revertFunc, jsEvent) {
+                    if (!jsEvent.shiftKey) {
+                        // update event with new dates
+                        $.ajax({
+                            type: "PATCH",
+                            url: updateUrl.replace(0, event.id),
+                            data: JSON.stringify({
+                                started_at: event.start.toISOString(),
+                                ended_at: event.end.toISOString()
+                            }),
+                            headers: headers,
+                            success: function (data) {
+                                // nothing
+                            },
+                            error: function (err) {
+                                revertFunc();
+                            }
+                        });
+                    } else {
+                        // copy the event and revert the original
+                        $.ajax({
+                            type: "POST",
+                            url: listUrl,
+                            data: JSON.stringify({
+                                task: event.task,
+                                user: user,
+                                started_at: event.start.toISOString(),
+                                ended_at: event.start.clone().add(slotDuration.minutes, 'minutes').toISOString()
+                            }),
+                            headers: headers,
+                            success: function (data) {
+                                var event = {
+                                    title: $(data).attr('title'),
+                                    start: $(data).attr('started_at'),
+                                    end: $(data).attr('ended_at'),
+                                    id: $(data).attr('id'),
+                                    task: $(data).attr('task'),
+                                    comments: $(data).attr('comments'),
+                                    color: $(data).attr('colour'),
+                                    textColor: '#000',
+                                };
+                                $('.cloc').fullCalendar('renderEvent', event, false);
+                            },
+                            error: function (err) {
+                                revertFunc();
+                            }
+                        });
+                        revertFunc();
                     }
-                ]
+                },
+                eventResize: function(event, delta, revertFunc) {
+                    var pk = $(event).attr('id');
+                    $.ajax({
+                        type: "PATCH",
+                        url: updateUrl.replace(0, pk),
+                        data: JSON.stringify({
+                            started_at: event.start.toISOString(),
+                            ended_at: event.end.toISOString()
+                        }),
+                        headers: headers,
+                        success: function (data) {
+                            // nothing
+                        },
+                        error: function (err) {
+                            revertFunc();
+                        }
+                    });
+                },
+                eventClick: function(calEvent, jsEvent, view) {
+                    var pk = calEvent.id;
+
+                    // sets the detail in the form from the event data
+                    overlay.find('.title').html(calEvent.title);
+                    overlay.css("background-color", calEvent.color);
+                    overlay.find('[name=comments]').val(calEvent.comments);
+                    overlay.addClass('in');
+
+                    // remove any previous events
+                    overlay.find('form').off('submit');
+                    overlay.find('.close').off('click');
+                    overlay.find('.delete').off('click');
+
+                    // setup close event
+                    overlay.find('.close').on('click', function () {
+                        overlay.removeClass('in');
+                    });
+
+                    // setup update event
+                    overlay.find('form').on('submit', function (evt) {
+                        evt.preventDefault();
+                        $.ajax({
+                            type: "PATCH",
+                            url: updateUrl.replace(0, calEvent.id),
+                            data: JSON.stringify({
+                                comments: $(this).find('[name=comments]').val()
+                            }),
+                            headers: headers,
+                            success: function (data) {
+                                calEvent.comments = data.comments;
+                                $('.cloc').fullCalendar('updateEvent', calEvent);
+                                overlay.removeClass('in');
+                            },
+                            error: function (err) {
+                                console.log(err);
+                            }
+                        });
+                    });
+
+                    // setup delete event
+                    overlay.find('.delete').on('click', function (evt) {
+                        evt.preventDefault();
+                        $.ajax({
+                            type: "DELETE",
+                            url: updateUrl.replace(0, pk),
+                            data: {},
+                            headers: headers,
+                            success: function (data) {
+                                $('.cloc').fullCalendar('removeEvents', calEvent.id);
+                                overlay.removeClass('in');
+                            },
+                            error: function (err) {
+                                console.log(err);
+                            }
+                        });
+                    });
+
+                }
             })
         });
     </script>
