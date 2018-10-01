@@ -11,6 +11,7 @@
   display: block;
   padding: 1rem 1rem;
   margin-bottom: .3rem;
+  cursor: pointer;
   background: color("shadylady");
   border-bottom: 1px solid $border-color;
 }
@@ -19,6 +20,7 @@
   display: block;
   padding: 1rem 1rem;
   margin-bottom: .3rem;
+  cursor: pointer;
   border-bottom: 1px solid $border-color;
 }
 
@@ -27,6 +29,23 @@
   margin-bottom: .3rem;
   cursor: move;
   border-radius: .25rem;
+}
+
+.cloc {
+  position: relative;
+  margin-bottom: $generic-margin-bottom;
+}
+
+.cloc table {
+  margin-bottom: 0;
+}
+
+.cloc .fc-dailycontrol {
+  margin: .5rem 1.5rem;
+
+  input {
+    display: none;
+  }
 }
 
 .cloc-event-overlay {
@@ -45,4 +64,14 @@
 .cloc-event-overlay .close {
   @include position($right: 15px);
   cursor: pointer;
+}
+
+
+// full calendar
+
+/* stylelint-disable declaration-no-important, selector-pseudo-element-colon-notation */
+.fc-view-container *,
+.fc-view-container :after,
+.fc-view-container :before {
+  box-sizing: border-box !important;
 }

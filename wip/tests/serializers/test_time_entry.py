@@ -27,7 +27,8 @@ class TestSerializer(AppTestCase):
                 'task',
                 'user',
                 'title',
-                'colour'
+                'colour',
+                'duration'
             ]
         )
 
@@ -51,6 +52,35 @@ class TestSerializer(AppTestCase):
                 'task': instance.task.pk,
                 'user': instance.user.pk,
                 'title': '%s - %s' % (instance.task.job, instance.task),
-                'colour': instance.task.job.colour
+                'colour': instance.task.job.colour,
+                'duration': '00:15:00'
             }
         )
+
+    # validation
+
+    def test_time_span_multiple_days(self):
+        user = User.objects.first()
+        job = Job.objects.first()
+        data = {
+            'task': job.tasks.first().pk,
+            'started_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
+            'ended_at': timezone.datetime(2018, 1, 2, 0, 0, 0),
+            'user': user.pk
+        }
+        serializer = TimeEntrySerializer(data=data)
+        self.assertFalse(serializer.is_valid())
+        self.assertEqual(serializer.errors, {'non_field_errors': ['Time entry cannot span multiple days']})
+
+    def test_ended_at_before_started_at(self):
+        user = User.objects.first()
+        job = Job.objects.first()
+        data = {
+            'task': job.tasks.first().pk,
+            'started_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
+            'ended_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
+            'user': user.pk
+        }
+        serializer = TimeEntrySerializer(data=data)
+        self.assertFalse(serializer.is_valid())
+        self.assertEqual(serializer.errors, {'ended_at': ['Must be after Started at']})

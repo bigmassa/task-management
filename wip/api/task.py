@@ -9,8 +9,8 @@ from wip.serializers import TaskSerializer
 
 
 class TaskFilter(FilterSet):
+    assignee = ModelChoiceFilter(field_name='assignees__user', queryset=User.objects.all())
     search = CharFilter(method='search_filter')
-    user = ModelChoiceFilter(field_name='assignees__user', queryset=User.objects.all())
 
     def search_filter(self, queryset, name, value):
         all_filters = Q()

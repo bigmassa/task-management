@@ -11,6 +11,14 @@ input[type="color"] {
   border-radius: $input-border-radius;
 }
 
+input[type="time"] {
+  @include input;
+  @include input-size;
+  @include input-width;
+  @include input-focus;
+  -webkit-appearance: none; // stylelint-disable-line property-no-vendor-prefix
+}
+
 .checkbox {
   margin-bottom: $input-margin-bottom;
   input {

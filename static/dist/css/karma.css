@@ -1783,6 +1783,7 @@ ul.radios input[type=radio] + span:after {
   display: block;
   padding: 1rem 1rem;
   margin-bottom: .3rem;
+  cursor: pointer;
   background: #979797;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -1791,6 +1792,7 @@ ul.radios input[type=radio] + span:after {
   display: block;
   padding: 1rem 1rem;
   margin-bottom: .3rem;
+  cursor: pointer;
   border-bottom: 1px solid #e6e6e6;
 }
 
@@ -1799,6 +1801,23 @@ ul.radios input[type=radio] + span:after {
   margin-bottom: .3rem;
   cursor: move;
   border-radius: .25rem;
+}
+
+.cloc {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.cloc table {
+  margin-bottom: 0;
+}
+
+.cloc .fc-dailycontrol {
+  margin: .5rem 1.5rem;
+}
+
+.cloc .fc-dailycontrol input {
+  display: none;
 }
 
 .cloc-event-overlay {
@@ -1825,6 +1844,13 @@ ul.radios input[type=radio] + span:after {
   bottom: auto;
   left: auto;
   cursor: pointer;
+}
+
+/* stylelint-disable declaration-no-important, selector-pseudo-element-colon-notation */
+.fc-view-container *,
+.fc-view-container :after,
+.fc-view-container :before {
+  box-sizing: border-box !important;
 }
 
 /* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
@@ -1865,6 +1891,30 @@ input[type="color"] {
   margin-bottom: 1.5rem;
   border: 1px solid #e6e6e6;
   border-radius: 0.25rem;
+}
+
+input[type="time"] {
+  box-sizing: border-box;
+  margin-bottom: 1.5rem;
+  font-family: inherit;
+  line-height: 1.5;
+  color: #3e3e3e;
+  background: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  transition: background linear 250ms, border-color linear 250ms;
+  padding: 0.8rem 1rem;
+  font-size: 1.3rem;
+  max-width: 100%;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+input[type="time"]:focus {
+  background: white;
+  border-color: #292c36;
+  outline: 0;
 }
 
 .checkbox {
@@ -2404,6 +2454,14 @@ td textarea {
 
 .mt-1 {
   margin-top: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .comment {

@@ -1,4 +1,7 @@
+import datetime
+
 from django.db import models
+from django.utils import timezone
 
 from authentication.models import User
 from tests.test_case import AppTestCase
@@ -33,3 +36,12 @@ class ModelTests(AppTestCase):
 
     def test_ordering(self):
         self.assertEqual(TimeEntry._meta.ordering, ['started_at'])
+
+    # properties
+
+    def test_duration(self):
+        entry = TimeEntry(
+            started_at=timezone.datetime(2018, 1, 1, 9, 0, 0),
+            ended_at=timezone.datetime(2018, 1, 1, 9, 15, 0)
+        )
+        self.assertEqual(entry.duration, datetime.timedelta(0, 900))
