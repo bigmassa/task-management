@@ -59,7 +59,7 @@ class Job(models.Model):
     )
     client = models.ForeignKey(
         'wip.Client',
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         related_name='jobs'
     )
     type = models.ForeignKey(

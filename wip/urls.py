@@ -8,6 +8,9 @@ API_TITLE = 'WIP API'
 API_DESCRIPTION = 'WIP API Documentation'
 
 router = routers.DefaultRouter()
+router.register(r'clients', api.ClientViewSet)
+router.register(r'jobs', api.JobViewSet)
+router.register(r'tasks', api.TaskViewSet)
 router.register(r'time-entries', api.TimeEntryViewSet)
 
 # DESKTOP
@@ -15,7 +18,7 @@ app_name = 'wip'
 urlpatterns = [
     path('api/', include(router.urls)),
     path('make-call/<telephone_number>/', views.MakeCall.as_view(), name='make-call'),
-    path('clients/', views.ClientList.as_view(), name='client-list'),
+    path('clients/', views.ClientList.as_view(), name='client-list-view'),
     path('clients/<int:pk>/', views.ClientDetail.as_view(), name='client-detail'),
     path('clients/create/', views.ClientCreate.as_view(), name='client-create'),
     path('clients/<int:pk>/update/', views.ClientUpdate.as_view(), name='client-update'),

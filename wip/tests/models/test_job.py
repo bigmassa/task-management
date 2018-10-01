@@ -4,10 +4,9 @@ from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 
-from authentication.models import User
 from tests.test_case import AppTestCase
 from wip.fields import ColorField
-from wip.models import Client, Job, JobStatus, JobType, Task, TimeEntry
+from wip.models import Client, Job, JobStatus, JobType, TimeEntry
 
 
 class ModelTests(AppTestCase):
@@ -31,7 +30,7 @@ class ModelTests(AppTestCase):
 
     def test_client(self):
         field = Job._meta.get_field('client')
-        self.assertModelPKField(field, Client, on_delete=models.PROTECT, related_name='jobs')
+        self.assertModelPKField(field, Client, on_delete=models.CASCADE, related_name='jobs')
 
     def test_estimated_hours(self):
         field = Job._meta.get_field('estimated_hours')

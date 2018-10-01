@@ -102,11 +102,9 @@
                                 {% endfor %}
                             </tbody>
                         </table>
-                        {% if object.tasks.closed %}
                         <div class="text-center pt-2">
                             <a class="button button-shadylady button-outline toggle-closed-tasks">{% trans 'Show Closed' %}</a>
                         </div>
-                        {% endif %}
                     </div>
                     <div data-tab="notes" class="d-hidden">
                         <div class="panel-actions">
