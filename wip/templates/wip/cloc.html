@@ -60,6 +60,7 @@
     <script type="text/javascript" src="{% static 'dist/vendor/fullcalendar/fullcalendar.min.js' %}"></script>
     <script type="text/javascript">
         $(function() {
+            var timeDailySignoffUrl = "{% url 'wip:timedailysignoff-list' %}";
             var timeEntryListUrl = "{% url 'wip:timeentry-list' %}";
             var timeEntryUpdateUrl = "{% url 'wip:timeentry-detail' 0 %}";
             var currentUser = {{ user.pk }};
@@ -161,6 +162,23 @@
                 $(this).find('[data-task-id]').toggle();
             });
 
+            $(document).on('change', '.fc-day-header .fc-dailycontrol input[type=checkbox]', function () {
+                var _this = $(this);
+                $.ajax({
+                    type: "POST",
+                    url: timeDailySignoffUrl,
+                    headers: headers,
+                    data: JSON.stringify({
+                        date: $(_this).closest('.fc-day-header').data('date'),
+                        user: currentUser,
+                        completed: $(_this)[0].checked
+                    }),
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            });
+
             var clocOptions = {
                 defaultView: 'agendaWeek',
                 header: {center: 'agendaDay,agendaWeek'},
@@ -201,13 +219,31 @@
                                 });
                             });
                             if (callback) callback(events);
+                        },
+                        error: function (err) {
+                            console.log(err);
                         }
                     });
                 },
                 viewRender: function(view, element) {
                     // add the controls to the day header
                     $.each($(".fc-day-header"), function(key, val) {
-                        $(this).append('<div class="fc-dailycontrol"><div class="checkbox"><label><input type="checkbox"><span></span><em>00:00</em></label></div></div>');
+                        var _this = $(this);
+                        $.ajax({
+                            type: "GET",
+                            url: timeDailySignoffUrl,
+                            data: {
+                                user: currentUser,
+                                date: $(_this).data('date')
+                            },
+                            success: function (data) {
+                                var checked = '';
+                                if (data.length > 0 && $(data)[0].completed) {
+                                    checked = 'checked';
+                                }
+                                $(_this).append('<div class="fc-dailycontrol"><div class="checkbox"><label><input type="checkbox" ' + checked + '><span></span><em>00:00</em></label></div></div>');
+                            }
+                        });
                     });
                 },
                 eventRender: function(event, element, view) {

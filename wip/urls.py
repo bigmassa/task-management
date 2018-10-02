@@ -11,6 +11,7 @@ router = routers.DefaultRouter()
 router.register(r'clients', api.ClientViewSet)
 router.register(r'jobs', api.JobViewSet)
 router.register(r'tasks', api.TaskViewSet)
+router.register(r'time-daily-signoff', api.TimeDailySignoffViewSet)
 router.register(r'time-entries', api.TimeEntryViewSet)
 
 # DESKTOP
