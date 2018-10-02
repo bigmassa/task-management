@@ -18,20 +18,22 @@
                 <div class="cloc">
                     <div class="cloc-event-overlay">
                         <a class="close"><i class="icon-cancel"></i></a>
-                        <h2 class="title">Title</h2>
+                        <h2 class="title"></h2>
+                        <p>{% trans 'To change the task click one from the main list' %}</p>
                         <form>
+                            <input type="hidden" name="task">
                             <div class="row">
                                 <div class="col">
-                                    <label>Start Time</label>
+                                    <label>{% trans 'Start Time' %}</label>
                                     <input type="time" name="start_time" min="0:00" max="23:59" />
                                 </div>
                                 <div class="col">
-                                    <label>End Time</label>
+                                    <label>{% trans 'End Time' %}</label>
                                     <input type="time" name="end_time" min="0:00" max="23:59" />
                                 </div>
                             </div>
-                            <label>Comments</label>
-                            <textarea name="comments" rows="5"></textarea>
+                            <label>{% trans 'Comments' %}</label>
+                            <textarea name="comments" rows="3"></textarea>
                             <div class="text-right">
                                 <button type="submit" class="button button-primary">{% trans 'Update' %}</button>
                                 <a class="delete button button-primary button-clear">{% trans 'Delete' %} <i class="icon-trash"></i></a>
@@ -62,9 +64,11 @@
         $(function() {
             var timeDailySignoffUrl = "{% url 'wip:timedailysignoff-list' %}";
             var timeEntryListUrl = "{% url 'wip:timeentry-list' %}";
-            var timeEntryUpdateUrl = "{% url 'wip:timeentry-detail' 0 %}";
+            var clientListUrl = "{% url 'wip:client-list' %}";
+            var jobListUrl = "{% url 'wip:job-list' %}";
+            var taskListUrl = "{% url 'wip:task-list' %}";
             var currentUser = {{ user.pk }};
-            var headers = {
+            var ajaxHeaders = {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
                 'X-CSRFToken': '{{ csrf_token }}'
@@ -73,21 +77,21 @@
             function getClients() {
                 return $.ajax({
                     type: "GET",
-                    url: "{% url 'wip:client-list' %}"
+                    url: clientListUrl
                 });
             }
 
             function getJobs() {
                 return $.ajax({
                     type: "GET",
-                    url: "{% url 'wip:job-list' %}"
+                    url: jobListUrl
                 });
             }
 
             function getTasks() {
                 return $.ajax({
                     type: "GET",
-                    url: "{% url 'wip:task-list' %}",
+                    url: taskListUrl,
                     data: {
                         assignee: currentUser,
                         search: $('[name=search]').val()
@@ -128,15 +132,21 @@
                             jobNode = $(foundNodes[0]);
                         }
 
-                        taskNode = $('<li data-task-id="' + task.id + '" data-title="\' + task.title + \'"></li>');
+                        taskNode = $('<li data-task-id="' + task.id + '" data-title="' + task.title + '" data-colour="' + job.colour + '"></li>');
+                        taskNode.text(task.title).addClass("task").css("background", job.colour);
+
                         if (!show) {
                             taskNode.hide();
                         }
-                        taskNode.text(task.title).addClass("task").css("background", job.colour);
+
                         taskNode.draggable({
+                            cursor: "move",
                             zIndex: 100,
                             revert: true,
-                            revertDuration: 0
+                            revertDuration: 0,
+                            helper: function(event) {
+                                return $( "<div class='task-drag-element'>" + task.title + "</div>" );
+                            }
                         });
                         jobNode.find('ul').first().append(taskNode);
                     });
@@ -152,14 +162,14 @@
                 buildClientList(show);
             });
 
-            $(document).on('click', '[data-client-id]', function (evt) {
+            $(document).on('click', '[data-client-id] a', function (evt) {
                 evt.stopPropagation();
-                $(this).find('[data-job-id]').toggle();
+                $(this).siblings('ul').find('[data-job-id]').toggle();
             });
 
-            $(document).on('click', '[data-job-id]', function (evt) {
+            $(document).on('click', '[data-job-id] a', function (evt) {
                 evt.stopPropagation();
-                $(this).find('[data-task-id]').toggle();
+                $(this).siblings('ul').find('[data-task-id]').toggle();
             });
 
             $(document).on('change', '.fc-day-header .fc-dailycontrol input[type=checkbox]', function () {
@@ -167,7 +177,7 @@
                 $.ajax({
                     type: "POST",
                     url: timeDailySignoffUrl,
-                    headers: headers,
+                    headers: ajaxHeaders,
                     data: JSON.stringify({
                         date: $(_this).closest('.fc-day-header').data('date'),
                         user: currentUser,
@@ -247,6 +257,7 @@
                     });
                 },
                 eventRender: function(event, element, view) {
+                    // reset the totals for eventAfterRender
                     var currentday = moment(event.start).format("YYYY-MM-DD");
                     $(".fc-day-header[data-date=" + currentday + "] em").text("00:00");
                 },
@@ -283,7 +294,7 @@
                     $.ajax({
                         type: "POST",
                         url: timeEntryListUrl,
-                        headers: headers,
+                        headers: ajaxHeaders,
                         data: JSON.stringify({
                             task: $(jsEvent.target).data('task-id'),
                             user: currentUser,
@@ -315,8 +326,8 @@
                         // update event with new dates
                         $.ajax({
                             type: "PATCH",
-                            url: timeEntryUpdateUrl.replace(0, event.id),
-                            headers: headers,
+                            url: timeEntryListUrl + event.id + '/',
+                            headers: ajaxHeaders,
                             data: JSON.stringify({
                                 started_at: event.start.toISOString(),
                                 ended_at: event.end.toISOString()
@@ -330,7 +341,7 @@
                         $.ajax({
                             type: "POST",
                             url: timeEntryListUrl,
-                            headers: headers,
+                            headers: ajaxHeaders,
                             data: JSON.stringify({
                                 task: event.task,
                                 user: currentUser,
@@ -360,11 +371,10 @@
                 },
                 eventResize: function(event, delta, revertFunc) {
                     // when resizing an event do a patch update to amend the start and end dates
-                    var pk = $(event).attr('id');
                     $.ajax({
                         type: "PATCH",
-                        url: timeEntryUpdateUrl.replace(0, pk),
-                        headers: headers,
+                        url: timeEntryListUrl + event.id + '/',
+                        headers: ajaxHeaders,
                         data: JSON.stringify({
                             started_at: event.start.toISOString(),
                             ended_at: event.end.toISOString()
@@ -386,6 +396,7 @@
                     // sets the detail in the form from the event data
                     clocOverlay.find('.title').html(calEvent.title);
                     clocOverlay.css("background-color", calEvent.color);
+                    clocOverlay.find('[name=task]').val(calEvent.task);
                     clocOverlay.find('[name=comments]').val(calEvent.comments);
                     clocOverlay.find('[name=start_time]').val(calEvent.start.format("HH:mm"));
                     clocOverlay.find('[name=end_time]').val(calEvent.end.format("HH:mm"));
@@ -397,6 +408,7 @@
                     clocOverlay.find('form').off('submit');
                     clocOverlay.find('.close').off('click');
                     clocOverlay.find('.delete').off('click');
+                    $(document).off('click', '.client-list .task');
 
                     // setup close event
                     clocOverlay.find('.close').on('click', function () {
@@ -405,24 +417,32 @@
 
                     // setup update event
                     clocOverlay.find('form').on('submit', function (evt) {
+                        var task = $(this).find('[name=task]').val();
                         var startSplit = $('[name=start_time]').val().split(':');
                         var endSplit = $('[name=end_time]').val().split(':');
                         var comments = $(this).find('[name=comments]').val();
                         $.ajax({
                             type: "PATCH",
-                            url: timeEntryUpdateUrl.replace(0, calEvent.id),
-                            headers: headers,
+                            url: timeEntryListUrl + calEvent.id + '/',
+                            headers: ajaxHeaders,
                             data: JSON.stringify({
+                                task: task,
                                 started_at: calEvent.start.set({h: startSplit[0], m: startSplit[1]}),
                                 ended_at: calEvent.end.set({h: endSplit[0], m: endSplit[1]}),
                                 comments: comments
                             }),
                             success: function (data) {
+                                calEvent.title = $(data).attr('title');
                                 calEvent.start = $(data).attr('started_at');
                                 calEvent.end = $(data).attr('ended_at');
+                                calEvent.id = $(data).attr('id');
+                                calEvent.task = $(data).attr('task');
                                 calEvent.comments = $(data).attr('comments');
+                                calEvent.color = $(data).attr('colour');
                                 calEvent.duration = $(data).attr('duration');
+
                                 $('.cloc').fullCalendar('updateEvent', calEvent);
+
                                 clocOverlay.removeClass('in');
                             },
                             error: function (err) {
@@ -438,17 +458,29 @@
                         evt.preventDefault();
                         $.ajax({
                             type: "DELETE",
-                            url: timeEntryUpdateUrl.replace(0, pk),
-                            headers: headers,
+                            url: timeEntryListUrl + pk + '/',
+                            headers: ajaxHeaders,
                             success: function (data) {
                                 $('.cloc').fullCalendar('removeEvents', calEvent.id);
-                                $('.cloc').fullCalendar('rerenderEvents');
                                 clocOverlay.removeClass('in');
                             },
                             error: function (err) {
                                 console.log(err);
                             }
                         });
+                    });
+
+                    // select another task for the event
+                    $(document).on('click', '.client-list .task', function (evt) {
+                        var task = $(this).data('task-id');
+                        var title = $(this).closest('[data-job-id]').find('.job').text() + ' - ' + $(this).data('title');
+                        var colour = $(this).data('colour');
+
+                        clocOverlay.find('[name=task]').val(task);
+                        clocOverlay.find('.title').html(title);
+                        clocOverlay.css("background-color", colour);
+
+                        evt.stopPropagation();
                     });
                 }
             };
