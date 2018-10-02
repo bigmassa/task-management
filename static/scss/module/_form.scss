@@ -19,6 +19,10 @@ input[type="time"] {
   -webkit-appearance: none; // stylelint-disable-line property-no-vendor-prefix
 }
 
+output {
+  min-width: 4rem;
+}
+
 .checkbox {
   margin-bottom: $input-margin-bottom;
   input {

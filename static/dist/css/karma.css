@@ -1917,6 +1917,10 @@ input[type="time"]:focus {
   outline: 0;
 }
 
+output {
+  min-width: 4rem;
+}
+
 .checkbox {
   margin-bottom: 1.5rem;
 }

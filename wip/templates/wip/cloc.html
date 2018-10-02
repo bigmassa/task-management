@@ -44,7 +44,8 @@
                 <div class="text-right">
                     <div class="input-group w-auto">
                         <div class="input-group-addon">{% trans 'Slot Duration (minutes)' %}</div>
-                        <input type="number" name="cloc_slot_duration" value="5">
+                        <input type="range" min="1" max="30" id="cloc_slot_duration" name="cloc_slot_duration" value="5" oninput="cloc_slot_duration_output.value = cloc_slot_duration.value">
+                        <output class="input-group-addon" id="cloc_slot_duration_output" name="cloc_slot_duration_output">5</output>
                     </div>
                 </div>
             </div>
