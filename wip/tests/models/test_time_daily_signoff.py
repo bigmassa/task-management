@@ -26,3 +26,6 @@ class ModelTests(AppTestCase):
 
     def test_ordering(self):
         self.assertEqual(TimeDailySignoff._meta.ordering, ['date'])
+
+    def test_unique_together(self):
+        self.assertEqual(TimeDailySignoff._meta.unique_together, (('date', 'user',),))
