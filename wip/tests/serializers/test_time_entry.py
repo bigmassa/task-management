@@ -1,3 +1,6 @@
+from django.contrib.auth.models import Permission
+from django.template import RequestContext
+from django.test import RequestFactory
 from django.utils import timezone
 from rest_framework import serializers
 
@@ -58,6 +61,62 @@ class TestSerializer(AppTestCase):
         )
 
     # validation
+
+    def test_user_without_correct_perm_cannot_save_for_another_user(self):
+        request = RequestFactory().get('/')
+        request.user = self.create_user()
+        context_instance = RequestContext(request)
+
+        user = User.objects.first()
+        job = Job.objects.first()
+
+        data = {
+            'task': job.tasks.first().pk,
+            'started_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
+            'ended_at': timezone.datetime(2018, 1, 1, 10, 0, 0),
+            'user': user.pk
+        }
+        serializer = TimeEntrySerializer(data=data, context=context_instance)
+
+        self.assertFalse(serializer.is_valid())
+        self.assertEqual(serializer.errors, {'non_field_errors': ['You cannot save this record for another user']})
+
+    def test_user_with_correct_perm_can_save_for_another_user(self):
+        request = RequestFactory().get('/')
+        request.user = self.create_user()
+        permission = Permission.objects.get(codename='manage_time_entry')
+        request.user.user_permissions.add(permission)
+        context_instance = RequestContext(request)
+
+        user = User.objects.first()
+        job = Job.objects.first()
+
+        data = {
+            'task': job.tasks.first().pk,
+            'started_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
+            'ended_at': timezone.datetime(2018, 1, 1, 10, 0, 0),
+            'user': user.pk
+        }
+        serializer = TimeEntrySerializer(data=data, context=context_instance)
+
+        self.assertTrue(serializer.is_valid())
+
+    def test_logged_in_user_can_save_their_own(self):
+        request = RequestFactory().get('/')
+        request.user = self.create_user()
+        context_instance = RequestContext(request)
+
+        job = Job.objects.first()
+
+        data = {
+            'task': job.tasks.first().pk,
+            'started_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
+            'ended_at': timezone.datetime(2018, 1, 1, 10, 0, 0),
+            'user': request.user.pk
+        }
+        serializer = TimeEntrySerializer(data=data, context=context_instance)
+
+        self.assertTrue(serializer.is_valid())
 
     def test_time_span_multiple_days(self):
         user = User.objects.first()

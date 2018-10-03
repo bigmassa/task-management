@@ -22,6 +22,9 @@ class TimeEntry(models.Model):
     )
 
     class Meta:
+        permissions = (
+            ('manage_time_entry', 'Can manage other peoples time entries'),
+        )
         ordering = ['started_at']
         verbose_name_plural = 'time entries'
 

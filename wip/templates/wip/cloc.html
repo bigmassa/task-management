@@ -48,6 +48,14 @@
                 </div>
                 <div class="text-right">
                     <div class="input-group w-auto">
+                        <div class="input-group-addon">{% trans 'User' %}</div>
+                        <select name="cloc_user">
+                            {% for option in users.all %}
+                                <option value="{{ option.pk }}"{% if user == option %} selected{% endif %}>{{ option.get_full_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="input-group w-auto">
                         <div class="input-group-addon">{% trans 'Slot Duration (minutes)' %}</div>
                         <input type="range" min="1" max="30" id="cloc_slot_duration" name="cloc_slot_duration" value="5" oninput="cloc_slot_duration_output.value = cloc_slot_duration.value">
                         <output class="input-group-addon" id="cloc_slot_duration_output" name="cloc_slot_duration_output">5</output>
@@ -72,7 +80,9 @@
         var clientListUrl = "{% url 'wip:client-list' %}";
         var jobListUrl = "{% url 'wip:job-list' %}";
         var taskListUrl = "{% url 'wip:task-list' %}";
+        var loggedInUser = {{ user.pk }};
         var currentUser = {{ user.pk }};
+        var canManageOthers = {% if perms.wip.manage_time_entry %}true{% else %}false{% endif %}
         var ajaxHeaders = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',

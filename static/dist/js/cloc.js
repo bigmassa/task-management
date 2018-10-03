@@ -129,23 +129,6 @@ $(function() {
         $(this).siblings('ul').find('[data-task-id]').toggle();
     });
 
-    $(document).on('change', '.fc-day-header .fc-dailycontrol input[type=checkbox]', function () {
-        var _this = $(this);
-        $.ajax({
-            type: "POST",
-            url: timeDailySignoffUrl,
-            headers: ajaxHeaders,
-            data: JSON.stringify({
-                date: $(_this).closest('.fc-day-header').data('date'),
-                user: currentUser,
-                completed: $(_this)[0].checked
-            }),
-            error: function (err) {
-                console.log(err);
-            }
-        });
-    });
-
     var clocOptions = {
         defaultView: 'agendaWeek',
         header: {center: 'agendaDay,agendaWeek'},
@@ -195,7 +178,12 @@ $(function() {
         viewRender: function(view, element) {
             // add the controls to the day header
             $.each($(".fc-day-header"), function(key, val) {
-                $(this).append('<div class="fc-dailycontrol"><div class="checkbox"><label><input type="checkbox"><span></span><em>00:00</em></label></div></div>');
+                if (clocOptions.editable) {
+                    var input = '<label><input type="checkbox"><span></span><em>00:00</em></label>';
+                } else {
+                    var input = '<label><input type="checkbox" disabled><span></span><em>00:00</em></label>';
+                }
+                $(this).append('<div class="fc-dailycontrol"><div class="checkbox">'+input+'</div></div>');
             });
             // and call the api to see whats completed
             $.ajax({
@@ -252,6 +240,11 @@ $(function() {
             }
         },
         drop: function(date, jsEvent) {
+            // if not editable return
+            if (!clocOptions.editable) {
+                return
+            }
+
             // on external drop add a new event
             $.ajax({
                 type: "POST",
@@ -351,6 +344,11 @@ $(function() {
             });
         },
         eventClick: function(calEvent) {
+            // if not editable return
+            if (!clocOptions.editable) {
+                return
+            }
+
             // on click of an event open the overlay to edit it
             var pk = calEvent.id;
             var clocOverlay = $('.cloc-event-overlay');
@@ -450,12 +448,37 @@ $(function() {
 
     $('.cloc').fullCalendar(clocOptions);
 
-    $('input[name=cloc_slot_duration]').on('change', function () {
-        if ($(this).val() > 0) {
-            clocOptions.slotDuration.minutes = $(this).val();
-            $('.cloc').fullCalendar('destroy');
-            $('.cloc').fullCalendar(clocOptions);
-        }
+    $(document).on('change', '[name=cloc_slot_duration]', function () {
+        clocOptions.slotDuration.minutes = $(this).val();
+        $('.cloc').fullCalendar('destroy');
+        $('.cloc').fullCalendar(clocOptions);
+    });
+
+    $(document).on('change', '[name=cloc_user]', function () {
+        currentUser = parseInt($(this).val());
+        // re init cloc
+        clocOptions.editable = currentUser === loggedInUser || canManageOthers;
+        $('.cloc').fullCalendar('destroy');
+        $('.cloc').fullCalendar(clocOptions);
+        // rebuild the client list
+        buildClientList(false);
+    });
+
+    $(document).on('change', '.fc-dailycontrol input[type=checkbox]', function () {
+        var _this = $(this);
+        $.ajax({
+            type: "POST",
+            url: timeDailySignoffUrl,
+            headers: ajaxHeaders,
+            data: JSON.stringify({
+                date: $(_this).closest('.fc-day-header').data('date'),
+                user: currentUser,
+                completed: $(_this)[0].checked
+            }),
+            error: function (err) {
+                console.log(err);
+            }
+        });
     });
 
 });

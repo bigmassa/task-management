@@ -13,5 +13,8 @@ class TimeDailySignoff(models.Model):
     )
 
     class Meta:
+        permissions = (
+            ('manage_time_daily_signoff', 'Can manage other peoples time daily signoffs'),
+        )
         ordering = ['date']
         unique_together = ('date', 'user')
