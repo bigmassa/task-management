@@ -49,11 +49,12 @@
 }
 
 .cloc-event-overlay {
+  @include box-shadow(1px, 1px, 2px, color("shadylady"));
   @include position($right: 25px, $bottom: 25px);
   z-index: 10;
   display: none;
   width: 400px;
-  background: color("white");
+  background: $body-background;
   border: solid 1px $border-color;
 }
 

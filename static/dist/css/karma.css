@@ -1821,6 +1821,7 @@ ul.radios input[type=radio] + span:after {
 }
 
 .cloc-event-overlay {
+  box-shadow: 1px 1px 2px #979797;
   position: absolute;
   top: auto;
   right: 25px;
@@ -1829,7 +1830,7 @@ ul.radios input[type=radio] + span:after {
   z-index: 10;
   display: none;
   width: 400px;
-  background: white;
+  background: #f0f0f1;
   border: solid 1px #e6e6e6;
 }
 
