@@ -17,28 +17,33 @@
             <div class="col-9">
                 <div class="cloc">
                     <div class="cloc-event-overlay">
-                        <a class="close"><i class="icon-cancel"></i></a>
-                        <h2 class="title"></h2>
-                        <p>{% trans 'To change the task click one from the main list' %}</p>
-                        <form>
-                            <input type="hidden" name="task">
-                            <div class="row">
-                                <div class="col">
-                                    <label>{% trans 'Start Time' %}</label>
-                                    <input type="time" name="start_time" min="0:00" max="23:59" />
+                        <div class="overlay-header d-flex align-items-top">
+                            <div class="color-indicator"></div>
+                            <div class="title h4"></div>
+                            <a class="close ml-auto"><i class="icon-cancel"></i></a>
+                        </div>
+                        <div class="overlay-body">
+                            <p>{% trans 'To change the task click one from the main list' %}</p>
+                            <form>
+                                <input type="hidden" name="task">
+                                <div class="row">
+                                    <div class="col">
+                                        <label>{% trans 'Start Time' %}</label>
+                                        <input type="time" name="start_time" min="0:00" max="23:59" />
+                                    </div>
+                                    <div class="col">
+                                        <label>{% trans 'End Time' %}</label>
+                                        <input type="time" name="end_time" min="0:00" max="23:59" />
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <label>{% trans 'End Time' %}</label>
-                                    <input type="time" name="end_time" min="0:00" max="23:59" />
+                                <label>{% trans 'Comments' %}</label>
+                                <textarea name="comments" rows="3"></textarea>
+                                <div class="text-right">
+                                    <button type="submit" class="button button-primary">{% trans 'Update' %}</button>
+                                    <a class="delete button button-primary button-clear">{% trans 'Delete' %} <i class="icon-trash"></i></a>
                                 </div>
-                            </div>
-                            <label>{% trans 'Comments' %}</label>
-                            <textarea name="comments" rows="3"></textarea>
-                            <div class="text-right">
-                                <button type="submit" class="button button-primary">{% trans 'Update' %}</button>
-                                <a class="delete button button-primary button-clear">{% trans 'Delete' %} <i class="icon-trash"></i></a>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="text-right">

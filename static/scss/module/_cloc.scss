@@ -53,19 +53,29 @@
   z-index: 10;
   display: none;
   width: 400px;
-  padding: 1.5rem;
   background: color("white");
+  border: solid 1px $border-color;
 }
 
 .cloc-event-overlay.in {
   display: block;
 }
 
-.cloc-event-overlay .close {
-  @include position($right: 15px);
+.cloc-event-overlay .overlay-header {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.cloc-event-overlay .overlay-header .title {
+  margin: 0;
+}
+
+.cloc-event-overlay .overlay-header .close {
   cursor: pointer;
 }
 
+.cloc-event-overlay .overlay-body {
+  padding: 1.5rem;
+}
 
 // full calendar
 
