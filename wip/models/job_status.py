@@ -6,6 +6,9 @@ class JobStatus(models.Model):
         max_length=50,
         unique=True
     )
+    allow_new_clock_entries = models.BooleanField(
+        default=True
+    )
     order = models.PositiveIntegerField(
         default=0
     )

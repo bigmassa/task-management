@@ -25,14 +25,20 @@ $(function() {
     function getClients() {
         return $.ajax({
             type: "GET",
-            url: clientListUrl
+            url: clientListUrl,
+            data: {
+                for_clock: true
+            }
         });
     }
 
     function getJobs() {
         return $.ajax({
             type: "GET",
-            url: jobListUrl
+            url: jobListUrl,
+            data: {
+                for_clock: true
+            }
         });
     }
 
@@ -42,7 +48,8 @@ $(function() {
             url: taskListUrl,
             data: {
                 assignee: currentUser,
-                search: $('[name=search]').val()
+                search: $('[name=search]').val(),
+                for_clock: true
             }
         });
     }
@@ -99,10 +106,9 @@ $(function() {
                         jobNode.find('ul').first().append(taskNode);
                     });
                 });
-                // finally add the tree to the page
-                $(".client-list-wrapper").html(clientTree);
             });
-
+            // finally add the tree to the page
+            $(".client-list-wrapper").html(clientTree);
         });
     }
 

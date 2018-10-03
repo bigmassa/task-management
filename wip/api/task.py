@@ -1,6 +1,7 @@
 from django.db.models import Q
 
-from django_filters import CharFilter, FilterSet, ModelChoiceFilter
+from django_filters import FilterSet
+from django_filters import rest_framework as filters
 from rest_framework import viewsets
 
 from authentication.models import User
@@ -9,8 +10,9 @@ from wip.serializers import TaskSerializer
 
 
 class TaskFilter(FilterSet):
-    assignee = ModelChoiceFilter(field_name='assignees__user', queryset=User.objects.all())
-    search = CharFilter(method='search_filter')
+    assignee = filters.ModelChoiceFilter(field_name='assignees__user', queryset=User.objects.all())
+    search = filters.CharFilter(method='search_filter')
+    for_clock = filters.BooleanFilter(field_name='job__status__allow_new_clock_entries')
 
     def search_filter(self, queryset, name, value):
         all_filters = Q()

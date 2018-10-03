@@ -1,4 +1,5 @@
-from django_filters import DateFilter, ModelChoiceFilter, FilterSet, DateFromToRangeFilter
+from django_filters import FilterSet
+from django_filters import rest_framework as filters
 from rest_framework import viewsets
 
 from authentication.models import User
@@ -7,8 +8,8 @@ from wip.serializers import TimeDailySignoffSerializer
 
 
 class TimeDailySignoffFilter(FilterSet):
-    date = DateFromToRangeFilter()
-    user = ModelChoiceFilter(queryset=User.objects.all())
+    date = filters.DateFromToRangeFilter()
+    user = filters.ModelChoiceFilter(queryset=User.objects.all())
 
 
 class TimeDailySignoffViewSet(viewsets.ModelViewSet):

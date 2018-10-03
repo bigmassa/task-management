@@ -59,6 +59,8 @@
     pk: 1
     fields: {
       title: "Live",
+      allow_new_clock_entries: true,
+      order: 0
     }
 
 -
@@ -134,6 +136,7 @@
     pk: 1
     fields: {
       title: "Ongoing",
+      order: 0
     }
 
 -
