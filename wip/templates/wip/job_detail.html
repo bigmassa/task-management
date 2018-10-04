@@ -197,30 +197,30 @@
 {% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
+    <link rel="stylesheet" href="{% static 'dist/vendor/dropzone/dropzone.min.css' %}">
 {% endblock %}
 
 {% block extra_js %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-    <script src="{% static 'dist/js/tabs.js' %}"></script>
+    <script src="{% static 'dist/vendor/dropzone/dropzone.min.js' %}"></script>
+    <script src="{% static 'dist/js/tabs.min.js' %}"></script>
     <script>$('.tabs').tabs();</script>
     <script>
-    Dropzone.options.filesDropzone = {
-        maxFilesize: 5,
-        init: function() {
-            this.on("success", function(response) {
-                var url = "{% url 'wip:jobfile-delete' 0 %}";
-                var data = JSON.parse(response.xhr.response);
-                url = url.replace('0', data.pk);
-                var html = '<tr>' +
-                    '<td><a href="' + data.url + '" target="_blank">' + data.name + '</a></td>' +
-                    '<td class="keep-min-width">' + data.size_mb + '</td>' +
-                    '<td class="keep-min-width text-right"><a href="' + url + '"><i class="icon-trash"></i></a></td>' +
-                    '</tr>';
-                var table = $('[data-tab="files"] table tbody');
-                table.append(html);
-            });
+        Dropzone.options.filesDropzone = {
+            maxFilesize: 5,
+            init: function() {
+                this.on("success", function(response) {
+                    var url = "{% url 'wip:jobfile-delete' 0 %}";
+                    var data = JSON.parse(response.xhr.response);
+                    url = url.replace('0', data.pk);
+                    var html = '<tr>' +
+                        '<td><a href="' + data.url + '" target="_blank">' + data.name + '</a></td>' +
+                        '<td class="keep-min-width">' + data.size_mb + '</td>' +
+                        '<td class="keep-min-width text-right"><a href="' + url + '"><i class="icon-trash"></i></a></td>' +
+                        '</tr>';
+                    var table = $('[data-tab="files"] table tbody');
+                    table.append(html);
+                });
+            }
         }
-    }
     </script>
 {% endblock %}

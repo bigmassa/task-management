@@ -13,13 +13,17 @@
     "fontello-dist": "cpy 'static/scss/fontello/font/*' static/dist/font",
     "fontello-install": "fontello-cli install --config static/scss/fontello/config.json --css static/scss/fontello/css --font static/scss/fontello/font",
     "fontello-web": "fontello-cli open --config static/scss/fontello/config.json",
-    "watch-css": "nodemon --ignore static/dist/ -e scss -x \"npm run css\""
+    "watch-css": "nodemon --ignore static/dist/ -e scss -x \"npm run css\"",
+    "js-minify": "rm static/dist/js/*.min.js; for f in static/dist/js/*.js; do short=${f%.js}; uglifyjs $f > $short.min.js; done"
   },
-  "dependencies": {},
+  "dependencies": {
+    "uglify-js": "^3.4.9"
+  },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "clean-css-cli": "^4.1.10",
     "cpy-cli": "^1.0.1",
+    "dropzone": "^5.5.1",
     "flatpickr": "^4.5.2",
     "fontello-cli": "^0.4.0",
     "fullcalendar": "^3.9.0",

@@ -79,7 +79,10 @@ class TestSerializer(AppTestCase):
         serializer = TimeEntrySerializer(data=data, context=context_instance)
 
         self.assertFalse(serializer.is_valid())
-        self.assertEqual(serializer.errors, {'non_field_errors': ['You cannot save this record for another user']})
+        self.assertEqual(
+            serializer.errors,
+            {'non_field_errors': ['You dont have permission to save a time entry for another user']}
+        )
 
     def test_user_with_correct_perm_can_save_for_another_user(self):
         request = RequestFactory().get('/')
@@ -129,7 +132,10 @@ class TestSerializer(AppTestCase):
         }
         serializer = TimeEntrySerializer(data=data)
         self.assertFalse(serializer.is_valid())
-        self.assertEqual(serializer.errors, {'non_field_errors': ['Time entry cannot span multiple days']})
+        self.assertEqual(
+            serializer.errors,
+            {'non_field_errors': ['A time entry cannot span multiple days']}
+        )
 
     def test_ended_at_before_started_at(self):
         user = User.objects.first()
@@ -142,4 +148,7 @@ class TestSerializer(AppTestCase):
         }
         serializer = TimeEntrySerializer(data=data)
         self.assertFalse(serializer.is_valid())
-        self.assertEqual(serializer.errors, {'ended_at': ['Must be after Started at']})
+        self.assertEqual(
+            serializer.errors,
+            {'ended_at': ['Ended at must be after Started at']}
+        )

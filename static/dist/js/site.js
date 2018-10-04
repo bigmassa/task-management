@@ -1,4 +1,15 @@
-$(document).ready(function() {
+$(function() {
+
+    // Prototypes
+
+    // turn an array into unique ie [1,2,1] = [1,2]
+    Array.prototype.getUnique = function() {
+        return this.filter(function (x, i, a) {
+            return a.indexOf(x) == i;
+        });
+    };
+
+    // Misc
 
     // tr onclick urls
     $('tr[data-url]').click(function (evt) {

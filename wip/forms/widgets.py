@@ -26,5 +26,5 @@ class DatePicker(forms.widgets.DateInput):
         }
         js = (
             static('dist/vendor/flatpickr/flatpickr.min.js'),
-            static('dist/js/flatpickr.js')
+            static('dist/js/flatpickr.min.js')
         )

@@ -70,11 +70,7 @@
 {% endblock %}
 
 {% block extra_css %}
-    <style>
-        html {
-            height: 100%;
-        }
-    </style>
+    <style>html { height: 100%; }</style>
     <link href="{% static 'dist/vendor/fullcalendar/fullcalendar.min.css' %}" type="text/css" rel="stylesheet">
 {% endblock %}
 
@@ -97,5 +93,5 @@
             'X-CSRFToken': '{{ csrf_token }}'
         };
     </script>
-    <script type="text/javascript" src="{% static 'dist/js/cloc.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/js/cloc.min.js' %}"></script>
 {% endblock %}

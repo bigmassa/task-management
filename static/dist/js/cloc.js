@@ -22,6 +22,23 @@ $(function() {
         return colourIsLight(bgRgb.r, bgRgb.g, bgRgb.b) ? 'black' : 'white';
     }
 
+    function handleAPIError(response) {
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-bottom-right",
+            "timeOut": "10000",
+        };
+        if (response.responseJSON) {
+            for (var key in response.responseJSON){
+                console.log(key);
+                if (response.responseJSON.hasOwnProperty(key)) {
+                     toastr.error(response.responseJSON[key], key);
+                }
+            }
+        }
+    }
+
     function getClients() {
         return $.ajax({
             type: "GET",
@@ -58,10 +75,10 @@ $(function() {
         $.when(getClients(), getJobs(), getTasks()).done(function (clients, jobs, tasks) {
             // find all client > jobs > tasks that have been searched for and construct the tree
             var clientTree = $("<ul></ul>").addClass("client-list");
-            var jobIds = [...new Set(tasks[0].map(o => o.job))];
-            var foundJobs = jobs[0].filter(o => jobIds.includes(o.id));
-            var clientIds = [...new Set(foundJobs.map(o => o.client))];
-            var foundCLients = clients[0].filter(o => clientIds.includes(o.id));
+            var jobIds = (tasks[0].map(function(o) { return o.job; })).getUnique();
+            var foundJobs = jobs[0].filter(function(o) { return jobIds.includes(o.id); });
+            var clientIds = (foundJobs.map(function(o) { return o.client; })).getUnique();
+            var foundCLients = clients[0].filter(function(o) { return clientIds.includes(o.id); });
             // loop each client and add the node
             $.each(foundCLients, function (index, client) {
                 var clientNode = $('<li data-client-id="' + client.id + '"></li>');
@@ -70,7 +87,7 @@ $(function() {
                 // append the node
                 clientTree.append(clientNode);
                 // filter jobs in client
-                var jobsInClient = foundJobs.filter(o => o.client === client.id);
+                var jobsInClient = foundJobs.filter(function(o) { return o.client === client.id; });
                 // loop each job and add the node
                 $.each(jobsInClient, function (index, job) {
                     var jobNode = $('<li data-job-id="' + job.id + '"></li>');
@@ -83,7 +100,7 @@ $(function() {
                     // append the node
                     clientNode.find('ul').first().append(jobNode);
                     // filter tasks in job
-                    var tasksInJob = tasks[0].filter(o => o.job === job.id);
+                    var tasksInJob = tasks[0].filter(function(o) { return o.job === job.id; });
                     // loop each task and add the node
                     $.each(tasksInJob, function (index, task) {
                         var taskNode = $('<li data-task-id="' + task.id + '" data-title="' + task.title + '" data-colour="' + job.colour + '"></li>');
@@ -201,9 +218,6 @@ $(function() {
                             $('.fc-day-header[data-date="' + $(this).attr('date') + '"] .fc-dailycontrol input[type=checkbox]').attr('checked', 'checked');
                         }
                     });
-                },
-                error: function (err) {
-                    console.log(err);
                 }
             });
         },
@@ -341,6 +355,7 @@ $(function() {
                 },
                 error: function (err) {
                     revertFunc();
+                    handleAPIError(err);
                 }
             });
         },
@@ -408,7 +423,7 @@ $(function() {
                         clocOverlay.removeClass('in');
                     },
                     error: function (err) {
-                        console.log(err);
+                        handleAPIError(err);
                     }
                 });
 
@@ -427,7 +442,7 @@ $(function() {
                         clocOverlay.removeClass('in');
                     },
                     error: function (err) {
-                        console.log(err);
+                        handleAPIError(err);
                     }
                 });
             });
@@ -477,7 +492,8 @@ $(function() {
                 completed: $(_this)[0].checked
             }),
             error: function (err) {
-                console.log(err);
+                // reset back
+                $(_this)[0].checked = !$(_this)[0].checked
             }
         });
     });

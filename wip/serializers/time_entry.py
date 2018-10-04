@@ -41,14 +41,14 @@ class TimeEntrySerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         # validate the user can save this
         if not self._has_manage_perm(attrs):
-            raise ValidationError('You cannot save this record for another user')
+            raise ValidationError('You dont have permission to save a time entry for another user')
 
         # validate the date range
         if attrs['ended_at'].date() > attrs['started_at'].date():
-            raise ValidationError('Time entry cannot span multiple days')
+            raise ValidationError('A time entry cannot span multiple days')
 
         if attrs['ended_at'] <= attrs['started_at']:
-            raise ValidationError({'ended_at': 'Must be after Started at'})
+            raise ValidationError({'ended_at': 'Ended at must be after Started at'})
 
         return super().validate(attrs)
 
