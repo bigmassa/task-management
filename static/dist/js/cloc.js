@@ -132,6 +132,7 @@ $(function() {
     var clocOptions = {
         defaultView: 'agendaWeek',
         header: {center: 'agendaDay,agendaWeek'},
+        height: 'parent',
         firstDay: 1,
         allDaySlot: false,
         nowIndicator: true,

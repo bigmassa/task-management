@@ -1,65 +1,68 @@
 {% extends 'base.html' %}
 {% load i18n static %}
 {% block page_title %}Cloc{% endblock %}
-{% block body_class %}{% endblock %}
+{% block body_class %}d-flex full-height flex-flow-column{% endblock %}
 {% block inner_content %}
-    <div class="container inner-content">
-        <div class="inner-header d-flex align-items-center">
-            <div class="h1">{% trans 'Cloc' %}</div>
+    <div class="page-header py-2">
+        <div class="container d-flex align-items-center">
+            <div class="h2">{% trans 'Cloc' %}</div>
+            <div class="page-header-actions">
+                 <select class="margin-zero" name="cloc_user">
+                    {% for option in users.all %}
+                        <option value="{{ option.pk }}"{% if user == option %} selected{% endif %}>{{ option.get_full_name }}</option>
+                    {% endfor %}
+                 </select>
+            </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
+    <div class="container inner-content d-flex full-height flex-flow-column">
+        <div class="row flex-fill">
             <div class="col-3">
                 <input type="text" name="search" placeholder="Search">
                 <div class="client-list-wrapper"></div>
             </div>
-            <div class="col-9">
-                <div class="cloc">
-                    <div class="cloc-event-overlay">
-                        <div class="overlay-header d-flex align-items-top">
-                            <div class="color-indicator"></div>
-                            <div class="title h4"></div>
-                            <a class="close ml-auto"><i class="icon-cancel"></i></a>
-                        </div>
-                        <div class="overlay-body">
-                            <p>{% trans 'To change the task click one from the main list' %}</p>
-                            <form>
-                                <input type="hidden" name="task">
-                                <div class="row">
-                                    <div class="col">
-                                        <label>{% trans 'Start Time' %}</label>
-                                        <input type="time" name="start_time" min="0:00" max="23:59" />
-                                    </div>
-                                    <div class="col">
-                                        <label>{% trans 'End Time' %}</label>
-                                        <input type="time" name="end_time" min="0:00" max="23:59" />
-                                    </div>
+            <div class="col-9 relative">
+                <div class="cloc"></div>
+                {# overlay #}
+                <div class="cloc-event-overlay">
+                    <div class="overlay-header d-flex align-items-top">
+                        <div class="color-indicator"></div>
+                        <div class="title h4"></div>
+                        <a class="close ml-auto"><i class="icon-cancel"></i></a>
+                    </div>
+                    <div class="overlay-body">
+                        <p>{% trans 'To change the task click one from the main list' %}</p>
+                        <form>
+                            <input type="hidden" name="task">
+                            <div class="row">
+                                <div class="col">
+                                    <label>{% trans 'Start Time' %}</label>
+                                    <input type="time" name="start_time" min="0:00" max="23:59" />
                                 </div>
-                                <label>{% trans 'Comments' %}</label>
-                                <textarea name="comments" rows="3"></textarea>
-                                <div class="text-right">
-                                    <button type="submit" class="button button-primary">{% trans 'Update' %}</button>
-                                    <a class="delete button button-primary button-clear">{% trans 'Delete' %} <i class="icon-trash"></i></a>
+                                <div class="col">
+                                    <label>{% trans 'End Time' %}</label>
+                                    <input type="time" name="end_time" min="0:00" max="23:59" />
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                            <label>{% trans 'Comments' %}</label>
+                            <textarea name="comments" rows="3"></textarea>
+                            <div class="text-right">
+                                <button type="submit" class="button button-primary">{% trans 'Update' %}</button>
+                                <a class="delete button button-primary button-clear">{% trans 'Delete' %} <i class="icon-trash"></i></a>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="text-right">
-                    <div class="input-group w-auto">
-                        <div class="input-group-addon">{% trans 'User' %}</div>
-                        <select name="cloc_user">
-                            {% for option in users.all %}
-                                <option value="{{ option.pk }}"{% if user == option %} selected{% endif %}>{{ option.get_full_name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="input-group w-auto">
-                        <div class="input-group-addon">{% trans 'Slot Duration (minutes)' %}</div>
-                        <input type="range" min="1" max="30" id="cloc_slot_duration" name="cloc_slot_duration" value="5" oninput="cloc_slot_duration_output.value = cloc_slot_duration.value">
-                        <output class="input-group-addon" id="cloc_slot_duration_output" name="cloc_slot_duration_output">5</output>
-                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="container inner-controls py-2">
+        <div class="row">
+            <div class="col-9 offset-3 text-right">
+                <div class="input-group w-auto margin-zero">
+                    <div class="input-group-addon">{% trans 'Slot Duration (minutes)' %}</div>
+                    <input type="range" min="1" max="30" id="cloc_slot_duration" name="cloc_slot_duration" value="5" oninput="cloc_slot_duration_output.value = cloc_slot_duration.value">
+                    <output class="input-group-addon" id="cloc_slot_duration_output" name="cloc_slot_duration_output">5</output>
                 </div>
             </div>
         </div>
@@ -67,6 +70,11 @@
 {% endblock %}
 
 {% block extra_css %}
+    <style>
+        html {
+            height: 100%;
+        }
+    </style>
     <link href="{% static 'dist/vendor/fullcalendar/fullcalendar.min.css' %}" type="text/css" rel="stylesheet">
 {% endblock %}
 

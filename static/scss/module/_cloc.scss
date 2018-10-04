@@ -50,7 +50,7 @@
 
 .cloc-event-overlay {
   @include box-shadow(1px, 1px, 2px, color("shadylady"));
-  @include position($right: 25px, $bottom: 25px);
+  @include position($right: 25px, $bottom: 10px);
   z-index: 10;
   display: none;
   width: 400px;
