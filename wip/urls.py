@@ -28,7 +28,6 @@ urlpatterns = [
     path('clients/<int:pk>/jobs/create/', views.JobCreate.as_view(), name='job-create'),
     path('client-contacts/<int:pk>/update/', views.ClientContactUpdate.as_view(), name='clientcontact-update'),
     path('client-contacts/<int:pk>/delete/', views.ClientContactDelete.as_view(), name='clientcontact-delete'),
-    path('timesheet/', views.Timesheet.as_view(), name='timesheet'),
     path('jobs/<int:pk>/', views.JobDetail.as_view(), name='job-detail'),
     path('jobs/<int:pk>/update/', views.JobUpdate.as_view(), name='job-update'),
     path('jobs/<int:pk>/delete/', views.JobDelete.as_view(), name='job-delete'),
@@ -48,6 +47,8 @@ urlpatterns = [
     path('tasks/<int:pk>/delete/', views.TaskDelete.as_view(), name='task-delete'),
     path('tasks/<int:pk>/assignees/update/', views.TaskAssigneeUpdate.as_view(), name='taskassignee-update'),
     path('tasks/<int:pk>/notes/create/', views.TaskNoteCreate.as_view(), name='tasknote-create'),
+    path('task-board/', views.TaskBoard.as_view(), name='task-board'),
     path('task-notes/<int:pk>/update/', views.TaskNoteUpdate.as_view(), name='tasknote-update'),
     path('task-notes/<int:pk>/delete/', views.TaskNoteDelete.as_view(), name='tasknote-delete'),
+    path('timesheet/', views.Timesheet.as_view(), name='timesheet'),
 ]

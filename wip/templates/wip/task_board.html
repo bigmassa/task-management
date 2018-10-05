@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+{% block page_title %}Taskboard{% endblock %}
+{% block body_class %}{% endblock %}
+{% block inner_content %}
+    <div class="page-header py-2">
+        <div class="container-fluid d-flex align-items-center">
+            <div class="h2">{% trans 'Taskboard' %}</div>
+            <div class="page-header-actions"></div>
+        </div>
+    </div>
+    <div class="container-fluid inner-content"></div>
+{% endblock %}
+
+{% block extra_js %}{% endblock %}
