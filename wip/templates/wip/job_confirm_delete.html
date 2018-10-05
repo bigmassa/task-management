@@ -6,7 +6,7 @@
     <form method="post" novalidate>
         {% csrf_token %}
         <div class="page-header">
-            <div class="container d-flex align-items-center py-2">
+            <div class="container-fluid d-flex align-items-center py-2">
                 <span class="color-indicator" style="background: {{ object.colour }}"></span>
                 <div class="h2">
                     <b>{{ object.pk }}</b> :
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="container inner-content">
+        <div class="container-fluid inner-content">
             <div class="panel">
                 {% if protected %}
                     <p>{% blocktrans with ob=object %}The following objects need to be deleted first:{% endblocktrans %}</p>

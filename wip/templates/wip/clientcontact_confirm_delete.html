@@ -6,7 +6,7 @@
     <form method="post" novalidate>
         {% csrf_token %}
         <div class="page-header py-2">
-            <div class="container d-flex align-items-center">
+            <div class="container-fluid d-flex align-items-center">
                 <span class="color-indicator" style="background: {{ object.client.colour }}"></span>
                 <div class="h2">
                     <a href="{{ object.client.get_absolute_url }}" class="underline-dotted">{{ object.client.name }}</a>
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <div class="container inner-content">
+        <div class="container-fluid inner-content">
             <div class="panel">
                 {% if protected %}
                     <p>{% blocktrans with ob=object %}The following objects need to be deleted first:{% endblocktrans %}</p>

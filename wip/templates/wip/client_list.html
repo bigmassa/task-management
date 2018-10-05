@@ -3,13 +3,15 @@
 {% block page_title %}Clients{% endblock %}
 {% block body_class %}{% endblock %}
 {% block inner_content %}
-    <div class="container inner-content">
-        <div class="inner-header d-flex align-items-center">
-            <div class="h1">{% trans 'Clients' %}</div>
-            <div class="inner-header-actions">
-                <a class="button button-primary" href="{% url 'wip:client-create' %}">{% trans 'Add Client' %}</a>
+    <div class="page-header py-2">
+        <div class="container-fluid d-flex align-items-center">
+            <div class="h2">{% trans 'Clients' %}</div>
+            <div class="page-header-actions">
+                 <a class="button button-white" href="{% url 'wip:client-create' %}">{% trans 'Add Client' %}</a>
             </div>
         </div>
+    </div>
+    <div class="container-fluid inner-content">
         <div class="panel">
             <table class="table-headed table-hover margin-zero">
                 <thead>

@@ -4,7 +4,7 @@
 {% block body_class %}d-flex full-height flex-flow-column{% endblock %}
 {% block inner_content %}
     <div class="page-header py-2">
-        <div class="container d-flex align-items-center">
+        <div class="container-fluid d-flex align-items-center">
             <div class="h2">{% trans 'Cloc' %}</div>
             <div class="page-header-actions">
                  <select class="margin-zero" name="cloc_user">
@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class="container inner-content d-flex full-height flex-flow-column">
+    <div class="container-fluid inner-content d-flex full-height flex-flow-column">
         <div class="row flex-fill">
             <div class="col-3">
                 <input type="text" name="search" placeholder="Search">
@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-    <div class="container inner-controls py-2">
+    <div class="container-fluid inner-controls py-2">
         <div class="row">
             <div class="col-9 offset-3 text-right">
                 <div class="input-group w-auto margin-zero">

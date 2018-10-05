@@ -4,7 +4,7 @@
 {% block body_class %}{% endblock %}
 {% block inner_content %}
     <div class="page-header py-2">
-        <div class="container d-flex align-items-center">
+        <div class="container-fluid d-flex align-items-center">
             <span class="color-indicator" style="background: {{ object.colour }}"></span>
             <div class="h2">
                 <b>{{ object.pk }}</b> :
@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="container inner-content">
+    <div class="container-fluid inner-content">
         <div class="row">
             <div class="col">
                 <p class="strong">{% trans 'Description' %}</p>
