@@ -1773,94 +1773,6 @@ ul.radios input[type=radio] + span:after {
 }
 
 /* '' */
-.client-list,
-.client-list ul {
-  margin-left: 0;
-  list-style-type: none;
-}
-
-.client-list .client {
-  display: block;
-  padding: 1rem 1rem;
-  margin-bottom: .3rem;
-  cursor: pointer;
-  background: #979797;
-  border-bottom: 1px solid #e6e6e6;
-}
-
-.client-list .job {
-  display: block;
-  padding: 1rem 1rem;
-  margin-bottom: .3rem;
-  cursor: pointer;
-  border-bottom: 1px solid #e6e6e6;
-}
-
-.client-list .task {
-  padding: 1rem 1rem;
-  margin-bottom: .3rem;
-  cursor: pointer;
-  border-radius: .25rem;
-}
-
-.cloc {
-  position: relative;
-  margin-bottom: 1.5rem;
-}
-
-.cloc table {
-  margin-bottom: 0;
-}
-
-.cloc .fc-dailycontrol {
-  margin: .5rem 1.5rem;
-}
-
-.cloc .fc-dailycontrol input {
-  display: none;
-}
-
-.cloc-event-overlay {
-  box-shadow: 1px 1px 2px #979797;
-  position: absolute;
-  top: auto;
-  right: 25px;
-  bottom: 10px;
-  left: auto;
-  z-index: 10;
-  display: none;
-  width: 400px;
-  background: #f0f0f1;
-  border: solid 1px #e6e6e6;
-}
-
-.cloc-event-overlay.in {
-  display: block;
-}
-
-.cloc-event-overlay .overlay-header {
-  padding: 1.5rem 1.5rem 0 1.5rem;
-}
-
-.cloc-event-overlay .overlay-header .title {
-  margin: 0;
-}
-
-.cloc-event-overlay .overlay-header .close {
-  cursor: pointer;
-}
-
-.cloc-event-overlay .overlay-body {
-  padding: 1.5rem;
-}
-
-/* stylelint-disable declaration-no-important, selector-pseudo-element-colon-notation */
-.fc-view-container *,
-.fc-view-container :after,
-.fc-view-container :before {
-  box-sizing: border-box !important;
-}
-
 /* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
 .dropzone {
   min-height: 120px !important;
@@ -2441,6 +2353,94 @@ td textarea {
   background: rgba(41, 44, 54, 0.14);
   border: 1px solid #e6e6e6;
   border-radius: 0.25rem;
+}
+
+.client-list,
+.client-list ul {
+  margin-left: 0;
+  list-style-type: none;
+}
+
+.client-list .client {
+  display: block;
+  padding: 1rem 1rem;
+  margin-bottom: .3rem;
+  cursor: pointer;
+  background: #979797;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.client-list .job {
+  display: block;
+  padding: 1rem 1rem;
+  margin-bottom: .3rem;
+  cursor: pointer;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.client-list .task {
+  padding: 1rem 1rem;
+  margin-bottom: .3rem;
+  cursor: pointer;
+  border-radius: .25rem;
+}
+
+.timesheet {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timesheet table {
+  margin-bottom: 0;
+}
+
+.timesheet .fc-dailycontrol {
+  margin: .5rem 1.5rem;
+}
+
+.timesheet .fc-dailycontrol input {
+  display: none;
+}
+
+.timesheet-event-overlay {
+  box-shadow: 1px 1px 2px #979797;
+  position: absolute;
+  top: auto;
+  right: 25px;
+  bottom: 10px;
+  left: auto;
+  z-index: 10;
+  display: none;
+  width: 400px;
+  background: #f0f0f1;
+  border: solid 1px #e6e6e6;
+}
+
+.timesheet-event-overlay.in {
+  display: block;
+}
+
+.timesheet-event-overlay .overlay-header {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.timesheet-event-overlay .overlay-header .title {
+  margin: 0;
+}
+
+.timesheet-event-overlay .overlay-header .close {
+  cursor: pointer;
+}
+
+.timesheet-event-overlay .overlay-body {
+  padding: 1.5rem;
+}
+
+/* stylelint-disable declaration-no-important, selector-pseudo-element-colon-notation */
+.fc-view-container *,
+.fc-view-container :after,
+.fc-view-container :before {
+  box-sizing: border-box !important;
 }
 
 .color-indicator {

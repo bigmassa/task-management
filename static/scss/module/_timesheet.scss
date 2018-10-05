@@ -1,4 +1,4 @@
-// Cloc
+// Timesheet
 // ------------------------------
 
 .client-list,
@@ -31,16 +31,16 @@
   border-radius: .25rem;
 }
 
-.cloc {
+.timesheet {
   position: relative;
   margin-bottom: $generic-margin-bottom;
 }
 
-.cloc table {
+.timesheet table {
   margin-bottom: 0;
 }
 
-.cloc .fc-dailycontrol {
+.timesheet .fc-dailycontrol {
   margin: .5rem 1.5rem;
 
   input {
@@ -48,7 +48,7 @@
   }
 }
 
-.cloc-event-overlay {
+.timesheet-event-overlay {
   @include box-shadow(1px, 1px, 2px, color("shadylady"));
   @include position($right: 25px, $bottom: 10px);
   z-index: 10;
@@ -58,23 +58,23 @@
   border: solid 1px $border-color;
 }
 
-.cloc-event-overlay.in {
+.timesheet-event-overlay.in {
   display: block;
 }
 
-.cloc-event-overlay .overlay-header {
+.timesheet-event-overlay .overlay-header {
   padding: 1.5rem 1.5rem 0 1.5rem;
 }
 
-.cloc-event-overlay .overlay-header .title {
+.timesheet-event-overlay .overlay-header .title {
   margin: 0;
 }
 
-.cloc-event-overlay .overlay-header .close {
+.timesheet-event-overlay .overlay-header .close {
   cursor: pointer;
 }
 
-.cloc-event-overlay .overlay-body {
+.timesheet-event-overlay .overlay-body {
   padding: 1.5rem;
 }
 

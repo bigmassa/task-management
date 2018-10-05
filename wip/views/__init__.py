@@ -13,9 +13,6 @@ from .client_contact import (
     ClientContactDelete,
     ClientContactUpdate
 )
-from .cloc import (
-    Cloc
-)
 from .job import (
     JobCreate,
     JobDelete,
@@ -53,4 +50,7 @@ from .task_note import (
     TaskNoteCreate,
     TaskNoteDelete,
     TaskNoteUpdate
+)
+from .timesheet import (
+    Timesheet
 )

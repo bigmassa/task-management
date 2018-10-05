@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% load i18n static %}
-{% block page_title %}Cloc{% endblock %}
+{% block page_title %}Timesheet{% endblock %}
 {% block body_class %}d-flex full-height flex-flow-column{% endblock %}
 {% block inner_content %}
     <div class="page-header py-2">
         <div class="container-fluid d-flex align-items-center">
-            <div class="h2">{% trans 'Cloc' %}</div>
+            <div class="h2">{% trans 'Timesheet' %}</div>
             <div class="page-header-actions">
-                 <select class="margin-zero" name="cloc_user">
+                 <select class="margin-zero" name="timesheet_user">
                     {% for option in users.all %}
                         <option value="{{ option.pk }}"{% if user == option %} selected{% endif %}>{{ option.get_full_name }}</option>
                     {% endfor %}
@@ -22,9 +22,9 @@
                 <div class="client-list-wrapper"></div>
             </div>
             <div class="col-9 relative">
-                <div class="cloc"></div>
+                <div class="timesheet"></div>
                 {# overlay #}
-                <div class="cloc-event-overlay">
+                <div class="timesheet-event-overlay">
                     <div class="overlay-header d-flex align-items-top">
                         <div class="color-indicator"></div>
                         <div class="title h4"></div>
@@ -61,8 +61,8 @@
             <div class="col-9 offset-3 text-right">
                 <div class="input-group w-auto margin-zero">
                     <div class="input-group-addon">{% trans 'Slot Duration (minutes)' %}</div>
-                    <input type="range" min="1" max="30" id="cloc_slot_duration" name="cloc_slot_duration" value="5" oninput="cloc_slot_duration_output.value = cloc_slot_duration.value">
-                    <output class="input-group-addon" id="cloc_slot_duration_output" name="cloc_slot_duration_output">5</output>
+                    <input type="range" min="1" max="30" id="timesheet_slot_duration" name="timesheet_slot_duration" value="5" oninput="timesheet_slot_duration_output.value = timesheet_slot_duration.value">
+                    <output class="input-group-addon" id="timesheet_slot_duration_output" name="timesheet_slot_duration_output">5</output>
                 </div>
             </div>
         </div>
@@ -93,5 +93,5 @@
             'X-CSRFToken': '{{ csrf_token }}'
         };
     </script>
-    <script type="text/javascript" src="{% static 'dist/js/cloc.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/js/timesheet.min.js' %}"></script>
 {% endblock %}

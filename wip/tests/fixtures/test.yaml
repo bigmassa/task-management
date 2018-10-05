@@ -59,7 +59,7 @@
     pk: 1
     fields: {
       title: "Live",
-      allow_new_clock_entries: true,
+      allow_new_timesheet_entries: true,
       order: 0
     }
 

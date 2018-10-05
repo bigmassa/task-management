@@ -14,8 +14,8 @@ class ModelTests(AppTestCase):
         self.assertEqual(field.max_length, 50)
         self.assertTrue(field.unique)
 
-    def test_allow_new_clock_entries(self):
-        field = JobStatus._meta.get_field('allow_new_clock_entries')
+    def test_allow_new_timesheet_entries(self):
+        field = JobStatus._meta.get_field('allow_new_timesheet_entries')
         self.assertModelField(field, models.BooleanField)
         self.assertTrue(field.default)
 

@@ -44,7 +44,7 @@ $(function() {
             type: "GET",
             url: clientListUrl,
             data: {
-                for_clock: true
+                for_timesheet: true
             }
         });
     }
@@ -54,7 +54,7 @@ $(function() {
             type: "GET",
             url: jobListUrl,
             data: {
-                for_clock: true
+                for_timesheet: true
             }
         });
     }
@@ -66,7 +66,7 @@ $(function() {
             data: {
                 assignee: currentUser,
                 search: $('[name=search]').val(),
-                for_clock: true
+                for_timesheet: true
             }
         });
     }
@@ -146,7 +146,7 @@ $(function() {
         $(this).siblings('ul').find('[data-task-id]').toggle();
     });
 
-    var clocOptions = {
+    var timesheetOptions = {
         defaultView: 'agendaWeek',
         header: {center: 'agendaDay,agendaWeek'},
         height: 'parent',
@@ -196,7 +196,7 @@ $(function() {
         viewRender: function(view, element) {
             // add the controls to the day header
             $.each($(".fc-day-header"), function(key, val) {
-                if (clocOptions.editable) {
+                if (timesheetOptions.editable) {
                     var input = '<label><input type="checkbox"><span></span><em>00:00</em></label>';
                 } else {
                     var input = '<label><input type="checkbox" disabled><span></span><em>00:00</em></label>';
@@ -256,7 +256,7 @@ $(function() {
         },
         drop: function(date, jsEvent) {
             // if not editable return
-            if (!clocOptions.editable) {
+            if (!timesheetOptions.editable) {
                 return
             }
 
@@ -269,7 +269,7 @@ $(function() {
                     task: $(jsEvent.target).data('task-id'),
                     user: currentUser,
                     started_at: date.toISOString(),
-                    ended_at: date.clone().add(clocOptions.defaultTimedEventDuration.minutes, 'minutes').toISOString()
+                    ended_at: date.clone().add(timesheetOptions.defaultTimedEventDuration.minutes, 'minutes').toISOString()
                 }),
                 success: function (data) {
                     var event = {
@@ -283,7 +283,7 @@ $(function() {
                         duration: $(data).attr('duration'),
                         textColor: readableTextColor($(data).attr('colour')),
                     };
-                    $('.cloc').fullCalendar('renderEvent', event, false);
+                    $('.timesheet').fullCalendar('renderEvent', event, false);
                 },
                 error: function (err) {
                     console.log(err);
@@ -316,7 +316,7 @@ $(function() {
                         task: event.task,
                         user: currentUser,
                         started_at: event.start.toISOString(),
-                        ended_at: event.start.clone().add(clocOptions.slotDuration.minutes, 'minutes').toISOString()
+                        ended_at: event.start.clone().add(timesheetOptions.slotDuration.minutes, 'minutes').toISOString()
                     }),
                     success: function (data) {
                         var event = {
@@ -330,7 +330,7 @@ $(function() {
                             duration: $(data).attr('duration'),
                             textColor: readableTextColor($(data).attr('colour')),
                         };
-                        $('.cloc').fullCalendar('renderEvent', event, false);
+                        $('.timesheet').fullCalendar('renderEvent', event, false);
                     },
                     error: function (err) {
                         revertFunc();
@@ -351,7 +351,7 @@ $(function() {
                 }),
                 success: function (data) {
                     event.duration = $(data).attr('duration');
-                    $(".cloc").fullCalendar('updateEvent', event);
+                    $(".timesheet").fullCalendar('updateEvent', event);
                 },
                 error: function (err) {
                     revertFunc();
@@ -361,38 +361,38 @@ $(function() {
         },
         eventClick: function(calEvent) {
             // if not editable return
-            if (!clocOptions.editable) {
+            if (!timesheetOptions.editable) {
                 return
             }
 
             // on click of an event open the overlay to edit it
             var pk = calEvent.id;
-            var clocOverlay = $('.cloc-event-overlay');
+            var timesheetOverlay = $('.timesheet-event-overlay');
 
             // sets the detail in the form from the event data
-            clocOverlay.find('.title').html(calEvent.title);
-            clocOverlay.find('.overlay-header .color-indicator').css("background-color", calEvent.color);
-            clocOverlay.find('[name=task]').val(calEvent.task);
-            clocOverlay.find('[name=comments]').val(calEvent.comments);
-            clocOverlay.find('[name=start_time]').val(calEvent.start.format("HH:mm"));
-            clocOverlay.find('[name=end_time]').val(calEvent.end.format("HH:mm"));
+            timesheetOverlay.find('.title').html(calEvent.title);
+            timesheetOverlay.find('.overlay-header .color-indicator').css("background-color", calEvent.color);
+            timesheetOverlay.find('[name=task]').val(calEvent.task);
+            timesheetOverlay.find('[name=comments]').val(calEvent.comments);
+            timesheetOverlay.find('[name=start_time]').val(calEvent.start.format("HH:mm"));
+            timesheetOverlay.find('[name=end_time]').val(calEvent.end.format("HH:mm"));
 
             // show the overlay
-            clocOverlay.addClass('in');
+            timesheetOverlay.addClass('in');
 
             // remove any previous events
-            clocOverlay.find('form').off('submit');
-            clocOverlay.find('.close').off('click');
-            clocOverlay.find('.delete').off('click');
+            timesheetOverlay.find('form').off('submit');
+            timesheetOverlay.find('.close').off('click');
+            timesheetOverlay.find('.delete').off('click');
             $(document).off('click', '.client-list .task');
 
             // setup close event
-            clocOverlay.find('.close').on('click', function () {
-                clocOverlay.removeClass('in');
+            timesheetOverlay.find('.close').on('click', function () {
+                timesheetOverlay.removeClass('in');
             });
 
             // setup update event
-            clocOverlay.find('form').on('submit', function (evt) {
+            timesheetOverlay.find('form').on('submit', function (evt) {
                 var task = $(this).find('[name=task]').val();
                 var comments = $(this).find('[name=comments]').val();
                 var startSplit = $('[name=start_time]').val().split(':');
@@ -418,9 +418,9 @@ $(function() {
                         calEvent.duration = $(data).attr('duration');
                         calEvent.textColor = readableTextColor($(data).attr('colour'));
 
-                        $('.cloc').fullCalendar('updateEvent', calEvent);
+                        $('.timesheet').fullCalendar('updateEvent', calEvent);
 
-                        clocOverlay.removeClass('in');
+                        timesheetOverlay.removeClass('in');
                     },
                     error: function (err) {
                         handleAPIError(err);
@@ -431,15 +431,15 @@ $(function() {
             });
 
             // setup delete event
-            clocOverlay.find('.delete').on('click', function (evt) {
+            timesheetOverlay.find('.delete').on('click', function (evt) {
                 evt.preventDefault();
                 $.ajax({
                     type: "DELETE",
                     url: timeEntryListUrl + pk + '/',
                     headers: ajaxHeaders,
                     success: function (data) {
-                        $('.cloc').fullCalendar('removeEvents', calEvent.id);
-                        clocOverlay.removeClass('in');
+                        $('.timesheet').fullCalendar('removeEvents', calEvent.id);
+                        timesheetOverlay.removeClass('in');
                     },
                     error: function (err) {
                         handleAPIError(err);
@@ -453,29 +453,29 @@ $(function() {
                 var title = $(this).closest('[data-job-id]').find('.job').text() + ' - ' + $(this).data('title');
                 var colour = $(this).data('colour');
 
-                clocOverlay.find('[name=task]').val(task);
-                clocOverlay.find('.title').html(title);
-                clocOverlay.find('.overlay-header .color-indicator').css("background-color", colour);
+                timesheetOverlay.find('[name=task]').val(task);
+                timesheetOverlay.find('.title').html(title);
+                timesheetOverlay.find('.overlay-header .color-indicator').css("background-color", colour);
 
                 evt.stopPropagation();
             });
         }
     };
 
-    $('.cloc').fullCalendar(clocOptions);
+    $('.timesheet').fullCalendar(timesheetOptions);
 
-    $(document).on('change', '[name=cloc_slot_duration]', function () {
-        clocOptions.slotDuration.minutes = $(this).val();
-        $('.cloc').fullCalendar('destroy');
-        $('.cloc').fullCalendar(clocOptions);
+    $(document).on('change', '[name=timesheet_slot_duration]', function () {
+        timesheetOptions.slotDuration.minutes = $(this).val();
+        $('.timesheet').fullCalendar('destroy');
+        $('.timesheet').fullCalendar(timesheetOptions);
     });
 
-    $(document).on('change', '[name=cloc_user]', function () {
+    $(document).on('change', '[name=timesheet_user]', function () {
         currentUser = parseInt($(this).val());
-        // re init cloc
-        clocOptions.editable = currentUser === loggedInUser || canManageOthers;
-        $('.cloc').fullCalendar('destroy');
-        $('.cloc').fullCalendar(clocOptions);
+        // re init timesheet
+        timesheetOptions.editable = currentUser === loggedInUser || canManageOthers;
+        $('.timesheet').fullCalendar('destroy');
+        $('.timesheet').fullCalendar(timesheetOptions);
         // rebuild the client list
         buildClientList(false);
     });

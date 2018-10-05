@@ -7,7 +7,7 @@ from wip.serializers import JobSerializer
 
 
 class JobFilter(FilterSet):
-    for_clock = filters.BooleanFilter(field_name='status__allow_new_clock_entries')
+    for_timesheet = filters.BooleanFilter(field_name='status__allow_new_timesheet_entries')
 
 
 class JobViewSet(viewsets.ModelViewSet):
