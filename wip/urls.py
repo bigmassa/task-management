@@ -13,6 +13,7 @@ router.register(r'jobs', api.JobViewSet)
 router.register(r'tasks', api.TaskViewSet)
 router.register(r'task-assignees', api.TaskAssigneeViewSet)
 router.register(r'task-notes', api.TaskNoteViewSet)
+router.register(r'task-statuses', api.TaskStatusViewSet)
 router.register(r'time-daily-signoff', api.TimeDailySignoffViewSet)
 router.register(r'time-entries', api.TimeEntryViewSet)
 
