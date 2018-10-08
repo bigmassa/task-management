@@ -5,7 +5,7 @@
         {% section_name as section %}
         <ul class="nav">
             <li><a href="{% url 'wip:task-board' %}" {% if section == 'taskboard' %} class="active"{% endif %}>{% trans 'Taskboard' %}</a></li>
-            <li><a href="{% url 'wip:client-list-view' %}" {% if section == 'client' %} class="active"{% endif %}>{% trans 'Clients' %}</a></li>
+            <li><a href="{% url 'wip:client-list' %}" {% if section == 'client' %} class="active"{% endif %}>{% trans 'Clients' %}</a></li>
             <li><a href="{% url 'wip:timesheet' %}" {% if section == 'timesheet' %} class="active"{% endif %}>{% trans 'Timesheet' %}</a></li>
         </ul>
         <div class="ml-auto">
