@@ -2,6 +2,7 @@ from .client import ClientViewSet
 from .job import JobViewSet
 from .job_file import JobFileViewSet
 from .job_note import JobNoteViewSet
+from .job_relationship import JobRelationshipViewSet
 from .task import TaskViewSet
 from .task_assignee import TaskAssigneeViewSet
 from .task_note import TaskNoteViewSet
