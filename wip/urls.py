@@ -8,6 +8,7 @@ from wip import api, views
 router = routers.DefaultRouter()
 router.register(r'clients', api.ClientViewSet)
 router.register(r'jobs', api.JobViewSet)
+router.register(r'job-files', api.JobFileViewSet)
 router.register(r'tasks', api.TaskViewSet)
 router.register(r'task-assignees', api.TaskAssigneeViewSet)
 router.register(r'task-notes', api.TaskNoteViewSet)

@@ -1,5 +1,6 @@
 from .client import ClientViewSet
 from .job import JobViewSet
+from .job_file import JobFileViewSet
 from .task import TaskViewSet
 from .task_assignee import TaskAssigneeViewSet
 from .task_note import TaskNoteViewSet

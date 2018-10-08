@@ -1,5 +1,6 @@
 from .client import ClientSerializer
 from .job import JobSerializer
+from .job_file import JobFileSerializer
 from .task import TaskSerializer
 from .task_assignee import TaskAssigneeSerializer
 from .task_note import TaskNoteSerializer
