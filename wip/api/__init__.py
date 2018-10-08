@@ -1,3 +1,4 @@
+from .billing_frequency import BillingFrequencyViewSet
 from .client import ClientViewSet
 from .client_contact import ClientContactViewSet
 from .job import JobViewSet

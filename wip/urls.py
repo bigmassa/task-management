@@ -6,6 +6,7 @@ from wip import api, views
 
 # API
 router = routers.DefaultRouter()
+router.register(r'billing-frequencies', api.BillingFrequencyViewSet, base_name='billingfrequency')
 router.register(r'clients', api.ClientViewSet)
 router.register(r'client-contacts', api.ClientContactViewSet)
 router.register(r'jobs', api.JobViewSet)
