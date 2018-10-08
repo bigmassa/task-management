@@ -3,6 +3,7 @@ from .job import JobSerializer
 from .job_file import JobFileSerializer
 from .job_note import JobNoteSerializer
 from .job_relationship import JobRelationshipSerializer
+from .job_status import JobStatusSerializer
 from .relationship import RelationshipSerializer
 from .task import TaskSerializer
 from .task_assignee import TaskAssigneeSerializer

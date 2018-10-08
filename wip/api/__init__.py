@@ -3,6 +3,7 @@ from .job import JobViewSet
 from .job_file import JobFileViewSet
 from .job_note import JobNoteViewSet
 from .job_relationship import JobRelationshipViewSet
+from .job_status import JobStatusViewSet
 from .relationship import RelationshipViewSet
 from .task import TaskViewSet
 from .task_assignee import TaskAssigneeViewSet
