@@ -3,6 +3,7 @@ from .client_contact import ClientContactViewSet
 from .job import JobViewSet
 from .job_file import JobFileViewSet
 from .job_note import JobNoteViewSet
+from .job_recurring_cost import JobRecurringCostViewSet
 from .job_relationship import JobRelationshipViewSet
 from .job_status import JobStatusViewSet
 from .job_type import JobTypeViewSet

@@ -3,6 +3,7 @@ from .client_contact import ClientContactSerializer
 from .job import JobSerializer
 from .job_file import JobFileSerializer
 from .job_note import JobNoteSerializer
+from .job_recurring_cost import JobRecurringCostSerializer
 from .job_relationship import JobRelationshipSerializer
 from .job_status import JobStatusSerializer
 from .job_type import JobTypeSerializer
