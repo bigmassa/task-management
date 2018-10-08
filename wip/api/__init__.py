@@ -6,6 +6,7 @@ from .job_note import JobNoteViewSet
 from .job_relationship import JobRelationshipViewSet
 from .job_status import JobStatusViewSet
 from .job_type import JobTypeViewSet
+from .position import PositionViewSet
 from .relationship import RelationshipViewSet
 from .task import TaskViewSet
 from .task_assignee import TaskAssigneeViewSet
