@@ -7,6 +7,7 @@ from wip import api, views
 # API
 router = routers.DefaultRouter()
 router.register(r'clients', api.ClientViewSet)
+router.register(r'client-contacts', api.ClientContactViewSet)
 router.register(r'jobs', api.JobViewSet)
 router.register(r'job-files', api.JobFileViewSet)
 router.register(r'job-notes', api.JobNoteViewSet)

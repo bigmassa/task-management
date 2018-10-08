@@ -1,4 +1,5 @@
 from .client import ClientViewSet
+from .client_contact import ClientContactViewSet
 from .job import JobViewSet
 from .job_file import JobFileViewSet
 from .job_note import JobNoteViewSet

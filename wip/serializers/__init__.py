@@ -1,4 +1,5 @@
 from .client import ClientSerializer
+from .client_contact import ClientContactSerializer
 from .job import JobSerializer
 from .job_file import JobFileSerializer
 from .job_note import JobNoteSerializer
