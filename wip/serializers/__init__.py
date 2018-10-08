@@ -7,6 +7,7 @@ from .job_recurring_cost import JobRecurringCostSerializer
 from .job_relationship import JobRelationshipSerializer
 from .job_status import JobStatusSerializer
 from .job_type import JobTypeSerializer
+from .payment_option import PaymentOptionSerializer
 from .position import PositionSerializer
 from .relationship import RelationshipSerializer
 from .task import TaskSerializer
