@@ -1224,7 +1224,7 @@ input[type="date"], input[type="datetime"], input[type="datetime-local"], input[
 
 input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="week"]:focus {
   background: white;
-  border-color: #292c36;
+  border-color: #979797;
   outline: 0;
 }
 
@@ -1293,7 +1293,7 @@ textarea {
 
 textarea:focus {
   background: white;
-  border-color: #292c36;
+  border-color: #979797;
   outline: 0;
 }
 
@@ -1317,7 +1317,7 @@ select {
 
 select:focus {
   background: white;
-  border-color: #292c36;
+  border-color: #979797;
   outline: 0;
 }
 
@@ -1800,7 +1800,7 @@ ul.radios input[type=radio] + span:after {
   height: 3rem;
   line-height: 3rem;
   text-align: center;
-  background: #33bfff;
+  background: #979797;
   border-radius: 50%;
 }
 
@@ -1872,10 +1872,6 @@ a.avatar:hover .avatar-close {
   border: 0;
 }
 
-.board-card .avatar {
-  background-color: rgba(41, 44, 54, 0.24);
-}
-
 .board-card-desc {
   margin: 1rem 0;
   font-size: 14px;
@@ -1942,8 +1938,15 @@ input[type="time"] {
 
 input[type="time"]:focus {
   background: white;
-  border-color: #292c36;
+  border-color: #979797;
   outline: 0;
+}
+
+.input-small {
+  height: 3rem !important;
+  padding: .5rem 1rem;
+  margin-bottom: .5rem;
+  font-size: 80%;
 }
 
 output {
@@ -1987,7 +1990,7 @@ output {
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
   background: white !important;
-  border-color: #292c36 !important;
+  border-color: #979797 !important;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
@@ -2317,7 +2320,19 @@ a.c-wildwillow:hover {
   padding: 2rem;
   margin: auto;
   margin-top: 4rem;
+  background-color: #f0f0f0;
+}
+
+.modal-panel .button-secondary:hover, .modal-panel .button-secondary:focus {
+  color: #292c36;
   background-color: white;
+  border-color: #979797;
+  outline: 0;
+}
+
+.modal-panel .panel {
+  padding: 2rem;
+  margin-bottom: .5rem;
 }
 
 .page-fs {
@@ -2592,8 +2607,24 @@ td textarea {
   margin-top: 2rem;
 }
 
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-0-5 {
+  margin-bottom: .5rem;
+}
+
 .mb-1 {
   margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mr-1 {
+  margin-right: 1rem;
 }
 
 .mr-2 {

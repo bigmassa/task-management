@@ -12,5 +12,15 @@
   padding: 2rem;
   margin: auto;
   margin-top: 4rem;
-  background-color: color("white");
+  background-color: color("secondary");
+
+  .button-secondary {
+    @include button-hover(color("primary"), color("white"), color("shadylady"));
+  }
+
+  .panel {
+    padding: 2rem;
+    margin-bottom: .5rem;
+  }
+
 }

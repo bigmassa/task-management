@@ -19,6 +19,13 @@ input[type="time"] {
   -webkit-appearance: none; // stylelint-disable-line property-no-vendor-prefix
 }
 
+.input-small {
+  height: 3rem !important;
+  padding: .5rem 1rem;
+  margin-bottom: .5rem;
+  font-size: 80%;
+}
+
 output {
   min-width: 4rem;
 }
