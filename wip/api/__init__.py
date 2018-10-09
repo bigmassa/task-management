@@ -10,6 +10,7 @@ from .job_status import JobStatusViewSet
 from .job_type import JobTypeViewSet
 from .payment_option import PaymentOptionViewSet
 from .position import PositionViewSet
+from .recurring_cost_type import RecurringCostTypeViewSet
 from .relationship import RelationshipViewSet
 from .task import TaskViewSet
 from .task_assignee import TaskAssigneeViewSet
