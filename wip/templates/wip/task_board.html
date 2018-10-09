@@ -1,15 +1,150 @@
 {% extends 'base.html' %}
 {% load i18n static %}
 {% block page_title %}Taskboard{% endblock %}
-{% block body_class %}{% endblock %}
+{% block body_class %}d-flex full-height flex-flow-column{% endblock %}
 {% block inner_content %}
     <div class="page-header py-2">
-        <div class="container-fluid d-flex align-items-center">
-            <div class="h2">{% trans 'Taskboard' %}</div>
+        <div class="container-fluid d-flex align-items-center c-white">
+            <div class="h2 mr-2">{% trans 'Taskboard' %}</div>
+            <div class="mr-2"><strong>Number of tasks</strong> 254</div>
+            <div class="mr-2"><strong>Assigned hours</strong> 750</div>
+            <div><strong>Overdue Tasks</strong> 4</div>
             <div class="page-header-actions"></div>
         </div>
     </div>
-    <div class="container-fluid inner-content"></div>
+    <div class="container-fluid d-flex flex-fill scroll-x mt-2 mb-1">
+
+        <div class="board-column d-flex flex-fill">
+            <div class="board-column-heading d-flex mb-1">
+                <strong class="flex-fill">Pending</strong>
+                <i class="icon-plus"></i>
+            </div>
+            <div class="flex-fill board-card-wrapper">
+
+                <div class="board-card d-flex flex-column">
+
+                    <div class="d-flex align-items-center">
+                        <span class="color-indicator" style="background: #bed600"></span>
+                        <span class="small uppercase"><strong>Limosa IT / Support</strong></span>
+                    </div>
+
+                    <p class="board-card-desc">Some amazing task title to ensure the text doesn't wrap</p>
+
+                    <div class="d-flex">
+                        <div class="flex-fill">
+                            <i class="icon-bell"></i> <span class="small uppercase">10 Oct</span>
+                            <i class="icon-clock"></i> <span class="small uppercase">4/12</span>
+                        </div>
+                        <div>
+                            <div class="avatar avatar-small">
+                                <span class="avatar-text">DF</span>
+                            </div>
+                            <div class="avatar avatar-small">
+                                <span class="avatar-text">SG</span>
+                            </div>
+                            <div class="avatar avatar-small">
+                                <span class="avatar-text">NT</span>
+                            </div>
+                            <div class="avatar avatar-small">
+                                <span class="avatar-text">BH</span>
+                            </div>
+                            <div class="avatar avatar-small">
+                                <span class="avatar-text">CV</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="board-card d-flex flex-column">
+
+                    <div class="d-flex align-items-center">
+                        <span class="color-indicator" style="background: #bed600"></span>
+                        <span class="small uppercase"><strong>Limosa Website Refresh</strong></span>
+                    </div>
+
+                    <p class="board-card-desc">As a user I want to login to the CMS so it's protected from authorised access</p>
+
+                    <div class="d-flex">
+                        <div class="flex-fill c-danger">
+                            <i class="icon-bell"></i> <span class="small uppercase strong">25 Sep</span>
+                            <i class="icon-clock"></i> <span class="small uppercase strong">14/12</span>
+                        </div>
+                        <div>
+                            <div class="avatar avatar-small">
+                                <span class="avatar-text">DF</span>
+                            </div>
+                            <div class="avatar avatar-small">
+                                <span class="avatar-text">SG</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="board-card">One.One</div>
+                <div class="board-card">One.Two</div>
+                <div class="board-card">One.Three</div>
+                <div class="board-card">One.Four</div>
+                <div class="board-card">One.Five</div>
+                <div class="board-card">One.Six</div>
+            </div>
+        </div>
+
+        <div class="board-column d-flex flex-fill">
+            <div class="board-column-heading d-flex mb-1">
+                <strong class="flex-fill">To Do</strong>
+                <i class="icon-plus"></i>
+            </div>
+            <div class="flex-fill board-card-wrapper">
+
+            </div>
+        </div>
+
+        <div class="board-column d-flex flex-fill">
+            <div class="board-column-heading d-flex mb-1">
+                <strong class="flex-fill">In Progress</strong>
+                <i class="icon-plus"></i>
+            </div>
+            <div class="flex-fill board-card-wrapper">
+
+            </div>
+        </div>
+
+        <div class="board-column d-flex flex-fill">
+            <div class="board-column-heading d-flex mb-1">
+                <strong class="flex-fill">QC/Review</strong>
+                <i class="icon-plus"></i>
+            </div>
+            <div class="flex-fill board-card-wrapper">
+
+            </div>
+        </div>
+
+        <div class="board-column d-flex flex-fill">
+            <div class="board-column-heading d-flex mb-1">
+                <strong class="flex-fill">Approved</strong>
+                <i class="icon-plus"></i>
+            </div>
+            <div class="flex-fill board-card-wrapper">
+
+            </div>
+        </div>
+
+        <div class="board-column d-flex flex-fill">
+            <div class="board-column-heading d-flex mb-1">
+                <strong class="flex-fill">Complete</strong>
+                <i class="icon-plus"></i>
+            </div>
+            <div class="flex-fill board-card-wrapper">
+
+            </div>
+        </div>
+
+    </div>
+
+    
+
 {% endblock %}
 
+{% block extra_css %}
+    <style>html { height: 100%; }</style>
+{% endblock %}
 {% block extra_js %}{% endblock %}

@@ -1,6 +1,8 @@
 // utils
 // -----------------------------------------
 
+/* stylelint-disable declaration-no-important  */
+
 .color-indicator {
   display: inline-block;
   width: 1.5rem;
@@ -38,7 +40,20 @@
   margin-top: 1rem;
 }
 
+.mt-2 {
+  margin-top: 2rem;
+}
+
 .mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mr-2 {
+  margin-right: 2rem;
+}
+
+.my-1 {
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
