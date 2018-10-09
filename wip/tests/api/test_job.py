@@ -5,7 +5,7 @@ from rest_framework.test import APIClient
 from tests.test_case import AppTestCase
 from wip.api import JobViewSet
 from wip.api.job import JobFilter
-from wip.models import Job
+from wip.models import Job, Task
 from wip.serializers import JobSerializer
 
 
@@ -67,3 +67,30 @@ class TestAPI(AppTestCase):
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         with self.assertRaises(Job.DoesNotExist):
             Job.objects.get(pk=self.test_object.pk)
+
+    def test_sort(self):
+        task1 = self.test_object.tasks.first()
+        task2 = Task.objects.create(
+            job=self.test_object,
+            title='task 2',
+            status_id=1,
+            order=0
+        )
+        task3 = Task.objects.create(
+            job=self.test_object,
+            title='task 3',
+            status_id=1,
+            order=0
+        )
+
+        data = {'tasks': [task2.pk, task1.pk, task3.pk]}
+        response = self.client.post(self.test_object_url + 'sort-tasks/', data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        task1.refresh_from_db()
+        task2.refresh_from_db()
+        task3.refresh_from_db()
+
+        self.assertEqual(task1.order, 1)
+        self.assertEqual(task2.order, 0)
+        self.assertEqual(task3.order, 2)
