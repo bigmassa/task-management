@@ -54,7 +54,7 @@ $button-border-radius:          .1rem;
 $input-use-full-width:          true;
 $input-font-size:               1.3rem;
 $input-margin-bottom:           $generic-margin-bottom;
-$input-border-color-focus:      map-get($colors, shadylady);
+$input-border-color-focus:      map-get($colors, "shadylady");
 
 
 // tables

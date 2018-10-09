@@ -1257,11 +1257,6 @@ input[type="checkbox"], input[type="radio"] {
   opacity: 1;
 }
 
-:-ms-input-placeholder {
-  color: #b9b9b9;
-  opacity: 1;
-}
-
 ::-ms-input-placeholder {
   color: #b9b9b9;
   opacity: 1;
