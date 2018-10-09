@@ -16,6 +16,7 @@ router.register(r'job-recurring-costs', api.JobRecurringCostViewSet)
 router.register(r'job-relationships', api.JobRelationshipViewSet)
 router.register(r'job-statuses', api.JobStatusViewSet)
 router.register(r'job-types', api.JobTypeViewSet)
+router.register(r'make-call', api.MakeCallViewSet, base_name='makecall')
 router.register(r'payment-options', api.PaymentOptionViewSet)
 router.register(r'positions', api.PositionViewSet)
 router.register(r'recurring-cost-type', api.RecurringCostTypeViewSet)
@@ -30,7 +31,6 @@ router.register(r'time-entries', api.TimeEntryViewSet)
 # DESKTOP
 app_name = 'wip'
 urlpatterns = [
-    path('make-call/<telephone_number>/', views.MakeCall.as_view(), name='make-call'),
     path('clients/', views.ClientList.as_view(), name='client-list'),
     path('clients/<int:pk>/', views.ClientDetail.as_view(), name='client-detail'),
     path('clients/create/', views.ClientCreate.as_view(), name='client-create'),
