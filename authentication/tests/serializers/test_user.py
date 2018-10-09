@@ -18,7 +18,8 @@ class TestSerializer(AppTestCase):
             UserSerializer.Meta.fields,
             [
                 'id',
-                'full_name'
+                'full_name',
+                'initials'
             ]
         )
 
@@ -29,6 +30,7 @@ class TestSerializer(AppTestCase):
             serializer.data,
             {
                 'id': instance.pk,
-                'full_name': instance.get_full_name()
+                'full_name': instance.get_full_name(),
+                'initials': instance.get_initials()
             }
         )

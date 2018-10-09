@@ -5,7 +5,7 @@ from django.views.generic import RedirectView
 
 
 class Home(LoginRequiredMixin, RedirectView):
-    pattern_name = 'wip:task-board'
+    pattern_name = 'wip:taskboard'
     permanent = True
 
 

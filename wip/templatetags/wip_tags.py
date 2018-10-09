@@ -10,7 +10,7 @@ def section_name(context):
 
     url_name = context['request'].resolver_match.url_name
 
-    if url_name.startswith("task-board"):
+    if url_name.startswith("taskboard"):
         return 'taskboard'
 
     if url_name.startswith("timesheet"):

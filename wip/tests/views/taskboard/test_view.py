@@ -6,7 +6,7 @@ from tests.test_case import AppTestCase
 class TestView(AppTestCase):
 
     def setUp(self):
-        self.url = reverse('wip:task-board')
+        self.url = reverse('wip:taskboard')
         self.user = self.create_user()
 
     def test_login_required(self):

@@ -86,6 +86,7 @@ class Task(models.Model):
     tags = TaggableManager(blank=True)
 
     class Meta:
+        base_manager_name = 'objects'
         ordering = ['order']
 
     def __str__(self):

@@ -3,8 +3,13 @@
 
 .modal {
   @include position(0,0,0,0);
+  display: none;
   overflow-y: auto;
   background-color: color-a("primary", .87);
+}
+
+.modal.in {
+  display: block;
 }
 
 .modal-panel {

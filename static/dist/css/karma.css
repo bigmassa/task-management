@@ -1257,6 +1257,11 @@ input[type="checkbox"], input[type="radio"] {
   opacity: 1;
 }
 
+:-ms-input-placeholder {
+  color: #b9b9b9;
+  opacity: 1;
+}
+
 ::-ms-input-placeholder {
   color: #b9b9b9;
   opacity: 1;
@@ -2306,8 +2311,13 @@ a.c-wildwillow:hover {
   right: 0;
   bottom: 0;
   left: 0;
+  display: none;
   overflow-y: auto;
   background-color: rgba(41, 44, 54, 0.87);
+}
+
+.modal.in {
+  display: block;
 }
 
 .modal-panel {

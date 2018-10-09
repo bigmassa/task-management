@@ -25,6 +25,7 @@ router.register(r'tasks', api.TaskViewSet)
 router.register(r'task-assignees', api.TaskAssigneeViewSet)
 router.register(r'task-notes', api.TaskNoteViewSet)
 router.register(r'task-statuses', api.TaskStatusViewSet)
+router.register(r'users', api.UserViewSet)
 router.register(r'time-daily-signoff', api.TimeDailySignoffViewSet)
 router.register(r'time-entries', api.TimeEntryViewSet)
 
@@ -59,8 +60,8 @@ urlpatterns = [
     path('tasks/<int:pk>/delete/', views.TaskDelete.as_view(), name='task-delete'),
     path('tasks/<int:pk>/assignees/update/', views.TaskAssigneeUpdate.as_view(), name='taskassignee-update'),
     path('tasks/<int:pk>/notes/create/', views.TaskNoteCreate.as_view(), name='tasknote-create'),
-    path('task-board/', views.TaskBoard.as_view(), name='task-board'),
     path('task-notes/<int:pk>/update/', views.TaskNoteUpdate.as_view(), name='tasknote-update'),
     path('task-notes/<int:pk>/delete/', views.TaskNoteDelete.as_view(), name='tasknote-delete'),
+    path('taskboard/', views.TaskBoard.as_view(), name='taskboard'),
     path('timesheet/', views.Timesheet.as_view(), name='timesheet'),
 ]

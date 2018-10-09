@@ -7,11 +7,12 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.schemas import ManualSchema
 
-from wip.models import Job, Task
+from wip.models import Job, Task, Client
 from wip.serializers import JobSerializer, JobTaskSortSerializer
 
 
 class JobFilter(FilterSet):
+    client = filters.ModelChoiceFilter(field_name='client', queryset=Client.objects.all())
     for_timesheet = filters.BooleanFilter(field_name='status__allow_new_timesheet_entries')
 
 
@@ -21,7 +22,7 @@ sort_schema = ManualSchema(
             "id",
             required=True,
             location="path",
-            schema=coreschema.String(
+            schema=coreschema.Integer(
                 title="ID",
                 description="Job ID",
             )
@@ -54,6 +55,6 @@ class JobViewSet(viewsets.ModelViewSet):
                 obj = Task.objects.get(pk=pk)
                 obj.order = index
                 obj.save()
-            return Response({'status': 'ok'})
+            return Response({'status': 'ok'}, status=status.HTTP_200_OK)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

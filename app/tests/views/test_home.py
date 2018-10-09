@@ -13,8 +13,8 @@ class ViewTests(AppTestCase):
         response = self.client.get(self.url)
         self.assertRedirects(response, expected_url, 302, 200)
 
-    def test_login_grants_access__but_redirects_to_task_board(self):
-        expected_url = reverse('wip:task-board')
+    def test_login_grants_access__but_redirects_to_taskboard(self):
+        expected_url = reverse('wip:taskboard')
         user = self.create_user()
         self.client.force_login(user)
         response = self.client.get(self.url)
