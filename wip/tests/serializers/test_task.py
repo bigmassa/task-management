@@ -27,7 +27,8 @@ class TestSerializer(AppTestCase):
                 'target_date',
                 'closed',
                 'not_chargeable',
-                'order'
+                'order',
+                'tags'
             ]
         )
 
@@ -46,6 +47,7 @@ class TestSerializer(AppTestCase):
                 'target_date': instance.target_date.isoformat(),
                 'closed': instance.closed,
                 'not_chargeable': instance.not_chargeable,
-                'order': instance.order
+                'order': instance.order,
+                'tags': [str(t) for t in instance.tags.all()]
             }
         )

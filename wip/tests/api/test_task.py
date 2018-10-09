@@ -36,10 +36,12 @@ class TestAPI(AppTestCase):
         del self.test_object_data['id']
         del self.test_object_data['created_at']
         self.test_object_data['title'] = 'some title'
+        self.test_object_data['tags'] = ['tag1']
         response = self.client.post(self.base_url, self.test_object_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.test_object_data['job_id'] = self.test_object_data.pop('job')
-        Task.objects.get(**self.test_object_data)
+        del self.test_object_data['tags']  # delete tags as cannot get this way
+        Task.objects.get(**self.test_object_data, tags__name='tag1')
 
     def test_detail(self):
         response = self.client.get(self.test_object_url)
@@ -47,12 +49,14 @@ class TestAPI(AppTestCase):
         self.assertEqual(response.json(), self.test_object_data)
 
     def test_put(self):
-        self.test_object_data['title'] = 'some title'
         del self.test_object_data['created_at']
+        self.test_object_data['title'] = 'some title'
+        self.test_object_data['tags'] = ['tag1']
         response = self.client.put(self.test_object_url, self.test_object_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.test_object_data['job_id'] = self.test_object_data.pop('job')
-        Task.objects.get(**self.test_object_data)
+        del self.test_object_data['tags']  # delete tags as cannot get this way
+        Task.objects.get(**self.test_object_data, tags__name='tag1')
 
     def test_delete(self):
         response = self.client.delete(self.test_object_url)
