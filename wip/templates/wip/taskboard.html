@@ -1,115 +1,21 @@
 {% extends 'base.html' %}
-{% load i18n static %}
+{% load i18n static wip_tags %}
 {% block page_title %}Taskboard{% endblock %}
-{% block body_class %}d-flex full-height flex-flow-column{% endblock %}
+{% block body_class %}d-flex full-height flex-column{% endblock %}
 {% block inner_content %}
-    <div class="page-header py-2">
-        <div class="container-fluid d-flex align-items-center c-white">
-            <div class="h2 mr-2">{% trans 'Taskboard' %}</div>
-            <div class="mr-2"><strong>{% trans 'Number of tasks' %}</strong> 254</div>
-            <div class="mr-2"><strong>{% trans 'Assigned hours' %}</strong> 750</div>
-            <div><strong>{% trans 'Overdue Tasks' %}</strong> 4</div>
-            <div class="page-header-actions"></div>
-        </div>
-    </div>
-    <div class="container-fluid d-flex flex-fill scroll-x mt-2 mb-1">
-        {% for status in statuses %}
-        <div data-status="{{ status.pk }}" class="board-column d-flex flex-fill">
-            <div class="board-column-heading d-flex mb-1">
-                <strong class="flex-fill">{{ status }}</strong>
-                <i class="icon-plus"></i>
-            </div>
-            <div class="flex-fill board-card-wrapper">
-                {% for item in assigned_tasks %}
-                    {% if item.task.status == status %}
-                        <div data-id="{{ item.pk }}" data-task="{{ item.task.pk }}" class="board-card d-flex flex-column">
-                            <div class="d-flex align-items-center">
-                                <span class="color-indicator" style="background: {{ item.task.job.colour }}"></span>
-                                <span class="small uppercase"><strong>{{ item.task.job.client }} / {{ item.task.job }}</strong></span>
-                            </div>
-                            <p class="board-card-desc">{{ item.task }}</p>
-                            <div class="d-flex">
-                                <div class="flex-fill">
-                                    <span class="uppercase {# c-danger #}"><i class="icon-bell"></i> {{ item.task.target_date|date:'d M'|default:'-' }}</span>
-                                    <span class="uppercase {# c-danger #}"><i class="icon-clock"></i> {{ item.task.time_spent_hours }}/{{ item.task.allocated_hours }}</span>
-                                </div>
-                                <div>
-                                    {% for user in item.task.assignees.all %}
-                                    <div class="avatar avatar-small">
-                                        <span class="avatar-text">{{ user.user.get_initials }}</span>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
-    <div class="modal">
-        <div class="modal-panel">
-            <div class="container">
-                <div class="row mb-2">
-                    <div class="col">
-                        <div class="input-group mb-0">
-                            <div class="input-group-addon"><span class="color-indicator" style="background: #bed600"></span></div>
-                            <input type="text" value="{% lorem 5 w %}">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-8">
-                        <div class="mb-2">
-                            <p class="mb-0-5"><strong>{% trans 'Description' %}</strong></p>
-                            <p>{% lorem 10 w %}</p>
-                        </div>
-                        <div class="mb-2">
-                            <p class="mb-0-5"><strong>{% trans 'Notes' %}</strong></p>
-                            <textarea class="full-width mb-0-5" placeholder="Write a note..."></textarea>
-                            <button class="button button-secondary">{% trans 'Add' %}</button>
-                        </div>
-                        <div class="my-1">
-                            <div class="d-flex align-items-center mb-1">
-                                <div class="avatar mr-1"><span class="avatar-text">DF</span></div>
-                                <div class="date">Oct. 5, 2018, 14:35</div>
-                            </div>
-                            <div class="panel">{% lorem 1 p %}</div>
-                            <div class="small muted">
-                                <button class="button button-clear">{% trans 'Edit' %}</button> |
-                                <button class="button button-clear">{% trans 'Delete' %}</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <p class="mb-0-5"><strong>{% trans 'Job' %}</strong></p>
-                        <select class="full-width input-small">
-                            <option>Select...</option>
-                        </select>
-                        <select class="full-width input-small">
-                            <option>Select...</option>
-                        </select>
-                        <hr>
-                        <p class="mb-0-5"><strong>{% trans 'Assignees' %}</strong></p>
-                        <div class="avatar"><span class="avatar-text">DF</span></div>
-                        <hr>
-                        <p class="mb-0-5"><strong>{% trans 'Time Spent (hrs)' %}</strong></p>
-                        <p>1 of 1.5</p>
-                        <hr>
-                        <p class="mb-0-5"><strong>{% trans 'Target Date' %}</strong></p>
-                        <p>04/05/2019</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <app-root></app-root>
 {% endblock %}
 
 {% block extra_css %}
     <style>html { height: 100%; }</style>
 {% endblock %}
 
-{% block extra_js %}{% endblock %}
+{% block extra_js %}
+    <script> if (global === undefined) { var global = window; } </script>
+    <script type="text/javascript" src="{% static 'dist/js/frontend/runtime.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/js/frontend/polyfills.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/js/frontend/styles.js' %}"></script>
+    {% is_debug_mode as is_debug %}
+    {% if is_debug %}<script type="text/javascript" src="{% static 'dist/js/frontend/vendor.js' %}"></script>{% endif %}
+    <script type="text/javascript" src="{% static 'dist/js/frontend/main.js' %}"></script>
+{% endblock %}

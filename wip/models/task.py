@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse_lazy
+from django.utils import timezone
 
 from taggit.managers import TaggableManager
 
@@ -114,3 +115,11 @@ class Task(models.Model):
         if hasattr(self, 'qs_time_spent') and getattr(self, 'qs_time_spent'):
             seconds = getattr(self, 'qs_time_spent').seconds
         return seconds_to_decimal_hrs(seconds)
+
+    @property
+    def is_overdue(self):
+        """ if the task is not closed, flag if the target date has past """
+
+        if self.target_date and not self.closed:
+            return self.target_date < timezone.now().date()
+        return False

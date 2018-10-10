@@ -72,7 +72,7 @@
                                     <th>{% trans 'Title' %}</th>
                                     <th class="keep-min-width">{% trans 'Tags' %}</th>
                                     <th class="keep-min-width">{% trans 'Assignees' %}</th>
-                                    <th class="keep-min-width">{% trans 'Time (hrs)' %}</th>
+                                    <th class="keep-min-width">{% trans 'Time Spent (hours)' %}</th>
                                     <th class="keep-min-width">{% trans 'Target Date' %}</th>
                                     <th class="keep-min-width">{% trans 'Status' %}</th>
                                 </tr>
@@ -113,7 +113,7 @@
                             <a class="button button-primary" href="{% url 'wip:jobnote-create' object.pk %}">{% trans 'Add' %}</a>
                         </div>
                         {% for note in object.notes.all %}
-                            <p>{{ note.user.get_full_name }} - {{ note.created_at }}</p>
+                            <p>{{ note.user.get_full_name }} - {{ note.updated_at }}</p>
                             <div class="comment">{{ note.note|linebreaks }}</td></div>
                             <span class="small muted">
                                 <a href="{{ note.get_update_url }}" class="underline-dotted">{% trans 'Edit' %}</a> |

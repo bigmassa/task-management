@@ -22,6 +22,15 @@
   }
 }
 
+.avatar.new {
+  background: transparent;
+  border: dotted 1px color("shadylady");
+
+  .avatar-text {
+    color: color("shadylady");
+  }
+}
+
 a.avatar:hover {
 
   background: color("white");

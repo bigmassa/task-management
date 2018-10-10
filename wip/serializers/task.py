@@ -33,6 +33,7 @@ class TaskSerializer(taggit_serializers.TaggitSerializer, serializers.ModelSeria
             'not_chargeable',
             'time_spent_hours',
             'allocated_hours',
+            'is_overdue',
             'order',
             'tags'
         ]

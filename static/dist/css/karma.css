@@ -1709,8 +1709,8 @@ ul.radios input[type=radio] + span:after {
 /* add your custom modules here */
 @font-face {
   font-family: 'fontello';
-  src: url("../font/fontello.eot?31030235");
-  src: url("../font/fontello.eot?31030235#iefix") format("embedded-opentype"), url("../font/fontello.woff2?31030235") format("woff2"), url("../font/fontello.woff?31030235") format("woff"), url("../font/fontello.ttf?31030235") format("truetype"), url("../font/fontello.svg?31030235#fontello") format("svg");
+  src: url("../font/fontello.eot?65811195");
+  src: url("../font/fontello.eot?65811195#iefix") format("embedded-opentype"), url("../font/fontello.woff2?65811195") format("woff2"), url("../font/fontello.woff?65811195") format("woff"), url("../font/fontello.ttf?65811195") format("truetype"), url("../font/fontello.svg?65811195#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1721,7 +1721,7 @@ ul.radios input[type=radio] + span:after {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?31030235#fontello') format('svg');
+    src: url('../font/fontello.svg?65811195#fontello') format('svg');
   }
 }
 */
@@ -1783,6 +1783,11 @@ ul.radios input[type=radio] + span:after {
 }
 
 /* '' */
+.icon-down-open:before {
+  content: '\e807';
+}
+
+/* '' */
 .icon-bell:before {
   content: '\f0f3';
 }
@@ -1813,6 +1818,15 @@ ul.radios input[type=radio] + span:after {
 .avatar .avatar-close {
   display: none;
   color: #292c36;
+}
+
+.avatar.new {
+  background: transparent;
+  border: dotted 1px #979797;
+}
+
+.avatar.new .avatar-text {
+  color: #979797;
 }
 
 a.avatar:hover {
@@ -1940,6 +1954,38 @@ input[type="time"]:focus {
   background: white;
   border-color: #979797;
   outline: 0;
+}
+
+input[disabled]:not(:hover) {
+  background: #e8e8e8;
+  border-color: transparent;
+}
+
+select[disabled]:not(:hover) {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  background: #e8e8e8;
+  border-color: transparent;
+}
+
+textarea[disabled]:not(:hover) {
+  resize: none;
+}
+
+textarea[disabled]:not(:hover).transparent {
+  background: #e8e8e8;
+  border-color: transparent;
+}
+
+input[disabled]:hover,
+select[disabled]:hover,
+textarea[disabled]:hover {
+  cursor: pointer;
+}
+
+textarea {
+  display: block;
 }
 
 .input-small {
@@ -2415,6 +2461,40 @@ a.c-wildwillow:hover {
   margin-bottom: 0;
 }
 
+.filter-box {
+  position: relative;
+}
+
+.filter-box .filter-options {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+  position: absolute;
+  top: calc(100% + 10px);
+  right: -11px;
+  bottom: auto;
+  left: auto;
+  min-width: 30rem;
+  padding: 1.5rem;
+  color: initial;
+  background-color: #f0f0f0;
+}
+
+.filter-box .filter-options::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  margin-bottom: -4px;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f0f0f0;
+  border-left: 10px solid transparent;
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  bottom: auto;
+  left: auto;
+}
+
 /* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
 tbody tr:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -2617,7 +2697,7 @@ td textarea {
 }
 
 .mb-0-5 {
-  margin-bottom: .5rem;
+  margin-bottom: .5rem !important;
 }
 
 .mb-1 {
@@ -2626,6 +2706,10 @@ td textarea {
 
 .mb-2 {
   margin-bottom: 2rem;
+}
+
+.mr-0-5 {
+  margin-right: .5rem;
 }
 
 .mr-1 {
