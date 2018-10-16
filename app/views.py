@@ -6,7 +6,7 @@ from django.views.generic import RedirectView
 
 class Home(LoginRequiredMixin, RedirectView):
     pattern_name = 'wip:taskboard'
-    permanent = True
+    permanent = False
 
 
 def error404(request, exception):

@@ -415,7 +415,7 @@ var TaskboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"board-card d-flex flex-column pointer\" *ngIf=\"task$ | async as task\">\n    <div class=\"d-flex align-items-center\">\n        <span class=\"color-indicator\" [style.background]=\"task._job?.colour\"></span>\n        <span class=\"small uppercase\"><strong>{{ task._job?._client?.name }} / {{ task._job?.title }}</strong></span>\n    </div>\n    <p class=\"board-card-desc\">{{ task.title }}</p>\n    <div class=\"d-flex\">\n        <div class=\"mr-auto\">\n            <span class=\"uppercase mr-1\" [class.c-red]=\"task.is_overdue\" *ngIf=\"task.target_date\"><i class=\"icon-bell\"></i> {{ task.target_date | date:'d MMM' }}</span>\n            <span class=\"uppercase\" [class.c-red]=\"task.time_spent_hours > task._allocated_hours\"><i class=\"icon-clock\"></i> {{ task.time_spent_hours }}/{{ task._allocated_hours }}</span>\n        </div>\n        <div>\n            <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of task._assignees\"></div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"board-card d-flex flex-column pointer\" *ngIf=\"task$ | async as task\">\n    <div class=\"d-flex align-items-center\">\n        <span class=\"color-indicator\" [style.background]=\"task._job?.colour\"></span>\n        <span class=\"small uppercase\"><strong>{{ task._job?._client?.name }} / {{ task._job?.title }}</strong></span>\n    </div>\n    <p class=\"board-card-desc\">{{ task.title }}</p>\n    <div class=\"d-flex\">\n        <div class=\"mr-auto\">\n            <span class=\"uppercase mr-1\" [class.c-red]=\"task.is_overdue\" *ngIf=\"task.target_date\"><i class=\"icon-bell\"></i> {{ task.target_date | date:'d MMM' }}</span>\n            <span class=\"uppercase\" [class.c-red]=\"+task.time_spent_hours > task._allocated_hours\"><i class=\"icon-clock\"></i> {{ task.time_spent_hours }}/{{ task._allocated_hours }}</span>\n        </div>\n        <div>\n            <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of task._assignees\"></div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -3662,7 +3662,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

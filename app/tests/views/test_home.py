@@ -18,4 +18,4 @@ class ViewTests(AppTestCase):
         user = self.create_user()
         self.client.force_login(user)
         response = self.client.get(self.url)
-        self.assertRedirects(response, expected_url, 301, 200)
+        self.assertRedirects(response, expected_url, 302, 200)
