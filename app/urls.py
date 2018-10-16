@@ -29,6 +29,7 @@ urlpatterns = [
     path('api/', include((router.urls, 'api'))),
     path('api/docs/', include_docs_urls(title=API_TITLE)),
     path('auth/', include('authentication.urls')),
+    path('reporting/', include('reporting.urls')),
     path('wip/', include('wip.urls')),
     path('', Home.as_view(), name='home')
 ]

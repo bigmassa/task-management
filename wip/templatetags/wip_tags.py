@@ -22,5 +22,8 @@ def section_name(context):
     if url_name.startswith("timesheet"):
         return 'timesheet'
 
+    if url_name.startswith("report"):
+        return 'report'
+
     if url_name.startswith(("client", "job", "task")):
         return 'client'

@@ -7,6 +7,7 @@
             <li><a href="{% url 'wip:taskboard' %}" {% if section == 'taskboard' %} class="active"{% endif %}>{% trans 'Taskboard' %}</a></li>
             <li><a href="{% url 'wip:client-list' %}" {% if section == 'client' %} class="active"{% endif %}>{% trans 'Clients' %}</a></li>
             <li><a href="{% url 'wip:timesheet' %}" {% if section == 'timesheet' %} class="active"{% endif %}>{% trans 'Timesheet' %}</a></li>
+            <li><a href="{% url 'reporting:report-list' %}" {% if section == 'report' %} class="active"{% endif %}>{% trans 'Reporting' %}</a></li>
         </ul>
         <div class="ml-auto">
             <a class="avatar" href="{% url 'logout' %}">
