@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import timedelta
 from decimal import Decimal
 
 from django.db import models
@@ -114,11 +114,11 @@ class TestModel(AppTestCase):
         task = Task()
         self.assertFalse(task.is_overdue)
 
-        task = Task(target_date=datetime.today().date())
+        task = Task(target_date=timezone.now().date())
         self.assertFalse(task.is_overdue)
 
-        task = Task(target_date=datetime.today().date() - timedelta(days=1), closed=True)
+        task = Task(target_date=timezone.now().date() - timedelta(days=1), closed=True)
         self.assertFalse(task.is_overdue)
 
-        task = Task(target_date=datetime.today().date() - timedelta(days=1))
+        task = Task(target_date=timezone.now().date() - timedelta(days=1))
         self.assertTrue(task.is_overdue)
