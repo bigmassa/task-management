@@ -415,7 +415,7 @@ var TaskboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"board-card d-flex flex-column pointer\" *ngIf=\"task$ | async as task\">\n    <div class=\"d-flex align-items-center\">\n        <span class=\"color-indicator\" [style.background]=\"task._job?.colour\"></span>\n        <span class=\"small uppercase\"><strong>{{ task._job?._client?.name }} / {{ task._job?.title }}</strong></span>\n    </div>\n    <p class=\"board-card-desc\">{{ task.title }}</p>\n    <div class=\"d-flex\">\n        <div class=\"mr-auto\">\n            <span class=\"uppercase mr-1\" [class.c-red]=\"task.is_overdue\" *ngIf=\"task.target_date\"><i class=\"icon-bell\"></i> {{ task.target_date | date:'d MMM' }}</span>\n            <span class=\"uppercase\" [class.c-red]=\"+task.time_spent_hours > task._allocated_hours\"><i class=\"icon-clock\"></i> {{ task.time_spent_hours }}/{{ task._allocated_hours }}</span>\n        </div>\n        <div>\n            <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of task._assignees\"></div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"board-card d-flex flex-column pointer\" *ngIf=\"task$ | async as task\">\n    <div class=\"d-flex align-items-center\">\n        <span class=\"color-indicator\" [style.background]=\"task._job?.colour\"></span>\n        <span class=\"small uppercase\"><strong>{{ task._job?._client?.name }} / {{ task._job?.title }}</strong></span>\n    </div>\n    <p class=\"board-card-desc\">{{ task.title }}</p>\n    <div class=\"d-flex\">\n        <div class=\"mr-auto\">\n            <span class=\"uppercase mr-1\" [class.c-red]=\"task.is_overdue\" *ngIf=\"task.target_date\"><i class=\"icon-bell\"></i> {{ task.target_date | date:'d MMM' }}</span>\n            <span class=\"uppercase\" [class.c-red]=\"task._is_over_allocated_hours\"><i class=\"icon-clock\"></i> {{ task._time_spent_hours }}/{{ task._allocated_hours }}</span>\n        </div>\n        <div>\n            <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of task._assignees\"></div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -3442,12 +3442,16 @@ var getTaskNotes = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelect
 var getTaskCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_job__WEBPACK_IMPORTED_MODULE_3__["getJobCollection"], _state__WEBPACK_IMPORTED_MODULE_1__["getTaskState"], _state__WEBPACK_IMPORTED_MODULE_1__["getTaskAssigneeState"], getTaskNotes, _state__WEBPACK_IMPORTED_MODULE_1__["getTaskStatusState"], function (jobs, tasks, assignees, notes, statuses) {
     var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](tasks, function (task) {
         var foundAssignees = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['task', task.id]);
+        var time_spent = lodash__WEBPACK_IMPORTED_MODULE_0__["sumBy"](foundAssignees, function (a) { return +a.time_spent_hours; }).toFixed(2);
+        var allocated = lodash__WEBPACK_IMPORTED_MODULE_0__["sumBy"](foundAssignees, function (a) { return +a.allocated_hours; }).toFixed(2);
         return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, task, {
             _job: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](jobs, ['id', task.job]),
             _assignees: foundAssignees,
             _notes: lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](notes, ['task', task.id]),
             _status: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](statuses, ['id', task.status]),
-            _allocated_hours: lodash__WEBPACK_IMPORTED_MODULE_0__["sumBy"](foundAssignees, function (a) { return +a.allocated_hours; }).toFixed(2)
+            _time_spent_hours: time_spent,
+            _allocated_hours: allocated,
+            _is_over_allocated_hours: +time_spent > +allocated
         });
     });
     return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['order'], ['asc']);
@@ -3519,7 +3523,7 @@ var getStatsForTaskboard = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["crea
     }
     return {
         count_of_tasks: foundTasks.length,
-        allocated_hours: lodash__WEBPACK_IMPORTED_MODULE_0__["sumBy"](foundTasks, function (t) { return +t.allocated_hours; }).toFixed(2),
+        allocated_hours: lodash__WEBPACK_IMPORTED_MODULE_0__["sumBy"](foundTasks, function (t) { return +t._allocated_hours; }).toFixed(2),
         count_of_overdue: lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](foundTasks, function (t) { return t.is_overdue; }).length
     };
 });

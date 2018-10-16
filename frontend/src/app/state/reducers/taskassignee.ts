@@ -5,6 +5,7 @@ export interface ITaskAssignee {
     task: number;
     user: number;
     allocated_hours: string;
+    time_spent_hours?: string;
     order: number;
 }
 

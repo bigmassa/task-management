@@ -48,7 +48,7 @@ export const getStatsForTaskboard = createSelector(
         }
         return {
             count_of_tasks: foundTasks.length,
-            allocated_hours: _.sumBy(foundTasks, t => +t.allocated_hours).toFixed(2),
+            allocated_hours: _.sumBy(foundTasks, t => +t._allocated_hours).toFixed(2),
             count_of_overdue: _.filter(foundTasks, t => t.is_overdue).length
         }
     }

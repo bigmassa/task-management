@@ -23,6 +23,9 @@ export interface ITask {
     _assignees?: ITaskAssignee[];
     _notes?: ITaskNote[];
     _status?: ITaskStatus[];
+    _time_spent_hours?: string;
+    _allocated_hours?: string;
+    _is_over_allocated_hours?: boolean;
 }
 
 export type State = ITask[];

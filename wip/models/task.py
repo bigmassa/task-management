@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 from django.urls import reverse_lazy
 from django.utils import timezone
@@ -105,7 +107,7 @@ class Task(models.Model):
 
         if hasattr(self, 'qs_allocated_hours'):
             return getattr(self, 'qs_allocated_hours')
-        return 0
+        return Decimal('0.00')
 
     @property
     def time_spent_hours(self):
