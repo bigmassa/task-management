@@ -10,7 +10,7 @@ class DatePicker(forms.widgets.DateInput):
     def __init__(self, attrs=None, format=None):
         if not attrs:
             attrs = {
-                'class': 'flatpickr',
+                'class': 'flatpickr date-input',
                 'placeholder': 'dd/mm/yyyy'
             }
         if not format:

@@ -8,5 +8,12 @@
             <div class="h2">{% trans 'Reporting' %}</div>
         </div>
     </div>
-    <div class="container-fluid inner-content"></div>
+    <div class="container-fluid inner-content">
+        <ul class="list-style-none">
+            <li>
+                <p><a href="{% url 'reporting:report-job-time-analysis' %}" class="underline-dotted">{% trans 'Job Time Analysis Report' %}</a></p>
+                <p>{% blocktrans %}Report that shows time spent for a job over a period of time. Includes allocated and chargeable time.{% endblocktrans %}</p>
+            </li>
+        </ul>
+    </div>
 {% endblock %}
