@@ -19,39 +19,33 @@
     </div>
     <div class="container-fluid inner-content">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-3">
+
                 <p class="strong">{% trans 'Description' %}</p>
                 {{ object.description|default:'-'|linebreaks }}
+
+                <hr>
+                
+                <p class="strong">{% trans 'Time Spent (hours)' %}</p>
+                {{ object.time_spent_hours }} of {{ object.allocated_hours }}
+
+                <hr>
+
+                <p class="strong">{% trans 'Type' %}</p>
+                {{ object.type }}
+
+                <hr>
+
+                <p class="strong">{% trans 'Status' %}</p>
+                {{ object.status }}
+
+                <hr>
+
+                <p class="strong">{% trans 'Billed To' %}</p>
+                {{ object.billed_to|date:'d/m/Y'|default:'-' }}
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-xl-3">
-                <div class="panel text-center">
-                    <p class="strong">{% trans 'Time Spent (hours)' %}</p>
-                    <p>{{ object.time_spent_hours }} of {{ object.allocated_hours }}</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-3">
-                <div class="panel text-center">
-                    <p class="strong">{% trans 'Type' %}</p>
-                    <p>{{ object.type }}</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-3">
-                <div class="panel text-center">
-                    <p class="strong">{% trans 'Status' %}</p>
-                    <p>{{ object.status }}</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-3">
-                <div class="panel text-center">
-                    <p class="strong">{% trans 'Billed To' %}</p>
-                    <p>{{ object.billed_to|date:'d/m/Y'|default:'-' }}</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
+
+            <div class="col-lg-9">
                 <ul class="tabs">
                     <li data-tab-id="tasks" class="active">{% trans 'Tasks' %}</li>
                     <li data-tab-id="notes">{% trans 'Notes' %}</li>
