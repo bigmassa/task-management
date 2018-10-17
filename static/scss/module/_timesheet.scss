@@ -7,13 +7,22 @@
   list-style-type: none;
 }
 
+.client-list a:hover {
+  background-color: color-a("primary", .24);
+}
+
+.client-list .task:hover {
+  border: 1px solid color-a("primary", .12);
+  @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, .24));
+}
+
 .client-list .client {
   display: block;
   padding: 1rem 1rem;
   margin-bottom: .3rem;
+  font-weight: 700;
   cursor: pointer;
-  background: color("shadylady");
-  border-bottom: 1px solid $border-color;
+  background-color: color-a("primary", .12);
 }
 
 .client-list .job {
@@ -28,12 +37,18 @@
   padding: 1rem 1rem;
   margin-bottom: .3rem;
   cursor: pointer;
+  border: 1px solid color-a("primary", 0);
   border-radius: .25rem;
 }
 
 .timesheet {
   position: relative;
   margin-bottom: $generic-margin-bottom;
+}
+
+.timesheet h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .timesheet table {
@@ -85,4 +100,10 @@
 .fc-view-container :after,
 .fc-view-container :before {
   box-sizing: border-box !important;
+}
+
+.fc-state-default {
+  text-shadow: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
 }
