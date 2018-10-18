@@ -11,6 +11,7 @@ from wip.serializers import TaskSerializer
 
 class TaskFilter(FilterSet):
     assignee = filters.ModelChoiceFilter(field_name='assignees__user', queryset=User.objects.all())
+    closed = filters.BooleanFilter(field_name='closed')
     search = filters.CharFilter(method='search_filter')
     for_timesheet = filters.BooleanFilter(field_name='job__status__allow_new_timesheet_entries')
 

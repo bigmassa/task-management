@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 from django.urls import reverse_lazy
 
@@ -103,8 +105,10 @@ class Job(models.Model):
         """ returns the sum of the allocated hours for all assignees """
 
         if hasattr(self, 'qs_allocated_hours'):
-            return getattr(self, 'qs_allocated_hours')
-        return 0
+            hours = getattr(self, 'qs_allocated_hours')
+            if hours:
+                return hours
+        return Decimal('0.00')
 
     @property
     def time_spent_hours(self):

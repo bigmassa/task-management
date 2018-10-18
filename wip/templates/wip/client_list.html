@@ -25,8 +25,8 @@
                     {% for object in object_list %}
                         <tr data-url="{{ object.get_absolute_url }}">
                             <td>{{ object.name }}</td>
-                            <td>{{ object.email_address }}</td>
-                            <td>{{ object.phone_number }}</td>
+                            <td>{{ object.email_address|default:'-' }}</td>
+                            <td>{{ object.phone_number|default:'-' }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>

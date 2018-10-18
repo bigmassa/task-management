@@ -19,7 +19,13 @@
         <div class="row">
             <div class="col-lg-3">
                 <p class="strong">{% trans 'Email Address' %}</p>
-                <p><a href="mailto://{{ object.email_address }}" class="underline-dotted">{{ object.email_address }}</a></p>
+                <p>
+                    {% if object.email_address %}
+                    <a href="mailto://{{ object.email_address }}" class="underline-dotted">{{ object.email_address }}</a>
+                    {% else %}
+                    -
+                    {% endif %}
+                </p>
                 <hr/>
                 <p class="strong">{% trans 'Phone Number' %}</p>
                 <p>
@@ -28,14 +34,22 @@
                         {% if user.is_gradwell_enabled %}
                             <a href="" data-make-call-url="{% url 'api:makecall-call' %}" data-tel="{{ object.phone_number|cut:" " }}"><i class="icon-phone c-red"></i></a>
                         {% endif %}
+                    {% else %}
+                    -
                     {% endif %}
                 </p>
                 <hr/>
                 <p class="strong">{% trans 'Website' %}</p>
-                <p><a href="{{ object.website }}" class="underline-dotted">{{ object.website }}</a></p>
+                <p>
+                    {% if object.website %}
+                    <a href="{{ object.website }}" class="underline-dotted">{{ object.website }}</a>
+                    {% else %}
+                    -
+                    {% endif %}
+                </p>
                 <hr/>
                 <p class="strong">{% trans 'Address' %}</p>
-                {{ object.address|linebreaks }}
+                {{ object.address|default:'-'|linebreaks }}
             </div>
             <div class="col-lg-9">
                 <ul class="tabs">

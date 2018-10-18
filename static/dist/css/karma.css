@@ -1257,11 +1257,6 @@ input[type="checkbox"], input[type="radio"] {
   opacity: 1;
 }
 
-:-ms-input-placeholder {
-  color: #b9b9b9;
-  opacity: 1;
-}
-
 ::-ms-input-placeholder {
   color: #b9b9b9;
   opacity: 1;
@@ -2568,6 +2563,12 @@ td textarea {
   background: rgba(41, 44, 54, 0.14);
   border: 1px solid #e6e6e6;
   border-radius: 0.25rem;
+}
+
+.client-list-wrapper {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-y: auto;
 }
 
 .client-list,

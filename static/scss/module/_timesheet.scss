@@ -1,6 +1,11 @@
 // Timesheet
 // ------------------------------
 
+.client-list-wrapper {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
 .client-list,
 .client-list ul {
   margin-left: 0;

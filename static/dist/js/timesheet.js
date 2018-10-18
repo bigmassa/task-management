@@ -65,6 +65,7 @@ $(function() {
             url: taskListUrl,
             data: {
                 assignee: currentUser,
+                closed: false,
                 search: $('[name=search]').val(),
                 for_timesheet: true
             }
