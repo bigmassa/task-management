@@ -57,6 +57,11 @@ class ModelTests(AppTestCase):
         field = User._meta.get_field('gradwell_extension')
         self.assertModelField(field, models.IntegerField, null=True, blank=True)
 
+    def test_moneyworks_cost_centre(self):
+        field = User._meta.get_field('moneyworks_cost_centre')
+        self.assertModelField(field, models.CharField, null=True, blank=True)
+        self.assertEqual(field.max_length, 50)
+
     ##################################
     # auth only specifics            #
     ##################################

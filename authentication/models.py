@@ -68,6 +68,11 @@ class User(AbstractBaseUser, PermissionsMixin):
         null=True,
         blank=True
     )
+    moneyworks_cost_centre = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True
+    )
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name']

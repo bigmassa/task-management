@@ -5,6 +5,13 @@ from reporting import views
 
 app_name = 'reporting'
 urlpatterns = [
-    path('', views.ReportList.as_view(), name='report-list'),
-    path('job-time-analysis/', views.JobTimeAnalysisReport.as_view(), name='report-job-time-analysis'),
+    path('',
+         views.ReportList.as_view(),
+         name='report-list'),
+    path('job-time-analysis/',
+         views.JobTimeAnalysisReport.as_view(),
+         name='report-job-time-analysis'),
+    path('moneyworks-timesheet-export/',
+         views.MoneyworksTimesheetExport.as_view(),
+         name='report-moneyworks-timesheet-export'),
 ]

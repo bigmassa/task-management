@@ -16,6 +16,7 @@ class UserAdmin(BaseUserAdmin):
         ('Important dates', {'fields': ('last_login', )}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', )}),
         ('Gradwell', {'fields': ('gradwell_token', 'gradwell_extension', )}),
+        ('Moneyworks', {'fields': ('moneyworks_cost_centre', )}),
     )
     add_fieldsets = (
         (None, {'fields': ('email', 'password1', 'password2', )}),

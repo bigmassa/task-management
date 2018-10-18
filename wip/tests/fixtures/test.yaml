@@ -9,7 +9,8 @@
       is_active: true,
       is_staff: true,
       is_superuser: true,
-      date_joined: "2018-01-01T00:00:00.000Z"
+      date_joined: "2018-01-01T00:00:00.000Z",
+      moneyworks_cost_centre: "AU"
     }
 
 -
