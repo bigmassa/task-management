@@ -26,7 +26,7 @@
                     {% if field.name == 'phone_number' or field.name == 'mobile_number' %}
                         <div class="row field-wrapper">
                             <div class="col-lg-2">{{ field.label_tag }}</div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-5">
                                 <div class="input-group">
                                     {{ field }}
                                     {% if field.value %}
@@ -41,13 +41,13 @@
                     {% else %}
                         <div class="row field-wrapper">
                             <div class="col-lg-2">{{ field.label_tag }}</div>
-                            <div class="col-lg-10">{{ field }}{{ field.errors }}</div>
+                            <div class="col-lg-5">{{ field }}{{ field.errors }}</div>
                         </div>
                     {% endif %}
                 {% else %}
                     <div class="row field-wrapper">
                         <div class="col-lg-2">{{ field.label_tag }}</div>
-                        <div class="col-lg-10">{{ field }}{{ field.errors }}</div>
+                        <div class="col-lg-5">{{ field }}{{ field.errors }}</div>
                     </div>
                 {% endif %}
             {% endfor %}
