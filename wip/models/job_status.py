@@ -9,6 +9,9 @@ class JobStatus(models.Model):
     allow_new_timesheet_entries = models.BooleanField(
         default=True
     )
+    closed = models.BooleanField(
+        default=False
+    )
     order = models.PositiveIntegerField(
         default=0
     )

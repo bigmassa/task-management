@@ -5,7 +5,7 @@ from io import StringIO
 
 from django.core.exceptions import ValidationError
 from django.core.management import call_command
-from django.db import transaction, connection
+from django.db import connection, models, transaction
 
 from authentication import models as a_models
 from migrator import models as m_models
@@ -103,7 +103,7 @@ def load():
                 estimated_hours=obj.estimatedtime,
                 colour=obj.jobcolour,
                 status_id=obj.jobstatusid_id,
-                billed_to=obj.billedto.date() if obj.billedto else None
+                billed_to=obj.billedto.date() if obj.billedto and obj.billedto.year != 5000 else None
             )
             new_job.full_clean()
             new_jobs.append(new_job)
@@ -140,7 +140,7 @@ def load():
             if obj.jobnotes:
                 new_note = w_models.JobNote(
                     job_id=obj.jobnumber,
-                    user_id=obj.managerid or 1,
+                    user_id=obj.managerid or 12,  # studio
                     note=obj.jobnotes
                 )
                 new_note.full_clean()
@@ -215,7 +215,7 @@ def load():
             if obj.notes:
                 new_note = w_models.TaskNote(
                     task_id=obj.taskid,
-                    user_id=obj.staffid or 1,
+                    user_id=obj.staffid or 12,  # studio
                     note=obj.notes
                 )
                 new_note.full_clean()
@@ -227,12 +227,13 @@ def load():
         reset_sequences()
 
         print('add time entries')
-        legacy_entries = m_models.Entry.objects.using('legacy').filter(taskid__isnull=False)
+        legacy_entries = m_models.Entry.objects.using('legacy').filter(taskid__isnull=False).order_by('entryid')
         new_time_entries = []
         for obj in legacy_entries:
             started_at = datetime.combine(obj.date, obj.started_at)
             ended_at = datetime.combine(obj.date, obj.ended_at)
             new_time_entry = w_models.TimeEntry(
+                id=obj.entryid,
                 task_id=obj.taskid_id,
                 started_at=started_at,
                 ended_at=max(ended_at, started_at + timedelta(minutes=1)),
@@ -248,9 +249,10 @@ def load():
 
         print('add time days signoff')
         new_time_daily_signoffs = []
-        legacy_days = m_models.Days.objects.using('legacy').all()
+        legacy_days = m_models.Days.objects.using('legacy').all().order_by('id')
         for obj in legacy_days:
             new_time_daily_signoff = w_models.TimeDailySignoff(
+                id=obj.id,
                 date=obj.entry_date,
                 user_id=obj.staffid,
                 completed=obj.complete
@@ -268,9 +270,17 @@ def tidyup():
 
     print('set client colour to first job colour')
     for obj in w_models.Client.objects.all():
-        if obj.jobs.exist():
+        if obj.jobs.count() > 0:
             obj.colour = obj.jobs.first().colour
             obj.save()
+
+    print('remove unused users')
+    # just try to delete and if good the user is not being used anywhere
+    try:
+        for u in a_models.User.objects.all():
+            u.delete()
+    except:
+        pass
 
 
 def reset_sequences():

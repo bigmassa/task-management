@@ -55,6 +55,6 @@ class ModelTests(AppTestCase):
             user=user
         )
 
-        task_assignee = TaskAssignee.objects.get(pk=1)
+        task_assignee = TaskAssignee.objects.with_time_spent().get(pk=1)
 
         self.assertEqual(task_assignee.time_spent_hours, Decimal('0.50'))

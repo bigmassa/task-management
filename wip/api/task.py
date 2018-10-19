@@ -31,3 +31,8 @@ class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.filter(closed=False)
     serializer_class = TaskSerializer
     filter_class = TaskFilter
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.prefetch_related('tags').with_allocated().with_time_spent()
+        return qs

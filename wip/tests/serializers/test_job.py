@@ -27,9 +27,7 @@ class TestSerializer(AppTestCase):
                 'estimated_hours',
                 'colour',
                 'status',
-                'billed_to',
-                'allocated_hours',
-                'time_spent_hours'
+                'billed_to'
             ]
         )
 
@@ -48,8 +46,6 @@ class TestSerializer(AppTestCase):
                 'estimated_hours': str(instance.estimated_hours),
                 'colour': instance.colour,
                 'status': instance.status.pk,
-                'billed_to': instance.billed_to.isoformat(),
-                'allocated_hours': str(instance.allocated_hours),
-                'time_spent_hours': str(instance.time_spent_hours)
+                'billed_to': instance.billed_to.isoformat()
             }
         )

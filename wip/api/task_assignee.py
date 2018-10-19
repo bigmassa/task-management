@@ -14,3 +14,8 @@ class TaskAssigneeViewSet(viewsets.ModelViewSet):
     queryset = TaskAssignee.objects.all()
     serializer_class = TaskAssigneeSerializer
     filter_class = TaskAssigneeFilter
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.with_time_spent()
+        return qs

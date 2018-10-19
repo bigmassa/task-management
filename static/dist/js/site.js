@@ -27,4 +27,11 @@ $(function() {
         return false;
     });
 
+    // tr toggle visibility of closed jobs
+    $('[data-tab="jobs"] .toggle-closed-jobs').click(function () {
+        $(this).closest('[data-tab]').find('.closed-job').show();
+        $(this).hide();
+        return false;
+    });
+
 });

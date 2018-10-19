@@ -1,37 +1,30 @@
 from django.conf import settings
 from django.db import models
+from django.db.models.manager import BaseManager
 
-from wip.utils import seconds_to_decimal_hrs
-from .time_entry import TimeEntry
+from wip.utils import duration_to_decimal_hrs
 
 
-class TaskAssigneeManager(models.Manager):
-    def get_queryset(self):
-        """ Returns the base queryset with additional properties """
+class TaskAssigneeQueryset(models.QuerySet):
+    """ Custom queryset """
 
-        qs = super().get_queryset()
+    def with_time_spent(self):
+        """ Add sum of time entry duration to the queryset """
 
-        time_spent_subquery = (
-            TimeEntry.objects
-            .filter(task_id=models.OuterRef('task_id'))
-            .values('task_id')
-            .annotate(
-                total=models.Sum(
-                    models.ExpressionWrapper(
-                        models.F('ended_at') - models.F('started_at'),
-                        output_field=models.fields.DurationField()
-                    )
+        return self.annotate(
+            qs_time_spent=models.Sum(
+                models.ExpressionWrapper(
+                    models.F('task__time_entries__ended_at') - models.F('task__time_entries__started_at'),
+                    output_field=models.fields.DurationField()
                 )
             )
-            .order_by('task_id')
-            .values('total')
         )
 
-        qs = qs.annotate(
-            qs_time_spent=models.Subquery(time_spent_subquery)
-        )
 
-        return qs
+class TaskAssigneeManager(BaseManager.from_queryset(TaskAssigneeQueryset)):
+    """ Custom manager from queryset """
+
+    pass
 
 
 class TaskAssignee(models.Model):
@@ -62,7 +55,5 @@ class TaskAssignee(models.Model):
     def time_spent_hours(self):
         """ returns the sum of the total time entries on the task """
 
-        seconds = 0
-        if hasattr(self, 'qs_time_spent') and getattr(self, 'qs_time_spent'):
-            seconds = getattr(self, 'qs_time_spent').seconds
-        return seconds_to_decimal_hrs(seconds)
+        value = getattr(self, 'qs_time_spent', None)
+        return duration_to_decimal_hrs(value)

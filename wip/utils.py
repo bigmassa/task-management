@@ -1,12 +1,14 @@
 from decimal import Decimal
 
 
-def seconds_to_decimal_hrs(seconds):
-    """ Convert seconds to hrs decimal, ie 1800 = Decimal('0.50') """
+def duration_to_decimal_hrs(duration):
+    """ Convert a duration to hrs decimal, ie 1 12:00:00 = Decimal('1.50') """
 
-    if seconds > 0:
-        hrs = seconds / 3600
-    else:
-        hrs = 0
+    if not duration:
+        return Decimal('0.00')
 
-    return Decimal(hrs).quantize(Decimal('0.01'))
+    hours, remainder = divmod(duration.seconds, 3600)
+    hours += (duration.days * 24)
+    minutes = remainder / 3600
+
+    return Decimal(hours + minutes).quantize(Decimal('0.01'))

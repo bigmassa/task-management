@@ -35,8 +35,6 @@ class TestAPI(AppTestCase):
     def test_post(self):
         del self.test_object_data['id']
         del self.test_object_data['created_at']
-        del self.test_object_data['allocated_hours']
-        del self.test_object_data['time_spent_hours']
         self.test_object_data['title'] = 'some title'
         response = self.client.post(self.base_url, self.test_object_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -53,8 +51,6 @@ class TestAPI(AppTestCase):
     def test_put(self):
         self.test_object_data['title'] = 'some title'
         del self.test_object_data['created_at']
-        del self.test_object_data['allocated_hours']
-        del self.test_object_data['time_spent_hours']
         response = self.client.put(self.test_object_url, self.test_object_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.test_object_data['client_id'] = self.test_object_data.pop('client')

@@ -20,7 +20,7 @@ class TestAPI(AppTestCase):
         self._create_test_object()
 
     def _create_test_object(self):
-        self.test_object = TaskAssignee.objects.first()
+        self.test_object = TaskAssignee.objects.with_time_spent().first()
         self.test_object_data = TaskAssigneeSerializer(instance=self.test_object).data
         self.test_object_url = self.base_url + str(self.test_object.pk) + '/'
 

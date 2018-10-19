@@ -37,6 +37,8 @@ class TaskDetail(LoginRequiredMixin, DetailView):
     def get_queryset(self):
         return (
             super().get_queryset()
+            .with_allocated()
+            .with_time_spent()
             .select_related(
                 'job__client',
                 'status'

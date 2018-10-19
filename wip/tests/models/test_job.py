@@ -75,7 +75,7 @@ class ModelTests(AppTestCase):
         self.assertEqual(obj.get_update_url(), expected_url)
 
     def test_allocated_hours(self):
-        job = Job.objects.get(pk=1)
+        job = Job.objects.with_allocated().get(pk=1)
         self.assertEqual(job.allocated_hours, Decimal('10.00'))
 
     def test_time_spent_hours(self):
@@ -94,6 +94,6 @@ class ModelTests(AppTestCase):
             user=user
         )
 
-        job = Job.objects.get(pk=1)
+        job = Job.objects.with_time_spent().get(pk=1)
 
         self.assertEqual(job.time_spent_hours, Decimal('0.50'))

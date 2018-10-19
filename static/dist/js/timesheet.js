@@ -60,15 +60,24 @@ $(function() {
     }
 
     function getTasks() {
+        var data = {
+            closed: false,
+            for_timesheet: true
+        };
+
+        // either search all or show only assigned to me
+        var search = $('[name=search]').val();
+
+        if (search) {
+            data['search'] = search;
+        } else {
+            data['assignee'] = currentUser;
+        }
+
         return $.ajax({
             type: "GET",
             url: taskListUrl,
-            data: {
-                assignee: currentUser,
-                closed: false,
-                search: $('[name=search]').val(),
-                for_timesheet: true
-            }
+            data: data
         });
     }
 

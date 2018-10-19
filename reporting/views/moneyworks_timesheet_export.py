@@ -7,7 +7,7 @@ from django.views.generic.edit import ProcessFormView
 
 from reporting.forms import DateFilterForm
 from wip.models import TimeEntry
-from wip.utils import seconds_to_decimal_hrs
+from wip.utils import duration_to_decimal_hrs
 
 
 class MoneyworksTimesheetExport(LoginRequiredMixin, ProcessFormView, TemplateView):
@@ -45,7 +45,7 @@ class MoneyworksTimesheetExport(LoginRequiredMixin, ProcessFormView, TemplateVie
             writer.writerow(
                 [
                     entry.task.job_id,
-                    seconds_to_decimal_hrs(entry.duration.seconds),
+                    duration_to_decimal_hrs(entry.duration),
                     'UT',
                     '',
                     entry.started_at.strftime('%d/%m/%Y'),

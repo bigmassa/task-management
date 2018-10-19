@@ -72,35 +72,33 @@
                                 </tr>
                             </thead>
                             <tbody class="sortable">
-                                {% for task in object.tasks.all %}
-                                    {% if not task.closed %}
-                                        <tr data-id="{{ task.id }}" data-url="{{ task.get_absolute_url }}">
-                                            <td class="keep-min-width"><i class="icon-menu"></i></td>
-                                            <td class="keep-min-width">{{ task.pk }}</td>
-                                            <td>{{ task.title }}</td>
-                                            <td class="keep-min-width"><ul class="tags">{% for tag in task.tags.all %}<li class="tag">{{ tag }}</li>{% empty %}<li>-</li>{% endfor %}</ul></td>
-                                            <td class="keep-min-width">{% for assignee in task.assignees.all %}{{ assignee.user.get_short_name }}{% if not forloop.last %}, {% endif %}{% empty %}-{% endfor %}</td>
-                                            <td class="keep-min-width">{{ task.time_spent_hours }} of {{ task.allocated_hours }}</td>
-                                            <td class="keep-min-width">{{ task.target_date|date:'d/m/Y'|default:'-' }}</td>
-                                            <td class="keep-min-width">{{ task.status }}</td>
-                                        </tr>
-                                    {% endif %}
+                                {% for task in object.open_tasks %}
+                                    <tr data-id="{{ task.id }}" data-url="{{ task.get_absolute_url }}">
+                                        <td class="keep-min-width"><i class="icon-menu"></i></td>
+                                        <td class="keep-min-width">{{ task.pk }}</td>
+                                        <td>{{ task.title }}</td>
+                                        <td class="keep-min-width"><ul class="tags">{% for tag in task.tags.all %}<li class="tag">{{ tag }}</li>{% empty %}<li>-</li>{% endfor %}</ul></td>
+                                        <td class="keep-min-width">{% for assignee in task.assignees.all %}{{ assignee.user.get_short_name }}{% if not forloop.last %}, {% endif %}{% empty %}-{% endfor %}</td>
+                                        <td class="keep-min-width">{{ task.time_spent_hours }} of {{ task.allocated_hours }}</td>
+                                        <td class="keep-min-width">{{ task.target_date|date:'d/m/Y'|default:'-' }}</td>
+                                        <td class="keep-min-width">{{ task.status }}</td>
+                                    </tr>
                                 {% endfor %}
                             </tbody>
                             <tbody class="closed-task">
-                                {% for task in object.tasks.all %}
-                                    {% if task.closed %}
-                                        <tr data-url="{{ task.get_absolute_url }}">
-                                            <td></td>
-                                            <td colspan="7" class="muted"><i class="icon-ok"></i> {{ task.title }}</td>
-                                        </tr>
-                                    {% endif %}
+                                {% for task in object.tasks.closed %}
+                                    <tr data-url="{{ task.get_absolute_url }}">
+                                        <td></td>
+                                        <td colspan="7" class="muted"><i class="icon-ok"></i> {{ task.title }}</td>
+                                    </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
+                        {% if object.tasks.closed %}
                         <div class="text-center pt-2">
                             <a class="button button-shadylady button-outline toggle-closed-tasks">{% trans 'Show Closed' %}</a>
                         </div>
+                        {% endif %}
                     </div>
                     <div data-tab="notes" class="d-hidden">
                         <div class="panel-actions">

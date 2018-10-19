@@ -70,7 +70,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for job in object.jobs.all %}
+                                {% for job in object.jobs.open %}
                                     <tr data-url="{{ job.get_absolute_url }}">
                                         <td class="keep-min-width">{{ job.pk }}</td>
                                         <td>{{ job.title }}</td>
@@ -78,7 +78,19 @@
                                     </tr>
                                 {% endfor %}
                             </tbody>
+                            <tbody class="closed-job">
+                                {% for job in object.jobs.closed %}
+                                    <tr data-url="{{ job.get_absolute_url }}">
+                                        <td colspan="3" class="muted"><i class="icon-ok"></i> {{ job.title }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
                         </table>
+                        {% if object.jobs.closed %}
+                        <div class="text-center pt-2">
+                            <a class="button button-shadylady button-outline toggle-closed-jobs">{% trans 'Show Closed' %}</a>
+                        </div>
+                        {% endif %}
                     </div>
                     <div data-tab="contacts" class="d-hidden">
                         <div class="panel-actions">

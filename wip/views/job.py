@@ -37,27 +37,26 @@ class JobDetail(LoginRequiredMixin, DetailView):
     def get_queryset(self):
         return (
             super().get_queryset()
+            .with_allocated()
+            .with_time_spent()
             .select_related(
                 'client',
                 'type',
                 'status'
             )
             .prefetch_related(
+                'notes__user',
+                'relationships__user',
+                'relationships__relationship',
+                'recurring_costs__type',
+                'recurring_costs__payment_option',
                 Prefetch(
-                    'tasks',
-                    Task.objects.all().select_related('status').prefetch_related('assignees__user', 'tags')
-                ),
-                Prefetch(
-                    'relationships',
-                    JobRelationship.objects.select_related('user', 'relationship')
-                ),
-                Prefetch(
-                    'recurring_costs',
-                    JobRecurringCost.objects.select_related('type', 'payment_option')
-                ),
-                Prefetch(
-                    'notes',
-                    JobNote.objects.select_related('user')
+                    'tasks', (
+                        Task.objects.with_allocated().with_time_spent().open()
+                        .select_related('status')
+                        .prefetch_related('assignees__user', 'tags')
+                    ),
+                    to_attr='open_tasks'
                 )
             )
         )

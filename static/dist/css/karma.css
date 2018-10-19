@@ -2507,7 +2507,8 @@ tbody tr[data-url] {
   cursor: pointer;
 }
 
-tbody.closed-task {
+tbody.closed-task,
+tbody.closed-job {
   display: none;
 }
 

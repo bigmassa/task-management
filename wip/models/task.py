@@ -1,23 +1,23 @@
 from decimal import Decimal
 
 from django.db import models
+from django.db.models.manager import BaseManager
 from django.urls import reverse_lazy
 from django.utils import timezone
 
 from taggit.managers import TaggableManager
 
-from wip.utils import seconds_to_decimal_hrs
-from .time_entry import TimeEntry
+from wip.utils import duration_to_decimal_hrs
 from .task_assignee import TaskAssignee
 
 
-class TaskManager(models.Manager):
-    def get_queryset(self):
-        """ Returns the base queryset with additional properties """
+class TaskQueryset(models.QuerySet):
+    """ Custom queryset """
 
-        qs = super().get_queryset()
+    def with_allocated(self):
+        """ Add sum of allocated hours to the queryset """
 
-        allocated_hours_subquery = (
+        query = (
             TaskAssignee.objects
             .filter(task_id=models.OuterRef('pk'))
             .values('task_id')
@@ -26,28 +26,33 @@ class TaskManager(models.Manager):
             .values('total')
         )
 
-        time_spent_subquery = (
-            TimeEntry.objects
-            .filter(task_id=models.OuterRef('pk'))
-            .values('task_id')
-            .annotate(
-                total=models.Sum(
-                    models.ExpressionWrapper(
-                        models.F('ended_at') - models.F('started_at'),
-                        output_field=models.fields.DurationField()
-                    )
+        return self.annotate(
+            qs_allocated_hours=models.Subquery(query)
+        )
+
+    def with_time_spent(self):
+        """ Add sum of time entry duration to the queryset """
+
+        return self.annotate(
+            qs_time_spent=models.Sum(
+                models.ExpressionWrapper(
+                    models.F('time_entries__ended_at') - models.F('time_entries__started_at'),
+                    output_field=models.fields.DurationField()
                 )
             )
-            .order_by('task_id')
-            .values('total')
         )
 
-        qs = qs.annotate(
-            qs_allocated_hours=models.Subquery(allocated_hours_subquery),
-            qs_time_spent=models.Subquery(time_spent_subquery)
-        )
+    def open(self):
+        return self.filter(closed=False)
 
-        return qs
+    def closed(self):
+        return self.filter(closed=True)
+
+
+class TaskManager(BaseManager.from_queryset(TaskQueryset)):
+    """ Custom manager from queryset """
+
+    pass
 
 
 class Task(models.Model):
@@ -105,20 +110,15 @@ class Task(models.Model):
     def allocated_hours(self):
         """ returns the sum of the allocated hours for all assignees """
 
-        if hasattr(self, 'qs_allocated_hours'):
-            hours = getattr(self, 'qs_allocated_hours')
-            if hours:
-                return hours
-        return Decimal('0.00')
+        value = getattr(self, 'qs_allocated_hours', None)
+        return value or Decimal('0.00')
 
     @property
     def time_spent_hours(self):
         """ returns the sum of the total time entries on the task """
 
-        seconds = 0
-        if hasattr(self, 'qs_time_spent') and getattr(self, 'qs_time_spent'):
-            seconds = getattr(self, 'qs_time_spent').seconds
-        return seconds_to_decimal_hrs(seconds)
+        value = getattr(self, 'qs_time_spent', None)
+        return duration_to_decimal_hrs(value)
 
     @property
     def is_overdue(self):

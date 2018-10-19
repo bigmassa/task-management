@@ -19,6 +19,11 @@ class ModelTests(AppTestCase):
         self.assertModelField(field, models.BooleanField)
         self.assertTrue(field.default)
 
+    def test_closed(self):
+        field = JobStatus._meta.get_field('closed')
+        self.assertModelField(field, models.BooleanField)
+        self.assertFalse(field.default)
+
     def test_order(self):
         field = JobStatus._meta.get_field('order')
         self.assertModelField(field, models.PositiveIntegerField)
