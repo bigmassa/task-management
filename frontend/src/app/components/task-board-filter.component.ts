@@ -27,7 +27,7 @@ export class TaskboardFilterComponent {
     jobs$: Observable<IJob[]>;
     
     filters: IFilter;
-    open: false;
+    open: boolean = false;
     
     constructor(private store: Store<AppState>) {
         this.clients$ = store.pipe(select(getClientState));
