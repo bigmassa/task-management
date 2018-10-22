@@ -52,7 +52,8 @@ class JobDetail(LoginRequiredMixin, DetailView):
                 'recurring_costs__payment_option',
                 Prefetch(
                     'tasks', (
-                        Task.objects.with_allocated().with_time_spent().open()
+                        Task.objects
+                        .open()
                         .select_related('status')
                         .prefetch_related('assignees__user', 'tags')
                     ),
