@@ -28,10 +28,12 @@ def load():
             new_user = a_models.User.objects.create(
                 id=obj.staffid,
                 email='%s@example.com' % obj.staffid,
-                first_name=obj.staffname
+                first_name=obj.staffname,
+                is_active=obj.currentyn
             )
-            new_user.set_password('password')
-            new_user.save()
+            if obj.currentyn:
+                new_user.set_password('password')
+                new_user.save()
 
         reset_sequences()
 
@@ -273,14 +275,6 @@ def tidyup():
         if obj.jobs.count() > 0:
             obj.colour = obj.jobs.first().colour
             obj.save()
-
-    print('remove unused users')
-    # just try to delete and if good the user is not being used anywhere
-    try:
-        for u in a_models.User.objects.all():
-            u.delete()
-    except:
-        pass
 
 
 def reset_sequences():
