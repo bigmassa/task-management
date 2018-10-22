@@ -27,15 +27,10 @@ class ModelTests(AppTestCase):
         self.assertEqual(field.max_digits, 10)
         self.assertEqual(field.decimal_places, 2)
 
-    def test_order(self):
-        field = TaskAssignee._meta.get_field('order')
-        self.assertModelField(field, models.PositiveIntegerField)
-        self.assertEqual(field.default, 0)
-
     # meta
 
     def test_ordering(self):
-        self.assertEqual(TaskAssignee._meta.ordering, ['order'])
+        self.assertEqual(TaskAssignee._meta.ordering, ['user'])
 
     # properties
 

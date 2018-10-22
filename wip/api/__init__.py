@@ -19,4 +19,3 @@ from .task_note import TaskNoteViewSet
 from .task_status import TaskStatusViewSet
 from .time_daily_signoff import TimeDailySignoffViewSet
 from .time_entry import TimeEntryViewSet
-from .user import UserViewSet

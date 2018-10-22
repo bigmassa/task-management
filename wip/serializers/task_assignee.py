@@ -17,6 +17,5 @@ class TaskAssigneeSerializer(serializers.ModelSerializer):
             'task',
             'user',
             'allocated_hours',
-            'time_spent_hours',
-            'order'
+            'time_spent_hours'
         ]

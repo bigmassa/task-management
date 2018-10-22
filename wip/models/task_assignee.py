@@ -42,14 +42,11 @@ class TaskAssignee(models.Model):
         max_digits=10,
         decimal_places=2
     )
-    order = models.PositiveIntegerField(
-        default=0
-    )
 
     objects = TaskAssigneeManager()
 
     class Meta:
-        ordering = ['order']
+        ordering = ['user']
 
     @property
     def time_spent_hours(self):

@@ -161,8 +161,7 @@
     fields: {
       task: 1,
       user: 1,
-      allocated_hours: "10.00",
-      order: 0
+      allocated_hours: "10.00"
     }
 
 -
