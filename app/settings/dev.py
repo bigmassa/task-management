@@ -21,7 +21,6 @@ DEBUG_TOOLBAR_CONFIG = {
 
 INSTALLED_APPS += [
     'debug_toolbar',
-    'migrator',
 ]
 
 MIDDLEWARE += [
