@@ -106,6 +106,10 @@ class Job(models.Model):
         return reverse_lazy('wip:job-update', kwargs={'pk': self.pk})
 
     @property
+    def full_title(self):
+        return '%s: %s' % (self.pk, self.title)
+
+    @property
     def allocated_hours(self):
         """ returns the sum of the allocated hours for all assignees """
 

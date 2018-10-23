@@ -16,13 +16,18 @@ class DateFilterForm(forms.Form):
     )
 
 
+class JobModelChoiceField(forms.ModelChoiceField):
+    def label_from_instance(self, obj):
+        return obj.full_title
+
+
 class JobAnalysisFilterForm(DateFilterForm):
     client = forms.ModelChoiceField(
         queryset=Client.objects.all(),
         widget=autocomplete.ModelSelect2('wip:client-autocomplete')
     )
-    job = forms.ModelChoiceField(
-        queryset=Job.objects.none(),
+    job = JobModelChoiceField(
+        queryset=Job.objects.all(),
         widget=autocomplete.ModelSelect2('wip:job-autocomplete', forward=['client'])
     )
 

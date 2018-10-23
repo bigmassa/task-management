@@ -1,7 +1,7 @@
 from dal import autocomplete
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.db.models import Prefetch
+from django.db.models import Prefetch, Q
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, CreateView, UpdateView, DeleteView
 
@@ -89,11 +89,12 @@ class JobAutocomplete(autocomplete.Select2QuerySetView):
             qs = self.model.objects.none()
 
         if self.q:
-            qs = qs.filter(**{'title__istartswith': self.q})
+            qs = qs.filter(Q(pk__icontains=self.q) | Q(title__icontains=self.q))
 
         return qs
 
+    def get_result_label(self, item):
+        return item.full_title
+
     def has_add_permission(self, request):
-        if not request.user.is_authenticated:
-            return False
         return False

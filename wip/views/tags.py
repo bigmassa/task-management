@@ -18,6 +18,4 @@ class TagsAutocomplete(autocomplete.Select2QuerySetView):
         return qs
 
     def has_add_permission(self, request):
-        if not request.user.is_authenticated:
-            return False
         return False
