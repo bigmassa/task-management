@@ -1,3 +1,8 @@
 $( function() {
-    $(".flatpickr").flatpickr({'dateFormat': 'd/m/Y'});
+    $(".flatpickr").flatpickr({
+        dateFormat: 'd/m/Y',
+        locale: {
+            firstDayOfWeek: 1
+        }
+    });
 });
