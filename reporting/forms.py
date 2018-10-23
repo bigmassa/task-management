@@ -1,3 +1,4 @@
+from dal import autocomplete
 from django import forms
 
 from wip.forms.widgets import DatePicker
@@ -17,10 +18,12 @@ class DateFilterForm(forms.Form):
 
 class JobAnalysisFilterForm(DateFilterForm):
     client = forms.ModelChoiceField(
-        queryset=Client.objects.all()
+        queryset=Client.objects.all(),
+        widget=autocomplete.ModelSelect2('wip:client-autocomplete')
     )
     job = forms.ModelChoiceField(
-        queryset=Job.objects.none()
+        queryset=Job.objects.none(),
+        widget=autocomplete.ModelSelect2('wip:job-autocomplete', forward=['client'])
     )
 
     def __init__(self, *args, **kwargs):

@@ -2092,13 +2092,16 @@ output {
   margin-bottom: 1.5rem !important;
 }
 
-.select2-container--default .select2-selection--multiple {
+.select2-container--default .select2-selection--multiple,
+.select2-container--default .select2-selection--single {
+  height: calc(3.55rem + 2px) !important;
   background-color: white !important;
   border: solid 1px #e6e6e6 !important;
   border-radius: 0.25rem !important;
 }
 
-.select2-container--default.select2-container--focus .select2-selection--multiple {
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default.select2-container--focus .select2-selection--single {
   background: white !important;
   border-color: #979797 !important;
 }
@@ -2111,6 +2114,26 @@ output {
 .select2-container--default .select2-search--inline .select2-search__field {
   height: 2.5rem;
   margin: .5rem .5rem 0 .5rem;
+}
+
+.select2-selection--single .select2-selection__rendered {
+  line-height: calc(3.55rem + 2px) !important;
+  color: #3e3e3e !important;
+}
+
+.select2-selection--single .select2-selection__arrow {
+  height: 3.55rem !important;
+}
+
+.select2-dropdown {
+  background: white !important;
+  border: solid 1px #e6e6e6 !important;
+  border-radius: 0.25rem !important;
+}
+
+.select2-dropdown .select2-search__field {
+  margin-bottom: 0 !important;
+  border: solid 1px #e6e6e6 !important;
 }
 
 input.date-input {
@@ -2486,9 +2509,9 @@ a.c-wildwillow:hover {
   margin-left: auto;
 }
 
-.page-header .page-header-actions form,
-.page-header .page-header-actions input,
-.page-header .page-header-actions select {
+.page-header .page-header-actions > form,
+.page-header .page-header-actions > form > input,
+.page-header .page-header-actions > form > select {
   margin-bottom: 0;
 }
 

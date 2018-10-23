@@ -30,9 +30,9 @@
   .page-header-actions {
     margin-left: auto;
 
-    form,
-    input,
-    select {
+    > form,
+    > form > input,
+    > form > select {
       margin-bottom: 0;
     }
   }

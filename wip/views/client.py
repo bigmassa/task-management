@@ -1,6 +1,7 @@
 import operator
 from functools import partial, reduce
 
+from dal import autocomplete
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
@@ -90,3 +91,24 @@ class ClientUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Client
     success_message = "Updated successfully"
     template_name = 'wip/client_update.html'
+
+
+class ClientAutocomplete(autocomplete.Select2QuerySetView):
+    model = Client
+    paginate_by = 50
+
+    def get_queryset(self):
+        if not self.request.user.is_authenticated:
+            return self.model.objects.none()
+
+        qs = self.model.objects.all()
+
+        if self.q:
+            qs = qs.filter(**{'name__istartswith': self.q})
+
+        return qs
+
+    def has_add_permission(self, request):
+        if not request.user.is_authenticated:
+            return False
+        return False

@@ -111,25 +111,5 @@
         $(document).on('click', '.filter-box a', function (evt) {
            $('.filter-options').toggle();
         });
-
-        $("#id_client").change(function () {
-            var url = "{% url 'api:job-list' %}";
-            var clientId = $(this).val();
-
-            // empty and add the blank option
-            $("#id_job").empty().append('<option value>---------</option>');
-
-            $.ajax({
-                url: url,
-                data: {
-                  'client': clientId
-                },
-                success: function (data) {
-                    $.each(data, function (i, item) {
-                        $("#id_job").append('<option value="' + $(item).attr('id') + '">' + $(item).attr('title') + '</option>')
-                    });
-                }
-            });
-        });
     </script>
 {% endblock %}

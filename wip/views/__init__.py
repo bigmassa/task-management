@@ -1,4 +1,5 @@
 from .client import (
+    ClientAutocomplete,
     ClientCreate,
     ClientDelete,
     ClientDetail,
@@ -11,6 +12,7 @@ from .client_contact import (
     ClientContactUpdate
 )
 from .job import (
+    JobAutocomplete,
     JobCreate,
     JobDelete,
     JobDetail,

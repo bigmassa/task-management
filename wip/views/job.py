@@ -1,3 +1,4 @@
+from dal import autocomplete
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import Prefetch
@@ -68,3 +69,31 @@ class JobUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Job
     success_message = "Updated successfully"
     template_name = 'wip/job_update.html'
+
+
+class JobAutocomplete(autocomplete.Select2QuerySetView):
+    model = Job
+    paginate_by = 50
+
+    def get_queryset(self):
+        if not self.request.user.is_authenticated:
+            return self.model.objects.none()
+
+        qs = self.model.objects.all()
+
+        client = self.forwarded.get('client', None)
+
+        if client:
+            qs = qs.filter(client_id=client)
+        else:
+            qs = self.model.objects.none()
+
+        if self.q:
+            qs = qs.filter(**{'title__istartswith': self.q})
+
+        return qs
+
+    def has_add_permission(self, request):
+        if not request.user.is_authenticated:
+            return False
+        return False

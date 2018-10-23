@@ -89,13 +89,16 @@ output {
   margin-bottom: $input-margin-bottom !important;
 }
 
-.select2-container--default .select2-selection--multiple {
+.select2-container--default .select2-selection--multiple,
+.select2-container--default .select2-selection--single {
+  height: $input-height !important;
   background-color: $input-background !important;
   border: solid $input-border-width $input-border-color !important;
   border-radius: $input-border-radius !important;
 }
 
-.select2-container--default.select2-container--focus .select2-selection--multiple {
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default.select2-container--focus .select2-selection--single {
   background: $input-background-focus !important;
   border-color: $input-border-color-focus !important;
 }
@@ -108,6 +111,26 @@ output {
 .select2-container--default .select2-search--inline .select2-search__field {
   height: 2.5rem;
   margin: .5rem .5rem 0 .5rem;
+}
+
+.select2-selection--single .select2-selection__rendered {
+  line-height: $input-height !important;
+  color: $input-font-color !important;
+}
+
+.select2-selection--single .select2-selection__arrow {
+  height: $input-height-inner !important;
+}
+
+.select2-dropdown {
+  background: $input-background !important;
+  border: solid $input-border-width $input-border-color !important;
+  border-radius: $input-border-radius !important;
+}
+
+.select2-dropdown .select2-search__field {
+  margin-bottom: 0 !important;
+  border: solid $input-border-width $input-border-color !important;
 }
 
 // flatpickr
