@@ -7,5 +7,7 @@
 .icon-menu:before { content: '\e805'; } /* '' */
 .icon-search:before { content: '\e806'; } /* '' */
 .icon-down-open:before { content: '\e807'; } /* '' */
+.icon-down-dir:before { content: '\e808'; } /* '' */
+.icon-up-dir:before { content: '\e809'; } /* '' */
 .icon-bell:before { content: '\f0f3'; } /* '' */
 .icon-trash:before { content: '\f1f8'; } /* '' */

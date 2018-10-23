@@ -1,0 +1,14 @@
+{% load wip_tags %}
+{% if sort_by == field_sort_on %}
+    {% if not order %}
+        <a href="?{% url_replace sort_by=field_sort_on order='desc' %}">
+            {{ field_label }} <i class="icon-up-dir"></i>
+        </a>
+    {% else %}
+        <a href="?{% url_replace sort_by=field_sort_on order='' %}">
+            {{ field_label }} <i class="icon-down-dir"></i>
+        </a>
+    {% endif %}
+{% else %}
+    <a href="?{% url_replace sort_by=field_sort_on order='' %}">{{ field_label }}</a>
+{% endif %}

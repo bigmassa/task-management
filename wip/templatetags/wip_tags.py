@@ -1,4 +1,5 @@
 from decimal import Decimal
+from urllib.parse import urlencode
 
 from django import template
 from django.conf import settings
@@ -29,6 +30,21 @@ def section_name(context):
 
     if url_name.startswith(("client", "job", "task")):
         return 'client'
+
+
+@register.simple_tag(takes_context=True)
+def url_replace(context, **kwargs):
+    """
+    will append kwargs to the existing url
+    ie:
+    assuming the current url is '/home/?foo=bar'
+    <a href="?{% url_replace page=1 %}">Next</a>
+    rendered html:
+    <a href="/home/?foo=bar&page=1">Next</a>
+    """
+    query = context['request'].GET.dict()
+    query.update(kwargs)
+    return urlencode(query)
 
 
 @register.filter

@@ -19,13 +19,13 @@
             <table class="table-hover table-headed margin-zero">
                 <thead>
                     <tr>
-                        <th class="keep-min-width">{% trans 'ID' %}</th>
-                        <th class="keep-min-width">{% trans 'Target Date' %}</th>
-                        <th>{% trans 'Title' %}</th>
-                        <th>{% trans 'Client' %}</th>
-                        <th>{% trans 'Job' %}</th>
+                        <th class="keep-min-width">{% include 'wip/partials/sort_link.html' with field_sort_on='id' field_label='ID' %}</th>
+                        <th class="keep-min-width">{% include 'wip/partials/sort_link.html' with field_sort_on='target_date' field_label='Target Date' %}</th>
+                        <th>{% include 'wip/partials/sort_link.html' with field_sort_on='title' field_label='Title' %}</th>
+                        <th>{% include 'wip/partials/sort_link.html' with field_sort_on='job__client' field_label='Client' %}</th>
+                        <th>{% include 'wip/partials/sort_link.html' with field_sort_on='job' field_label='Job' %}</th>
                         <th class="keep-min-width">{% trans 'Assignees' %}</th>
-                        <th class="keep-min-width">{% trans 'Status' %}</th>
+                        <th class="keep-min-width">{% include 'wip/partials/sort_link.html' with field_sort_on='status' field_label='Status' %}</th>
                     </tr>
                 </thead>
                 <tbody>
