@@ -27,11 +27,12 @@ $(function() {
         return false;
     });
 
-    // tr toggle visibility of closed jobs
-    $('[data-tab="jobs"] .toggle-closed-jobs').click(function () {
-        $(this).closest('[data-tab]').find('.closed-job').show();
-        $(this).hide();
-        return false;
+    // toggle visibility of filter panel
+    $(document).on('click', function (evt) {
+        if ( evt.target === $('.filter-box a')[0] ) {
+            $('.filter-options').toggle();
+        } else if ( ! $('.filter-options')[0].contains(evt.target) ) {
+            $('.filter-options').hide();
+        }
     });
-
 });
