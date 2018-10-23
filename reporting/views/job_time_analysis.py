@@ -45,6 +45,7 @@ class JobTimeAnalysisReport(LoginRequiredMixin, TemplateView):
         if form.is_valid():
             return (
                 Task.objects
+                .with_allocated()
                 .annotate(
                     time_spent_in_period=models.Sum(
                         models.F('time_entries__ended_at') - models.F('time_entries__started_at'),
