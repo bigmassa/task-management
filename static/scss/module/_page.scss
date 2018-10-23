@@ -29,6 +29,12 @@
   }
   .page-header-actions {
     margin-left: auto;
+
+    form,
+    input,
+    select {
+      margin-bottom: 0;
+    }
   }
 
   .page-header-tab-title {

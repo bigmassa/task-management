@@ -2476,6 +2476,12 @@ a.c-wildwillow:hover {
   margin-left: auto;
 }
 
+.page-header .page-header-actions form,
+.page-header .page-header-actions input,
+.page-header .page-header-actions select {
+  margin-bottom: 0;
+}
+
 .page-header .page-header-tab-title {
   display: inline-block;
   padding: 1rem 1.5rem;
