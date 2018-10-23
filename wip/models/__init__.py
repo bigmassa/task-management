@@ -13,6 +13,7 @@ from .recurring_cost_type import RecurringCostType
 from .relationship import Relationship
 from .task import Task
 from .task_assignee import TaskAssignee
+from .task_file import TaskFile
 from .task_note import TaskNote
 from .task_status import TaskStatus
 from .time_daily_signoff import TimeDailySignoff

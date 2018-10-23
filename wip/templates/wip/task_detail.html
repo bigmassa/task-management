@@ -45,6 +45,7 @@
             <div class="col-lg-9">
                 <ul class="tabs">
                     <li data-tab-id="notes" class="active">{% trans 'Notes' %}</li>
+                    <li data-tab-id="files">{% trans 'Files' %}</li>
                     <li data-tab-id="assignees">{% trans 'Assignees' %}</li>
                 </ul>
                 <div class="panel">
@@ -61,6 +62,30 @@
                             </span>
                             {% if not forloop.last %}<hr>{% endif %}
                         {% endfor %}
+                    </div>
+                    <div data-tab="files" class="d-hidden">
+                        <form id="files-dropzone" method="post" action="{% url 'wip:taskfile-upload' object.pk %}" enctype="multipart/form-data" class="dropzone">
+                            {% csrf_token %}
+                            <input type="file" name="file" multiple>
+                        </form>
+                        <table class="table-headed margin-zero">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'File' %}</th>
+                                    <th class="keep-min-width">{% trans 'Size' %}</th>
+                                    <th class="keep-min-width"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for file in object.files.all %}
+                                <tr>
+                                    <td><a href="{{ file.file.url }}" target="_blank">{{ file }}</a></td>
+                                    <td class="keep-min-width">{{ file.size_mb }}</td>
+                                    <td class="keep-min-width text-right"><a href="{% url 'wip:taskfile-delete' file.pk %}"><i class="icon-trash"></i></a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
                     <div data-tab="assignees" class="d-hidden">
                         <div class="panel-actions">
@@ -88,7 +113,33 @@
         </div>
     </div>
 {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'dist/vendor/dropzone/dropzone.min.css' %}">
+{% endblock %}
+
 {% block extra_js %}
-    <script src="{% static 'dist/js/tabs.min.js' %}"></script>
-    <script>$('.tabs').tabs();</script>
+    <script type="text/javascript" src="{% static 'dist/vendor/dropzone/dropzone.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/js/tabs.min.js' %}"></script>
+    <script>
+        // dropzone options
+        Dropzone.options.filesDropzone = {
+            maxFilesize: 5,
+            init: function() {
+                this.on("success", function(response) {
+                    var url = "{% url 'wip:taskfile-delete' 0 %}";
+                    var data = JSON.parse(response.xhr.response);
+                    url = url.replace('0', data.pk);
+                    var html = '<tr>' +
+                        '<td><a href="' + data.url + '" target="_blank">' + data.name + '</a></td>' +
+                        '<td class="keep-min-width">' + data.size_mb + '</td>' +
+                        '<td class="keep-min-width text-right"><a href="' + url + '"><i class="icon-trash"></i></a></td>' +
+                        '</tr>';
+                    var table = $('[data-tab="files"] table tbody');
+                    table.append(html);
+                });
+            }
+        };
+        $('.tabs').tabs();
+    </script>
 {% endblock %}

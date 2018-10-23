@@ -43,6 +43,10 @@ from .task import (
 from .task_assignee import (
     TaskAssigneeUpdate
 )
+from .task_file import (
+    TaskFileDelete,
+    TaskFileUpload
+)
 from .task_note import (
     TaskNoteCreate,
     TaskNoteDelete,

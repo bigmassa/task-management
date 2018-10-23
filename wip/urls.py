@@ -23,6 +23,7 @@ router.register(r'recurring-cost-type', api.RecurringCostTypeViewSet)
 router.register(r'relationships', api.RelationshipViewSet)
 router.register(r'tasks', api.TaskViewSet)
 router.register(r'task-assignees', api.TaskAssigneeViewSet)
+router.register(r'task-files', api.TaskFileViewSet)
 router.register(r'task-notes', api.TaskNoteViewSet)
 router.register(r'task-statuses', api.TaskStatusViewSet)
 router.register(r'time-daily-signoff', api.TimeDailySignoffViewSet)
@@ -55,10 +56,12 @@ urlpatterns = [
     path('job-notes/<int:pk>/delete/', views.JobNoteDelete.as_view(), name='jobnote-delete'),
     path('tags/autocomplete/', views.TagsAutocomplete.as_view(), name='tag-autocomplete'),
     path('tasks/<int:pk>/', views.TaskDetail.as_view(), name='task-detail'),
+    path('tasks/<int:pk>/files/upload/', views.TaskFileUpload.as_view(), name='taskfile-upload'),
     path('tasks/<int:pk>/update/', views.TaskUpdate.as_view(), name='task-update'),
     path('tasks/<int:pk>/delete/', views.TaskDelete.as_view(), name='task-delete'),
     path('tasks/<int:pk>/assignees/update/', views.TaskAssigneeUpdate.as_view(), name='taskassignee-update'),
     path('tasks/<int:pk>/notes/create/', views.TaskNoteCreate.as_view(), name='tasknote-create'),
+    path('task-files/<int:pk>/delete/', views.TaskFileDelete.as_view(), name='taskfile-delete'),
     path('task-notes/<int:pk>/update/', views.TaskNoteUpdate.as_view(), name='tasknote-update'),
     path('task-notes/<int:pk>/delete/', views.TaskNoteDelete.as_view(), name='tasknote-delete'),
     path('taskboard/', views.TaskBoard.as_view(), name='taskboard'),
