@@ -54,6 +54,7 @@
             <div class="col-lg-9">
                 <ul class="tabs">
                     <li data-tab-id="jobs" class="active">{% trans 'Jobs' %}</li>
+                    <li data-tab-id="closed-jobs">{% trans 'Closed Jobs' %}</li>
                     <li data-tab-id="contacts">{% trans 'Contacts' %}</li>
                 </ul>
                 <div class="panel">
@@ -78,19 +79,25 @@
                                     </tr>
                                 {% endfor %}
                             </tbody>
-                            <tbody class="closed-job">
+                        </table>
+                    </div>
+                    <div data-tab="closed-jobs" class="d-hidden">
+                        <table class="table-hover table-headed margin-zero">
+                            <thead>
+                                <tr>
+                                    <th class="keep-min-width">{% trans 'ID' %}</th>
+                                    <th>{% trans 'Title' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 {% for job in object.jobs.closed %}
                                     <tr data-url="{{ job.get_absolute_url }}">
-                                        <td colspan="3" class="muted"><i class="icon-ok"></i> {{ job.title }}</td>
+                                        <td class="keep-min-width">{{ job.pk }}</td>
+                                        <td>{{ job.title }}</td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
-                        {% if object.jobs.closed %}
-                        <div class="text-center pt-2">
-                            <a class="button button-shadylady button-outline toggle-closed-jobs">{% trans 'Show Closed' %}</a>
-                        </div>
-                        {% endif %}
                     </div>
                     <div data-tab="contacts" class="d-hidden">
                         <div class="panel-actions">
