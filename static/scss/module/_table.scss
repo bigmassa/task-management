@@ -3,6 +3,10 @@
 
 /* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
 
+table.layout-fixed {
+  table-layout: fixed;
+}
+
 tbody tr:last-child {
   border-bottom: $table-border-width solid $table-border-color;
 }

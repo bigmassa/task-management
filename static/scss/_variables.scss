@@ -55,6 +55,7 @@ $input-use-full-width:          true;
 $input-font-size:               1.3rem;
 $input-margin-bottom:           $generic-margin-bottom;
 $input-border-color-focus:      map-get($colors, "shadylady");
+$input-placeholder-color:       rgb(185, 185, 185);
 
 
 // tables
@@ -76,7 +77,6 @@ $z-layers: (
 
 
 // checkboxes and radios
-
 $checkbox-checked-color:        map-get($colors, "primary");
 $checkbox-font-weight:          400;
 $checkbox-size:                 2.4rem;
@@ -85,6 +85,12 @@ $radio-dot-spacing:             .4rem;
 
 
 // Input Groups
-
 $input-group-addon-y-padding:   1rem;
 $input-group-margin-bottom:     $input-margin-bottom;
+
+
+// Icon Input
+$icon-input-icon-color:         $input-placeholder-color;
+$icon-input-icon-class-prefix:  "icon-";
+$icon-input-icon-width:         2.65em;
+$icon-input-margin-bottom:      $input-margin-bottom;

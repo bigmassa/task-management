@@ -1,11 +1,18 @@
+import operator
+from functools import partial, reduce
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.db.models import Prefetch
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
 from wip.models import Client, Job
 from wip.views.mixins import ProtectedDeleteMixin, DeleteMessageMixin
+
+
+AND = partial(reduce, operator.and_)
 
 
 class ClientCreate(LoginRequiredMixin, SuccessMessageMixin, CreateView):
@@ -39,6 +46,43 @@ class ClientDetail(LoginRequiredMixin, DetailView):
 
 class ClientList(LoginRequiredMixin, ListView):
     model = Client
+
+    def get_search_kwargs(self):
+        return self.request.GET.get('search', '').split()
+
+    @staticmethod
+    def get_search_vector():
+        return (
+            SearchVector('name', weight='A') +
+            SearchVector('phone_number', weight='B') +
+            SearchVector('email_address', weight='B') +
+            SearchVector('website', weight='B') +
+            SearchVector('address', weight='B')
+        )
+
+    def get_search_query(self):
+        search_terms = self.get_search_kwargs()
+        if not search_terms:
+            return SearchQuery('')
+        return AND(SearchQuery(q) for q in search_terms)
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        vector = self.get_search_vector()
+        query = self.get_search_query()
+        return (
+            queryset
+            .annotate(search=vector, rank=SearchRank(vector, query))
+            .filter(search=query)
+            .order_by('-rank')
+        )
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context.update({
+            'search': self.request.GET.get('search', '')
+        })
+        return context
 
 
 class ClientUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):

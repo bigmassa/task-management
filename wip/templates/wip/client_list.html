@@ -13,7 +13,14 @@
     </div>
     <div class="container-fluid inner-content">
         <div class="panel">
-            <table class="table-headed table-hover margin-zero">
+            <form method="get" novalidate>
+                <div class="icon-input">
+                    <input name="search" type="search" placeholder="{% trans 'Search' %}" value="{{ search }}">
+                    <span class="icon-search"></span>
+                </div>
+                <button type="submit" class="d-hidden"></button>
+            </form>
+            <table class="table-headed table-hover margin-zero layout-fixed">
                 <thead>
                     <tr>
                         <th>{% trans 'Name' %}</th>
@@ -28,9 +35,30 @@
                             <td>{{ object.email_address|default:'-' }}</td>
                             <td>{{ object.phone_number|default:'-' }}</td>
                         </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="3">
+                            {% if search %}
+                                {% trans 'No clients found matching the search criteria.' %}
+                            {% else %}
+                                {% trans 'Please search for clients using the search box.' %}
+                            {% endif %}
+                            </td>
+                        </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(function() {
+    // focus on the input at end of value
+    var input = $('[name=search]');
+    var val = input.val();
+    input.focus().val('').val(val);
+});
+</script>
 {% endblock %}
