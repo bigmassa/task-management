@@ -1,0 +1,29 @@
+<div class="overlay-header d-flex align-items-top">
+    <ng-container *ngIf="form.task$ | async as task">
+        <div class="color-indicator" [style.backgroundColor]="task._job.colour"></div>
+        <div class="title h4">{{ task.title }}</div>
+    </ng-container>
+    <a class="close ml-auto" (click)="closeEvent($event)"><i class="icon-cancel"></i></a>
+</div>
+<div class="overlay-body">
+    <p class="muted">To change the task click one from the main list</p>
+    <form>
+        <input type="hidden" name="task">
+        <div class="row">
+            <div class="col">
+                <label>Start Time</label>
+                <input [formControl]="form.controls.started_at_time" type="time" min="0:00" max="23:59" />
+            </div>
+            <div class="col">
+                <label>End Time</label>
+                <input [formControl]="form.controls.ended_at_time" type="time" min="0:00" max="23:59" />
+            </div>
+        </div>
+        <label>Comments</label>
+        <textarea [formControl]="form.controls.comments" name="comments" rows="3"></textarea>
+        <div class="text-right">
+            <a class="button button-primary" (click)="form.save($event)">Update</a>
+            <a class="delete button button-primary button-clear" (click)="form.delete($event)">Delete <i class="icon-trash"></i></a>
+        </div>
+    </form>
+</div>

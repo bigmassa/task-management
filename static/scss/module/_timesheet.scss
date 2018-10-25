@@ -39,11 +39,15 @@
 }
 
 .client-list .task {
-  padding: 1rem 1rem;
+  padding: 0;
   margin-bottom: .3rem;
   cursor: pointer;
   border: 1px solid color-a("primary", 0);
   border-radius: .25rem;
+}
+
+.client-list .task span {
+  padding: 1rem;
 }
 
 .timesheet {
@@ -60,8 +64,12 @@
   margin-bottom: 0;
 }
 
-.timesheet .fc-dailycontrol {
-  margin: .5rem 1.5rem;
+.fc-dailycontrol {
+  margin: 0;
+
+  label {
+    padding-right: 0;
+  }
 
   input {
     display: none;
@@ -101,12 +109,6 @@
 // full calendar
 
 /* stylelint-disable declaration-no-important, selector-pseudo-element-colon-notation */
-.fc-view-container *,
-.fc-view-container :after,
-.fc-view-container :before {
-  box-sizing: border-box !important;
-}
-
 .fc-state-default {
   text-shadow: none !important;
   background-image: none !important;

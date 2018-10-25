@@ -51,7 +51,7 @@ export class APIBaseEffects {
         mergeMap(obj =>
             this.service$.create(this.apiUrl, obj).pipe(
                 map(data => ({type: successOfType, payload: data})),
-                catchError(res => of({type: HttpActions.HTTP_ERROR, payload: res}))
+                catchError(res => of({type: HttpActions.HTTP_ERROR, payload: {err: res, data: obj}}))
             )
         )
     )
@@ -64,7 +64,7 @@ export class APIBaseEffects {
         mergeMap(obj =>
             this.service$.update(this.apiUrl, obj).pipe(
                 map(data => ({type: successOfType, payload: data})),
-                catchError(res => of({type: HttpActions.HTTP_ERROR, payload: res}))
+                catchError(res => of({type: HttpActions.HTTP_ERROR, payload: {err: res, data: obj}}))
             )
         )
     )
@@ -77,7 +77,7 @@ export class APIBaseEffects {
         mergeMap(obj =>
             this.service$.patch(this.apiUrl, obj).pipe(
                 map(data => ({type: successOfType, payload: data})),
-                catchError(res => of({type: HttpActions.HTTP_ERROR, payload: res}))
+                catchError(res => of({type: HttpActions.HTTP_ERROR, payload: {err: res, data: obj}}))
             )
         )
     )
@@ -90,7 +90,7 @@ export class APIBaseEffects {
         mergeMap(obj =>
             this.service$.remove(this.apiUrl, obj).pipe(
                 map(data => ({type: successOfType, payload: data})),
-                catchError(res => of({type: HttpActions.HTTP_ERROR, payload: res}))
+                catchError(res => of({type: HttpActions.HTTP_ERROR, payload: {err: res, data: obj}}))
             )
         )
     )

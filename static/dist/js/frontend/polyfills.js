@@ -5437,6 +5437,10 @@ __webpack_require__.r(__webpack_exports__);
 /** Evergreen browsers require these. **/
 // Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
 
+/***************************************************************************************************
+ * Zone JS is required by default for Angular itself.
+ */
+
 /**
  * Web Animations `@angular/platform-browser/animations`
  * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
@@ -5455,13 +5459,10 @@ __webpack_require__.r(__webpack_exports__);
 * with the following flag, it will bypass `zone.js` patch for IE/Edge
 */
 // (window as any).__Zone_enable_cross_context_check = true;
-/***************************************************************************************************
- * Zone JS is required by default for Angular itself.
- */
- // Included with Angular CLI.
+// Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
- */
+ */ 
 
 
 /***/ }),
@@ -5473,7 +5474,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/src/polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/src/polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })

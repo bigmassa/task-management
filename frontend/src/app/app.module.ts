@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app.routing';
 import { AutoResizeDirective } from './directives/auto-resize.directive';
 import { AvatarComponent } from './components/avatar.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { CalendarComponent } from './components/calendar.component';
 import { ClientListComponent } from './components/client-list.component';
 import { ClientSearchPipe } from './pipes/client-search.pipe';
 import { EffectsModule } from '@ngrx/effects';
@@ -24,7 +25,9 @@ import { TaskCreateFormComponent } from './components/task-create-form.component
 import { TaskFormComponent } from './components/task-form.component';
 import { TaskboardComponent } from './components/task-board.component';
 import { TaskboardFilterComponent } from './components/task-board-filter.component';
+import { TimeEntryFormComponent } from './components/time-entry-form.component';
 import { TimesheetComponent } from './components/time-sheet.component';
+import { TimesheetSignoffComponent } from './components/time-sheet-signoff.component';
 import { effects } from './state/effects';
 
 @NgModule({
@@ -32,6 +35,7 @@ import { effects } from './state/effects';
         AppComponent,
         AutoResizeDirective,
         AvatarComponent,
+        CalendarComponent,
         ClientListComponent,
         ClientSearchPipe,
         NotFoundComponent,
@@ -42,7 +46,9 @@ import { effects } from './state/effects';
         TaskCardComponent,
         TaskCreateFormComponent,
         TaskFormComponent,
-        TimesheetComponent
+        TimeEntryFormComponent,
+        TimesheetComponent,
+        TimesheetSignoffComponent
     ],
     imports: [
         AppRoutingModule,
@@ -67,5 +73,5 @@ export class AppModule {
     constructor(public store: Store<AppState>) {
         store.dispatch({ type: actions.DataActions.LOAD_DATA });
     }
-
+    
 }

@@ -1,5 +1,284 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./src/$$_lazy_route_resource lazy recursive":
 /*!**********************************************************!*\
   !*** ./src/$$_lazy_route_resource lazy namespace object ***!
@@ -105,22 +384,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./directives/auto-resize.directive */ "./src/app/directives/auto-resize.directive.ts");
 /* harmony import */ var _components_avatar_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/avatar.component */ "./src/app/components/avatar.component.ts");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
-/* harmony import */ var _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pipes/client-search.pipe */ "./src/app/pipes/client-search.pipe.ts");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
-/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
-/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
-/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
-/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
-/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
-/* harmony import */ var _components_task_board_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/task-board.component */ "./src/app/components/task-board.component.ts");
-/* harmony import */ var _components_task_board_filter_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/task-board-filter.component */ "./src/app/components/task-board-filter.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
-/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
+/* harmony import */ var _components_calendar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/calendar.component */ "./src/app/components/calendar.component.ts");
+/* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
+/* harmony import */ var _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pipes/client-search.pipe */ "./src/app/pipes/client-search.pipe.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
+/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
+/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
+/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
+/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
+/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
+/* harmony import */ var _components_task_board_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/task-board.component */ "./src/app/components/task-board.component.ts");
+/* harmony import */ var _components_task_board_filter_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/task-board-filter.component */ "./src/app/components/task-board-filter.component.ts");
+/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
+/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -156,42 +438,48 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule(store) {
         this.store = store;
         store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["DataActions"].LOAD_DATA });
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_13__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_14__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_7__["AutoResizeDirective"],
                 _components_avatar_component__WEBPACK_IMPORTED_MODULE_8__["AvatarComponent"],
-                _components_client_list_component__WEBPACK_IMPORTED_MODULE_10__["ClientListComponent"],
-                _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_11__["ClientSearchPipe"],
-                _components_not_found_component__WEBPACK_IMPORTED_MODULE_15__["NotFoundComponent"],
-                _components_report_list_component__WEBPACK_IMPORTED_MODULE_16__["ReportListComponent"],
-                _components_search_component__WEBPACK_IMPORTED_MODULE_18__["SearchComponent"],
-                _components_task_board_component__WEBPACK_IMPORTED_MODULE_22__["TaskboardComponent"],
-                _components_task_board_filter_component__WEBPACK_IMPORTED_MODULE_23__["TaskboardFilterComponent"],
-                _components_task_card_component__WEBPACK_IMPORTED_MODULE_19__["TaskCardComponent"],
-                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_20__["TaskCreateFormComponent"],
-                _components_task_form_component__WEBPACK_IMPORTED_MODULE_21__["TaskFormComponent"],
-                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_24__["TimesheetComponent"]
+                _components_calendar_component__WEBPACK_IMPORTED_MODULE_10__["CalendarComponent"],
+                _components_client_list_component__WEBPACK_IMPORTED_MODULE_11__["ClientListComponent"],
+                _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_12__["ClientSearchPipe"],
+                _components_not_found_component__WEBPACK_IMPORTED_MODULE_16__["NotFoundComponent"],
+                _components_report_list_component__WEBPACK_IMPORTED_MODULE_17__["ReportListComponent"],
+                _components_search_component__WEBPACK_IMPORTED_MODULE_19__["SearchComponent"],
+                _components_task_board_component__WEBPACK_IMPORTED_MODULE_23__["TaskboardComponent"],
+                _components_task_board_filter_component__WEBPACK_IMPORTED_MODULE_24__["TaskboardFilterComponent"],
+                _components_task_card_component__WEBPACK_IMPORTED_MODULE_20__["TaskCardComponent"],
+                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_21__["TaskCreateFormComponent"],
+                _components_task_form_component__WEBPACK_IMPORTED_MODULE_22__["TaskFormComponent"],
+                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_25__["TimeEntryFormComponent"],
+                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_26__["TimesheetComponent"],
+                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_27__["TimesheetSignoffComponent"]
             ],
             imports: [
                 _app_routing__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["BrowserModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_12__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_25__["effects"]),
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_13__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_28__["effects"]),
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientXsrfModule"].withOptions({
                     cookieName: 'csrftoken',
                     headerName: 'X-CSRFTOKEN'
                 }),
-                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_14__["NgxDnDModule"],
+                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_15__["NgxDnDModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_17__["RouterModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_18__["RouterModule"],
                 _ngrx_store__WEBPACK_IMPORTED_MODULE_4__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_1__["reducers"])
             ],
             providers: [],
@@ -324,6 +612,380 @@ var AvatarComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]])
     ], AvatarComponent);
     return AvatarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/calendar.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/components/calendar.component.ts ***!
+  \**************************************************/
+/*! exports provided: CalendarComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CalendarComponent", function() { return CalendarComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var fullcalendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fullcalendar */ "./node_modules/fullcalendar/dist/fullcalendar.js");
+/* harmony import */ var fullcalendar__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(fullcalendar__WEBPACK_IMPORTED_MODULE_1__);
+var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var defaultConfig = {
+    aspectRatio: 1.35,
+    defaultView: 'month',
+    slotDuration: '00:30:00',
+    scrollTime: '06:00:00',
+    minTime: '00:00:00',
+    maxTime: '24:00:00',
+    slotEventOverlap: true,
+    dragRevertDuration: 500,
+    dragOpacity: .75,
+    dragScroll: true,
+    timezone: false,
+    timeFormat: null
+};
+var CalendarComponent = /** @class */ (function () {
+    function CalendarComponent(el, differs) {
+        this.el = el;
+        this.externalEventsWrapperId = 'fc-event-wrapper';
+        this.externalEventItemClass = '.fc-event';
+        // tslint:disable:no-output-on-prefix
+        this.onViewSkeletonRender = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.onDatesRender = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.onDrop = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.onEventDrop = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.onEventClick = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.onEventResize = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.eventDiffer = differs.find([]).create(null);
+        this.initialized = false;
+    }
+    CalendarComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.config = this.safeGenerateConfig();
+        this.config.viewSkeletonRender = function (info) {
+            _this.onViewSkeletonRender.emit(info);
+        };
+        this.config.datesRender = function (info) {
+            _this.onDatesRender.emit(info);
+        };
+        this.config.drop = function (info) {
+            _this.onDrop.emit(info);
+        };
+        this.config.eventDrop = function (info) {
+            _this.onEventDrop.emit(info);
+        };
+        this.config.eventResize = function (info) {
+            _this.onEventResize.emit(info);
+        };
+        this.config.eventClick = function (info) {
+            _this.onEventClick.emit(info);
+        };
+    };
+    CalendarComponent.prototype.ngOnDestroy = function () {
+        if (this.calendar) {
+            this.calendar.destroy();
+            this.initialized = false;
+            this.calendar = null;
+        }
+    };
+    CalendarComponent.prototype.ngOnChanges = function (changes) {
+        if (this.calendar) {
+            for (var propName in changes) {
+                if (propName !== 'events') {
+                    this.calendar.option(propName, changes[propName].currentValue);
+                }
+            }
+        }
+    };
+    CalendarComponent.prototype.ngAfterViewChecked = function () {
+        if (!this.initialized && this.el.nativeElement.offsetParent) {
+            this.initialize();
+        }
+    };
+    CalendarComponent.prototype.ngDoCheck = function () {
+        var eventChanges = this.eventDiffer.diff(this.events);
+        if (this.calendar && eventChanges) {
+            var sources = this.calendar.getEventSources();
+            sources.forEach(function (source) { source.remove(); });
+            if (this.events) {
+                this.calendar.addEventSource(this.events);
+            }
+        }
+    };
+    CalendarComponent.prototype.initialize = function () {
+        this.calendar = new fullcalendar__WEBPACK_IMPORTED_MODULE_1__["Calendar"](this.el.nativeElement, this.config);
+        var externalEventsEl = document.getElementById(this.externalEventsWrapperId);
+        new fullcalendar__WEBPACK_IMPORTED_MODULE_1__["Draggable"](externalEventsEl, {
+            itemSelector: this.externalEventItemClass
+        });
+        this.calendar.render();
+        if (this.events) {
+            this.calendar.addEventSource(this.events);
+        }
+        this.initialized = true;
+    };
+    CalendarComponent.prototype.safeGenerateConfig = function () {
+        var configFromAttrs = {
+            // tslint:disable:no-non-null-assertion
+            header: this.header,
+            isRTL: this.isRTL,
+            weekends: this.weekends,
+            hiddenDays: this.hiddenDays,
+            fixedWeekCount: this.fixedWeekCount,
+            weekNumbers: this.weekNumbers,
+            businessHours: this.businessHours,
+            height: this.height,
+            contentHeight: this.contentHeight,
+            aspectRatio: this.aspectRatio,
+            eventLimit: this.eventLimit,
+            defaultDate: this.defaultDate,
+            locale: this.locale,
+            timezone: this.timezone,
+            timeFormat: this.timeFormat,
+            editable: this.editable,
+            droppable: this.droppable,
+            eventStartEditable: this.eventStartEditable,
+            eventDurationEditable: this.eventDurationEditable,
+            defaultView: this.defaultView,
+            allDaySlot: this.allDaySlot,
+            allDayText: this.allDayText,
+            slotDuration: this.slotDuration,
+            slotLabelInterval: this.slotLabelInterval,
+            snapDuration: this.snapDuration,
+            scrollTime: this.scrollTime,
+            minTime: this.minTime,
+            maxTime: this.maxTime,
+            slotEventOverlap: this.slotEventOverlap,
+            nowIndicator: this.nowIndicator,
+            dragRevertDuration: this.dragRevertDuration,
+            dragOpacity: this.dragOpacity,
+            dragScroll: this.dragScroll,
+            eventOverlap: this.eventOverlap,
+            eventConstraint: this.eventConstraint,
+            dayRender: this.dayRender,
+            navLinks: this.navLinks,
+        };
+        return __assign({}, defaultConfig, this.removeUndefinedProperties(this.options), this.removeUndefinedProperties(configFromAttrs));
+    };
+    CalendarComponent.prototype.removeUndefinedProperties = function (object) {
+        return JSON.parse(JSON.stringify(typeof object === 'object' ? object : {}));
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], CalendarComponent.prototype, "externalEventsWrapperId", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], CalendarComponent.prototype, "externalEventItemClass", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "options", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Array)
+    ], CalendarComponent.prototype, "events", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "header", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "isRTL", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "weekends", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Array)
+    ], CalendarComponent.prototype, "hiddenDays", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "fixedWeekCount", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "weekNumbers", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "businessHours", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "height", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "contentHeight", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Number)
+    ], CalendarComponent.prototype, "aspectRatio", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "eventLimit", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "defaultDate", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "editable", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "droppable", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "eventStartEditable", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "eventDurationEditable", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], CalendarComponent.prototype, "defaultView", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "allDaySlot", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], CalendarComponent.prototype, "allDayText", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "slotDuration", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "slotLabelInterval", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "snapDuration", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "scrollTime", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "minTime", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "maxTime", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "slotEventOverlap", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "nowIndicator", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Number)
+    ], CalendarComponent.prototype, "dragRevertDuration", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Number)
+    ], CalendarComponent.prototype, "dragOpacity", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "dragScroll", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "eventOverlap", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "eventConstraint", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], CalendarComponent.prototype, "locale", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CalendarComponent.prototype, "timezone", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], CalendarComponent.prototype, "timeFormat", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Function)
+    ], CalendarComponent.prototype, "dayRender", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Boolean)
+    ], CalendarComponent.prototype, "navLinks", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
+    ], CalendarComponent.prototype, "onViewSkeletonRender", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
+    ], CalendarComponent.prototype, "onDatesRender", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
+    ], CalendarComponent.prototype, "onDrop", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
+    ], CalendarComponent.prototype, "onEventDrop", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
+    ], CalendarComponent.prototype, "onEventClick", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
+    ], CalendarComponent.prototype, "onEventResize", void 0);
+    CalendarComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'calendar, [calendar]',
+            template: ""
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["IterableDiffers"]])
+    ], CalendarComponent);
+    return CalendarComponent;
 }());
 
 
@@ -531,10 +1193,10 @@ var SearchComponent = /** @class */ (function () {
         get: function () {
             return this._value;
         },
-        set: function (v) {
-            if (v !== this._value) {
-                this._value = v;
-                this._onChangeCallback(v);
+        set: function (value) {
+            if (value !== this._value) {
+                this._value = value;
+                this._onChangeCallback(value);
             }
         },
         enumerable: true,
@@ -557,7 +1219,12 @@ var SearchComponent = /** @class */ (function () {
         this._onTouchedCallback = fn;
     };
     SearchComponent.prototype.searchChange = function (value) {
-        this.value = value.split(" ");
+        if (value) {
+            this.value = value.split(" ");
+        }
+        else {
+            this.value = [];
+        }
     };
     SearchComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1071,6 +1738,182 @@ var TaskFormComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/time-entry-form.component.html":
+/*!***********************************************************!*\
+  !*** ./src/app/components/time-entry-form.component.html ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"overlay-header d-flex align-items-top\">\n    <ng-container *ngIf=\"form.task$ | async as task\">\n        <div class=\"color-indicator\" [style.backgroundColor]=\"task._job.colour\"></div>\n        <div class=\"title h4\">{{ task.title }}</div>\n    </ng-container>\n    <a class=\"close ml-auto\" (click)=\"closeEvent($event)\"><i class=\"icon-cancel\"></i></a>\n</div>\n<div class=\"overlay-body\">\n    <p class=\"muted\">To change the task click one from the main list</p>\n    <form>\n        <input type=\"hidden\" name=\"task\">\n        <div class=\"row\">\n            <div class=\"col\">\n                <label>Start Time</label>\n                <input [formControl]=\"form.controls.started_at_time\" type=\"time\" min=\"0:00\" max=\"23:59\" />\n            </div>\n            <div class=\"col\">\n                <label>End Time</label>\n                <input [formControl]=\"form.controls.ended_at_time\" type=\"time\" min=\"0:00\" max=\"23:59\" />\n            </div>\n        </div>\n        <label>Comments</label>\n        <textarea [formControl]=\"form.controls.comments\" name=\"comments\" rows=\"3\"></textarea>\n        <div class=\"text-right\">\n            <a class=\"button button-primary\" (click)=\"form.save($event)\">Update</a>\n            <a class=\"delete button button-primary button-clear\" (click)=\"form.delete($event)\">Delete <i class=\"icon-trash\"></i></a>\n        </div>\n    </form>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/time-entry-form.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/time-entry-form.component.ts ***!
+  \*********************************************************/
+/*! exports provided: TimeEntryFormComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeEntryFormComponent", function() { return TimeEntryFormComponent; });
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _forms_time_entry_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../forms/time-entry.form */ "./src/app/forms/time-entry.form.ts");
+/* harmony import */ var _state_selectors_timeentry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state/selectors/timeentry */ "./src/app/state/selectors/timeentry.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var TimeEntryFormComponent = /** @class */ (function () {
+    function TimeEntryFormComponent(store, actionsSubject) {
+        var _this = this;
+        this.store = store;
+        this.actionsSubject = actionsSubject;
+        this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        // setup the form
+        this.form = new _forms_time_entry_form__WEBPACK_IMPORTED_MODULE_2__["TimeEntryForm"](this.store, this.actionsSubject);
+        // close the form when saved and deleted
+        this.form.formSaved.subscribe(function () { return _this.closeEvent(null); });
+        this.form.formDeleted.subscribe(function () { return _this.closeEvent(null); });
+    }
+    TimeEntryFormComponent.prototype.ngOnChanges = function (changes) {
+        var _this = this;
+        for (var propName in changes) {
+            if (propName === 'id') {
+                this.entry$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(Object(_state_selectors_timeentry__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryById"])(changes[propName].currentValue)));
+                this.entry$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1)).subscribe(function (d) {
+                    _this.form.load(d);
+                });
+            }
+            if (propName === 'newTaskId' && changes[propName].currentValue) {
+                this.form.controls.task.setValue(changes[propName].currentValue);
+            }
+        }
+    };
+    TimeEntryFormComponent.prototype.closeEvent = function (event) {
+        this.close.emit(event);
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        __metadata("design:type", Number)
+    ], TimeEntryFormComponent.prototype, "id", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        __metadata("design:type", Number)
+    ], TimeEntryFormComponent.prototype, "newTaskId", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        __metadata("design:type", Object)
+    ], TimeEntryFormComponent.prototype, "close", void 0);
+    TimeEntryFormComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'time-entry-form, [time-entry-form]',
+            template: __webpack_require__(/*! ./time-entry-form.component.html */ "./src/app/components/time-entry-form.component.html")
+        }),
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["Store"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_0__["ActionsSubject"]])
+    ], TimeEntryFormComponent);
+    return TimeEntryFormComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/time-sheet-signoff.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/components/time-sheet-signoff.component.ts ***!
+  \************************************************************/
+/*! exports provided: TimesheetSignoffComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimesheetSignoffComponent", function() { return TimesheetSignoffComponent; });
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/selectors/timesheet */ "./src/app/state/selectors/timesheet.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var TimesheetSignoffComponent = /** @class */ (function () {
+    function TimesheetSignoffComponent(store) {
+        this.store = store;
+    }
+    TimesheetSignoffComponent.prototype.ngOnChanges = function (changes) {
+        if (this.user && this.date) {
+            this.signoff$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_4__["getDailyTimeSignoffForUser"])(this.user, this.date)));
+            this.sum$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_4__["getDailyTimeTotalForUser"])(this.user, this.date)));
+        }
+    };
+    TimesheetSignoffComponent.prototype.changeSignoff = function (checked, originalData) {
+        if (originalData === void 0) { originalData = null; }
+        if (originalData) {
+            var payload = {
+                id: originalData.id,
+                completed: checked
+            };
+            this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["TimeDailySignoffActions"].PATCH, payload: payload });
+        }
+        else {
+            var payload = {
+                date: moment__WEBPACK_IMPORTED_MODULE_1__(this.date).format('YYYY-MM-DD'),
+                user: this.user,
+                completed: checked
+            };
+            this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["TimeDailySignoffActions"].ADD, payload: payload });
+        }
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
+        __metadata("design:type", Date)
+    ], TimesheetSignoffComponent.prototype, "date", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
+        __metadata("design:type", Number)
+    ], TimesheetSignoffComponent.prototype, "user", void 0);
+    TimesheetSignoffComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+            selector: 'time-sheet-signoff, [time-sheet-signoff]',
+            template: "\n    <span class=\"checkbox fc-dailycontrol\">\n        <label>\n            <ng-container *ngIf=\"signoff$ | async as signoff; else emptyTemplate\">\n                <input #ckb type=\"checkbox\" [checked]=\"signoff.completed\" (change)=\"changeSignoff(ckb.checked, signoff)\">\n            </ng-container>\n            <span></span><em>{{ sum$ | async }}</em>\n        </label>\n    </span>\n\n    <ng-template #emptyTemplate>\n        <input #ckb type=\"checkbox\" (change)=\"changeSignoff(ckb.checked)\">\n    </ng-template>\n    "
+        }),
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"]])
+    ], TimesheetSignoffComponent);
+    return TimesheetSignoffComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/time-sheet.component.html":
 /*!******************************************************!*\
   !*** ./src/app/components/time-sheet.component.html ***!
@@ -1078,7 +1921,7 @@ var TaskFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\"></div>\n    </div>\n</div>"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchData()\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content d-flex flex-fill flex-flow-column\">\n    <div class=\"row flex-fill\">\n        <div class=\"col-3 d-flex flex-column flex-fill\">\n            <search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchData()\"></search>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task\" [style.background-color]=\"task._job.colour\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <span class=\"external-event d-block\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div class=\"row\" style=\"flex: 0 1 50px;\">    \n        <div class=\"col-9 offset-3\">\n            <table class=\"mb-0\">\n                <tr>\n                    <td class=\"py-1\" [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></td>\n                    <td class=\"text-center px-0 py-1\" *ngFor=\"let date of viewDates\">\n                        <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1092,8 +1935,15 @@ module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-f
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimesheetComponent", function() { return TimesheetComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../state/selectors/timesheet */ "./src/app/state/selectors/timesheet.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var _utils_generic__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../utils/generic */ "./src/app/utils/generic.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1105,17 +1955,116 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
+
+
+
+
 var TimesheetComponent = /** @class */ (function () {
-    function TimesheetComponent(store) {
+    function TimesheetComponent(store, actionsSubject) {
         this.store = store;
+        this.actionsSubject = actionsSubject;
+        this.searchTerms = [];
+        this.subscriptions = [];
+        this.viewDates = [];
     }
+    TimesheetComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_6__["getMeState"])).subscribe(function (me) {
+            _this.selectedUserId = me.id;
+            _this.refetchData();
+        });
+        this.options = {
+            defaultView: 'agendaWeek',
+            header: {
+                left: 'agendaDay,agendaWeek',
+                center: 'title',
+                right: 'today prev,next'
+            },
+            height: 'parent',
+            firstDay: 1,
+            allDaySlot: false,
+            nowIndicator: true,
+            slotEventOverlap: false,
+            slotDuration: '00:05:00',
+            snapDuration: '00:01:00',
+            defaultTimedEventDuration: '00:05:00',
+            scrollTime: moment__WEBPACK_IMPORTED_MODULE_1__().format('HH:00:00'),
+            editable: true,
+            dragRevertDuration: 0,
+            droppable: true,
+            eventOverlap: false
+        };
+    };
+    TimesheetComponent.prototype.refetchData = function () {
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_6__["getUserState"]));
+        this.tasks$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_5__["getTasksForUser"])(this.selectedUserId, this.searchTerms)));
+        this.events$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_5__["getEventsForUser"])(this.selectedUserId)));
+    };
+    TimesheetComponent.prototype.changeTask = function (task) {
+        if (this.selectedEventId) {
+            this.selectedTaskId = task;
+        }
+    };
+    TimesheetComponent.prototype.onViewSkeletonRender = function (info) {
+        var _this = this;
+        setTimeout(function () {
+            _this.viewAxisWidth = info.view.axisWidth;
+        });
+    };
+    TimesheetComponent.prototype.onDatesRender = function (info) {
+        var _this = this;
+        setTimeout(function () {
+            _this.viewDates = Object(_utils_generic__WEBPACK_IMPORTED_MODULE_7__["getDatesBetween"])(info.view.activeStart, moment__WEBPACK_IMPORTED_MODULE_1__(info.view.activeEnd).add(-1, "days").toDate());
+        });
+    };
+    TimesheetComponent.prototype.onDrop = function (info) {
+        var payload = {
+            user: this.selectedUserId,
+            task: info.draggedEl.dataset.task,
+            started_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.date).toISOString(),
+            ended_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.date).add(5, 'minutes').toISOString()
+        };
+        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["TimeEntryActions"].ADD, payload: payload });
+    };
+    TimesheetComponent.prototype.onEventDrop = function (info) {
+        var payload = {
+            id: info.event.extendedProps.id,
+            started_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.event.start).toISOString(),
+            ended_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.event.end).toISOString()
+        };
+        this.updateEvent(info, payload);
+    };
+    TimesheetComponent.prototype.onEventResize = function (info) {
+        var payload = {
+            id: info.event.extendedProps.id,
+            started_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.event.start).toISOString(),
+            ended_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.event.end).toISOString()
+        };
+        this.updateEvent(info, payload);
+    };
+    TimesheetComponent.prototype.onEventClick = function (info) {
+        this.selectedEventId = info.event.extendedProps.id;
+    };
+    TimesheetComponent.prototype.updateEvent = function (info, payload) {
+        // if there is a current subscription stop it
+        if (this.currentUpdateRequest) {
+            this.currentUpdateRequest.unsubscribe();
+        }
+        // update the entry
+        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["TimeEntryActions"].PATCH, payload: payload });
+        // if there is an http error revert it
+        this.currentUpdateRequest = this.actionsSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (a) { return a.type === _state_actions__WEBPACK_IMPORTED_MODULE_0__["HttpActions"].HTTP_ERROR && a.payload.data.id === payload.id; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1)).subscribe(function () { return info.revert(); });
+    };
     TimesheetComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
             selector: 'time-sheet, [time-sheet]',
             template: __webpack_require__(/*! ./time-sheet.component.html */ "./src/app/components/time-sheet.component.html"),
             host: { 'class': 'd-flex flex-fill flex-column' }
         }),
-        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["Store"]])
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["ActionsSubject"]])
     ], TimesheetComponent);
     return TimesheetComponent;
 }());
@@ -1779,6 +2728,107 @@ var TaskTitleForm = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/forms/time-entry.form.ts":
+/*!******************************************!*\
+  !*** ./src/app/forms/time-entry.form.ts ***!
+  \******************************************/
+/*! exports provided: TimeEntryForm */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeEntryForm", function() { return TimeEntryForm; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./base.form */ "./src/app/forms/base.form.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../state/selectors/task */ "./src/app/state/selectors/task.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+
+
+
+var options = {
+    alwaysEditable: true,
+    cleanAfterMethod: _base_form__WEBPACK_IMPORTED_MODULE_4__["FormCleanAfterMethod"].loadSaved
+};
+var TimeEntryForm = /** @class */ (function (_super) {
+    __extends(TimeEntryForm, _super);
+    function TimeEntryForm(store, actionsSubject, formOptions) {
+        var _this = _super.call(this, store, actionsSubject, {
+            id: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+            task: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+            started_at: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+            started_at_time: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+            ended_at: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+            ended_at_time: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+            comments: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null)
+        }, null, null, lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, options, formOptions)) || this;
+        _this.store = store;
+        _this.actionsSubject = actionsSubject;
+        _this.updateAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TimeEntryActions"].PATCH;
+        _this.updateSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TimeEntryActions"].PATCH_SUCCESS;
+        _this.deleteAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TimeEntryActions"].REMOVE;
+        _this.deleteSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TimeEntryActions"].REMOVE_SUCCESS;
+        // subscribe to the time changes and update the full date time fields
+        _this.controls.started_at_time.valueChanges.subscribe(function (value) {
+            if (!value) {
+                return;
+            }
+            ;
+            var timeSplit = value.split(':');
+            var date = moment__WEBPACK_IMPORTED_MODULE_2__(_this.controls.started_at.value).set({ h: timeSplit[0], m: timeSplit[1] });
+            _this.controls.started_at.setValue(date.toISOString());
+        });
+        _this.controls.ended_at_time.valueChanges.subscribe(function (value) {
+            if (!value) {
+                return;
+            }
+            ;
+            var timeSplit = value.split(':');
+            var date = moment__WEBPACK_IMPORTED_MODULE_2__(_this.controls.ended_at.value).set({ h: timeSplit[0], m: timeSplit[1] });
+            _this.controls.ended_at.setValue(date.toISOString());
+        });
+        // reload the selected task data
+        _this.controls.task.valueChanges.subscribe(function (value) {
+            _this.task$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_6__["getTaskCollectionById"])(value)));
+        });
+        return _this;
+    }
+    TimeEntryForm.prototype.load = function (data) {
+        // set the initial data incase we need to reset it
+        this.initialData = data;
+        // patch the form as no all fields will be defined
+        this.patchValue(data);
+        // set the time fields values
+        this.controls.started_at_time.setValue(moment__WEBPACK_IMPORTED_MODULE_2__(data.started_at).format('HH:mm'));
+        this.controls.ended_at_time.setValue(moment__WEBPACK_IMPORTED_MODULE_2__(data.ended_at).format('HH:mm'));
+        // load the selected task data
+        this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_6__["getTaskCollectionById"])(data.task)));
+    };
+    return TimeEntryForm;
+}(_base_form__WEBPACK_IMPORTED_MODULE_4__["BaseForm"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/pipes/client-search.pipe.ts":
 /*!*********************************************!*\
   !*** ./src/app/pipes/client-search.pipe.ts ***!
@@ -2156,7 +3206,7 @@ var HttpActions = /** @class */ (function () {
 /*!****************************************!*\
   !*** ./src/app/state/actions/index.ts ***!
   \****************************************/
-/*! exports provided: ClientActions, DataActions, FilterActions, HttpActions, JobActions, MeActions, TaskActions, TaskAssigneeActions, TaskNoteActions, TaskStatusActions, UserActions, actions */
+/*! exports provided: ClientActions, DataActions, FilterActions, HttpActions, JobActions, MeActions, TaskActions, TaskAssigneeActions, TaskNoteActions, TaskStatusActions, TimeDailySignoffActions, TimeEntryActions, UserActions, actions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2192,8 +3242,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/actions/taskstatus.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskStatusActions", function() { return _taskstatus__WEBPACK_IMPORTED_MODULE_9__["TaskStatusActions"]; });
 
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_10__["UserActions"]; });
+/* harmony import */ var _timedailysignoff__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./timedailysignoff */ "./src/app/state/actions/timedailysignoff.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeDailySignoffActions", function() { return _timedailysignoff__WEBPACK_IMPORTED_MODULE_10__["TimeDailySignoffActions"]; });
+
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_11__["TimeEntryActions"]; });
+
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_12__["UserActions"]; });
+
+
 
 
 
@@ -2218,7 +3276,9 @@ var actions = [
     _taskassignee__WEBPACK_IMPORTED_MODULE_7__["TaskAssigneeActions"],
     _tasknote__WEBPACK_IMPORTED_MODULE_8__["TaskNoteActions"],
     _taskstatus__WEBPACK_IMPORTED_MODULE_9__["TaskStatusActions"],
-    _user__WEBPACK_IMPORTED_MODULE_10__["UserActions"]
+    _timedailysignoff__WEBPACK_IMPORTED_MODULE_10__["TimeDailySignoffActions"],
+    _timeentry__WEBPACK_IMPORTED_MODULE_11__["TimeEntryActions"],
+    _user__WEBPACK_IMPORTED_MODULE_12__["UserActions"]
 ];
 
 
@@ -2634,6 +3694,172 @@ var TaskStatusActions = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/state/actions/timedailysignoff.ts":
+/*!***************************************************!*\
+  !*** ./src/app/state/actions/timedailysignoff.ts ***!
+  \***************************************************/
+/*! exports provided: TimeDailySignoffActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeDailySignoffActions", function() { return TimeDailySignoffActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var TimeDailySignoffActions = /** @class */ (function () {
+    function TimeDailySignoffActions() {
+    }
+    TimeDailySignoffActions_1 = TimeDailySignoffActions;
+    TimeDailySignoffActions.prototype.LoadAll = function () {
+        return { type: TimeDailySignoffActions_1.LOAD_ALL };
+    };
+    TimeDailySignoffActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: TimeDailySignoffActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    TimeDailySignoffActions.prototype.LoadOne = function (payload) {
+        return { type: TimeDailySignoffActions_1.LOAD_ONE, payload: payload };
+    };
+    TimeDailySignoffActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: TimeDailySignoffActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    TimeDailySignoffActions.prototype.Add = function (payload) {
+        return { type: TimeDailySignoffActions_1.ADD, payload: payload };
+    };
+    TimeDailySignoffActions.prototype.AddSuccess = function (payload) {
+        return { type: TimeDailySignoffActions_1.ADD_SUCCESS, payload: payload };
+    };
+    TimeDailySignoffActions.prototype.Update = function (payload) {
+        return { type: TimeDailySignoffActions_1.UPDATE, payload: payload };
+    };
+    TimeDailySignoffActions.prototype.UpdateSuccess = function (payload) {
+        return { type: TimeDailySignoffActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    TimeDailySignoffActions.prototype.Patch = function (payload) {
+        return { type: TimeDailySignoffActions_1.PATCH, payload: payload };
+    };
+    TimeDailySignoffActions.prototype.PatchSuccess = function (payload) {
+        return { type: TimeDailySignoffActions_1.PATCH_SUCCESS, payload: payload };
+    };
+    TimeDailySignoffActions.prototype.Remove = function (payload) {
+        return { type: TimeDailySignoffActions_1.REMOVE, payload: payload };
+    };
+    TimeDailySignoffActions.prototype.RemoveSuccess = function (payload) {
+        return { type: TimeDailySignoffActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var TimeDailySignoffActions_1;
+    TimeDailySignoffActions.LOAD_ALL = '[TimeDailySignoff] LOAD_ALL';
+    TimeDailySignoffActions.LOAD_ALL_SUCCESS = '[TimeDailySignoff] LOAD_ALL_SUCCESS';
+    TimeDailySignoffActions.LOAD_ONE = '[TimeDailySignoff] LOAD_ONE';
+    TimeDailySignoffActions.LOAD_ONE_SUCCESS = '[TimeDailySignoff] LOAD_ONE_SUCCESS';
+    TimeDailySignoffActions.ADD = '[TimeDailySignoff] ADD';
+    TimeDailySignoffActions.ADD_SUCCESS = '[TimeDailySignoff] ADD_SUCCESS';
+    TimeDailySignoffActions.UPDATE = '[TimeDailySignoff] UPDATE';
+    TimeDailySignoffActions.UPDATE_SUCCESS = '[TimeDailySignoff] UPDATE_SUCCESS';
+    TimeDailySignoffActions.PATCH = '[TimeDailySignoff] PATCH';
+    TimeDailySignoffActions.PATCH_SUCCESS = '[TimeDailySignoff] PATCH_SUCCESS';
+    TimeDailySignoffActions.REMOVE = '[TimeDailySignoff] REMOVE';
+    TimeDailySignoffActions.REMOVE_SUCCESS = '[TimeDailySignoff] REMOVE_SUCCESS';
+    TimeDailySignoffActions = TimeDailySignoffActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TimeDailySignoffActions);
+    return TimeDailySignoffActions;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/actions/timeentry.ts":
+/*!********************************************!*\
+  !*** ./src/app/state/actions/timeentry.ts ***!
+  \********************************************/
+/*! exports provided: TimeEntryActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return TimeEntryActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var TimeEntryActions = /** @class */ (function () {
+    function TimeEntryActions() {
+    }
+    TimeEntryActions_1 = TimeEntryActions;
+    TimeEntryActions.prototype.LoadAll = function () {
+        return { type: TimeEntryActions_1.LOAD_ALL };
+    };
+    TimeEntryActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: TimeEntryActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    TimeEntryActions.prototype.LoadOne = function (payload) {
+        return { type: TimeEntryActions_1.LOAD_ONE, payload: payload };
+    };
+    TimeEntryActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: TimeEntryActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    TimeEntryActions.prototype.Add = function (payload) {
+        return { type: TimeEntryActions_1.ADD, payload: payload };
+    };
+    TimeEntryActions.prototype.AddSuccess = function (payload) {
+        return { type: TimeEntryActions_1.ADD_SUCCESS, payload: payload };
+    };
+    TimeEntryActions.prototype.Update = function (payload) {
+        return { type: TimeEntryActions_1.UPDATE, payload: payload };
+    };
+    TimeEntryActions.prototype.UpdateSuccess = function (payload) {
+        return { type: TimeEntryActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    TimeEntryActions.prototype.Patch = function (payload) {
+        return { type: TimeEntryActions_1.PATCH, payload: payload };
+    };
+    TimeEntryActions.prototype.PatchSuccess = function (payload) {
+        return { type: TimeEntryActions_1.PATCH_SUCCESS, payload: payload };
+    };
+    TimeEntryActions.prototype.Remove = function (payload) {
+        return { type: TimeEntryActions_1.REMOVE, payload: payload };
+    };
+    TimeEntryActions.prototype.RemoveSuccess = function (payload) {
+        return { type: TimeEntryActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var TimeEntryActions_1;
+    TimeEntryActions.LOAD_ALL = '[TimeEntry] LOAD_ALL';
+    TimeEntryActions.LOAD_ALL_SUCCESS = '[TimeEntry] LOAD_ALL_SUCCESS';
+    TimeEntryActions.LOAD_ONE = '[TimeEntry] LOAD_ONE';
+    TimeEntryActions.LOAD_ONE_SUCCESS = '[TimeEntry] LOAD_ONE_SUCCESS';
+    TimeEntryActions.ADD = '[TimeEntry] ADD';
+    TimeEntryActions.ADD_SUCCESS = '[TimeEntry] ADD_SUCCESS';
+    TimeEntryActions.UPDATE = '[TimeEntry] UPDATE';
+    TimeEntryActions.UPDATE_SUCCESS = '[TimeEntry] UPDATE_SUCCESS';
+    TimeEntryActions.PATCH = '[TimeEntry] PATCH';
+    TimeEntryActions.PATCH_SUCCESS = '[TimeEntry] PATCH_SUCCESS';
+    TimeEntryActions.REMOVE = '[TimeEntry] REMOVE';
+    TimeEntryActions.REMOVE_SUCCESS = '[TimeEntry] REMOVE_SUCCESS';
+    TimeEntryActions = TimeEntryActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TimeEntryActions);
+    return TimeEntryActions;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/actions/user.ts":
 /*!***************************************!*\
   !*** ./src/app/state/actions/user.ts ***!
@@ -2729,16 +3955,16 @@ var APIBaseEffects = /** @class */ (function () {
             return _this.service$.one(_this.apiUrl, id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
         })); };
         this._add$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
-            return _this.service$.create(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
+            return _this.service$.create(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
         })); };
         this._update$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
-            return _this.service$.update(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
+            return _this.service$.update(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
         })); };
         this._patch$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
-            return _this.service$.patch(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
+            return _this.service$.patch(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
         })); };
         this._remove$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
-            return _this.service$.remove(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
+            return _this.service$.remove(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
         })); };
     }
     Object.defineProperty(APIBaseEffects.prototype, "apiUrl", {
@@ -2881,6 +4107,8 @@ var DataEffects = /** @class */ (function () {
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskAssigneeActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskNoteActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskStatusActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TimeDailySignoffActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TimeEntryActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["UserActions"]().LoadAll()
             ];
         }));
@@ -2920,7 +4148,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./task */ "./src/app/state/effects/task.ts");
 /* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/effects/tasknote.ts");
 /* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/effects/taskstatus.ts");
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+/* harmony import */ var _timedailysignoff__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./timedailysignoff */ "./src/app/state/effects/timedailysignoff.ts");
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+
+
 
 
 
@@ -2939,7 +4171,9 @@ var effects = [
     _taskassignee__WEBPACK_IMPORTED_MODULE_4__["TaskAssigneeEffects"],
     _tasknote__WEBPACK_IMPORTED_MODULE_6__["TaskNoteEffects"],
     _taskstatus__WEBPACK_IMPORTED_MODULE_7__["TaskStatusEffects"],
-    _user__WEBPACK_IMPORTED_MODULE_8__["UserEffects"]
+    _timedailysignoff__WEBPACK_IMPORTED_MODULE_8__["TimeDailySignoffEffects"],
+    _timeentry__WEBPACK_IMPORTED_MODULE_9__["TimeEntryEffects"],
+    _user__WEBPACK_IMPORTED_MODULE_10__["UserEffects"]
 ];
 
 
@@ -3400,6 +4634,176 @@ var TaskStatusEffects = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/state/effects/timedailysignoff.ts":
+/*!***************************************************!*\
+  !*** ./src/app/state/effects/timedailysignoff.ts ***!
+  \***************************************************/
+/*! exports provided: TimeDailySignoffEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeDailySignoffEffects", function() { return TimeDailySignoffEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TimeDailySignoffEffects = /** @class */ (function (_super) {
+    __extends(TimeDailySignoffEffects, _super);
+    function TimeDailySignoffEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/time-daily-signoff/';
+        _this.prefix = '[TimeDailySignoff]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeDailySignoffEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeDailySignoffEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeDailySignoffEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeDailySignoffEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeDailySignoffEffects.prototype, "patch$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeDailySignoffEffects.prototype, "remove$", void 0);
+    TimeDailySignoffEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TimeDailySignoffEffects);
+    return TimeDailySignoffEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/effects/timeentry.ts":
+/*!********************************************!*\
+  !*** ./src/app/state/effects/timeentry.ts ***!
+  \********************************************/
+/*! exports provided: TimeEntryEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeEntryEffects", function() { return TimeEntryEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TimeEntryEffects = /** @class */ (function (_super) {
+    __extends(TimeEntryEffects, _super);
+    function TimeEntryEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/time-entries/';
+        _this.prefix = '[TimeEntry]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeEntryEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeEntryEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeEntryEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeEntryEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeEntryEffects.prototype, "patch$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeEntryEffects.prototype, "remove$", void 0);
+    TimeEntryEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TimeEntryEffects);
+    return TimeEntryEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/effects/user.ts":
 /*!***************************************!*\
   !*** ./src/app/state/effects/user.ts ***!
@@ -3841,6 +5245,98 @@ function reducer(state, action) {
 
 /***/ }),
 
+/***/ "./src/app/state/reducers/timedailysignoff.ts":
+/*!****************************************************!*\
+  !*** ./src/app/state/reducers/timedailysignoff.ts ***!
+  \****************************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[TimeDailySignoff]';
+    switch (action.type) {
+        // Replace all objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " PATCH_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/state/reducers/timeentry.ts":
+/*!*********************************************!*\
+  !*** ./src/app/state/reducers/timeentry.ts ***!
+  \*********************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[TimeEntry]';
+    switch (action.type) {
+        // Replace all objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " PATCH_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/state/reducers/user.ts":
 /*!****************************************!*\
   !*** ./src/app/state/reducers/user.ts ***!
@@ -4020,6 +5516,126 @@ var getStatsForTaskboard = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["crea
 
 /***/ }),
 
+/***/ "./src/app/state/selectors/timeentry.ts":
+/*!**********************************************!*\
+  !*** ./src/app/state/selectors/timeentry.ts ***!
+  \**********************************************/
+/*! exports provided: getTimeEntryById */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeEntryById", function() { return getTimeEntryById; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../state */ "./src/app/state/state.ts");
+
+
+
+var getTimeEntryById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeEntryState"], function (entries) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](entries, ['id', id]); }); };
+
+
+/***/ }),
+
+/***/ "./src/app/state/selectors/timesheet.ts":
+/*!**********************************************!*\
+  !*** ./src/app/state/selectors/timesheet.ts ***!
+  \**********************************************/
+/*! exports provided: getEventsForUser, getTasksForUser, getDailyTimeSignoffForUser, getDailyTimeTotalForUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEventsForUser", function() { return getEventsForUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTasksForUser", function() { return getTasksForUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDailyTimeSignoffForUser", function() { return getDailyTimeSignoffForUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDailyTimeTotalForUser", function() { return getDailyTimeTotalForUser; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../state */ "./src/app/state/state.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./task */ "./src/app/state/selectors/task.ts");
+/* harmony import */ var _utils_generic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/generic */ "./src/app/utils/generic.ts");
+
+
+
+
+
+
+var getEventsForUser = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeEntryState"], _task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollection"], function (entries, tasks) {
+    var objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, ['user', id]);
+    return lodash__WEBPACK_IMPORTED_MODULE_0__["map"](objs, function (obj) {
+        var _task = lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', obj.task]);
+        return {
+            id: obj.id.toString(),
+            start: new Date(obj.started_at),
+            end: new Date(obj.ended_at),
+            title: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job.title', '') + ' - ' + lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, 'title', ''),
+            backgroundColor: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job.colour', ''),
+            borderColor: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job.colour', ''),
+            textColor: '#000',
+            allDay: false,
+            extendedProps: {
+                id: obj.id,
+                task: obj.task
+            }
+        };
+    });
+}); };
+var getTasksForUser = function (id, searchTerms) {
+    if (id === void 0) { id = null; }
+    if (searchTerms === void 0) { searchTerms = []; }
+    return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollection"], function (tasks) {
+        var objs = tasks;
+        // apply filters (either search all or only show tasks im assigned to)
+        if (searchTerms.length > 0) {
+            objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](objs, function (obj) {
+                var found = true;
+                lodash__WEBPACK_IMPORTED_MODULE_0__["each"](searchTerms, function (term) {
+                    if (!lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_5__["valueOr"])(obj.title).toLowerCase(), term) &&
+                        !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_5__["valueOr"])(obj._job.title).toLowerCase(), term) &&
+                        !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_5__["valueOr"])(obj._job._client.name).toLowerCase(), term)) {
+                        found = false;
+                    }
+                });
+                return found;
+            });
+        }
+        else if (id) {
+            objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](objs, { _assignees: [{ 'user': id }] });
+        }
+        // group the tasks by client
+        var autoShow = searchTerms.length > 0;
+        var byClient = lodash__WEBPACK_IMPORTED_MODULE_0__["groupBy"](objs, '_job._client.name');
+        var byClientByJob = {};
+        // then for each client group the tasks by job
+        lodash__WEBPACK_IMPORTED_MODULE_0__["forEach"](byClient, function (tasks, key) {
+            var byJob = lodash__WEBPACK_IMPORTED_MODULE_0__["groupBy"](tasks, '_job.title');
+            byClientByJob[key] = {
+                visible: autoShow,
+                jobs: lodash__WEBPACK_IMPORTED_MODULE_0__["transform"](byJob, function (result, value, key) { return result[key] = {
+                    visible: autoShow,
+                    tasks: value
+                }; })
+            };
+        });
+        return byClientByJob;
+    });
+};
+var getDailyTimeSignoffForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeDailySignoffState"], function (signoffs) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](signoffs, function (e) { return e.user == id && moment__WEBPACK_IMPORTED_MODULE_1__(e.date).date() == moment__WEBPACK_IMPORTED_MODULE_1__(date).date(); }); }); };
+var getDailyTimeTotalForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeEntryState"], function (entries) {
+    var forDay = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user == id && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).date() == moment__WEBPACK_IMPORTED_MODULE_1__(date).date(); });
+    var durations = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](forDay, 'duration');
+    var totalDurations = durations.slice(1).reduce(function (prev, cur) { return moment__WEBPACK_IMPORTED_MODULE_1__["duration"](cur).add(prev); }, moment__WEBPACK_IMPORTED_MODULE_1__["duration"](durations[0]));
+    return moment__WEBPACK_IMPORTED_MODULE_1__["utc"](totalDurations.asMilliseconds()).format("HH:mm");
+}); };
+
+
+/***/ }),
+
 /***/ "./src/app/state/selectors/user.ts":
 /*!*****************************************!*\
   !*** ./src/app/state/selectors/user.ts ***!
@@ -4046,7 +5662,7 @@ var getUserById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MO
 /*!********************************!*\
   !*** ./src/app/state/state.ts ***!
   \********************************/
-/*! exports provided: reducers, getClientState, getFilterState, getJobState, getMeState, getTaskState, getTaskAssigneeState, getTaskNoteState, getTaskStatusState, getUserState */
+/*! exports provided: reducers, getClientState, getFilterState, getJobState, getMeState, getTaskState, getTaskAssigneeState, getTaskNoteState, getTaskStatusState, getTimeDailySignoffState, getTimeEntryState, getUserState */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4060,6 +5676,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskAssigneeState", function() { return getTaskAssigneeState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNoteState", function() { return getTaskNoteState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskStatusState", function() { return getTaskStatusState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeDailySignoffState", function() { return getTimeDailySignoffState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeEntryState", function() { return getTimeEntryState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserState", function() { return getUserState; });
 /* harmony import */ var _reducers_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducers/client */ "./src/app/state/reducers/client.ts");
 /* harmony import */ var _reducers_filter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reducers/filter */ "./src/app/state/reducers/filter.ts");
@@ -4069,8 +5687,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reducers/taskassignee */ "./src/app/state/reducers/taskassignee.ts");
 /* harmony import */ var _reducers_tasknote__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reducers/tasknote */ "./src/app/state/reducers/tasknote.ts");
 /* harmony import */ var _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reducers/taskstatus */ "./src/app/state/reducers/taskstatus.ts");
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./reducers/user */ "./src/app/state/reducers/user.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _reducers_timedailysignoff__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./reducers/timedailysignoff */ "./src/app/state/reducers/timedailysignoff.ts");
+/* harmony import */ var _reducers_timeentry__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./reducers/timeentry */ "./src/app/state/reducers/timeentry.ts");
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./reducers/user */ "./src/app/state/reducers/user.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+
+
 
 
 
@@ -4090,17 +5712,21 @@ var reducers = {
     task_assignees: _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_5__["reducer"],
     task_notes: _reducers_tasknote__WEBPACK_IMPORTED_MODULE_6__["reducer"],
     task_statuses: _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_7__["reducer"],
-    users: _reducers_user__WEBPACK_IMPORTED_MODULE_8__["reducer"]
+    time_daily_signoffs: _reducers_timedailysignoff__WEBPACK_IMPORTED_MODULE_8__["reducer"],
+    time_entries: _reducers_timeentry__WEBPACK_IMPORTED_MODULE_9__["reducer"],
+    users: _reducers_user__WEBPACK_IMPORTED_MODULE_10__["reducer"]
 };
-var getClientState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["createFeatureSelector"])('clients');
-var getFilterState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["createFeatureSelector"])('filters');
-var getJobState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["createFeatureSelector"])('jobs');
-var getMeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["createFeatureSelector"])('me');
-var getTaskState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["createFeatureSelector"])('tasks');
-var getTaskAssigneeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["createFeatureSelector"])('task_assignees');
-var getTaskNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["createFeatureSelector"])('task_notes');
-var getTaskStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["createFeatureSelector"])('task_statuses');
-var getUserState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["createFeatureSelector"])('users');
+var getClientState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_11__["createFeatureSelector"])('clients');
+var getFilterState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_11__["createFeatureSelector"])('filters');
+var getJobState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_11__["createFeatureSelector"])('jobs');
+var getMeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_11__["createFeatureSelector"])('me');
+var getTaskState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_11__["createFeatureSelector"])('tasks');
+var getTaskAssigneeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_11__["createFeatureSelector"])('task_assignees');
+var getTaskNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_11__["createFeatureSelector"])('task_notes');
+var getTaskStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_11__["createFeatureSelector"])('task_statuses');
+var getTimeDailySignoffState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_11__["createFeatureSelector"])('time_daily_signoffs');
+var getTimeEntryState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_11__["createFeatureSelector"])('time_entries');
+var getUserState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_11__["createFeatureSelector"])('users');
 
 
 /***/ }),
@@ -4109,12 +5735,26 @@ var getUserState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_9__["createFeatur
 /*!**********************************!*\
   !*** ./src/app/utils/generic.ts ***!
   \**********************************/
-/*! exports provided: valueOr */
+/*! exports provided: getDatesBetween, valueOr */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDatesBetween", function() { return getDatesBetween; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "valueOr", function() { return valueOr; });
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+
+var getDatesBetween = function (from, to) {
+    var dateArray = [];
+    var currentDate = moment__WEBPACK_IMPORTED_MODULE_0__(from);
+    var stopDate = moment__WEBPACK_IMPORTED_MODULE_0__(to);
+    while (currentDate <= stopDate) {
+        dateArray.push(moment__WEBPACK_IMPORTED_MODULE_0__(currentDate).toDate());
+        currentDate = moment__WEBPACK_IMPORTED_MODULE_0__(currentDate).add(1, 'days');
+    }
+    return dateArray;
+};
 var valueOr = function (value, ifNull) {
     if (ifNull === void 0) { ifNull = ''; }
     return value ? value : ifNull;

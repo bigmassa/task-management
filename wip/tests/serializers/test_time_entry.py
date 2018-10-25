@@ -29,8 +29,6 @@ class TestSerializer(AppTestCase):
                 'comments',
                 'task',
                 'user',
-                'title',
-                'colour',
                 'duration'
             ]
         )
@@ -54,8 +52,6 @@ class TestSerializer(AppTestCase):
                 'comments': instance.comments,
                 'task': instance.task.pk,
                 'user': instance.user.pk,
-                'title': '%s - %s' % (instance.task.job, instance.task),
-                'colour': instance.task.job.colour,
                 'duration': '00:15:00'
             }
         )

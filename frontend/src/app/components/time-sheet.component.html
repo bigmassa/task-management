@@ -1,6 +1,69 @@
 <div class="page-header py-2">
     <div class="container-fluid d-flex align-items-center">
         <div class="h2">Timesheet</div>
-        <div class="page-header-actions"></div>
+        <div class="page-header-actions">
+            <select [(ngModel)]="selectedUserId" (ngModelChange)="refetchData()" class="mb-0">
+                <option *ngFor="let user of users$ | async" [ngValue]="user.id">{{ user.full_name }}</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="container-fluid inner-content d-flex flex-fill flex-flow-column">
+    <div class="row flex-fill">
+        <div class="col-3 d-flex flex-column flex-fill">
+            <search [(ngModel)]="searchTerms" (ngModelChange)="refetchData()"></search>
+            <div class="client-list-wrapper" id="external-events">
+                <ul class="client-list">
+                    <li *ngFor="let client of tasks$ | async | keyvalue">
+                        <a class="client" (click)="client.value.visible = !client.value.visible">{{ client.key }}</a>
+                        <ul *ngIf="client.value.visible">
+                            <li *ngFor="let job of client.value.jobs | keyvalue">
+                                <a class="job" (click)="job.value.visible = !job.value.visible">{{ job.key }}</a>
+                                <ul *ngIf="job.value.visible">
+                                    <li class="task" [style.background-color]="task._job.colour" (click)="changeTask(task.id)" *ngFor="let task of job.value.tasks">
+                                        <span class="external-event d-block" [attr.data-task]="task.id">{{ task.title }}</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-9 relative">
+            <div calendar
+                class="timesheet"
+                [options]="options"
+                [events]="events$ | async"
+                (onViewSkeletonRender)="onViewSkeletonRender($event)"
+                (onDatesRender)="onDatesRender($event)"
+                (onDrop)="onDrop($event)"
+                (onEventDrop)="onEventDrop($event)"
+                (onEventResize)="onEventResize($event)"
+                (onEventClick)="onEventClick($event)"
+                externalEventsWrapperId="external-events"
+                externalEventItemClass=".external-event">
+            </div>
+            <div time-entry-form
+                [id]="selectedEventId"
+                [newTaskId]="selectedTaskId"
+                class="timesheet-event-overlay"
+                [class.in]="selectedEventId"
+                (close)="selectedEventId = null; selectedTaskId = null"
+                *ngIf="selectedEventId">
+            </div>
+        </div>
+    </div>    
+    <div class="row" style="flex: 0 1 50px;">    
+        <div class="col-9 offset-3">
+            <table class="mb-0">
+                <tr>
+                    <td class="py-1" [style.width.px]="viewAxisWidth" [style.max-width.px]="viewAxisWidth"></td>
+                    <td class="text-center px-0 py-1" *ngFor="let date of viewDates">
+                        <time-sheet-signoff [user]="selectedUserId" [date]="date"></time-sheet-signoff>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>

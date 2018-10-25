@@ -22,6 +22,8 @@ export class DataEffects {
                     new actions.TaskAssigneeActions().LoadAll(),
                     new actions.TaskNoteActions().LoadAll(),
                     new actions.TaskStatusActions().LoadAll(),
+                    new actions.TimeDailySignoffActions().LoadAll(),
+                    new actions.TimeEntryActions().LoadAll(),
                     new actions.UserActions().LoadAll()
                 ];
             }

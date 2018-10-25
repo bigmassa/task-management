@@ -32,10 +32,10 @@ export class SearchComponent {
         return this._value;
     };
 
-    set value(v: any) {
-        if (v !== this._value) {
-            this._value = v;
-            this._onChangeCallback(v);
+    set value(value: any) {
+        if (value !== this._value) {
+            this._value = value;
+            this._onChangeCallback(value);
         }
     }
 
@@ -59,6 +59,10 @@ export class SearchComponent {
     }
 
     searchChange(value) {
-        this.value = value.split(" ");
+        if (value) {
+            this.value = value.split(" ");
+        } else {
+            this.value = [];
+        }
     }
 }

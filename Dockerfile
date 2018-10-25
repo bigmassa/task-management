@@ -16,7 +16,7 @@ RUN         set -ex \
                 libpq-dev \
                 postgresql-client \
             --no-install-recommends \
-            && rm -rf /var/lib/apt/lists/ \
+            && apt-get clean \
             && pip install --no-cache-dir -r $REQUIREMENTS_FILE
 
 # Copy your application code to the container

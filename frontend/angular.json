@@ -22,9 +22,15 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@swimlane/ngx-dnd/release/index.css"
+              "./node_modules/@swimlane/ngx-dnd/release/index.css",
+              "./node_modules/dragula/dist/dragula.min.css",
+              "./node_modules/fullcalendar/dist/fullcalendar.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/moment/min/moment.min.js",
+              "./node_modules/dragula/dist/dragula.min.js",
+              "./node_modules/fullcalendar/dist/fullcalendar.min.js"
+            ]
           },
           "configurations": {
             "production": {

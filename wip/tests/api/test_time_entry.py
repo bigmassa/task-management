@@ -42,8 +42,6 @@ class TestAPI(AppTestCase):
 
     def test_post(self):
         del self.test_object_data['id']
-        del self.test_object_data['title']
-        del self.test_object_data['colour']
         del self.test_object_data['duration']
         self.test_object_data['comments'] = 'some edited comments'
         response = self.client.post(self.base_url, self.test_object_data, format='json')
@@ -59,8 +57,6 @@ class TestAPI(AppTestCase):
         self.test_object_data['comments'] = 'some edited comments'
         response = self.client.put(self.test_object_url, self.test_object_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        del self.test_object_data['title']
-        del self.test_object_data['colour']
         del self.test_object_data['duration']
         TimeEntry.objects.get(**self.test_object_data)
 

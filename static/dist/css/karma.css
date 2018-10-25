@@ -2704,11 +2704,15 @@ td textarea {
 }
 
 .client-list .task {
-  padding: 1rem 1rem;
+  padding: 0;
   margin-bottom: .3rem;
   cursor: pointer;
   border: 1px solid rgba(41, 44, 54, 0);
   border-radius: .25rem;
+}
+
+.client-list .task span {
+  padding: 1rem;
 }
 
 .timesheet {
@@ -2725,11 +2729,15 @@ td textarea {
   margin-bottom: 0;
 }
 
-.timesheet .fc-dailycontrol {
-  margin: .5rem 1.5rem;
+.fc-dailycontrol {
+  margin: 0;
 }
 
-.timesheet .fc-dailycontrol input {
+.fc-dailycontrol label {
+  padding-right: 0;
+}
+
+.fc-dailycontrol input {
   display: none;
 }
 
@@ -2768,12 +2776,6 @@ td textarea {
 }
 
 /* stylelint-disable declaration-no-important, selector-pseudo-element-colon-notation */
-.fc-view-container *,
-.fc-view-container :after,
-.fc-view-container :before {
-  box-sizing: border-box !important;
-}
-
 .fc-state-default {
   text-shadow: none !important;
   background-image: none !important;
@@ -2799,6 +2801,16 @@ td textarea {
 
 .comment > *:last-child {
   margin-bottom: 0;
+}
+
+.px-0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-2 {

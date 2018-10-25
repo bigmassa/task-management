@@ -5,8 +5,6 @@ from wip.models import TimeEntry
 
 
 class TimeEntrySerializer(serializers.ModelSerializer):
-    title = serializers.SerializerMethodField()
-    colour = serializers.SerializerMethodField()
     duration = serializers.DurationField(
         read_only=True
     )
@@ -20,8 +18,6 @@ class TimeEntrySerializer(serializers.ModelSerializer):
             'comments',
             'task',
             'user',
-            'title',
-            'colour',
             'duration'
         ]
 
@@ -51,9 +47,3 @@ class TimeEntrySerializer(serializers.ModelSerializer):
             raise ValidationError({'ended_at': 'Ended at must be after Started at'})
 
         return super().validate(attrs)
-
-    def get_title(self, obj):
-        return '%s - %s' % (obj.task.job, obj.task)
-
-    def get_colour(self, obj):
-        return obj.task.job.colour
