@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n static wip_tags %}
+{% block page_title %}Home{% endblock %}
+{% block body_class %}d-flex full-height flex-column{% endblock %}
+{% block full_outer_content %}
+    <app-root></app-root>
+{% endblock %}
+
+{% block extra_css %}
+    <style>html { height: 100%; }</style>
+    {% is_debug_mode as is_debug %}
+    {% if not is_debug %}
+        <style type="text/css" href="{% static 'dist/js/frontend/styles.css' %}"></style>
+    {% endif %}
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        if (global === undefined) { var global = window; }
+        // declaring some properties to use in angular
+        window.appJSRoot = "{% static 'dist/js/frontend/' %}";
+        window.logoutUrl = "{% url 'logout' %}";
+    </script>
+    <script type="text/javascript" src="{% static 'dist/js/frontend/runtime.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/js/frontend/polyfills.js' %}"></script>
+    {% is_debug_mode as is_debug %}
+    {% if is_debug %}
+        <script type="text/javascript" src="{% static 'dist/js/frontend/styles.js' %}"></script>
+        <script type="text/javascript" src="{% static 'dist/js/frontend/vendor.js' %}"></script>
+    {% endif %}
+    <script type="text/javascript" src="{% static 'dist/js/frontend/main.js' %}"></script>
+{% endblock %}

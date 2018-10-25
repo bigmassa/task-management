@@ -6,17 +6,23 @@ import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { Store, StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routing';
 import { AutoResizeDirective } from './directives/auto-resize.directive';
 import { AvatarComponent } from './components/avatar.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { ClientListComponent } from './components/client-list.component';
 import { EffectsModule } from '@ngrx/effects';
 import { NgModule } from '@angular/core';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
+import { NotFoundComponent } from './components/not-found.component';
+import { ReportListComponent } from './components/report-list.component';
+import { RouterModule } from '@angular/router';
 import { TaskCardComponent } from './components/task-card.component';
 import { TaskCreateFormComponent } from './components/task-create-form.component';
 import { TaskFormComponent } from './components/task-form.component';
 import { TaskboardComponent } from './components/task-board.component';
 import { TaskboardFilterComponent } from './components/task-board-filter.component';
+import { TimesheetComponent } from './components/time-sheet.component';
 import { effects } from './state/effects';
 
 @NgModule({
@@ -24,13 +30,18 @@ import { effects } from './state/effects';
         AppComponent,
         AutoResizeDirective,
         AvatarComponent,
+        ClientListComponent,
+        NotFoundComponent,
+        ReportListComponent,
         TaskboardComponent,
         TaskboardFilterComponent,
         TaskCardComponent,
         TaskCreateFormComponent,
-        TaskFormComponent
+        TaskFormComponent,
+        TimesheetComponent
     ],
     imports: [
+        AppRoutingModule,
         BrowserModule,
         EffectsModule.forRoot(effects),
         FormsModule,
@@ -41,6 +52,7 @@ import { effects } from './state/effects';
         }),
         NgxDnDModule,
         ReactiveFormsModule,
+        RouterModule,
         StoreModule.forRoot(reducers)
     ],
     providers: [],
@@ -48,7 +60,7 @@ import { effects } from './state/effects';
 })
 export class AppModule {
 
-    constructor(private store: Store<AppState>) {
+    constructor(public store: Store<AppState>) {
         store.dispatch({ type: actions.DataActions.LOAD_DATA });
     }
 

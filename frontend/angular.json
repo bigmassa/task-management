@@ -18,9 +18,11 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": [],
+            "assets": [
+              "src/assets"
+            ],
             "styles": [
-              './node_modules/@swimlane/ngx-dnd/release/index.css'
+              "./node_modules/@swimlane/ngx-dnd/release/index.css"
             ],
             "scripts": []
           },

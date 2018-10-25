@@ -2159,6 +2159,7 @@ header {
 
 .nav li {
   display: inline-block;
+  margin-right: .5rem;
   background: #292c36;
 }
 

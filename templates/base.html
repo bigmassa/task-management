@@ -2,15 +2,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <base href="/">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>WIP | {% block page_title %}{% endblock %}</title>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <link href="{% static 'dist/vendor/toastr/toastr.min.css' %}" type="text/css" rel="stylesheet">
         <link href="{% static 'dist/css/karma.min.css' %}" type="text/css" rel="stylesheet">
         {% block extra_css %}{% endblock %}
-        <script type="text/javascript" src="{% static 'dist/vendor/jquery/jquery.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'dist/vendor/toastr/toastr.min.js' %}"></script>
     </head>
     <body class="{% block body_class %}{% endblock %}">
         {% block full_outer_content %}
@@ -19,7 +17,6 @@
             {% include 'partials/footer.html' %}
         {% endblock %}
         {% include 'partials/messages.html' %}
-        <script type="text/javascript" src="{% static 'dist/js/site.min.js' %}"></script>
         {% block extra_js %}{% endblock %}
     </body>
 </html>
