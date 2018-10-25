@@ -4,3 +4,24 @@
         <div class="page-header-actions"></div>
     </div>
 </div>
+<div class="container-fluid inner-content">
+    <div class="panel">
+        <search [(ngModel)]="searchTerms"></search>
+        <table class="table-headed table-hover margin-zero layout-fixed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email Address</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let client of clients$ | async | clientSearch:searchTerms">
+                    <td>{{ client.name }}</td>
+                    <td>{{ client.email_address }}</td>
+                    <td>{{ client.phone_number }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

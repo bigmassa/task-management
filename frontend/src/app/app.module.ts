@@ -11,12 +11,14 @@ import { AutoResizeDirective } from './directives/auto-resize.directive';
 import { AvatarComponent } from './components/avatar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ClientListComponent } from './components/client-list.component';
+import { ClientSearchPipe } from './pipes/client-search.pipe';
 import { EffectsModule } from '@ngrx/effects';
 import { NgModule } from '@angular/core';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { NotFoundComponent } from './components/not-found.component';
 import { ReportListComponent } from './components/report-list.component';
 import { RouterModule } from '@angular/router';
+import { SearchComponent } from './components/search.component';
 import { TaskCardComponent } from './components/task-card.component';
 import { TaskCreateFormComponent } from './components/task-create-form.component';
 import { TaskFormComponent } from './components/task-form.component';
@@ -31,8 +33,10 @@ import { effects } from './state/effects';
         AutoResizeDirective,
         AvatarComponent,
         ClientListComponent,
+        ClientSearchPipe,
         NotFoundComponent,
         ReportListComponent,
+        SearchComponent,
         TaskboardComponent,
         TaskboardFilterComponent,
         TaskCardComponent,
