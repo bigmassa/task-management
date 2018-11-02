@@ -12,5 +12,6 @@ class UserSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'full_name',
-            'initials'
+            'initials',
+            'is_gradwell_enabled'
         ]

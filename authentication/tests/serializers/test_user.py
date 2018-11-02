@@ -19,7 +19,8 @@ class TestSerializer(AppTestCase):
             [
                 'id',
                 'full_name',
-                'initials'
+                'initials',
+                'is_gradwell_enabled'
             ]
         )
 
@@ -31,6 +32,7 @@ class TestSerializer(AppTestCase):
             {
                 'id': instance.pk,
                 'full_name': instance.get_full_name(),
-                'initials': instance.get_initials()
+                'initials': instance.get_initials(),
+                'is_gradwell_enabled': instance.is_gradwell_enabled
             }
         )
