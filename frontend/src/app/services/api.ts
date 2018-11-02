@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { IActionWithHTTPData } from '../state/models';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -15,8 +16,8 @@ export class APIService {
         return new HttpHeaders({'Content-Type': 'application/json'});
     }
 
-    all(url: string): Observable<any> {
-        return this.http.get(`${url}`, { headers: this.headers });
+    all(url: string, options: IActionWithHTTPData = {}): Observable<any> {
+        return this.http.get(`${url}`, { headers: this.headers, params: options.params });
     }
 
     one(url: string, id: number): Observable<any> {

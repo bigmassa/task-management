@@ -7,13 +7,12 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.schemas import ManualSchema
 
-from wip.models import Job, Task, Client
-from wip.serializers import JobSerializer, JobTaskSortSerializer
+from wip.models import Job, Task
+from wip.serializers import JobSerializer, JobTaskSortSerializer, TaskSerializer
 
 
 class JobFilter(FilterSet):
-    client = filters.ModelChoiceFilter(field_name='client', queryset=Client.objects.all())
-    for_timesheet = filters.BooleanFilter(field_name='status__allow_new_timesheet_entries')
+    pass
 
 
 sort_schema = ManualSchema(
@@ -51,10 +50,15 @@ class JobViewSet(viewsets.ModelViewSet):
     def sort_tasks(self, request, pk=None):
         serializer = JobTaskSortSerializer(data=request.data)
         if serializer.is_valid():
+            # sort the tasks
             for index, pk in enumerate(serializer.data['tasks']):
                 obj = Task.objects.get(pk=pk)
-                obj.order = index
+                obj.order = index + 1
                 obj.save()
-            return Response({'status': 'ok'}, status=status.HTTP_200_OK)
+
+            # return the tasks as the response using their correct serializer
+            tasks = Task.objects.filter(pk__in=serializer.data['tasks'])
+            task_serializer = TaskSerializer(instance=tasks, many=True)
+            return Response(task_serializer.data, status=status.HTTP_200_OK)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

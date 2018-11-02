@@ -2,12 +2,12 @@ from django_filters import FilterSet
 from django_filters import rest_framework as filters
 from rest_framework import viewsets
 
-from wip.models import Task, TaskNote
+from wip.models import TaskNote
 from wip.serializers import TaskNoteSerializer
 
 
 class TaskNoteFilter(FilterSet):
-    task = filters.ModelChoiceFilter(field_name='task', queryset=Task.objects.all())
+    pass
 
 
 class TaskNoteViewSet(viewsets.ModelViewSet):

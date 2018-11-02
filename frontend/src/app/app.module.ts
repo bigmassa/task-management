@@ -17,6 +17,7 @@ import { ClientSearchPipe } from './pipes/client-search.pipe';
 import { ClosedJobsPipe } from './pipes/closed-jobs.pipe';
 import { EffectsModule } from '@ngrx/effects';
 import { GetPipe } from './pipes/get.pipe';
+import { JobComponent } from './components/job.component';
 import { JobSearchPipe } from './pipes/job-search.pipe';
 import { NgModule } from '@angular/core';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
@@ -28,8 +29,8 @@ import { SearchComponent } from './components/search.component';
 import { TaskCardComponent } from './components/task-card.component';
 import { TaskCreateFormComponent } from './components/task-create-form.component';
 import { TaskFormComponent } from './components/task-form.component';
-import { TaskboardComponent } from './components/task-board.component';
-import { TaskboardFilterComponent } from './components/task-board-filter.component';
+import { TaskboardComponent } from './components/taskboard.component';
+import { TasksByStatusPipe } from './pipes/tasks-by-status.pipe';
 import { TimeEntryFormComponent } from './components/time-entry-form.component';
 import { TimesheetComponent } from './components/time-sheet.component';
 import { TimesheetSignoffComponent } from './components/time-sheet-signoff.component';
@@ -46,16 +47,17 @@ import { effects } from './state/effects';
         ClientListComponent,
         ClientSearchPipe,
         GetPipe,
+        JobComponent,
         JobSearchPipe,
         NotFoundComponent,
         OpenJobsPipe,
         ReportListComponent,
         SearchComponent,
         TaskboardComponent,
-        TaskboardFilterComponent,
         TaskCardComponent,
         TaskCreateFormComponent,
         TaskFormComponent,
+        TasksByStatusPipe,
         TimeEntryFormComponent,
         TimesheetComponent,
         TimesheetSignoffComponent

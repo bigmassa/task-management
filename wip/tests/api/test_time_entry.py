@@ -54,10 +54,10 @@ class TestAPI(AppTestCase):
         self.assertEqual(response.json(), self.test_object_data)
 
     def test_put(self):
+        del self.test_object_data['duration']
         self.test_object_data['comments'] = 'some edited comments'
         response = self.client.put(self.test_object_url, self.test_object_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        del self.test_object_data['duration']
         TimeEntry.objects.get(**self.test_object_data)
 
     def test_delete(self):

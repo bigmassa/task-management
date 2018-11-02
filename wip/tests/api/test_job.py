@@ -87,6 +87,6 @@ class TestAPI(AppTestCase):
         task2.refresh_from_db()
         task3.refresh_from_db()
 
-        self.assertEqual(task1.order, 1)
-        self.assertEqual(task2.order, 0)
-        self.assertEqual(task3.order, 2)
+        self.assertEqual(task2.order, 1)
+        self.assertEqual(task1.order, 2)
+        self.assertEqual(task3.order, 3)

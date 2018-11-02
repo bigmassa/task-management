@@ -2,12 +2,12 @@ from django_filters import FilterSet
 from django_filters import rest_framework as filters
 from rest_framework import viewsets
 
-from wip.models import Job, JobRecurringCost
+from wip.models import JobRecurringCost
 from wip.serializers import JobRecurringCostSerializer
 
 
 class JobRecurringCostFilter(FilterSet):
-    job = filters.ModelChoiceFilter(field_name='job', queryset=Job.objects.all())
+    pass
 
 
 class JobRecurringCostViewSet(viewsets.ModelViewSet):

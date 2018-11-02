@@ -13,9 +13,13 @@ export function reducer(state = initialState, action: any): State {
     const actionPrefix = '[Position]';
     switch (action.type) {
 
-        // Replace all objects
+        // Replace objects
         case `${actionPrefix} LOAD_ALL_SUCCESS`: {
             return reduceState(state, action, 'REPLACE_ALL');
+        }
+
+        case `${actionPrefix} REPLACE_MANY`: {
+            return reduceState(state, action, 'REPLACE_MANY');
         }
 
         // Basic CRUD actions

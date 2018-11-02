@@ -2,10 +2,7 @@
     <div class="modal-panel" #modalPanel>
         <div class="container">
             <div class="row mb-2">
-                <div class="col-1 text-right">
-                    <span class="color-indicator mt-1" [style.background]="task._job?.colour"></span>
-                </div>
-                <div class="col-11">
+                <div class="col">
                     <div (click)="titleForm.editable = true">
                         <input type="text" [formControl]="titleForm.controls.title" class="mb-0-5">
                         <button class="input-group-addon button" *ngIf="titleForm.editable" (click)="titleForm.save($event)">Save</button>
@@ -30,7 +27,7 @@
                         <button class="button button-secondary" (click)="newNoteForm.save($event)">Add</button>
                     </div>
                     
-                    <ng-container *ngFor="let note of task._notes">
+                    <ng-container *ngFor="let note of taskNotes$ | async">
                         <div class="my-1" *ngIf="getOrCreateEditNoteForm(note) as form">
                             <div class="d-flex align-items-center mb-1">
                                 <div avatar [id]="note.user" class="avatar mr-1"></div>
@@ -53,27 +50,12 @@
                     </ng-container>
                 </div>
                 <div class="col-4">
-                    <div (click)="jobForm.editable = true">
-                        <p class="mb-0-5"><strong>Job</strong></p>
-                        <select [disabled]="!jobForm.editable" class="full-width input-small" [(ngModel)]="selectedClientId" (change)="changeClient($event)">
-                            <option [value]="null">Select...</option>
-                            <option *ngFor="let option of clients$ | async" [value]="option.id">{{ option.name }}</option>
-                        </select>
-                        <select class="full-width input-small" [formControl]="jobForm.controls.job">
-                            <option [ngValue]="null">Select...</option>
-                            <ng-container *ngFor="let option of jobs$ | async">
-                                <option *ngIf="option.client == selectedClientId" [ngValue]="option.id">{{ option.title }}</option>
-                            </ng-container>
-                        </select>
-                        <ng-container *ngIf="jobForm.editable">
-                            <button class="button button-secondary" (click)="jobForm.save($event)">Save</button>
-                            <button class="button button-clear" (click)="jobForm.cancel($event)">Cancel</button>
-                        </ng-container>
-                    </div>
+                    <p class="mb-0-5"><strong>Job</strong></p>
+                    <p>{{ task$ | async | get:'_job._client.name' }}<br>{{ task$ | async | get:'_job.title' }}</p>
                     <hr>
                     
                     <p class="mb-0-5"><strong>Assignees</strong></p>
-                    <div *ngFor="let assignee of task._assignees" class="d-inline-block text-center mr-0-5">
+                    <div *ngFor="let assignee of taskAssignees$ | async" class="d-inline-block text-center mr-0-5">
                         <div avatar [id]="assignee.user" class="avatar pointer d-block" (click)="editAssignee(assignee)"></div>
                         <small>{{ assignee.allocated_hours }}</small>
                     </div>
@@ -85,13 +67,13 @@
                     </div>
                     <div *ngIf="assigneeEditForm && assigneeEditForm.editable" class="mt-1">
                         <div class="input-group mb-0-5">
-                            <select [formControl]="assigneeEditForm.controls.user" class="input-small mr-1 flex-fill">
+                            <select [formControl]="assigneeEditForm.controls.user" class="mr-1 flex-fill">
                                 <option [ngValue]="null">Select...</option>
                                 <ng-container *ngFor="let option of users$ | async">
                                     <option [ngValue]="option.id">{{ option.full_name }}</option>
                                 </ng-container>
                             </select>
-                            <input type="number" [formControl]="assigneeEditForm.controls.allocated_hours" class="input-small" style="flex: 0 1 7rem;">
+                            <input type="number" [formControl]="assigneeEditForm.controls.allocated_hours" style="flex: 0 0 7rem;">
                         </div>
                         <div class="d-flex">
                             <button class="button button-secondary" (click)="assigneeEditForm.save($event)">Save</button>
@@ -102,11 +84,11 @@
                     <hr>
 
                     <p class="mb-0-5"><strong>Time Spent (hrs)</strong></p>
-                    <p>{{ task.time_spent_hours }} of {{ task._allocated_hours }}</p>
+                    <p>{{ task.time_spent_hours }} of {{ task.allocated_hours }}</p>
                     <hr>
                     <p class="mb-0-5"><strong>Target Date</strong></p>
                     <div (click)="targetDateForm.editable = true">
-                        <input [formControl]="targetDateForm.controls.target_date" type="date" class="input-small">
+                        <input [formControl]="targetDateForm.controls.target_date" type="date" class="">
                         <button class="button" *ngIf="targetDateForm.editable" (click)="targetDateForm.save($event)">Save</button>
                         <button class="button button-clear" *ngIf="targetDateForm.editable" (click)="targetDateForm.cancel($event)">Cancel</button>
                     </div>

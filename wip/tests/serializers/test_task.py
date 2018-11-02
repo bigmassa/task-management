@@ -27,11 +27,10 @@ class TestSerializer(AppTestCase):
                 'target_date',
                 'closed',
                 'not_chargeable',
-                'time_spent_hours',
-                'allocated_hours',
                 'is_overdue',
-                'order',
-                'tags'
+                'allocated_hours',
+                'time_spent_hours',
+                'order'
             ]
         )
 
@@ -50,10 +49,9 @@ class TestSerializer(AppTestCase):
                 'target_date': instance.target_date.isoformat(),
                 'closed': instance.closed,
                 'not_chargeable': instance.not_chargeable,
-                'time_spent_hours': str(instance.time_spent_hours),
-                'allocated_hours': str(instance.allocated_hours),
                 'is_overdue': instance.is_overdue,
-                'order': instance.order,
-                'tags': [str(t) for t in instance.tags.all()]
+                'allocated_hours': str(instance.allocated_hours),
+                'time_spent_hours': str(instance.time_spent_hours),
+                'order': instance.order
             }
         )

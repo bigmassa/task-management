@@ -1,5 +1,4 @@
 from datetime import timedelta
-from decimal import Decimal
 
 from django.db import models
 from django.utils import timezone
@@ -7,7 +6,7 @@ from django.utils import timezone
 from taggit.managers import TaggableManager
 
 from tests.test_case import AppTestCase
-from wip.models import Job, Task, TaskStatus, TimeEntry
+from wip.models import Job, Task, TaskStatus
 from wip.models.task import TaskManager
 
 
@@ -52,6 +51,20 @@ class TestModel(AppTestCase):
         self.assertModelField(field, models.BooleanField)
         self.assertFalse(field.default)
 
+    def test_allocated_hours(self):
+        field = Task._meta.get_field('allocated_hours')
+        self.assertModelField(field, models.DecimalField, null=True, default='0.00')
+        self.assertEqual(field.max_digits, 10)
+        self.assertEqual(field.decimal_places, 2)
+        self.assertFalse(field.editable)
+
+    def test_time_spent_hours(self):
+        field = Task._meta.get_field('time_spent_hours')
+        self.assertModelField(field, models.DecimalField, null=True, default='0.00')
+        self.assertEqual(field.max_digits, 10)
+        self.assertEqual(field.decimal_places, 2)
+        self.assertFalse(field.editable)
+
     def test_order(self):
         field = Task._meta.get_field('order')
         self.assertModelField(field, models.PositiveIntegerField)
@@ -74,30 +87,6 @@ class TestModel(AppTestCase):
 
     def test_str(self):
         self.assertEqual(str(Task(title='Foo')), 'Foo')
-
-    def test_allocated_hours(self):
-        task = Task.objects.with_allocated().get(pk=1)
-        self.assertEqual(task.allocated_hours, Decimal('10.00'))
-
-    def test_time_spent_hours(self):
-        user = self.create_user()
-        task = Task.objects.get(pk=1)
-        TimeEntry.objects.create(
-            task=task,
-            started_at=timezone.datetime(2018, 1, 1, 9, 0, 0),
-            ended_at=timezone.datetime(2018, 1, 1, 9, 15, 0),
-            user=user
-        )
-        TimeEntry.objects.create(
-            task=task,
-            started_at=timezone.datetime(2018, 1, 2, 9, 0, 0),
-            ended_at=timezone.datetime(2018, 1, 2, 9, 15, 0),
-            user=user
-        )
-
-        task = Task.objects.with_time_spent().get(pk=1)
-
-        self.assertEqual(task.time_spent_hours, Decimal('0.50'))
 
     def test_is_overdue(self):
         task = Task()

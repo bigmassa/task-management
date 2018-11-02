@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import * as moment from 'moment';
 
-import { getTimeDailySignoffState, getTimeEntryState } from './../state';
+import { getTaskAssigneeState, getTimeDailySignoffState, getTimeEntryState } from './../state';
 
 import { createSelector } from '@ngrx/store';
 import { getTaskCollection } from './task';
@@ -21,7 +21,7 @@ export const getEventsForUser = (id: number) => createSelector(
                 title: _.get(_task, '_job.title', '') + ' - ' + _.get(_task, 'title', ''),
                 backgroundColor: _.get(_task, '_job.colour', ''),
                 borderColor: _.get(_task, '_job.colour', ''),
-                textColor: '#000',
+                textColor: _.get(_task, '_job._text_colour', ''),
                 allDay: false,
                 extendedProps: {
                     id: obj.id,
@@ -32,9 +32,15 @@ export const getEventsForUser = (id: number) => createSelector(
     }
 );
 
-export const getTasksForUser = (id: number = null, searchTerms: string[] = []) => createSelector(
+export const getTasksForTimeEntry = createSelector(
     getTaskCollection,
-    (tasks) => {
+    (tasks) => _.filter(tasks, t => t.closed == false && t._job._status.allow_new_timesheet_entries == true)
+)
+
+export const getTasksForUser = (id: number = null, searchTerms: string[] = []) => createSelector(
+    getTasksForTimeEntry,
+    getTaskAssigneeState,
+    (tasks, assignees) => {
         let objs = tasks;
         
         // apply filters (either search all or only show tasks im assigned to)
@@ -52,7 +58,8 @@ export const getTasksForUser = (id: number = null, searchTerms: string[] = []) =
                 return found;
             });
         } else if (id) {
-            objs = _.filter(objs, { _assignees: [{'user': id}] });
+            let ids = _.map(_.filter(assignees, ['user', id]), 'task');
+            objs = _.filter(objs, o => _.includes(ids, o.id));
         }
 
         // group the tasks by client
@@ -73,20 +80,23 @@ export const getTasksForUser = (id: number = null, searchTerms: string[] = []) =
                 )
             }
         })
-        
+
         return byClientByJob;
     }
 )
 
 export const getDailyTimeSignoffForUser = (id: number, date: Date) => createSelector(
     getTimeDailySignoffState,
-    (signoffs) => _.find(signoffs, e => e.user == id && moment(e.date).date() == moment(date).date())
+    (signoffs) => _.find(signoffs, e => e.user === id && e.date === moment(date).format('YYYY-MM-DD'))
 )
 
 export const getDailyTimeTotalForUser = (id: number, date: Date) => createSelector(
     getTimeEntryState,
     (entries) => {
-        const forDay = _.filter(entries, e => e.user == id && moment(e.started_at).date() == moment(date).date());
+        const forDay = _.filter(
+            entries,
+            e => e.user === id && moment(e.started_at).format('YYYY-MM-DD') === moment(date).format('YYYY-MM-DD')
+        );
         const durations: string[] = _.map(forDay, 'duration');
         const totalDurations = durations.slice(1).reduce((prev, cur) => moment.duration(cur).add(prev), moment.duration(durations[0]));
         return moment.utc(totalDurations.asMilliseconds()).format("HH:mm");

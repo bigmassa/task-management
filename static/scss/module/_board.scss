@@ -2,6 +2,8 @@
 // ------------------------------------------
 
 .board-column {
+  display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   min-width: 355px;
   max-width: 355px;
@@ -12,6 +14,8 @@
 }
 
 .board-column-heading {
+  display: flex;
+  flex: 0 0 30px;
   font-size: 14px;
 }
 
@@ -20,6 +24,9 @@
 }
 
 .board-card-wrapper {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
   overflow-y: auto;
 }
 

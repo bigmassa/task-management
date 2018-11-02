@@ -20,7 +20,7 @@
                             <li *ngFor="let job of client.value.jobs | keyvalue">
                                 <a class="job" (click)="job.value.visible = !job.value.visible">{{ job.key }}</a>
                                 <ul *ngIf="job.value.visible">
-                                    <li class="task" [style.background-color]="task._job.colour" (click)="changeTask(task.id)" *ngFor="let task of job.value.tasks">
+                                    <li class="task" [style.background-color]="task._job.colour" [style.color]="task._job._text_colour" (click)="changeTask(task.id)" *ngFor="let task of job.value.tasks">
                                         <span class="external-event d-block" [attr.data-task]="task.id">{{ task.title }}</span>
                                     </li>
                                 </ul>

@@ -2,12 +2,12 @@ from django_filters import FilterSet
 from django_filters import rest_framework as filters
 from rest_framework import viewsets
 
-from wip.models import Job, JobRelationship
+from wip.models import JobRelationship
 from wip.serializers import JobRelationshipSerializer
 
 
 class JobRelationshipFilter(FilterSet):
-    job = filters.ModelChoiceFilter(field_name='job', queryset=Job.objects.all())
+    pass
 
 
 class JobRelationshipViewSet(viewsets.ModelViewSet):

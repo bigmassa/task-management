@@ -391,23 +391,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pipes/closed-jobs.pipe */ "./src/app/pipes/closed-jobs.pipe.ts");
 /* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
 /* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
-/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
-/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
-/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
-/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
-/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
-/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
-/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
-/* harmony import */ var _components_task_board_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/task-board.component */ "./src/app/components/task-board.component.ts");
-/* harmony import */ var _components_task_board_filter_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/task-board-filter.component */ "./src/app/components/task-board-filter.component.ts");
-/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
-/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
-/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
+/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
+/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
+/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
+/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
+/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
+/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
+/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
+/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
+/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
+/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
+/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
+/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -451,13 +452,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule(store) {
         this.store = store;
         store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["DataActions"].LOAD_DATA });
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_18__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_19__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_7__["AutoResizeDirective"],
@@ -468,33 +470,34 @@ var AppModule = /** @class */ (function () {
                 _components_client_list_component__WEBPACK_IMPORTED_MODULE_12__["ClientListComponent"],
                 _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_13__["ClientSearchPipe"],
                 _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_16__["GetPipe"],
-                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_17__["JobSearchPipe"],
-                _components_not_found_component__WEBPACK_IMPORTED_MODULE_20__["NotFoundComponent"],
-                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_21__["OpenJobsPipe"],
-                _components_report_list_component__WEBPACK_IMPORTED_MODULE_22__["ReportListComponent"],
-                _components_search_component__WEBPACK_IMPORTED_MODULE_24__["SearchComponent"],
-                _components_task_board_component__WEBPACK_IMPORTED_MODULE_28__["TaskboardComponent"],
-                _components_task_board_filter_component__WEBPACK_IMPORTED_MODULE_29__["TaskboardFilterComponent"],
-                _components_task_card_component__WEBPACK_IMPORTED_MODULE_25__["TaskCardComponent"],
-                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_26__["TaskCreateFormComponent"],
-                _components_task_form_component__WEBPACK_IMPORTED_MODULE_27__["TaskFormComponent"],
-                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_30__["TimeEntryFormComponent"],
-                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_31__["TimesheetComponent"],
-                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_32__["TimesheetSignoffComponent"]
+                _components_job_component__WEBPACK_IMPORTED_MODULE_17__["JobComponent"],
+                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_18__["JobSearchPipe"],
+                _components_not_found_component__WEBPACK_IMPORTED_MODULE_21__["NotFoundComponent"],
+                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_22__["OpenJobsPipe"],
+                _components_report_list_component__WEBPACK_IMPORTED_MODULE_23__["ReportListComponent"],
+                _components_search_component__WEBPACK_IMPORTED_MODULE_25__["SearchComponent"],
+                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_29__["TaskboardComponent"],
+                _components_task_card_component__WEBPACK_IMPORTED_MODULE_26__["TaskCardComponent"],
+                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_27__["TaskCreateFormComponent"],
+                _components_task_form_component__WEBPACK_IMPORTED_MODULE_28__["TaskFormComponent"],
+                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_30__["TasksByStatusPipe"],
+                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_31__["TimeEntryFormComponent"],
+                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_32__["TimesheetComponent"],
+                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_33__["TimesheetSignoffComponent"]
             ],
             imports: [
                 _app_routing__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["BrowserModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_15__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_33__["effects"]),
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_15__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_34__["effects"]),
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientXsrfModule"].withOptions({
                     cookieName: 'csrftoken',
                     headerName: 'X-CSRFTOKEN'
                 }),
-                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_19__["NgxDnDModule"],
+                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_20__["NgxDnDModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_23__["RouterModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_24__["RouterModule"],
                 _ngrx_store__WEBPACK_IMPORTED_MODULE_4__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_1__["reducers"])
             ],
             providers: [],
@@ -522,11 +525,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _components_client_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/client.component */ "./src/app/components/client.component.ts");
 /* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
-/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
-/* harmony import */ var _components_task_board_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/task-board.component */ "./src/app/components/task-board.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
+/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
+/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -541,20 +545,22 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
-    { path: '', component: _components_task_board_component__WEBPACK_IMPORTED_MODULE_6__["TaskboardComponent"] },
+    { path: '', component: _components_taskboard_component__WEBPACK_IMPORTED_MODULE_7__["TaskboardComponent"] },
     { path: 'clients', component: _components_client_list_component__WEBPACK_IMPORTED_MODULE_2__["ClientListComponent"] },
     { path: 'clients/:id', component: _components_client_component__WEBPACK_IMPORTED_MODULE_1__["ClientComponent"] },
-    { path: 'reporting', component: _components_report_list_component__WEBPACK_IMPORTED_MODULE_5__["ReportListComponent"] },
-    { path: 'timesheet', component: _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_7__["TimesheetComponent"] },
-    { path: '404', component: _components_not_found_component__WEBPACK_IMPORTED_MODULE_4__["NotFoundComponent"] },
+    { path: 'clients/:client_id/jobs/:id', component: _components_job_component__WEBPACK_IMPORTED_MODULE_3__["JobComponent"] },
+    { path: 'reporting', component: _components_report_list_component__WEBPACK_IMPORTED_MODULE_6__["ReportListComponent"] },
+    { path: 'timesheet', component: _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_8__["TimesheetComponent"] },
+    { path: '404', component: _components_not_found_component__WEBPACK_IMPORTED_MODULE_5__["NotFoundComponent"] },
     { path: '**', redirectTo: '/404' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"])({
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes)
             ],
@@ -1017,7 +1023,7 @@ var CalendarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Clients</div>\n        <div class=\"page-header-actions\"></div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <search [(ngModel)]=\"searchTerms\"></search>\n        <table class=\"table-headed table-hover margin-zero layout-fixed\">\n            <thead>\n                <tr>\n                    <th>Name</th>\n                    <th>Email Address</th>\n                    <th>Phone Number</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr [routerLink]=\"['/clients/', client.id]\" *ngFor=\"let client of clients$ | async | clientSearch:searchTerms\">\n                    <td>{{ client.name }}</td>\n                    <td>{{ client | get:'email_address' }}</td>\n                    <td>{{ client | get:'phone_number' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Clients</div>\n        <div class=\"page-header-actions\"></div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <search [(ngModel)]=\"searchTerms\"></search>\n        <table class=\"table-headed table-hover margin-zero layout-fixed\">\n            <thead>\n                <tr>\n                    <th>Name</th>\n                    <th>Email Address</th>\n                    <th>Phone Number</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr [routerLink]=\"['/clients', client.id]\" *ngFor=\"let client of clients$ | async | clientSearch:searchTerms\">\n                    <td>{{ client.name }}</td>\n                    <td>{{ client | get:'email_address' }}</td>\n                    <td>{{ client | get:'phone_number' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1076,7 +1082,7 @@ var ClientListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"client$ | async as client\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"client.colour\"></span>\n            <div class=\"h2\">\n                <a class=\"underline-dotted\">{{ client.name }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <button class=\"button button-white\" type=\"submit\">Edit</button>\n                <a class=\"button button-white button-clear\" >Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'jobs'\" [class.active]=\"selectedTab == 'jobs'\">Jobs</li>\n                <li (click)=\"selectedTab = 'closed_jobs'\" [class.active]=\"selectedTab == 'closed_jobs'\">Closed Jobs</li>\n                <li (click)=\"selectedTab = 'contacts'\" [class.active]=\"selectedTab == 'contacts'\">Contacts</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Email Address</p>\n                <p>\n                    <a *ngIf=\"client.email_address; else emptyValue\" href=\"mailto://{{ client.email_address }}\" class=\"underline-dotted\">{{ client.email_address }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Phone Number</p>\n                <p>\n                    <ng-container *ngIf=\"client.phone_number; else emptyValue\">\n                        <a href=\"tel:{{ client.phone_number }}\" class=\"underline-dotted\">{{ client.phone_number }}</a>\n                        <a *ngIf=\"(me$ | async)?.is_gradwell_enabled\"><i class=\"icon-phone c-red\"></i></a>\n                    </ng-container>    \n                </p>\n                <hr/>\n                <p class=\"strong\">Website</p>\n                <p>\n                    <a *ngIf=\"client.website; else emptyValue\" href=\"{{ client.website }}\" class=\"underline-dotted\">{{ client.website }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Address</p>\n                <p class=\"ws-pre-wrap\">{{ client | get:'address' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Notes</p>\n                    <p class=\"ws-pre-wrap\">{{ client | get:'notes' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'jobs'\">\n            <search [(ngModel)]=\"openSearchTerms\"></search>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | openJobs | jobSearch:openSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'closed_jobs'\">\n                <search [(ngModel)]=\"closedSearchTerms\"></search>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | closedJobs | jobSearch:closedSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'contacts'\">\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Email Address</th>\n                        <th>Phone Number</th>\n                        <th>Mobile Number</th>\n                        <th>Position</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"contacts$ | async as contacts\">\n                <tbody *ngIf=\"contacts.length > 0; else emptyContacts\">\n                    <tr *ngFor=\"let contact of contacts\">\n                        <td>{{ contact.first_name }} {{ contact.last_name }}</td>\n                        <td>{{ contact | get:'email_address' }}</td>\n                        <td>{{ contact | get:'phone_number' }}</td>\n                        <td>{{ contact | get:'mobile_number' }}</td>\n                        <td>{{ contact | get:'_position.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyValue><span>-</span></ng-template>\n<ng-template #emptyJobs><tbody><tr><td colspan=\"3\">No jobs found.</td></tr></tbody></ng-template>\n<ng-template #emptyContacts><tbody><tr><td colspan=\"5\">No contacts found.</td></tr></tbody></ng-template>"
+module.exports = "<ng-container *ngIf=\"client$ | async as client\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"client.colour\"></span>\n            <div class=\"h2\">\n                <a class=\"underline-dotted\">{{ client.name }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <button class=\"button button-white\" type=\"submit\">Edit</button>\n                <a class=\"button button-white button-clear\" >Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'jobs'\" [class.active]=\"selectedTab == 'jobs'\">Jobs</li>\n                <li (click)=\"selectedTab = 'closed_jobs'\" [class.active]=\"selectedTab == 'closed_jobs'\">Closed Jobs</li>\n                <li (click)=\"selectedTab = 'contacts'\" [class.active]=\"selectedTab == 'contacts'\">Contacts</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Email Address</p>\n                <p>\n                    <a *ngIf=\"client.email_address; else emptyValue\" href=\"mailto://{{ client.email_address }}\" class=\"underline-dotted\">{{ client.email_address }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Phone Number</p>\n                <p>\n                    <ng-container *ngIf=\"client.phone_number; else emptyValue\">\n                        <a href=\"tel:{{ client.phone_number }}\" class=\"underline-dotted\">{{ client.phone_number }}</a>\n                        <a *ngIf=\"(me$ | async)?.is_gradwell_enabled\"><i class=\"icon-phone c-red\"></i></a>\n                    </ng-container>    \n                </p>\n                <hr/>\n                <p class=\"strong\">Website</p>\n                <p>\n                    <a *ngIf=\"client.website; else emptyValue\" href=\"{{ client.website }}\" class=\"underline-dotted\">{{ client.website }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Address</p>\n                <p class=\"ws-pre-wrap\">{{ client | get:'address' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Notes</p>\n                    <p class=\"ws-pre-wrap\">{{ client | get:'notes' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'jobs'\">\n            <search [(ngModel)]=\"openSearchTerms\"></search>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | openJobs | jobSearch:openSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'closed_jobs'\">\n                <search [(ngModel)]=\"closedSearchTerms\"></search>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | closedJobs | jobSearch:closedSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'contacts'\">\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Email Address</th>\n                        <th>Phone Number</th>\n                        <th>Mobile Number</th>\n                        <th>Position</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"contacts$ | async as contacts\">\n                <tbody *ngIf=\"contacts.length > 0; else emptyContacts\">\n                    <tr *ngFor=\"let contact of contacts\">\n                        <td>{{ contact.first_name }} {{ contact.last_name }}</td>\n                        <td>{{ contact | get:'email_address' }}</td>\n                        <td>{{ contact | get:'phone_number' }}</td>\n                        <td>{{ contact | get:'mobile_number' }}</td>\n                        <td>{{ contact | get:'_position.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyValue><span>-</span></ng-template>\n<ng-template #emptyJobs><tbody><tr><td colspan=\"3\">No jobs found.</td></tr></tbody></ng-template>\n<ng-template #emptyContacts><tbody><tr><td colspan=\"5\">No contacts found.</td></tr></tbody></ng-template>"
 
 /***/ }),
 
@@ -1146,6 +1152,119 @@ var ClientComponent = /** @class */ (function () {
             _ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"]])
     ], ClientComponent);
     return ClientComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/job.component.html":
+/*!***********************************************!*\
+  !*** ./src/app/components/job.component.html ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-container *ngIf=\"job$ | async as job\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <button class=\"button button-white\" type=\"submit\">Edit</button>\n                <a class=\"button button-white button-clear\" >Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'tasks'\" [class.active]=\"selectedTab == 'tasks'\">Tasks</li>\n                <li (click)=\"selectedTab = 'notes'\" [class.active]=\"selectedTab == 'notes'\">Notes</li>\n                <li (click)=\"selectedTab = 'files'\" [class.active]=\"selectedTab == 'files'\">Files</li>\n                <li (click)=\"selectedTab = 'relationships'\" [class.active]=\"selectedTab == 'relationships'\">Relationships</li>\n                <li (click)=\"selectedTab = 'recurring_costs'\" [class.active]=\"selectedTab == 'recurring_costs'\">Recurring Costs</li>\n            </ul>\n        </div>\n    </div>\n\n    <ng-container *ngIf=\"selectedTab == 'tasks'\">\n\n        <div class=\"container-fluid d-flex flex-fill\">\n            <div class=\"d-flex flex-fill mt-1 mb-1 scroll-x\">\n                <div class=\"board-column\" *ngFor=\"let status of statuses$ | async\">\n                    <div class=\"board-column-heading\">\n                        <strong>{{ status.title }}</strong>\n                        <i class=\"icon-plus ml-auto\" (click)=\"openCreateForm(status)\"></i>\n                    </div>\n                    <div class=\"board-card-wrapper\" \n                        ngxDroppable=\"status-column\"\n                        (drop)=\"droppedIntoColumn(status, tasks)\"\n                        [model]=\"tasks\"\n                        *ngIf=\"tasks$ | async | tasksByStatus:status.id as tasks\">\n                        <div task-card \n                            [id]=\"task.id\"\n                            ngxDraggable\n                            [model]=\"task\"\n                            (click)=\"selectedTaskId=task.id\"\n                            *ngFor=\"let task of tasks\">\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <task-create-form\n            [opened]=\"createFormOpen\"\n            [jobId]=\"jobId\"\n            [statusId]=\"createFormStatusId\"\n            (close)=\"createFormOpen = false\"\n            (saved)=\"selectedTaskId = $event.id\"\n            *ngIf=\"createFormOpen\">\n        </task-create-form>\n\n        <task-form\n            [id]=\"selectedTaskId\"\n            (close)=\"selectedTaskId = null\"\n            *ngIf=\"selectedTaskId\">\n        </task-form>\n\n    </ng-container>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab != 'tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hours)</p>\n                <p>-</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'files'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td class=\"keep-min-width\"><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab == 'notes'\">\n            <div class=\"row mb-1-5\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\"></textarea>\n                    <button class=\"button button-primary pull-right\">Add</button>\n                </div>\n            </div>\n\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1-5\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\">{{ note.note }}</div>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <a class=\"underline-dotted\">Edit</a> |\n                        <a class=\"underline-dotted\">Delete</a>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'relationships'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'recurring_costs'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"2\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"5\">No recurring costs found.</td></tr></tbody></ng-template>"
+
+/***/ }),
+
+/***/ "./src/app/components/job.component.ts":
+/*!*********************************************!*\
+  !*** ./src/app/components/job.component.ts ***!
+  \*********************************************/
+/*! exports provided: JobComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobComponent", function() { return JobComponent; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state_selectors_job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/selectors/job */ "./src/app/state/selectors/job.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../state/selectors/task */ "./src/app/state/selectors/task.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var JobComponent = /** @class */ (function () {
+    function JobComponent(route, store) {
+        this.route = route;
+        this.store = store;
+        this.createFormOpen = false;
+        this.selectedTab = 'detail';
+        this.selectedTaskId = null;
+        this.subscriptions = [];
+    }
+    JobComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.statuses$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_8__["getTaskStatusState"]));
+        var subscription = this.route.params.subscribe(function (params) {
+            _this.jobId = +params.id;
+            _this.files$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobFilesForJob"])(_this.jobId)));
+            _this.job$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobCollectionById"])(_this.jobId)));
+            _this.notes$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobNoteCollectionForJob"])(_this.jobId)));
+            _this.recurringCosts$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobRecurringCostCollectionForJob"])(_this.jobId)));
+            _this.relationships$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobRelationshipCollectionForJob"])(_this.jobId)));
+            _this.tasks$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_7__["getTaskCollectionForJob"])(_this.jobId)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["debounceTime"])(200));
+        });
+        this.subscriptions.push(subscription);
+    };
+    JobComponent.prototype.ngOnDestroy = function () {
+        lodash__WEBPACK_IMPORTED_MODULE_0__["each"](this.subscriptions, function (s) { return s.unsubscribe(); });
+    };
+    JobComponent.prototype.droppedIntoColumn = function (status, tasks) {
+        var _this = this;
+        if (lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](tasks)) {
+            return;
+        }
+        // ensure their status is correct
+        lodash__WEBPACK_IMPORTED_MODULE_0__["each"](tasks, function (task, i) {
+            if (task.status != status.id) {
+                var payload = { id: task.id, status: status.id, order: i + 1 };
+                _this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].PATCH, payload: payload });
+            }
+        });
+        // sort all tasks for this status
+        // use a timeout to ensure the api gets a chance to update the status
+        // as the data can come back with the original status
+        var sortData = { id: tasks[0].job, tasks: lodash__WEBPACK_IMPORTED_MODULE_0__["map"](tasks, 'id') };
+        setTimeout(function () { return _this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobActions"].SORT_TASKS, payload: sortData }); }, 100);
+    };
+    JobComponent.prototype.openCreateForm = function (status) {
+        this.createFormStatusId = status.id;
+        this.createFormOpen = true;
+    };
+    JobComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+            selector: 'job, [job]',
+            template: __webpack_require__(/*! ./job.component.html */ "./src/app/components/job.component.html"),
+            host: { 'class': 'd-flex flex-fill flex-column' }
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"]])
+    ], JobComponent);
+    return JobComponent;
 }());
 
 
@@ -1341,183 +1460,6 @@ var SearchComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/task-board-filter.component.html":
-/*!*************************************************************!*\
-  !*** ./src/app/components/task-board-filter.component.html ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"filter-box\">\n    <a class=\"pointer\" (click)=\"open=!open\">Filter <i class=\"icon-down-open\"></i></a>\n    <div class=\"filter-options\" *ngIf=\"open\">\n        <label>User</label>\n        <select [(ngModel)]=\"filters.user\" (ngModelChange)=\"onUserChange($event)\">\n            <option *ngFor=\"let option of users$ | async\" [ngValue]=\"option.id\">{{ option.full_name }}</option>\n        </select>\n        <label>Client</label>\n        <select [(ngModel)]=\"filters.client\" (ngModelChange)=\"onClientChange($event)\">\n            <option [ngValue]=\"null\">---------</option>\n            <option *ngFor=\"let option of clients$ | async\" [ngValue]=\"option.id\">{{ option.name }}</option>\n        </select>\n        <label>Job</label>\n        <select [(ngModel)]=\"filters.job\" (ngModelChange)=\"onJobChange($event)\">\n            <option [ngValue]=\"null\">---------</option>\n            <ng-container *ngFor=\"let option of jobs$ | async\">\n                <option *ngIf=\"option.client === filters.client\" [ngValue]=\"option.id\">{{ option.title }}</option>\n            </ng-container>\n        </select>\n        <label>Overdue</label>\n        <div class=\"checkbox\">\n            <label>\n                <input type=\"checkbox\" [(ngModel)]=\"filters.overdue\" (ngModelChange)=\"onOverdueChange($event)\">\n                <span></span>\n            </label>\n        </div>\n    </div>\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/components/task-board-filter.component.ts":
-/*!***********************************************************!*\
-  !*** ./src/app/components/task-board-filter.component.ts ***!
-  \***********************************************************/
-/*! exports provided: TaskboardFilterComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskboardFilterComponent", function() { return TaskboardFilterComponent; });
-/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
-/* harmony import */ var _state_selectors_job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/selectors/job */ "./src/app/state/selectors/job.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var TaskboardFilterComponent = /** @class */ (function () {
-    function TaskboardFilterComponent(store) {
-        var _this = this;
-        this.store = store;
-        this.client = null;
-        this.job = null;
-        this.user = null;
-        this.open = false;
-        this.clients$ = store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getClientState"]));
-        this.jobs$ = store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobCollection"]));
-        this.users$ = store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getUserState"]));
-        this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getMeState"])).subscribe(function (m) { return _this.onUserChange(m.id); });
-        this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getFilterState"])).subscribe(function (f) { return _this.filters = f; });
-    }
-    TaskboardFilterComponent.prototype.onClientChange = function (id) {
-        console.log(id);
-        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["FilterActions"].CLIENT, payload: id });
-        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["FilterActions"].JOB, payload: null });
-    };
-    TaskboardFilterComponent.prototype.onJobChange = function (id) {
-        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["FilterActions"].JOB, payload: id });
-    };
-    TaskboardFilterComponent.prototype.onOverdueChange = function (value) {
-        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["FilterActions"].OVERDUE, payload: value });
-    };
-    TaskboardFilterComponent.prototype.onUserChange = function (id) {
-        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["FilterActions"].USER, payload: id });
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        __metadata("design:type", Number)
-    ], TaskboardFilterComponent.prototype, "client", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        __metadata("design:type", Number)
-    ], TaskboardFilterComponent.prototype, "job", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        __metadata("design:type", Number)
-    ], TaskboardFilterComponent.prototype, "user", void 0);
-    TaskboardFilterComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'task-board-filter, [task-board-filter]',
-            template: __webpack_require__(/*! ./task-board-filter.component.html */ "./src/app/components/task-board-filter.component.html")
-        }),
-        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]])
-    ], TaskboardFilterComponent);
-    return TaskboardFilterComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/task-board.component.html":
-/*!******************************************************!*\
-  !*** ./src/app/components/task-board.component.html ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center c-white\">\n        <div class=\"h2 mr-2\">Taskboard</div>\n        <ng-container *ngIf=\"this.statsForTaskboard$ | async as stats\">\n            <div class=\"mr-2\"><strong>Number of tasks</strong> {{ stats.count_of_tasks }}</div>\n            <div class=\"mr-2\"><strong>Allocated hours</strong> {{ stats.allocated_hours }}</div>\n            <div><strong>Overdue tasks</strong> {{ stats.count_of_overdue }}</div>\n        </ng-container>\n        <div class=\"page-header-actions\">\n            <task-board-filter></task-board-filter>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid d-flex flex-fill mt-2 mb-1 scroll-x\">\n    <div class=\"board-column d-flex flex-fill\" *ngFor=\"let status of taskAssigneesForTaskboard$ | async\">\n        <div class=\"board-column-heading d-flex mb-1\">\n            <strong>{{ status.title }}</strong>\n            <i class=\"icon-plus ml-auto\" (click)=\"openCreateForm(status)\"></i>\n        </div>\n        <div class=\"flex-fill board-card-wrapper\" \n            ngxDroppable=\"status-column\" [model]=\"status._assignees\"\n            (drop)=\"droppedIntoColumn(status, status._assignees)\">\n            <div task-card [id]=\"assignee.task\"\n                ngxDraggable [model]=\"assignee\"\n                (click)=\"selectedTaskId=assignee.task\"\n                *ngFor=\"let assignee of status._assignees\">\n            </div>\n        </div>\n    </div>\n</div>    \n<task-create-form\n    [opened]=\"createFormOpen\"\n    [status]=\"createFormStatusId\"\n    (close)=\"createFormOpen = false\"\n    (saved)=\"selectedTaskId = $event.id\"\n    *ngIf=\"createFormOpen\">\n</task-create-form>\n<task-form\n    [id]=\"selectedTaskId\"\n    (close)=\"selectedTaskId = null\"\n    *ngIf=\"selectedTaskId\">\n</task-form>"
-
-/***/ }),
-
-/***/ "./src/app/components/task-board.component.ts":
-/*!****************************************************!*\
-  !*** ./src/app/components/task-board.component.ts ***!
-  \****************************************************/
-/*! exports provided: TaskboardComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskboardComponent", function() { return TaskboardComponent; });
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _state_selectors_taskboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../state/selectors/taskboard */ "./src/app/state/selectors/taskboard.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var TaskboardComponent = /** @class */ (function () {
-    function TaskboardComponent(store) {
-        this.store = store;
-        this.createFormOpen = false;
-        this.taskAssigneesForTaskboard$ = store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_taskboard__WEBPACK_IMPORTED_MODULE_3__["getTaskAssigneesForTaskboard"]), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["debounceTime"])(100));
-        this.statsForTaskboard$ = store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_taskboard__WEBPACK_IMPORTED_MODULE_3__["getStatsForTaskboard"]), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["debounceTime"])(100));
-    }
-    TaskboardComponent.prototype.droppedIntoColumn = function (status, assignees) {
-        var _this = this;
-        lodash__WEBPACK_IMPORTED_MODULE_0__["each"](assignees, function (assignee, i) {
-            if (assignee._task.status != status.id) {
-                var payload = { id: assignee.task, status: status.id };
-                _this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].PATCH, payload: payload });
-            }
-            var order = i + 1;
-            if (assignee.order != order) {
-                var payload = { id: assignee.id, order: order };
-                _this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskAssigneeActions"].PATCH, payload: payload });
-            }
-        });
-    };
-    TaskboardComponent.prototype.openCreateForm = function (status) {
-        this.createFormStatusId = status.id;
-        this.createFormOpen = true;
-    };
-    TaskboardComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
-            selector: 'task-board, [task-board]',
-            template: __webpack_require__(/*! ./task-board.component.html */ "./src/app/components/task-board.component.html"),
-            host: { 'class': 'd-flex flex-fill flex-column' }
-        }),
-        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]])
-    ], TaskboardComponent);
-    return TaskboardComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/components/task-card.component.html":
 /*!*****************************************************!*\
   !*** ./src/app/components/task-card.component.html ***!
@@ -1525,7 +1467,7 @@ var TaskboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"board-card d-flex flex-column pointer\" *ngIf=\"task$ | async as task\">\n    <div class=\"d-flex align-items-center\">\n        <span class=\"color-indicator\" [style.background]=\"task._job?.colour\"></span>\n        <span class=\"small uppercase\"><strong>{{ task._job?._client?.name }} / {{ task._job?.title }}</strong></span>\n    </div>\n    <p class=\"board-card-desc\">{{ task.title }}</p>\n    <div class=\"d-flex\">\n        <div class=\"mr-auto\">\n            <span class=\"uppercase mr-1\" [class.c-red]=\"task.is_overdue\" *ngIf=\"task.target_date\"><i class=\"icon-bell\"></i> {{ task.target_date | date:'d MMM' }}</span>\n            <span class=\"uppercase\" [class.c-red]=\"task._is_over_allocated_hours\"><i class=\"icon-clock\"></i> {{ task._time_spent_hours }}/{{ task._allocated_hours }}</span>\n        </div>\n        <div>\n            <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of task._assignees\"></div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"board-card d-flex flex-column pointer\" *ngIf=\"task$ | async as task\">\n    <div class=\"d-flex align-items-center\">\n        <span class=\"small uppercase\"><strong>{{ task._job?._client?.name }} / {{ task._job?.title }}</strong></span>\n    </div>\n    <p class=\"board-card-desc\">{{ task.title }}</p>\n    <div class=\"d-flex\">\n        <div class=\"mr-auto\">\n            <span class=\"uppercase mr-1\" [class.c-red]=\"task.is_overdue\" *ngIf=\"task.target_date\"><i class=\"icon-bell\"></i> {{ task.target_date | date:'d MMM' }}</span>\n            <span class=\"uppercase\" [class.c-red]=\"task._is_over_allocated_hours\"><i class=\"icon-clock\"></i> {{ task.time_spent_hours }}/{{ task.allocated_hours }}</span>\n        </div>\n        <div>\n            <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of assignees$ | async\"></div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1563,6 +1505,7 @@ var TaskCardComponent = /** @class */ (function () {
     }
     TaskCardComponent.prototype.ngOnChanges = function (changes) {
         if (lodash__WEBPACK_IMPORTED_MODULE_0__["has"](changes, 'id.currentValue')) {
+            this.assignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_3__["getTaskAssigneesForTask"])(this.id)));
             this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_3__["getTaskCollectionById"])(this.id)));
         }
     };
@@ -1591,7 +1534,7 @@ var TaskCardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal {{ opened ? 'in': '' }}\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <input type=\"text\" [formControl]=\"form.controls.title\" class=\"mb-0-5\" placeholder=\"Title\">\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <textarea autoResize [formControl]=\"form.controls.description\" class=\"mb-0-5\" rows=\"2\"></textarea>\n                    </div>\n                    <button class=\"button\" (click)=\"form.save($event)\">Save</button>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <select class=\"full-width input-small\" [(ngModel)]=\"selectedClientId\" (change)=\"changeClient($event)\">\n                        <option [value]=\"null\">Select...</option>\n                        <option *ngFor=\"let option of clients$ | async\" [value]=\"option.id\">{{ option.name }}</option>\n                    </select>\n                    <select class=\"full-width input-small\" [formControl]=\"form.controls.job\">\n                        <option [ngValue]=\"null\">Select...</option>\n                        <ng-container *ngFor=\"let option of jobs$ | async\">\n                            <option *ngIf=\"option.client == selectedClientId\" [ngValue]=\"option.id\">{{ option.title }}</option>\n                        </ng-container>\n                    </select>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <input [formControl]=\"form.controls.target_date\" type=\"date\" class=\"input-small\">\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"modal {{ opened ? 'in': '' }}\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <input type=\"text\" [formControl]=\"form.controls.title\" class=\"mb-0-5\" placeholder=\"Title\">\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <textarea autoResize [formControl]=\"form.controls.description\" class=\"mb-0-5\" rows=\"2\"></textarea>\n                    </div>\n                    <button class=\"button\" (click)=\"form.save($event)\">Save</button>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ job$ | async | get:'_client.name' }}<br>{{ job$ | async | get:'title' }}</p>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <input [formControl]=\"form.controls.target_date\" type=\"date\">\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1605,12 +1548,11 @@ module.exports = "<div class=\"modal {{ opened ? 'in': '' }}\" (click)=\"closeEv
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskCreateFormComponent", function() { return TaskCreateFormComponent; });
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
-/* harmony import */ var _forms_task_create_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../forms/task-create.form */ "./src/app/forms/task-create.form.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var _forms_task_create_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../forms/task-create.form */ "./src/app/forms/task-create.form.ts");
+/* harmony import */ var _state_selectors_job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/selectors/job */ "./src/app/state/selectors/job.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1630,23 +1572,20 @@ var TaskCreateFormComponent = /** @class */ (function () {
         this.store = store;
         this.actionsSubject = actionsSubject;
         this.opened = false;
-        this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
-        this.saved = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.saved = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.selectedClientId = null;
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getUserState"]));
-        this.clients$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getClientState"]));
-        this.jobs$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getJobState"]));
-        this.form = new _forms_task_create_form__WEBPACK_IMPORTED_MODULE_4__["TaskCreateForm"](this.store, this.actionsSubject);
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_2__["getUserState"]));
+        this.form = new _forms_task_create_form__WEBPACK_IMPORTED_MODULE_3__["TaskCreateForm"](this.store, this.actionsSubject);
     }
     TaskCreateFormComponent.prototype.ngOnChanges = function (changes) {
         var _this = this;
-        if (lodash__WEBPACK_IMPORTED_MODULE_0__["has"](changes, 'status.currentValue')) {
-            this.form.load({ status: this.status });
-            this.form.formSaved.subscribe(function (e) {
-                _this.close.emit(e.event);
-                _this.saved.emit(e.payload);
-            });
-        }
+        this.job$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobCollectionById"])(this.jobId)));
+        this.form.patchValue({ status: this.statusId, job: this.jobId });
+        this.form.formSaved.subscribe(function (e) {
+            _this.close.emit(e.event);
+            _this.saved.emit(e.payload);
+        });
     };
     TaskCreateFormComponent.prototype.closeEvent = function (event) {
         if (this.modalPanelRef.nativeElement.contains(event.target)) {
@@ -1656,39 +1595,37 @@ var TaskCreateFormComponent = /** @class */ (function () {
             this.close.emit(event);
         }
     };
-    TaskCreateFormComponent.prototype.changeClient = function ($event) {
-        this.selectedClientId = $event.target.value;
-        if ($event.target.value == 'null') {
-            this.form.controls.job.setValue(null);
-        }
-    };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         __metadata("design:type", Object)
     ], TaskCreateFormComponent.prototype, "opened", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         __metadata("design:type", Number)
-    ], TaskCreateFormComponent.prototype, "status", void 0);
+    ], TaskCreateFormComponent.prototype, "jobId", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        __metadata("design:type", Number)
+    ], TaskCreateFormComponent.prototype, "statusId", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
         __metadata("design:type", Object)
     ], TaskCreateFormComponent.prototype, "close", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
         __metadata("design:type", Object)
     ], TaskCreateFormComponent.prototype, "saved", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])('modalPanel'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"])
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('modalPanel'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
     ], TaskCreateFormComponent.prototype, "modalPanelRef", void 0);
     TaskCreateFormComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'task-create-form, [task-create-form]',
             template: __webpack_require__(/*! ./task-create-form.component.html */ "./src/app/components/task-create-form.component.html")
         }),
-        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["Store"],
-            _ngrx_store__WEBPACK_IMPORTED_MODULE_1__["ActionsSubject"]])
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["Store"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_0__["ActionsSubject"]])
     ], TaskCreateFormComponent);
     return TaskCreateFormComponent;
 }());
@@ -1704,7 +1641,7 @@ var TaskCreateFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col-1 text-right\">\n                    <span class=\"color-indicator mt-1\" [style.background]=\"task._job?.colour\"></span>\n                </div>\n                <div class=\"col-11\">\n                    <div (click)=\"titleForm.editable = true\">\n                        <input type=\"text\" [formControl]=\"titleForm.controls.title\" class=\"mb-0-5\">\n                        <button class=\"input-group-addon button\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <div (click)=\"descriptionForm.editable = true\">\n                            <textarea autoResize [formControl]=\"descriptionForm.controls.description\" class=\"transparent mb-0-5\" rows=\"2\"></textarea>\n                            <button class=\"button\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.cancel($event)\">Cancel</button>\n                        </div>\n                    </div>\n\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Notes</strong></p>\n                        <textarea autoResize [formControl]=\"newNoteForm.controls.note\" class=\"full-width mb-0-5\" placeholder=\"Write a note...\" rows=\"2\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of task._notes\">\n                        <div class=\"my-1\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <div (click)=\"form.editable = true\">\n                                <textarea autoResize [formControl]=\"form.controls.note\" class=\"panel\" rows=\"1\"></textarea>\n                            </div>\n                            <div class=\"small muted\">\n                                <ng-container *ngIf=\"!form.editable\">\n                                    <button class=\"button button-clear\" (click)=\"$event.stopPropagation(); form.editable = true\">Edit</button> |\n                                    <button class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</button>\n                                </ng-container>\n                                <ng-container *ngIf=\"form.editable\">\n                                    <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                    <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                                </ng-container>\n                            </div>\n                        </div>\n                    </ng-container>\n                </div>\n                <div class=\"col-4\">\n                    <div (click)=\"jobForm.editable = true\">\n                        <p class=\"mb-0-5\"><strong>Job</strong></p>\n                        <select [disabled]=\"!jobForm.editable\" class=\"full-width input-small\" [(ngModel)]=\"selectedClientId\" (change)=\"changeClient($event)\">\n                            <option [value]=\"null\">Select...</option>\n                            <option *ngFor=\"let option of clients$ | async\" [value]=\"option.id\">{{ option.name }}</option>\n                        </select>\n                        <select class=\"full-width input-small\" [formControl]=\"jobForm.controls.job\">\n                            <option [ngValue]=\"null\">Select...</option>\n                            <ng-container *ngFor=\"let option of jobs$ | async\">\n                                <option *ngIf=\"option.client == selectedClientId\" [ngValue]=\"option.id\">{{ option.title }}</option>\n                            </ng-container>\n                        </select>\n                        <ng-container *ngIf=\"jobForm.editable\">\n                            <button class=\"button button-secondary\" (click)=\"jobForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" (click)=\"jobForm.cancel($event)\">Cancel</button>\n                        </ng-container>\n                    </div>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of task._assignees\" class=\"d-inline-block text-center mr-0-5\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-0-5\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div *ngIf=\"assigneeEditForm && assigneeEditForm.editable\" class=\"mt-1\">\n                        <div class=\"input-group mb-0-5\">\n                            <select [formControl]=\"assigneeEditForm.controls.user\" class=\"input-small mr-1 flex-fill\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of users$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                </ng-container>\n                            </select>\n                            <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\" class=\"input-small\" style=\"flex: 0 1 7rem;\">\n                        </div>\n                        <div class=\"d-flex\">\n                            <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                            <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Delete</button>\n                        </div>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Time Spent (hrs)</strong></p>\n                    <p>{{ task.time_spent_hours }} of {{ task._allocated_hours }}</p>\n                    <hr>\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <div (click)=\"targetDateForm.editable = true\">\n                        <input [formControl]=\"targetDateForm.controls.target_date\" type=\"date\" class=\"input-small\">\n                        <button class=\"button\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <div (click)=\"titleForm.editable = true\">\n                        <input type=\"text\" [formControl]=\"titleForm.controls.title\" class=\"mb-0-5\">\n                        <button class=\"input-group-addon button\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <div (click)=\"descriptionForm.editable = true\">\n                            <textarea autoResize [formControl]=\"descriptionForm.controls.description\" class=\"transparent mb-0-5\" rows=\"2\"></textarea>\n                            <button class=\"button\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.cancel($event)\">Cancel</button>\n                        </div>\n                    </div>\n\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Notes</strong></p>\n                        <textarea autoResize [formControl]=\"newNoteForm.controls.note\" class=\"full-width mb-0-5\" placeholder=\"Write a note...\" rows=\"2\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of taskNotes$ | async\">\n                        <div class=\"my-1\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <div (click)=\"form.editable = true\">\n                                <textarea autoResize [formControl]=\"form.controls.note\" class=\"panel\" rows=\"1\"></textarea>\n                            </div>\n                            <div class=\"small muted\">\n                                <ng-container *ngIf=\"!form.editable\">\n                                    <button class=\"button button-clear\" (click)=\"$event.stopPropagation(); form.editable = true\">Edit</button> |\n                                    <button class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</button>\n                                </ng-container>\n                                <ng-container *ngIf=\"form.editable\">\n                                    <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                    <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                                </ng-container>\n                            </div>\n                        </div>\n                    </ng-container>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ task$ | async | get:'_job._client.name' }}<br>{{ task$ | async | get:'_job.title' }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of taskAssignees$ | async\" class=\"d-inline-block text-center mr-0-5\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-0-5\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div *ngIf=\"assigneeEditForm && assigneeEditForm.editable\" class=\"mt-1\">\n                        <div class=\"input-group mb-0-5\">\n                            <select [formControl]=\"assigneeEditForm.controls.user\" class=\"mr-1 flex-fill\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of users$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                </ng-container>\n                            </select>\n                            <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\" style=\"flex: 0 0 7rem;\">\n                        </div>\n                        <div class=\"d-flex\">\n                            <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                            <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Delete</button>\n                        </div>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Time Spent (hrs)</strong></p>\n                    <p>{{ task.time_spent_hours }} of {{ task.allocated_hours }}</p>\n                    <hr>\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <div (click)=\"targetDateForm.editable = true\">\n                        <input [formControl]=\"targetDateForm.controls.target_date\" type=\"date\" class=\"\">\n                        <button class=\"button\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1722,16 +1659,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../state/selectors/task */ "./src/app/state/selectors/task.ts");
 /* harmony import */ var _forms_base_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../forms/base.form */ "./src/app/forms/base.form.ts");
 /* harmony import */ var _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../forms/task-assignee.form */ "./src/app/forms/task-assignee.form.ts");
 /* harmony import */ var _forms_task_description_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../forms/task-description.form */ "./src/app/forms/task-description.form.ts");
-/* harmony import */ var _forms_task_job_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../forms/task-job.form */ "./src/app/forms/task-job.form.ts");
-/* harmony import */ var _forms_task_note_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../forms/task-note.form */ "./src/app/forms/task-note.form.ts");
-/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
-/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
-/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./../state/selectors/task */ "./src/app/state/selectors/task.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _forms_task_note_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../forms/task-note.form */ "./src/app/forms/task-note.form.ts");
+/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
+/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1753,7 +1689,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var TaskFormComponent = /** @class */ (function () {
     function TaskFormComponent(store, actionsSubject) {
         this.store = store;
@@ -1761,23 +1696,21 @@ var TaskFormComponent = /** @class */ (function () {
         this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
         this.taskNoteForms = {};
         this.selectedClientId = null;
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getUserState"]));
-        this.clients$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getClientState"]));
-        this.jobs$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getJobState"]));
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_10__["getUserState"]));
         this.descriptionForm = new _forms_task_description_form__WEBPACK_IMPORTED_MODULE_6__["TaskDescriptionForm"](this.store, this.actionsSubject);
-        this.jobForm = new _forms_task_job_form__WEBPACK_IMPORTED_MODULE_7__["TaskJobForm"](this.store, this.actionsSubject);
-        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_10__["TaskTitleForm"](this.store, this.actionsSubject);
-        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_9__["TaskTargetDateForm"](this.store, this.actionsSubject);
-        this.newNoteForm = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_8__["TaskNoteForm"](this.store, this.actionsSubject);
+        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_9__["TaskTitleForm"](this.store, this.actionsSubject);
+        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_8__["TaskTargetDateForm"](this.store, this.actionsSubject);
+        this.newNoteForm = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_7__["TaskNoteForm"](this.store, this.actionsSubject);
     }
     TaskFormComponent.prototype.ngOnChanges = function (changes) {
         var _this = this;
         if (lodash__WEBPACK_IMPORTED_MODULE_0__["has"](changes, 'id.currentValue')) {
-            this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_11__["getTaskCollectionById"])(this.id)));
-            this.task$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["take"])(1)).subscribe(function (d) {
+            this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_3__["getTaskCollectionById"])(this.id)));
+            this.taskAssignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_3__["getTaskAssigneesForTask"])(this.id)));
+            this.taskNotes$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_3__["getTaskNotesForTask"])(this.id)));
+            this.task$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_11__["take"])(1)).subscribe(function (d) {
                 _this.selectedClientId = d._job.client;
                 _this.descriptionForm.load(d);
-                _this.jobForm.load(d);
                 _this.titleForm.load(d);
                 _this.targetDateForm.load(d);
                 _this.newNoteForm.load({ task: d.id });
@@ -1794,18 +1727,12 @@ var TaskFormComponent = /** @class */ (function () {
     };
     TaskFormComponent.prototype.getOrCreateEditNoteForm = function (note) {
         if (!lodash__WEBPACK_IMPORTED_MODULE_0__["has"](this.taskNoteForms, note.id)) {
-            var form = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_8__["TaskNoteForm"](this.store, this.actionsSubject, { alwaysEditable: false, cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_4__["FormCleanAfterMethod"].loadSaved });
+            var form = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_7__["TaskNoteForm"](this.store, this.actionsSubject, { alwaysEditable: false, cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_4__["FormCleanAfterMethod"].loadSaved });
             form.load(note);
             this.taskNoteForms[note.id] = form;
             return this.taskNoteForms[note.id];
         }
         return this.taskNoteForms[note.id];
-    };
-    TaskFormComponent.prototype.changeClient = function ($event) {
-        this.selectedClientId = $event.target.value;
-        if ($event.target.value == 'null') {
-            this.jobForm.controls.job.setValue(null);
-        }
     };
     TaskFormComponent.prototype.editAssignee = function (assignee) {
         this.assigneeEditForm = new _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_5__["TaskAssigneeForm"](this.store, this.actionsSubject);
@@ -1833,6 +1760,51 @@ var TaskFormComponent = /** @class */ (function () {
             _ngrx_store__WEBPACK_IMPORTED_MODULE_1__["ActionsSubject"]])
     ], TaskFormComponent);
     return TaskFormComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/taskboard.component.html":
+/*!*****************************************************!*\
+  !*** ./src/app/components/taskboard.component.html ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Taskboard</div>\n        <div class=\"page-header-actions\"></div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\"></div>"
+
+/***/ }),
+
+/***/ "./src/app/components/taskboard.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/components/taskboard.component.ts ***!
+  \***************************************************/
+/*! exports provided: TaskboardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskboardComponent", function() { return TaskboardComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var TaskboardComponent = /** @class */ (function () {
+    function TaskboardComponent() {
+    }
+    TaskboardComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'taskboard, [taskboard]',
+            template: __webpack_require__(/*! ./taskboard.component.html */ "./src/app/components/taskboard.component.html")
+        })
+    ], TaskboardComponent);
+    return TaskboardComponent;
 }());
 
 
@@ -2022,7 +1994,7 @@ var TimesheetSignoffComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchData()\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content d-flex flex-fill flex-flow-column\">\n    <div class=\"row flex-fill\">\n        <div class=\"col-3 d-flex flex-column flex-fill\">\n            <search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchData()\"></search>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task\" [style.background-color]=\"task._job.colour\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <span class=\"external-event d-block\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div class=\"row\" style=\"flex: 0 1 50px;\">    \n        <div class=\"col-9 offset-3\">\n            <table class=\"mb-0\">\n                <tr>\n                    <td class=\"py-1\" [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></td>\n                    <td class=\"text-center px-0 py-1\" *ngFor=\"let date of viewDates\">\n                        <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchData()\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content d-flex flex-fill flex-flow-column\">\n    <div class=\"row flex-fill\">\n        <div class=\"col-3 d-flex flex-column flex-fill\">\n            <search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchData()\"></search>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task\" [style.background-color]=\"task._job.colour\" [style.color]=\"task._job._text_colour\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <span class=\"external-event d-block\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div class=\"row\" style=\"flex: 0 1 50px;\">    \n        <div class=\"col-9 offset-3\">\n            <table class=\"mb-0\">\n                <tr>\n                    <td class=\"py-1\" [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></td>\n                    <td class=\"text-center px-0 py-1\" *ngFor=\"let date of viewDates\">\n                        <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -2598,61 +2570,6 @@ var TaskDescriptionForm = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/app/forms/task-job.form.ts":
-/*!****************************************!*\
-  !*** ./src/app/forms/task-job.form.ts ***!
-  \****************************************/
-/*! exports provided: TaskJobForm */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskJobForm", function() { return TaskJobForm; });
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
-/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./base.form */ "./src/app/forms/base.form.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-
-
-var options = {
-    alwaysEditable: false,
-    cleanAfterMethod: _base_form__WEBPACK_IMPORTED_MODULE_2__["FormCleanAfterMethod"].loadSaved
-};
-var TaskJobForm = /** @class */ (function (_super) {
-    __extends(TaskJobForm, _super);
-    function TaskJobForm(store, actionsSubject, formOptions) {
-        var _this = _super.call(this, store, actionsSubject, {
-            id: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null),
-            job: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required)
-        }, null, null, lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, options, formOptions)) || this;
-        _this.store = store;
-        _this.actionsSubject = actionsSubject;
-        _this.createAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].ADD;
-        _this.createSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].ADD_SUCCESS;
-        _this.updateAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].PATCH;
-        _this.updateSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].PATCH_SUCCESS;
-        return _this;
-    }
-    return TaskJobForm;
-}(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));
-
-
-
-/***/ }),
-
 /***/ "./src/app/forms/task-note.form.ts":
 /*!*****************************************!*\
   !*** ./src/app/forms/task-note.form.ts ***!
@@ -2958,11 +2875,11 @@ var ClientSearchPipe = /** @class */ (function () {
         this.filterObject = function (value, terms) {
             var found = true;
             lodash__WEBPACK_IMPORTED_MODULE_0__["each"](terms, function (term) {
-                if (!lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.name).toLowerCase(), term) &&
-                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.phone_number).toLowerCase(), term) &&
-                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.email_address).toLowerCase(), term) &&
-                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.website).toLowerCase(), term) &&
-                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.address).toLowerCase(), term)) {
+                if (!lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.name).toLowerCase(), term.toLowerCase()) &&
+                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.phone_number).toLowerCase(), term.toLowerCase()) &&
+                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.email_address).toLowerCase(), term.toLowerCase()) &&
+                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.website).toLowerCase(), term.toLowerCase()) &&
+                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.address).toLowerCase(), term.toLowerCase())) {
                     found = false;
                 }
             });
@@ -3098,8 +3015,8 @@ var JobSearchPipe = /** @class */ (function () {
         this.filterObject = function (value, terms) {
             var found = true;
             lodash__WEBPACK_IMPORTED_MODULE_0__["each"](terms, function (term) {
-                if (!lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.title).toLowerCase(), term) &&
-                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value._status.title).toLowerCase(), term)) {
+                if (!lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value.title).toLowerCase(), term.toLowerCase()) &&
+                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value._status.title).toLowerCase(), term.toLowerCase())) {
                     found = false;
                 }
             });
@@ -3166,6 +3083,46 @@ var OpenJobsPipe = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/pipes/tasks-by-status.pipe.ts":
+/*!***********************************************!*\
+  !*** ./src/app/pipes/tasks-by-status.pipe.ts ***!
+  \***********************************************/
+/*! exports provided: TasksByStatusPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TasksByStatusPipe", function() { return TasksByStatusPipe; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var TasksByStatusPipe = /** @class */ (function () {
+    function TasksByStatusPipe() {
+    }
+    TasksByStatusPipe.prototype.transform = function (array, status) {
+        return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](array, ['status', status]);
+    };
+    TasksByStatusPipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'tasksByStatus',
+            pure: true
+        })
+    ], TasksByStatusPipe);
+    return TasksByStatusPipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/api.ts":
 /*!*********************************!*\
   !*** ./src/app/services/api.ts ***!
@@ -3202,8 +3159,9 @@ var APIService = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    APIService.prototype.all = function (url) {
-        return this.http.get("" + url, { headers: this.headers });
+    APIService.prototype.all = function (url, options) {
+        if (options === void 0) { options = {}; }
+        return this.http.get("" + url, { headers: this.headers, params: options.params });
     };
     APIService.prototype.one = function (url, id) {
         return this.http.get("" + url + id + "/", { headers: this.headers });
@@ -3270,6 +3228,81 @@ var Globals = /** @class */ (function () {
         })
     ], Globals);
     return Globals;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/actions/billingfrequency.ts":
+/*!***************************************************!*\
+  !*** ./src/app/state/actions/billingfrequency.ts ***!
+  \***************************************************/
+/*! exports provided: BillingFrequencyActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BillingFrequencyActions", function() { return BillingFrequencyActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var BillingFrequencyActions = /** @class */ (function () {
+    function BillingFrequencyActions() {
+    }
+    BillingFrequencyActions_1 = BillingFrequencyActions;
+    BillingFrequencyActions.prototype.LoadAll = function () {
+        return { type: BillingFrequencyActions_1.LOAD_ALL };
+    };
+    BillingFrequencyActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: BillingFrequencyActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    BillingFrequencyActions.prototype.LoadOne = function (payload) {
+        return { type: BillingFrequencyActions_1.LOAD_ONE, payload: payload };
+    };
+    BillingFrequencyActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: BillingFrequencyActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    BillingFrequencyActions.prototype.Add = function (payload) {
+        return { type: BillingFrequencyActions_1.ADD, payload: payload };
+    };
+    BillingFrequencyActions.prototype.AddSuccess = function (payload) {
+        return { type: BillingFrequencyActions_1.ADD_SUCCESS, payload: payload };
+    };
+    BillingFrequencyActions.prototype.Update = function (payload) {
+        return { type: BillingFrequencyActions_1.UPDATE, payload: payload };
+    };
+    BillingFrequencyActions.prototype.UpdateSuccess = function (payload) {
+        return { type: BillingFrequencyActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    BillingFrequencyActions.prototype.Remove = function (payload) {
+        return { type: BillingFrequencyActions_1.REMOVE, payload: payload };
+    };
+    BillingFrequencyActions.prototype.RemoveSuccess = function (payload) {
+        return { type: BillingFrequencyActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var BillingFrequencyActions_1;
+    BillingFrequencyActions.LOAD_ALL = '[BillingFrequency] LOAD_ALL';
+    BillingFrequencyActions.LOAD_ALL_SUCCESS = '[BillingFrequency] LOAD_ALL_SUCCESS';
+    BillingFrequencyActions.LOAD_ONE = '[BillingFrequency] LOAD_ONE';
+    BillingFrequencyActions.LOAD_ONE_SUCCESS = '[BillingFrequency] LOAD_ONE_SUCCESS';
+    BillingFrequencyActions.ADD = '[BillingFrequency] ADD';
+    BillingFrequencyActions.ADD_SUCCESS = '[BillingFrequency] ADD_SUCCESS';
+    BillingFrequencyActions.UPDATE = '[BillingFrequency] UPDATE';
+    BillingFrequencyActions.UPDATE_SUCCESS = '[BillingFrequency] UPDATE_SUCCESS';
+    BillingFrequencyActions.REMOVE = '[BillingFrequency] REMOVE';
+    BillingFrequencyActions.REMOVE_SUCCESS = '[BillingFrequency] REMOVE_SUCCESS';
+    BillingFrequencyActions = BillingFrequencyActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], BillingFrequencyActions);
+    return BillingFrequencyActions;
 }());
 
 
@@ -3567,59 +3600,95 @@ var HttpActions = /** @class */ (function () {
 /*!****************************************!*\
   !*** ./src/app/state/actions/index.ts ***!
   \****************************************/
-/*! exports provided: ClientActions, ClientContactActions, DataActions, FilterActions, HttpActions, JobActions, JobStatusActions, MeActions, PositionActions, TaskActions, TaskAssigneeActions, TaskNoteActions, TaskStatusActions, TimeDailySignoffActions, TimeEntryActions, UserActions, actions */
+/*! exports provided: BillingFrequencyActions, ClientActions, ClientContactActions, DataActions, FilterActions, HttpActions, JobActions, JobFileActions, JobNoteActions, JobRecurringCostActions, JobRelationshipActions, JobStatusActions, JobTypeActions, MeActions, PaymentOptionActions, PositionActions, RecurringCostTypeActions, RelationshipActions, TaskActions, TaskAssigneeActions, TaskNoteActions, TaskStatusActions, TimeDailySignoffActions, TimeEntryActions, UserActions, actions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
-/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./client */ "./src/app/state/actions/client.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ClientActions", function() { return _client__WEBPACK_IMPORTED_MODULE_0__["ClientActions"]; });
+/* harmony import */ var _billingfrequency__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./billingfrequency */ "./src/app/state/actions/billingfrequency.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BillingFrequencyActions", function() { return _billingfrequency__WEBPACK_IMPORTED_MODULE_0__["BillingFrequencyActions"]; });
 
-/* harmony import */ var _clientcontact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clientcontact */ "./src/app/state/actions/clientcontact.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ClientContactActions", function() { return _clientcontact__WEBPACK_IMPORTED_MODULE_1__["ClientContactActions"]; });
+/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./client */ "./src/app/state/actions/client.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ClientActions", function() { return _client__WEBPACK_IMPORTED_MODULE_1__["ClientActions"]; });
 
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data */ "./src/app/state/actions/data.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataActions", function() { return _data__WEBPACK_IMPORTED_MODULE_2__["DataActions"]; });
+/* harmony import */ var _clientcontact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clientcontact */ "./src/app/state/actions/clientcontact.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ClientContactActions", function() { return _clientcontact__WEBPACK_IMPORTED_MODULE_2__["ClientContactActions"]; });
 
-/* harmony import */ var _filters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./filters */ "./src/app/state/actions/filters.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FilterActions", function() { return _filters__WEBPACK_IMPORTED_MODULE_3__["FilterActions"]; });
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data */ "./src/app/state/actions/data.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataActions", function() { return _data__WEBPACK_IMPORTED_MODULE_3__["DataActions"]; });
 
-/* harmony import */ var _http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./http */ "./src/app/state/actions/http.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpActions", function() { return _http__WEBPACK_IMPORTED_MODULE_4__["HttpActions"]; });
+/* harmony import */ var _filters__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./filters */ "./src/app/state/actions/filters.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FilterActions", function() { return _filters__WEBPACK_IMPORTED_MODULE_4__["FilterActions"]; });
 
-/* harmony import */ var _job__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./job */ "./src/app/state/actions/job.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobActions", function() { return _job__WEBPACK_IMPORTED_MODULE_5__["JobActions"]; });
+/* harmony import */ var _http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./http */ "./src/app/state/actions/http.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpActions", function() { return _http__WEBPACK_IMPORTED_MODULE_5__["HttpActions"]; });
 
-/* harmony import */ var _jobstatus__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./jobstatus */ "./src/app/state/actions/jobstatus.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobStatusActions", function() { return _jobstatus__WEBPACK_IMPORTED_MODULE_6__["JobStatusActions"]; });
+/* harmony import */ var _job__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./job */ "./src/app/state/actions/job.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobActions", function() { return _job__WEBPACK_IMPORTED_MODULE_6__["JobActions"]; });
 
-/* harmony import */ var _me__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./me */ "./src/app/state/actions/me.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MeActions", function() { return _me__WEBPACK_IMPORTED_MODULE_7__["MeActions"]; });
+/* harmony import */ var _jobfile__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./jobfile */ "./src/app/state/actions/jobfile.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobFileActions", function() { return _jobfile__WEBPACK_IMPORTED_MODULE_7__["JobFileActions"]; });
 
-/* harmony import */ var _position__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./position */ "./src/app/state/actions/position.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PositionActions", function() { return _position__WEBPACK_IMPORTED_MODULE_8__["PositionActions"]; });
+/* harmony import */ var _jobnote__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./jobnote */ "./src/app/state/actions/jobnote.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobNoteActions", function() { return _jobnote__WEBPACK_IMPORTED_MODULE_8__["JobNoteActions"]; });
 
-/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./task */ "./src/app/state/actions/task.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskActions", function() { return _task__WEBPACK_IMPORTED_MODULE_9__["TaskActions"]; });
+/* harmony import */ var _jobrecurringcost__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./jobrecurringcost */ "./src/app/state/actions/jobrecurringcost.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobRecurringCostActions", function() { return _jobrecurringcost__WEBPACK_IMPORTED_MODULE_9__["JobRecurringCostActions"]; });
 
-/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/actions/taskassignee.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskAssigneeActions", function() { return _taskassignee__WEBPACK_IMPORTED_MODULE_10__["TaskAssigneeActions"]; });
+/* harmony import */ var _jobrelationship__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./jobrelationship */ "./src/app/state/actions/jobrelationship.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobRelationshipActions", function() { return _jobrelationship__WEBPACK_IMPORTED_MODULE_10__["JobRelationshipActions"]; });
 
-/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/actions/tasknote.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskNoteActions", function() { return _tasknote__WEBPACK_IMPORTED_MODULE_11__["TaskNoteActions"]; });
+/* harmony import */ var _jobstatus__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./jobstatus */ "./src/app/state/actions/jobstatus.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobStatusActions", function() { return _jobstatus__WEBPACK_IMPORTED_MODULE_11__["JobStatusActions"]; });
 
-/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/actions/taskstatus.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskStatusActions", function() { return _taskstatus__WEBPACK_IMPORTED_MODULE_12__["TaskStatusActions"]; });
+/* harmony import */ var _jobtype__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./jobtype */ "./src/app/state/actions/jobtype.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobTypeActions", function() { return _jobtype__WEBPACK_IMPORTED_MODULE_12__["JobTypeActions"]; });
 
-/* harmony import */ var _timedailysignoff__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./timedailysignoff */ "./src/app/state/actions/timedailysignoff.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeDailySignoffActions", function() { return _timedailysignoff__WEBPACK_IMPORTED_MODULE_13__["TimeDailySignoffActions"]; });
+/* harmony import */ var _me__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./me */ "./src/app/state/actions/me.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MeActions", function() { return _me__WEBPACK_IMPORTED_MODULE_13__["MeActions"]; });
 
-/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_14__["TimeEntryActions"]; });
+/* harmony import */ var _paymentoption__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./paymentoption */ "./src/app/state/actions/paymentoption.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaymentOptionActions", function() { return _paymentoption__WEBPACK_IMPORTED_MODULE_14__["PaymentOptionActions"]; });
 
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_15__["UserActions"]; });
+/* harmony import */ var _position__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./position */ "./src/app/state/actions/position.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PositionActions", function() { return _position__WEBPACK_IMPORTED_MODULE_15__["PositionActions"]; });
+
+/* harmony import */ var _recurringcosttype__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./recurringcosttype */ "./src/app/state/actions/recurringcosttype.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RecurringCostTypeActions", function() { return _recurringcosttype__WEBPACK_IMPORTED_MODULE_16__["RecurringCostTypeActions"]; });
+
+/* harmony import */ var _relationship__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./relationship */ "./src/app/state/actions/relationship.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RelationshipActions", function() { return _relationship__WEBPACK_IMPORTED_MODULE_17__["RelationshipActions"]; });
+
+/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./task */ "./src/app/state/actions/task.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskActions", function() { return _task__WEBPACK_IMPORTED_MODULE_18__["TaskActions"]; });
+
+/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/actions/taskassignee.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskAssigneeActions", function() { return _taskassignee__WEBPACK_IMPORTED_MODULE_19__["TaskAssigneeActions"]; });
+
+/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/actions/tasknote.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskNoteActions", function() { return _tasknote__WEBPACK_IMPORTED_MODULE_20__["TaskNoteActions"]; });
+
+/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/actions/taskstatus.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskStatusActions", function() { return _taskstatus__WEBPACK_IMPORTED_MODULE_21__["TaskStatusActions"]; });
+
+/* harmony import */ var _timedailysignoff__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./timedailysignoff */ "./src/app/state/actions/timedailysignoff.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeDailySignoffActions", function() { return _timedailysignoff__WEBPACK_IMPORTED_MODULE_22__["TimeDailySignoffActions"]; });
+
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_23__["TimeEntryActions"]; });
+
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_24__["UserActions"]; });
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3639,22 +3708,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var actions = [
-    _client__WEBPACK_IMPORTED_MODULE_0__["ClientActions"],
-    _clientcontact__WEBPACK_IMPORTED_MODULE_1__["ClientContactActions"],
-    _data__WEBPACK_IMPORTED_MODULE_2__["DataActions"],
-    _filters__WEBPACK_IMPORTED_MODULE_3__["FilterActions"],
-    _http__WEBPACK_IMPORTED_MODULE_4__["HttpActions"],
-    _job__WEBPACK_IMPORTED_MODULE_5__["JobActions"],
-    _jobstatus__WEBPACK_IMPORTED_MODULE_6__["JobStatusActions"],
-    _me__WEBPACK_IMPORTED_MODULE_7__["MeActions"],
-    _position__WEBPACK_IMPORTED_MODULE_8__["PositionActions"],
-    _task__WEBPACK_IMPORTED_MODULE_9__["TaskActions"],
-    _taskassignee__WEBPACK_IMPORTED_MODULE_10__["TaskAssigneeActions"],
-    _tasknote__WEBPACK_IMPORTED_MODULE_11__["TaskNoteActions"],
-    _taskstatus__WEBPACK_IMPORTED_MODULE_12__["TaskStatusActions"],
-    _timedailysignoff__WEBPACK_IMPORTED_MODULE_13__["TimeDailySignoffActions"],
-    _timeentry__WEBPACK_IMPORTED_MODULE_14__["TimeEntryActions"],
-    _user__WEBPACK_IMPORTED_MODULE_15__["UserActions"]
+    _billingfrequency__WEBPACK_IMPORTED_MODULE_0__["BillingFrequencyActions"],
+    _client__WEBPACK_IMPORTED_MODULE_1__["ClientActions"],
+    _clientcontact__WEBPACK_IMPORTED_MODULE_2__["ClientContactActions"],
+    _data__WEBPACK_IMPORTED_MODULE_3__["DataActions"],
+    _filters__WEBPACK_IMPORTED_MODULE_4__["FilterActions"],
+    _http__WEBPACK_IMPORTED_MODULE_5__["HttpActions"],
+    _job__WEBPACK_IMPORTED_MODULE_6__["JobActions"],
+    _jobfile__WEBPACK_IMPORTED_MODULE_7__["JobFileActions"],
+    _jobnote__WEBPACK_IMPORTED_MODULE_8__["JobNoteActions"],
+    _jobrecurringcost__WEBPACK_IMPORTED_MODULE_9__["JobRecurringCostActions"],
+    _jobrelationship__WEBPACK_IMPORTED_MODULE_10__["JobRelationshipActions"],
+    _jobstatus__WEBPACK_IMPORTED_MODULE_11__["JobStatusActions"],
+    _jobtype__WEBPACK_IMPORTED_MODULE_12__["JobTypeActions"],
+    _me__WEBPACK_IMPORTED_MODULE_13__["MeActions"],
+    _paymentoption__WEBPACK_IMPORTED_MODULE_14__["PaymentOptionActions"],
+    _position__WEBPACK_IMPORTED_MODULE_15__["PositionActions"],
+    _recurringcosttype__WEBPACK_IMPORTED_MODULE_16__["RecurringCostTypeActions"],
+    _relationship__WEBPACK_IMPORTED_MODULE_17__["RelationshipActions"],
+    _task__WEBPACK_IMPORTED_MODULE_18__["TaskActions"],
+    _taskassignee__WEBPACK_IMPORTED_MODULE_19__["TaskAssigneeActions"],
+    _tasknote__WEBPACK_IMPORTED_MODULE_20__["TaskNoteActions"],
+    _taskstatus__WEBPACK_IMPORTED_MODULE_21__["TaskStatusActions"],
+    _timedailysignoff__WEBPACK_IMPORTED_MODULE_22__["TimeDailySignoffActions"],
+    _timeentry__WEBPACK_IMPORTED_MODULE_23__["TimeEntryActions"],
+    _user__WEBPACK_IMPORTED_MODULE_24__["UserActions"]
 ];
 
 
@@ -3712,6 +3790,9 @@ var JobActions = /** @class */ (function () {
     JobActions.prototype.RemoveSuccess = function (payload) {
         return { type: JobActions_1.REMOVE_SUCCESS, payload: payload };
     };
+    JobActions.prototype.SortTasks = function (payload) {
+        return { type: JobActions_1.SORT_TASKS, payload: payload };
+    };
     var JobActions_1;
     JobActions.LOAD_ALL = '[Job] LOAD_ALL';
     JobActions.LOAD_ALL_SUCCESS = '[Job] LOAD_ALL_SUCCESS';
@@ -3723,12 +3804,329 @@ var JobActions = /** @class */ (function () {
     JobActions.UPDATE_SUCCESS = '[Job] UPDATE_SUCCESS';
     JobActions.REMOVE = '[Job] REMOVE';
     JobActions.REMOVE_SUCCESS = '[Job] REMOVE_SUCCESS';
+    JobActions.SORT_TASKS = '[Job] SORT_TASKS';
     JobActions = JobActions_1 = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         })
     ], JobActions);
     return JobActions;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/actions/jobfile.ts":
+/*!******************************************!*\
+  !*** ./src/app/state/actions/jobfile.ts ***!
+  \******************************************/
+/*! exports provided: JobFileActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobFileActions", function() { return JobFileActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var JobFileActions = /** @class */ (function () {
+    function JobFileActions() {
+    }
+    JobFileActions_1 = JobFileActions;
+    JobFileActions.prototype.LoadAll = function () {
+        return { type: JobFileActions_1.LOAD_ALL };
+    };
+    JobFileActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: JobFileActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    JobFileActions.prototype.LoadOne = function (payload) {
+        return { type: JobFileActions_1.LOAD_ONE, payload: payload };
+    };
+    JobFileActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: JobFileActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    JobFileActions.prototype.Add = function (payload) {
+        return { type: JobFileActions_1.ADD, payload: payload };
+    };
+    JobFileActions.prototype.AddSuccess = function (payload) {
+        return { type: JobFileActions_1.ADD_SUCCESS, payload: payload };
+    };
+    JobFileActions.prototype.Update = function (payload) {
+        return { type: JobFileActions_1.UPDATE, payload: payload };
+    };
+    JobFileActions.prototype.UpdateSuccess = function (payload) {
+        return { type: JobFileActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    JobFileActions.prototype.Remove = function (payload) {
+        return { type: JobFileActions_1.REMOVE, payload: payload };
+    };
+    JobFileActions.prototype.RemoveSuccess = function (payload) {
+        return { type: JobFileActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var JobFileActions_1;
+    JobFileActions.LOAD_ALL = '[JobFile] LOAD_ALL';
+    JobFileActions.LOAD_ALL_SUCCESS = '[JobFile] LOAD_ALL_SUCCESS';
+    JobFileActions.LOAD_ONE = '[JobFile] LOAD_ONE';
+    JobFileActions.LOAD_ONE_SUCCESS = '[JobFile] LOAD_ONE_SUCCESS';
+    JobFileActions.ADD = '[JobFile] ADD';
+    JobFileActions.ADD_SUCCESS = '[JobFile] ADD_SUCCESS';
+    JobFileActions.UPDATE = '[JobFile] UPDATE';
+    JobFileActions.UPDATE_SUCCESS = '[JobFile] UPDATE_SUCCESS';
+    JobFileActions.REMOVE = '[JobFile] REMOVE';
+    JobFileActions.REMOVE_SUCCESS = '[JobFile] REMOVE_SUCCESS';
+    JobFileActions = JobFileActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], JobFileActions);
+    return JobFileActions;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/actions/jobnote.ts":
+/*!******************************************!*\
+  !*** ./src/app/state/actions/jobnote.ts ***!
+  \******************************************/
+/*! exports provided: JobNoteActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobNoteActions", function() { return JobNoteActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var JobNoteActions = /** @class */ (function () {
+    function JobNoteActions() {
+    }
+    JobNoteActions_1 = JobNoteActions;
+    JobNoteActions.prototype.LoadAll = function () {
+        return { type: JobNoteActions_1.LOAD_ALL };
+    };
+    JobNoteActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: JobNoteActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    JobNoteActions.prototype.LoadOne = function (payload) {
+        return { type: JobNoteActions_1.LOAD_ONE, payload: payload };
+    };
+    JobNoteActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: JobNoteActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    JobNoteActions.prototype.Add = function (payload) {
+        return { type: JobNoteActions_1.ADD, payload: payload };
+    };
+    JobNoteActions.prototype.AddSuccess = function (payload) {
+        return { type: JobNoteActions_1.ADD_SUCCESS, payload: payload };
+    };
+    JobNoteActions.prototype.Update = function (payload) {
+        return { type: JobNoteActions_1.UPDATE, payload: payload };
+    };
+    JobNoteActions.prototype.UpdateSuccess = function (payload) {
+        return { type: JobNoteActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    JobNoteActions.prototype.Remove = function (payload) {
+        return { type: JobNoteActions_1.REMOVE, payload: payload };
+    };
+    JobNoteActions.prototype.RemoveSuccess = function (payload) {
+        return { type: JobNoteActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var JobNoteActions_1;
+    JobNoteActions.LOAD_ALL = '[JobNote] LOAD_ALL';
+    JobNoteActions.LOAD_ALL_SUCCESS = '[JobNote] LOAD_ALL_SUCCESS';
+    JobNoteActions.LOAD_ONE = '[JobNote] LOAD_ONE';
+    JobNoteActions.LOAD_ONE_SUCCESS = '[JobNote] LOAD_ONE_SUCCESS';
+    JobNoteActions.ADD = '[JobNote] ADD';
+    JobNoteActions.ADD_SUCCESS = '[JobNote] ADD_SUCCESS';
+    JobNoteActions.UPDATE = '[JobNote] UPDATE';
+    JobNoteActions.UPDATE_SUCCESS = '[JobNote] UPDATE_SUCCESS';
+    JobNoteActions.REMOVE = '[JobNote] REMOVE';
+    JobNoteActions.REMOVE_SUCCESS = '[JobNote] REMOVE_SUCCESS';
+    JobNoteActions = JobNoteActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], JobNoteActions);
+    return JobNoteActions;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/actions/jobrecurringcost.ts":
+/*!***************************************************!*\
+  !*** ./src/app/state/actions/jobrecurringcost.ts ***!
+  \***************************************************/
+/*! exports provided: JobRecurringCostActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobRecurringCostActions", function() { return JobRecurringCostActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var JobRecurringCostActions = /** @class */ (function () {
+    function JobRecurringCostActions() {
+    }
+    JobRecurringCostActions_1 = JobRecurringCostActions;
+    JobRecurringCostActions.prototype.LoadAll = function () {
+        return { type: JobRecurringCostActions_1.LOAD_ALL };
+    };
+    JobRecurringCostActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: JobRecurringCostActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    JobRecurringCostActions.prototype.LoadOne = function (payload) {
+        return { type: JobRecurringCostActions_1.LOAD_ONE, payload: payload };
+    };
+    JobRecurringCostActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: JobRecurringCostActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    JobRecurringCostActions.prototype.Add = function (payload) {
+        return { type: JobRecurringCostActions_1.ADD, payload: payload };
+    };
+    JobRecurringCostActions.prototype.AddSuccess = function (payload) {
+        return { type: JobRecurringCostActions_1.ADD_SUCCESS, payload: payload };
+    };
+    JobRecurringCostActions.prototype.Update = function (payload) {
+        return { type: JobRecurringCostActions_1.UPDATE, payload: payload };
+    };
+    JobRecurringCostActions.prototype.UpdateSuccess = function (payload) {
+        return { type: JobRecurringCostActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    JobRecurringCostActions.prototype.Patch = function (payload) {
+        return { type: JobRecurringCostActions_1.PATCH, payload: payload };
+    };
+    JobRecurringCostActions.prototype.PatchSuccess = function (payload) {
+        return { type: JobRecurringCostActions_1.PATCH_SUCCESS, payload: payload };
+    };
+    JobRecurringCostActions.prototype.Remove = function (payload) {
+        return { type: JobRecurringCostActions_1.REMOVE, payload: payload };
+    };
+    JobRecurringCostActions.prototype.RemoveSuccess = function (payload) {
+        return { type: JobRecurringCostActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var JobRecurringCostActions_1;
+    JobRecurringCostActions.LOAD_ALL = '[JobRecurringCost] LOAD_ALL';
+    JobRecurringCostActions.LOAD_ALL_SUCCESS = '[JobRecurringCost] LOAD_ALL_SUCCESS';
+    JobRecurringCostActions.LOAD_ONE = '[JobRecurringCost] LOAD_ONE';
+    JobRecurringCostActions.LOAD_ONE_SUCCESS = '[JobRecurringCost] LOAD_ONE_SUCCESS';
+    JobRecurringCostActions.ADD = '[JobRecurringCost] ADD';
+    JobRecurringCostActions.ADD_SUCCESS = '[JobRecurringCost] ADD_SUCCESS';
+    JobRecurringCostActions.UPDATE = '[JobRecurringCost] UPDATE';
+    JobRecurringCostActions.UPDATE_SUCCESS = '[JobRecurringCost] UPDATE_SUCCESS';
+    JobRecurringCostActions.PATCH = '[JobRecurringCost] PATCH';
+    JobRecurringCostActions.PATCH_SUCCESS = '[JobRecurringCost] PATCH_SUCCESS';
+    JobRecurringCostActions.REMOVE = '[JobRecurringCost] REMOVE';
+    JobRecurringCostActions.REMOVE_SUCCESS = '[JobRecurringCost] REMOVE_SUCCESS';
+    JobRecurringCostActions = JobRecurringCostActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], JobRecurringCostActions);
+    return JobRecurringCostActions;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/actions/jobrelationship.ts":
+/*!**************************************************!*\
+  !*** ./src/app/state/actions/jobrelationship.ts ***!
+  \**************************************************/
+/*! exports provided: JobRelationshipActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobRelationshipActions", function() { return JobRelationshipActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var JobRelationshipActions = /** @class */ (function () {
+    function JobRelationshipActions() {
+    }
+    JobRelationshipActions_1 = JobRelationshipActions;
+    JobRelationshipActions.prototype.LoadAll = function () {
+        return { type: JobRelationshipActions_1.LOAD_ALL };
+    };
+    JobRelationshipActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: JobRelationshipActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    JobRelationshipActions.prototype.LoadOne = function (payload) {
+        return { type: JobRelationshipActions_1.LOAD_ONE, payload: payload };
+    };
+    JobRelationshipActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: JobRelationshipActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    JobRelationshipActions.prototype.Add = function (payload) {
+        return { type: JobRelationshipActions_1.ADD, payload: payload };
+    };
+    JobRelationshipActions.prototype.AddSuccess = function (payload) {
+        return { type: JobRelationshipActions_1.ADD_SUCCESS, payload: payload };
+    };
+    JobRelationshipActions.prototype.Update = function (payload) {
+        return { type: JobRelationshipActions_1.UPDATE, payload: payload };
+    };
+    JobRelationshipActions.prototype.UpdateSuccess = function (payload) {
+        return { type: JobRelationshipActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    JobRelationshipActions.prototype.Patch = function (payload) {
+        return { type: JobRelationshipActions_1.PATCH, payload: payload };
+    };
+    JobRelationshipActions.prototype.PatchSuccess = function (payload) {
+        return { type: JobRelationshipActions_1.PATCH_SUCCESS, payload: payload };
+    };
+    JobRelationshipActions.prototype.Remove = function (payload) {
+        return { type: JobRelationshipActions_1.REMOVE, payload: payload };
+    };
+    JobRelationshipActions.prototype.RemoveSuccess = function (payload) {
+        return { type: JobRelationshipActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var JobRelationshipActions_1;
+    JobRelationshipActions.LOAD_ALL = '[JobRelationship] LOAD_ALL';
+    JobRelationshipActions.LOAD_ALL_SUCCESS = '[JobRelationship] LOAD_ALL_SUCCESS';
+    JobRelationshipActions.LOAD_ONE = '[JobRelationship] LOAD_ONE';
+    JobRelationshipActions.LOAD_ONE_SUCCESS = '[JobRelationship] LOAD_ONE_SUCCESS';
+    JobRelationshipActions.ADD = '[JobRelationship] ADD';
+    JobRelationshipActions.ADD_SUCCESS = '[JobRelationship] ADD_SUCCESS';
+    JobRelationshipActions.UPDATE = '[JobRelationship] UPDATE';
+    JobRelationshipActions.UPDATE_SUCCESS = '[JobRelationship] UPDATE_SUCCESS';
+    JobRelationshipActions.PATCH = '[JobRelationship] PATCH';
+    JobRelationshipActions.PATCH_SUCCESS = '[JobRelationship] PATCH_SUCCESS';
+    JobRelationshipActions.REMOVE = '[JobRelationship] REMOVE';
+    JobRelationshipActions.REMOVE_SUCCESS = '[JobRelationship] REMOVE_SUCCESS';
+    JobRelationshipActions = JobRelationshipActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], JobRelationshipActions);
+    return JobRelationshipActions;
 }());
 
 
@@ -3810,6 +4208,81 @@ var JobStatusActions = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/state/actions/jobtype.ts":
+/*!******************************************!*\
+  !*** ./src/app/state/actions/jobtype.ts ***!
+  \******************************************/
+/*! exports provided: JobTypeActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobTypeActions", function() { return JobTypeActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var JobTypeActions = /** @class */ (function () {
+    function JobTypeActions() {
+    }
+    JobTypeActions_1 = JobTypeActions;
+    JobTypeActions.prototype.LoadAll = function () {
+        return { type: JobTypeActions_1.LOAD_ALL };
+    };
+    JobTypeActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: JobTypeActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    JobTypeActions.prototype.LoadOne = function (payload) {
+        return { type: JobTypeActions_1.LOAD_ONE, payload: payload };
+    };
+    JobTypeActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: JobTypeActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    JobTypeActions.prototype.Add = function (payload) {
+        return { type: JobTypeActions_1.ADD, payload: payload };
+    };
+    JobTypeActions.prototype.AddSuccess = function (payload) {
+        return { type: JobTypeActions_1.ADD_SUCCESS, payload: payload };
+    };
+    JobTypeActions.prototype.Update = function (payload) {
+        return { type: JobTypeActions_1.UPDATE, payload: payload };
+    };
+    JobTypeActions.prototype.UpdateSuccess = function (payload) {
+        return { type: JobTypeActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    JobTypeActions.prototype.Remove = function (payload) {
+        return { type: JobTypeActions_1.REMOVE, payload: payload };
+    };
+    JobTypeActions.prototype.RemoveSuccess = function (payload) {
+        return { type: JobTypeActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var JobTypeActions_1;
+    JobTypeActions.LOAD_ALL = '[JobType] LOAD_ALL';
+    JobTypeActions.LOAD_ALL_SUCCESS = '[JobType] LOAD_ALL_SUCCESS';
+    JobTypeActions.LOAD_ONE = '[JobType] LOAD_ONE';
+    JobTypeActions.LOAD_ONE_SUCCESS = '[JobType] LOAD_ONE_SUCCESS';
+    JobTypeActions.ADD = '[JobType] ADD';
+    JobTypeActions.ADD_SUCCESS = '[JobType] ADD_SUCCESS';
+    JobTypeActions.UPDATE = '[JobType] UPDATE';
+    JobTypeActions.UPDATE_SUCCESS = '[JobType] UPDATE_SUCCESS';
+    JobTypeActions.REMOVE = '[JobType] REMOVE';
+    JobTypeActions.REMOVE_SUCCESS = '[JobType] REMOVE_SUCCESS';
+    JobTypeActions = JobTypeActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], JobTypeActions);
+    return JobTypeActions;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/actions/me.ts":
 /*!*************************************!*\
   !*** ./src/app/state/actions/me.ts ***!
@@ -3847,6 +4320,81 @@ var MeActions = /** @class */ (function () {
         })
     ], MeActions);
     return MeActions;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/actions/paymentoption.ts":
+/*!************************************************!*\
+  !*** ./src/app/state/actions/paymentoption.ts ***!
+  \************************************************/
+/*! exports provided: PaymentOptionActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaymentOptionActions", function() { return PaymentOptionActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var PaymentOptionActions = /** @class */ (function () {
+    function PaymentOptionActions() {
+    }
+    PaymentOptionActions_1 = PaymentOptionActions;
+    PaymentOptionActions.prototype.LoadAll = function () {
+        return { type: PaymentOptionActions_1.LOAD_ALL };
+    };
+    PaymentOptionActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: PaymentOptionActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    PaymentOptionActions.prototype.LoadOne = function (payload) {
+        return { type: PaymentOptionActions_1.LOAD_ONE, payload: payload };
+    };
+    PaymentOptionActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: PaymentOptionActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    PaymentOptionActions.prototype.Add = function (payload) {
+        return { type: PaymentOptionActions_1.ADD, payload: payload };
+    };
+    PaymentOptionActions.prototype.AddSuccess = function (payload) {
+        return { type: PaymentOptionActions_1.ADD_SUCCESS, payload: payload };
+    };
+    PaymentOptionActions.prototype.Update = function (payload) {
+        return { type: PaymentOptionActions_1.UPDATE, payload: payload };
+    };
+    PaymentOptionActions.prototype.UpdateSuccess = function (payload) {
+        return { type: PaymentOptionActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    PaymentOptionActions.prototype.Remove = function (payload) {
+        return { type: PaymentOptionActions_1.REMOVE, payload: payload };
+    };
+    PaymentOptionActions.prototype.RemoveSuccess = function (payload) {
+        return { type: PaymentOptionActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var PaymentOptionActions_1;
+    PaymentOptionActions.LOAD_ALL = '[PaymentOption] LOAD_ALL';
+    PaymentOptionActions.LOAD_ALL_SUCCESS = '[PaymentOption] LOAD_ALL_SUCCESS';
+    PaymentOptionActions.LOAD_ONE = '[PaymentOption] LOAD_ONE';
+    PaymentOptionActions.LOAD_ONE_SUCCESS = '[PaymentOption] LOAD_ONE_SUCCESS';
+    PaymentOptionActions.ADD = '[PaymentOption] ADD';
+    PaymentOptionActions.ADD_SUCCESS = '[PaymentOption] ADD_SUCCESS';
+    PaymentOptionActions.UPDATE = '[PaymentOption] UPDATE';
+    PaymentOptionActions.UPDATE_SUCCESS = '[PaymentOption] UPDATE_SUCCESS';
+    PaymentOptionActions.REMOVE = '[PaymentOption] REMOVE';
+    PaymentOptionActions.REMOVE_SUCCESS = '[PaymentOption] REMOVE_SUCCESS';
+    PaymentOptionActions = PaymentOptionActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], PaymentOptionActions);
+    return PaymentOptionActions;
 }());
 
 
@@ -3928,6 +4476,156 @@ var PositionActions = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/state/actions/recurringcosttype.ts":
+/*!****************************************************!*\
+  !*** ./src/app/state/actions/recurringcosttype.ts ***!
+  \****************************************************/
+/*! exports provided: RecurringCostTypeActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecurringCostTypeActions", function() { return RecurringCostTypeActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var RecurringCostTypeActions = /** @class */ (function () {
+    function RecurringCostTypeActions() {
+    }
+    RecurringCostTypeActions_1 = RecurringCostTypeActions;
+    RecurringCostTypeActions.prototype.LoadAll = function () {
+        return { type: RecurringCostTypeActions_1.LOAD_ALL };
+    };
+    RecurringCostTypeActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: RecurringCostTypeActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    RecurringCostTypeActions.prototype.LoadOne = function (payload) {
+        return { type: RecurringCostTypeActions_1.LOAD_ONE, payload: payload };
+    };
+    RecurringCostTypeActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: RecurringCostTypeActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    RecurringCostTypeActions.prototype.Add = function (payload) {
+        return { type: RecurringCostTypeActions_1.ADD, payload: payload };
+    };
+    RecurringCostTypeActions.prototype.AddSuccess = function (payload) {
+        return { type: RecurringCostTypeActions_1.ADD_SUCCESS, payload: payload };
+    };
+    RecurringCostTypeActions.prototype.Update = function (payload) {
+        return { type: RecurringCostTypeActions_1.UPDATE, payload: payload };
+    };
+    RecurringCostTypeActions.prototype.UpdateSuccess = function (payload) {
+        return { type: RecurringCostTypeActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    RecurringCostTypeActions.prototype.Remove = function (payload) {
+        return { type: RecurringCostTypeActions_1.REMOVE, payload: payload };
+    };
+    RecurringCostTypeActions.prototype.RemoveSuccess = function (payload) {
+        return { type: RecurringCostTypeActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var RecurringCostTypeActions_1;
+    RecurringCostTypeActions.LOAD_ALL = '[RecurringCostType] LOAD_ALL';
+    RecurringCostTypeActions.LOAD_ALL_SUCCESS = '[RecurringCostType] LOAD_ALL_SUCCESS';
+    RecurringCostTypeActions.LOAD_ONE = '[RecurringCostType] LOAD_ONE';
+    RecurringCostTypeActions.LOAD_ONE_SUCCESS = '[RecurringCostType] LOAD_ONE_SUCCESS';
+    RecurringCostTypeActions.ADD = '[RecurringCostType] ADD';
+    RecurringCostTypeActions.ADD_SUCCESS = '[RecurringCostType] ADD_SUCCESS';
+    RecurringCostTypeActions.UPDATE = '[RecurringCostType] UPDATE';
+    RecurringCostTypeActions.UPDATE_SUCCESS = '[RecurringCostType] UPDATE_SUCCESS';
+    RecurringCostTypeActions.REMOVE = '[RecurringCostType] REMOVE';
+    RecurringCostTypeActions.REMOVE_SUCCESS = '[RecurringCostType] REMOVE_SUCCESS';
+    RecurringCostTypeActions = RecurringCostTypeActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], RecurringCostTypeActions);
+    return RecurringCostTypeActions;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/actions/relationship.ts":
+/*!***********************************************!*\
+  !*** ./src/app/state/actions/relationship.ts ***!
+  \***********************************************/
+/*! exports provided: RelationshipActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RelationshipActions", function() { return RelationshipActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var RelationshipActions = /** @class */ (function () {
+    function RelationshipActions() {
+    }
+    RelationshipActions_1 = RelationshipActions;
+    RelationshipActions.prototype.LoadAll = function () {
+        return { type: RelationshipActions_1.LOAD_ALL };
+    };
+    RelationshipActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: RelationshipActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    RelationshipActions.prototype.LoadOne = function (payload) {
+        return { type: RelationshipActions_1.LOAD_ONE, payload: payload };
+    };
+    RelationshipActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: RelationshipActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    RelationshipActions.prototype.Add = function (payload) {
+        return { type: RelationshipActions_1.ADD, payload: payload };
+    };
+    RelationshipActions.prototype.AddSuccess = function (payload) {
+        return { type: RelationshipActions_1.ADD_SUCCESS, payload: payload };
+    };
+    RelationshipActions.prototype.Update = function (payload) {
+        return { type: RelationshipActions_1.UPDATE, payload: payload };
+    };
+    RelationshipActions.prototype.UpdateSuccess = function (payload) {
+        return { type: RelationshipActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    RelationshipActions.prototype.Remove = function (payload) {
+        return { type: RelationshipActions_1.REMOVE, payload: payload };
+    };
+    RelationshipActions.prototype.RemoveSuccess = function (payload) {
+        return { type: RelationshipActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var RelationshipActions_1;
+    RelationshipActions.LOAD_ALL = '[Relationship] LOAD_ALL';
+    RelationshipActions.LOAD_ALL_SUCCESS = '[Relationship] LOAD_ALL_SUCCESS';
+    RelationshipActions.LOAD_ONE = '[Relationship] LOAD_ONE';
+    RelationshipActions.LOAD_ONE_SUCCESS = '[Relationship] LOAD_ONE_SUCCESS';
+    RelationshipActions.ADD = '[Relationship] ADD';
+    RelationshipActions.ADD_SUCCESS = '[Relationship] ADD_SUCCESS';
+    RelationshipActions.UPDATE = '[Relationship] UPDATE';
+    RelationshipActions.UPDATE_SUCCESS = '[Relationship] UPDATE_SUCCESS';
+    RelationshipActions.REMOVE = '[Relationship] REMOVE';
+    RelationshipActions.REMOVE_SUCCESS = '[Relationship] REMOVE_SUCCESS';
+    RelationshipActions = RelationshipActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], RelationshipActions);
+    return RelationshipActions;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/actions/task.ts":
 /*!***************************************!*\
   !*** ./src/app/state/actions/task.ts ***!
@@ -3986,6 +4684,9 @@ var TaskActions = /** @class */ (function () {
     TaskActions.prototype.RemoveSuccess = function (payload) {
         return { type: TaskActions_1.REMOVE_SUCCESS, payload: payload };
     };
+    TaskActions.prototype.ReplaceMany = function (payload) {
+        return { type: TaskActions_1.REPLACE_MANY, payload: payload };
+    };
     var TaskActions_1;
     TaskActions.LOAD_ALL = '[Task] LOAD_ALL';
     TaskActions.LOAD_ALL_SUCCESS = '[Task] LOAD_ALL_SUCCESS';
@@ -3999,6 +4700,7 @@ var TaskActions = /** @class */ (function () {
     TaskActions.PATCH_SUCCESS = '[Task] PATCH_SUCCESS';
     TaskActions.REMOVE = '[Task] REMOVE';
     TaskActions.REMOVE_SUCCESS = '[Task] REMOVE_SUCCESS';
+    TaskActions.REPLACE_MANY = '[Task] REPLACE_MANY';
     TaskActions = TaskActions_1 = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -4242,8 +4944,8 @@ var TimeDailySignoffActions = /** @class */ (function () {
     function TimeDailySignoffActions() {
     }
     TimeDailySignoffActions_1 = TimeDailySignoffActions;
-    TimeDailySignoffActions.prototype.LoadAll = function () {
-        return { type: TimeDailySignoffActions_1.LOAD_ALL };
+    TimeDailySignoffActions.prototype.LoadAll = function (payload) {
+        return { type: TimeDailySignoffActions_1.LOAD_ALL, payload: payload };
     };
     TimeDailySignoffActions.prototype.LoadAllSuccess = function (payload) {
         return { type: TimeDailySignoffActions_1.LOAD_ALL_SUCCESS, payload: payload };
@@ -4325,8 +5027,8 @@ var TimeEntryActions = /** @class */ (function () {
     function TimeEntryActions() {
     }
     TimeEntryActions_1 = TimeEntryActions;
-    TimeEntryActions.prototype.LoadAll = function () {
-        return { type: TimeEntryActions_1.LOAD_ALL };
+    TimeEntryActions.prototype.LoadAll = function (payload) {
+        return { type: TimeEntryActions_1.LOAD_ALL, payload: payload };
     };
     TimeEntryActions.prototype.LoadAllSuccess = function (payload) {
         return { type: TimeEntryActions_1.LOAD_ALL_SUCCESS, payload: payload };
@@ -4474,8 +5176,8 @@ var APIBaseEffects = /** @class */ (function () {
         this.updates$ = updates$;
         this.service$ = service$;
         this.url = '';
-        this._all$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (action) {
-            return _this.service$.all(_this.apiUrl).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
+        this._all$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (payload) {
+            return _this.service$.all(_this.apiUrl, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
         })); };
         this._one$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (id) {
             return _this.service$.one(_this.apiUrl, id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
@@ -4509,6 +5211,86 @@ var APIBaseEffects = /** @class */ (function () {
     ], APIBaseEffects);
     return APIBaseEffects;
 }());
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/effects/billingfrequency.ts":
+/*!***************************************************!*\
+  !*** ./src/app/state/effects/billingfrequency.ts ***!
+  \***************************************************/
+/*! exports provided: BillingFrequencyEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BillingFrequencyEffects", function() { return BillingFrequencyEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var BillingFrequencyEffects = /** @class */ (function (_super) {
+    __extends(BillingFrequencyEffects, _super);
+    function BillingFrequencyEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/billing-frequencies/';
+        _this.prefix = '[BillingFrequency]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], BillingFrequencyEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], BillingFrequencyEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], BillingFrequencyEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], BillingFrequencyEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], BillingFrequencyEffects.prototype, "remove$", void 0);
+    BillingFrequencyEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], BillingFrequencyEffects);
+    return BillingFrequencyEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
 
 
 
@@ -4690,9 +5472,11 @@ var ClientContactEffects = /** @class */ (function (_super) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataEffects", function() { return DataEffects; });
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions */ "./src/app/state/actions/index.ts");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4706,36 +5490,51 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var DataEffects = /** @class */ (function () {
     function DataEffects(updates$) {
         this.updates$ = updates$;
-        this.loadData$ = this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["ofType"])(_actions__WEBPACK_IMPORTED_MODULE_0__["DataActions"].LOAD_DATA), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["mergeMap"])(function () {
+        this.loadData$ = this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_actions__WEBPACK_IMPORTED_MODULE_0__["DataActions"].LOAD_DATA), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["mergeMap"])(function () {
+            var fromDate = {
+                params: {
+                    date_from: moment__WEBPACK_IMPORTED_MODULE_1__().add(-2, 'months').format('YYYY-MM-DD')
+                }
+            };
             return [
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientContactActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobStatusActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["MeActions"]().Load(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["PositionActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskAssigneeActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskNoteActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobNoteActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TimeDailySignoffActions"]().LoadAll(fromDate),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TimeEntryActions"]().LoadAll(fromDate),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["BillingFrequencyActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientContactActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobFileActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobRecurringCostActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobRelationshipActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobStatusActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobTypeActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["MeActions"]().Load(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["PaymentOptionActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["PositionActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["RecurringCostTypeActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["RelationshipActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskAssigneeActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskStatusActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["TimeDailySignoffActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["TimeEntryActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["UserActions"]().LoadAll()
             ];
         }));
     }
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
         __metadata("design:type", Object)
     ], DataEffects.prototype, "loadData$", void 0);
     DataEffects = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Actions"]])
+        __metadata("design:paramtypes", [_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Actions"]])
     ], DataEffects);
     return DataEffects;
 }());
@@ -4754,20 +5553,38 @@ var DataEffects = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "effects", function() { return effects; });
-/* harmony import */ var _clientcontact__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clientcontact */ "./src/app/state/effects/clientcontact.ts");
-/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./client */ "./src/app/state/effects/client.ts");
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data */ "./src/app/state/effects/data.ts");
-/* harmony import */ var _job__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./job */ "./src/app/state/effects/job.ts");
-/* harmony import */ var _jobstatus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./jobstatus */ "./src/app/state/effects/jobstatus.ts");
-/* harmony import */ var _me__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./me */ "./src/app/state/effects/me.ts");
-/* harmony import */ var _position__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./position */ "./src/app/state/effects/position.ts");
-/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/effects/taskassignee.ts");
-/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./task */ "./src/app/state/effects/task.ts");
-/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/effects/tasknote.ts");
-/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/effects/taskstatus.ts");
-/* harmony import */ var _timedailysignoff__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./timedailysignoff */ "./src/app/state/effects/timedailysignoff.ts");
-/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+/* harmony import */ var _billingfrequency__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./billingfrequency */ "./src/app/state/effects/billingfrequency.ts");
+/* harmony import */ var _clientcontact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clientcontact */ "./src/app/state/effects/clientcontact.ts");
+/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./client */ "./src/app/state/effects/client.ts");
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data */ "./src/app/state/effects/data.ts");
+/* harmony import */ var _job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./job */ "./src/app/state/effects/job.ts");
+/* harmony import */ var _jobfile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./jobfile */ "./src/app/state/effects/jobfile.ts");
+/* harmony import */ var _jobnote__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./jobnote */ "./src/app/state/effects/jobnote.ts");
+/* harmony import */ var _jobrecurringcost__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./jobrecurringcost */ "./src/app/state/effects/jobrecurringcost.ts");
+/* harmony import */ var _jobrelationship__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./jobrelationship */ "./src/app/state/effects/jobrelationship.ts");
+/* harmony import */ var _jobstatus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./jobstatus */ "./src/app/state/effects/jobstatus.ts");
+/* harmony import */ var _jobtype__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./jobtype */ "./src/app/state/effects/jobtype.ts");
+/* harmony import */ var _me__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./me */ "./src/app/state/effects/me.ts");
+/* harmony import */ var _paymentoption__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./paymentoption */ "./src/app/state/effects/paymentoption.ts");
+/* harmony import */ var _position__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./position */ "./src/app/state/effects/position.ts");
+/* harmony import */ var _recurringcosttype__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./recurringcosttype */ "./src/app/state/effects/recurringcosttype.ts");
+/* harmony import */ var _relationship__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./relationship */ "./src/app/state/effects/relationship.ts");
+/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/effects/taskassignee.ts");
+/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./task */ "./src/app/state/effects/task.ts");
+/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/effects/tasknote.ts");
+/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/effects/taskstatus.ts");
+/* harmony import */ var _timedailysignoff__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./timedailysignoff */ "./src/app/state/effects/timedailysignoff.ts");
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4783,20 +5600,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var effects = [
-    _clientcontact__WEBPACK_IMPORTED_MODULE_0__["ClientContactEffects"],
-    _client__WEBPACK_IMPORTED_MODULE_1__["ClientEffects"],
-    _data__WEBPACK_IMPORTED_MODULE_2__["DataEffects"],
-    _job__WEBPACK_IMPORTED_MODULE_3__["JobEffects"],
-    _jobstatus__WEBPACK_IMPORTED_MODULE_4__["JobStatusEffects"],
-    _me__WEBPACK_IMPORTED_MODULE_5__["MeEffects"],
-    _position__WEBPACK_IMPORTED_MODULE_6__["PositionEffects"],
-    _task__WEBPACK_IMPORTED_MODULE_8__["TaskEffects"],
-    _taskassignee__WEBPACK_IMPORTED_MODULE_7__["TaskAssigneeEffects"],
-    _tasknote__WEBPACK_IMPORTED_MODULE_9__["TaskNoteEffects"],
-    _taskstatus__WEBPACK_IMPORTED_MODULE_10__["TaskStatusEffects"],
-    _timedailysignoff__WEBPACK_IMPORTED_MODULE_11__["TimeDailySignoffEffects"],
-    _timeentry__WEBPACK_IMPORTED_MODULE_12__["TimeEntryEffects"],
-    _user__WEBPACK_IMPORTED_MODULE_13__["UserEffects"]
+    _billingfrequency__WEBPACK_IMPORTED_MODULE_0__["BillingFrequencyEffects"],
+    _clientcontact__WEBPACK_IMPORTED_MODULE_1__["ClientContactEffects"],
+    _client__WEBPACK_IMPORTED_MODULE_2__["ClientEffects"],
+    _data__WEBPACK_IMPORTED_MODULE_3__["DataEffects"],
+    _job__WEBPACK_IMPORTED_MODULE_4__["JobEffects"],
+    _jobfile__WEBPACK_IMPORTED_MODULE_5__["JobFileEffects"],
+    _jobnote__WEBPACK_IMPORTED_MODULE_6__["JobNoteEffects"],
+    _jobrecurringcost__WEBPACK_IMPORTED_MODULE_7__["JobRecurringCostEffects"],
+    _jobrelationship__WEBPACK_IMPORTED_MODULE_8__["JobRelationshipEffects"],
+    _jobstatus__WEBPACK_IMPORTED_MODULE_9__["JobStatusEffects"],
+    _jobtype__WEBPACK_IMPORTED_MODULE_10__["JobTypeEffects"],
+    _me__WEBPACK_IMPORTED_MODULE_11__["MeEffects"],
+    _paymentoption__WEBPACK_IMPORTED_MODULE_12__["PaymentOptionEffects"],
+    _position__WEBPACK_IMPORTED_MODULE_13__["PositionEffects"],
+    _recurringcosttype__WEBPACK_IMPORTED_MODULE_14__["RecurringCostTypeEffects"],
+    _relationship__WEBPACK_IMPORTED_MODULE_15__["RelationshipEffects"],
+    _task__WEBPACK_IMPORTED_MODULE_17__["TaskEffects"],
+    _taskassignee__WEBPACK_IMPORTED_MODULE_16__["TaskAssigneeEffects"],
+    _tasknote__WEBPACK_IMPORTED_MODULE_18__["TaskNoteEffects"],
+    _taskstatus__WEBPACK_IMPORTED_MODULE_19__["TaskStatusEffects"],
+    _timedailysignoff__WEBPACK_IMPORTED_MODULE_20__["TimeDailySignoffEffects"],
+    _timeentry__WEBPACK_IMPORTED_MODULE_21__["TimeEntryEffects"],
+    _user__WEBPACK_IMPORTED_MODULE_22__["UserEffects"]
 ];
 
 
@@ -4812,6 +5638,101 @@ var effects = [
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobEffects", function() { return JobEffects; });
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _actions_task__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../actions/task */ "./src/app/state/actions/task.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var JobEffects = /** @class */ (function (_super) {
+    __extends(JobEffects, _super);
+    function JobEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/jobs/';
+        _this.prefix = '[Job]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.sortTasks$ = _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(_this.prefix + " SORT_TASKS"), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
+            return _this.service$.post("" + _this.apiUrl + obj.id + "/sort-tasks/", obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: _actions_task__WEBPACK_IMPORTED_MODULE_5__["TaskActions"].REPLACE_MANY, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
+        }));
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobEffects.prototype, "sortTasks$", void 0);
+    JobEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], JobEffects);
+    return JobEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_2__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/effects/jobfile.ts":
+/*!******************************************!*\
+  !*** ./src/app/state/effects/jobfile.ts ***!
+  \******************************************/
+/*! exports provided: JobFileEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobFileEffects", function() { return JobFileEffects; });
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
 /* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
@@ -4837,12 +5758,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var JobEffects = /** @class */ (function (_super) {
-    __extends(JobEffects, _super);
-    function JobEffects() {
+var JobFileEffects = /** @class */ (function (_super) {
+    __extends(JobFileEffects, _super);
+    function JobFileEffects() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.url = '/api/jobs/';
-        _this.prefix = '[Job]';
+        _this.url = '/api/job-files/';
+        _this.prefix = '[JobFile]';
         _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
         _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
         _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
@@ -4853,29 +5774,279 @@ var JobEffects = /** @class */ (function (_super) {
     __decorate([
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
-    ], JobEffects.prototype, "all$", void 0);
+    ], JobFileEffects.prototype, "all$", void 0);
     __decorate([
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
-    ], JobEffects.prototype, "one$", void 0);
+    ], JobFileEffects.prototype, "one$", void 0);
     __decorate([
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
-    ], JobEffects.prototype, "add$", void 0);
+    ], JobFileEffects.prototype, "add$", void 0);
     __decorate([
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
-    ], JobEffects.prototype, "update$", void 0);
+    ], JobFileEffects.prototype, "update$", void 0);
     __decorate([
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
-    ], JobEffects.prototype, "remove$", void 0);
-    JobEffects = __decorate([
+    ], JobFileEffects.prototype, "remove$", void 0);
+    JobFileEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
         })
-    ], JobEffects);
-    return JobEffects;
+    ], JobFileEffects);
+    return JobFileEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/effects/jobnote.ts":
+/*!******************************************!*\
+  !*** ./src/app/state/effects/jobnote.ts ***!
+  \******************************************/
+/*! exports provided: JobNoteEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobNoteEffects", function() { return JobNoteEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var JobNoteEffects = /** @class */ (function (_super) {
+    __extends(JobNoteEffects, _super);
+    function JobNoteEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/job-notes/';
+        _this.prefix = '[JobNote]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobNoteEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobNoteEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobNoteEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobNoteEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobNoteEffects.prototype, "remove$", void 0);
+    JobNoteEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], JobNoteEffects);
+    return JobNoteEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/effects/jobrecurringcost.ts":
+/*!***************************************************!*\
+  !*** ./src/app/state/effects/jobrecurringcost.ts ***!
+  \***************************************************/
+/*! exports provided: JobRecurringCostEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobRecurringCostEffects", function() { return JobRecurringCostEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var JobRecurringCostEffects = /** @class */ (function (_super) {
+    __extends(JobRecurringCostEffects, _super);
+    function JobRecurringCostEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/job-recurring-costs/';
+        _this.prefix = '[JobRecurringCost]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRecurringCostEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRecurringCostEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRecurringCostEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRecurringCostEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRecurringCostEffects.prototype, "patch$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRecurringCostEffects.prototype, "remove$", void 0);
+    JobRecurringCostEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], JobRecurringCostEffects);
+    return JobRecurringCostEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/effects/jobrelationship.ts":
+/*!**************************************************!*\
+  !*** ./src/app/state/effects/jobrelationship.ts ***!
+  \**************************************************/
+/*! exports provided: JobRelationshipEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobRelationshipEffects", function() { return JobRelationshipEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var JobRelationshipEffects = /** @class */ (function (_super) {
+    __extends(JobRelationshipEffects, _super);
+    function JobRelationshipEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/job-relationships/';
+        _this.prefix = '[JobRelationship]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRelationshipEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRelationshipEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRelationshipEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRelationshipEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRelationshipEffects.prototype, "patch$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRelationshipEffects.prototype, "remove$", void 0);
+    JobRelationshipEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], JobRelationshipEffects);
+    return JobRelationshipEffects;
 }(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
 
 
@@ -4962,6 +6133,86 @@ var JobStatusEffects = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/state/effects/jobtype.ts":
+/*!******************************************!*\
+  !*** ./src/app/state/effects/jobtype.ts ***!
+  \******************************************/
+/*! exports provided: JobTypeEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobTypeEffects", function() { return JobTypeEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var JobTypeEffects = /** @class */ (function (_super) {
+    __extends(JobTypeEffects, _super);
+    function JobTypeEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/job-types/';
+        _this.prefix = '[JobType]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobTypeEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobTypeEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobTypeEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobTypeEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobTypeEffects.prototype, "remove$", void 0);
+    JobTypeEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], JobTypeEffects);
+    return JobTypeEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/effects/me.ts":
 /*!*************************************!*\
   !*** ./src/app/state/effects/me.ts ***!
@@ -5016,6 +6267,86 @@ var MeEffects = /** @class */ (function (_super) {
         })
     ], MeEffects);
     return MeEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/effects/paymentoption.ts":
+/*!************************************************!*\
+  !*** ./src/app/state/effects/paymentoption.ts ***!
+  \************************************************/
+/*! exports provided: PaymentOptionEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaymentOptionEffects", function() { return PaymentOptionEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PaymentOptionEffects = /** @class */ (function (_super) {
+    __extends(PaymentOptionEffects, _super);
+    function PaymentOptionEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/payment-options/';
+        _this.prefix = '[PaymentOption]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], PaymentOptionEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], PaymentOptionEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], PaymentOptionEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], PaymentOptionEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], PaymentOptionEffects.prototype, "remove$", void 0);
+    PaymentOptionEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], PaymentOptionEffects);
+    return PaymentOptionEffects;
 }(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
 
 
@@ -5096,6 +6427,166 @@ var PositionEffects = /** @class */ (function (_super) {
         })
     ], PositionEffects);
     return PositionEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/effects/recurringcosttype.ts":
+/*!****************************************************!*\
+  !*** ./src/app/state/effects/recurringcosttype.ts ***!
+  \****************************************************/
+/*! exports provided: RecurringCostTypeEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecurringCostTypeEffects", function() { return RecurringCostTypeEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var RecurringCostTypeEffects = /** @class */ (function (_super) {
+    __extends(RecurringCostTypeEffects, _super);
+    function RecurringCostTypeEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/recurring-cost-types/';
+        _this.prefix = '[RecurringCostType]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], RecurringCostTypeEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], RecurringCostTypeEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], RecurringCostTypeEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], RecurringCostTypeEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], RecurringCostTypeEffects.prototype, "remove$", void 0);
+    RecurringCostTypeEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], RecurringCostTypeEffects);
+    return RecurringCostTypeEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/effects/relationship.ts":
+/*!***********************************************!*\
+  !*** ./src/app/state/effects/relationship.ts ***!
+  \***********************************************/
+/*! exports provided: RelationshipEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RelationshipEffects", function() { return RelationshipEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var RelationshipEffects = /** @class */ (function (_super) {
+    __extends(RelationshipEffects, _super);
+    function RelationshipEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/relationships/';
+        _this.prefix = '[Relationship]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], RelationshipEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], RelationshipEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], RelationshipEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], RelationshipEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], RelationshipEffects.prototype, "remove$", void 0);
+    RelationshipEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], RelationshipEffects);
+    return RelationshipEffects;
 }(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
 
 
@@ -5669,24 +7160,77 @@ function reduceState(state, action, type) {
     switch (type) {
         case 'REPLACE_ALL':
             return action.payload;
+        case 'REPLACE_MANY':
+            lodash__WEBPACK_IMPORTED_MODULE_0__["each"](action.payload, function (obj) {
+                var index = lodash__WEBPACK_IMPORTED_MODULE_0__["findIndex"](state, { id: obj.id });
+                if (index >= 0) {
+                    state = state.slice(0, index).concat([
+                        obj
+                    ], state.slice(index + 1));
+                }
+                else {
+                    state = state.concat([obj]);
+                }
+            });
+            return state.slice();
         case 'REPLACE_ONE':
             var index = lodash__WEBPACK_IMPORTED_MODULE_0__["findIndex"](state, { id: action.payload.id });
             if (index >= 0) {
-                // only replace the data if its not the same to avoid a state change
-                if (lodash__WEBPACK_IMPORTED_MODULE_0__["isEqual"](state[index], action.payload)) {
-                    return state;
-                }
-                else {
-                    return state.slice(0, index).concat([
-                        action.payload
-                    ], state.slice(index + 1));
-                }
+                return state.slice(0, index).concat([
+                    action.payload
+                ], state.slice(index + 1));
             }
             return state.concat([action.payload]);
         case 'ADD_ONE':
             return state.concat([action.payload]);
         case 'REMOVE_ONE':
             return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](state, function (obj) { return obj.id !== action.payload.id; });
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/state/reducers/billingfrequency.ts":
+/*!****************************************************!*\
+  !*** ./src/app/state/reducers/billingfrequency.ts ***!
+  \****************************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[BillingFrequency]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
         default:
             return state;
     }
@@ -5713,9 +7257,12 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[Client]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -5756,9 +7303,12 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[ClientContact]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -5846,9 +7396,12 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[Job]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -5858,6 +7411,193 @@ function reducer(state, action) {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
         }
         case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/state/reducers/jobfile.ts":
+/*!*******************************************!*\
+  !*** ./src/app/state/reducers/jobfile.ts ***!
+  \*******************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[JobFile]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/state/reducers/jobnote.ts":
+/*!*******************************************!*\
+  !*** ./src/app/state/reducers/jobnote.ts ***!
+  \*******************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[JobNote]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/state/reducers/jobrecurringcost.ts":
+/*!****************************************************!*\
+  !*** ./src/app/state/reducers/jobrecurringcost.ts ***!
+  \****************************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[JobRecurringCost]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/state/reducers/jobrelationship.ts":
+/*!***************************************************!*\
+  !*** ./src/app/state/reducers/jobrelationship.ts ***!
+  \***************************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[JobRelationship]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " PATCH_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
         }
         case actionPrefix + " REMOVE_SUCCESS": {
@@ -5889,9 +7629,58 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[JobStatus]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/state/reducers/jobtype.ts":
+/*!*******************************************!*\
+  !*** ./src/app/state/reducers/jobtype.ts ***!
+  \*******************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[JobType]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -5949,6 +7738,52 @@ function reducer(state, action) {
 
 /***/ }),
 
+/***/ "./src/app/state/reducers/paymentoption.ts":
+/*!*************************************************!*\
+  !*** ./src/app/state/reducers/paymentoption.ts ***!
+  \*************************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[PaymentOption]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/state/reducers/position.ts":
 /*!********************************************!*\
   !*** ./src/app/state/reducers/position.ts ***!
@@ -5967,9 +7802,104 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[Position]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/state/reducers/recurringcosttype.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/state/reducers/recurringcosttype.ts ***!
+  \*****************************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[RecurringCostType]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/state/reducers/relationship.ts":
+/*!************************************************!*\
+  !*** ./src/app/state/reducers/relationship.ts ***!
+  \************************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[Relationship]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -6010,9 +7940,12 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[Task]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -6056,9 +7989,12 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[TaskAssignee]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -6102,9 +8038,12 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[TaskNote]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -6145,9 +8084,12 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[TaskStatus]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -6179,9 +8121,12 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[TimeDailySignoff]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -6225,9 +8170,12 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[TimeEntry]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -6271,9 +8219,12 @@ function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[User]';
     switch (action.type) {
-        // Replace all objects
+        // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
             return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
         }
         // Basic CRUD actions
         case actionPrefix + " LOAD_ONE_SUCCESS": {
@@ -6326,30 +8277,79 @@ var getClientContactCollectionForClient = function (id) { return Object(_ngrx_st
 /*!****************************************!*\
   !*** ./src/app/state/selectors/job.ts ***!
   \****************************************/
-/*! exports provided: getJobCollection, getJobCollectionForClient */
+/*! exports provided: getJobCollection, getJobCollectionById, getJobCollectionForClient, getJobFilesForJob, getJobNoteCollection, getJobNoteCollectionForJob, getJobRecurringCostCollection, getJobRecurringCostCollectionForJob, getJobRelationshipCollection, getJobRelationshipCollectionForJob */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobCollection", function() { return getJobCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobCollectionById", function() { return getJobCollectionById; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobCollectionForClient", function() { return getJobCollectionForClient; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobFilesForJob", function() { return getJobFilesForJob; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobNoteCollection", function() { return getJobNoteCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobNoteCollectionForJob", function() { return getJobNoteCollectionForJob; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobRecurringCostCollection", function() { return getJobRecurringCostCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobRecurringCostCollectionForJob", function() { return getJobRecurringCostCollectionForJob; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobRelationshipCollection", function() { return getJobRelationshipCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobRelationshipCollectionForJob", function() { return getJobRelationshipCollectionForJob; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state */ "./src/app/state/state.ts");
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../state */ "./src/app/state/state.ts");
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _utils_colour__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/colour */ "./src/app/utils/colour.ts");
 
 
 
-var getJobCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getClientState"], _state__WEBPACK_IMPORTED_MODULE_1__["getJobState"], _state__WEBPACK_IMPORTED_MODULE_1__["getJobStatusState"], function (clients, jobs, statuses) {
+
+
+var getJobCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getClientState"], _state__WEBPACK_IMPORTED_MODULE_1__["getJobState"], _state__WEBPACK_IMPORTED_MODULE_1__["getJobStatusState"], _state__WEBPACK_IMPORTED_MODULE_1__["getJobTypeState"], function (clients, jobs, statuses, types) {
+    if (lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](clients) || lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](jobs) || lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](statuses) || lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](types)) {
+        return [];
+    }
     var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](jobs, function (job) {
         return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, job, {
+            _client: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](clients, ['id', job.client]),
             _status: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](statuses, ['id', job.status]),
-            _client: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](clients, ['id', job.client])
+            _type: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](types, ['id', job.type]),
+            _text_colour: Object(_utils_colour__WEBPACK_IMPORTED_MODULE_3__["readableTextColor"])(job.colour)
         });
     });
     return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['title'], ['asc']);
 });
+var getJobCollectionById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getJobCollection, function (jobs) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](jobs, ['id', id]); }); };
 var getJobCollectionForClient = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getJobCollection, function (jobs) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](jobs, ['client', id]); }); };
+var getJobFilesForJob = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getJobFileState"], function (files) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](files, ['job', id]); }); };
+var getJobNoteCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getJobNoteState"], _state__WEBPACK_IMPORTED_MODULE_1__["getUserState"], function (notes, users) {
+    var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](notes, function (note) {
+        return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, note, {
+            _user: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](users, ['id', note.user])
+        });
+    });
+    return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['updated_at'], ['desc']);
+});
+var getJobNoteCollectionForJob = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getJobNoteCollection, function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](notes, ['job', id]); }); };
+var getJobRecurringCostCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getJobRecurringCostState"], _state__WEBPACK_IMPORTED_MODULE_1__["getRecurringCostTypeState"], _state__WEBPACK_IMPORTED_MODULE_1__["getBillingFrequencyState"], _state__WEBPACK_IMPORTED_MODULE_1__["getPaymentOptionState"], function (costs, types, frequencies, options) {
+    console.log(types);
+    var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](costs, function (cost) {
+        return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, cost, {
+            _type: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](types, ['id', cost.type]),
+            _billing_frequency: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](frequencies, ['id', cost.billing_frequency]),
+            _payment_option: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](options, ['id', cost.payment_option])
+        });
+    });
+    return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['_type.title'], ['asc']);
+});
+var getJobRecurringCostCollectionForJob = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getJobRecurringCostCollection, function (costs) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](costs, ['job', id]); }); };
+var getJobRelationshipCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getJobRelationshipState"], _state__WEBPACK_IMPORTED_MODULE_1__["getUserState"], _state__WEBPACK_IMPORTED_MODULE_1__["getRelationshipState"], function (jobRelationships, users, relationships) {
+    var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](jobRelationships, function (jobRelationship) {
+        return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, jobRelationship, {
+            _user: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](users, ['id', jobRelationship.user]),
+            _relationship: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](relationships, ['id', jobRelationship.relationship])
+        });
+    });
+    return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['_user.full_name'], ['asc']);
+});
+var getJobRelationshipCollectionForJob = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getJobRelationshipCollection, function (relationships) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](relationships, ['job', id]); }); };
 
 
 /***/ }),
@@ -6358,15 +8358,17 @@ var getJobCollectionForClient = function (id) { return Object(_ngrx_store__WEBPA
 /*!*****************************************!*\
   !*** ./src/app/state/selectors/task.ts ***!
   \*****************************************/
-/*! exports provided: getTaskNotes, getTaskCollection, getTaskCollectionById, getTaskAssigneeCollection */
+/*! exports provided: getTaskAssigneesForTask, getTaskCollection, getTaskCollectionById, getTaskCollectionForJob, getTaskNotes, getTaskNotesForTask */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNotes", function() { return getTaskNotes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskAssigneesForTask", function() { return getTaskAssigneesForTask; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollection", function() { return getTaskCollection; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionById", function() { return getTaskCollectionById; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskAssigneeCollection", function() { return getTaskAssigneeCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionForJob", function() { return getTaskCollectionForJob; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNotes", function() { return getTaskNotes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNotesForTask", function() { return getTaskNotesForTask; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state */ "./src/app/state/state.ts");
@@ -6377,95 +8379,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var getTaskNotes = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskNoteState"], function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](notes, ['updated_at'], ['desc']); });
-var getTaskCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_job__WEBPACK_IMPORTED_MODULE_3__["getJobCollection"], _state__WEBPACK_IMPORTED_MODULE_1__["getTaskState"], _state__WEBPACK_IMPORTED_MODULE_1__["getTaskAssigneeState"], getTaskNotes, _state__WEBPACK_IMPORTED_MODULE_1__["getTaskStatusState"], function (jobs, tasks, assignees, notes, statuses) {
+
+var getTaskAssigneesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskAssigneeState"], function (assignees) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['task', id]); }); };
+var getTaskCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_job__WEBPACK_IMPORTED_MODULE_3__["getJobCollection"], _state__WEBPACK_IMPORTED_MODULE_1__["getTaskState"], _state__WEBPACK_IMPORTED_MODULE_1__["getTaskStatusState"], function (jobs, tasks, statuses) {
+    if (lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](jobs) || lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](tasks) || lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](statuses)) {
+        return [];
+    }
     var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](tasks, function (task) {
-        var foundAssignees = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['task', task.id]);
-        var time_spent = lodash__WEBPACK_IMPORTED_MODULE_0__["sumBy"](foundAssignees, function (a) { return +a.time_spent_hours; }).toFixed(2);
-        var allocated = lodash__WEBPACK_IMPORTED_MODULE_0__["sumBy"](foundAssignees, function (a) { return +a.allocated_hours; }).toFixed(2);
         return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, task, {
             _job: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](jobs, ['id', task.job]),
-            _assignees: foundAssignees,
-            _notes: lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](notes, ['task', task.id]),
             _status: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](statuses, ['id', task.status]),
-            _time_spent_hours: time_spent,
-            _allocated_hours: allocated,
-            _is_over_allocated_hours: +time_spent > +allocated
+            _is_over_allocated_hours: +task.time_spent_hours > +task.allocated_hours
         });
     });
     return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['order'], ['asc']);
 });
 var getTaskCollectionById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', id]); }); };
-var getTaskAssigneeCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskAssigneeState"], getTaskCollection, function (assignees, tasks) {
-    var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](assignees, function (assignee) {
-        return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, assignee, {
-            _task: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', assignee.task])
-        });
-    });
-    return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['order'], ['asc']);
-});
-
-
-/***/ }),
-
-/***/ "./src/app/state/selectors/taskboard.ts":
-/*!**********************************************!*\
-  !*** ./src/app/state/selectors/taskboard.ts ***!
-  \**********************************************/
-/*! exports provided: getTaskAssigneesForTaskboard, getStatsForTaskboard */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskAssigneesForTaskboard", function() { return getTaskAssigneesForTaskboard; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStatsForTaskboard", function() { return getStatsForTaskboard; });
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../state */ "./src/app/state/state.ts");
-/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./task */ "./src/app/state/selectors/task.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-
-
-
-
-var getTaskAssigneesForTaskboard = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getFilterState"], _state__WEBPACK_IMPORTED_MODULE_1__["getTaskStatusState"], _task__WEBPACK_IMPORTED_MODULE_2__["getTaskAssigneeCollection"], function (filters, statuses, assignees) { return lodash__WEBPACK_IMPORTED_MODULE_0__["map"](statuses, function (status) {
-    var foundAssignees = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['_task.status', status.id]);
-    if (filters.user) {
-        foundAssignees = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](foundAssignees, ['user', filters.user]);
-    }
-    if (filters.client) {
-        foundAssignees = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](foundAssignees, ['_task._job.client', filters.client]);
-    }
-    if (filters.job) {
-        foundAssignees = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](foundAssignees, ['_task.job', filters.job]);
-    }
-    if (filters.overdue === true) {
-        foundAssignees = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](foundAssignees, ['_task.is_overdue', filters.overdue]);
-    }
-    return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, status, {
-        _assignees: foundAssignees
-    });
-}); });
-var getStatsForTaskboard = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getFilterState"], _task__WEBPACK_IMPORTED_MODULE_2__["getTaskCollection"], function (filters, tasks) {
-    var foundTasks = tasks;
-    if (filters.user) {
-        foundTasks = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](foundTasks, { _assignees: [{ 'user': filters.user }] });
-    }
-    if (filters.client) {
-        foundTasks = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](foundTasks, ['_job.client', filters.client]);
-    }
-    if (filters.job) {
-        foundTasks = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](foundTasks, ['job', filters.job]);
-    }
-    if (filters.overdue === true) {
-        foundTasks = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](foundTasks, ['is_overdue', filters.overdue]);
-    }
-    return {
-        count_of_tasks: foundTasks.length,
-        allocated_hours: lodash__WEBPACK_IMPORTED_MODULE_0__["sumBy"](foundTasks, function (t) { return +t._allocated_hours; }).toFixed(2),
-        count_of_overdue: lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](foundTasks, function (t) { return t.is_overdue; }).length
-    };
-});
+var getTaskCollectionForJob = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, ['job', id]); }); };
+var getTaskNotes = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskNoteState"], function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](notes, ['updated_at'], ['desc']); });
+var getTaskNotesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskNotes, function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](notes, ['task', id]); }); };
 
 
 /***/ }),
@@ -6496,12 +8428,13 @@ var getTimeEntryById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORT
 /*!**********************************************!*\
   !*** ./src/app/state/selectors/timesheet.ts ***!
   \**********************************************/
-/*! exports provided: getEventsForUser, getTasksForUser, getDailyTimeSignoffForUser, getDailyTimeTotalForUser */
+/*! exports provided: getEventsForUser, getTasksForTimeEntry, getTasksForUser, getDailyTimeSignoffForUser, getDailyTimeTotalForUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEventsForUser", function() { return getEventsForUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTasksForTimeEntry", function() { return getTasksForTimeEntry; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTasksForUser", function() { return getTasksForUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDailyTimeSignoffForUser", function() { return getDailyTimeSignoffForUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDailyTimeTotalForUser", function() { return getDailyTimeTotalForUser; });
@@ -6530,7 +8463,7 @@ var getEventsForUser = function (id) { return Object(_ngrx_store__WEBPACK_IMPORT
             title: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job.title', '') + ' - ' + lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, 'title', ''),
             backgroundColor: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job.colour', ''),
             borderColor: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job.colour', ''),
-            textColor: '#000',
+            textColor: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job._text_colour', ''),
             allDay: false,
             extendedProps: {
                 id: obj.id,
@@ -6539,10 +8472,11 @@ var getEventsForUser = function (id) { return Object(_ngrx_store__WEBPACK_IMPORT
         };
     });
 }); };
+var getTasksForTimeEntry = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollection"], function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, function (t) { return t.closed == false && t._job._status.allow_new_timesheet_entries == true; }); });
 var getTasksForUser = function (id, searchTerms) {
     if (id === void 0) { id = null; }
     if (searchTerms === void 0) { searchTerms = []; }
-    return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollection"], function (tasks) {
+    return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(getTasksForTimeEntry, _state__WEBPACK_IMPORTED_MODULE_2__["getTaskAssigneeState"], function (tasks, assignees) {
         var objs = tasks;
         // apply filters (either search all or only show tasks im assigned to)
         if (searchTerms.length > 0) {
@@ -6559,7 +8493,8 @@ var getTasksForUser = function (id, searchTerms) {
             });
         }
         else if (id) {
-            objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](objs, { _assignees: [{ 'user': id }] });
+            var ids_1 = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['user', id]), 'task');
+            objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](objs, function (o) { return lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](ids_1, o.id); });
         }
         // group the tasks by client
         var autoShow = searchTerms.length > 0;
@@ -6579,9 +8514,9 @@ var getTasksForUser = function (id, searchTerms) {
         return byClientByJob;
     });
 };
-var getDailyTimeSignoffForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeDailySignoffState"], function (signoffs) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](signoffs, function (e) { return e.user == id && moment__WEBPACK_IMPORTED_MODULE_1__(e.date).date() == moment__WEBPACK_IMPORTED_MODULE_1__(date).date(); }); }); };
+var getDailyTimeSignoffForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeDailySignoffState"], function (signoffs) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](signoffs, function (e) { return e.user === id && e.date === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD'); }); }); };
 var getDailyTimeTotalForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeEntryState"], function (entries) {
-    var forDay = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user == id && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).date() == moment__WEBPACK_IMPORTED_MODULE_1__(date).date(); });
+    var forDay = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD'); });
     var durations = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](forDay, 'duration');
     var totalDurations = durations.slice(1).reduce(function (prev, cur) { return moment__WEBPACK_IMPORTED_MODULE_1__["duration"](cur).add(prev); }, moment__WEBPACK_IMPORTED_MODULE_1__["duration"](durations[0]));
     return moment__WEBPACK_IMPORTED_MODULE_1__["utc"](totalDurations.asMilliseconds()).format("HH:mm");
@@ -6616,19 +8551,28 @@ var getUserById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MO
 /*!********************************!*\
   !*** ./src/app/state/state.ts ***!
   \********************************/
-/*! exports provided: reducers, getClientState, getClientContactState, getFilterState, getJobState, getJobStatusState, getMeState, getPositionState, getTaskState, getTaskAssigneeState, getTaskNoteState, getTaskStatusState, getTimeDailySignoffState, getTimeEntryState, getUserState */
+/*! exports provided: reducers, getBillingFrequencyState, getClientState, getClientContactState, getFilterState, getJobState, getJobFileState, getJobNoteState, getJobRecurringCostState, getJobRelationshipState, getJobStatusState, getJobTypeState, getMeState, getPaymentOptionState, getPositionState, getRecurringCostTypeState, getRelationshipState, getTaskState, getTaskAssigneeState, getTaskNoteState, getTaskStatusState, getTimeDailySignoffState, getTimeEntryState, getUserState */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducers", function() { return reducers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBillingFrequencyState", function() { return getBillingFrequencyState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClientState", function() { return getClientState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClientContactState", function() { return getClientContactState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFilterState", function() { return getFilterState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobState", function() { return getJobState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobFileState", function() { return getJobFileState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobNoteState", function() { return getJobNoteState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobRecurringCostState", function() { return getJobRecurringCostState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobRelationshipState", function() { return getJobRelationshipState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobStatusState", function() { return getJobStatusState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobTypeState", function() { return getJobTypeState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMeState", function() { return getMeState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPaymentOptionState", function() { return getPaymentOptionState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPositionState", function() { return getPositionState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRecurringCostTypeState", function() { return getRecurringCostTypeState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRelationshipState", function() { return getRelationshipState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskState", function() { return getTaskState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskAssigneeState", function() { return getTaskAssigneeState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNoteState", function() { return getTaskNoteState; });
@@ -6636,21 +8580,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeDailySignoffState", function() { return getTimeDailySignoffState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeEntryState", function() { return getTimeEntryState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserState", function() { return getUserState; });
-/* harmony import */ var _reducers_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducers/client */ "./src/app/state/reducers/client.ts");
-/* harmony import */ var _reducers_clientcontact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reducers/clientcontact */ "./src/app/state/reducers/clientcontact.ts");
-/* harmony import */ var _reducers_filter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reducers/filter */ "./src/app/state/reducers/filter.ts");
-/* harmony import */ var _reducers_job__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reducers/job */ "./src/app/state/reducers/job.ts");
-/* harmony import */ var _reducers_jobstatus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reducers/jobstatus */ "./src/app/state/reducers/jobstatus.ts");
-/* harmony import */ var _reducers_me__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reducers/me */ "./src/app/state/reducers/me.ts");
-/* harmony import */ var _reducers_position__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reducers/position */ "./src/app/state/reducers/position.ts");
-/* harmony import */ var _reducers_task__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reducers/task */ "./src/app/state/reducers/task.ts");
-/* harmony import */ var _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./reducers/taskassignee */ "./src/app/state/reducers/taskassignee.ts");
-/* harmony import */ var _reducers_tasknote__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./reducers/tasknote */ "./src/app/state/reducers/tasknote.ts");
-/* harmony import */ var _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./reducers/taskstatus */ "./src/app/state/reducers/taskstatus.ts");
-/* harmony import */ var _reducers_timedailysignoff__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./reducers/timedailysignoff */ "./src/app/state/reducers/timedailysignoff.ts");
-/* harmony import */ var _reducers_timeentry__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./reducers/timeentry */ "./src/app/state/reducers/timeentry.ts");
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./reducers/user */ "./src/app/state/reducers/user.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _reducers_billingfrequency__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducers/billingfrequency */ "./src/app/state/reducers/billingfrequency.ts");
+/* harmony import */ var _reducers_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reducers/client */ "./src/app/state/reducers/client.ts");
+/* harmony import */ var _reducers_clientcontact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reducers/clientcontact */ "./src/app/state/reducers/clientcontact.ts");
+/* harmony import */ var _reducers_filter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reducers/filter */ "./src/app/state/reducers/filter.ts");
+/* harmony import */ var _reducers_job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reducers/job */ "./src/app/state/reducers/job.ts");
+/* harmony import */ var _reducers_jobfile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reducers/jobfile */ "./src/app/state/reducers/jobfile.ts");
+/* harmony import */ var _reducers_jobnote__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reducers/jobnote */ "./src/app/state/reducers/jobnote.ts");
+/* harmony import */ var _reducers_jobrecurringcost__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reducers/jobrecurringcost */ "./src/app/state/reducers/jobrecurringcost.ts");
+/* harmony import */ var _reducers_jobrelationship__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./reducers/jobrelationship */ "./src/app/state/reducers/jobrelationship.ts");
+/* harmony import */ var _reducers_jobstatus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./reducers/jobstatus */ "./src/app/state/reducers/jobstatus.ts");
+/* harmony import */ var _reducers_jobtype__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./reducers/jobtype */ "./src/app/state/reducers/jobtype.ts");
+/* harmony import */ var _reducers_me__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./reducers/me */ "./src/app/state/reducers/me.ts");
+/* harmony import */ var _reducers_paymentoption__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./reducers/paymentoption */ "./src/app/state/reducers/paymentoption.ts");
+/* harmony import */ var _reducers_position__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./reducers/position */ "./src/app/state/reducers/position.ts");
+/* harmony import */ var _reducers_recurringcosttype__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./reducers/recurringcosttype */ "./src/app/state/reducers/recurringcosttype.ts");
+/* harmony import */ var _reducers_relationship__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./reducers/relationship */ "./src/app/state/reducers/relationship.ts");
+/* harmony import */ var _reducers_task__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./reducers/task */ "./src/app/state/reducers/task.ts");
+/* harmony import */ var _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./reducers/taskassignee */ "./src/app/state/reducers/taskassignee.ts");
+/* harmony import */ var _reducers_tasknote__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./reducers/tasknote */ "./src/app/state/reducers/tasknote.ts");
+/* harmony import */ var _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./reducers/taskstatus */ "./src/app/state/reducers/taskstatus.ts");
+/* harmony import */ var _reducers_timedailysignoff__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./reducers/timedailysignoff */ "./src/app/state/reducers/timedailysignoff.ts");
+/* harmony import */ var _reducers_timeentry__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./reducers/timeentry */ "./src/app/state/reducers/timeentry.ts");
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./reducers/user */ "./src/app/state/reducers/user.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6667,35 +8629,91 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var reducers = {
-    clients: _reducers_client__WEBPACK_IMPORTED_MODULE_0__["reducer"],
-    client_contacts: _reducers_clientcontact__WEBPACK_IMPORTED_MODULE_1__["reducer"],
-    filters: _reducers_filter__WEBPACK_IMPORTED_MODULE_2__["reducer"],
-    jobs: _reducers_job__WEBPACK_IMPORTED_MODULE_3__["reducer"],
-    job_statuses: _reducers_jobstatus__WEBPACK_IMPORTED_MODULE_4__["reducer"],
-    me: _reducers_me__WEBPACK_IMPORTED_MODULE_5__["reducer"],
-    positions: _reducers_position__WEBPACK_IMPORTED_MODULE_6__["reducer"],
-    tasks: _reducers_task__WEBPACK_IMPORTED_MODULE_7__["reducer"],
-    task_assignees: _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_8__["reducer"],
-    task_notes: _reducers_tasknote__WEBPACK_IMPORTED_MODULE_9__["reducer"],
-    task_statuses: _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_10__["reducer"],
-    time_daily_signoffs: _reducers_timedailysignoff__WEBPACK_IMPORTED_MODULE_11__["reducer"],
-    time_entries: _reducers_timeentry__WEBPACK_IMPORTED_MODULE_12__["reducer"],
-    users: _reducers_user__WEBPACK_IMPORTED_MODULE_13__["reducer"]
+    billing_frequencies: _reducers_billingfrequency__WEBPACK_IMPORTED_MODULE_0__["reducer"],
+    clients: _reducers_client__WEBPACK_IMPORTED_MODULE_1__["reducer"],
+    client_contacts: _reducers_clientcontact__WEBPACK_IMPORTED_MODULE_2__["reducer"],
+    filters: _reducers_filter__WEBPACK_IMPORTED_MODULE_3__["reducer"],
+    jobs: _reducers_job__WEBPACK_IMPORTED_MODULE_4__["reducer"],
+    job_files: _reducers_jobfile__WEBPACK_IMPORTED_MODULE_5__["reducer"],
+    job_notes: _reducers_jobnote__WEBPACK_IMPORTED_MODULE_6__["reducer"],
+    job_recurring_costs: _reducers_jobrecurringcost__WEBPACK_IMPORTED_MODULE_7__["reducer"],
+    job_relationships: _reducers_jobrelationship__WEBPACK_IMPORTED_MODULE_8__["reducer"],
+    job_statuses: _reducers_jobstatus__WEBPACK_IMPORTED_MODULE_9__["reducer"],
+    job_types: _reducers_jobtype__WEBPACK_IMPORTED_MODULE_10__["reducer"],
+    me: _reducers_me__WEBPACK_IMPORTED_MODULE_11__["reducer"],
+    payment_options: _reducers_paymentoption__WEBPACK_IMPORTED_MODULE_12__["reducer"],
+    positions: _reducers_position__WEBPACK_IMPORTED_MODULE_13__["reducer"],
+    recurring_cost_types: _reducers_recurringcosttype__WEBPACK_IMPORTED_MODULE_14__["reducer"],
+    relationships: _reducers_relationship__WEBPACK_IMPORTED_MODULE_15__["reducer"],
+    tasks: _reducers_task__WEBPACK_IMPORTED_MODULE_16__["reducer"],
+    task_assignees: _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_17__["reducer"],
+    task_notes: _reducers_tasknote__WEBPACK_IMPORTED_MODULE_18__["reducer"],
+    task_statuses: _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_19__["reducer"],
+    time_daily_signoffs: _reducers_timedailysignoff__WEBPACK_IMPORTED_MODULE_20__["reducer"],
+    time_entries: _reducers_timeentry__WEBPACK_IMPORTED_MODULE_21__["reducer"],
+    users: _reducers_user__WEBPACK_IMPORTED_MODULE_22__["reducer"]
 };
-var getClientState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('clients');
-var getClientContactState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('client_contacts');
-var getFilterState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('filters');
-var getJobState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('jobs');
-var getJobStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('job_statuses');
-var getMeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('me');
-var getPositionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('positions');
-var getTaskState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('tasks');
-var getTaskAssigneeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('task_assignees');
-var getTaskNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('task_notes');
-var getTaskStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('task_statuses');
-var getTimeDailySignoffState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('time_daily_signoffs');
-var getTimeEntryState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('time_entries');
-var getUserState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_14__["createFeatureSelector"])('users');
+var getBillingFrequencyState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('billing_frequencies');
+var getClientState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('clients');
+var getClientContactState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('client_contacts');
+var getFilterState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('filters');
+var getJobState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('jobs');
+var getJobFileState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_files');
+var getJobNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_notes');
+var getJobRecurringCostState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_recurring_costs');
+var getJobRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_relationships');
+var getJobStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_statuses');
+var getJobTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_types');
+var getMeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('me');
+var getPaymentOptionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('payment_options');
+var getPositionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('positions');
+var getRecurringCostTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('recurring_cost_types');
+var getRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('relationships');
+var getTaskState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('tasks');
+var getTaskAssigneeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_assignees');
+var getTaskNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_notes');
+var getTaskStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_statuses');
+var getTimeDailySignoffState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('time_daily_signoffs');
+var getTimeEntryState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('time_entries');
+var getUserState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('users');
+
+
+/***/ }),
+
+/***/ "./src/app/utils/colour.ts":
+/*!*********************************!*\
+  !*** ./src/app/utils/colour.ts ***!
+  \*********************************/
+/*! exports provided: readableTextColor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "readableTextColor", function() { return readableTextColor; });
+var readableTextColor = function (color) {
+    if (!color) {
+        return '#000000';
+    }
+    var brightStart = 123;
+    function hexToRgb(hex) {
+        var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+        hex = hex.replace(shorthandRegex, function (m, r, g, b) {
+            return r + r + g + g + b + b;
+        });
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+    }
+    var colourIsLight = function (r, g, b) {
+        var a = (r * 299 + g * 587 + b * 114) / 1000;
+        return (a > brightStart);
+    };
+    var bgRgb = hexToRgb(color);
+    return colourIsLight(bgRgb.r, bgRgb.g, bgRgb.b) ? 'black' : 'white';
+};
 
 
 /***/ }),
@@ -6782,7 +8800,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

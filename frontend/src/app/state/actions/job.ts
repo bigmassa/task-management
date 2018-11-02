@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { IActionWithPayload } from '../models';
 import { IJob } from '../reducers/job';
+import { ITask } from './../reducers/task';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -18,6 +19,7 @@ export class JobActions {
     static UPDATE_SUCCESS = '[Job] UPDATE_SUCCESS';
     static REMOVE = '[Job] REMOVE';
     static REMOVE_SUCCESS = '[Job] REMOVE_SUCCESS';
+    static SORT_TASKS = '[Job] SORT_TASKS';
 
     LoadAll(): Action {
         return { type: JobActions.LOAD_ALL };
@@ -57,5 +59,9 @@ export class JobActions {
 
     RemoveSuccess(payload: IJob): IActionWithPayload {
         return { type: JobActions.REMOVE_SUCCESS, payload };
+    }
+
+    SortTasks(payload: any): IActionWithPayload {
+        return { type: JobActions.SORT_TASKS, payload };
     }
 }

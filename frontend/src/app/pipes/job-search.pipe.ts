@@ -20,8 +20,8 @@ export class JobSearchPipe implements PipeTransform {
     private filterObject = (value: IJob, terms: string[]) => {
         let found: boolean = true;
         _.each(terms, (term) => {
-            if (!_.includes(valueOr(value.title).toLowerCase(), term) &&
-                !_.includes(valueOr(value._status.title).toLowerCase(), term)
+            if (!_.includes(valueOr(value.title).toLowerCase(), term.toLowerCase()) &&
+                !_.includes(valueOr(value._status.title).toLowerCase(), term.toLowerCase())
             ) {
                 found = false;
             }

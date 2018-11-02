@@ -1,3 +1,5 @@
+import * as _ from 'lodash';
+
 import { Actions, ofType } from '@ngrx/effects';
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
 
@@ -22,12 +24,13 @@ export class APIBaseEffects {
         actionOfType: string, successOfType: string
     ) => this.updates$.pipe(
         ofType(actionOfType),
-        mergeMap(action =>
-            this.service$.all(this.apiUrl).pipe(
+        map((action: IActionWithPayload) => action.payload),
+        mergeMap(payload => {
+            return this.service$.all(this.apiUrl, payload).pipe(
                 map(data => ({type: successOfType, payload: data})),
                 catchError(res => of({type: HttpActions.HTTP_ERROR, payload: res}))
             )
-        )
+        })
     )
 
     protected _one$ = (

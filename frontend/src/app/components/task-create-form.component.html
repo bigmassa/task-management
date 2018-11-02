@@ -16,20 +16,11 @@
                 </div>
                 <div class="col-4">
                     <p class="mb-0-5"><strong>Job</strong></p>
-                    <select class="full-width input-small" [(ngModel)]="selectedClientId" (change)="changeClient($event)">
-                        <option [value]="null">Select...</option>
-                        <option *ngFor="let option of clients$ | async" [value]="option.id">{{ option.name }}</option>
-                    </select>
-                    <select class="full-width input-small" [formControl]="form.controls.job">
-                        <option [ngValue]="null">Select...</option>
-                        <ng-container *ngFor="let option of jobs$ | async">
-                            <option *ngIf="option.client == selectedClientId" [ngValue]="option.id">{{ option.title }}</option>
-                        </ng-container>
-                    </select>
+                    <p>{{ job$ | async | get:'_client.name' }}<br>{{ job$ | async | get:'title' }}</p>
                     <hr>
 
                     <p class="mb-0-5"><strong>Target Date</strong></p>
-                    <input [formControl]="form.controls.target_date" type="date" class="input-small">
+                    <input [formControl]="form.controls.target_date" type="date">
                 </div>
             </div>
         </div>

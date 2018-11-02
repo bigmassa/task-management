@@ -1,6 +1,10 @@
 from django.conf import settings
 from django.core.exceptions import ValidationError
-from django.db import models
+from django.db import models, transaction
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
+
+from wip.utils import duration_to_decimal_hrs
 
 
 class TimeEntry(models.Model):
@@ -9,7 +13,9 @@ class TimeEntry(models.Model):
         on_delete=models.PROTECT,
         related_name='time_entries'
     )
-    started_at = models.DateTimeField()
+    started_at = models.DateTimeField(
+        db_index=True
+    )
     ended_at = models.DateTimeField()
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -42,3 +48,17 @@ class TimeEntry(models.Model):
         """ returns the duration of the time """
 
         return self.ended_at - self.started_at
+
+
+@receiver(post_save, sender=TimeEntry)
+@receiver(post_delete, sender=TimeEntry)
+def update_time_spent_hours(instance, **kwargs):
+    task_id = instance.task_id
+
+    def do():
+        from wip.models import Task
+        task = Task.objects.with_time_spent().get(pk=task_id)
+        task.time_spent_hours = duration_to_decimal_hrs(task.qs_time_spent)
+        task.save()
+
+    transaction.on_commit(do)

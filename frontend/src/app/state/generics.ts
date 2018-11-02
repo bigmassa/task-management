@@ -7,19 +7,29 @@ export function reduceState (state: any, action: IActionWithPayload, type: strin
         case 'REPLACE_ALL':
             return action.payload;
 
+        case 'REPLACE_MANY':
+            _.each(action.payload, obj => {
+                const index = _.findIndex(state, { id: obj.id });
+                if (index >= 0) {
+                    state = [
+                        ...state.slice(0, index),
+                        obj,
+                        ...state.slice(index + 1)
+                    ]
+                } else {
+                    state = [...state, obj]
+                }
+            });
+            return [...state];
+
         case 'REPLACE_ONE':
             const index = _.findIndex(state, { id: action.payload.id });
             if (index >= 0) {
-                // only replace the data if its not the same to avoid a state change
-                if (_.isEqual(state[index], action.payload)) {
-                    return state;
-                } else {
-                    return [
-                        ...state.slice(0, index),
-                        action.payload,
-                        ...state.slice(index + 1)
-                    ];
-                }
+                return [
+                    ...state.slice(0, index),
+                    action.payload,
+                    ...state.slice(index + 1)
+                ];
             }
             return [...state, action.payload];
 

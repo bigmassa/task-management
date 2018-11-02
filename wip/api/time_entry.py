@@ -2,15 +2,12 @@ from django_filters import FilterSet
 from django_filters import rest_framework as filters
 from rest_framework import viewsets
 
-from authentication.models import User
 from wip.models import TimeEntry
 from wip.serializers import TimeEntrySerializer
 
 
 class TimeEntryFilter(FilterSet):
-    started_at = filters.DateTimeFromToRangeFilter()
-    ended_at = filters.DateTimeFromToRangeFilter()
-    user = filters.ModelChoiceFilter(queryset=User.objects.all())
+    date_from = filters.DateTimeFilter(field_name='started_at__date', lookup_expr='gte')
 
 
 class TimeEntryViewSet(viewsets.ModelViewSet):

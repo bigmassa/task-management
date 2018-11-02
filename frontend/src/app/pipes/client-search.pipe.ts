@@ -20,11 +20,11 @@ export class ClientSearchPipe implements PipeTransform {
     private filterObject = (value: IClient, terms: string[]) => {
         let found: boolean = true;
         _.each(terms, (term) => {
-            if (!_.includes(valueOr(value.name).toLowerCase(), term) &&
-                !_.includes(valueOr(value.phone_number).toLowerCase(), term) &&
-                !_.includes(valueOr(value.email_address).toLowerCase(), term) &&
-                !_.includes(valueOr(value.website).toLowerCase(), term) &&
-                !_.includes(valueOr(value.address).toLowerCase(), term)
+            if (!_.includes(valueOr(value.name).toLowerCase(), term.toLowerCase()) &&
+                !_.includes(valueOr(value.phone_number).toLowerCase(), term.toLowerCase()) &&
+                !_.includes(valueOr(value.email_address).toLowerCase(), term.toLowerCase()) &&
+                !_.includes(valueOr(value.website).toLowerCase(), term.toLowerCase()) &&
+                !_.includes(valueOr(value.address).toLowerCase(), term.toLowerCase())
             ) {
                 found = false;
             }

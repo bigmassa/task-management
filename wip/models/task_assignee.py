@@ -1,24 +1,14 @@
 from django.conf import settings
-from django.db import models
+from django.db import models, transaction
 from django.db.models.manager import BaseManager
-
-from wip.utils import duration_to_decimal_hrs
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
 
 
 class TaskAssigneeQueryset(models.QuerySet):
     """ Custom queryset """
 
-    def with_time_spent(self):
-        """ Add sum of time entry duration to the queryset """
-
-        return self.annotate(
-            qs_time_spent=models.Sum(
-                models.ExpressionWrapper(
-                    models.F('task__time_entries__ended_at') - models.F('task__time_entries__started_at'),
-                    output_field=models.fields.DurationField()
-                )
-            )
-        )
+    pass
 
 
 class TaskAssigneeManager(BaseManager.from_queryset(TaskAssigneeQueryset)):
@@ -48,9 +38,16 @@ class TaskAssignee(models.Model):
     class Meta:
         ordering = ['user']
 
-    @property
-    def time_spent_hours(self):
-        """ returns the sum of the total time entries on the task """
 
-        value = getattr(self, 'qs_time_spent', None)
-        return duration_to_decimal_hrs(value)
+@receiver(post_save, sender=TaskAssignee)
+@receiver(post_delete, sender=TaskAssignee)
+def update_allocated_hours(instance, **kwargs):
+    task_id = instance.task_id
+
+    def do():
+        from wip.models import Task
+        task = Task.objects.with_allocated().get(pk=task_id)
+        task.allocated_hours = task.qs_allocated_hours
+        task.save()
+
+    transaction.on_commit(do)

@@ -5,7 +5,7 @@ from io import StringIO
 
 from django.core.exceptions import ValidationError
 from django.core.management import call_command
-from django.db import connection, models, transaction
+from django.db import connection, transaction
 
 from authentication import models as a_models
 from migrator import models as m_models
@@ -250,21 +250,16 @@ def load():
         reset_sequences()
 
         print('add time days signoff')
-        new_time_daily_signoffs = []
-        legacy_days = m_models.Days.objects.using('legacy').all().order_by('id')
-        for obj in legacy_days:
-            new_time_daily_signoff = w_models.TimeDailySignoff(
-                id=obj.id,
-                date=obj.entry_date,
-                user_id=obj.staffid,
-                completed=obj.complete
-            )
-            new_time_daily_signoff.full_clean()
-            new_time_daily_signoffs.append(new_time_daily_signoff)
-
-        w_models.TimeDailySignoff.objects.bulk_create(new_time_daily_signoffs)
-
-        reset_sequences()
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                insert into wip_timedailysignoff (date, user_id, completed)
+                select distinct
+                started_at::date as date,
+                user_id,
+                true as completed
+                from wip_timeentry
+                order by date desc, user_id asc
+            """)
 
 
 def tidyup():

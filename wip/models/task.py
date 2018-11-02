@@ -1,12 +1,9 @@
-from decimal import Decimal
-
 from django.db import models
 from django.db.models.manager import BaseManager
 from django.utils import timezone
 
 from taggit.managers import TaggableManager
 
-from wip.utils import duration_to_decimal_hrs
 from .task_assignee import TaskAssignee
 
 
@@ -85,6 +82,20 @@ class Task(models.Model):
     not_chargeable = models.BooleanField(
         default=False
     )
+    allocated_hours = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=True,
+        default='0.00',
+        editable=False
+    )
+    time_spent_hours = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=True,
+        default='0.00',
+        editable=False
+    )
     order = models.PositiveIntegerField(
         default=0
     )
@@ -98,20 +109,6 @@ class Task(models.Model):
 
     def __str__(self):
         return self.title
-
-    @property
-    def allocated_hours(self):
-        """ returns the sum of the allocated hours for all assignees """
-
-        value = getattr(self, 'qs_allocated_hours', None)
-        return value or Decimal('0.00')
-
-    @property
-    def time_spent_hours(self):
-        """ returns the sum of the total time entries on the task """
-
-        value = getattr(self, 'qs_time_spent', None)
-        return duration_to_decimal_hrs(value)
 
     @property
     def is_overdue(self):

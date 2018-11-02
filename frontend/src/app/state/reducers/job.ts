@@ -1,5 +1,6 @@
 import { IClient } from './client';
 import { IJobStatus } from './jobstatus';
+import { IJobType } from './jobtype';
 import { reduceState } from '../generics';
 
 export interface IJob {
@@ -15,8 +16,10 @@ export interface IJob {
     billed_to?: string;
     allocated_hours?: string;
     time_spent_hours?: string;
-    _status?: IJobStatus;
     _client?: IClient;
+    _status?: IJobStatus;
+    _type?: IJobType
+    _text_colour?: string;
 }
 
 export type State = IJob[];
@@ -27,9 +30,13 @@ export function reducer(state = initialState, action: any): State {
     const actionPrefix = '[Job]';
     switch (action.type) {
 
-        // Replace all objects
+        // Replace objects
         case `${actionPrefix} LOAD_ALL_SUCCESS`: {
             return reduceState(state, action, 'REPLACE_ALL');
+        }
+
+        case `${actionPrefix} REPLACE_MANY`: {
+            return reduceState(state, action, 'REPLACE_MANY');
         }
 
         // Basic CRUD actions

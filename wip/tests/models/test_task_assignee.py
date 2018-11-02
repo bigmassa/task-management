@@ -1,11 +1,8 @@
-from decimal import Decimal
-
 from django.db import models
-from django.utils import timezone
 
 from authentication.models import User
 from tests.test_case import AppTestCase
-from wip.models import Task, TaskAssignee, TimeEntry
+from wip.models import Task, TaskAssignee
 
 
 class ModelTests(AppTestCase):
@@ -31,25 +28,3 @@ class ModelTests(AppTestCase):
 
     def test_ordering(self):
         self.assertEqual(TaskAssignee._meta.ordering, ['user'])
-
-    # properties
-
-    def test_time_spent_hours(self):
-        user = self.create_user()
-        task = Task.objects.get(pk=1)
-        TimeEntry.objects.create(
-            task=task,
-            started_at=timezone.datetime(2018, 1, 1, 9, 0, 0),
-            ended_at=timezone.datetime(2018, 1, 1, 9, 15, 0),
-            user=user
-        )
-        TimeEntry.objects.create(
-            task=task,
-            started_at=timezone.datetime(2018, 1, 2, 9, 0, 0),
-            ended_at=timezone.datetime(2018, 1, 2, 9, 15, 0),
-            user=user
-        )
-
-        task_assignee = TaskAssignee.objects.with_time_spent().get(pk=1)
-
-        self.assertEqual(task_assignee.time_spent_hours, Decimal('0.50'))

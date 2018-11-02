@@ -20,6 +20,7 @@ export class TaskActions {
     static PATCH_SUCCESS = '[Task] PATCH_SUCCESS';
     static REMOVE = '[Task] REMOVE';
     static REMOVE_SUCCESS = '[Task] REMOVE_SUCCESS';
+    static REPLACE_MANY = '[Task] REPLACE_MANY';
 
     LoadAll(): Action {
         return { type: TaskActions.LOAD_ALL };
@@ -67,5 +68,9 @@ export class TaskActions {
 
     RemoveSuccess(payload: ITask): IActionWithPayload {
         return { type: TaskActions.REMOVE_SUCCESS, payload };
+    }
+
+    ReplaceMany(payload: ITask[]): IActionWithPayload {
+        return { type: TaskActions.REPLACE_MANY, payload };
     }
 }

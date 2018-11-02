@@ -1,5 +1,6 @@
+import { IActionWithHTTPData, IActionWithPayload } from '../models';
+
 import { Action } from '@ngrx/store';
-import { IActionWithPayload } from '../models';
 import { ITimeDailySignoff } from '../reducers/timedailysignoff';
 import { Injectable } from '@angular/core';
 
@@ -21,8 +22,8 @@ export class TimeDailySignoffActions {
     static REMOVE = '[TimeDailySignoff] REMOVE';
     static REMOVE_SUCCESS = '[TimeDailySignoff] REMOVE_SUCCESS';
 
-    LoadAll(): Action {
-        return { type: TimeDailySignoffActions.LOAD_ALL };
+    LoadAll(payload: IActionWithHTTPData): IActionWithPayload {
+        return { type: TimeDailySignoffActions.LOAD_ALL, payload };
     }
 
     LoadAllSuccess(payload: ITimeDailySignoff[]): IActionWithPayload {

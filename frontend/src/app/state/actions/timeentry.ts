@@ -1,5 +1,6 @@
+import { IActionWithHTTPData, IActionWithPayload } from '../models';
+
 import { Action } from '@ngrx/store';
-import { IActionWithPayload } from '../models';
 import { ITimeEntry } from '../reducers/timeentry';
 import { Injectable } from '@angular/core';
 
@@ -21,8 +22,8 @@ export class TimeEntryActions {
     static REMOVE = '[TimeEntry] REMOVE';
     static REMOVE_SUCCESS = '[TimeEntry] REMOVE_SUCCESS';
 
-    LoadAll(): Action {
-        return { type: TimeEntryActions.LOAD_ALL };
+    LoadAll(payload: IActionWithHTTPData): IActionWithPayload {
+        return { type: TimeEntryActions.LOAD_ALL, payload };
     }
 
     LoadAllSuccess(payload: ITimeEntry[]): IActionWithPayload {

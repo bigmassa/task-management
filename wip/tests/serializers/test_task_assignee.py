@@ -21,8 +21,7 @@ class TestSerializer(AppTestCase):
                 'id',
                 'task',
                 'user',
-                'allocated_hours',
-                'time_spent_hours'
+                'allocated_hours'
             ]
         )
 
@@ -35,7 +34,6 @@ class TestSerializer(AppTestCase):
                 'id': instance.pk,
                 'task': instance.task.pk,
                 'user': instance.user.pk,
-                'allocated_hours': str(instance.allocated_hours),
-                'time_spent_hours': str(instance.time_spent_hours)
+                'allocated_hours': str(instance.allocated_hours)
             }
         )
