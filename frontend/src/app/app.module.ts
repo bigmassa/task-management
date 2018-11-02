@@ -11,6 +11,7 @@ import { AutoResizeDirective } from './directives/auto-resize.directive';
 import { AvatarComponent } from './components/avatar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CalendarComponent } from './components/calendar.component';
+import { ClientComponent } from './components/client.component';
 import { ClientListComponent } from './components/client-list.component';
 import { ClientSearchPipe } from './pipes/client-search.pipe';
 import { EffectsModule } from '@ngrx/effects';
@@ -36,6 +37,7 @@ import { effects } from './state/effects';
         AutoResizeDirective,
         AvatarComponent,
         CalendarComponent,
+        ClientComponent,
         ClientListComponent,
         ClientSearchPipe,
         NotFoundComponent,

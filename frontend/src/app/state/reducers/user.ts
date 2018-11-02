@@ -4,6 +4,7 @@ export interface IUser {
     id: number;
     full_name: string;
     initials: string;
+    is_gradwell_enabled: boolean;
 }
 
 export type State = IUser[];

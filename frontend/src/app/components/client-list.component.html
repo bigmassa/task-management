@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let client of clients$ | async | clientSearch:searchTerms">
+                <tr [routerLink]="['/clients/', client.id]" *ngFor="let client of clients$ | async | clientSearch:searchTerms">
                     <td>{{ client.name }}</td>
                     <td>{{ client.email_address }}</td>
                     <td>{{ client.phone_number }}</td>

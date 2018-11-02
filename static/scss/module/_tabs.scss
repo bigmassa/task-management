@@ -11,21 +11,15 @@
   li {
     display: inline-block;
     padding: 1rem 1.5rem;
+    color: color("white");
     cursor: pointer;
-    background: color-a("primary", .14);
-    border: 1px solid $border-color;
+    border: 1px solid transparent;
     border-bottom: 0;
   }
 
-  li:not(.active) a {
-    color: $font-color;
-  }
-
   li.active {
-    background: color("white");
+    color: $font-color;
+    background: $body-background;
   }
 
-  + .panel {
-    margin-top: -1px;
-  }
 }

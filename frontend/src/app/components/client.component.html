@@ -1,0 +1,47 @@
+<ng-container *ngIf="client$ | async as client">
+    <div class="page-header">
+        <div class="container-fluid d-flex align-items-center py-2">
+            <span class="color-indicator" [style.backgroundColor]="client.colour"></span>
+            <div class="h2">
+                <a class="underline-dotted">{{ client.name }}</a>
+            </div>
+            <div class="page-header-actions">
+                <button class="button button-white" type="submit">Edit</button>
+                <a class="button button-white button-clear" >Delete</a>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <ul class="tabs">
+                <li class="active">Detail</li>
+                <li>Jobs</li>
+                <li>Contacts</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid inner-content">
+        <div class="row">
+            <div class="col-lg-3">
+                <p class="strong">Email Address</p>
+                <p>
+                    <a *ngIf="client.email_address; else emptyValue" href="mailto://{{ client.email_address }}" class="underline-dotted">{{ client.email_address }}</a>
+                </p>
+                <hr/>
+                <p class="strong">Phone Number</p>
+                <p>
+                    <a *ngIf="client.phone_number; else emptyValue" href="tel:{{ client.phone_number }}" class="underline-dotted">{{ client.phone_number }}</a>
+                    <a *ngIf="(me$ | async)?.is_gradwell_enabled"><i class="icon-phone c-red"></i></a>
+                </p>
+                <hr/>
+                <p class="strong">Website</p>
+                <p>
+                    <a *ngIf="client.website; else emptyValue" href="{{ client.website }}" class="underline-dotted">{{ client.website }}</a>
+                </p>
+                <hr/>
+                <p class="strong">Address</p>
+                <p *ngIf="client.address; else emptyValue" class="ws-pre-wrap">{{ client.address }}</p>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #emptyValue><span>-</span></ng-template>
