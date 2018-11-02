@@ -1,7 +1,6 @@
 from decimal import Decimal
 
 from django.db import models
-from django.urls import reverse
 from django.utils import timezone
 
 from tests.test_case import AppTestCase
@@ -66,16 +65,6 @@ class ModelTests(AppTestCase):
 
     def test_full_title(self):
         self.assertEqual(Job(pk=1, title='Foo').full_title, '1: Foo')
-
-    def test_get_absolute_url(self):
-        obj = Job(pk=10)
-        expected_url = reverse('wip:job-detail', kwargs={'pk': obj.pk})
-        self.assertEqual(obj.get_absolute_url(), expected_url)
-
-    def test_get_update_url(self):
-        obj = Job(pk=10)
-        expected_url = reverse('wip:job-update', kwargs={'pk': obj.pk})
-        self.assertEqual(obj.get_update_url(), expected_url)
 
     def test_allocated_hours(self):
         job = Job.objects.with_allocated().get(pk=1)

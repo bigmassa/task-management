@@ -2,7 +2,6 @@ from datetime import timedelta
 from decimal import Decimal
 
 from django.db import models
-from django.urls import reverse
 from django.utils import timezone
 
 from taggit.managers import TaggableManager
@@ -75,16 +74,6 @@ class TestModel(AppTestCase):
 
     def test_str(self):
         self.assertEqual(str(Task(title='Foo')), 'Foo')
-
-    def test_get_absolute_url(self):
-        obj = Task(pk=10)
-        expected_url = reverse('wip:task-detail', kwargs={'pk': obj.pk})
-        self.assertEqual(obj.get_absolute_url(), expected_url)
-
-    def test_get_update_url(self):
-        obj = Task(pk=10)
-        expected_url = reverse('wip:task-update', kwargs={'pk': obj.pk})
-        self.assertEqual(obj.get_update_url(), expected_url)
 
     def test_allocated_hours(self):
         task = Task.objects.with_allocated().get(pk=1)

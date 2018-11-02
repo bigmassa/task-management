@@ -1,7 +1,6 @@
 from django.core.validators import RegexValidator
 from django.db import models
 from django.db.models.manager import BaseManager
-from django.urls import reverse_lazy
 
 from wip.fields import ColorField
 
@@ -75,9 +74,3 @@ class Client(models.Model):
 
     def __str__(self):
         return self.name
-
-    def get_absolute_url(self):
-        return reverse_lazy('wip:client-detail', kwargs={'pk': self.pk})
-
-    def get_update_url(self):
-        return reverse_lazy('wip:client-update', kwargs={'pk': self.pk})

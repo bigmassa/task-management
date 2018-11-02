@@ -1,6 +1,5 @@
 from django.core.validators import RegexValidator
 from django.db import models
-from django.urls import reverse
 
 from tests.test_case import AppTestCase
 from wip.fields import ColorField
@@ -75,13 +74,3 @@ class ModelTests(AppTestCase):
 
     def test_str(self):
         self.assertEqual(str(Client(name='Foo')), 'Foo')
-
-    def test_get_absolute_url(self):
-        obj = Client(pk=10)
-        expected_url = reverse('wip:client-detail', kwargs={'pk': obj.pk})
-        self.assertEqual(obj.get_absolute_url(), expected_url)
-
-    def test_get_update_url(self):
-        obj = Client(pk=10)
-        expected_url = reverse('wip:client-update', kwargs={'pk': obj.pk})
-        self.assertEqual(obj.get_update_url(), expected_url)

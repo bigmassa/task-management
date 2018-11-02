@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'app',
     'authentication',
     'migrator',
-    'reporting',
     'wip',
 
     'dal',

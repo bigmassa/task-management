@@ -44,6 +44,6 @@ class TestSerializer(AppTestCase):
                 'job': instance.job.pk,
                 'file': instance.file.url,
                 'uploaded_by': instance.uploaded_by.pk,
-                'uploaded_on': localtime(instance.uploaded_on).isoformat()
+                'uploaded_on': localtime(instance.uploaded_on).isoformat()[:-6] + 'Z'
             }
         )

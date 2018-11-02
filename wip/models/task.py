@@ -2,7 +2,6 @@ from decimal import Decimal
 
 from django.db import models
 from django.db.models.manager import BaseManager
-from django.urls import reverse_lazy
 from django.utils import timezone
 
 from taggit.managers import TaggableManager
@@ -99,12 +98,6 @@ class Task(models.Model):
 
     def __str__(self):
         return self.title
-
-    def get_absolute_url(self):
-        return reverse_lazy('wip:task-detail', kwargs={'pk': self.pk})
-
-    def get_update_url(self):
-        return reverse_lazy('wip:task-update', kwargs={'pk': self.pk})
 
     @property
     def allocated_hours(self):

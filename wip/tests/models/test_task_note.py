@@ -1,5 +1,4 @@
 from django.db import models
-from django.urls import reverse
 
 from authentication.middleware.current_user import get_current_user
 from authentication.models import User
@@ -39,10 +38,3 @@ class ModelTests(AppTestCase):
 
     def test_ordering(self):
         self.assertEqual(TaskNote._meta.ordering, ['-updated_at'])
-
-    # properties
-
-    def test_get_update_url(self):
-        obj = TaskNote(pk=10)
-        expected_url = reverse('wip:tasknote-update', kwargs={'pk': obj.pk})
-        self.assertEqual(obj.get_update_url(), expected_url)

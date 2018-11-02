@@ -2,7 +2,6 @@ from decimal import Decimal
 
 from django.db import models
 from django.db.models.manager import BaseManager
-from django.urls import reverse_lazy
 
 from wip.fields import ColorField
 from wip.utils import duration_to_decimal_hrs
@@ -98,12 +97,6 @@ class Job(models.Model):
 
     def __str__(self):
         return self.title
-
-    def get_absolute_url(self):
-        return reverse_lazy('wip:job-detail', kwargs={'pk': self.pk})
-
-    def get_update_url(self):
-        return reverse_lazy('wip:job-update', kwargs={'pk': self.pk})
 
     @property
     def full_title(self):
