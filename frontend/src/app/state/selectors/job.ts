@@ -1,18 +1,25 @@
 import * as _ from 'lodash';
 
-import { getClientState, getJobState } from '../state';
+import { getClientState, getJobState, getJobStatusState } from '../state';
 
 import { createSelector } from '@ngrx/store';
 
 export const getJobCollection = createSelector(
     getClientState,
     getJobState,
-    (clients, jobs) => {
+    getJobStatusState,
+    (clients, jobs, statuses) => {
         const objects = _.map(jobs, (job) => {
             return _.assign({}, job, {
+                _status: _.find(statuses, ['id', job.status]),
                 _client: _.find(clients, ['id', job.client])
             });
         });
         return _.orderBy(objects, ['title'], ['asc']);
     }
+);
+
+export const getJobCollectionForClient = (id) => createSelector(
+    getJobCollection,
+    (jobs) => _.filter(jobs, ['client', id])
 );

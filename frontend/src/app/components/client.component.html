@@ -12,14 +12,16 @@
         </div>
         <div class="container-fluid">
             <ul class="tabs">
-                <li class="active">Detail</li>
-                <li>Jobs</li>
-                <li>Contacts</li>
+                <li (click)="selectedTab = 'detail'" [class.active]="selectedTab == 'detail'">Detail</li>
+                <li (click)="selectedTab = 'jobs'" [class.active]="selectedTab == 'jobs'">Jobs</li>
+                <li (click)="selectedTab = 'closed_jobs'" [class.active]="selectedTab == 'closed_jobs'">Closed Jobs</li>
+                <li (click)="selectedTab = 'contacts'" [class.active]="selectedTab == 'contacts'">Contacts</li>
             </ul>
         </div>
     </div>
     <div class="container-fluid inner-content">
-        <div class="row">
+
+        <div class="row" *ngIf="selectedTab == 'detail'">
             <div class="col-lg-3">
                 <p class="strong">Email Address</p>
                 <p>
@@ -28,8 +30,10 @@
                 <hr/>
                 <p class="strong">Phone Number</p>
                 <p>
-                    <a *ngIf="client.phone_number; else emptyValue" href="tel:{{ client.phone_number }}" class="underline-dotted">{{ client.phone_number }}</a>
-                    <a *ngIf="(me$ | async)?.is_gradwell_enabled"><i class="icon-phone c-red"></i></a>
+                    <ng-container *ngIf="client.phone_number; else emptyValue">
+                        <a href="tel:{{ client.phone_number }}" class="underline-dotted">{{ client.phone_number }}</a>
+                        <a *ngIf="(me$ | async)?.is_gradwell_enabled"><i class="icon-phone c-red"></i></a>
+                    </ng-container>    
                 </p>
                 <hr/>
                 <p class="strong">Website</p>
@@ -38,10 +42,88 @@
                 </p>
                 <hr/>
                 <p class="strong">Address</p>
-                <p *ngIf="client.address; else emptyValue" class="ws-pre-wrap">{{ client.address }}</p>
+                <p class="ws-pre-wrap">{{ client | get:'address' }}</p>
+            </div>
+            <div class="col-lg-9">
+                <div class="panel panel-dark">
+                    <p class="strong">Notes</p>
+                    <p class="ws-pre-wrap">{{ client | get:'notes' }}</p>
+                </div>
             </div>
         </div>
+
+        <div class="panel" *ngIf="selectedTab == 'jobs'">
+            <search [(ngModel)]="openSearchTerms"></search>
+            <table class="table-hover">
+                <thead>
+                    <tr>
+                        <th class="keep-min-width">ID</th>
+                        <th>Title</th>
+                        <th class="keep-min-width">Status</th>
+                    </tr>
+                </thead>
+                <ng-container *ngIf="jobs$ | async | openJobs | jobSearch:openSearchTerms as jobs">
+                <tbody *ngIf="jobs.length > 0; else emptyJobs">
+                    <tr *ngFor="let job of jobs">
+                        <td class="keep-min-width">{{ job.id }}</td>
+                        <td>{{ job.title }}</td>
+                        <td class="keep-min-width">{{ job | get:'_status.title' }}</td>
+                    </tr>
+                </tbody>
+                </ng-container>
+            </table>
+        </div>
+
+        <div class="panel" *ngIf="selectedTab == 'closed_jobs'">
+                <search [(ngModel)]="closedSearchTerms"></search>
+            <table class="table-hover">
+                <thead>
+                    <tr>
+                        <th class="keep-min-width">ID</th>
+                        <th>Title</th>
+                        <th class="keep-min-width">Status</th>
+                    </tr>
+                </thead>
+                <ng-container *ngIf="jobs$ | async | closedJobs | jobSearch:closedSearchTerms as jobs">
+                <tbody *ngIf="jobs.length > 0; else emptyJobs">
+                    <tr *ngFor="let job of jobs">
+                        <td class="keep-min-width">{{ job.id }}</td>
+                        <td>{{ job.title }}</td>
+                        <td class="keep-min-width">{{ job | get:'_status.title' }}</td>
+                    </tr>
+                </tbody>
+                </ng-container>
+            </table>
+        </div>
+
+        <div class="panel" *ngIf="selectedTab == 'contacts'">
+            <table class="table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email Address</th>
+                        <th>Phone Number</th>
+                        <th>Mobile Number</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+                <ng-container *ngIf="contacts$ | async as contacts">
+                <tbody *ngIf="contacts.length > 0; else emptyContacts">
+                    <tr *ngFor="let contact of contacts">
+                        <td>{{ contact.first_name }} {{ contact.last_name }}</td>
+                        <td>{{ contact | get:'email_address' }}</td>
+                        <td>{{ contact | get:'phone_number' }}</td>
+                        <td>{{ contact | get:'mobile_number' }}</td>
+                        <td>{{ contact | get:'_position.title' }}</td>
+                    </tr>
+                </tbody>
+                </ng-container>
+            </table>
+        </div>
+
     </div>
 </ng-container>
 
 <ng-template #emptyValue><span>-</span></ng-template>
+<ng-template #emptyJobs><tbody><tr><td colspan="3">No jobs found.</td></tr></tbody></ng-template>
+<ng-template #emptyContacts><tbody><tr><td colspan="5">No contacts found.</td></tr></tbody></ng-template>

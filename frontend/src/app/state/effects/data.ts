@@ -16,8 +16,11 @@ export class DataEffects {
             () => {
                 return [
                     new actions.ClientActions().LoadAll(),
+                    new actions.ClientContactActions().LoadAll(),
                     new actions.JobActions().LoadAll(),
+                    new actions.JobStatusActions().LoadAll(),
                     new actions.MeActions().Load(),
+                    new actions.PositionActions().LoadAll(),
                     new actions.TaskActions().LoadAll(),
                     new actions.TaskAssigneeActions().LoadAll(),
                     new actions.TaskNoteActions().LoadAll(),

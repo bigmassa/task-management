@@ -21,6 +21,7 @@ class TestSerializer(AppTestCase):
                 'id',
                 'title',
                 'allow_new_timesheet_entries',
+                'closed',
                 'order'
             ]
         )
@@ -34,6 +35,7 @@ class TestSerializer(AppTestCase):
                 'id': instance.pk,
                 'title': instance.title,
                 'allow_new_timesheet_entries': instance.allow_new_timesheet_entries,
+                'closed': instance.closed,
                 'order': instance.order
             }
         )

@@ -4,11 +4,14 @@ import { AppState, getMeState } from '../state/state';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Store, select } from '@ngrx/store';
+import { getClientCollectionById, getClientContactCollectionForClient } from '../state/selectors/client';
 
 import { ActivatedRoute } from '@angular/router';
 import { IClient } from '../state/reducers/client';
+import { IClientContact } from '../state/reducers/clientcontact';
+import { IJob } from './../state/reducers/job';
 import { IMe } from './../state/reducers/me';
-import { getClientCollectionById } from '../state/selectors/client';
+import { getJobCollectionForClient } from '../state/selectors/job';
 
 @Component({
     selector: 'client, [client]',
@@ -17,8 +20,12 @@ import { getClientCollectionById } from '../state/selectors/client';
 export class ClientComponent implements OnDestroy, OnInit {
 
     client$: Observable<IClient>;
+    contacts$: Observable<IClientContact[]>;
+    jobs$: Observable<IJob[]>;
+    openSearchTerms: string[] = [];
+    closedSearchTerms: string[] = [];
     me$: Observable<IMe>;
-
+    selectedTab: string = 'detail';
     private subscriptions: Subscription[] = [];
 
     constructor(
@@ -29,7 +36,9 @@ export class ClientComponent implements OnDestroy, OnInit {
     ngOnInit() {
         const subscription = this.route.params.subscribe(
             (params) => {
-                this.client$ = this.store.pipe(select(getClientCollectionById(+params.id)))
+                this.client$ = this.store.pipe(select(getClientCollectionById(+params.id)));
+                this.contacts$ = this.store.pipe(select(getClientContactCollectionForClient(+params.id)));
+                this.jobs$ = this.store.pipe(select(getJobCollectionForClient(+params.id)));
             }
         );
         this.subscriptions.push(subscription);

@@ -11,5 +11,6 @@ class JobStatusSerializer(serializers.ModelSerializer):
             'id',
             'title',
             'allow_new_timesheet_entries',
+            'closed',
             'order'
         ]

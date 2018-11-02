@@ -1,30 +1,19 @@
-import { IClient } from './client';
-import { IJobStatus } from './jobstatus';
 import { reduceState } from '../generics';
 
-export interface IJob {
+export interface IJobStatus {
     id?: number;
     title: string;
-    description?: string;
-    created_at?: string;
-    client: number;
-    type: number;
-    estimated_hours?: string;
-    colour: string;
-    status: number;
-    billed_to?: string;
-    allocated_hours?: string;
-    time_spent_hours?: string;
-    _status?: IJobStatus;
-    _client?: IClient;
+    allow_new_timesheet_entries: boolean;
+    closed: boolean;
+    order: number;
 }
 
-export type State = IJob[];
+export type State = IJobStatus[];
 
 export const initialState: State = [];
 
 export function reducer(state = initialState, action: any): State {
-    const actionPrefix = '[Job]';
+    const actionPrefix = '[JobStatus]';
     switch (action.type) {
 
         // Replace all objects

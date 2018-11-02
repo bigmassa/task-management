@@ -14,10 +14,14 @@ import { CalendarComponent } from './components/calendar.component';
 import { ClientComponent } from './components/client.component';
 import { ClientListComponent } from './components/client-list.component';
 import { ClientSearchPipe } from './pipes/client-search.pipe';
+import { ClosedJobsPipe } from './pipes/closed-jobs.pipe';
 import { EffectsModule } from '@ngrx/effects';
+import { GetPipe } from './pipes/get.pipe';
+import { JobSearchPipe } from './pipes/job-search.pipe';
 import { NgModule } from '@angular/core';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { NotFoundComponent } from './components/not-found.component';
+import { OpenJobsPipe } from './pipes/open-jobs.pipe';
 import { ReportListComponent } from './components/report-list.component';
 import { RouterModule } from '@angular/router';
 import { SearchComponent } from './components/search.component';
@@ -37,10 +41,14 @@ import { effects } from './state/effects';
         AutoResizeDirective,
         AvatarComponent,
         CalendarComponent,
+        ClosedJobsPipe,
         ClientComponent,
         ClientListComponent,
         ClientSearchPipe,
+        GetPipe,
+        JobSearchPipe,
         NotFoundComponent,
+        OpenJobsPipe,
         ReportListComponent,
         SearchComponent,
         TaskboardComponent,

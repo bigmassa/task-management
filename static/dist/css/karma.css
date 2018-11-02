@@ -2559,6 +2559,10 @@ a.c-wildwillow:hover {
   margin-bottom: 0;
 }
 
+.panel.panel-dark {
+  background: #e8e8e8;
+}
+
 .filter-box {
   position: relative;
 }

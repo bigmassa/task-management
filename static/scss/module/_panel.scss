@@ -16,6 +16,9 @@
     margin-bottom: 0;
   }
 
+  &.panel-dark {
+    background: color-darken("secondary", 3%);
+  }
 }
 
 .filter-box {
