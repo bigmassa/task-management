@@ -696,6 +696,7 @@ var CalendarComponent = /** @class */ (function () {
         // tslint:disable:no-output-on-prefix
         this.onViewSkeletonRender = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.onDatesRender = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.onEventRender = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.onDrop = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.onEventDrop = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.onEventClick = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
@@ -711,6 +712,9 @@ var CalendarComponent = /** @class */ (function () {
         };
         this.config.datesRender = function (info) {
             _this.onDatesRender.emit(info);
+        };
+        this.config.eventRender = function (info) {
+            _this.onEventRender.emit(info);
         };
         this.config.drop = function (info) {
             _this.onDrop.emit(info);
@@ -986,6 +990,10 @@ var CalendarComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
     ], CalendarComponent.prototype, "onDatesRender", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
+    ], CalendarComponent.prototype, "onEventRender", void 0);
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
@@ -1917,12 +1925,14 @@ var TimeEntryFormComponent = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimesheetSignoffComponent", function() { return TimesheetSignoffComponent; });
-/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 /* harmony import */ var _state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/selectors/timesheet */ "./src/app/state/selectors/timesheet.ts");
+/* harmony import */ var _state_selectors_timeentry__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../state/selectors/timeentry */ "./src/app/state/selectors/timeentry.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1937,33 +1947,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var TimesheetSignoffComponent = /** @class */ (function () {
     function TimesheetSignoffComponent(store) {
         this.store = store;
     }
     TimesheetSignoffComponent.prototype.ngOnChanges = function (changes) {
         if (this.user && this.date) {
-            this.signoff$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_4__["getDailyTimeSignoffForUser"])(this.user, this.date)));
+            this.requiresSignOff$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_4__["getIsDaySignedOffRequired"])(this.user, this.date)));
             this.sum$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_4__["getDailyTimeTotalForUser"])(this.user, this.date)));
         }
     };
-    TimesheetSignoffComponent.prototype.changeSignoff = function (checked, originalData) {
-        if (originalData === void 0) { originalData = null; }
-        if (originalData) {
-            var payload = {
-                id: originalData.id,
-                completed: checked
-            };
-            this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["TimeDailySignoffActions"].PATCH, payload: payload });
-        }
-        else {
-            var payload = {
-                date: moment__WEBPACK_IMPORTED_MODULE_1__(this.date).format('YYYY-MM-DD'),
-                user: this.user,
-                completed: checked
-            };
-            this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["TimeDailySignoffActions"].ADD, payload: payload });
-        }
+    TimesheetSignoffComponent.prototype.signOff = function () {
+        var _this = this;
+        this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_timeentry__WEBPACK_IMPORTED_MODULE_5__["getTimeEntriesForUserAndDay"])(this.date, this.user)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["take"])(1)).subscribe(function (objs) {
+            lodash__WEBPACK_IMPORTED_MODULE_0__["each"](objs, function (o) {
+                if (!o.signed_off) {
+                    var payload = { id: o.id, signed_off: true };
+                    _this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TimeEntryActions"].PATCH, payload: payload });
+                }
+            });
+        });
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
@@ -1976,7 +1981,7 @@ var TimesheetSignoffComponent = /** @class */ (function () {
     TimesheetSignoffComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'time-sheet-signoff, [time-sheet-signoff]',
-            template: "\n    <span class=\"checkbox fc-dailycontrol\">\n        <label>\n            <ng-container *ngIf=\"signoff$ | async as signoff; else emptyTemplate\">\n                <input #ckb type=\"checkbox\" [checked]=\"signoff.completed\" (change)=\"changeSignoff(ckb.checked, signoff)\">\n            </ng-container>\n            <span></span><em>{{ sum$ | async }}</em>\n        </label>\n    </span>\n\n    <ng-template #emptyTemplate>\n        <input #ckb type=\"checkbox\" (change)=\"changeSignoff(ckb.checked)\">\n    </ng-template>\n    "
+            template: "\n    <span class=\"checkbox fc-dailycontrol\">\n        <label>\n            <input type=\"checkbox\" (change)=\"signOff()\" *ngIf=\"requiresSignOff$ | async; else complete\">\n            <ng-template #complete><input type=\"checkbox\" [checked]=\"true\" disabled></ng-template>\n            <span></span><em>{{ sum$ | async }}</em>\n        </label>\n    </span>\n    "
         }),
         __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"]])
     ], TimesheetSignoffComponent);
@@ -1994,7 +1999,7 @@ var TimesheetSignoffComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchData()\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content d-flex flex-fill flex-flow-column\">\n    <div class=\"row flex-fill\">\n        <div class=\"col-3 d-flex flex-column flex-fill\">\n            <search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchData()\"></search>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task\" [style.background-color]=\"task._job.colour\" [style.color]=\"task._job._text_colour\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <span class=\"external-event d-block\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div class=\"row\" style=\"flex: 0 1 50px;\">    \n        <div class=\"col-9 offset-3\">\n            <table class=\"mb-0\">\n                <tr>\n                    <td class=\"py-1\" [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></td>\n                    <td class=\"text-center px-0 py-1\" *ngFor=\"let date of viewDates\">\n                        <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchData()\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content d-flex flex-fill flex-flow-column\">\n    <div class=\"row flex-fill\">\n        <div class=\"col-3 d-flex flex-column flex-fill\">\n            <search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchData()\"></search>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task\" [style.background-color]=\"task._job.colour\" [style.color]=\"task._job._text_colour\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <span class=\"external-event d-block\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onEventRender)=\"onEventRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div class=\"row\" style=\"flex: 0 1 50px;\">    \n        <div class=\"col-9 offset-3\">\n            <table class=\"mb-0\">\n                <tr>\n                    <td class=\"py-1\" [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></td>\n                    <td class=\"text-center px-0 py-1\" *ngFor=\"let date of viewDates\">\n                        <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2092,12 +2097,18 @@ var TimesheetComponent = /** @class */ (function () {
             _this.viewDates = Object(_utils_generic__WEBPACK_IMPORTED_MODULE_7__["getDatesBetween"])(info.view.activeStart, moment__WEBPACK_IMPORTED_MODULE_1__(info.view.activeEnd).add(-1, "days").toDate());
         });
     };
+    TimesheetComponent.prototype.onEventRender = function (info) {
+        if (info.event.extendedProps.signed_off) {
+            info.el.style.opacity = '.5';
+        }
+    };
     TimesheetComponent.prototype.onDrop = function (info) {
         var payload = {
             user: this.selectedUserId,
             task: info.draggedEl.dataset.task,
             started_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.date).toISOString(),
-            ended_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.date).add(5, 'minutes').toISOString()
+            ended_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.date).add(5, 'minutes').toISOString(),
+            signed_off: false
         };
         this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["TimeEntryActions"].ADD, payload: payload });
     };
@@ -2105,7 +2116,8 @@ var TimesheetComponent = /** @class */ (function () {
         var payload = {
             id: info.event.extendedProps.id,
             started_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.event.start).toISOString(),
-            ended_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.event.end).toISOString()
+            ended_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.event.end).toISOString(),
+            signed_off: false
         };
         this.updateEvent(info, payload);
     };
@@ -2113,7 +2125,8 @@ var TimesheetComponent = /** @class */ (function () {
         var payload = {
             id: info.event.extendedProps.id,
             started_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.event.start).toISOString(),
-            ended_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.event.end).toISOString()
+            ended_at: moment__WEBPACK_IMPORTED_MODULE_1__(info.event.end).toISOString(),
+            signed_off: false
         };
         this.updateEvent(info, payload);
     };
@@ -2796,7 +2809,8 @@ var TimeEntryForm = /** @class */ (function (_super) {
             started_at_time: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
             ended_at: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
             ended_at_time: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
-            comments: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null)
+            comments: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null),
+            signed_off: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](false),
         }, null, null, lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, options, formOptions)) || this;
         _this.store = store;
         _this.actionsSubject = actionsSubject;
@@ -2837,6 +2851,7 @@ var TimeEntryForm = /** @class */ (function (_super) {
         // set the time fields values
         this.controls.started_at_time.setValue(moment__WEBPACK_IMPORTED_MODULE_2__(data.started_at).format('HH:mm'));
         this.controls.ended_at_time.setValue(moment__WEBPACK_IMPORTED_MODULE_2__(data.ended_at).format('HH:mm'));
+        this.controls.signed_off.setValue(false);
         // load the selected task data
         this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_6__["getTaskCollectionById"])(data.task)));
     };
@@ -3600,7 +3615,7 @@ var HttpActions = /** @class */ (function () {
 /*!****************************************!*\
   !*** ./src/app/state/actions/index.ts ***!
   \****************************************/
-/*! exports provided: BillingFrequencyActions, ClientActions, ClientContactActions, DataActions, FilterActions, HttpActions, JobActions, JobFileActions, JobNoteActions, JobRecurringCostActions, JobRelationshipActions, JobStatusActions, JobTypeActions, MeActions, PaymentOptionActions, PositionActions, RecurringCostTypeActions, RelationshipActions, TaskActions, TaskAssigneeActions, TaskNoteActions, TaskStatusActions, TimeDailySignoffActions, TimeEntryActions, UserActions, actions */
+/*! exports provided: BillingFrequencyActions, ClientActions, ClientContactActions, DataActions, FilterActions, HttpActions, JobActions, JobFileActions, JobNoteActions, JobRecurringCostActions, JobRelationshipActions, JobStatusActions, JobTypeActions, MeActions, PaymentOptionActions, PositionActions, RecurringCostTypeActions, RelationshipActions, TaskActions, TaskAssigneeActions, TaskNoteActions, TaskStatusActions, TimeEntryActions, UserActions, actions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3672,15 +3687,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/actions/taskstatus.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskStatusActions", function() { return _taskstatus__WEBPACK_IMPORTED_MODULE_21__["TaskStatusActions"]; });
 
-/* harmony import */ var _timedailysignoff__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./timedailysignoff */ "./src/app/state/actions/timedailysignoff.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeDailySignoffActions", function() { return _timedailysignoff__WEBPACK_IMPORTED_MODULE_22__["TimeDailySignoffActions"]; });
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_22__["TimeEntryActions"]; });
 
-/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_23__["TimeEntryActions"]; });
-
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_24__["UserActions"]; });
-
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_23__["UserActions"]; });
 
 
 
@@ -3730,9 +3741,8 @@ var actions = [
     _taskassignee__WEBPACK_IMPORTED_MODULE_19__["TaskAssigneeActions"],
     _tasknote__WEBPACK_IMPORTED_MODULE_20__["TaskNoteActions"],
     _taskstatus__WEBPACK_IMPORTED_MODULE_21__["TaskStatusActions"],
-    _timedailysignoff__WEBPACK_IMPORTED_MODULE_22__["TimeDailySignoffActions"],
-    _timeentry__WEBPACK_IMPORTED_MODULE_23__["TimeEntryActions"],
-    _user__WEBPACK_IMPORTED_MODULE_24__["UserActions"]
+    _timeentry__WEBPACK_IMPORTED_MODULE_22__["TimeEntryActions"],
+    _user__WEBPACK_IMPORTED_MODULE_23__["UserActions"]
 ];
 
 
@@ -4922,89 +4932,6 @@ var TaskStatusActions = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/state/actions/timedailysignoff.ts":
-/*!***************************************************!*\
-  !*** ./src/app/state/actions/timedailysignoff.ts ***!
-  \***************************************************/
-/*! exports provided: TimeDailySignoffActions */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeDailySignoffActions", function() { return TimeDailySignoffActions; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var TimeDailySignoffActions = /** @class */ (function () {
-    function TimeDailySignoffActions() {
-    }
-    TimeDailySignoffActions_1 = TimeDailySignoffActions;
-    TimeDailySignoffActions.prototype.LoadAll = function (payload) {
-        return { type: TimeDailySignoffActions_1.LOAD_ALL, payload: payload };
-    };
-    TimeDailySignoffActions.prototype.LoadAllSuccess = function (payload) {
-        return { type: TimeDailySignoffActions_1.LOAD_ALL_SUCCESS, payload: payload };
-    };
-    TimeDailySignoffActions.prototype.LoadOne = function (payload) {
-        return { type: TimeDailySignoffActions_1.LOAD_ONE, payload: payload };
-    };
-    TimeDailySignoffActions.prototype.LoadOneSuccess = function (payload) {
-        return { type: TimeDailySignoffActions_1.LOAD_ONE_SUCCESS, payload: payload };
-    };
-    TimeDailySignoffActions.prototype.Add = function (payload) {
-        return { type: TimeDailySignoffActions_1.ADD, payload: payload };
-    };
-    TimeDailySignoffActions.prototype.AddSuccess = function (payload) {
-        return { type: TimeDailySignoffActions_1.ADD_SUCCESS, payload: payload };
-    };
-    TimeDailySignoffActions.prototype.Update = function (payload) {
-        return { type: TimeDailySignoffActions_1.UPDATE, payload: payload };
-    };
-    TimeDailySignoffActions.prototype.UpdateSuccess = function (payload) {
-        return { type: TimeDailySignoffActions_1.UPDATE_SUCCESS, payload: payload };
-    };
-    TimeDailySignoffActions.prototype.Patch = function (payload) {
-        return { type: TimeDailySignoffActions_1.PATCH, payload: payload };
-    };
-    TimeDailySignoffActions.prototype.PatchSuccess = function (payload) {
-        return { type: TimeDailySignoffActions_1.PATCH_SUCCESS, payload: payload };
-    };
-    TimeDailySignoffActions.prototype.Remove = function (payload) {
-        return { type: TimeDailySignoffActions_1.REMOVE, payload: payload };
-    };
-    TimeDailySignoffActions.prototype.RemoveSuccess = function (payload) {
-        return { type: TimeDailySignoffActions_1.REMOVE_SUCCESS, payload: payload };
-    };
-    var TimeDailySignoffActions_1;
-    TimeDailySignoffActions.LOAD_ALL = '[TimeDailySignoff] LOAD_ALL';
-    TimeDailySignoffActions.LOAD_ALL_SUCCESS = '[TimeDailySignoff] LOAD_ALL_SUCCESS';
-    TimeDailySignoffActions.LOAD_ONE = '[TimeDailySignoff] LOAD_ONE';
-    TimeDailySignoffActions.LOAD_ONE_SUCCESS = '[TimeDailySignoff] LOAD_ONE_SUCCESS';
-    TimeDailySignoffActions.ADD = '[TimeDailySignoff] ADD';
-    TimeDailySignoffActions.ADD_SUCCESS = '[TimeDailySignoff] ADD_SUCCESS';
-    TimeDailySignoffActions.UPDATE = '[TimeDailySignoff] UPDATE';
-    TimeDailySignoffActions.UPDATE_SUCCESS = '[TimeDailySignoff] UPDATE_SUCCESS';
-    TimeDailySignoffActions.PATCH = '[TimeDailySignoff] PATCH';
-    TimeDailySignoffActions.PATCH_SUCCESS = '[TimeDailySignoff] PATCH_SUCCESS';
-    TimeDailySignoffActions.REMOVE = '[TimeDailySignoff] REMOVE';
-    TimeDailySignoffActions.REMOVE_SUCCESS = '[TimeDailySignoff] REMOVE_SUCCESS';
-    TimeDailySignoffActions = TimeDailySignoffActions_1 = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
-            providedIn: 'root'
-        })
-    ], TimeDailySignoffActions);
-    return TimeDailySignoffActions;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/state/actions/timeentry.ts":
 /*!********************************************!*\
   !*** ./src/app/state/actions/timeentry.ts ***!
@@ -5506,7 +5433,6 @@ var DataEffects = /** @class */ (function () {
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["JobActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["JobNoteActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["TimeDailySignoffActions"]().LoadAll(fromDate),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TimeEntryActions"]().LoadAll(fromDate),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["BillingFrequencyActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientContactActions"]().LoadAll(),
@@ -5573,10 +5499,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./task */ "./src/app/state/effects/task.ts");
 /* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/effects/tasknote.ts");
 /* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/effects/taskstatus.ts");
-/* harmony import */ var _timedailysignoff__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./timedailysignoff */ "./src/app/state/effects/timedailysignoff.ts");
-/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
-
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
 
 
 
@@ -5620,9 +5544,8 @@ var effects = [
     _taskassignee__WEBPACK_IMPORTED_MODULE_16__["TaskAssigneeEffects"],
     _tasknote__WEBPACK_IMPORTED_MODULE_18__["TaskNoteEffects"],
     _taskstatus__WEBPACK_IMPORTED_MODULE_19__["TaskStatusEffects"],
-    _timedailysignoff__WEBPACK_IMPORTED_MODULE_20__["TimeDailySignoffEffects"],
-    _timeentry__WEBPACK_IMPORTED_MODULE_21__["TimeEntryEffects"],
-    _user__WEBPACK_IMPORTED_MODULE_22__["UserEffects"]
+    _timeentry__WEBPACK_IMPORTED_MODULE_20__["TimeEntryEffects"],
+    _user__WEBPACK_IMPORTED_MODULE_21__["UserEffects"]
 ];
 
 
@@ -6908,91 +6831,6 @@ var TaskStatusEffects = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/app/state/effects/timedailysignoff.ts":
-/*!***************************************************!*\
-  !*** ./src/app/state/effects/timedailysignoff.ts ***!
-  \***************************************************/
-/*! exports provided: TimeDailySignoffEffects */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeDailySignoffEffects", function() { return TimeDailySignoffEffects; });
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var TimeDailySignoffEffects = /** @class */ (function (_super) {
-    __extends(TimeDailySignoffEffects, _super);
-    function TimeDailySignoffEffects() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.url = '/api/time-daily-signoff/';
-        _this.prefix = '[TimeDailySignoff]';
-        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
-        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
-        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
-        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
-        _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
-        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
-        return _this;
-    }
-    __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
-        __metadata("design:type", Object)
-    ], TimeDailySignoffEffects.prototype, "all$", void 0);
-    __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
-        __metadata("design:type", Object)
-    ], TimeDailySignoffEffects.prototype, "one$", void 0);
-    __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
-        __metadata("design:type", Object)
-    ], TimeDailySignoffEffects.prototype, "add$", void 0);
-    __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
-        __metadata("design:type", Object)
-    ], TimeDailySignoffEffects.prototype, "update$", void 0);
-    __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
-        __metadata("design:type", Object)
-    ], TimeDailySignoffEffects.prototype, "patch$", void 0);
-    __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
-        __metadata("design:type", Object)
-    ], TimeDailySignoffEffects.prototype, "remove$", void 0);
-    TimeDailySignoffEffects = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
-            providedIn: 'root'
-        })
-    ], TimeDailySignoffEffects);
-    return TimeDailySignoffEffects;
-}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
-
-
-
-/***/ }),
-
 /***/ "./src/app/state/effects/timeentry.ts":
 /*!********************************************!*\
   !*** ./src/app/state/effects/timeentry.ts ***!
@@ -8103,55 +7941,6 @@ function reducer(state, action) {
 
 /***/ }),
 
-/***/ "./src/app/state/reducers/timedailysignoff.ts":
-/*!****************************************************!*\
-  !*** ./src/app/state/reducers/timedailysignoff.ts ***!
-  \****************************************************/
-/*! exports provided: initialState, reducer */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
-/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
-
-var initialState = [];
-function reducer(state, action) {
-    if (state === void 0) { state = initialState; }
-    var actionPrefix = '[TimeDailySignoff]';
-    switch (action.type) {
-        // Replace objects
-        case actionPrefix + " LOAD_ALL_SUCCESS": {
-            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
-        }
-        case actionPrefix + " REPLACE_MANY": {
-            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
-        }
-        // Basic CRUD actions
-        case actionPrefix + " LOAD_ONE_SUCCESS": {
-            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
-        }
-        case actionPrefix + " ADD_SUCCESS": {
-            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
-        }
-        case actionPrefix + " UPDATE_SUCCESS": {
-            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
-        }
-        case actionPrefix + " PATCH_SUCCESS": {
-            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
-        }
-        case actionPrefix + " REMOVE_SUCCESS": {
-            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
-        }
-        default:
-            return state;
-    }
-}
-
-
-/***/ }),
-
 /***/ "./src/app/state/reducers/timeentry.ts":
 /*!*********************************************!*\
   !*** ./src/app/state/reducers/timeentry.ts ***!
@@ -8406,20 +8195,25 @@ var getTaskNotesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMP
 /*!**********************************************!*\
   !*** ./src/app/state/selectors/timeentry.ts ***!
   \**********************************************/
-/*! exports provided: getTimeEntryById */
+/*! exports provided: getTimeEntryById, getTimeEntriesForUserAndDay */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeEntryById", function() { return getTimeEntryById; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeEntriesForUserAndDay", function() { return getTimeEntriesForUserAndDay; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../state */ "./src/app/state/state.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state */ "./src/app/state/state.ts");
 
 
 
-var getTimeEntryById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeEntryState"], function (entries) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](entries, ['id', id]); }); };
+
+var getTimeEntryById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](entries, ['id', id]); }); };
+var getTimeEntriesForUserAndDay = function (date, id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD'); }); }); };
 
 
 /***/ }),
@@ -8428,7 +8222,7 @@ var getTimeEntryById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORT
 /*!**********************************************!*\
   !*** ./src/app/state/selectors/timesheet.ts ***!
   \**********************************************/
-/*! exports provided: getEventsForUser, getTasksForTimeEntry, getTasksForUser, getDailyTimeSignoffForUser, getDailyTimeTotalForUser */
+/*! exports provided: getEventsForUser, getTasksForTimeEntry, getTasksForUser, getIsDaySignedOffRequired, getDailyTimeTotalForUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8436,7 +8230,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getEventsForUser", function() { return getEventsForUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTasksForTimeEntry", function() { return getTasksForTimeEntry; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTasksForUser", function() { return getTasksForUser; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDailyTimeSignoffForUser", function() { return getDailyTimeSignoffForUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getIsDaySignedOffRequired", function() { return getIsDaySignedOffRequired; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDailyTimeTotalForUser", function() { return getDailyTimeTotalForUser; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
@@ -8467,7 +8261,8 @@ var getEventsForUser = function (id) { return Object(_ngrx_store__WEBPACK_IMPORT
             allDay: false,
             extendedProps: {
                 id: obj.id,
-                task: obj.task
+                task: obj.task,
+                signed_off: obj.signed_off
             }
         };
     });
@@ -8514,7 +8309,12 @@ var getTasksForUser = function (id, searchTerms) {
         return byClientByJob;
     });
 };
-var getDailyTimeSignoffForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeDailySignoffState"], function (signoffs) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](signoffs, function (e) { return e.user === id && e.date === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD'); }); }); };
+var getIsDaySignedOffRequired = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeEntryState"], function (entries) {
+    var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id
+        && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD')
+        && e.signed_off === false; });
+    return objects.length > 0;
+}); };
 var getDailyTimeTotalForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeEntryState"], function (entries) {
     var forDay = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD'); });
     var durations = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](forDay, 'duration');
@@ -8551,7 +8351,7 @@ var getUserById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MO
 /*!********************************!*\
   !*** ./src/app/state/state.ts ***!
   \********************************/
-/*! exports provided: reducers, getBillingFrequencyState, getClientState, getClientContactState, getFilterState, getJobState, getJobFileState, getJobNoteState, getJobRecurringCostState, getJobRelationshipState, getJobStatusState, getJobTypeState, getMeState, getPaymentOptionState, getPositionState, getRecurringCostTypeState, getRelationshipState, getTaskState, getTaskAssigneeState, getTaskNoteState, getTaskStatusState, getTimeDailySignoffState, getTimeEntryState, getUserState */
+/*! exports provided: reducers, getBillingFrequencyState, getClientState, getClientContactState, getFilterState, getJobState, getJobFileState, getJobNoteState, getJobRecurringCostState, getJobRelationshipState, getJobStatusState, getJobTypeState, getMeState, getPaymentOptionState, getPositionState, getRecurringCostTypeState, getRelationshipState, getTaskState, getTaskAssigneeState, getTaskNoteState, getTaskStatusState, getTimeEntryState, getUserState */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8577,7 +8377,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskAssigneeState", function() { return getTaskAssigneeState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNoteState", function() { return getTaskNoteState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskStatusState", function() { return getTaskStatusState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeDailySignoffState", function() { return getTimeDailySignoffState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeEntryState", function() { return getTimeEntryState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserState", function() { return getUserState; });
 /* harmony import */ var _reducers_billingfrequency__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducers/billingfrequency */ "./src/app/state/reducers/billingfrequency.ts");
@@ -8600,11 +8399,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./reducers/taskassignee */ "./src/app/state/reducers/taskassignee.ts");
 /* harmony import */ var _reducers_tasknote__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./reducers/tasknote */ "./src/app/state/reducers/tasknote.ts");
 /* harmony import */ var _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./reducers/taskstatus */ "./src/app/state/reducers/taskstatus.ts");
-/* harmony import */ var _reducers_timedailysignoff__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./reducers/timedailysignoff */ "./src/app/state/reducers/timedailysignoff.ts");
-/* harmony import */ var _reducers_timeentry__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./reducers/timeentry */ "./src/app/state/reducers/timeentry.ts");
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./reducers/user */ "./src/app/state/reducers/user.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-
+/* harmony import */ var _reducers_timeentry__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./reducers/timeentry */ "./src/app/state/reducers/timeentry.ts");
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./reducers/user */ "./src/app/state/reducers/user.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 
 
 
@@ -8649,33 +8446,31 @@ var reducers = {
     task_assignees: _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_17__["reducer"],
     task_notes: _reducers_tasknote__WEBPACK_IMPORTED_MODULE_18__["reducer"],
     task_statuses: _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_19__["reducer"],
-    time_daily_signoffs: _reducers_timedailysignoff__WEBPACK_IMPORTED_MODULE_20__["reducer"],
-    time_entries: _reducers_timeentry__WEBPACK_IMPORTED_MODULE_21__["reducer"],
-    users: _reducers_user__WEBPACK_IMPORTED_MODULE_22__["reducer"]
+    time_entries: _reducers_timeentry__WEBPACK_IMPORTED_MODULE_20__["reducer"],
+    users: _reducers_user__WEBPACK_IMPORTED_MODULE_21__["reducer"]
 };
-var getBillingFrequencyState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('billing_frequencies');
-var getClientState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('clients');
-var getClientContactState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('client_contacts');
-var getFilterState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('filters');
-var getJobState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('jobs');
-var getJobFileState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_files');
-var getJobNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_notes');
-var getJobRecurringCostState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_recurring_costs');
-var getJobRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_relationships');
-var getJobStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_statuses');
-var getJobTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_types');
-var getMeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('me');
-var getPaymentOptionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('payment_options');
-var getPositionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('positions');
-var getRecurringCostTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('recurring_cost_types');
-var getRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('relationships');
-var getTaskState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('tasks');
-var getTaskAssigneeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_assignees');
-var getTaskNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_notes');
-var getTaskStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_statuses');
-var getTimeDailySignoffState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('time_daily_signoffs');
-var getTimeEntryState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('time_entries');
-var getUserState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('users');
+var getBillingFrequencyState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('billing_frequencies');
+var getClientState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('clients');
+var getClientContactState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('client_contacts');
+var getFilterState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('filters');
+var getJobState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('jobs');
+var getJobFileState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_files');
+var getJobNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_notes');
+var getJobRecurringCostState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_recurring_costs');
+var getJobRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_relationships');
+var getJobStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_statuses');
+var getJobTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_types');
+var getMeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('me');
+var getPaymentOptionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('payment_options');
+var getPositionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('positions');
+var getRecurringCostTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('recurring_cost_types');
+var getRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('relationships');
+var getTaskState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('tasks');
+var getTaskAssigneeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('task_assignees');
+var getTaskNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('task_notes');
+var getTaskStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('task_statuses');
+var getTimeEntryState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('time_entries');
+var getUserState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('users');
 
 
 /***/ }),
@@ -8800,7 +8595,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

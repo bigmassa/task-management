@@ -18,7 +18,6 @@ import * as fromTask from './reducers/task';
 import * as fromTaskAssignee from './reducers/taskassignee';
 import * as fromTaskNote from './reducers/tasknote';
 import * as fromTaskStatus from './reducers/taskstatus';
-import * as fromTimeDailySignoff from './reducers/timedailysignoff';
 import * as fromTimeEntry from './reducers/timeentry';
 import * as fromUser from './reducers/user';
 
@@ -45,7 +44,6 @@ export interface AppState {
     task_assignees: fromTaskAssignee.State;
     task_notes: fromTaskNote.State;
     task_statuses: fromTaskStatus.State;
-    time_daily_signoffs: fromTimeDailySignoff.State;
     time_entries: fromTimeEntry.State;
     users: fromUser.State;
 }
@@ -71,7 +69,6 @@ export const reducers: ActionReducerMap<AppState> = {
     task_assignees: fromTaskAssignee.reducer,
     task_notes: fromTaskNote.reducer,
     task_statuses: fromTaskStatus.reducer,
-    time_daily_signoffs: fromTimeDailySignoff.reducer,
     time_entries: fromTimeEntry.reducer,
     users: fromUser.reducer
 };
@@ -96,6 +93,5 @@ export const getTaskState = createFeatureSelector<fromTask.State>('tasks');
 export const getTaskAssigneeState = createFeatureSelector<fromTaskAssignee.State>('task_assignees');
 export const getTaskNoteState = createFeatureSelector<fromTaskNote.State>('task_notes');
 export const getTaskStatusState = createFeatureSelector<fromTaskStatus.State>('task_statuses');
-export const getTimeDailySignoffState = createFeatureSelector<fromTimeDailySignoff.State>('time_daily_signoffs');
 export const getTimeEntryState = createFeatureSelector<fromTimeEntry.State>('time_entries');
 export const getUserState = createFeatureSelector<fromUser.State>('users');

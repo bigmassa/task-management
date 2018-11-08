@@ -27,7 +27,6 @@ export class DataEffects {
                     new actions.JobActions().LoadAll(),
                     new actions.JobNoteActions().LoadAll(),
                     new actions.ClientActions().LoadAll(),
-                    new actions.TimeDailySignoffActions().LoadAll(fromDate),
                     new actions.TimeEntryActions().LoadAll(fromDate),
                     new actions.BillingFrequencyActions().LoadAll(),
                     new actions.ClientContactActions().LoadAll(),

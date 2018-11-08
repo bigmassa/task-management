@@ -32,6 +32,14 @@ class ModelTests(AppTestCase):
         field = TimeEntry._meta.get_field('comments')
         self.assertModelField(field, models.TextField, null=True, blank=True)
 
+    def test_signed_off(self):
+        field = TimeEntry._meta.get_field('signed_off')
+        self.assertModelField(field, models.BooleanField, default=False)
+
+    def test_signed_off_date(self):
+        field = TimeEntry._meta.get_field('signed_off_date')
+        self.assertModelField(field, models.DateTimeField, null=True, blank=True)
+
     # meta
 
     def test_ordering(self):

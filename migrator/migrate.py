@@ -249,18 +249,6 @@ def load():
 
         reset_sequences()
 
-        print('add time days signoff')
-        with connection.cursor() as cursor:
-            cursor.execute("""
-                insert into wip_timedailysignoff (date, user_id, completed)
-                select distinct
-                started_at::date as date,
-                user_id,
-                true as completed
-                from wip_timeentry
-                order by date desc, user_id asc
-            """)
-
 
 def tidyup():
     """ from migrator.migrate import tidyup; tidyup() """

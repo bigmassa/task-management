@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import * as moment from 'moment';
 
-import { getTaskAssigneeState, getTimeDailySignoffState, getTimeEntryState } from './../state';
+import { getTaskAssigneeState, getTimeEntryState } from './../state';
 
 import { createSelector } from '@ngrx/store';
 import { getTaskCollection } from './task';
@@ -25,7 +25,8 @@ export const getEventsForUser = (id: number) => createSelector(
                 allDay: false,
                 extendedProps: {
                     id: obj.id,
-                    task: obj.task 
+                    task: obj.task,
+                    signed_off: obj.signed_off
                 }
             };
         });
@@ -85,9 +86,17 @@ export const getTasksForUser = (id: number = null, searchTerms: string[] = []) =
     }
 )
 
-export const getDailyTimeSignoffForUser = (id: number, date: Date) => createSelector(
-    getTimeDailySignoffState,
-    (signoffs) => _.find(signoffs, e => e.user === id && e.date === moment(date).format('YYYY-MM-DD'))
+export const getIsDaySignedOffRequired = (id: number, date: Date) => createSelector(
+    getTimeEntryState,
+    (entries) => {
+        const objects = _.filter(
+            entries,
+            e => e.user === id
+            && moment(e.started_at).format('YYYY-MM-DD') === moment(date).format('YYYY-MM-DD')
+            && e.signed_off === false
+        );
+        return objects.length > 0;
+    }
 )
 
 export const getDailyTimeTotalForUser = (id: number, date: Date) => createSelector(

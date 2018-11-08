@@ -29,7 +29,6 @@ class Command(BaseCommand):
             models.JobRelationship.objects.filter(user=from_user).update(user=to_user)
             models.TaskAssignee.objects.filter(user=from_user).update(user=to_user)
             models.TaskNote.objects.filter(user=from_user).update(user=to_user)
-            models.TimeDailySignoff.objects.filter(user=from_user).update(user=to_user)
             models.TimeEntry.objects.filter(user=from_user).update(user=to_user)
 
         self.stdout.write(self.style.SUCCESS('Successfully reassigned data for "%s" to "%s"' % (from_user, to_user)))

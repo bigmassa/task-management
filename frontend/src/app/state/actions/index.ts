@@ -20,7 +20,6 @@ import { TaskActions } from './task';
 import { TaskAssigneeActions } from './taskassignee';
 import { TaskNoteActions } from './tasknote';
 import { TaskStatusActions } from './taskstatus';
-import { TimeDailySignoffActions } from './timedailysignoff';
 import { TimeEntryActions } from './timeentry';
 import { UserActions } from './user';
 
@@ -47,7 +46,6 @@ export {
     TaskAssigneeActions,
     TaskNoteActions,
     TaskStatusActions,
-    TimeDailySignoffActions,
     TimeEntryActions,
     UserActions
 };
@@ -75,7 +73,6 @@ export const actions = [
     TaskAssigneeActions,
     TaskNoteActions,
     TaskStatusActions,
-    TimeDailySignoffActions,
     TimeEntryActions,
     UserActions
 ];

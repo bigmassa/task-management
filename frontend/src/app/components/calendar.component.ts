@@ -26,6 +26,15 @@ export interface DatesRenderInfo {
     el: HTMLElement;
 }
 
+export interface EventRenderInfo {
+    event: EventObject;
+    el: HTMLElement;
+    isMirror: boolean;
+    isStart: boolean;
+    isEnd: boolean;
+    view: any;
+}
+
 export interface DropInfo {
     date: Date;
     draggedEl: HTMLElement;
@@ -193,6 +202,7 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewChecked, D
     // tslint:disable:no-output-on-prefix
     @Output() onViewSkeletonRender: EventEmitter<ViewSkeletonRenderInfo> = new EventEmitter<ViewSkeletonRenderInfo>();
     @Output() onDatesRender: EventEmitter<DatesRenderInfo> = new EventEmitter<DatesRenderInfo>();
+    @Output() onEventRender: EventEmitter<EventRenderInfo> = new EventEmitter<EventRenderInfo>();
     @Output() onDrop: EventEmitter<DropInfo> = new EventEmitter<DropInfo>();
     @Output() onEventDrop: EventEmitter<EventDropInfo> = new EventEmitter<EventDropInfo>();
     @Output() onEventClick: EventEmitter<EventClickInfo> = new EventEmitter<EventClickInfo>();
@@ -218,6 +228,10 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewChecked, D
 
         this.config.datesRender = (info: DatesRenderInfo) => {
             this.onDatesRender.emit(info);
+        };
+
+        this.config.eventRender = (info: EventRenderInfo) => {
+            this.onEventRender.emit(info);
         };
 
         this.config.drop = (info: DropInfo) => {

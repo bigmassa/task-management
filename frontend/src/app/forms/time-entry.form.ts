@@ -27,7 +27,8 @@ export class TimeEntryForm extends BaseForm {
         started_at_time: FormControl
         ended_at: FormControl
         ended_at_time: FormControl
-        comments: FormControl
+        comments: FormControl,
+        signed_off: FormControl
     };
     updateAction = actions.TimeEntryActions.PATCH;
     updateSuccessAction = actions.TimeEntryActions.PATCH_SUCCESS;
@@ -51,7 +52,8 @@ export class TimeEntryForm extends BaseForm {
                 started_at_time: new FormControl(null, Validators.required),
                 ended_at: new FormControl(null, Validators.required),
                 ended_at_time: new FormControl(null, Validators.required),
-                comments: new FormControl(null)
+                comments: new FormControl(null),
+                signed_off: new FormControl(false),
             },
             null,
             null,
@@ -91,6 +93,7 @@ export class TimeEntryForm extends BaseForm {
         // set the time fields values
         this.controls.started_at_time.setValue(moment(data.started_at).format('HH:mm'));
         this.controls.ended_at_time.setValue(moment(data.ended_at).format('HH:mm'));
+        this.controls.signed_off.setValue(false);
         // load the selected task data
         this.task$ = this.store.pipe(select(getTaskCollectionById(data.task)));
     }

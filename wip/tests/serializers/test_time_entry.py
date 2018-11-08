@@ -29,7 +29,9 @@ class TestSerializer(AppTestCase):
                 'comments',
                 'task',
                 'user',
-                'duration'
+                'duration',
+                'signed_off',
+                'signed_off_date'
             ]
         )
 
@@ -40,7 +42,9 @@ class TestSerializer(AppTestCase):
             task=job.tasks.first(),
             started_at=timezone.datetime(2018, 1, 1, 9, 0, 0),
             ended_at=timezone.datetime(2018, 1, 1, 9, 15, 0),
-            user=user
+            user=user,
+            signed_off=True,
+            signed_off_date=timezone.datetime(2018, 1, 2, 9, 0, 0)
         )
         serializer = TimeEntrySerializer(instance=instance)
         self.assertEqual(
@@ -52,7 +56,9 @@ class TestSerializer(AppTestCase):
                 'comments': instance.comments,
                 'task': instance.task.pk,
                 'user': instance.user.pk,
-                'duration': '00:15:00'
+                'duration': '00:15:00',
+                'signed_off': instance.signed_off,
+                'signed_off_date': instance.signed_off_date.isoformat() + 'Z'
             }
         )
 

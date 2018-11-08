@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from django.db import models, transaction
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
+from django.utils import timezone
 
 from wip.utils import duration_to_decimal_hrs
 
@@ -26,6 +27,13 @@ class TimeEntry(models.Model):
         null=True,
         blank=True
     )
+    signed_off = models.BooleanField(
+        default=False
+    )
+    signed_off_date = models.DateTimeField(
+        null=True,
+        blank=True
+    )
 
     class Meta:
         permissions = (
@@ -41,6 +49,12 @@ class TimeEntry(models.Model):
 
     def save(self, **kwargs):
         self.clean()
+
+        if self.signed_off and not self.signed_off_date:
+            self.signed_off_date = timezone.now()
+        elif not self.signed_off:
+            self.signed_off_date = None
+
         return super().save(**kwargs)
 
     @property

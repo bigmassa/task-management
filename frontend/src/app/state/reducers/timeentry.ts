@@ -8,6 +8,8 @@ export interface ITimeEntry {
     task: number;
     user: number;
     duration?: string;
+    signed_off: boolean;
+    signed_off_date?: string;
 }
 
 export type State = ITimeEntry[];

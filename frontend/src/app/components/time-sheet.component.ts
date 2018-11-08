@@ -2,7 +2,7 @@ import * as actions from '../state/actions';
 import * as moment from 'moment';
 
 import { ActionsSubject, Store, select } from '@ngrx/store';
-import { CalendarOptions, DatesRenderInfo, DropInfo, EventClickInfo, EventDropInfo, EventObject, EventResizeInfo, ViewSkeletonRenderInfo } from './calendar.component';
+import { CalendarOptions, DatesRenderInfo, DropInfo, EventClickInfo, EventDropInfo, EventObject, EventRenderInfo, EventResizeInfo, ViewSkeletonRenderInfo } from './calendar.component';
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
@@ -91,12 +91,19 @@ export class TimesheetComponent implements OnInit {
         });
     }
 
+    onEventRender(info: EventRenderInfo) {
+        if (info.event.extendedProps.signed_off) {
+            info.el.style.opacity = '.5';
+        }
+    }
+
     onDrop(info: DropInfo) {
         const payload: any = {
             user: this.selectedUserId,
             task: info.draggedEl.dataset.task,
             started_at: moment(info.date).toISOString(),
-            ended_at: moment(info.date).add(5, 'minutes').toISOString()
+            ended_at: moment(info.date).add(5, 'minutes').toISOString(),
+            signed_off: false
         }
         this.store.dispatch({type: actions.TimeEntryActions.ADD, payload});
     }
@@ -105,7 +112,8 @@ export class TimesheetComponent implements OnInit {
         const payload: any = {
             id: info.event.extendedProps.id,
             started_at: moment(info.event.start).toISOString(),
-            ended_at: moment(info.event.end).toISOString()
+            ended_at: moment(info.event.end).toISOString(),
+            signed_off: false
         }
         this.updateEvent(info, payload);
     }
@@ -114,7 +122,8 @@ export class TimesheetComponent implements OnInit {
         const payload: any = {
             id: info.event.extendedProps.id,
             started_at: moment(info.event.start).toISOString(),
-            ended_at: moment(info.event.end).toISOString()
+            ended_at: moment(info.event.end).toISOString(),
+            signed_off: false
         }
         this.updateEvent(info, payload);
     }

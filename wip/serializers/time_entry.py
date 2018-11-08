@@ -18,7 +18,9 @@ class TimeEntrySerializer(serializers.ModelSerializer):
             'comments',
             'task',
             'user',
-            'duration'
+            'duration',
+            'signed_off',
+            'signed_off_date'
         ]
 
     def _user(self):
@@ -39,11 +41,12 @@ class TimeEntrySerializer(serializers.ModelSerializer):
         if not self._has_manage_perm(attrs):
             raise ValidationError('You dont have permission to save a time entry for another user')
 
-        # validate the date range
-        if attrs['ended_at'].date() > attrs['started_at'].date():
-            raise ValidationError('A time entry cannot span multiple days')
+        if attrs.get('started_at') and attrs.get('ended_at'):
+            # validate the date range
+            if attrs['ended_at'].date() > attrs['started_at'].date():
+                raise ValidationError('A time entry cannot span multiple days')
 
-        if attrs['ended_at'] <= attrs['started_at']:
-            raise ValidationError({'ended_at': 'Ended at must be after Started at'})
+            if attrs['ended_at'] <= attrs['started_at']:
+                raise ValidationError({'ended_at': 'Ended at must be after Started at'})
 
         return super().validate(attrs)

@@ -1,30 +1,25 @@
 import * as _ from 'lodash';
 import * as actions from '../state/actions';
-import * as moment from 'moment';
 
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { getDailyTimeSignoffForUser, getDailyTimeTotalForUser } from '../state/selectors/timesheet';
+import { getDailyTimeTotalForUser, getIsDaySignedOffRequired } from '../state/selectors/timesheet';
 
 import { AppState } from '../state/state';
-import { ITimeDailySignoff } from './../state/reducers/timedailysignoff';
 import { Observable } from 'rxjs';
+import { getTimeEntriesForUserAndDay } from '../state/selectors/timeentry';
+import { take } from 'rxjs/operators';
 
 @Component({
     selector: 'time-sheet-signoff, [time-sheet-signoff]',
     template: `
     <span class="checkbox fc-dailycontrol">
         <label>
-            <ng-container *ngIf="signoff$ | async as signoff; else emptyTemplate">
-                <input #ckb type="checkbox" [checked]="signoff.completed" (change)="changeSignoff(ckb.checked, signoff)">
-            </ng-container>
+            <input type="checkbox" (change)="signOff()" *ngIf="requiresSignOff$ | async; else complete">
+            <ng-template #complete><input type="checkbox" [checked]="true" disabled></ng-template>
             <span></span><em>{{ sum$ | async }}</em>
         </label>
     </span>
-
-    <ng-template #emptyTemplate>
-        <input #ckb type="checkbox" (change)="changeSignoff(ckb.checked)">
-    </ng-template>
     `
 })
 export class TimesheetSignoffComponent implements OnChanges {
@@ -33,32 +28,31 @@ export class TimesheetSignoffComponent implements OnChanges {
     @Input() user: number;
 
     checked: boolean;
-    signoff$: Observable<ITimeDailySignoff>;
+    requiresSignOff$: Observable<boolean>;
     sum$: Observable<any>;
 
     constructor(private store: Store<AppState>) { }
 
     ngOnChanges(changes: SimpleChanges) {
         if (this.user && this.date) {
-            this.signoff$ = this.store.pipe(select(getDailyTimeSignoffForUser(this.user, this.date)));
+            this.requiresSignOff$ = this.store.pipe(select(getIsDaySignedOffRequired(this.user, this.date)));
             this.sum$ = this.store.pipe(select(getDailyTimeTotalForUser(this.user, this.date)));
         }
     }
     
-    changeSignoff(checked: boolean, originalData = null) {
-        if (originalData) {
-            const payload = {
-                id: originalData.id,
-                completed: checked
-            };
-            this.store.dispatch({type: actions.TimeDailySignoffActions.PATCH, payload});
-        } else {
-            const payload = {
-                date: moment(this.date).format('YYYY-MM-DD'),
-                user: this.user,
-                completed: checked
-            };
-            this.store.dispatch({type: actions.TimeDailySignoffActions.ADD, payload});
-        }
+    signOff() {
+        this.store.pipe(
+            select(getTimeEntriesForUserAndDay(this.date, this.user)),
+            take(1)
+        ).subscribe(
+            objs => {
+                _.each(objs, o => {
+                    if (!o.signed_off) {
+                        const payload = { id: o.id, signed_off: true };
+                        this.store.dispatch({type: actions.TimeEntryActions.PATCH, payload});
+                    }
+                })
+            }
+        )
     }
 }
