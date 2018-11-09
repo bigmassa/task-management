@@ -46,6 +46,11 @@ class TestModel(AppTestCase):
         self.assertModelField(field, models.BooleanField)
         self.assertFalse(field.default)
 
+    def test_closed_date(self):
+        field = Task._meta.get_field('closed_date')
+        self.assertModelField(field, models.DateTimeField, null=True, blank=True)
+        self.assertFalse(field.editable)
+
     def test_not_chargeable(self):
         field = Task._meta.get_field('not_chargeable')
         self.assertModelField(field, models.BooleanField)

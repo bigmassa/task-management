@@ -26,6 +26,7 @@ class TestSerializer(AppTestCase):
                 'status',
                 'target_date',
                 'closed',
+                'closed_date',
                 'not_chargeable',
                 'is_overdue',
                 'allocated_hours',
@@ -36,6 +37,8 @@ class TestSerializer(AppTestCase):
 
     def test_serialized_data(self):
         instance = Task.objects.first()
+        instance.closed = True
+        instance.save()
         serializer = TaskSerializer(instance=instance)
         self.assertEqual(
             serializer.data,
@@ -48,6 +51,7 @@ class TestSerializer(AppTestCase):
                 'status': instance.status.pk,
                 'target_date': instance.target_date.isoformat(),
                 'closed': instance.closed,
+                'closed_date': instance.closed_date.isoformat()[:-6] + 'Z',
                 'not_chargeable': instance.not_chargeable,
                 'is_overdue': instance.is_overdue,
                 'allocated_hours': str(instance.allocated_hours),

@@ -1,5 +1,7 @@
 from django.db import models
 from django.db.models.manager import BaseManager
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 from django.utils import timezone
 
 from taggit.managers import TaggableManager
@@ -79,6 +81,11 @@ class Task(models.Model):
     closed = models.BooleanField(
         default=False
     )
+    closed_date = models.DateTimeField(
+        null=True,
+        blank=True,
+        editable=False
+    )
     not_chargeable = models.BooleanField(
         default=False
     )
@@ -117,3 +124,11 @@ class Task(models.Model):
         if self.target_date and not self.closed:
             return self.target_date < timezone.now().date()
         return False
+
+
+@receiver(pre_save, sender=Task)
+def update_closed_date(instance, **kwargs):
+    if instance.closed and not instance.closed_date:
+        instance.closed_date = timezone.now()
+    elif not instance.closed:
+        instance.closed_date = None

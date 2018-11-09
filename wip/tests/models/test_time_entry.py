@@ -39,6 +39,7 @@ class ModelTests(AppTestCase):
     def test_signed_off_date(self):
         field = TimeEntry._meta.get_field('signed_off_date')
         self.assertModelField(field, models.DateTimeField, null=True, blank=True)
+        self.assertFalse(field.editable)
 
     # meta
 

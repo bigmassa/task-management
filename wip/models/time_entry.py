@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models, transaction
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_save, post_delete, pre_save
 from django.dispatch import receiver
 from django.utils import timezone
 
@@ -32,7 +32,8 @@ class TimeEntry(models.Model):
     )
     signed_off_date = models.DateTimeField(
         null=True,
-        blank=True
+        blank=True,
+        editable=False
     )
 
     class Meta:
@@ -49,12 +50,6 @@ class TimeEntry(models.Model):
 
     def save(self, **kwargs):
         self.clean()
-
-        if self.signed_off and not self.signed_off_date:
-            self.signed_off_date = timezone.now()
-        elif not self.signed_off:
-            self.signed_off_date = None
-
         return super().save(**kwargs)
 
     @property
@@ -62,6 +57,14 @@ class TimeEntry(models.Model):
         """ returns the duration of the time """
 
         return self.ended_at - self.started_at
+
+
+@receiver(pre_save, sender=TimeEntry)
+def update_signed_off_date(instance, **kwargs):
+    if instance.signed_off and not instance.signed_off_date:
+        instance.signed_off_date = timezone.now()
+    elif not instance.signed_off:
+        instance.signed_off_date = None
 
 
 @receiver(post_save, sender=TimeEntry)
