@@ -18,6 +18,7 @@ import { RecurringCostTypeActions } from './recurringcosttype';
 import { RelationshipActions } from './relationship';
 import { TaskActions } from './task';
 import { TaskAssigneeActions } from './taskassignee';
+import { TaskFileActions } from './taskfile';
 import { TaskNoteActions } from './tasknote';
 import { TaskStatusActions } from './taskstatus';
 import { TimeEntryActions } from './timeentry';
@@ -44,6 +45,7 @@ export {
     RelationshipActions,
     TaskActions,
     TaskAssigneeActions,
+    TaskFileActions,
     TaskNoteActions,
     TaskStatusActions,
     TimeEntryActions,
@@ -71,6 +73,7 @@ export const actions = [
     RelationshipActions,
     TaskActions,
     TaskAssigneeActions,
+    TaskFileActions,
     TaskNoteActions,
     TaskStatusActions,
     TimeEntryActions,

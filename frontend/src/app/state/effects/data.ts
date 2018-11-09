@@ -41,6 +41,7 @@ export class DataEffects {
                     new actions.RecurringCostTypeActions().LoadAll(),
                     new actions.RelationshipActions().LoadAll(),
                     new actions.TaskAssigneeActions().LoadAll(),
+                    new actions.TaskFileActions().LoadAll(),
                     new actions.TaskStatusActions().LoadAll(),
                     new actions.UserActions().LoadAll()
                 ];

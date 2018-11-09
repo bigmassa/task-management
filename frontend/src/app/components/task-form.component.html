@@ -48,6 +48,22 @@
                             </div>
                         </div>
                     </ng-container>
+                    
+                    <div class="mb-2">
+                        <p class="mb-0-5"><strong>Files</strong></p>
+                        <dropzone [config]="dropzoneConfig" [message]="'Click or drag files here to upload'" (sending)="onFileSending($event)" (success)="onFileSuccess($event)"></dropzone>
+                        <table>
+                            <ng-container *ngIf="taskFiles$ | async as files">
+                            <tbody *ngIf="files.length > 0; else emptyFiles">
+                                <tr *ngFor="let file of files">
+                                    <td><a href="{{ file.file }}" target="_blank">{{ file.file }}</a></td>
+                                    <td class="keep-min-width"><a class="pointer" (click)="deleteFile(file)"><i class="icon-trash"></i></a></td>
+                                </tr>
+                            </tbody>
+                            <ng-template #emptyFiles><tbody><tr><td colspan="2">No files found.</td></tr></tbody></ng-template>
+                            </ng-container>
+                        </table>
+                    </div>
                 </div>
                 <div class="col-4">
                     <p class="mb-0-5"><strong>Job</strong></p>
@@ -92,6 +108,8 @@
                         <button class="button" *ngIf="targetDateForm.editable" (click)="targetDateForm.save($event)">Save</button>
                         <button class="button button-clear" *ngIf="targetDateForm.editable" (click)="targetDateForm.cancel($event)">Cancel</button>
                     </div>
+                    <hr>
+
                 </div>
             </div>
         </div>

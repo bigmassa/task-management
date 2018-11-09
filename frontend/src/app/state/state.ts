@@ -16,6 +16,7 @@ import * as fromRecurringCostType from './reducers/recurringcosttype';
 import * as fromRelationship from './reducers/relationship';
 import * as fromTask from './reducers/task';
 import * as fromTaskAssignee from './reducers/taskassignee';
+import * as fromTaskFile from './reducers/taskfile';
 import * as fromTaskNote from './reducers/tasknote';
 import * as fromTaskStatus from './reducers/taskstatus';
 import * as fromTimeEntry from './reducers/timeentry';
@@ -42,6 +43,7 @@ export interface AppState {
     relationships: fromRelationship.State;
     tasks: fromTask.State;
     task_assignees: fromTaskAssignee.State;
+    task_files: fromTaskFile.State;
     task_notes: fromTaskNote.State;
     task_statuses: fromTaskStatus.State;
     time_entries: fromTimeEntry.State;
@@ -67,6 +69,7 @@ export const reducers: ActionReducerMap<AppState> = {
     relationships: fromRelationship.reducer,
     tasks: fromTask.reducer,
     task_assignees: fromTaskAssignee.reducer,
+    task_files: fromTaskFile.reducer,
     task_notes: fromTaskNote.reducer,
     task_statuses: fromTaskStatus.reducer,
     time_entries: fromTimeEntry.reducer,
@@ -91,6 +94,7 @@ export const getRecurringCostTypeState = createFeatureSelector<fromRecurringCost
 export const getRelationshipState = createFeatureSelector<fromRelationship.State>('relationships');
 export const getTaskState = createFeatureSelector<fromTask.State>('tasks');
 export const getTaskAssigneeState = createFeatureSelector<fromTaskAssignee.State>('task_assignees');
+export const getTaskFileState = createFeatureSelector<fromTaskFile.State>('task_files');
 export const getTaskNoteState = createFeatureSelector<fromTaskNote.State>('task_notes');
 export const getTaskStatusState = createFeatureSelector<fromTaskStatus.State>('task_statuses');
 export const getTimeEntryState = createFeatureSelector<fromTimeEntry.State>('time_entries');

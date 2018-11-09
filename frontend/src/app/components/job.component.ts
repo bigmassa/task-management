@@ -14,6 +14,7 @@ import {
 
 import { ActivatedRoute } from '@angular/router';
 import { AppState } from '../state/state';
+import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { IJob } from '../state/reducers/job';
 import { IJobFile } from '../state/reducers/jobfile';
 import { IJobNote } from './../state/reducers/jobnote';
@@ -22,6 +23,7 @@ import { IJobRelationship } from './../state/reducers/jobrelationship';
 import { ITask } from '../state/reducers/task';
 import { ITaskStatus } from '../state/reducers/taskstatus';
 import { debounceTime } from 'rxjs/operators';
+import { getCookie } from '../utils/cookies';
 import { getTaskCollectionForJob } from '../state/selectors/task';
 import { getTaskStatusState } from './../state/state';
 
@@ -32,6 +34,11 @@ import { getTaskStatusState } from './../state/state';
 })
 export class JobComponent implements OnDestroy, OnInit {
 
+    dropzoneConfig: DropzoneConfigInterface = {
+        url: '/api/job-files/',
+        maxFilesize: 50,
+        headers: { 'X-CSRFTOKEN': getCookie('csrftoken') }
+    };
     jobId: number;
     createFormOpen = false;
     createFormStatusId: number;
@@ -72,6 +79,8 @@ export class JobComponent implements OnDestroy, OnInit {
         _.each(this.subscriptions, s => s.unsubscribe());
     }
 
+    // tasks
+
     droppedIntoColumn(status: ITaskStatus, tasks: ITask[]) {
         if (_.isEmpty(tasks)) {
             return;
@@ -93,6 +102,21 @@ export class JobComponent implements OnDestroy, OnInit {
     openCreateForm(status: ITaskStatus) {
         this.createFormStatusId = status.id;
         this.createFormOpen = true;
+    }
+
+    // files
+    
+    onFileSending(event: any) {
+        event[2].set('job', this.jobId);
+    }
+
+    onFileSuccess(event: any) {
+        const payload = event[1];
+        this.store.dispatch({type: actions.JobFileActions.LOAD_ONE_SUCCESS, payload});
+    }
+
+    deleteFile(payload: IJobFile) {
+        this.store.dispatch({type: actions.JobFileActions.REMOVE, payload});
     }
 
 }

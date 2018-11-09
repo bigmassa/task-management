@@ -16,6 +16,7 @@ import { RecurringCostTypeEffects } from './recurringcosttype';
 import { RelationshipEffects } from './relationship';
 import { TaskAssigneeEffects } from './taskassignee';
 import { TaskEffects } from './task';
+import { TaskFileEffects } from './taskfile';
 import { TaskNoteEffects } from './tasknote';
 import { TaskStatusEffects } from './taskstatus';
 import { TimeEntryEffects } from './timeentry';
@@ -40,6 +41,7 @@ export const effects = [
     RelationshipEffects,
     TaskEffects,
     TaskAssigneeEffects,
+    TaskFileEffects,
     TaskNoteEffects,
     TaskStatusEffects,
     TimeEntryEffects,

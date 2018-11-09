@@ -91,16 +91,19 @@
         </div>
 
         <div class="panel" *ngIf="selectedTab == 'files'">
-            <table class="table-hover layout-fixed">
+            <dropzone [config]="dropzoneConfig" [message]="'Click or drag files here to upload'" (sending)="onFileSending($event)" (success)="onFileSuccess($event)"></dropzone>
+            <table class="table-hover">
                 <thead>
                     <tr>
                         <th>File</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <ng-container *ngIf="files$ | async as files">
                 <tbody *ngIf="files.length > 0; else emptyFiles">
                     <tr *ngFor="let file of files">
-                        <td class="keep-min-width"><a href="{{ file.file }}" target="_blank">{{ file.file }}</a></td>
+                        <td><a href="{{ file.file }}" target="_blank">{{ file.file }}</a></td>
+                        <td class="keep-min-width"><a class="pointer" (click)="deleteFile(file)"><i class="icon-trash"></i></a></td>
                     </tr>
                 </tbody>
                 </ng-container>

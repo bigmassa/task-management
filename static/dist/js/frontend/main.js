@@ -389,26 +389,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
 /* harmony import */ var _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pipes/client-search.pipe */ "./src/app/pipes/client-search.pipe.ts");
 /* harmony import */ var _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pipes/closed-jobs.pipe */ "./src/app/pipes/closed-jobs.pipe.ts");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
-/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
-/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
-/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
-/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
-/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
-/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
-/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
-/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
-/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
-/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
-/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
-/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
-/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
+/* harmony import */ var ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-dropzone-wrapper */ "./node_modules/ngx-dropzone-wrapper/dist/ngx-dropzone-wrapper.es5.js");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
+/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
+/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
+/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
+/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
+/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
+/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
+/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
+/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
+/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
+/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
+/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
+/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -453,13 +454,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule(store) {
         this.store = store;
         store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["DataActions"].LOAD_DATA });
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_19__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_20__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_7__["AutoResizeDirective"],
@@ -469,35 +471,36 @@ var AppModule = /** @class */ (function () {
                 _components_client_component__WEBPACK_IMPORTED_MODULE_11__["ClientComponent"],
                 _components_client_list_component__WEBPACK_IMPORTED_MODULE_12__["ClientListComponent"],
                 _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_13__["ClientSearchPipe"],
-                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_16__["GetPipe"],
-                _components_job_component__WEBPACK_IMPORTED_MODULE_17__["JobComponent"],
-                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_18__["JobSearchPipe"],
-                _components_not_found_component__WEBPACK_IMPORTED_MODULE_21__["NotFoundComponent"],
-                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_22__["OpenJobsPipe"],
-                _components_report_list_component__WEBPACK_IMPORTED_MODULE_23__["ReportListComponent"],
-                _components_search_component__WEBPACK_IMPORTED_MODULE_25__["SearchComponent"],
-                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_29__["TaskboardComponent"],
-                _components_task_card_component__WEBPACK_IMPORTED_MODULE_26__["TaskCardComponent"],
-                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_27__["TaskCreateFormComponent"],
-                _components_task_form_component__WEBPACK_IMPORTED_MODULE_28__["TaskFormComponent"],
-                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_30__["TasksByStatusPipe"],
-                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_31__["TimeEntryFormComponent"],
-                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_32__["TimesheetComponent"],
-                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_33__["TimesheetSignoffComponent"]
+                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_17__["GetPipe"],
+                _components_job_component__WEBPACK_IMPORTED_MODULE_18__["JobComponent"],
+                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_19__["JobSearchPipe"],
+                _components_not_found_component__WEBPACK_IMPORTED_MODULE_22__["NotFoundComponent"],
+                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_23__["OpenJobsPipe"],
+                _components_report_list_component__WEBPACK_IMPORTED_MODULE_24__["ReportListComponent"],
+                _components_search_component__WEBPACK_IMPORTED_MODULE_26__["SearchComponent"],
+                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_30__["TaskboardComponent"],
+                _components_task_card_component__WEBPACK_IMPORTED_MODULE_27__["TaskCardComponent"],
+                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_28__["TaskCreateFormComponent"],
+                _components_task_form_component__WEBPACK_IMPORTED_MODULE_29__["TaskFormComponent"],
+                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_31__["TasksByStatusPipe"],
+                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_32__["TimeEntryFormComponent"],
+                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_33__["TimesheetComponent"],
+                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_34__["TimesheetSignoffComponent"]
             ],
             imports: [
                 _app_routing__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["BrowserModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_15__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_34__["effects"]),
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_16__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_35__["effects"]),
+                ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_15__["DropzoneModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientXsrfModule"].withOptions({
                     cookieName: 'csrftoken',
                     headerName: 'X-CSRFTOKEN'
                 }),
-                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_20__["NgxDnDModule"],
+                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_21__["NgxDnDModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_24__["RouterModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_25__["RouterModule"],
                 _ngrx_store__WEBPACK_IMPORTED_MODULE_4__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_1__["reducers"])
             ],
             providers: [],
@@ -1173,7 +1176,7 @@ var ClientComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"job$ | async as job\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <button class=\"button button-white\" type=\"submit\">Edit</button>\n                <a class=\"button button-white button-clear\" >Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'tasks'\" [class.active]=\"selectedTab == 'tasks'\">Tasks</li>\n                <li (click)=\"selectedTab = 'notes'\" [class.active]=\"selectedTab == 'notes'\">Notes</li>\n                <li (click)=\"selectedTab = 'files'\" [class.active]=\"selectedTab == 'files'\">Files</li>\n                <li (click)=\"selectedTab = 'relationships'\" [class.active]=\"selectedTab == 'relationships'\">Relationships</li>\n                <li (click)=\"selectedTab = 'recurring_costs'\" [class.active]=\"selectedTab == 'recurring_costs'\">Recurring Costs</li>\n            </ul>\n        </div>\n    </div>\n\n    <ng-container *ngIf=\"selectedTab == 'tasks'\">\n\n        <div class=\"container-fluid d-flex flex-fill\">\n            <div class=\"d-flex flex-fill mt-1 mb-1 scroll-x\">\n                <div class=\"board-column\" *ngFor=\"let status of statuses$ | async\">\n                    <div class=\"board-column-heading\">\n                        <strong>{{ status.title }}</strong>\n                        <i class=\"icon-plus ml-auto\" (click)=\"openCreateForm(status)\"></i>\n                    </div>\n                    <div class=\"board-card-wrapper\" \n                        ngxDroppable=\"status-column\"\n                        (drop)=\"droppedIntoColumn(status, tasks)\"\n                        [model]=\"tasks\"\n                        *ngIf=\"tasks$ | async | tasksByStatus:status.id as tasks\">\n                        <div task-card \n                            [id]=\"task.id\"\n                            ngxDraggable\n                            [model]=\"task\"\n                            (click)=\"selectedTaskId=task.id\"\n                            *ngFor=\"let task of tasks\">\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <task-create-form\n            [opened]=\"createFormOpen\"\n            [jobId]=\"jobId\"\n            [statusId]=\"createFormStatusId\"\n            (close)=\"createFormOpen = false\"\n            (saved)=\"selectedTaskId = $event.id\"\n            *ngIf=\"createFormOpen\">\n        </task-create-form>\n\n        <task-form\n            [id]=\"selectedTaskId\"\n            (close)=\"selectedTaskId = null\"\n            *ngIf=\"selectedTaskId\">\n        </task-form>\n\n    </ng-container>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab != 'tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hours)</p>\n                <p>-</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'files'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td class=\"keep-min-width\"><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab == 'notes'\">\n            <div class=\"row mb-1-5\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\"></textarea>\n                    <button class=\"button button-primary pull-right\">Add</button>\n                </div>\n            </div>\n\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1-5\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\">{{ note.note }}</div>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <a class=\"underline-dotted\">Edit</a> |\n                        <a class=\"underline-dotted\">Delete</a>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'relationships'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'recurring_costs'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"2\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"5\">No recurring costs found.</td></tr></tbody></ng-template>"
+module.exports = "<ng-container *ngIf=\"job$ | async as job\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <button class=\"button button-white\" type=\"submit\">Edit</button>\n                <a class=\"button button-white button-clear\" >Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'tasks'\" [class.active]=\"selectedTab == 'tasks'\">Tasks</li>\n                <li (click)=\"selectedTab = 'notes'\" [class.active]=\"selectedTab == 'notes'\">Notes</li>\n                <li (click)=\"selectedTab = 'files'\" [class.active]=\"selectedTab == 'files'\">Files</li>\n                <li (click)=\"selectedTab = 'relationships'\" [class.active]=\"selectedTab == 'relationships'\">Relationships</li>\n                <li (click)=\"selectedTab = 'recurring_costs'\" [class.active]=\"selectedTab == 'recurring_costs'\">Recurring Costs</li>\n            </ul>\n        </div>\n    </div>\n\n    <ng-container *ngIf=\"selectedTab == 'tasks'\">\n\n        <div class=\"container-fluid d-flex flex-fill\">\n            <div class=\"d-flex flex-fill mt-1 mb-1 scroll-x\">\n                <div class=\"board-column\" *ngFor=\"let status of statuses$ | async\">\n                    <div class=\"board-column-heading\">\n                        <strong>{{ status.title }}</strong>\n                        <i class=\"icon-plus ml-auto\" (click)=\"openCreateForm(status)\"></i>\n                    </div>\n                    <div class=\"board-card-wrapper\" \n                        ngxDroppable=\"status-column\"\n                        (drop)=\"droppedIntoColumn(status, tasks)\"\n                        [model]=\"tasks\"\n                        *ngIf=\"tasks$ | async | tasksByStatus:status.id as tasks\">\n                        <div task-card \n                            [id]=\"task.id\"\n                            ngxDraggable\n                            [model]=\"task\"\n                            (click)=\"selectedTaskId=task.id\"\n                            *ngFor=\"let task of tasks\">\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <task-create-form\n            [opened]=\"createFormOpen\"\n            [jobId]=\"jobId\"\n            [statusId]=\"createFormStatusId\"\n            (close)=\"createFormOpen = false\"\n            (saved)=\"selectedTaskId = $event.id\"\n            *ngIf=\"createFormOpen\">\n        </task-create-form>\n\n        <task-form\n            [id]=\"selectedTaskId\"\n            (close)=\"selectedTaskId = null\"\n            *ngIf=\"selectedTaskId\">\n        </task-form>\n\n    </ng-container>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab != 'tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hours)</p>\n                <p>-</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'files'\">\n            <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab == 'notes'\">\n            <div class=\"row mb-1-5\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\"></textarea>\n                    <button class=\"button button-primary pull-right\">Add</button>\n                </div>\n            </div>\n\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1-5\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\">{{ note.note }}</div>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <a class=\"underline-dotted\">Edit</a> |\n                        <a class=\"underline-dotted\">Delete</a>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'relationships'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'recurring_costs'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"2\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"5\">No recurring costs found.</td></tr></tbody></ng-template>"
 
 /***/ }),
 
@@ -1195,8 +1198,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _state_selectors_job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/selectors/job */ "./src/app/state/selectors/job.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../state/selectors/task */ "./src/app/state/selectors/task.ts");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var _utils_cookies__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/cookies */ "./src/app/utils/cookies.ts");
+/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../state/selectors/task */ "./src/app/state/selectors/task.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1215,10 +1219,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var JobComponent = /** @class */ (function () {
     function JobComponent(route, store) {
         this.route = route;
         this.store = store;
+        this.dropzoneConfig = {
+            url: '/api/job-files/',
+            maxFilesize: 50,
+            headers: { 'X-CSRFTOKEN': Object(_utils_cookies__WEBPACK_IMPORTED_MODULE_7__["getCookie"])('csrftoken') }
+        };
         this.createFormOpen = false;
         this.selectedTab = 'detail';
         this.selectedTaskId = null;
@@ -1226,7 +1236,7 @@ var JobComponent = /** @class */ (function () {
     }
     JobComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.statuses$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_8__["getTaskStatusState"]));
+        this.statuses$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_9__["getTaskStatusState"]));
         var subscription = this.route.params.subscribe(function (params) {
             _this.jobId = +params.id;
             _this.files$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobFilesForJob"])(_this.jobId)));
@@ -1234,13 +1244,14 @@ var JobComponent = /** @class */ (function () {
             _this.notes$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobNoteCollectionForJob"])(_this.jobId)));
             _this.recurringCosts$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobRecurringCostCollectionForJob"])(_this.jobId)));
             _this.relationships$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobRelationshipCollectionForJob"])(_this.jobId)));
-            _this.tasks$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_7__["getTaskCollectionForJob"])(_this.jobId)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["debounceTime"])(200));
+            _this.tasks$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_8__["getTaskCollectionForJob"])(_this.jobId)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["debounceTime"])(200));
         });
         this.subscriptions.push(subscription);
     };
     JobComponent.prototype.ngOnDestroy = function () {
         lodash__WEBPACK_IMPORTED_MODULE_0__["each"](this.subscriptions, function (s) { return s.unsubscribe(); });
     };
+    // tasks
     JobComponent.prototype.droppedIntoColumn = function (status, tasks) {
         var _this = this;
         if (lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](tasks)) {
@@ -1262,6 +1273,17 @@ var JobComponent = /** @class */ (function () {
     JobComponent.prototype.openCreateForm = function (status) {
         this.createFormStatusId = status.id;
         this.createFormOpen = true;
+    };
+    // files
+    JobComponent.prototype.onFileSending = function (event) {
+        event[2].set('job', this.jobId);
+    };
+    JobComponent.prototype.onFileSuccess = function (event) {
+        var payload = event[1];
+        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobFileActions"].LOAD_ONE_SUCCESS, payload: payload });
+    };
+    JobComponent.prototype.deleteFile = function (payload) {
+        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobFileActions"].REMOVE, payload: payload });
     };
     JobComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
@@ -1649,7 +1671,7 @@ var TaskCreateFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <div (click)=\"titleForm.editable = true\">\n                        <input type=\"text\" [formControl]=\"titleForm.controls.title\" class=\"mb-0-5\">\n                        <button class=\"input-group-addon button\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <div (click)=\"descriptionForm.editable = true\">\n                            <textarea autoResize [formControl]=\"descriptionForm.controls.description\" class=\"transparent mb-0-5\" rows=\"2\"></textarea>\n                            <button class=\"button\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.cancel($event)\">Cancel</button>\n                        </div>\n                    </div>\n\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Notes</strong></p>\n                        <textarea autoResize [formControl]=\"newNoteForm.controls.note\" class=\"full-width mb-0-5\" placeholder=\"Write a note...\" rows=\"2\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of taskNotes$ | async\">\n                        <div class=\"my-1\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <div (click)=\"form.editable = true\">\n                                <textarea autoResize [formControl]=\"form.controls.note\" class=\"panel\" rows=\"1\"></textarea>\n                            </div>\n                            <div class=\"small muted\">\n                                <ng-container *ngIf=\"!form.editable\">\n                                    <button class=\"button button-clear\" (click)=\"$event.stopPropagation(); form.editable = true\">Edit</button> |\n                                    <button class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</button>\n                                </ng-container>\n                                <ng-container *ngIf=\"form.editable\">\n                                    <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                    <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                                </ng-container>\n                            </div>\n                        </div>\n                    </ng-container>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ task$ | async | get:'_job._client.name' }}<br>{{ task$ | async | get:'_job.title' }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of taskAssignees$ | async\" class=\"d-inline-block text-center mr-0-5\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-0-5\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div *ngIf=\"assigneeEditForm && assigneeEditForm.editable\" class=\"mt-1\">\n                        <div class=\"input-group mb-0-5\">\n                            <select [formControl]=\"assigneeEditForm.controls.user\" class=\"mr-1 flex-fill\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of users$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                </ng-container>\n                            </select>\n                            <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\" style=\"flex: 0 0 7rem;\">\n                        </div>\n                        <div class=\"d-flex\">\n                            <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                            <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Delete</button>\n                        </div>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Time Spent (hrs)</strong></p>\n                    <p>{{ task.time_spent_hours }} of {{ task.allocated_hours }}</p>\n                    <hr>\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <div (click)=\"targetDateForm.editable = true\">\n                        <input [formControl]=\"targetDateForm.controls.target_date\" type=\"date\" class=\"\">\n                        <button class=\"button\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <div (click)=\"titleForm.editable = true\">\n                        <input type=\"text\" [formControl]=\"titleForm.controls.title\" class=\"mb-0-5\">\n                        <button class=\"input-group-addon button\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <div (click)=\"descriptionForm.editable = true\">\n                            <textarea autoResize [formControl]=\"descriptionForm.controls.description\" class=\"transparent mb-0-5\" rows=\"2\"></textarea>\n                            <button class=\"button\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.cancel($event)\">Cancel</button>\n                        </div>\n                    </div>\n\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Notes</strong></p>\n                        <textarea autoResize [formControl]=\"newNoteForm.controls.note\" class=\"full-width mb-0-5\" placeholder=\"Write a note...\" rows=\"2\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of taskNotes$ | async\">\n                        <div class=\"my-1\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <div (click)=\"form.editable = true\">\n                                <textarea autoResize [formControl]=\"form.controls.note\" class=\"panel\" rows=\"1\"></textarea>\n                            </div>\n                            <div class=\"small muted\">\n                                <ng-container *ngIf=\"!form.editable\">\n                                    <button class=\"button button-clear\" (click)=\"$event.stopPropagation(); form.editable = true\">Edit</button> |\n                                    <button class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</button>\n                                </ng-container>\n                                <ng-container *ngIf=\"form.editable\">\n                                    <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                    <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                                </ng-container>\n                            </div>\n                        </div>\n                    </ng-container>\n                    \n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Files</strong></p>\n                        <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n                        <table>\n                            <ng-container *ngIf=\"taskFiles$ | async as files\">\n                            <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                                <tr *ngFor=\"let file of files\">\n                                    <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                                    <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                                </tr>\n                            </tbody>\n                            <ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n                            </ng-container>\n                        </table>\n                    </div>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ task$ | async | get:'_job._client.name' }}<br>{{ task$ | async | get:'_job.title' }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of taskAssignees$ | async\" class=\"d-inline-block text-center mr-0-5\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-0-5\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div *ngIf=\"assigneeEditForm && assigneeEditForm.editable\" class=\"mt-1\">\n                        <div class=\"input-group mb-0-5\">\n                            <select [formControl]=\"assigneeEditForm.controls.user\" class=\"mr-1 flex-fill\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of users$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                </ng-container>\n                            </select>\n                            <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\" style=\"flex: 0 0 7rem;\">\n                        </div>\n                        <div class=\"d-flex\">\n                            <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                            <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Delete</button>\n                        </div>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Time Spent (hrs)</strong></p>\n                    <p>{{ task.time_spent_hours }} of {{ task.allocated_hours }}</p>\n                    <hr>\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <div (click)=\"targetDateForm.editable = true\">\n                        <input [formControl]=\"targetDateForm.controls.target_date\" type=\"date\" class=\"\">\n                        <button class=\"button\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                    </div>\n                    <hr>\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1665,17 +1687,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskFormComponent", function() { return TaskFormComponent; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../state/selectors/task */ "./src/app/state/selectors/task.ts");
-/* harmony import */ var _forms_base_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../forms/base.form */ "./src/app/forms/base.form.ts");
-/* harmony import */ var _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../forms/task-assignee.form */ "./src/app/forms/task-assignee.form.ts");
-/* harmony import */ var _forms_task_description_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../forms/task-description.form */ "./src/app/forms/task-description.form.ts");
-/* harmony import */ var _forms_task_note_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../forms/task-note.form */ "./src/app/forms/task-note.form.ts");
-/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
-/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../state/selectors/task */ "./src/app/state/selectors/task.ts");
+/* harmony import */ var _forms_base_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../forms/base.form */ "./src/app/forms/base.form.ts");
+/* harmony import */ var _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../forms/task-assignee.form */ "./src/app/forms/task-assignee.form.ts");
+/* harmony import */ var _forms_task_description_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../forms/task-description.form */ "./src/app/forms/task-description.form.ts");
+/* harmony import */ var _forms_task_note_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../forms/task-note.form */ "./src/app/forms/task-note.form.ts");
+/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
+/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
+/* harmony import */ var _utils_cookies__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/cookies */ "./src/app/utils/cookies.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1697,26 +1721,34 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var TaskFormComponent = /** @class */ (function () {
     function TaskFormComponent(store, actionsSubject) {
         this.store = store;
         this.actionsSubject = actionsSubject;
-        this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
+        this.dropzoneConfig = {
+            url: '/api/task-files/',
+            maxFilesize: 50,
+            headers: { 'X-CSRFTOKEN': Object(_utils_cookies__WEBPACK_IMPORTED_MODULE_11__["getCookie"])('csrftoken') }
+        };
         this.taskNoteForms = {};
         this.selectedClientId = null;
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_10__["getUserState"]));
-        this.descriptionForm = new _forms_task_description_form__WEBPACK_IMPORTED_MODULE_6__["TaskDescriptionForm"](this.store, this.actionsSubject);
-        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_9__["TaskTitleForm"](this.store, this.actionsSubject);
-        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_8__["TaskTargetDateForm"](this.store, this.actionsSubject);
-        this.newNoteForm = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_7__["TaskNoteForm"](this.store, this.actionsSubject);
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_12__["getUserState"]));
+        this.descriptionForm = new _forms_task_description_form__WEBPACK_IMPORTED_MODULE_7__["TaskDescriptionForm"](this.store, this.actionsSubject);
+        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_10__["TaskTitleForm"](this.store, this.actionsSubject);
+        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_9__["TaskTargetDateForm"](this.store, this.actionsSubject);
+        this.newNoteForm = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_8__["TaskNoteForm"](this.store, this.actionsSubject);
     }
     TaskFormComponent.prototype.ngOnChanges = function (changes) {
         var _this = this;
         if (lodash__WEBPACK_IMPORTED_MODULE_0__["has"](changes, 'id.currentValue')) {
-            this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_3__["getTaskCollectionById"])(this.id)));
-            this.taskAssignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_3__["getTaskAssigneesForTask"])(this.id)));
-            this.taskNotes$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_3__["getTaskNotesForTask"])(this.id)));
-            this.task$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_11__["take"])(1)).subscribe(function (d) {
+            this.taskFiles$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_4__["getTaskFilesForTask"])(this.id)));
+            this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollectionById"])(this.id)));
+            this.taskAssignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_4__["getTaskAssigneesForTask"])(this.id)));
+            this.taskNotes$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_4__["getTaskNotesForTask"])(this.id)));
+            this.task$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_13__["take"])(1)).subscribe(function (d) {
                 _this.selectedClientId = d._job.client;
                 _this.descriptionForm.load(d);
                 _this.titleForm.load(d);
@@ -1735,7 +1767,7 @@ var TaskFormComponent = /** @class */ (function () {
     };
     TaskFormComponent.prototype.getOrCreateEditNoteForm = function (note) {
         if (!lodash__WEBPACK_IMPORTED_MODULE_0__["has"](this.taskNoteForms, note.id)) {
-            var form = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_7__["TaskNoteForm"](this.store, this.actionsSubject, { alwaysEditable: false, cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_4__["FormCleanAfterMethod"].loadSaved });
+            var form = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_8__["TaskNoteForm"](this.store, this.actionsSubject, { alwaysEditable: false, cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_5__["FormCleanAfterMethod"].loadSaved });
             form.load(note);
             this.taskNoteForms[note.id] = form;
             return this.taskNoteForms[note.id];
@@ -1743,29 +1775,40 @@ var TaskFormComponent = /** @class */ (function () {
         return this.taskNoteForms[note.id];
     };
     TaskFormComponent.prototype.editAssignee = function (assignee) {
-        this.assigneeEditForm = new _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_5__["TaskAssigneeForm"](this.store, this.actionsSubject);
+        this.assigneeEditForm = new _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_6__["TaskAssigneeForm"](this.store, this.actionsSubject);
         this.assigneeEditForm.editable = true;
         this.assigneeEditForm.load(assignee);
     };
+    // files
+    TaskFormComponent.prototype.onFileSending = function (event) {
+        event[2].set('task', this.id);
+    };
+    TaskFormComponent.prototype.onFileSuccess = function (event) {
+        var payload = event[1];
+        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskFileActions"].LOAD_ONE_SUCCESS, payload: payload });
+    };
+    TaskFormComponent.prototype.deleteFile = function (payload) {
+        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskFileActions"].REMOVE, payload: payload });
+    };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])(),
         __metadata("design:type", Number)
     ], TaskFormComponent.prototype, "id", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"])(),
         __metadata("design:type", Object)
     ], TaskFormComponent.prototype, "close", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])('modalPanel'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"])
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"])('modalPanel'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"])
     ], TaskFormComponent.prototype, "modalPanelRef", void 0);
     TaskFormComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
             selector: 'task-form, [task-form]',
             template: __webpack_require__(/*! ./task-form.component.html */ "./src/app/components/task-form.component.html")
         }),
-        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["Store"],
-            _ngrx_store__WEBPACK_IMPORTED_MODULE_1__["ActionsSubject"]])
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["ActionsSubject"]])
     ], TaskFormComponent);
     return TaskFormComponent;
 }());
@@ -3615,7 +3658,7 @@ var HttpActions = /** @class */ (function () {
 /*!****************************************!*\
   !*** ./src/app/state/actions/index.ts ***!
   \****************************************/
-/*! exports provided: BillingFrequencyActions, ClientActions, ClientContactActions, DataActions, FilterActions, HttpActions, JobActions, JobFileActions, JobNoteActions, JobRecurringCostActions, JobRelationshipActions, JobStatusActions, JobTypeActions, MeActions, PaymentOptionActions, PositionActions, RecurringCostTypeActions, RelationshipActions, TaskActions, TaskAssigneeActions, TaskNoteActions, TaskStatusActions, TimeEntryActions, UserActions, actions */
+/*! exports provided: BillingFrequencyActions, ClientActions, ClientContactActions, DataActions, FilterActions, HttpActions, JobActions, JobFileActions, JobNoteActions, JobRecurringCostActions, JobRelationshipActions, JobStatusActions, JobTypeActions, MeActions, PaymentOptionActions, PositionActions, RecurringCostTypeActions, RelationshipActions, TaskActions, TaskAssigneeActions, TaskFileActions, TaskNoteActions, TaskStatusActions, TimeEntryActions, UserActions, actions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3681,17 +3724,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/actions/taskassignee.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskAssigneeActions", function() { return _taskassignee__WEBPACK_IMPORTED_MODULE_19__["TaskAssigneeActions"]; });
 
-/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/actions/tasknote.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskNoteActions", function() { return _tasknote__WEBPACK_IMPORTED_MODULE_20__["TaskNoteActions"]; });
+/* harmony import */ var _taskfile__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./taskfile */ "./src/app/state/actions/taskfile.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskFileActions", function() { return _taskfile__WEBPACK_IMPORTED_MODULE_20__["TaskFileActions"]; });
 
-/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/actions/taskstatus.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskStatusActions", function() { return _taskstatus__WEBPACK_IMPORTED_MODULE_21__["TaskStatusActions"]; });
+/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/actions/tasknote.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskNoteActions", function() { return _tasknote__WEBPACK_IMPORTED_MODULE_21__["TaskNoteActions"]; });
 
-/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_22__["TimeEntryActions"]; });
+/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/actions/taskstatus.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskStatusActions", function() { return _taskstatus__WEBPACK_IMPORTED_MODULE_22__["TaskStatusActions"]; });
 
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_23__["UserActions"]; });
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_23__["TimeEntryActions"]; });
+
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_24__["UserActions"]; });
+
 
 
 
@@ -3739,10 +3786,11 @@ var actions = [
     _relationship__WEBPACK_IMPORTED_MODULE_17__["RelationshipActions"],
     _task__WEBPACK_IMPORTED_MODULE_18__["TaskActions"],
     _taskassignee__WEBPACK_IMPORTED_MODULE_19__["TaskAssigneeActions"],
-    _tasknote__WEBPACK_IMPORTED_MODULE_20__["TaskNoteActions"],
-    _taskstatus__WEBPACK_IMPORTED_MODULE_21__["TaskStatusActions"],
-    _timeentry__WEBPACK_IMPORTED_MODULE_22__["TimeEntryActions"],
-    _user__WEBPACK_IMPORTED_MODULE_23__["UserActions"]
+    _taskfile__WEBPACK_IMPORTED_MODULE_20__["TaskFileActions"],
+    _tasknote__WEBPACK_IMPORTED_MODULE_21__["TaskNoteActions"],
+    _taskstatus__WEBPACK_IMPORTED_MODULE_22__["TaskStatusActions"],
+    _timeentry__WEBPACK_IMPORTED_MODULE_23__["TimeEntryActions"],
+    _user__WEBPACK_IMPORTED_MODULE_24__["UserActions"]
 ];
 
 
@@ -4806,6 +4854,81 @@ var TaskAssigneeActions = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/state/actions/taskfile.ts":
+/*!*******************************************!*\
+  !*** ./src/app/state/actions/taskfile.ts ***!
+  \*******************************************/
+/*! exports provided: TaskFileActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskFileActions", function() { return TaskFileActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var TaskFileActions = /** @class */ (function () {
+    function TaskFileActions() {
+    }
+    TaskFileActions_1 = TaskFileActions;
+    TaskFileActions.prototype.LoadAll = function () {
+        return { type: TaskFileActions_1.LOAD_ALL };
+    };
+    TaskFileActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: TaskFileActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    TaskFileActions.prototype.LoadOne = function (payload) {
+        return { type: TaskFileActions_1.LOAD_ONE, payload: payload };
+    };
+    TaskFileActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: TaskFileActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    TaskFileActions.prototype.Add = function (payload) {
+        return { type: TaskFileActions_1.ADD, payload: payload };
+    };
+    TaskFileActions.prototype.AddSuccess = function (payload) {
+        return { type: TaskFileActions_1.ADD_SUCCESS, payload: payload };
+    };
+    TaskFileActions.prototype.Update = function (payload) {
+        return { type: TaskFileActions_1.UPDATE, payload: payload };
+    };
+    TaskFileActions.prototype.UpdateSuccess = function (payload) {
+        return { type: TaskFileActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    TaskFileActions.prototype.Remove = function (payload) {
+        return { type: TaskFileActions_1.REMOVE, payload: payload };
+    };
+    TaskFileActions.prototype.RemoveSuccess = function (payload) {
+        return { type: TaskFileActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var TaskFileActions_1;
+    TaskFileActions.LOAD_ALL = '[TaskFile] LOAD_ALL';
+    TaskFileActions.LOAD_ALL_SUCCESS = '[TaskFile] LOAD_ALL_SUCCESS';
+    TaskFileActions.LOAD_ONE = '[TaskFile] LOAD_ONE';
+    TaskFileActions.LOAD_ONE_SUCCESS = '[TaskFile] LOAD_ONE_SUCCESS';
+    TaskFileActions.ADD = '[TaskFile] ADD';
+    TaskFileActions.ADD_SUCCESS = '[TaskFile] ADD_SUCCESS';
+    TaskFileActions.UPDATE = '[TaskFile] UPDATE';
+    TaskFileActions.UPDATE_SUCCESS = '[TaskFile] UPDATE_SUCCESS';
+    TaskFileActions.REMOVE = '[TaskFile] REMOVE';
+    TaskFileActions.REMOVE_SUCCESS = '[TaskFile] REMOVE_SUCCESS';
+    TaskFileActions = TaskFileActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TaskFileActions);
+    return TaskFileActions;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/actions/tasknote.ts":
 /*!*******************************************!*\
   !*** ./src/app/state/actions/tasknote.ts ***!
@@ -5447,6 +5570,7 @@ var DataEffects = /** @class */ (function () {
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["RecurringCostTypeActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["RelationshipActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskAssigneeActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskFileActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskStatusActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["UserActions"]().LoadAll()
             ];
@@ -5497,10 +5621,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _relationship__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./relationship */ "./src/app/state/effects/relationship.ts");
 /* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/effects/taskassignee.ts");
 /* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./task */ "./src/app/state/effects/task.ts");
-/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/effects/tasknote.ts");
-/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/effects/taskstatus.ts");
-/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+/* harmony import */ var _taskfile__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./taskfile */ "./src/app/state/effects/taskfile.ts");
+/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/effects/tasknote.ts");
+/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/effects/taskstatus.ts");
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+
 
 
 
@@ -5542,10 +5668,11 @@ var effects = [
     _relationship__WEBPACK_IMPORTED_MODULE_15__["RelationshipEffects"],
     _task__WEBPACK_IMPORTED_MODULE_17__["TaskEffects"],
     _taskassignee__WEBPACK_IMPORTED_MODULE_16__["TaskAssigneeEffects"],
-    _tasknote__WEBPACK_IMPORTED_MODULE_18__["TaskNoteEffects"],
-    _taskstatus__WEBPACK_IMPORTED_MODULE_19__["TaskStatusEffects"],
-    _timeentry__WEBPACK_IMPORTED_MODULE_20__["TimeEntryEffects"],
-    _user__WEBPACK_IMPORTED_MODULE_21__["UserEffects"]
+    _taskfile__WEBPACK_IMPORTED_MODULE_18__["TaskFileEffects"],
+    _tasknote__WEBPACK_IMPORTED_MODULE_19__["TaskNoteEffects"],
+    _taskstatus__WEBPACK_IMPORTED_MODULE_20__["TaskStatusEffects"],
+    _timeentry__WEBPACK_IMPORTED_MODULE_21__["TimeEntryEffects"],
+    _user__WEBPACK_IMPORTED_MODULE_22__["UserEffects"]
 ];
 
 
@@ -6680,6 +6807,86 @@ var TaskAssigneeEffects = /** @class */ (function (_super) {
         })
     ], TaskAssigneeEffects);
     return TaskAssigneeEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/effects/taskfile.ts":
+/*!*******************************************!*\
+  !*** ./src/app/state/effects/taskfile.ts ***!
+  \*******************************************/
+/*! exports provided: TaskFileEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskFileEffects", function() { return TaskFileEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TaskFileEffects = /** @class */ (function (_super) {
+    __extends(TaskFileEffects, _super);
+    function TaskFileEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/task-files/';
+        _this.prefix = '[TaskFile]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskFileEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskFileEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskFileEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskFileEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskFileEffects.prototype, "remove$", void 0);
+    TaskFileEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TaskFileEffects);
+    return TaskFileEffects;
 }(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
 
 
@@ -7858,6 +8065,52 @@ function reducer(state, action) {
 
 /***/ }),
 
+/***/ "./src/app/state/reducers/taskfile.ts":
+/*!********************************************!*\
+  !*** ./src/app/state/reducers/taskfile.ts ***!
+  \********************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[TaskFile]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/state/reducers/tasknote.ts":
 /*!********************************************!*\
   !*** ./src/app/state/reducers/tasknote.ts ***!
@@ -8147,7 +8400,7 @@ var getJobRelationshipCollectionForJob = function (id) { return Object(_ngrx_sto
 /*!*****************************************!*\
   !*** ./src/app/state/selectors/task.ts ***!
   \*****************************************/
-/*! exports provided: getTaskAssigneesForTask, getTaskCollection, getTaskCollectionById, getTaskCollectionForJob, getTaskNotes, getTaskNotesForTask */
+/*! exports provided: getTaskAssigneesForTask, getTaskCollection, getTaskCollectionById, getTaskCollectionForJob, getTaskFilesForTask, getTaskNotes, getTaskNotesForTask */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8156,6 +8409,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollection", function() { return getTaskCollection; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionById", function() { return getTaskCollectionById; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionForJob", function() { return getTaskCollectionForJob; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskFilesForTask", function() { return getTaskFilesForTask; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNotes", function() { return getTaskNotes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNotesForTask", function() { return getTaskNotesForTask; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
@@ -8185,6 +8439,7 @@ var getTaskCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createS
 });
 var getTaskCollectionById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', id]); }); };
 var getTaskCollectionForJob = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, ['job', id]); }); };
+var getTaskFilesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskFileState"], function (files) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](files, ['task', id]); }); };
 var getTaskNotes = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskNoteState"], function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](notes, ['updated_at'], ['desc']); });
 var getTaskNotesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskNotes, function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](notes, ['task', id]); }); };
 
@@ -8351,7 +8606,7 @@ var getUserById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MO
 /*!********************************!*\
   !*** ./src/app/state/state.ts ***!
   \********************************/
-/*! exports provided: reducers, getBillingFrequencyState, getClientState, getClientContactState, getFilterState, getJobState, getJobFileState, getJobNoteState, getJobRecurringCostState, getJobRelationshipState, getJobStatusState, getJobTypeState, getMeState, getPaymentOptionState, getPositionState, getRecurringCostTypeState, getRelationshipState, getTaskState, getTaskAssigneeState, getTaskNoteState, getTaskStatusState, getTimeEntryState, getUserState */
+/*! exports provided: reducers, getBillingFrequencyState, getClientState, getClientContactState, getFilterState, getJobState, getJobFileState, getJobNoteState, getJobRecurringCostState, getJobRelationshipState, getJobStatusState, getJobTypeState, getMeState, getPaymentOptionState, getPositionState, getRecurringCostTypeState, getRelationshipState, getTaskState, getTaskAssigneeState, getTaskFileState, getTaskNoteState, getTaskStatusState, getTimeEntryState, getUserState */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8375,6 +8630,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRelationshipState", function() { return getRelationshipState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskState", function() { return getTaskState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskAssigneeState", function() { return getTaskAssigneeState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskFileState", function() { return getTaskFileState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNoteState", function() { return getTaskNoteState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskStatusState", function() { return getTaskStatusState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeEntryState", function() { return getTimeEntryState; });
@@ -8397,11 +8653,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_relationship__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./reducers/relationship */ "./src/app/state/reducers/relationship.ts");
 /* harmony import */ var _reducers_task__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./reducers/task */ "./src/app/state/reducers/task.ts");
 /* harmony import */ var _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./reducers/taskassignee */ "./src/app/state/reducers/taskassignee.ts");
-/* harmony import */ var _reducers_tasknote__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./reducers/tasknote */ "./src/app/state/reducers/tasknote.ts");
-/* harmony import */ var _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./reducers/taskstatus */ "./src/app/state/reducers/taskstatus.ts");
-/* harmony import */ var _reducers_timeentry__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./reducers/timeentry */ "./src/app/state/reducers/timeentry.ts");
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./reducers/user */ "./src/app/state/reducers/user.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _reducers_taskfile__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./reducers/taskfile */ "./src/app/state/reducers/taskfile.ts");
+/* harmony import */ var _reducers_tasknote__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./reducers/tasknote */ "./src/app/state/reducers/tasknote.ts");
+/* harmony import */ var _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./reducers/taskstatus */ "./src/app/state/reducers/taskstatus.ts");
+/* harmony import */ var _reducers_timeentry__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./reducers/timeentry */ "./src/app/state/reducers/timeentry.ts");
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./reducers/user */ "./src/app/state/reducers/user.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+
 
 
 
@@ -8444,33 +8702,35 @@ var reducers = {
     relationships: _reducers_relationship__WEBPACK_IMPORTED_MODULE_15__["reducer"],
     tasks: _reducers_task__WEBPACK_IMPORTED_MODULE_16__["reducer"],
     task_assignees: _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_17__["reducer"],
-    task_notes: _reducers_tasknote__WEBPACK_IMPORTED_MODULE_18__["reducer"],
-    task_statuses: _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_19__["reducer"],
-    time_entries: _reducers_timeentry__WEBPACK_IMPORTED_MODULE_20__["reducer"],
-    users: _reducers_user__WEBPACK_IMPORTED_MODULE_21__["reducer"]
+    task_files: _reducers_taskfile__WEBPACK_IMPORTED_MODULE_18__["reducer"],
+    task_notes: _reducers_tasknote__WEBPACK_IMPORTED_MODULE_19__["reducer"],
+    task_statuses: _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_20__["reducer"],
+    time_entries: _reducers_timeentry__WEBPACK_IMPORTED_MODULE_21__["reducer"],
+    users: _reducers_user__WEBPACK_IMPORTED_MODULE_22__["reducer"]
 };
-var getBillingFrequencyState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('billing_frequencies');
-var getClientState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('clients');
-var getClientContactState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('client_contacts');
-var getFilterState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('filters');
-var getJobState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('jobs');
-var getJobFileState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_files');
-var getJobNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_notes');
-var getJobRecurringCostState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_recurring_costs');
-var getJobRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_relationships');
-var getJobStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_statuses');
-var getJobTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('job_types');
-var getMeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('me');
-var getPaymentOptionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('payment_options');
-var getPositionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('positions');
-var getRecurringCostTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('recurring_cost_types');
-var getRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('relationships');
-var getTaskState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('tasks');
-var getTaskAssigneeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('task_assignees');
-var getTaskNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('task_notes');
-var getTaskStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('task_statuses');
-var getTimeEntryState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('time_entries');
-var getUserState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_22__["createFeatureSelector"])('users');
+var getBillingFrequencyState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('billing_frequencies');
+var getClientState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('clients');
+var getClientContactState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('client_contacts');
+var getFilterState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('filters');
+var getJobState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('jobs');
+var getJobFileState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_files');
+var getJobNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_notes');
+var getJobRecurringCostState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_recurring_costs');
+var getJobRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_relationships');
+var getJobStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_statuses');
+var getJobTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_types');
+var getMeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('me');
+var getPaymentOptionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('payment_options');
+var getPositionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('positions');
+var getRecurringCostTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('recurring_cost_types');
+var getRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('relationships');
+var getTaskState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('tasks');
+var getTaskAssigneeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_assignees');
+var getTaskFileState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_files');
+var getTaskNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_notes');
+var getTaskStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_statuses');
+var getTimeEntryState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('time_entries');
+var getUserState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('users');
 
 
 /***/ }),
@@ -8508,6 +8768,33 @@ var readableTextColor = function (color) {
     };
     var bgRgb = hexToRgb(color);
     return colourIsLight(bgRgb.r, bgRgb.g, bgRgb.b) ? 'black' : 'white';
+};
+
+
+/***/ }),
+
+/***/ "./src/app/utils/cookies.ts":
+/*!**********************************!*\
+  !*** ./src/app/utils/cookies.ts ***!
+  \**********************************/
+/*! exports provided: getCookie */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookie", function() { return getCookie; });
+var getCookie = function (name) {
+    var ca = document.cookie.split(';');
+    var caLen = ca.length;
+    var cookieName = name + "=";
+    var c;
+    for (var i = 0; i < caLen; i += 1) {
+        c = ca[i].replace(/^\s+/g, '');
+        if (c.indexOf(cookieName) == 0) {
+            return c.substring(cookieName.length, c.length);
+        }
+    }
+    return '';
 };
 
 

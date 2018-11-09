@@ -1,13 +1,16 @@
 import * as _ from 'lodash';
+import * as actions from '../state/actions';
 
 import { ActionsSubject, Store, select } from '@ngrx/store';
 import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { getTaskAssigneesForTask, getTaskCollectionById, getTaskNotesForTask } from './../state/selectors/task';
+import { getTaskAssigneesForTask, getTaskCollectionById, getTaskFilesForTask, getTaskNotesForTask } from './../state/selectors/task';
 
 import { AppState } from '../state/state';
+import { DropzoneConfigInterface } from '../../../node_modules/ngx-dropzone-wrapper';
 import { FormCleanAfterMethod } from '../forms/base.form';
 import { ITask } from '../state/reducers/task';
 import { ITaskAssignee } from '../state/reducers/taskassignee';
+import { ITaskFile } from './../state/reducers/taskfile';
 import { ITaskNote } from '../state/reducers/tasknote';
 import { IUser } from '../state/reducers/user';
 import { Observable } from 'rxjs';
@@ -16,6 +19,7 @@ import { TaskDescriptionForm } from '../forms/task-description.form';
 import { TaskNoteForm } from '../forms/task-note.form';
 import { TaskTargetDateForm } from '../forms/task-target-date.form';
 import { TaskTitleForm } from '../forms/task-title.form';
+import { getCookie } from '../utils/cookies';
 import { getUserState } from './../state/state';
 import { take } from 'rxjs/operators';
 
@@ -30,9 +34,15 @@ export class TaskFormComponent implements OnChanges {
 
     @ViewChild('modalPanel') modalPanelRef: ElementRef;
 
+    dropzoneConfig: DropzoneConfigInterface = {
+        url: '/api/task-files/',
+        maxFilesize: 50,
+        headers: { 'X-CSRFTOKEN': getCookie('csrftoken') }
+    };
     users$: Observable<IUser[]>;
     task$: Observable<ITask>;
     taskAssignees$: Observable<ITaskAssignee[]>;
+    taskFiles$: Observable<ITaskFile[]>;
     taskNotes$: Observable<ITaskNote[]>;
     taskNoteForms = {};
     descriptionForm: TaskDescriptionForm;
@@ -55,6 +65,7 @@ export class TaskFormComponent implements OnChanges {
 
     ngOnChanges(changes: SimpleChanges) {
         if (_.has(changes, 'id.currentValue')) {
+            this.taskFiles$ = this.store.pipe(select(getTaskFilesForTask(this.id)));
             this.task$ = this.store.pipe(select(getTaskCollectionById(this.id)));
             this.taskAssignees$ = this.store.pipe(select(getTaskAssigneesForTask(this.id)));
             this.taskNotes$ = this.store.pipe(select(getTaskNotesForTask(this.id)));
@@ -99,5 +110,20 @@ export class TaskFormComponent implements OnChanges {
         );
         this.assigneeEditForm.editable = true;
         this.assigneeEditForm.load(assignee);
+    }
+
+    // files
+    
+    onFileSending(event: any) {
+        event[2].set('task', this.id);
+    }
+
+    onFileSuccess(event: any) {
+        const payload = event[1];
+        this.store.dispatch({type: actions.TaskFileActions.LOAD_ONE_SUCCESS, payload});
+    }
+
+    deleteFile(payload: ITaskFile) {
+        this.store.dispatch({type: actions.TaskFileActions.REMOVE, payload});
     }
 }

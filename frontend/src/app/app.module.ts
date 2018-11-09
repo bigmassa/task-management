@@ -15,6 +15,7 @@ import { ClientComponent } from './components/client.component';
 import { ClientListComponent } from './components/client-list.component';
 import { ClientSearchPipe } from './pipes/client-search.pipe';
 import { ClosedJobsPipe } from './pipes/closed-jobs.pipe';
+import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { EffectsModule } from '@ngrx/effects';
 import { GetPipe } from './pipes/get.pipe';
 import { JobComponent } from './components/job.component';
@@ -66,6 +67,7 @@ import { effects } from './state/effects';
         AppRoutingModule,
         BrowserModule,
         EffectsModule.forRoot(effects),
+        DropzoneModule,
         FormsModule,
         HttpClientModule,
         HttpClientXsrfModule.withOptions({

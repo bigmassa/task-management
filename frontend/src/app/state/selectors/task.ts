@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import { getTaskNoteState, getTaskState } from '../state';
+import { getTaskFileState, getTaskNoteState, getTaskState } from '../state';
 
 import { createSelector } from '@ngrx/store';
 import { getJobCollection } from './job';
@@ -40,6 +40,11 @@ export const getTaskCollectionById = (id) => createSelector(
 export const getTaskCollectionForJob = (id) => createSelector(
     getTaskCollection,
     (tasks) => _.filter(tasks, ['job', id])
+);
+
+export const getTaskFilesForTask = (id) => createSelector(
+    getTaskFileState,
+    (files) => _.filter(files, ['task', id])
 );
 
 export const getTaskNotes = createSelector(

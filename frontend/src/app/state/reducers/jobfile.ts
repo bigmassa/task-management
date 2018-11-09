@@ -2,7 +2,7 @@ import { reduceState } from '../generics';
 
 export interface IJobFile {
     id?: number;
-    job: string;
+    job: number;
     file: string;
     uploaded_by?: number;
     uploaded_on?: string;
