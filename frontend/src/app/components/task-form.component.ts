@@ -3,23 +3,27 @@ import * as actions from '../state/actions';
 
 import { ActionsSubject, Store, select } from '@ngrx/store';
 import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { getTaskAssigneesForTask, getTaskCollectionById, getTaskFilesForTask, getTaskNotesForTask } from './../state/selectors/task';
+import { getTaskAssigneesForTask, getTaskCollectionById, getTaskFilesForTask, getTaskNotesForTask, getTaskTagsForTask } from './../state/selectors/task';
 
 import { AppState } from '../state/state';
 import { DropzoneConfigInterface } from '../../../node_modules/ngx-dropzone-wrapper';
 import { FormCleanAfterMethod } from '../forms/base.form';
+import { ITag } from '../state/reducers/tag';
 import { ITask } from '../state/reducers/task';
 import { ITaskAssignee } from '../state/reducers/taskassignee';
 import { ITaskFile } from './../state/reducers/taskfile';
 import { ITaskNote } from '../state/reducers/tasknote';
+import { ITaskTag } from './../state/reducers/tasktag';
 import { IUser } from '../state/reducers/user';
 import { Observable } from 'rxjs';
 import { TaskAssigneeForm } from '../forms/task-assignee.form';
 import { TaskDescriptionForm } from '../forms/task-description.form';
 import { TaskNoteForm } from '../forms/task-note.form';
+import { TaskTagForm } from '../forms/task-tag.form';
 import { TaskTargetDateForm } from '../forms/task-target-date.form';
 import { TaskTitleForm } from '../forms/task-title.form';
 import { getCookie } from '../utils/cookies';
+import { getTagCollection } from '../state/selectors/tag';
 import { getUserState } from './../state/state';
 import { take } from 'rxjs/operators';
 
@@ -44,6 +48,8 @@ export class TaskFormComponent implements OnChanges {
     taskAssignees$: Observable<ITaskAssignee[]>;
     taskFiles$: Observable<ITaskFile[]>;
     taskNotes$: Observable<ITaskNote[]>;
+    taskTags$: Observable<ITaskTag[]>;
+    tags$: Observable<ITag[]>;
     taskNoteForms = {};
     descriptionForm: TaskDescriptionForm;
     titleForm: TaskTitleForm;
@@ -51,11 +57,13 @@ export class TaskFormComponent implements OnChanges {
     newNoteForm: TaskNoteForm;
     assigneeEditForm: TaskAssigneeForm;
     selectedClientId: number = null; 
+    tagEditForm: TaskTagForm;
 
     constructor(
         private store: Store<AppState>,
         private actionsSubject: ActionsSubject
     ) {
+        this.tags$ = this.store.pipe(select(getTagCollection));
         this.users$ = this.store.pipe(select(getUserState));
         this.descriptionForm = new TaskDescriptionForm(this.store, this.actionsSubject);
         this.titleForm = new TaskTitleForm(this.store, this.actionsSubject);
@@ -69,6 +77,7 @@ export class TaskFormComponent implements OnChanges {
             this.task$ = this.store.pipe(select(getTaskCollectionById(this.id)));
             this.taskAssignees$ = this.store.pipe(select(getTaskAssigneesForTask(this.id)));
             this.taskNotes$ = this.store.pipe(select(getTaskNotesForTask(this.id)));
+            this.taskTags$ = this.store.pipe(select(getTaskTagsForTask(this.id)));
             this.task$.pipe(take(1)).subscribe(
                 d => {
                     this.selectedClientId = d._job.client;
@@ -125,5 +134,25 @@ export class TaskFormComponent implements OnChanges {
 
     deleteFile(payload: ITaskFile) {
         this.store.dispatch({type: actions.TaskFileActions.REMOVE, payload});
+    }
+
+    // tags
+
+    editTag(tag: ITaskTag) {
+        this.tagEditForm = new TaskTagForm(
+            this.store,
+            this.actionsSubject
+        );
+        this.tagEditForm.editable = true;
+        this.tagEditForm.load(tag);
+    }
+
+    setTag(event: any, tag: ITag) {
+        this.tagEditForm.controls.tag.setValue(tag.id);
+        this.tagEditForm.save(event);
+    }
+
+    addNewTagOption(title: string) {
+        this.store.dispatch({type: actions.TagActions.ADD, payload: {name: title}});
     }
 }

@@ -30,6 +30,7 @@ export class DataEffects {
                     new actions.TimeEntryActions().LoadAll(fromDate),
                     new actions.BillingFrequencyActions().LoadAll(),
                     new actions.ClientContactActions().LoadAll(),
+                    new actions.ClientContactTagActions().LoadAll(),
                     new actions.JobFileActions().LoadAll(),
                     new actions.JobRecurringCostActions().LoadAll(),
                     new actions.JobRelationshipActions().LoadAll(),
@@ -40,9 +41,11 @@ export class DataEffects {
                     new actions.PositionActions().LoadAll(),
                     new actions.RecurringCostTypeActions().LoadAll(),
                     new actions.RelationshipActions().LoadAll(),
+                    new actions.TagActions().LoadAll(),
                     new actions.TaskAssigneeActions().LoadAll(),
                     new actions.TaskFileActions().LoadAll(),
                     new actions.TaskStatusActions().LoadAll(),
+                    new actions.TaskTagActions().LoadAll(),
                     new actions.UserActions().LoadAll()
                 ];
             }

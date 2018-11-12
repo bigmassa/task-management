@@ -27,6 +27,7 @@ import { OpenJobsPipe } from './pipes/open-jobs.pipe';
 import { ReportListComponent } from './components/report-list.component';
 import { RouterModule } from '@angular/router';
 import { SearchComponent } from './components/search.component';
+import { TagComponent } from './components/tag.component';
 import { TaskCardComponent } from './components/task-card.component';
 import { TaskCreateFormComponent } from './components/task-create-form.component';
 import { TaskFormComponent } from './components/task-form.component';
@@ -54,6 +55,7 @@ import { effects } from './state/effects';
         OpenJobsPipe,
         ReportListComponent,
         SearchComponent,
+        TagComponent,
         TaskboardComponent,
         TaskCardComponent,
         TaskCreateFormComponent,

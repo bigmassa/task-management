@@ -7,10 +7,22 @@
 
   .tag {
     display: inline-block;
-    padding: .1rem .5rem;
-    margin-right: .3rem;
-    background: color-a("primary", .14);
-    border: 1px solid $border-color;
+    padding: .2rem .5rem;
+    margin-right: .5rem;
+    color: color("white");
+    background: color("shadylady");
+    border: 1px solid color("shadylady");
     border-radius: $global-radius;
+  }
+
+  .tag.outline {
+    color: color("shadylady");
+    background: transparent;
+    border: dotted 1px color("shadylady");
+  }
+
+  .tag.active {
+    color: color("primary");
+    border-color: color("primary");
   }
 }

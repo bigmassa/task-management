@@ -3,6 +3,7 @@ import * as _ from 'lodash';
 import { getClientContactState, getClientState, getPositionState } from '../state';
 
 import { createSelector } from '@ngrx/store';
+import { getClientContactTagState } from './../state';
 
 export const getClientCollection = createSelector(
     getClientState,
@@ -17,10 +18,12 @@ export const getClientCollectionById = (id) => createSelector(
 export const getClientContactCollection = createSelector(
     getClientContactState,
     getPositionState,
-    (contacts, positions) => {
+    getClientContactTagState,
+    (contacts, positions, tags) => {
         const objects = _.map(contacts, (contact) => {
             return _.assign({}, contact, {
-                _position: _.find(positions, ['id', contact.position])
+                _position: _.find(positions, ['id', contact.position]),
+                _tags: _.filter(tags, ['object_id', contact.id])
             });
         });
         return _.orderBy(objects, ['first_name', 'last_name'], ['asc', 'asc']);

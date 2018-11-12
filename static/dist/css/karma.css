@@ -2638,11 +2638,23 @@ td textarea {
 
 .tags .tag {
   display: inline-block;
-  padding: .1rem .5rem;
-  margin-right: .3rem;
-  background: rgba(41, 44, 54, 0.14);
-  border: 1px solid #e6e6e6;
+  padding: .2rem .5rem;
+  margin-right: .5rem;
+  color: white;
+  background: #979797;
+  border: 1px solid #979797;
   border-radius: 0.25rem;
+}
+
+.tags .tag.outline {
+  color: #979797;
+  background: transparent;
+  border: dotted 1px #979797;
+}
+
+.tags .tag.active {
+  color: #292c36;
+  border-color: #292c36;
 }
 
 .client-list-wrapper {

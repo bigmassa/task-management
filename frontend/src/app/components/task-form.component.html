@@ -110,6 +110,24 @@
                     </div>
                     <hr>
 
+                    <p class="mb-0-5"><strong>Tags</strong></p>
+                    <ul class="tags">
+                        <li tag [id]="tag.tag" *ngFor="let tag of taskTags$ | async" class="tag pointer mb-0-5" (click)="editTag(tag)"></li>
+                        <li class="tag outline pointer mb-0-5" (click)="editTag({object_id: id})"><i class="icon-plus"></i></li>
+                    </ul>
+                    <div *ngIf="tagEditForm && tagEditForm.editable" class="mt-1">
+                        <p class="mb-0-5">Choose a new tag</p>
+                        <ul class="tags mb-1">
+                            <li tag [id]="tag.id" *ngFor="let tag of tags$ | async" class="tag outline pointer mb-0-5" [class.active]="tagEditForm.value.tag == tag.id" (click)="setTag($event, tag)"></li>
+                        </ul>
+                        <div class="input-group">
+                            <input #newTag type="text" placeholder="Create a tag...">
+                            <button class="button input-group-addon" (click)="addNewTagOption(newTag.value)">Add</button>
+                        </div>
+                        <ng-container *ngIf="tagEditForm.value.id">
+                            <button class="button" (click)="tagEditForm.delete($event)">Delete</button>
+                        </ng-container>
+                    </div>
                 </div>
             </div>
         </div>

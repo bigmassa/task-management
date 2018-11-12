@@ -105,6 +105,7 @@
                         <th>Phone Number</th>
                         <th>Mobile Number</th>
                         <th>Position</th>
+                        <th>Tags</th>
                     </tr>
                 </thead>
                 <ng-container *ngIf="contacts$ | async as contacts">
@@ -115,6 +116,7 @@
                         <td>{{ contact | get:'phone_number' }}</td>
                         <td>{{ contact | get:'mobile_number' }}</td>
                         <td>{{ contact | get:'_position.title' }}</td>
+                        <td><ul class="tags"><li tag [id]="tag.tag" class="tag" *ngFor="let tag of contact._tags"></li></ul></td>
                     </tr>
                 </tbody>
                 </ng-container>

@@ -1,5 +1,6 @@
 import { BillingFrequencyEffects } from './billingfrequency';
 import { ClientContactEffects } from './clientcontact';
+import { ClientContactTagEffects } from './clientcontacttag';
 import { ClientEffects } from './client';
 import { DataEffects } from './data';
 import { JobEffects } from './job';
@@ -14,17 +15,20 @@ import { PaymentOptionEffects } from './paymentoption';
 import { PositionEffects } from './position';
 import { RecurringCostTypeEffects } from './recurringcosttype';
 import { RelationshipEffects } from './relationship';
+import { TagEffects } from './tag';
 import { TaskAssigneeEffects } from './taskassignee';
 import { TaskEffects } from './task';
 import { TaskFileEffects } from './taskfile';
 import { TaskNoteEffects } from './tasknote';
 import { TaskStatusEffects } from './taskstatus';
+import { TaskTagEffects } from './tasktag';
 import { TimeEntryEffects } from './timeentry';
 import { UserEffects } from './user';
 
 export const effects = [
     BillingFrequencyEffects,
     ClientContactEffects,
+    ClientContactTagEffects,
     ClientEffects,
     DataEffects,
     JobEffects,
@@ -39,11 +43,13 @@ export const effects = [
     PositionEffects,
     RecurringCostTypeEffects,
     RelationshipEffects,
+    TagEffects,
     TaskEffects,
     TaskAssigneeEffects,
     TaskFileEffects,
     TaskNoteEffects,
     TaskStatusEffects,
+    TaskTagEffects,
     TimeEntryEffects,
     UserEffects
 ];

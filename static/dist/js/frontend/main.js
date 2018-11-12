@@ -401,15 +401,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
-/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
-/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
-/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
-/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
-/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
-/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
-/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
-/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
+/* harmony import */ var _components_tag_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/tag.component */ "./src/app/components/tag.component.ts");
+/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
+/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
+/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
+/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
+/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
+/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
+/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -419,6 +420,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -478,19 +480,20 @@ var AppModule = /** @class */ (function () {
                 _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_23__["OpenJobsPipe"],
                 _components_report_list_component__WEBPACK_IMPORTED_MODULE_24__["ReportListComponent"],
                 _components_search_component__WEBPACK_IMPORTED_MODULE_26__["SearchComponent"],
-                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_30__["TaskboardComponent"],
-                _components_task_card_component__WEBPACK_IMPORTED_MODULE_27__["TaskCardComponent"],
-                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_28__["TaskCreateFormComponent"],
-                _components_task_form_component__WEBPACK_IMPORTED_MODULE_29__["TaskFormComponent"],
-                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_31__["TasksByStatusPipe"],
-                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_32__["TimeEntryFormComponent"],
-                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_33__["TimesheetComponent"],
-                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_34__["TimesheetSignoffComponent"]
+                _components_tag_component__WEBPACK_IMPORTED_MODULE_27__["TagComponent"],
+                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_31__["TaskboardComponent"],
+                _components_task_card_component__WEBPACK_IMPORTED_MODULE_28__["TaskCardComponent"],
+                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_29__["TaskCreateFormComponent"],
+                _components_task_form_component__WEBPACK_IMPORTED_MODULE_30__["TaskFormComponent"],
+                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_32__["TasksByStatusPipe"],
+                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_33__["TimeEntryFormComponent"],
+                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_34__["TimesheetComponent"],
+                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_35__["TimesheetSignoffComponent"]
             ],
             imports: [
                 _app_routing__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["BrowserModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_16__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_35__["effects"]),
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_16__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_36__["effects"]),
                 ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_15__["DropzoneModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
@@ -1093,7 +1096,7 @@ var ClientListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"client$ | async as client\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"client.colour\"></span>\n            <div class=\"h2\">\n                <a class=\"underline-dotted\">{{ client.name }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <button class=\"button button-white\" type=\"submit\">Edit</button>\n                <a class=\"button button-white button-clear\" >Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'jobs'\" [class.active]=\"selectedTab == 'jobs'\">Jobs</li>\n                <li (click)=\"selectedTab = 'closed_jobs'\" [class.active]=\"selectedTab == 'closed_jobs'\">Closed Jobs</li>\n                <li (click)=\"selectedTab = 'contacts'\" [class.active]=\"selectedTab == 'contacts'\">Contacts</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Email Address</p>\n                <p>\n                    <a *ngIf=\"client.email_address; else emptyValue\" href=\"mailto://{{ client.email_address }}\" class=\"underline-dotted\">{{ client.email_address }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Phone Number</p>\n                <p>\n                    <ng-container *ngIf=\"client.phone_number; else emptyValue\">\n                        <a href=\"tel:{{ client.phone_number }}\" class=\"underline-dotted\">{{ client.phone_number }}</a>\n                        <a *ngIf=\"(me$ | async)?.is_gradwell_enabled\"><i class=\"icon-phone c-red\"></i></a>\n                    </ng-container>    \n                </p>\n                <hr/>\n                <p class=\"strong\">Website</p>\n                <p>\n                    <a *ngIf=\"client.website; else emptyValue\" href=\"{{ client.website }}\" class=\"underline-dotted\">{{ client.website }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Address</p>\n                <p class=\"ws-pre-wrap\">{{ client | get:'address' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Notes</p>\n                    <p class=\"ws-pre-wrap\">{{ client | get:'notes' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'jobs'\">\n            <search [(ngModel)]=\"openSearchTerms\"></search>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | openJobs | jobSearch:openSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'closed_jobs'\">\n                <search [(ngModel)]=\"closedSearchTerms\"></search>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | closedJobs | jobSearch:closedSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'contacts'\">\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Email Address</th>\n                        <th>Phone Number</th>\n                        <th>Mobile Number</th>\n                        <th>Position</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"contacts$ | async as contacts\">\n                <tbody *ngIf=\"contacts.length > 0; else emptyContacts\">\n                    <tr *ngFor=\"let contact of contacts\">\n                        <td>{{ contact.first_name }} {{ contact.last_name }}</td>\n                        <td>{{ contact | get:'email_address' }}</td>\n                        <td>{{ contact | get:'phone_number' }}</td>\n                        <td>{{ contact | get:'mobile_number' }}</td>\n                        <td>{{ contact | get:'_position.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyValue><span>-</span></ng-template>\n<ng-template #emptyJobs><tbody><tr><td colspan=\"3\">No jobs found.</td></tr></tbody></ng-template>\n<ng-template #emptyContacts><tbody><tr><td colspan=\"5\">No contacts found.</td></tr></tbody></ng-template>"
+module.exports = "<ng-container *ngIf=\"client$ | async as client\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"client.colour\"></span>\n            <div class=\"h2\">\n                <a class=\"underline-dotted\">{{ client.name }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <button class=\"button button-white\" type=\"submit\">Edit</button>\n                <a class=\"button button-white button-clear\" >Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'jobs'\" [class.active]=\"selectedTab == 'jobs'\">Jobs</li>\n                <li (click)=\"selectedTab = 'closed_jobs'\" [class.active]=\"selectedTab == 'closed_jobs'\">Closed Jobs</li>\n                <li (click)=\"selectedTab = 'contacts'\" [class.active]=\"selectedTab == 'contacts'\">Contacts</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Email Address</p>\n                <p>\n                    <a *ngIf=\"client.email_address; else emptyValue\" href=\"mailto://{{ client.email_address }}\" class=\"underline-dotted\">{{ client.email_address }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Phone Number</p>\n                <p>\n                    <ng-container *ngIf=\"client.phone_number; else emptyValue\">\n                        <a href=\"tel:{{ client.phone_number }}\" class=\"underline-dotted\">{{ client.phone_number }}</a>\n                        <a *ngIf=\"(me$ | async)?.is_gradwell_enabled\"><i class=\"icon-phone c-red\"></i></a>\n                    </ng-container>    \n                </p>\n                <hr/>\n                <p class=\"strong\">Website</p>\n                <p>\n                    <a *ngIf=\"client.website; else emptyValue\" href=\"{{ client.website }}\" class=\"underline-dotted\">{{ client.website }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Address</p>\n                <p class=\"ws-pre-wrap\">{{ client | get:'address' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Notes</p>\n                    <p class=\"ws-pre-wrap\">{{ client | get:'notes' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'jobs'\">\n            <search [(ngModel)]=\"openSearchTerms\"></search>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | openJobs | jobSearch:openSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'closed_jobs'\">\n                <search [(ngModel)]=\"closedSearchTerms\"></search>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | closedJobs | jobSearch:closedSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'contacts'\">\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Email Address</th>\n                        <th>Phone Number</th>\n                        <th>Mobile Number</th>\n                        <th>Position</th>\n                        <th>Tags</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"contacts$ | async as contacts\">\n                <tbody *ngIf=\"contacts.length > 0; else emptyContacts\">\n                    <tr *ngFor=\"let contact of contacts\">\n                        <td>{{ contact.first_name }} {{ contact.last_name }}</td>\n                        <td>{{ contact | get:'email_address' }}</td>\n                        <td>{{ contact | get:'phone_number' }}</td>\n                        <td>{{ contact | get:'mobile_number' }}</td>\n                        <td>{{ contact | get:'_position.title' }}</td>\n                        <td><ul class=\"tags\"><li tag [id]=\"tag.tag\" class=\"tag\" *ngFor=\"let tag of contact._tags\"></li></ul></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyValue><span>-</span></ng-template>\n<ng-template #emptyJobs><tbody><tr><td colspan=\"3\">No jobs found.</td></tr></tbody></ng-template>\n<ng-template #emptyContacts><tbody><tr><td colspan=\"5\">No contacts found.</td></tr></tbody></ng-template>"
 
 /***/ }),
 
@@ -1490,6 +1493,67 @@ var SearchComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/tag.component.html":
+/*!***********************************************!*\
+  !*** ./src/app/components/tag.component.html ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<span>{{ tag$ | async | get:'name' }}</span>"
+
+/***/ }),
+
+/***/ "./src/app/components/tag.component.ts":
+/*!*********************************************!*\
+  !*** ./src/app/components/tag.component.ts ***!
+  \*********************************************/
+/*! exports provided: TagComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TagComponent", function() { return TagComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state_selectors_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../state/selectors/tag */ "./src/app/state/selectors/tag.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TagComponent = /** @class */ (function () {
+    function TagComponent(store) {
+        this.store = store;
+    }
+    TagComponent.prototype.ngOnChanges = function (changes) {
+        this.tag$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_tag__WEBPACK_IMPORTED_MODULE_2__["getTagById"])(this.id)));
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Number)
+    ], TagComponent.prototype, "id", void 0);
+    TagComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'tag, [tag]',
+            template: __webpack_require__(/*! ./tag.component.html */ "./src/app/components/tag.component.html")
+        }),
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["Store"]])
+    ], TagComponent);
+    return TagComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/task-card.component.html":
 /*!*****************************************************!*\
   !*** ./src/app/components/task-card.component.html ***!
@@ -1671,7 +1735,7 @@ var TaskCreateFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <div (click)=\"titleForm.editable = true\">\n                        <input type=\"text\" [formControl]=\"titleForm.controls.title\" class=\"mb-0-5\">\n                        <button class=\"input-group-addon button\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <div (click)=\"descriptionForm.editable = true\">\n                            <textarea autoResize [formControl]=\"descriptionForm.controls.description\" class=\"transparent mb-0-5\" rows=\"2\"></textarea>\n                            <button class=\"button\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.cancel($event)\">Cancel</button>\n                        </div>\n                    </div>\n\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Notes</strong></p>\n                        <textarea autoResize [formControl]=\"newNoteForm.controls.note\" class=\"full-width mb-0-5\" placeholder=\"Write a note...\" rows=\"2\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of taskNotes$ | async\">\n                        <div class=\"my-1\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <div (click)=\"form.editable = true\">\n                                <textarea autoResize [formControl]=\"form.controls.note\" class=\"panel\" rows=\"1\"></textarea>\n                            </div>\n                            <div class=\"small muted\">\n                                <ng-container *ngIf=\"!form.editable\">\n                                    <button class=\"button button-clear\" (click)=\"$event.stopPropagation(); form.editable = true\">Edit</button> |\n                                    <button class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</button>\n                                </ng-container>\n                                <ng-container *ngIf=\"form.editable\">\n                                    <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                    <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                                </ng-container>\n                            </div>\n                        </div>\n                    </ng-container>\n                    \n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Files</strong></p>\n                        <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n                        <table>\n                            <ng-container *ngIf=\"taskFiles$ | async as files\">\n                            <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                                <tr *ngFor=\"let file of files\">\n                                    <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                                    <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                                </tr>\n                            </tbody>\n                            <ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n                            </ng-container>\n                        </table>\n                    </div>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ task$ | async | get:'_job._client.name' }}<br>{{ task$ | async | get:'_job.title' }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of taskAssignees$ | async\" class=\"d-inline-block text-center mr-0-5\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-0-5\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div *ngIf=\"assigneeEditForm && assigneeEditForm.editable\" class=\"mt-1\">\n                        <div class=\"input-group mb-0-5\">\n                            <select [formControl]=\"assigneeEditForm.controls.user\" class=\"mr-1 flex-fill\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of users$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                </ng-container>\n                            </select>\n                            <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\" style=\"flex: 0 0 7rem;\">\n                        </div>\n                        <div class=\"d-flex\">\n                            <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                            <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Delete</button>\n                        </div>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Time Spent (hrs)</strong></p>\n                    <p>{{ task.time_spent_hours }} of {{ task.allocated_hours }}</p>\n                    <hr>\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <div (click)=\"targetDateForm.editable = true\">\n                        <input [formControl]=\"targetDateForm.controls.target_date\" type=\"date\" class=\"\">\n                        <button class=\"button\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                    </div>\n                    <hr>\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <div (click)=\"titleForm.editable = true\">\n                        <input type=\"text\" [formControl]=\"titleForm.controls.title\" class=\"mb-0-5\">\n                        <button class=\"input-group-addon button\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <div (click)=\"descriptionForm.editable = true\">\n                            <textarea autoResize [formControl]=\"descriptionForm.controls.description\" class=\"transparent mb-0-5\" rows=\"2\"></textarea>\n                            <button class=\"button\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.cancel($event)\">Cancel</button>\n                        </div>\n                    </div>\n\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Notes</strong></p>\n                        <textarea autoResize [formControl]=\"newNoteForm.controls.note\" class=\"full-width mb-0-5\" placeholder=\"Write a note...\" rows=\"2\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of taskNotes$ | async\">\n                        <div class=\"my-1\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <div (click)=\"form.editable = true\">\n                                <textarea autoResize [formControl]=\"form.controls.note\" class=\"panel\" rows=\"1\"></textarea>\n                            </div>\n                            <div class=\"small muted\">\n                                <ng-container *ngIf=\"!form.editable\">\n                                    <button class=\"button button-clear\" (click)=\"$event.stopPropagation(); form.editable = true\">Edit</button> |\n                                    <button class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</button>\n                                </ng-container>\n                                <ng-container *ngIf=\"form.editable\">\n                                    <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                    <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                                </ng-container>\n                            </div>\n                        </div>\n                    </ng-container>\n                    \n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Files</strong></p>\n                        <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n                        <table>\n                            <ng-container *ngIf=\"taskFiles$ | async as files\">\n                            <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                                <tr *ngFor=\"let file of files\">\n                                    <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                                    <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                                </tr>\n                            </tbody>\n                            <ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n                            </ng-container>\n                        </table>\n                    </div>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ task$ | async | get:'_job._client.name' }}<br>{{ task$ | async | get:'_job.title' }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of taskAssignees$ | async\" class=\"d-inline-block text-center mr-0-5\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-0-5\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div *ngIf=\"assigneeEditForm && assigneeEditForm.editable\" class=\"mt-1\">\n                        <div class=\"input-group mb-0-5\">\n                            <select [formControl]=\"assigneeEditForm.controls.user\" class=\"mr-1 flex-fill\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of users$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                </ng-container>\n                            </select>\n                            <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\" style=\"flex: 0 0 7rem;\">\n                        </div>\n                        <div class=\"d-flex\">\n                            <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                            <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Delete</button>\n                        </div>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Time Spent (hrs)</strong></p>\n                    <p>{{ task.time_spent_hours }} of {{ task.allocated_hours }}</p>\n                    <hr>\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <div (click)=\"targetDateForm.editable = true\">\n                        <input [formControl]=\"targetDateForm.controls.target_date\" type=\"date\" class=\"\">\n                        <button class=\"button\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Tags</strong></p>\n                    <ul class=\"tags\">\n                        <li tag [id]=\"tag.tag\" *ngFor=\"let tag of taskTags$ | async\" class=\"tag pointer mb-0-5\" (click)=\"editTag(tag)\"></li>\n                        <li class=\"tag outline pointer mb-0-5\" (click)=\"editTag({object_id: id})\"><i class=\"icon-plus\"></i></li>\n                    </ul>\n                    <div *ngIf=\"tagEditForm && tagEditForm.editable\" class=\"mt-1\">\n                        <p class=\"mb-0-5\">Choose a new tag</p>\n                        <ul class=\"tags mb-1\">\n                            <li tag [id]=\"tag.id\" *ngFor=\"let tag of tags$ | async\" class=\"tag outline pointer mb-0-5\" [class.active]=\"tagEditForm.value.tag == tag.id\" (click)=\"setTag($event, tag)\"></li>\n                        </ul>\n                        <div class=\"input-group\">\n                            <input #newTag type=\"text\" placeholder=\"Create a tag...\">\n                            <button class=\"button input-group-addon\" (click)=\"addNewTagOption(newTag.value)\">Add</button>\n                        </div>\n                        <ng-container *ngIf=\"tagEditForm.value.id\">\n                            <button class=\"button\" (click)=\"tagEditForm.delete($event)\">Delete</button>\n                        </ng-container>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1695,11 +1759,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../forms/task-assignee.form */ "./src/app/forms/task-assignee.form.ts");
 /* harmony import */ var _forms_task_description_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../forms/task-description.form */ "./src/app/forms/task-description.form.ts");
 /* harmony import */ var _forms_task_note_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../forms/task-note.form */ "./src/app/forms/task-note.form.ts");
-/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
-/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
-/* harmony import */ var _utils_cookies__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/cookies */ "./src/app/utils/cookies.ts");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../forms/task-tag.form */ "./src/app/forms/task-tag.form.ts");
+/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
+/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
+/* harmony import */ var _utils_cookies__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/cookies */ "./src/app/utils/cookies.ts");
+/* harmony import */ var _state_selectors_tag__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../state/selectors/tag */ "./src/app/state/selectors/tag.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1723,6 +1789,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var TaskFormComponent = /** @class */ (function () {
     function TaskFormComponent(store, actionsSubject) {
         this.store = store;
@@ -1731,14 +1799,15 @@ var TaskFormComponent = /** @class */ (function () {
         this.dropzoneConfig = {
             url: '/api/task-files/',
             maxFilesize: 50,
-            headers: { 'X-CSRFTOKEN': Object(_utils_cookies__WEBPACK_IMPORTED_MODULE_11__["getCookie"])('csrftoken') }
+            headers: { 'X-CSRFTOKEN': Object(_utils_cookies__WEBPACK_IMPORTED_MODULE_12__["getCookie"])('csrftoken') }
         };
         this.taskNoteForms = {};
         this.selectedClientId = null;
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_12__["getUserState"]));
+        this.tags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_tag__WEBPACK_IMPORTED_MODULE_13__["getTagCollection"]));
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_14__["getUserState"]));
         this.descriptionForm = new _forms_task_description_form__WEBPACK_IMPORTED_MODULE_7__["TaskDescriptionForm"](this.store, this.actionsSubject);
-        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_10__["TaskTitleForm"](this.store, this.actionsSubject);
-        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_9__["TaskTargetDateForm"](this.store, this.actionsSubject);
+        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_11__["TaskTitleForm"](this.store, this.actionsSubject);
+        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_10__["TaskTargetDateForm"](this.store, this.actionsSubject);
         this.newNoteForm = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_8__["TaskNoteForm"](this.store, this.actionsSubject);
     }
     TaskFormComponent.prototype.ngOnChanges = function (changes) {
@@ -1748,7 +1817,8 @@ var TaskFormComponent = /** @class */ (function () {
             this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollectionById"])(this.id)));
             this.taskAssignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_4__["getTaskAssigneesForTask"])(this.id)));
             this.taskNotes$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_4__["getTaskNotesForTask"])(this.id)));
-            this.task$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_13__["take"])(1)).subscribe(function (d) {
+            this.taskTags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_4__["getTaskTagsForTask"])(this.id)));
+            this.task$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_15__["take"])(1)).subscribe(function (d) {
                 _this.selectedClientId = d._job.client;
                 _this.descriptionForm.load(d);
                 _this.titleForm.load(d);
@@ -1789,6 +1859,19 @@ var TaskFormComponent = /** @class */ (function () {
     };
     TaskFormComponent.prototype.deleteFile = function (payload) {
         this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskFileActions"].REMOVE, payload: payload });
+    };
+    // tags
+    TaskFormComponent.prototype.editTag = function (tag) {
+        this.tagEditForm = new _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_9__["TaskTagForm"](this.store, this.actionsSubject);
+        this.tagEditForm.editable = true;
+        this.tagEditForm.load(tag);
+    };
+    TaskFormComponent.prototype.setTag = function (event, tag) {
+        this.tagEditForm.controls.tag.setValue(tag.id);
+        this.tagEditForm.save(event);
+    };
+    TaskFormComponent.prototype.addNewTagOption = function (title) {
+        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TagActions"].ADD, payload: { name: title } });
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])(),
@@ -2684,6 +2767,64 @@ var TaskNoteForm = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/forms/task-tag.form.ts":
+/*!****************************************!*\
+  !*** ./src/app/forms/task-tag.form.ts ***!
+  \****************************************/
+/*! exports provided: TaskTagForm */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskTagForm", function() { return TaskTagForm; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./base.form */ "./src/app/forms/base.form.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+var options = {
+    alwaysEditable: false,
+    cleanAfterMethod: _base_form__WEBPACK_IMPORTED_MODULE_2__["FormCleanAfterMethod"].loadSaved
+};
+var TaskTagForm = /** @class */ (function (_super) {
+    __extends(TaskTagForm, _super);
+    function TaskTagForm(store, actionsSubject, formOptions) {
+        var _this = _super.call(this, store, actionsSubject, {
+            id: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null),
+            object_id: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            tag: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required)
+        }, null, null, lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, options, formOptions)) || this;
+        _this.store = store;
+        _this.actionsSubject = actionsSubject;
+        _this.createAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskTagActions"].ADD;
+        _this.createSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskTagActions"].ADD_SUCCESS;
+        _this.updateAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskTagActions"].UPDATE;
+        _this.updateSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskTagActions"].UPDATE_SUCCESS;
+        _this.deleteAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskTagActions"].REMOVE;
+        _this.deleteSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskTagActions"].REMOVE_SUCCESS;
+        return _this;
+    }
+    return TaskTagForm;
+}(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/forms/task-target-date.form.ts":
 /*!************************************************!*\
   !*** ./src/app/forms/task-target-date.form.ts ***!
@@ -3525,6 +3666,89 @@ var ClientContactActions = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/state/actions/clientcontacttag.ts":
+/*!***************************************************!*\
+  !*** ./src/app/state/actions/clientcontacttag.ts ***!
+  \***************************************************/
+/*! exports provided: ClientContactTagActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientContactTagActions", function() { return ClientContactTagActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var ClientContactTagActions = /** @class */ (function () {
+    function ClientContactTagActions() {
+    }
+    ClientContactTagActions_1 = ClientContactTagActions;
+    ClientContactTagActions.prototype.LoadAll = function () {
+        return { type: ClientContactTagActions_1.LOAD_ALL };
+    };
+    ClientContactTagActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: ClientContactTagActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    ClientContactTagActions.prototype.LoadOne = function (payload) {
+        return { type: ClientContactTagActions_1.LOAD_ONE, payload: payload };
+    };
+    ClientContactTagActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: ClientContactTagActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    ClientContactTagActions.prototype.Add = function (payload) {
+        return { type: ClientContactTagActions_1.ADD, payload: payload };
+    };
+    ClientContactTagActions.prototype.AddSuccess = function (payload) {
+        return { type: ClientContactTagActions_1.ADD_SUCCESS, payload: payload };
+    };
+    ClientContactTagActions.prototype.Update = function (payload) {
+        return { type: ClientContactTagActions_1.UPDATE, payload: payload };
+    };
+    ClientContactTagActions.prototype.UpdateSuccess = function (payload) {
+        return { type: ClientContactTagActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    ClientContactTagActions.prototype.Patch = function (payload) {
+        return { type: ClientContactTagActions_1.PATCH, payload: payload };
+    };
+    ClientContactTagActions.prototype.PatchSuccess = function (payload) {
+        return { type: ClientContactTagActions_1.PATCH_SUCCESS, payload: payload };
+    };
+    ClientContactTagActions.prototype.Remove = function (payload) {
+        return { type: ClientContactTagActions_1.REMOVE, payload: payload };
+    };
+    ClientContactTagActions.prototype.RemoveSuccess = function (payload) {
+        return { type: ClientContactTagActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var ClientContactTagActions_1;
+    ClientContactTagActions.LOAD_ALL = '[ClientContactTag] LOAD_ALL';
+    ClientContactTagActions.LOAD_ALL_SUCCESS = '[ClientContactTag] LOAD_ALL_SUCCESS';
+    ClientContactTagActions.LOAD_ONE = '[ClientContactTag] LOAD_ONE';
+    ClientContactTagActions.LOAD_ONE_SUCCESS = '[ClientContactTag] LOAD_ONE_SUCCESS';
+    ClientContactTagActions.ADD = '[ClientContactTag] ADD';
+    ClientContactTagActions.ADD_SUCCESS = '[ClientContactTag] ADD_SUCCESS';
+    ClientContactTagActions.UPDATE = '[ClientContactTag] UPDATE';
+    ClientContactTagActions.UPDATE_SUCCESS = '[ClientContactTag] UPDATE_SUCCESS';
+    ClientContactTagActions.PATCH = '[ClientContactTag] PATCH';
+    ClientContactTagActions.PATCH_SUCCESS = '[ClientContactTag] PATCH_SUCCESS';
+    ClientContactTagActions.REMOVE = '[ClientContactTag] REMOVE';
+    ClientContactTagActions.REMOVE_SUCCESS = '[ClientContactTag] REMOVE_SUCCESS';
+    ClientContactTagActions = ClientContactTagActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], ClientContactTagActions);
+    return ClientContactTagActions;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/actions/data.ts":
 /*!***************************************!*\
   !*** ./src/app/state/actions/data.ts ***!
@@ -3658,7 +3882,7 @@ var HttpActions = /** @class */ (function () {
 /*!****************************************!*\
   !*** ./src/app/state/actions/index.ts ***!
   \****************************************/
-/*! exports provided: BillingFrequencyActions, ClientActions, ClientContactActions, DataActions, FilterActions, HttpActions, JobActions, JobFileActions, JobNoteActions, JobRecurringCostActions, JobRelationshipActions, JobStatusActions, JobTypeActions, MeActions, PaymentOptionActions, PositionActions, RecurringCostTypeActions, RelationshipActions, TaskActions, TaskAssigneeActions, TaskFileActions, TaskNoteActions, TaskStatusActions, TimeEntryActions, UserActions, actions */
+/*! exports provided: BillingFrequencyActions, ClientActions, ClientContactActions, ClientContactTagActions, DataActions, FilterActions, HttpActions, JobActions, JobFileActions, JobNoteActions, JobRecurringCostActions, JobRelationshipActions, JobStatusActions, JobTypeActions, MeActions, PaymentOptionActions, PositionActions, RecurringCostTypeActions, RelationshipActions, TagActions, TaskActions, TaskAssigneeActions, TaskFileActions, TaskNoteActions, TaskStatusActions, TaskTagActions, TimeEntryActions, UserActions, actions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3673,71 +3897,83 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _clientcontact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clientcontact */ "./src/app/state/actions/clientcontact.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ClientContactActions", function() { return _clientcontact__WEBPACK_IMPORTED_MODULE_2__["ClientContactActions"]; });
 
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data */ "./src/app/state/actions/data.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataActions", function() { return _data__WEBPACK_IMPORTED_MODULE_3__["DataActions"]; });
+/* harmony import */ var _clientcontacttag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./clientcontacttag */ "./src/app/state/actions/clientcontacttag.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ClientContactTagActions", function() { return _clientcontacttag__WEBPACK_IMPORTED_MODULE_3__["ClientContactTagActions"]; });
 
-/* harmony import */ var _filters__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./filters */ "./src/app/state/actions/filters.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FilterActions", function() { return _filters__WEBPACK_IMPORTED_MODULE_4__["FilterActions"]; });
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data */ "./src/app/state/actions/data.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataActions", function() { return _data__WEBPACK_IMPORTED_MODULE_4__["DataActions"]; });
 
-/* harmony import */ var _http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./http */ "./src/app/state/actions/http.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpActions", function() { return _http__WEBPACK_IMPORTED_MODULE_5__["HttpActions"]; });
+/* harmony import */ var _filters__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./filters */ "./src/app/state/actions/filters.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FilterActions", function() { return _filters__WEBPACK_IMPORTED_MODULE_5__["FilterActions"]; });
 
-/* harmony import */ var _job__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./job */ "./src/app/state/actions/job.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobActions", function() { return _job__WEBPACK_IMPORTED_MODULE_6__["JobActions"]; });
+/* harmony import */ var _http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./http */ "./src/app/state/actions/http.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HttpActions", function() { return _http__WEBPACK_IMPORTED_MODULE_6__["HttpActions"]; });
 
-/* harmony import */ var _jobfile__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./jobfile */ "./src/app/state/actions/jobfile.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobFileActions", function() { return _jobfile__WEBPACK_IMPORTED_MODULE_7__["JobFileActions"]; });
+/* harmony import */ var _job__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./job */ "./src/app/state/actions/job.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobActions", function() { return _job__WEBPACK_IMPORTED_MODULE_7__["JobActions"]; });
 
-/* harmony import */ var _jobnote__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./jobnote */ "./src/app/state/actions/jobnote.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobNoteActions", function() { return _jobnote__WEBPACK_IMPORTED_MODULE_8__["JobNoteActions"]; });
+/* harmony import */ var _jobfile__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./jobfile */ "./src/app/state/actions/jobfile.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobFileActions", function() { return _jobfile__WEBPACK_IMPORTED_MODULE_8__["JobFileActions"]; });
 
-/* harmony import */ var _jobrecurringcost__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./jobrecurringcost */ "./src/app/state/actions/jobrecurringcost.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobRecurringCostActions", function() { return _jobrecurringcost__WEBPACK_IMPORTED_MODULE_9__["JobRecurringCostActions"]; });
+/* harmony import */ var _jobnote__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./jobnote */ "./src/app/state/actions/jobnote.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobNoteActions", function() { return _jobnote__WEBPACK_IMPORTED_MODULE_9__["JobNoteActions"]; });
 
-/* harmony import */ var _jobrelationship__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./jobrelationship */ "./src/app/state/actions/jobrelationship.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobRelationshipActions", function() { return _jobrelationship__WEBPACK_IMPORTED_MODULE_10__["JobRelationshipActions"]; });
+/* harmony import */ var _jobrecurringcost__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./jobrecurringcost */ "./src/app/state/actions/jobrecurringcost.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobRecurringCostActions", function() { return _jobrecurringcost__WEBPACK_IMPORTED_MODULE_10__["JobRecurringCostActions"]; });
 
-/* harmony import */ var _jobstatus__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./jobstatus */ "./src/app/state/actions/jobstatus.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobStatusActions", function() { return _jobstatus__WEBPACK_IMPORTED_MODULE_11__["JobStatusActions"]; });
+/* harmony import */ var _jobrelationship__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./jobrelationship */ "./src/app/state/actions/jobrelationship.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobRelationshipActions", function() { return _jobrelationship__WEBPACK_IMPORTED_MODULE_11__["JobRelationshipActions"]; });
 
-/* harmony import */ var _jobtype__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./jobtype */ "./src/app/state/actions/jobtype.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobTypeActions", function() { return _jobtype__WEBPACK_IMPORTED_MODULE_12__["JobTypeActions"]; });
+/* harmony import */ var _jobstatus__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./jobstatus */ "./src/app/state/actions/jobstatus.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobStatusActions", function() { return _jobstatus__WEBPACK_IMPORTED_MODULE_12__["JobStatusActions"]; });
 
-/* harmony import */ var _me__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./me */ "./src/app/state/actions/me.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MeActions", function() { return _me__WEBPACK_IMPORTED_MODULE_13__["MeActions"]; });
+/* harmony import */ var _jobtype__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./jobtype */ "./src/app/state/actions/jobtype.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "JobTypeActions", function() { return _jobtype__WEBPACK_IMPORTED_MODULE_13__["JobTypeActions"]; });
 
-/* harmony import */ var _paymentoption__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./paymentoption */ "./src/app/state/actions/paymentoption.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaymentOptionActions", function() { return _paymentoption__WEBPACK_IMPORTED_MODULE_14__["PaymentOptionActions"]; });
+/* harmony import */ var _me__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./me */ "./src/app/state/actions/me.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MeActions", function() { return _me__WEBPACK_IMPORTED_MODULE_14__["MeActions"]; });
 
-/* harmony import */ var _position__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./position */ "./src/app/state/actions/position.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PositionActions", function() { return _position__WEBPACK_IMPORTED_MODULE_15__["PositionActions"]; });
+/* harmony import */ var _paymentoption__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./paymentoption */ "./src/app/state/actions/paymentoption.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PaymentOptionActions", function() { return _paymentoption__WEBPACK_IMPORTED_MODULE_15__["PaymentOptionActions"]; });
 
-/* harmony import */ var _recurringcosttype__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./recurringcosttype */ "./src/app/state/actions/recurringcosttype.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RecurringCostTypeActions", function() { return _recurringcosttype__WEBPACK_IMPORTED_MODULE_16__["RecurringCostTypeActions"]; });
+/* harmony import */ var _position__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./position */ "./src/app/state/actions/position.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PositionActions", function() { return _position__WEBPACK_IMPORTED_MODULE_16__["PositionActions"]; });
 
-/* harmony import */ var _relationship__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./relationship */ "./src/app/state/actions/relationship.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RelationshipActions", function() { return _relationship__WEBPACK_IMPORTED_MODULE_17__["RelationshipActions"]; });
+/* harmony import */ var _recurringcosttype__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./recurringcosttype */ "./src/app/state/actions/recurringcosttype.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RecurringCostTypeActions", function() { return _recurringcosttype__WEBPACK_IMPORTED_MODULE_17__["RecurringCostTypeActions"]; });
 
-/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./task */ "./src/app/state/actions/task.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskActions", function() { return _task__WEBPACK_IMPORTED_MODULE_18__["TaskActions"]; });
+/* harmony import */ var _relationship__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./relationship */ "./src/app/state/actions/relationship.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RelationshipActions", function() { return _relationship__WEBPACK_IMPORTED_MODULE_18__["RelationshipActions"]; });
 
-/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/actions/taskassignee.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskAssigneeActions", function() { return _taskassignee__WEBPACK_IMPORTED_MODULE_19__["TaskAssigneeActions"]; });
+/* harmony import */ var _tag__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./tag */ "./src/app/state/actions/tag.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagActions", function() { return _tag__WEBPACK_IMPORTED_MODULE_19__["TagActions"]; });
 
-/* harmony import */ var _taskfile__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./taskfile */ "./src/app/state/actions/taskfile.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskFileActions", function() { return _taskfile__WEBPACK_IMPORTED_MODULE_20__["TaskFileActions"]; });
+/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./task */ "./src/app/state/actions/task.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskActions", function() { return _task__WEBPACK_IMPORTED_MODULE_20__["TaskActions"]; });
 
-/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/actions/tasknote.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskNoteActions", function() { return _tasknote__WEBPACK_IMPORTED_MODULE_21__["TaskNoteActions"]; });
+/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/actions/taskassignee.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskAssigneeActions", function() { return _taskassignee__WEBPACK_IMPORTED_MODULE_21__["TaskAssigneeActions"]; });
 
-/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/actions/taskstatus.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskStatusActions", function() { return _taskstatus__WEBPACK_IMPORTED_MODULE_22__["TaskStatusActions"]; });
+/* harmony import */ var _taskfile__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./taskfile */ "./src/app/state/actions/taskfile.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskFileActions", function() { return _taskfile__WEBPACK_IMPORTED_MODULE_22__["TaskFileActions"]; });
 
-/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_23__["TimeEntryActions"]; });
+/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/actions/tasknote.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskNoteActions", function() { return _tasknote__WEBPACK_IMPORTED_MODULE_23__["TaskNoteActions"]; });
 
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_24__["UserActions"]; });
+/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/actions/taskstatus.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskStatusActions", function() { return _taskstatus__WEBPACK_IMPORTED_MODULE_24__["TaskStatusActions"]; });
+
+/* harmony import */ var _tasktag__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./tasktag */ "./src/app/state/actions/tasktag.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskTagActions", function() { return _tasktag__WEBPACK_IMPORTED_MODULE_25__["TaskTagActions"]; });
+
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_26__["TimeEntryActions"]; });
+
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_27__["UserActions"]; });
+
+
+
 
 
 
@@ -3769,28 +4005,31 @@ var actions = [
     _billingfrequency__WEBPACK_IMPORTED_MODULE_0__["BillingFrequencyActions"],
     _client__WEBPACK_IMPORTED_MODULE_1__["ClientActions"],
     _clientcontact__WEBPACK_IMPORTED_MODULE_2__["ClientContactActions"],
-    _data__WEBPACK_IMPORTED_MODULE_3__["DataActions"],
-    _filters__WEBPACK_IMPORTED_MODULE_4__["FilterActions"],
-    _http__WEBPACK_IMPORTED_MODULE_5__["HttpActions"],
-    _job__WEBPACK_IMPORTED_MODULE_6__["JobActions"],
-    _jobfile__WEBPACK_IMPORTED_MODULE_7__["JobFileActions"],
-    _jobnote__WEBPACK_IMPORTED_MODULE_8__["JobNoteActions"],
-    _jobrecurringcost__WEBPACK_IMPORTED_MODULE_9__["JobRecurringCostActions"],
-    _jobrelationship__WEBPACK_IMPORTED_MODULE_10__["JobRelationshipActions"],
-    _jobstatus__WEBPACK_IMPORTED_MODULE_11__["JobStatusActions"],
-    _jobtype__WEBPACK_IMPORTED_MODULE_12__["JobTypeActions"],
-    _me__WEBPACK_IMPORTED_MODULE_13__["MeActions"],
-    _paymentoption__WEBPACK_IMPORTED_MODULE_14__["PaymentOptionActions"],
-    _position__WEBPACK_IMPORTED_MODULE_15__["PositionActions"],
-    _recurringcosttype__WEBPACK_IMPORTED_MODULE_16__["RecurringCostTypeActions"],
-    _relationship__WEBPACK_IMPORTED_MODULE_17__["RelationshipActions"],
-    _task__WEBPACK_IMPORTED_MODULE_18__["TaskActions"],
-    _taskassignee__WEBPACK_IMPORTED_MODULE_19__["TaskAssigneeActions"],
-    _taskfile__WEBPACK_IMPORTED_MODULE_20__["TaskFileActions"],
-    _tasknote__WEBPACK_IMPORTED_MODULE_21__["TaskNoteActions"],
-    _taskstatus__WEBPACK_IMPORTED_MODULE_22__["TaskStatusActions"],
-    _timeentry__WEBPACK_IMPORTED_MODULE_23__["TimeEntryActions"],
-    _user__WEBPACK_IMPORTED_MODULE_24__["UserActions"]
+    _clientcontacttag__WEBPACK_IMPORTED_MODULE_3__["ClientContactTagActions"],
+    _data__WEBPACK_IMPORTED_MODULE_4__["DataActions"],
+    _filters__WEBPACK_IMPORTED_MODULE_5__["FilterActions"],
+    _http__WEBPACK_IMPORTED_MODULE_6__["HttpActions"],
+    _job__WEBPACK_IMPORTED_MODULE_7__["JobActions"],
+    _jobfile__WEBPACK_IMPORTED_MODULE_8__["JobFileActions"],
+    _jobnote__WEBPACK_IMPORTED_MODULE_9__["JobNoteActions"],
+    _jobrecurringcost__WEBPACK_IMPORTED_MODULE_10__["JobRecurringCostActions"],
+    _jobrelationship__WEBPACK_IMPORTED_MODULE_11__["JobRelationshipActions"],
+    _jobstatus__WEBPACK_IMPORTED_MODULE_12__["JobStatusActions"],
+    _jobtype__WEBPACK_IMPORTED_MODULE_13__["JobTypeActions"],
+    _me__WEBPACK_IMPORTED_MODULE_14__["MeActions"],
+    _paymentoption__WEBPACK_IMPORTED_MODULE_15__["PaymentOptionActions"],
+    _position__WEBPACK_IMPORTED_MODULE_16__["PositionActions"],
+    _recurringcosttype__WEBPACK_IMPORTED_MODULE_17__["RecurringCostTypeActions"],
+    _relationship__WEBPACK_IMPORTED_MODULE_18__["RelationshipActions"],
+    _tag__WEBPACK_IMPORTED_MODULE_19__["TagActions"],
+    _task__WEBPACK_IMPORTED_MODULE_20__["TaskActions"],
+    _taskassignee__WEBPACK_IMPORTED_MODULE_21__["TaskAssigneeActions"],
+    _taskfile__WEBPACK_IMPORTED_MODULE_22__["TaskFileActions"],
+    _tasknote__WEBPACK_IMPORTED_MODULE_23__["TaskNoteActions"],
+    _taskstatus__WEBPACK_IMPORTED_MODULE_24__["TaskStatusActions"],
+    _tasktag__WEBPACK_IMPORTED_MODULE_25__["TaskTagActions"],
+    _timeentry__WEBPACK_IMPORTED_MODULE_26__["TimeEntryActions"],
+    _user__WEBPACK_IMPORTED_MODULE_27__["UserActions"]
 ];
 
 
@@ -4684,6 +4923,81 @@ var RelationshipActions = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/state/actions/tag.ts":
+/*!**************************************!*\
+  !*** ./src/app/state/actions/tag.ts ***!
+  \**************************************/
+/*! exports provided: TagActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TagActions", function() { return TagActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var TagActions = /** @class */ (function () {
+    function TagActions() {
+    }
+    TagActions_1 = TagActions;
+    TagActions.prototype.LoadAll = function () {
+        return { type: TagActions_1.LOAD_ALL };
+    };
+    TagActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: TagActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    TagActions.prototype.LoadOne = function (payload) {
+        return { type: TagActions_1.LOAD_ONE, payload: payload };
+    };
+    TagActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: TagActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    TagActions.prototype.Add = function (payload) {
+        return { type: TagActions_1.ADD, payload: payload };
+    };
+    TagActions.prototype.AddSuccess = function (payload) {
+        return { type: TagActions_1.ADD_SUCCESS, payload: payload };
+    };
+    TagActions.prototype.Update = function (payload) {
+        return { type: TagActions_1.UPDATE, payload: payload };
+    };
+    TagActions.prototype.UpdateSuccess = function (payload) {
+        return { type: TagActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    TagActions.prototype.Remove = function (payload) {
+        return { type: TagActions_1.REMOVE, payload: payload };
+    };
+    TagActions.prototype.RemoveSuccess = function (payload) {
+        return { type: TagActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var TagActions_1;
+    TagActions.LOAD_ALL = '[Tag] LOAD_ALL';
+    TagActions.LOAD_ALL_SUCCESS = '[Tag] LOAD_ALL_SUCCESS';
+    TagActions.LOAD_ONE = '[Tag] LOAD_ONE';
+    TagActions.LOAD_ONE_SUCCESS = '[Tag] LOAD_ONE_SUCCESS';
+    TagActions.ADD = '[Tag] ADD';
+    TagActions.ADD_SUCCESS = '[Tag] ADD_SUCCESS';
+    TagActions.UPDATE = '[Tag] UPDATE';
+    TagActions.UPDATE_SUCCESS = '[Tag] UPDATE_SUCCESS';
+    TagActions.REMOVE = '[Tag] REMOVE';
+    TagActions.REMOVE_SUCCESS = '[Tag] REMOVE_SUCCESS';
+    TagActions = TagActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TagActions);
+    return TagActions;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/actions/task.ts":
 /*!***************************************!*\
   !*** ./src/app/state/actions/task.ts ***!
@@ -5049,6 +5363,89 @@ var TaskStatusActions = /** @class */ (function () {
         })
     ], TaskStatusActions);
     return TaskStatusActions;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/state/actions/tasktag.ts":
+/*!******************************************!*\
+  !*** ./src/app/state/actions/tasktag.ts ***!
+  \******************************************/
+/*! exports provided: TaskTagActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskTagActions", function() { return TaskTagActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var TaskTagActions = /** @class */ (function () {
+    function TaskTagActions() {
+    }
+    TaskTagActions_1 = TaskTagActions;
+    TaskTagActions.prototype.LoadAll = function () {
+        return { type: TaskTagActions_1.LOAD_ALL };
+    };
+    TaskTagActions.prototype.LoadAllSuccess = function (payload) {
+        return { type: TaskTagActions_1.LOAD_ALL_SUCCESS, payload: payload };
+    };
+    TaskTagActions.prototype.LoadOne = function (payload) {
+        return { type: TaskTagActions_1.LOAD_ONE, payload: payload };
+    };
+    TaskTagActions.prototype.LoadOneSuccess = function (payload) {
+        return { type: TaskTagActions_1.LOAD_ONE_SUCCESS, payload: payload };
+    };
+    TaskTagActions.prototype.Add = function (payload) {
+        return { type: TaskTagActions_1.ADD, payload: payload };
+    };
+    TaskTagActions.prototype.AddSuccess = function (payload) {
+        return { type: TaskTagActions_1.ADD_SUCCESS, payload: payload };
+    };
+    TaskTagActions.prototype.Update = function (payload) {
+        return { type: TaskTagActions_1.UPDATE, payload: payload };
+    };
+    TaskTagActions.prototype.UpdateSuccess = function (payload) {
+        return { type: TaskTagActions_1.UPDATE_SUCCESS, payload: payload };
+    };
+    TaskTagActions.prototype.Patch = function (payload) {
+        return { type: TaskTagActions_1.PATCH, payload: payload };
+    };
+    TaskTagActions.prototype.PatchSuccess = function (payload) {
+        return { type: TaskTagActions_1.PATCH_SUCCESS, payload: payload };
+    };
+    TaskTagActions.prototype.Remove = function (payload) {
+        return { type: TaskTagActions_1.REMOVE, payload: payload };
+    };
+    TaskTagActions.prototype.RemoveSuccess = function (payload) {
+        return { type: TaskTagActions_1.REMOVE_SUCCESS, payload: payload };
+    };
+    var TaskTagActions_1;
+    TaskTagActions.LOAD_ALL = '[TaskTag] LOAD_ALL';
+    TaskTagActions.LOAD_ALL_SUCCESS = '[TaskTag] LOAD_ALL_SUCCESS';
+    TaskTagActions.LOAD_ONE = '[TaskTag] LOAD_ONE';
+    TaskTagActions.LOAD_ONE_SUCCESS = '[TaskTag] LOAD_ONE_SUCCESS';
+    TaskTagActions.ADD = '[TaskTag] ADD';
+    TaskTagActions.ADD_SUCCESS = '[TaskTag] ADD_SUCCESS';
+    TaskTagActions.UPDATE = '[TaskTag] UPDATE';
+    TaskTagActions.UPDATE_SUCCESS = '[TaskTag] UPDATE_SUCCESS';
+    TaskTagActions.PATCH = '[TaskTag] PATCH';
+    TaskTagActions.PATCH_SUCCESS = '[TaskTag] PATCH_SUCCESS';
+    TaskTagActions.REMOVE = '[TaskTag] REMOVE';
+    TaskTagActions.REMOVE_SUCCESS = '[TaskTag] REMOVE_SUCCESS';
+    TaskTagActions = TaskTagActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TaskTagActions);
+    return TaskTagActions;
 }());
 
 
@@ -5511,6 +5908,91 @@ var ClientContactEffects = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/state/effects/clientcontacttag.ts":
+/*!***************************************************!*\
+  !*** ./src/app/state/effects/clientcontacttag.ts ***!
+  \***************************************************/
+/*! exports provided: ClientContactTagEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientContactTagEffects", function() { return ClientContactTagEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ClientContactTagEffects = /** @class */ (function (_super) {
+    __extends(ClientContactTagEffects, _super);
+    function ClientContactTagEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/client-contact-tags/';
+        _this.prefix = '[ClientContactTag]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], ClientContactTagEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], ClientContactTagEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], ClientContactTagEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], ClientContactTagEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], ClientContactTagEffects.prototype, "patch$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], ClientContactTagEffects.prototype, "remove$", void 0);
+    ClientContactTagEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], ClientContactTagEffects);
+    return ClientContactTagEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/effects/data.ts":
 /*!***************************************!*\
   !*** ./src/app/state/effects/data.ts ***!
@@ -5559,6 +6041,7 @@ var DataEffects = /** @class */ (function () {
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TimeEntryActions"]().LoadAll(fromDate),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["BillingFrequencyActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientContactActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientContactTagActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["JobFileActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["JobRecurringCostActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["JobRelationshipActions"]().LoadAll(),
@@ -5569,9 +6052,11 @@ var DataEffects = /** @class */ (function () {
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["PositionActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["RecurringCostTypeActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["RelationshipActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TagActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskAssigneeActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskFileActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskStatusActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskTagActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["UserActions"]().LoadAll()
             ];
         }));
@@ -5605,27 +6090,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "effects", function() { return effects; });
 /* harmony import */ var _billingfrequency__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./billingfrequency */ "./src/app/state/effects/billingfrequency.ts");
 /* harmony import */ var _clientcontact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clientcontact */ "./src/app/state/effects/clientcontact.ts");
-/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./client */ "./src/app/state/effects/client.ts");
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./data */ "./src/app/state/effects/data.ts");
-/* harmony import */ var _job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./job */ "./src/app/state/effects/job.ts");
-/* harmony import */ var _jobfile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./jobfile */ "./src/app/state/effects/jobfile.ts");
-/* harmony import */ var _jobnote__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./jobnote */ "./src/app/state/effects/jobnote.ts");
-/* harmony import */ var _jobrecurringcost__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./jobrecurringcost */ "./src/app/state/effects/jobrecurringcost.ts");
-/* harmony import */ var _jobrelationship__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./jobrelationship */ "./src/app/state/effects/jobrelationship.ts");
-/* harmony import */ var _jobstatus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./jobstatus */ "./src/app/state/effects/jobstatus.ts");
-/* harmony import */ var _jobtype__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./jobtype */ "./src/app/state/effects/jobtype.ts");
-/* harmony import */ var _me__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./me */ "./src/app/state/effects/me.ts");
-/* harmony import */ var _paymentoption__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./paymentoption */ "./src/app/state/effects/paymentoption.ts");
-/* harmony import */ var _position__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./position */ "./src/app/state/effects/position.ts");
-/* harmony import */ var _recurringcosttype__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./recurringcosttype */ "./src/app/state/effects/recurringcosttype.ts");
-/* harmony import */ var _relationship__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./relationship */ "./src/app/state/effects/relationship.ts");
-/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/effects/taskassignee.ts");
-/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./task */ "./src/app/state/effects/task.ts");
-/* harmony import */ var _taskfile__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./taskfile */ "./src/app/state/effects/taskfile.ts");
-/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/effects/tasknote.ts");
-/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/effects/taskstatus.ts");
-/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+/* harmony import */ var _clientcontacttag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clientcontacttag */ "./src/app/state/effects/clientcontacttag.ts");
+/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./client */ "./src/app/state/effects/client.ts");
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./data */ "./src/app/state/effects/data.ts");
+/* harmony import */ var _job__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./job */ "./src/app/state/effects/job.ts");
+/* harmony import */ var _jobfile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./jobfile */ "./src/app/state/effects/jobfile.ts");
+/* harmony import */ var _jobnote__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./jobnote */ "./src/app/state/effects/jobnote.ts");
+/* harmony import */ var _jobrecurringcost__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./jobrecurringcost */ "./src/app/state/effects/jobrecurringcost.ts");
+/* harmony import */ var _jobrelationship__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./jobrelationship */ "./src/app/state/effects/jobrelationship.ts");
+/* harmony import */ var _jobstatus__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./jobstatus */ "./src/app/state/effects/jobstatus.ts");
+/* harmony import */ var _jobtype__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./jobtype */ "./src/app/state/effects/jobtype.ts");
+/* harmony import */ var _me__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./me */ "./src/app/state/effects/me.ts");
+/* harmony import */ var _paymentoption__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./paymentoption */ "./src/app/state/effects/paymentoption.ts");
+/* harmony import */ var _position__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./position */ "./src/app/state/effects/position.ts");
+/* harmony import */ var _recurringcosttype__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./recurringcosttype */ "./src/app/state/effects/recurringcosttype.ts");
+/* harmony import */ var _relationship__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./relationship */ "./src/app/state/effects/relationship.ts");
+/* harmony import */ var _tag__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./tag */ "./src/app/state/effects/tag.ts");
+/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/effects/taskassignee.ts");
+/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./task */ "./src/app/state/effects/task.ts");
+/* harmony import */ var _taskfile__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./taskfile */ "./src/app/state/effects/taskfile.ts");
+/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/effects/tasknote.ts");
+/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/effects/taskstatus.ts");
+/* harmony import */ var _tasktag__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./tasktag */ "./src/app/state/effects/tasktag.ts");
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+
+
+
 
 
 
@@ -5652,27 +6143,30 @@ __webpack_require__.r(__webpack_exports__);
 var effects = [
     _billingfrequency__WEBPACK_IMPORTED_MODULE_0__["BillingFrequencyEffects"],
     _clientcontact__WEBPACK_IMPORTED_MODULE_1__["ClientContactEffects"],
-    _client__WEBPACK_IMPORTED_MODULE_2__["ClientEffects"],
-    _data__WEBPACK_IMPORTED_MODULE_3__["DataEffects"],
-    _job__WEBPACK_IMPORTED_MODULE_4__["JobEffects"],
-    _jobfile__WEBPACK_IMPORTED_MODULE_5__["JobFileEffects"],
-    _jobnote__WEBPACK_IMPORTED_MODULE_6__["JobNoteEffects"],
-    _jobrecurringcost__WEBPACK_IMPORTED_MODULE_7__["JobRecurringCostEffects"],
-    _jobrelationship__WEBPACK_IMPORTED_MODULE_8__["JobRelationshipEffects"],
-    _jobstatus__WEBPACK_IMPORTED_MODULE_9__["JobStatusEffects"],
-    _jobtype__WEBPACK_IMPORTED_MODULE_10__["JobTypeEffects"],
-    _me__WEBPACK_IMPORTED_MODULE_11__["MeEffects"],
-    _paymentoption__WEBPACK_IMPORTED_MODULE_12__["PaymentOptionEffects"],
-    _position__WEBPACK_IMPORTED_MODULE_13__["PositionEffects"],
-    _recurringcosttype__WEBPACK_IMPORTED_MODULE_14__["RecurringCostTypeEffects"],
-    _relationship__WEBPACK_IMPORTED_MODULE_15__["RelationshipEffects"],
-    _task__WEBPACK_IMPORTED_MODULE_17__["TaskEffects"],
-    _taskassignee__WEBPACK_IMPORTED_MODULE_16__["TaskAssigneeEffects"],
-    _taskfile__WEBPACK_IMPORTED_MODULE_18__["TaskFileEffects"],
-    _tasknote__WEBPACK_IMPORTED_MODULE_19__["TaskNoteEffects"],
-    _taskstatus__WEBPACK_IMPORTED_MODULE_20__["TaskStatusEffects"],
-    _timeentry__WEBPACK_IMPORTED_MODULE_21__["TimeEntryEffects"],
-    _user__WEBPACK_IMPORTED_MODULE_22__["UserEffects"]
+    _clientcontacttag__WEBPACK_IMPORTED_MODULE_2__["ClientContactTagEffects"],
+    _client__WEBPACK_IMPORTED_MODULE_3__["ClientEffects"],
+    _data__WEBPACK_IMPORTED_MODULE_4__["DataEffects"],
+    _job__WEBPACK_IMPORTED_MODULE_5__["JobEffects"],
+    _jobfile__WEBPACK_IMPORTED_MODULE_6__["JobFileEffects"],
+    _jobnote__WEBPACK_IMPORTED_MODULE_7__["JobNoteEffects"],
+    _jobrecurringcost__WEBPACK_IMPORTED_MODULE_8__["JobRecurringCostEffects"],
+    _jobrelationship__WEBPACK_IMPORTED_MODULE_9__["JobRelationshipEffects"],
+    _jobstatus__WEBPACK_IMPORTED_MODULE_10__["JobStatusEffects"],
+    _jobtype__WEBPACK_IMPORTED_MODULE_11__["JobTypeEffects"],
+    _me__WEBPACK_IMPORTED_MODULE_12__["MeEffects"],
+    _paymentoption__WEBPACK_IMPORTED_MODULE_13__["PaymentOptionEffects"],
+    _position__WEBPACK_IMPORTED_MODULE_14__["PositionEffects"],
+    _recurringcosttype__WEBPACK_IMPORTED_MODULE_15__["RecurringCostTypeEffects"],
+    _relationship__WEBPACK_IMPORTED_MODULE_16__["RelationshipEffects"],
+    _tag__WEBPACK_IMPORTED_MODULE_17__["TagEffects"],
+    _task__WEBPACK_IMPORTED_MODULE_19__["TaskEffects"],
+    _taskassignee__WEBPACK_IMPORTED_MODULE_18__["TaskAssigneeEffects"],
+    _taskfile__WEBPACK_IMPORTED_MODULE_20__["TaskFileEffects"],
+    _tasknote__WEBPACK_IMPORTED_MODULE_21__["TaskNoteEffects"],
+    _taskstatus__WEBPACK_IMPORTED_MODULE_22__["TaskStatusEffects"],
+    _tasktag__WEBPACK_IMPORTED_MODULE_23__["TaskTagEffects"],
+    _timeentry__WEBPACK_IMPORTED_MODULE_24__["TimeEntryEffects"],
+    _user__WEBPACK_IMPORTED_MODULE_25__["UserEffects"]
 ];
 
 
@@ -6643,6 +7137,86 @@ var RelationshipEffects = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/state/effects/tag.ts":
+/*!**************************************!*\
+  !*** ./src/app/state/effects/tag.ts ***!
+  \**************************************/
+/*! exports provided: TagEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TagEffects", function() { return TagEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TagEffects = /** @class */ (function (_super) {
+    __extends(TagEffects, _super);
+    function TagEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/tags/';
+        _this.prefix = '[Tag]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TagEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TagEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TagEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TagEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TagEffects.prototype, "remove$", void 0);
+    TagEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TagEffects);
+    return TagEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/effects/task.ts":
 /*!***************************************!*\
   !*** ./src/app/state/effects/task.ts ***!
@@ -7038,6 +7612,91 @@ var TaskStatusEffects = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/state/effects/tasktag.ts":
+/*!******************************************!*\
+  !*** ./src/app/state/effects/tasktag.ts ***!
+  \******************************************/
+/*! exports provided: TaskTagEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskTagEffects", function() { return TaskTagEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TaskTagEffects = /** @class */ (function (_super) {
+    __extends(TaskTagEffects, _super);
+    function TaskTagEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/task-tags/';
+        _this.prefix = '[TaskTag]';
+        _this.all$ = _this._all$(_this.prefix + " LOAD_ALL", _this.prefix + " LOAD_ALL_SUCCESS");
+        _this.one$ = _this._one$(_this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE_SUCCESS");
+        _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
+        _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
+        _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
+        _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskTagEffects.prototype, "all$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskTagEffects.prototype, "one$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskTagEffects.prototype, "add$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskTagEffects.prototype, "update$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskTagEffects.prototype, "patch$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskTagEffects.prototype, "remove$", void 0);
+    TaskTagEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TaskTagEffects);
+    return TaskTagEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/effects/timeentry.ts":
 /*!********************************************!*\
   !*** ./src/app/state/effects/timeentry.ts ***!
@@ -7347,6 +8006,55 @@ var initialState = [];
 function reducer(state, action) {
     if (state === void 0) { state = initialState; }
     var actionPrefix = '[ClientContact]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " PATCH_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/state/reducers/clientcontacttag.ts":
+/*!****************************************************!*\
+  !*** ./src/app/state/reducers/clientcontacttag.ts ***!
+  \****************************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[ClientContactTag]';
     switch (action.type) {
         // Replace objects
         case actionPrefix + " LOAD_ALL_SUCCESS": {
@@ -7967,6 +8675,52 @@ function reducer(state, action) {
 
 /***/ }),
 
+/***/ "./src/app/state/reducers/tag.ts":
+/*!***************************************!*\
+  !*** ./src/app/state/reducers/tag.ts ***!
+  \***************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[Tag]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/state/reducers/task.ts":
 /*!****************************************!*\
   !*** ./src/app/state/reducers/task.ts ***!
@@ -8194,6 +8948,55 @@ function reducer(state, action) {
 
 /***/ }),
 
+/***/ "./src/app/state/reducers/tasktag.ts":
+/*!*******************************************!*\
+  !*** ./src/app/state/reducers/tasktag.ts ***!
+  \*******************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _generics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../generics */ "./src/app/state/generics.ts");
+
+var initialState = [];
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    var actionPrefix = '[TaskTag]';
+    switch (action.type) {
+        // Replace objects
+        case actionPrefix + " LOAD_ALL_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ALL');
+        }
+        case actionPrefix + " REPLACE_MANY": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_MANY');
+        }
+        // Basic CRUD actions
+        case actionPrefix + " LOAD_ONE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " ADD_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'ADD_ONE');
+        }
+        case actionPrefix + " UPDATE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " PATCH_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REPLACE_ONE');
+        }
+        case actionPrefix + " REMOVE_SUCCESS": {
+            return Object(_generics__WEBPACK_IMPORTED_MODULE_0__["reduceState"])(state, action, 'REMOVE_ONE');
+        }
+        default:
+            return state;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/state/reducers/timeentry.ts":
 /*!*********************************************!*\
   !*** ./src/app/state/reducers/timeentry.ts ***!
@@ -8300,12 +9103,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var getClientCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getClientState"], function (clients) { return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](clients, ['name'], ['asc']); });
 var getClientCollectionById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getClientCollection, function (clients) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](clients, ['id', id]); }); };
-var getClientContactCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getClientContactState"], _state__WEBPACK_IMPORTED_MODULE_1__["getPositionState"], function (contacts, positions) {
+var getClientContactCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getClientContactState"], _state__WEBPACK_IMPORTED_MODULE_1__["getPositionState"], _state__WEBPACK_IMPORTED_MODULE_1__["getClientContactTagState"], function (contacts, positions, tags) {
     var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](contacts, function (contact) {
         return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, contact, {
-            _position: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](positions, ['id', contact.position])
+            _position: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](positions, ['id', contact.position]),
+            _tags: lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tags, ['object_id', contact.id])
         });
     });
     return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['first_name', 'last_name'], ['asc', 'asc']);
@@ -8396,11 +9201,35 @@ var getJobRelationshipCollectionForJob = function (id) { return Object(_ngrx_sto
 
 /***/ }),
 
+/***/ "./src/app/state/selectors/tag.ts":
+/*!****************************************!*\
+  !*** ./src/app/state/selectors/tag.ts ***!
+  \****************************************/
+/*! exports provided: getTagCollection, getTagById */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTagCollection", function() { return getTagCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTagById", function() { return getTagById; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../state */ "./src/app/state/state.ts");
+
+
+
+var getTagCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTagState"], function (tags) { return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](tags, ['name'], ['asc']); });
+var getTagById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getTagCollection, function (tags) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tags, ['id', id]); }); };
+
+
+/***/ }),
+
 /***/ "./src/app/state/selectors/task.ts":
 /*!*****************************************!*\
   !*** ./src/app/state/selectors/task.ts ***!
   \*****************************************/
-/*! exports provided: getTaskAssigneesForTask, getTaskCollection, getTaskCollectionById, getTaskCollectionForJob, getTaskFilesForTask, getTaskNotes, getTaskNotesForTask */
+/*! exports provided: getTaskAssigneesForTask, getTaskCollection, getTaskCollectionById, getTaskCollectionForJob, getTaskFilesForTask, getTaskNotes, getTaskNotesForTask, getTaskTagsForTask */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8412,9 +9241,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskFilesForTask", function() { return getTaskFilesForTask; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNotes", function() { return getTaskNotes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNotesForTask", function() { return getTaskNotesForTask; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskTagsForTask", function() { return getTaskTagsForTask; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state */ "./src/app/state/state.ts");
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../state */ "./src/app/state/state.ts");
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 /* harmony import */ var _job__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./job */ "./src/app/state/selectors/job.ts");
 
@@ -8442,6 +9272,7 @@ var getTaskCollectionForJob = function (id) { return Object(_ngrx_store__WEBPACK
 var getTaskFilesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskFileState"], function (files) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](files, ['task', id]); }); };
 var getTaskNotes = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskNoteState"], function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](notes, ['updated_at'], ['desc']); });
 var getTaskNotesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskNotes, function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](notes, ['task', id]); }); };
+var getTaskTagsForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskTagState"], function (tags) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tags, ['object_id', id]); }); };
 
 
 /***/ }),
@@ -8606,7 +9437,7 @@ var getUserById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MO
 /*!********************************!*\
   !*** ./src/app/state/state.ts ***!
   \********************************/
-/*! exports provided: reducers, getBillingFrequencyState, getClientState, getClientContactState, getFilterState, getJobState, getJobFileState, getJobNoteState, getJobRecurringCostState, getJobRelationshipState, getJobStatusState, getJobTypeState, getMeState, getPaymentOptionState, getPositionState, getRecurringCostTypeState, getRelationshipState, getTaskState, getTaskAssigneeState, getTaskFileState, getTaskNoteState, getTaskStatusState, getTimeEntryState, getUserState */
+/*! exports provided: reducers, getBillingFrequencyState, getClientState, getClientContactState, getClientContactTagState, getFilterState, getJobState, getJobFileState, getJobNoteState, getJobRecurringCostState, getJobRelationshipState, getJobStatusState, getJobTypeState, getMeState, getPaymentOptionState, getPositionState, getRecurringCostTypeState, getRelationshipState, getTagState, getTaskState, getTaskAssigneeState, getTaskFileState, getTaskNoteState, getTaskStatusState, getTaskTagState, getTimeEntryState, getUserState */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8615,6 +9446,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBillingFrequencyState", function() { return getBillingFrequencyState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClientState", function() { return getClientState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClientContactState", function() { return getClientContactState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClientContactTagState", function() { return getClientContactTagState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFilterState", function() { return getFilterState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobState", function() { return getJobState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getJobFileState", function() { return getJobFileState; });
@@ -8628,37 +9460,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPositionState", function() { return getPositionState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRecurringCostTypeState", function() { return getRecurringCostTypeState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRelationshipState", function() { return getRelationshipState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTagState", function() { return getTagState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskState", function() { return getTaskState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskAssigneeState", function() { return getTaskAssigneeState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskFileState", function() { return getTaskFileState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNoteState", function() { return getTaskNoteState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskStatusState", function() { return getTaskStatusState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskTagState", function() { return getTaskTagState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeEntryState", function() { return getTimeEntryState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserState", function() { return getUserState; });
 /* harmony import */ var _reducers_billingfrequency__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducers/billingfrequency */ "./src/app/state/reducers/billingfrequency.ts");
 /* harmony import */ var _reducers_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reducers/client */ "./src/app/state/reducers/client.ts");
 /* harmony import */ var _reducers_clientcontact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reducers/clientcontact */ "./src/app/state/reducers/clientcontact.ts");
-/* harmony import */ var _reducers_filter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reducers/filter */ "./src/app/state/reducers/filter.ts");
-/* harmony import */ var _reducers_job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reducers/job */ "./src/app/state/reducers/job.ts");
-/* harmony import */ var _reducers_jobfile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reducers/jobfile */ "./src/app/state/reducers/jobfile.ts");
-/* harmony import */ var _reducers_jobnote__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reducers/jobnote */ "./src/app/state/reducers/jobnote.ts");
-/* harmony import */ var _reducers_jobrecurringcost__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reducers/jobrecurringcost */ "./src/app/state/reducers/jobrecurringcost.ts");
-/* harmony import */ var _reducers_jobrelationship__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./reducers/jobrelationship */ "./src/app/state/reducers/jobrelationship.ts");
-/* harmony import */ var _reducers_jobstatus__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./reducers/jobstatus */ "./src/app/state/reducers/jobstatus.ts");
-/* harmony import */ var _reducers_jobtype__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./reducers/jobtype */ "./src/app/state/reducers/jobtype.ts");
-/* harmony import */ var _reducers_me__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./reducers/me */ "./src/app/state/reducers/me.ts");
-/* harmony import */ var _reducers_paymentoption__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./reducers/paymentoption */ "./src/app/state/reducers/paymentoption.ts");
-/* harmony import */ var _reducers_position__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./reducers/position */ "./src/app/state/reducers/position.ts");
-/* harmony import */ var _reducers_recurringcosttype__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./reducers/recurringcosttype */ "./src/app/state/reducers/recurringcosttype.ts");
-/* harmony import */ var _reducers_relationship__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./reducers/relationship */ "./src/app/state/reducers/relationship.ts");
-/* harmony import */ var _reducers_task__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./reducers/task */ "./src/app/state/reducers/task.ts");
-/* harmony import */ var _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./reducers/taskassignee */ "./src/app/state/reducers/taskassignee.ts");
-/* harmony import */ var _reducers_taskfile__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./reducers/taskfile */ "./src/app/state/reducers/taskfile.ts");
-/* harmony import */ var _reducers_tasknote__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./reducers/tasknote */ "./src/app/state/reducers/tasknote.ts");
-/* harmony import */ var _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./reducers/taskstatus */ "./src/app/state/reducers/taskstatus.ts");
-/* harmony import */ var _reducers_timeentry__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./reducers/timeentry */ "./src/app/state/reducers/timeentry.ts");
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./reducers/user */ "./src/app/state/reducers/user.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _reducers_clientcontacttag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reducers/clientcontacttag */ "./src/app/state/reducers/clientcontacttag.ts");
+/* harmony import */ var _reducers_filter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reducers/filter */ "./src/app/state/reducers/filter.ts");
+/* harmony import */ var _reducers_job__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reducers/job */ "./src/app/state/reducers/job.ts");
+/* harmony import */ var _reducers_jobfile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reducers/jobfile */ "./src/app/state/reducers/jobfile.ts");
+/* harmony import */ var _reducers_jobnote__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reducers/jobnote */ "./src/app/state/reducers/jobnote.ts");
+/* harmony import */ var _reducers_jobrecurringcost__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./reducers/jobrecurringcost */ "./src/app/state/reducers/jobrecurringcost.ts");
+/* harmony import */ var _reducers_jobrelationship__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./reducers/jobrelationship */ "./src/app/state/reducers/jobrelationship.ts");
+/* harmony import */ var _reducers_jobstatus__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./reducers/jobstatus */ "./src/app/state/reducers/jobstatus.ts");
+/* harmony import */ var _reducers_jobtype__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./reducers/jobtype */ "./src/app/state/reducers/jobtype.ts");
+/* harmony import */ var _reducers_me__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./reducers/me */ "./src/app/state/reducers/me.ts");
+/* harmony import */ var _reducers_paymentoption__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./reducers/paymentoption */ "./src/app/state/reducers/paymentoption.ts");
+/* harmony import */ var _reducers_position__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./reducers/position */ "./src/app/state/reducers/position.ts");
+/* harmony import */ var _reducers_recurringcosttype__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./reducers/recurringcosttype */ "./src/app/state/reducers/recurringcosttype.ts");
+/* harmony import */ var _reducers_relationship__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./reducers/relationship */ "./src/app/state/reducers/relationship.ts");
+/* harmony import */ var _reducers_tag__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./reducers/tag */ "./src/app/state/reducers/tag.ts");
+/* harmony import */ var _reducers_task__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./reducers/task */ "./src/app/state/reducers/task.ts");
+/* harmony import */ var _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./reducers/taskassignee */ "./src/app/state/reducers/taskassignee.ts");
+/* harmony import */ var _reducers_taskfile__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./reducers/taskfile */ "./src/app/state/reducers/taskfile.ts");
+/* harmony import */ var _reducers_tasknote__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./reducers/tasknote */ "./src/app/state/reducers/tasknote.ts");
+/* harmony import */ var _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./reducers/taskstatus */ "./src/app/state/reducers/taskstatus.ts");
+/* harmony import */ var _reducers_tasktag__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./reducers/tasktag */ "./src/app/state/reducers/tasktag.ts");
+/* harmony import */ var _reducers_timeentry__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./reducers/timeentry */ "./src/app/state/reducers/timeentry.ts");
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./reducers/user */ "./src/app/state/reducers/user.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+
+
+
 
 
 
@@ -8687,50 +9527,56 @@ var reducers = {
     billing_frequencies: _reducers_billingfrequency__WEBPACK_IMPORTED_MODULE_0__["reducer"],
     clients: _reducers_client__WEBPACK_IMPORTED_MODULE_1__["reducer"],
     client_contacts: _reducers_clientcontact__WEBPACK_IMPORTED_MODULE_2__["reducer"],
-    filters: _reducers_filter__WEBPACK_IMPORTED_MODULE_3__["reducer"],
-    jobs: _reducers_job__WEBPACK_IMPORTED_MODULE_4__["reducer"],
-    job_files: _reducers_jobfile__WEBPACK_IMPORTED_MODULE_5__["reducer"],
-    job_notes: _reducers_jobnote__WEBPACK_IMPORTED_MODULE_6__["reducer"],
-    job_recurring_costs: _reducers_jobrecurringcost__WEBPACK_IMPORTED_MODULE_7__["reducer"],
-    job_relationships: _reducers_jobrelationship__WEBPACK_IMPORTED_MODULE_8__["reducer"],
-    job_statuses: _reducers_jobstatus__WEBPACK_IMPORTED_MODULE_9__["reducer"],
-    job_types: _reducers_jobtype__WEBPACK_IMPORTED_MODULE_10__["reducer"],
-    me: _reducers_me__WEBPACK_IMPORTED_MODULE_11__["reducer"],
-    payment_options: _reducers_paymentoption__WEBPACK_IMPORTED_MODULE_12__["reducer"],
-    positions: _reducers_position__WEBPACK_IMPORTED_MODULE_13__["reducer"],
-    recurring_cost_types: _reducers_recurringcosttype__WEBPACK_IMPORTED_MODULE_14__["reducer"],
-    relationships: _reducers_relationship__WEBPACK_IMPORTED_MODULE_15__["reducer"],
-    tasks: _reducers_task__WEBPACK_IMPORTED_MODULE_16__["reducer"],
-    task_assignees: _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_17__["reducer"],
-    task_files: _reducers_taskfile__WEBPACK_IMPORTED_MODULE_18__["reducer"],
-    task_notes: _reducers_tasknote__WEBPACK_IMPORTED_MODULE_19__["reducer"],
-    task_statuses: _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_20__["reducer"],
-    time_entries: _reducers_timeentry__WEBPACK_IMPORTED_MODULE_21__["reducer"],
-    users: _reducers_user__WEBPACK_IMPORTED_MODULE_22__["reducer"]
+    client_contact_tags: _reducers_clientcontacttag__WEBPACK_IMPORTED_MODULE_3__["reducer"],
+    filters: _reducers_filter__WEBPACK_IMPORTED_MODULE_4__["reducer"],
+    jobs: _reducers_job__WEBPACK_IMPORTED_MODULE_5__["reducer"],
+    job_files: _reducers_jobfile__WEBPACK_IMPORTED_MODULE_6__["reducer"],
+    job_notes: _reducers_jobnote__WEBPACK_IMPORTED_MODULE_7__["reducer"],
+    job_recurring_costs: _reducers_jobrecurringcost__WEBPACK_IMPORTED_MODULE_8__["reducer"],
+    job_relationships: _reducers_jobrelationship__WEBPACK_IMPORTED_MODULE_9__["reducer"],
+    job_statuses: _reducers_jobstatus__WEBPACK_IMPORTED_MODULE_10__["reducer"],
+    job_types: _reducers_jobtype__WEBPACK_IMPORTED_MODULE_11__["reducer"],
+    me: _reducers_me__WEBPACK_IMPORTED_MODULE_12__["reducer"],
+    payment_options: _reducers_paymentoption__WEBPACK_IMPORTED_MODULE_13__["reducer"],
+    positions: _reducers_position__WEBPACK_IMPORTED_MODULE_14__["reducer"],
+    recurring_cost_types: _reducers_recurringcosttype__WEBPACK_IMPORTED_MODULE_15__["reducer"],
+    relationships: _reducers_relationship__WEBPACK_IMPORTED_MODULE_16__["reducer"],
+    tags: _reducers_tag__WEBPACK_IMPORTED_MODULE_17__["reducer"],
+    tasks: _reducers_task__WEBPACK_IMPORTED_MODULE_18__["reducer"],
+    task_assignees: _reducers_taskassignee__WEBPACK_IMPORTED_MODULE_19__["reducer"],
+    task_files: _reducers_taskfile__WEBPACK_IMPORTED_MODULE_20__["reducer"],
+    task_notes: _reducers_tasknote__WEBPACK_IMPORTED_MODULE_21__["reducer"],
+    task_statuses: _reducers_taskstatus__WEBPACK_IMPORTED_MODULE_22__["reducer"],
+    task_tags: _reducers_tasktag__WEBPACK_IMPORTED_MODULE_23__["reducer"],
+    time_entries: _reducers_timeentry__WEBPACK_IMPORTED_MODULE_24__["reducer"],
+    users: _reducers_user__WEBPACK_IMPORTED_MODULE_25__["reducer"]
 };
-var getBillingFrequencyState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('billing_frequencies');
-var getClientState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('clients');
-var getClientContactState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('client_contacts');
-var getFilterState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('filters');
-var getJobState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('jobs');
-var getJobFileState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_files');
-var getJobNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_notes');
-var getJobRecurringCostState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_recurring_costs');
-var getJobRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_relationships');
-var getJobStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_statuses');
-var getJobTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('job_types');
-var getMeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('me');
-var getPaymentOptionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('payment_options');
-var getPositionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('positions');
-var getRecurringCostTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('recurring_cost_types');
-var getRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('relationships');
-var getTaskState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('tasks');
-var getTaskAssigneeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_assignees');
-var getTaskFileState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_files');
-var getTaskNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_notes');
-var getTaskStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('task_statuses');
-var getTimeEntryState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('time_entries');
-var getUserState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_23__["createFeatureSelector"])('users');
+var getBillingFrequencyState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('billing_frequencies');
+var getClientState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('clients');
+var getClientContactState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('client_contacts');
+var getClientContactTagState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('client_contact_tags');
+var getFilterState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('filters');
+var getJobState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('jobs');
+var getJobFileState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('job_files');
+var getJobNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('job_notes');
+var getJobRecurringCostState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('job_recurring_costs');
+var getJobRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('job_relationships');
+var getJobStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('job_statuses');
+var getJobTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('job_types');
+var getMeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('me');
+var getPaymentOptionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('payment_options');
+var getPositionState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('positions');
+var getRecurringCostTypeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('recurring_cost_types');
+var getRelationshipState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('relationships');
+var getTagState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('tags');
+var getTaskState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('tasks');
+var getTaskAssigneeState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('task_assignees');
+var getTaskFileState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('task_files');
+var getTaskNoteState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('task_notes');
+var getTaskStatusState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('task_statuses');
+var getTaskTagState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('task_tags');
+var getTimeEntryState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('time_entries');
+var getUserState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_26__["createFeatureSelector"])('users');
 
 
 /***/ }),

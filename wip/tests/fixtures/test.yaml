@@ -192,6 +192,14 @@
     }
 
 -
+    model: taggit.tag
+    pk: 3
+    fields: {
+      name: "not-assigned",
+      slug: "not-assigned"
+    }
+
+-
     model: taggit.taggeditem
     pk: 1
     fields: {

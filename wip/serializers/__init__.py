@@ -12,6 +12,8 @@ from .payment_option import PaymentOptionSerializer
 from .position import PositionSerializer
 from .recurring_cost_type import RecurringCostTypeSerializer
 from .relationship import RelationshipSerializer
+from .tag import TagSerializer
+from .tagged_item import TaggedItemSerializer
 from .task import TaskSerializer
 from .task_assignee import TaskAssigneeSerializer
 from .task_file import TaskFileSerializer

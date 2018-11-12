@@ -1,6 +1,7 @@
 import { BillingFrequencyActions } from './billingfrequency';
 import { ClientActions } from './client';
 import { ClientContactActions } from './clientcontact';
+import { ClientContactTagActions } from './clientcontacttag';
 import { DataActions } from './data';
 import { FilterActions } from './filters';
 import { HttpActions } from './http';
@@ -16,11 +17,13 @@ import { PaymentOptionActions } from './paymentoption';
 import { PositionActions } from './position';
 import { RecurringCostTypeActions } from './recurringcosttype';
 import { RelationshipActions } from './relationship';
+import { TagActions } from './tag';
 import { TaskActions } from './task';
 import { TaskAssigneeActions } from './taskassignee';
 import { TaskFileActions } from './taskfile';
 import { TaskNoteActions } from './tasknote';
 import { TaskStatusActions } from './taskstatus';
+import { TaskTagActions } from './tasktag';
 import { TimeEntryActions } from './timeentry';
 import { UserActions } from './user';
 
@@ -28,6 +31,7 @@ export {
     BillingFrequencyActions,
     ClientActions,
     ClientContactActions,
+    ClientContactTagActions,
     DataActions,
     FilterActions,
     HttpActions,
@@ -43,11 +47,13 @@ export {
     PositionActions,
     RecurringCostTypeActions,
     RelationshipActions,
+    TagActions,
     TaskActions,
     TaskAssigneeActions,
     TaskFileActions,
     TaskNoteActions,
     TaskStatusActions,
+    TaskTagActions,
     TimeEntryActions,
     UserActions
 };
@@ -56,6 +62,7 @@ export const actions = [
     BillingFrequencyActions,
     ClientActions,
     ClientContactActions,
+    ClientContactTagActions,
     DataActions,
     FilterActions,
     HttpActions,
@@ -71,11 +78,13 @@ export const actions = [
     PositionActions,
     RecurringCostTypeActions,
     RelationshipActions,
+    TagActions,
     TaskActions,
     TaskAssigneeActions,
     TaskFileActions,
     TaskNoteActions,
     TaskStatusActions,
+    TaskTagActions,
     TimeEntryActions,
     UserActions
 ];
