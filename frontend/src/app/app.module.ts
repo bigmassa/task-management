@@ -12,11 +12,13 @@ import { AvatarComponent } from './components/avatar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CalendarComponent } from './components/calendar.component';
 import { ClientComponent } from './components/client.component';
+import { ClientDetailFormComponent } from './components/client-detail-form.component';
 import { ClientListComponent } from './components/client-list.component';
 import { ClientSearchPipe } from './pipes/client-search.pipe';
 import { ClosedJobsPipe } from './pipes/closed-jobs.pipe';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { EffectsModule } from '@ngrx/effects';
+import { FormErrorComponent } from './components/formerror.component';
 import { GetPipe } from './pipes/get.pipe';
 import { JobComponent } from './components/job.component';
 import { JobSearchPipe } from './pipes/job-search.pipe';
@@ -46,8 +48,10 @@ import { effects } from './state/effects';
         CalendarComponent,
         ClosedJobsPipe,
         ClientComponent,
+        ClientDetailFormComponent,
         ClientListComponent,
         ClientSearchPipe,
+        FormErrorComponent,
         GetPipe,
         JobComponent,
         JobSearchPipe,

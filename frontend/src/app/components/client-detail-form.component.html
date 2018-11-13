@@ -1,0 +1,48 @@
+<ng-container *ngIf="form">
+    <div class="page-header">
+        <div class="container-fluid d-flex align-items-center py-2">
+            <ng-container *ngIf="client; else newClient;">
+                <span class="color-indicator" [style.backgroundColor]="client.colour"></span>
+                <div class="h2">{{ client.name }}</div>
+                <div class="page-header-actions">
+                    <button class="button button-white" type="submit" (click)="form.save($event)">Save</button>
+                    <a [routerLink]="['/clients', client.id]" class="button button-white button-clear">Cancel</a>
+                </div>
+            </ng-container>
+        </div>
+        <div class="container-fluid">
+            <ul class="tabs">
+                <li class="active">Detail</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid inner-content">
+        <label>Name</label>
+        <input type="text" [formControl]="form.controls.name" />
+        <label>Colour</label>
+        <input type="text" [formControl]="form.controls.colour" />
+        <p class="c-red" [formError]="form.controls.colour">Please enter a hex colour (ie #fff or #ffffff)</p>
+        <label>Phone Number</label>
+        <input type="text" [formControl]="form.controls.phone_number" />
+        <p class="c-red" [formError]="form.controls.phone_number">Please enter a valid phone number (ie 01603 766062)</p>
+        <label>Email Address</label>
+        <input type="text" [formControl]="form.controls.email_address" />
+        <p class="c-red" [formError]="form.controls.email_address">Please enter a valid email address</p>
+        <label>Website</label>
+        <input type="text" [formControl]="form.controls.website" />
+        <p class="c-red" [formError]="form.controls.website">Please enter a valid url (ie https://google.com)</p>
+        <label>Address</label>
+        <textarea autoResize [formControl]="form.controls.address"></textarea>
+        <label>Notes</label>
+        <textarea autoResize [formControl]="form.controls.notes"></textarea>
+    </div>
+</ng-container>
+
+<ng-template #newClient>
+    <span class="color-indicator"></span>
+    <div class="h2">New</div>
+    <div class="page-header-actions">
+        <button class="button button-white" type="submit" (click)="form.save($event)">Save</button>
+        <a [routerLink]="['/clients']" class="button button-white button-clear">Cancel</a>
+    </div>
+</ng-template>

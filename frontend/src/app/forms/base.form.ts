@@ -96,6 +96,9 @@ export class BaseForm extends FormGroup implements OnDestroy {
         event.stopPropagation();
         
         if (!this.valid) {
+            // set the controls to touched so we can display the errors
+            _.forEach(this.controls, (c, k) => this.controls[k].markAsTouched());
+            // just return out
             return;
         }
         

@@ -2,11 +2,9 @@
     <div class="page-header">
         <div class="container-fluid d-flex align-items-center py-2">
             <span class="color-indicator" [style.backgroundColor]="client.colour"></span>
-            <div class="h2">
-                <a class="underline-dotted">{{ client.name }}</a>
-            </div>
+            <div class="h2">{{ client.name }}</div>
             <div class="page-header-actions">
-                <button class="button button-white" type="submit">Edit</button>
+                <a class="button button-white" [routerLink]="['/clients', client.id, 'detail']">Edit</a>
                 <a class="button button-white button-clear" >Delete</a>
             </div>
         </div>
