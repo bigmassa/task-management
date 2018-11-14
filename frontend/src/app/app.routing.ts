@@ -5,6 +5,7 @@ import { ClientDeleteComponent } from './components/client-delete.component';
 import { ClientDetailFormComponent } from './components/client-detail-form.component';
 import { ClientListComponent } from './components/client-list.component';
 import { JobComponent } from './components/job.component';
+import { JobDetailFormComponent } from './components/job-detail-form.component';
 import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './components/not-found.component';
 import { ReportListComponent } from './components/report-list.component';
@@ -18,6 +19,8 @@ const routes: Routes = [
     { path: 'clients/:id', component: ClientComponent},
     { path: 'clients/:id/detail', component: ClientDetailFormComponent},
     { path: 'clients/:id/delete', component: ClientDeleteComponent},
+    { path: 'clients/:client_id/jobs/new', component: JobDetailFormComponent},
+    { path: 'clients/:client_id/jobs/:id/detail', component: JobDetailFormComponent},
     { path: 'clients/:client_id/jobs/:id', component: JobComponent},
     { path: 'reporting', component: ReportListComponent},
     { path: 'timesheet', component: TimesheetComponent},

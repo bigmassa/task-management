@@ -24,7 +24,8 @@
             "styles": [
               "./node_modules/@swimlane/ngx-dnd/release/index.css",
               "./node_modules/dragula/dist/dragula.min.css",
-              "./node_modules/fullcalendar/dist/fullcalendar.min.css"
+              "./node_modules/fullcalendar/dist/fullcalendar.min.css",
+              "./node_modules/flatpickr/dist/flatpickr.css"
             ],
             "scripts": [
               "./node_modules/moment/min/moment.min.js",

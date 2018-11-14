@@ -19,9 +19,11 @@ import { ClientSearchPipe } from './pipes/client-search.pipe';
 import { ClosedJobsPipe } from './pipes/closed-jobs.pipe';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { EffectsModule } from '@ngrx/effects';
-import { FormErrorComponent } from './components/formerror.component';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { FormErrorDirective } from './directives/formerror.directive';
 import { GetPipe } from './pipes/get.pipe';
 import { JobComponent } from './components/job.component';
+import { JobDetailFormComponent } from './components/job-detail-form.component';
 import { JobSearchPipe } from './pipes/job-search.pipe';
 import { NgModule } from '@angular/core';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
@@ -53,9 +55,10 @@ import { effects } from './state/effects';
         ClientDetailFormComponent,
         ClientListComponent,
         ClientSearchPipe,
-        FormErrorComponent,
+        FormErrorDirective,
         GetPipe,
         JobComponent,
+        JobDetailFormComponent,
         JobSearchPipe,
         NotFoundComponent,
         OpenJobsPipe,
@@ -76,6 +79,7 @@ import { effects } from './state/effects';
         BrowserModule,
         EffectsModule.forRoot(effects),
         DropzoneModule,
+        FlatpickrModule.forRoot(),
         FormsModule,
         HttpClientModule,
         HttpClientXsrfModule.withOptions({

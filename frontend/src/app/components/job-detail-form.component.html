@@ -1,0 +1,63 @@
+<ng-container *ngIf="form">
+    <div class="page-header">
+        <div class="container-fluid d-flex align-items-center py-2">
+            <ng-container *ngIf="job; else newJob;">
+                <span class="color-indicator" [style.backgroundColor]="job.colour"></span>
+                <div class="h2">{{ client?.name }} / {{ job.title }}</div>
+                <div class="page-header-actions">
+                    <a class="button button-white" (click)="form.save($event)">Save</a>
+                    <a [routerLink]="['/clients', params.client_id, 'jobs', params.id]" class="button button-white button-clear">Cancel</a>
+                </div>
+            </ng-container>
+        </div>
+        <div class="container-fluid">
+            <ul class="tabs">
+                <li class="active">Detail</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid inner-content">
+        <label>Title</label>
+        <input type="text" [formControl]="form.controls.title" />
+        <p class="c-red" *formError="form.controls.title">Please enter a title</p>
+
+        <label>Description</label>
+        <textarea autoResize [formControl]="form.controls.description"></textarea>
+
+        <label>Colour</label>
+        <input type="text" [formControl]="form.controls.colour" />
+        <p class="c-red" *formError="form.controls.colour">Please enter a hex colour (ie #fff or #ffffff)</p>
+
+        <label>Type</label>
+        <select [formControl]="form.controls.type">
+            <option [ngValue]="null">Please select...</option>
+            <option [ngValue]="option.id" *ngFor="let option of jobTypes$ | async">{{ option.title }}</option>
+        </select>
+        <p class="c-red" *formError="form.controls.type">Please choose a type</p>
+
+        <label>Estimated Hours</label>
+        <input type="number" [formControl]="form.controls.estimated_hours" />
+        <p class="c-red" *formError="form.controls.estimated_hours">Please enter a valid number</p>
+
+        <label>Status</label>
+        <select [formControl]="form.controls.status">
+            <option [ngValue]="null">Please select...</option>
+            <option [ngValue]="option.id" *ngFor="let option of jobStatuses$ | async">{{ option.title }}</option>
+        </select>
+        <p class="c-red" *formError="form.controls.status">Please choose a status</p>
+
+        <label>Billed To</label>
+        <input type="text" mwlFlatpickr [formControl]="form.controls.billed_to" />
+        <p class="c-red" *formError="form.controls.billed_to">Please enter a date</p>
+        
+    </div>
+</ng-container>
+
+<ng-template #newJob>
+    <span class="color-indicator" [style.backgroundColor]="client?.colour"></span>
+    <div class="h2">{{ client?.name }} / New</div>
+    <div class="page-header-actions">
+        <button class="button button-white" type="submit" (click)="form.save($event)">Save</button>
+        <a [routerLink]="['/clients', params.client_id]" class="button button-white button-clear">Cancel</a>
+    </div>
+</ng-template>

@@ -393,27 +393,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pipes/closed-jobs.pipe */ "./src/app/pipes/closed-jobs.pipe.ts");
 /* harmony import */ var ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ngx-dropzone-wrapper */ "./node_modules/ngx-dropzone-wrapper/dist/ngx-dropzone-wrapper.es5.js");
 /* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _components_formerror_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/formerror.component */ "./src/app/components/formerror.component.ts");
-/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
-/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
-/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
-/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
-/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
-/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
-/* harmony import */ var _components_tag_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/tag.component */ "./src/app/components/tag.component.ts");
-/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
-/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
-/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
-/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
-/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
-/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
-/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
-/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
+/* harmony import */ var angularx_flatpickr__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! angularx-flatpickr */ "./node_modules/angularx-flatpickr/fesm5/angularx-flatpickr.js");
+/* harmony import */ var _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./directives/formerror.directive */ "./src/app/directives/formerror.directive.ts");
+/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
+/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
+/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
+/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
+/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
+/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
+/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
+/* harmony import */ var _components_tag_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/tag.component */ "./src/app/components/tag.component.ts");
+/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
+/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
+/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
+/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
+/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
+/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
+/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -463,13 +465,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule(store) {
         this.store = store;
         store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["DataActions"].LOAD_DATA });
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_23__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_25__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_7__["AutoResizeDirective"],
@@ -481,38 +485,40 @@ var AppModule = /** @class */ (function () {
                 _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_13__["ClientDetailFormComponent"],
                 _components_client_list_component__WEBPACK_IMPORTED_MODULE_14__["ClientListComponent"],
                 _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_15__["ClientSearchPipe"],
-                _components_formerror_component__WEBPACK_IMPORTED_MODULE_19__["FormErrorComponent"],
-                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_20__["GetPipe"],
-                _components_job_component__WEBPACK_IMPORTED_MODULE_21__["JobComponent"],
-                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_22__["JobSearchPipe"],
-                _components_not_found_component__WEBPACK_IMPORTED_MODULE_25__["NotFoundComponent"],
-                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_26__["OpenJobsPipe"],
-                _components_report_list_component__WEBPACK_IMPORTED_MODULE_27__["ReportListComponent"],
-                _components_search_component__WEBPACK_IMPORTED_MODULE_29__["SearchComponent"],
-                _components_tag_component__WEBPACK_IMPORTED_MODULE_30__["TagComponent"],
-                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_34__["TaskboardComponent"],
-                _components_task_card_component__WEBPACK_IMPORTED_MODULE_31__["TaskCardComponent"],
-                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_32__["TaskCreateFormComponent"],
-                _components_task_form_component__WEBPACK_IMPORTED_MODULE_33__["TaskFormComponent"],
-                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_35__["TasksByStatusPipe"],
-                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_36__["TimeEntryFormComponent"],
-                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_37__["TimesheetComponent"],
-                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_38__["TimesheetSignoffComponent"]
+                _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_20__["FormErrorDirective"],
+                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_21__["GetPipe"],
+                _components_job_component__WEBPACK_IMPORTED_MODULE_22__["JobComponent"],
+                _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_23__["JobDetailFormComponent"],
+                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_24__["JobSearchPipe"],
+                _components_not_found_component__WEBPACK_IMPORTED_MODULE_27__["NotFoundComponent"],
+                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_28__["OpenJobsPipe"],
+                _components_report_list_component__WEBPACK_IMPORTED_MODULE_29__["ReportListComponent"],
+                _components_search_component__WEBPACK_IMPORTED_MODULE_31__["SearchComponent"],
+                _components_tag_component__WEBPACK_IMPORTED_MODULE_32__["TagComponent"],
+                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_36__["TaskboardComponent"],
+                _components_task_card_component__WEBPACK_IMPORTED_MODULE_33__["TaskCardComponent"],
+                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_34__["TaskCreateFormComponent"],
+                _components_task_form_component__WEBPACK_IMPORTED_MODULE_35__["TaskFormComponent"],
+                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_37__["TasksByStatusPipe"],
+                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_38__["TimeEntryFormComponent"],
+                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_39__["TimesheetComponent"],
+                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_40__["TimesheetSignoffComponent"]
             ],
             imports: [
                 _app_routing__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["BrowserModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_18__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_39__["effects"]),
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_18__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_41__["effects"]),
                 ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_17__["DropzoneModule"],
+                angularx_flatpickr__WEBPACK_IMPORTED_MODULE_19__["FlatpickrModule"].forRoot(),
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientXsrfModule"].withOptions({
                     cookieName: 'csrftoken',
                     headerName: 'X-CSRFTOKEN'
                 }),
-                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_24__["NgxDnDModule"],
+                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_26__["NgxDnDModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_28__["RouterModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_30__["RouterModule"],
                 _ngrx_store__WEBPACK_IMPORTED_MODULE_4__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_1__["reducers"])
             ],
             providers: [],
@@ -543,11 +549,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/client-detail-form.component */ "./src/app/components/client-detail-form.component.ts");
 /* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
 /* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
-/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
-/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
+/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
+/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -565,24 +572,27 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
-    { path: '', component: _components_taskboard_component__WEBPACK_IMPORTED_MODULE_9__["TaskboardComponent"] },
+    { path: '', component: _components_taskboard_component__WEBPACK_IMPORTED_MODULE_10__["TaskboardComponent"] },
     { path: 'clients', component: _components_client_list_component__WEBPACK_IMPORTED_MODULE_4__["ClientListComponent"] },
     { path: 'clients/new', component: _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_3__["ClientDetailFormComponent"] },
     { path: 'clients/:id', component: _components_client_component__WEBPACK_IMPORTED_MODULE_1__["ClientComponent"] },
     { path: 'clients/:id/detail', component: _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_3__["ClientDetailFormComponent"] },
     { path: 'clients/:id/delete', component: _components_client_delete_component__WEBPACK_IMPORTED_MODULE_2__["ClientDeleteComponent"] },
+    { path: 'clients/:client_id/jobs/new', component: _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_6__["JobDetailFormComponent"] },
+    { path: 'clients/:client_id/jobs/:id/detail', component: _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_6__["JobDetailFormComponent"] },
     { path: 'clients/:client_id/jobs/:id', component: _components_job_component__WEBPACK_IMPORTED_MODULE_5__["JobComponent"] },
-    { path: 'reporting', component: _components_report_list_component__WEBPACK_IMPORTED_MODULE_8__["ReportListComponent"] },
-    { path: 'timesheet', component: _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_10__["TimesheetComponent"] },
-    { path: '404', component: _components_not_found_component__WEBPACK_IMPORTED_MODULE_7__["NotFoundComponent"] },
+    { path: 'reporting', component: _components_report_list_component__WEBPACK_IMPORTED_MODULE_9__["ReportListComponent"] },
+    { path: 'timesheet', component: _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_11__["TimesheetComponent"] },
+    { path: '404', component: _components_not_found_component__WEBPACK_IMPORTED_MODULE_8__["NotFoundComponent"] },
     { path: '**', redirectTo: '/404' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_7__["NgModule"])({
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes)
             ],
@@ -1143,7 +1153,7 @@ var ClientDeleteComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"form\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <ng-container *ngIf=\"client; else newClient;\">\n                <span class=\"color-indicator\" [style.backgroundColor]=\"client.colour\"></span>\n                <div class=\"h2\">{{ client.name }}</div>\n                <div class=\"page-header-actions\">\n                    <a class=\"button button-white\" (click)=\"form.save($event)\">Save</a>\n                    <a [routerLink]=\"['/clients', client.id]\" class=\"button button-white button-clear\">Cancel</a>\n                </div>\n            </ng-container>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li class=\"active\">Detail</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n        <label>Name</label>\n        <input type=\"text\" [formControl]=\"form.controls.name\" />\n        <label>Colour</label>\n        <input type=\"text\" [formControl]=\"form.controls.colour\" />\n        <p class=\"c-red\" [formError]=\"form.controls.colour\">Please enter a hex colour (ie #fff or #ffffff)</p>\n        <label>Phone Number</label>\n        <input type=\"text\" [formControl]=\"form.controls.phone_number\" />\n        <p class=\"c-red\" [formError]=\"form.controls.phone_number\">Please enter a valid phone number (ie 01603 766062)</p>\n        <label>Email Address</label>\n        <input type=\"text\" [formControl]=\"form.controls.email_address\" />\n        <p class=\"c-red\" [formError]=\"form.controls.email_address\">Please enter a valid email address</p>\n        <label>Website</label>\n        <input type=\"text\" [formControl]=\"form.controls.website\" />\n        <p class=\"c-red\" [formError]=\"form.controls.website\">Please enter a valid url (ie https://google.com)</p>\n        <label>Address</label>\n        <textarea autoResize [formControl]=\"form.controls.address\"></textarea>\n        <label>Notes</label>\n        <textarea autoResize [formControl]=\"form.controls.notes\"></textarea>\n    </div>\n</ng-container>\n\n<ng-template #newClient>\n    <span class=\"color-indicator\"></span>\n    <div class=\"h2\">New</div>\n    <div class=\"page-header-actions\">\n        <button class=\"button button-white\" type=\"submit\" (click)=\"form.save($event)\">Save</button>\n        <a [routerLink]=\"['/clients']\" class=\"button button-white button-clear\">Cancel</a>\n    </div>\n</ng-template>"
+module.exports = "<ng-container *ngIf=\"form\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <ng-container *ngIf=\"client; else newClient;\">\n                <span class=\"color-indicator\" [style.backgroundColor]=\"client.colour\"></span>\n                <div class=\"h2\">{{ client.name }}</div>\n                <div class=\"page-header-actions\">\n                    <a class=\"button button-white\" (click)=\"form.save($event)\">Save</a>\n                    <a [routerLink]=\"['/clients', client.id]\" class=\"button button-white button-clear\">Cancel</a>\n                </div>\n            </ng-container>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li class=\"active\">Detail</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n        <label>Name</label>\n        <input type=\"text\" [formControl]=\"form.controls.name\" />\n        <label>Colour</label>\n        <input type=\"text\" [formControl]=\"form.controls.colour\" />\n        <p class=\"c-red\" *formError=\"form.controls.colour\">Please enter a hex colour (ie #fff or #ffffff)</p>\n        <label>Phone Number</label>\n        <input type=\"text\" [formControl]=\"form.controls.phone_number\" />\n        <p class=\"c-red\" *formError=\"form.controls.phone_number\">Please enter a valid phone number (ie 01603 766062)</p>\n        <label>Email Address</label>\n        <input type=\"text\" [formControl]=\"form.controls.email_address\" />\n        <p class=\"c-red\" *formError=\"form.controls.email_address\">Please enter a valid email address</p>\n        <label>Website</label>\n        <input type=\"text\" [formControl]=\"form.controls.website\" />\n        <p class=\"c-red\" *formError=\"form.controls.website\">Please enter a valid url (ie https://google.com)</p>\n        <label>Address</label>\n        <textarea autoResize [formControl]=\"form.controls.address\"></textarea>\n        <label>Notes</label>\n        <textarea autoResize [formControl]=\"form.controls.notes\"></textarea>\n    </div>\n</ng-container>\n\n<ng-template #newClient>\n    <span class=\"color-indicator\"></span>\n    <div class=\"h2\">New</div>\n    <div class=\"page-header-actions\">\n        <button class=\"button button-white\" type=\"submit\" (click)=\"form.save($event)\">Save</button>\n        <a [routerLink]=\"['/clients']\" class=\"button button-white button-clear\">Cancel</a>\n    </div>\n</ng-template>"
 
 /***/ }),
 
@@ -1241,7 +1251,7 @@ var ClientDetailFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Clients</div>\n        <div class=\"page-header-actions\">\n            <a routerLink=\"/clients/new\" class=\"button button-white\">Add</a>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <search [(ngModel)]=\"searchTerms\"></search>\n        <table class=\"table-headed table-hover margin-zero layout-fixed\">\n            <thead>\n                <tr>\n                    <th>Name</th>\n                    <th>Email Address</th>\n                    <th>Phone Number</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr [routerLink]=\"['/clients', client.id]\" *ngFor=\"let client of clients$ | async | clientSearch:searchTerms\">\n                    <td>{{ client.name }}</td>\n                    <td>{{ client | get:'email_address' }}</td>\n                    <td>{{ client | get:'phone_number' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Clients</div>\n        <div class=\"page-header-actions\">\n            <a routerLink=\"/clients/new\" class=\"button button-white\">Add</a>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <div class=\"row\">\n            <div class=\"col-6\"><search [(ngModel)]=\"searchTerms\"></search></div>\n        </div>\n        <table class=\"table-headed table-hover margin-zero layout-fixed\">\n            <thead>\n                <tr>\n                    <th>Name</th>\n                    <th>Email Address</th>\n                    <th>Phone Number</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr [routerLink]=\"['/clients', client.id]\" *ngFor=\"let client of clients$ | async | clientSearch:searchTerms\">\n                    <td>{{ client.name }}</td>\n                    <td>{{ client | get:'email_address' }}</td>\n                    <td>{{ client | get:'phone_number' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1300,7 +1310,7 @@ var ClientListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"client$ | async as client\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"client.colour\"></span>\n            <div class=\"h2\">{{ client.name }}</div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', client.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\" [routerLink]=\"['/clients', client.id, 'delete']\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'jobs'\" [class.active]=\"selectedTab == 'jobs'\">Jobs</li>\n                <li (click)=\"selectedTab = 'closed_jobs'\" [class.active]=\"selectedTab == 'closed_jobs'\">Closed Jobs</li>\n                <li (click)=\"selectedTab = 'contacts'\" [class.active]=\"selectedTab == 'contacts'\">Contacts</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Email Address</p>\n                <p>\n                    <a *ngIf=\"client.email_address; else emptyValue\" href=\"mailto://{{ client.email_address }}\" class=\"underline-dotted\">{{ client.email_address }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Phone Number</p>\n                <p>\n                    <ng-container *ngIf=\"client.phone_number; else emptyValue\">\n                        <a href=\"tel:{{ client.phone_number }}\" class=\"underline-dotted\">{{ client.phone_number }}</a>\n                        <a *ngIf=\"(me$ | async)?.is_gradwell_enabled\"><i class=\"icon-phone c-red\"></i></a>\n                    </ng-container>    \n                </p>\n                <hr/>\n                <p class=\"strong\">Website</p>\n                <p>\n                    <a *ngIf=\"client.website; else emptyValue\" href=\"{{ client.website }}\" class=\"underline-dotted\">{{ client.website }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Address</p>\n                <p class=\"ws-pre-wrap\">{{ client | get:'address' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Notes</p>\n                    <p class=\"ws-pre-wrap\">{{ client | get:'notes' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'jobs'\">\n            <search [(ngModel)]=\"openSearchTerms\"></search>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | openJobs | jobSearch:openSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'closed_jobs'\">\n                <search [(ngModel)]=\"closedSearchTerms\"></search>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | closedJobs | jobSearch:closedSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'contacts'\">\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Email Address</th>\n                        <th>Phone Number</th>\n                        <th>Mobile Number</th>\n                        <th>Position</th>\n                        <th>Tags</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"contacts$ | async as contacts\">\n                <tbody *ngIf=\"contacts.length > 0; else emptyContacts\">\n                    <tr *ngFor=\"let contact of contacts\">\n                        <td>{{ contact.first_name }} {{ contact.last_name }}</td>\n                        <td>{{ contact | get:'email_address' }}</td>\n                        <td>{{ contact | get:'phone_number' }}</td>\n                        <td>{{ contact | get:'mobile_number' }}</td>\n                        <td>{{ contact | get:'_position.title' }}</td>\n                        <td><ul class=\"tags\"><li tag [id]=\"tag.tag\" class=\"tag\" *ngFor=\"let tag of contact._tags\"></li></ul></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyValue><span>-</span></ng-template>\n<ng-template #emptyJobs><tbody><tr><td colspan=\"3\">No jobs found.</td></tr></tbody></ng-template>\n<ng-template #emptyContacts><tbody><tr><td colspan=\"5\">No contacts found.</td></tr></tbody></ng-template>"
+module.exports = "<ng-container *ngIf=\"client$ | async as client\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"client.colour\"></span>\n            <div class=\"h2\">{{ client.name }}</div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', client.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\" [routerLink]=\"['/clients', client.id, 'delete']\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'jobs'\" [class.active]=\"selectedTab == 'jobs'\">Jobs</li>\n                <li (click)=\"selectedTab = 'closed_jobs'\" [class.active]=\"selectedTab == 'closed_jobs'\">Closed Jobs</li>\n                <li (click)=\"selectedTab = 'contacts'\" [class.active]=\"selectedTab == 'contacts'\">Contacts</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Email Address</p>\n                <p>\n                    <a *ngIf=\"client.email_address; else emptyValue\" href=\"mailto://{{ client.email_address }}\" class=\"underline-dotted\">{{ client.email_address }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Phone Number</p>\n                <p>\n                    <ng-container *ngIf=\"client.phone_number; else emptyValue\">\n                        <a href=\"tel:{{ client.phone_number }}\" class=\"underline-dotted\">{{ client.phone_number }}</a>\n                        <a *ngIf=\"(me$ | async)?.is_gradwell_enabled\"><i class=\"icon-phone c-red\"></i></a>\n                    </ng-container>    \n                </p>\n                <hr/>\n                <p class=\"strong\">Website</p>\n                <p>\n                    <a *ngIf=\"client.website; else emptyValue\" href=\"{{ client.website }}\" class=\"underline-dotted\">{{ client.website }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Address</p>\n                <p class=\"ws-pre-wrap\">{{ client | get:'address' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Notes</p>\n                    <p class=\"ws-pre-wrap\">{{ client | get:'notes' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'jobs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"><search [(ngModel)]=\"openSearchTerms\"></search></div>\n                <div class=\"col-6\"><a class=\"button button-white pull-right\" [routerLink]=\"['/clients', client.id, 'jobs', 'new']\">Add Job</a></div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | openJobs | jobSearch:openSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'closed_jobs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"><search [(ngModel)]=\"closedSearchTerms\"></search></div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | closedJobs | jobSearch:closedSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'contacts'\">\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Email Address</th>\n                        <th>Phone Number</th>\n                        <th>Mobile Number</th>\n                        <th>Position</th>\n                        <th>Tags</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"contacts$ | async as contacts\">\n                <tbody *ngIf=\"contacts.length > 0; else emptyContacts\">\n                    <tr *ngFor=\"let contact of contacts\">\n                        <td>{{ contact.first_name }} {{ contact.last_name }}</td>\n                        <td>{{ contact | get:'email_address' }}</td>\n                        <td>{{ contact | get:'phone_number' }}</td>\n                        <td>{{ contact | get:'mobile_number' }}</td>\n                        <td>{{ contact | get:'_position.title' }}</td>\n                        <td><ul class=\"tags\"><li tag [id]=\"tag.tag\" class=\"tag\" *ngFor=\"let tag of contact._tags\"></li></ul></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyValue><span>-</span></ng-template>\n<ng-template #emptyJobs><tbody><tr><td colspan=\"3\">No jobs found.</td></tr></tbody></ng-template>\n<ng-template #emptyContacts><tbody><tr><td colspan=\"5\">No contacts found.</td></tr></tbody></ng-template>"
 
 /***/ }),
 
@@ -1376,18 +1386,38 @@ var ClientComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/formerror.component.ts":
-/*!***************************************************!*\
-  !*** ./src/app/components/formerror.component.ts ***!
-  \***************************************************/
-/*! exports provided: FormErrorComponent */
+/***/ "./src/app/components/job-detail-form.component.html":
+/*!***********************************************************!*\
+  !*** ./src/app/components/job-detail-form.component.html ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-container *ngIf=\"form\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <ng-container *ngIf=\"job; else newJob;\">\n                <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n                <div class=\"h2\">{{ client?.name }} / {{ job.title }}</div>\n                <div class=\"page-header-actions\">\n                    <a class=\"button button-white\" (click)=\"form.save($event)\">Save</a>\n                    <a [routerLink]=\"['/clients', params.client_id, 'jobs', params.id]\" class=\"button button-white button-clear\">Cancel</a>\n                </div>\n            </ng-container>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li class=\"active\">Detail</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n        <label>Title</label>\n        <input type=\"text\" [formControl]=\"form.controls.title\" />\n        <p class=\"c-red\" *formError=\"form.controls.title\">Please enter a title</p>\n\n        <label>Description</label>\n        <textarea autoResize [formControl]=\"form.controls.description\"></textarea>\n\n        <label>Colour</label>\n        <input type=\"text\" [formControl]=\"form.controls.colour\" />\n        <p class=\"c-red\" *formError=\"form.controls.colour\">Please enter a hex colour (ie #fff or #ffffff)</p>\n\n        <label>Type</label>\n        <select [formControl]=\"form.controls.type\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of jobTypes$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.type\">Please choose a type</p>\n\n        <label>Estimated Hours</label>\n        <input type=\"number\" [formControl]=\"form.controls.estimated_hours\" />\n        <p class=\"c-red\" *formError=\"form.controls.estimated_hours\">Please enter a valid number</p>\n\n        <label>Status</label>\n        <select [formControl]=\"form.controls.status\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of jobStatuses$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.status\">Please choose a status</p>\n\n        <label>Billed To</label>\n        <input type=\"text\" mwlFlatpickr [formControl]=\"form.controls.billed_to\" />\n        <p class=\"c-red\" *formError=\"form.controls.billed_to\">Please enter a date</p>\n        \n    </div>\n</ng-container>\n\n<ng-template #newJob>\n    <span class=\"color-indicator\" [style.backgroundColor]=\"client?.colour\"></span>\n    <div class=\"h2\">{{ client?.name }} / New</div>\n    <div class=\"page-header-actions\">\n        <button class=\"button button-white\" type=\"submit\" (click)=\"form.save($event)\">Save</button>\n        <a [routerLink]=\"['/clients', params.client_id]\" class=\"button button-white button-clear\">Cancel</a>\n    </div>\n</ng-template>"
+
+/***/ }),
+
+/***/ "./src/app/components/job-detail-form.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/job-detail-form.component.ts ***!
+  \*********************************************************/
+/*! exports provided: JobDetailFormComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormErrorComponent", function() { return FormErrorComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobDetailFormComponent", function() { return JobDetailFormComponent; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _forms_job_detail_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../forms/job-detail.form */ "./src/app/forms/job-detail.form.ts");
+/* harmony import */ var _state_selectors_client__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../state/selectors/client */ "./src/app/state/selectors/client.ts");
+/* harmony import */ var _state_selectors_job__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../state/selectors/job */ "./src/app/state/selectors/job.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1399,20 +1429,58 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-var FormErrorComponent = /** @class */ (function () {
-    function FormErrorComponent() {
+
+
+
+
+
+
+
+
+var JobDetailFormComponent = /** @class */ (function () {
+    function JobDetailFormComponent(router, route, store, actionsSubject) {
+        this.router = router;
+        this.route = route;
+        this.store = store;
+        this.actionsSubject = actionsSubject;
+        this.subscriptions = [];
     }
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('formError'),
-        __metadata("design:type", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"])
-    ], FormErrorComponent.prototype, "control", void 0);
-    FormErrorComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'formError, [formError]',
-            template: "\n    <ng-container *ngIf=\"control.invalid && (control.dirty || control.touched)\">\n        <ng-content></ng-content>\n    </ng-container>\n    "
-        })
-    ], FormErrorComponent);
-    return FormErrorComponent;
+    JobDetailFormComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.jobStatuses$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getJobStatusState"]));
+        this.jobTypes$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getJobTypeState"]));
+        var paramsObsv = this.route.params.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["mergeMap"])(function (params) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["combineLatest"])(Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])(params), _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_client__WEBPACK_IMPORTED_MODULE_8__["getClientCollectionById"])(+params.client_id))), _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_9__["getJobCollectionById"])(+params.id)))); })).subscribe(function (_a) {
+            var params = _a[0], client = _a[1], job = _a[2];
+            _this.params = params;
+            _this.client = client;
+            _this.job = job;
+            _this.form = new _forms_job_detail_form__WEBPACK_IMPORTED_MODULE_7__["JobDetailForm"](_this.store, _this.actionsSubject, { alwaysEditable: true });
+            if (job) {
+                _this.form.load(_this.job);
+            }
+            else if (client) {
+                _this.form.load({ client: client.id, colour: client.colour });
+            }
+            _this.form.formSaved.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["take"])(1)).subscribe(function (result) {
+                _this.router.navigate(['/clients', _this.params.client_id, 'jobs', result.payload.id]);
+            });
+        });
+        this.subscriptions.push(paramsObsv);
+    };
+    JobDetailFormComponent.prototype.ngOnDestroy = function () {
+        lodash__WEBPACK_IMPORTED_MODULE_0__["each"](this.subscriptions, function (s) { return s.unsubscribe(); });
+    };
+    JobDetailFormComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
+            template: __webpack_require__(/*! ./job-detail-form.component.html */ "./src/app/components/job-detail-form.component.html"),
+            host: { 'class': 'd-flex flex-fill flex-column' }
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_1__["Store"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_1__["ActionsSubject"]])
+    ], JobDetailFormComponent);
+    return JobDetailFormComponent;
 }());
 
 
@@ -1426,7 +1494,7 @@ var FormErrorComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"job$ | async as job\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <button class=\"button button-white\" type=\"submit\">Edit</button>\n                <a class=\"button button-white button-clear\" >Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'tasks'\" [class.active]=\"selectedTab == 'tasks'\">Tasks</li>\n                <li (click)=\"selectedTab = 'notes'\" [class.active]=\"selectedTab == 'notes'\">Notes</li>\n                <li (click)=\"selectedTab = 'files'\" [class.active]=\"selectedTab == 'files'\">Files</li>\n                <li (click)=\"selectedTab = 'relationships'\" [class.active]=\"selectedTab == 'relationships'\">Relationships</li>\n                <li (click)=\"selectedTab = 'recurring_costs'\" [class.active]=\"selectedTab == 'recurring_costs'\">Recurring Costs</li>\n            </ul>\n        </div>\n    </div>\n\n    <ng-container *ngIf=\"selectedTab == 'tasks'\">\n\n        <div class=\"container-fluid d-flex flex-fill\">\n            <div class=\"d-flex flex-fill mt-1 mb-1 scroll-x\">\n                <div class=\"board-column\" *ngFor=\"let status of statuses$ | async\">\n                    <div class=\"board-column-heading\">\n                        <strong>{{ status.title }}</strong>\n                        <i class=\"icon-plus ml-auto\" (click)=\"openCreateForm(status)\"></i>\n                    </div>\n                    <div class=\"board-card-wrapper\" \n                        ngxDroppable=\"status-column\"\n                        (drop)=\"droppedIntoColumn(status, tasks)\"\n                        [model]=\"tasks\"\n                        *ngIf=\"tasks$ | async | tasksByStatus:status.id as tasks\">\n                        <div task-card \n                            [id]=\"task.id\"\n                            ngxDraggable\n                            [model]=\"task\"\n                            (click)=\"selectedTaskId=task.id\"\n                            *ngFor=\"let task of tasks\">\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <task-create-form\n            [opened]=\"createFormOpen\"\n            [jobId]=\"jobId\"\n            [statusId]=\"createFormStatusId\"\n            (close)=\"createFormOpen = false\"\n            (saved)=\"selectedTaskId = $event.id\"\n            *ngIf=\"createFormOpen\">\n        </task-create-form>\n\n        <task-form\n            [id]=\"selectedTaskId\"\n            (close)=\"selectedTaskId = null\"\n            *ngIf=\"selectedTaskId\">\n        </task-form>\n\n    </ng-container>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab != 'tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hours)</p>\n                <p>-</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'files'\">\n            <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab == 'notes'\">\n            <div class=\"row mb-1-5\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\"></textarea>\n                    <button class=\"button button-primary pull-right\">Add</button>\n                </div>\n            </div>\n\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1-5\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\">{{ note.note }}</div>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <a class=\"underline-dotted\">Edit</a> |\n                        <a class=\"underline-dotted\">Delete</a>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'relationships'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'recurring_costs'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"2\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"5\">No recurring costs found.</td></tr></tbody></ng-template>"
+module.exports = "<ng-container *ngIf=\"job$ | async as job\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'tasks'\" [class.active]=\"selectedTab == 'tasks'\">Tasks</li>\n                <li (click)=\"selectedTab = 'notes'\" [class.active]=\"selectedTab == 'notes'\">Notes</li>\n                <li (click)=\"selectedTab = 'files'\" [class.active]=\"selectedTab == 'files'\">Files</li>\n                <li (click)=\"selectedTab = 'relationships'\" [class.active]=\"selectedTab == 'relationships'\">Relationships</li>\n                <li (click)=\"selectedTab = 'recurring_costs'\" [class.active]=\"selectedTab == 'recurring_costs'\">Recurring Costs</li>\n            </ul>\n        </div>\n    </div>\n\n    <ng-container *ngIf=\"selectedTab == 'tasks'\">\n\n        <div class=\"container-fluid d-flex flex-fill\">\n            <div class=\"d-flex flex-fill mt-1 mb-1 scroll-x\">\n                <div class=\"board-column\" *ngFor=\"let status of statuses$ | async\">\n                    <div class=\"board-column-heading\">\n                        <strong>{{ status.title }}</strong>\n                        <i class=\"icon-plus ml-auto\" (click)=\"openCreateForm(status)\"></i>\n                    </div>\n                    <div class=\"board-card-wrapper\" \n                        ngxDroppable=\"status-column\"\n                        (drop)=\"droppedIntoColumn(status, tasks)\"\n                        [model]=\"tasks\"\n                        *ngIf=\"tasks$ | async | tasksByStatus:status.id as tasks\">\n                        <div task-card \n                            [id]=\"task.id\"\n                            ngxDraggable\n                            [model]=\"task\"\n                            (click)=\"selectedTaskId=task.id\"\n                            *ngFor=\"let task of tasks\">\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <task-create-form\n            [opened]=\"createFormOpen\"\n            [jobId]=\"jobId\"\n            [statusId]=\"createFormStatusId\"\n            (close)=\"createFormOpen = false\"\n            (saved)=\"selectedTaskId = $event.id\"\n            *ngIf=\"createFormOpen\">\n        </task-create-form>\n\n        <task-form\n            [id]=\"selectedTaskId\"\n            (close)=\"selectedTaskId = null\"\n            *ngIf=\"selectedTaskId\">\n        </task-form>\n\n    </ng-container>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab != 'tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hours)</p>\n                <p>-</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'files'\">\n            <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab == 'notes'\">\n            <div class=\"row mb-1-5\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\"></textarea>\n                    <button class=\"button button-primary pull-right\">Add</button>\n                </div>\n            </div>\n\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1-5\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\">{{ note.note }}</div>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <a class=\"underline-dotted\">Edit</a> |\n                        <a class=\"underline-dotted\">Delete</a>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'relationships'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'recurring_costs'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"2\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"5\">No recurring costs found.</td></tr></tbody></ng-template>"
 
 /***/ }),
 
@@ -2601,6 +2669,71 @@ var AutoResizeDirective = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/directives/formerror.directive.ts":
+/*!***************************************************!*\
+  !*** ./src/app/directives/formerror.directive.ts ***!
+  \***************************************************/
+/*! exports provided: FormErrorDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormErrorDirective", function() { return FormErrorDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FormErrorDirective = /** @class */ (function () {
+    function FormErrorDirective(templateRef, viewContainer) {
+        this.templateRef = templateRef;
+        this.viewContainer = viewContainer;
+    }
+    Object.defineProperty(FormErrorDirective.prototype, "formError", {
+        set: function (control) {
+            var _this = this;
+            this.control = control;
+            this.subscription = this.control.statusChanges.subscribe(function () { return _this.check(); });
+        },
+        enumerable: true,
+        configurable: true
+    });
+    FormErrorDirective.prototype.check = function () {
+        this.viewContainer.clear();
+        if (this.control.invalid && (this.control.dirty || this.control.touched)) {
+            this.viewContainer.createEmbeddedView(this.templateRef);
+        }
+    };
+    FormErrorDirective.prototype.ngOnDestroy = function () {
+        this.subscription.unsubscribe();
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]),
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]])
+    ], FormErrorDirective.prototype, "formError", null);
+    FormErrorDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[formError]'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["TemplateRef"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewContainerRef"]])
+    ], FormErrorDirective);
+    return FormErrorDirective;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/forms/base.form.ts":
 /*!************************************!*\
   !*** ./src/app/forms/base.form.ts ***!
@@ -2698,10 +2831,14 @@ var BaseForm = /** @class */ (function (_super) {
         event.stopPropagation();
         if (!this.valid) {
             // set the controls to touched so we can display the errors
-            lodash__WEBPACK_IMPORTED_MODULE_0__["forEach"](this.controls, function (c, k) { return _this.controls[k].markAsTouched(); });
+            lodash__WEBPACK_IMPORTED_MODULE_0__["forEach"](this.controls, function (c, k) {
+                _this.controls[k].markAsTouched();
+                _this.controls[k].updateValueAndValidity();
+            });
             // just return out
             return;
         }
+        this.prepareValueForDispatch();
         if (this.createAction && !this.value.id) {
             // create a new record as we have no id
             this.store.dispatch({ type: this.createAction, payload: this.value });
@@ -2715,6 +2852,9 @@ var BaseForm = /** @class */ (function (_super) {
         }
         // wait for the result
         this.waitForResult(event);
+    };
+    BaseForm.prototype.prepareValueForDispatch = function () {
+        // use as a trigger point to ammend and values before save
     };
     BaseForm.prototype.cancel = function (event) {
         event.stopPropagation();
@@ -2846,6 +2986,76 @@ var ClientDetailForm = /** @class */ (function (_super) {
         return _this;
     }
     return ClientDetailForm;
+}(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/forms/job-detail.form.ts":
+/*!******************************************!*\
+  !*** ./src/app/forms/job-detail.form.ts ***!
+  \******************************************/
+/*! exports provided: JobDetailForm */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobDetailForm", function() { return JobDetailForm; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./base.form */ "./src/app/forms/base.form.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _utils_regex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/regex */ "./src/app/utils/regex.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+
+var options = {
+    alwaysEditable: false,
+    cleanAfterMethod: _base_form__WEBPACK_IMPORTED_MODULE_2__["FormCleanAfterMethod"].loadSaved
+};
+var JobDetailForm = /** @class */ (function (_super) {
+    __extends(JobDetailForm, _super);
+    function JobDetailForm(store, actionsSubject, formOptions) {
+        var _this = _super.call(this, store, actionsSubject, {
+            id: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null),
+            title: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            description: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null),
+            client: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            type: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            estimated_hours: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern(_utils_regex__WEBPACK_IMPORTED_MODULE_4__["decimal10at2"])),
+            colour: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern(_utils_regex__WEBPACK_IMPORTED_MODULE_4__["hexReg"])]),
+            status: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            billed_to: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null),
+        }, null, null, lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, options, formOptions)) || this;
+        _this.store = store;
+        _this.actionsSubject = actionsSubject;
+        _this.createAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobActions"].ADD;
+        _this.createSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobActions"].ADD_SUCCESS;
+        _this.updateAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobActions"].UPDATE;
+        _this.updateSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobActions"].UPDATE_SUCCESS;
+        return _this;
+    }
+    JobDetailForm.prototype.prepareValueForDispatch = function () {
+        // the api doesnt like empty strings for a date field
+        if (this.controls.billed_to.value === '') {
+            this.controls.billed_to.setValue(null);
+        }
+    };
+    return JobDetailForm;
 }(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));
 
 
@@ -10054,14 +10264,16 @@ var valueOr = function (value, ifNull) {
 /*!********************************!*\
   !*** ./src/app/utils/regex.ts ***!
   \********************************/
-/*! exports provided: hexReg, phoneReg, urlReg */
+/*! exports provided: decimal10at2, hexReg, phoneReg, urlReg */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "decimal10at2", function() { return decimal10at2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hexReg", function() { return hexReg; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "phoneReg", function() { return phoneReg; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "urlReg", function() { return urlReg; });
+var decimal10at2 = '^[0-9]{1,7}(\\.[0-9]{0,2})?$';
 var hexReg = '#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})';
 var phoneReg = '[0-9 ]*';
 var urlReg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';

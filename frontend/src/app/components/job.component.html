@@ -7,8 +7,8 @@
                 <a>{{ job.title }}</a>
             </div>
             <div class="page-header-actions">
-                <button class="button button-white" type="submit">Edit</button>
-                <a class="button button-white button-clear" >Delete</a>
+                <a class="button button-white" [routerLink]="['/clients', job.client, 'jobs', job.id, 'detail']">Edit</a>
+                <a class="button button-white button-clear">Delete</a>
             </div>
         </div>
         <div class="container-fluid">

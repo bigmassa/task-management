@@ -4,11 +4,9 @@ import * as actions from '../state/actions';
 import { ActionsSubject, Store } from '@ngrx/store';
 import { BaseForm, FormCleanAfterMethod, IFormOptions } from './base.form';
 import { FormControl, Validators } from '@angular/forms';
-import { filter, take } from 'rxjs/operators';
 import { hexReg, phoneReg, urlReg } from '../utils/regex';
 
 import { AppState } from '../state/state';
-import { IActionWithPayload } from './../state/models';
 
 const options: IFormOptions = {
     alwaysEditable: false,

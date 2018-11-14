@@ -97,11 +97,16 @@ export class BaseForm extends FormGroup implements OnDestroy {
         
         if (!this.valid) {
             // set the controls to touched so we can display the errors
-            _.forEach(this.controls, (c, k) => this.controls[k].markAsTouched());
+            _.forEach(this.controls, (c, k) => {
+                this.controls[k].markAsTouched();
+                this.controls[k].updateValueAndValidity();
+            });
             // just return out
             return;
         }
         
+        this.prepareValueForDispatch();
+
         if (this.createAction && !this.value.id) {
             // create a new record as we have no id
             this.store.dispatch({ type: this.createAction, payload: this.value });
@@ -114,6 +119,10 @@ export class BaseForm extends FormGroup implements OnDestroy {
         
         // wait for the result
         this.waitForResult(event);
+    }
+
+    prepareValueForDispatch() {
+        // use as a trigger point to ammend and values before save
     }
 
     cancel(event: Event) {

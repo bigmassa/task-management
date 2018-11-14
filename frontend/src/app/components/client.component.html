@@ -51,7 +51,10 @@
         </div>
 
         <div class="panel" *ngIf="selectedTab == 'jobs'">
-            <search [(ngModel)]="openSearchTerms"></search>
+            <div class="row">
+                <div class="col-6"><search [(ngModel)]="openSearchTerms"></search></div>
+                <div class="col-6"><a class="button button-white pull-right" [routerLink]="['/clients', client.id, 'jobs', 'new']">Add Job</a></div>
+            </div>
             <table class="table-hover">
                 <thead>
                     <tr>
@@ -73,7 +76,9 @@
         </div>
 
         <div class="panel" *ngIf="selectedTab == 'closed_jobs'">
-                <search [(ngModel)]="closedSearchTerms"></search>
+            <div class="row">
+                <div class="col-6"><search [(ngModel)]="closedSearchTerms"></search></div>
+            </div>
             <table class="table-hover">
                 <thead>
                     <tr>
