@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { ClientComponent } from './components/client.component';
+import { ClientDeleteComponent } from './components/client-delete.component';
 import { ClientDetailFormComponent } from './components/client-detail-form.component';
 import { ClientListComponent } from './components/client-list.component';
 import { JobComponent } from './components/job.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'clients/new', component: ClientDetailFormComponent},
     { path: 'clients/:id', component: ClientComponent},
     { path: 'clients/:id/detail', component: ClientDetailFormComponent},
+    { path: 'clients/:id/delete', component: ClientDeleteComponent},
     { path: 'clients/:client_id/jobs/:id', component: JobComponent},
     { path: 'reporting', component: ReportListComponent},
     { path: 'timesheet', component: TimesheetComponent},

@@ -5,7 +5,7 @@
                 <span class="color-indicator" [style.backgroundColor]="client.colour"></span>
                 <div class="h2">{{ client.name }}</div>
                 <div class="page-header-actions">
-                    <button class="button button-white" type="submit" (click)="form.save($event)">Save</button>
+                    <a class="button button-white" (click)="form.save($event)">Save</a>
                     <a [routerLink]="['/clients', client.id]" class="button button-white button-clear">Cancel</a>
                 </div>
             </ng-container>

@@ -5,7 +5,7 @@
             <div class="h2">{{ client.name }}</div>
             <div class="page-header-actions">
                 <a class="button button-white" [routerLink]="['/clients', client.id, 'detail']">Edit</a>
-                <a class="button button-white button-clear" >Delete</a>
+                <a class="button button-white button-clear" [routerLink]="['/clients', client.id, 'delete']">Delete</a>
             </div>
         </div>
         <div class="container-fluid">
