@@ -386,36 +386,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _components_calendar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/calendar.component */ "./src/app/components/calendar.component.ts");
 /* harmony import */ var _components_client_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/client.component */ "./src/app/components/client.component.ts");
-/* harmony import */ var _components_client_delete_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/client-delete.component */ "./src/app/components/client-delete.component.ts");
-/* harmony import */ var _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/client-detail-form.component */ "./src/app/components/client-detail-form.component.ts");
-/* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
-/* harmony import */ var _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pipes/client-search.pipe */ "./src/app/pipes/client-search.pipe.ts");
-/* harmony import */ var _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pipes/closed-jobs.pipe */ "./src/app/pipes/closed-jobs.pipe.ts");
-/* harmony import */ var ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ngx-dropzone-wrapper */ "./node_modules/ngx-dropzone-wrapper/dist/ngx-dropzone-wrapper.es5.js");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var angularx_flatpickr__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! angularx-flatpickr */ "./node_modules/angularx-flatpickr/fesm5/angularx-flatpickr.js");
-/* harmony import */ var _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./directives/formerror.directive */ "./src/app/directives/formerror.directive.ts");
-/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
-/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
-/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
-/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
-/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
-/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
-/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
-/* harmony import */ var _components_tag_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/tag.component */ "./src/app/components/tag.component.ts");
-/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
-/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
-/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
-/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
-/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
-/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
-/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
-/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
+/* harmony import */ var _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/client-contact-form.component */ "./src/app/components/client-contact-form.component.ts");
+/* harmony import */ var _components_client_delete_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/client-delete.component */ "./src/app/components/client-delete.component.ts");
+/* harmony import */ var _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/client-detail-form.component */ "./src/app/components/client-detail-form.component.ts");
+/* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
+/* harmony import */ var _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pipes/client-search.pipe */ "./src/app/pipes/client-search.pipe.ts");
+/* harmony import */ var _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pipes/closed-jobs.pipe */ "./src/app/pipes/closed-jobs.pipe.ts");
+/* harmony import */ var ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-dropzone-wrapper */ "./node_modules/ngx-dropzone-wrapper/dist/ngx-dropzone-wrapper.es5.js");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var angularx_flatpickr__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! angularx-flatpickr */ "./node_modules/angularx-flatpickr/fesm5/angularx-flatpickr.js");
+/* harmony import */ var _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/formerror.directive */ "./src/app/directives/formerror.directive.ts");
+/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
+/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
+/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
+/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
+/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
+/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
+/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
+/* harmony import */ var _components_tag_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/tag.component */ "./src/app/components/tag.component.ts");
+/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
+/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
+/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
+/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
+/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
+/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
+/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -467,58 +468,60 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule(store) {
         this.store = store;
         store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["DataActions"].LOAD_DATA });
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_25__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_26__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
                 _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_7__["AutoResizeDirective"],
                 _components_avatar_component__WEBPACK_IMPORTED_MODULE_8__["AvatarComponent"],
                 _components_calendar_component__WEBPACK_IMPORTED_MODULE_10__["CalendarComponent"],
-                _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_16__["ClosedJobsPipe"],
+                _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_17__["ClosedJobsPipe"],
                 _components_client_component__WEBPACK_IMPORTED_MODULE_11__["ClientComponent"],
-                _components_client_delete_component__WEBPACK_IMPORTED_MODULE_12__["ClientDeleteComponent"],
-                _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_13__["ClientDetailFormComponent"],
-                _components_client_list_component__WEBPACK_IMPORTED_MODULE_14__["ClientListComponent"],
-                _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_15__["ClientSearchPipe"],
-                _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_20__["FormErrorDirective"],
-                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_21__["GetPipe"],
-                _components_job_component__WEBPACK_IMPORTED_MODULE_22__["JobComponent"],
-                _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_23__["JobDetailFormComponent"],
-                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_24__["JobSearchPipe"],
-                _components_not_found_component__WEBPACK_IMPORTED_MODULE_27__["NotFoundComponent"],
-                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_28__["OpenJobsPipe"],
-                _components_report_list_component__WEBPACK_IMPORTED_MODULE_29__["ReportListComponent"],
-                _components_search_component__WEBPACK_IMPORTED_MODULE_31__["SearchComponent"],
-                _components_tag_component__WEBPACK_IMPORTED_MODULE_32__["TagComponent"],
-                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_36__["TaskboardComponent"],
-                _components_task_card_component__WEBPACK_IMPORTED_MODULE_33__["TaskCardComponent"],
-                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_34__["TaskCreateFormComponent"],
-                _components_task_form_component__WEBPACK_IMPORTED_MODULE_35__["TaskFormComponent"],
-                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_37__["TasksByStatusPipe"],
-                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_38__["TimeEntryFormComponent"],
-                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_39__["TimesheetComponent"],
-                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_40__["TimesheetSignoffComponent"]
+                _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_12__["ClientContactFormComponent"],
+                _components_client_delete_component__WEBPACK_IMPORTED_MODULE_13__["ClientDeleteComponent"],
+                _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_14__["ClientDetailFormComponent"],
+                _components_client_list_component__WEBPACK_IMPORTED_MODULE_15__["ClientListComponent"],
+                _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_16__["ClientSearchPipe"],
+                _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_21__["FormErrorDirective"],
+                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_22__["GetPipe"],
+                _components_job_component__WEBPACK_IMPORTED_MODULE_23__["JobComponent"],
+                _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_24__["JobDetailFormComponent"],
+                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_25__["JobSearchPipe"],
+                _components_not_found_component__WEBPACK_IMPORTED_MODULE_28__["NotFoundComponent"],
+                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_29__["OpenJobsPipe"],
+                _components_report_list_component__WEBPACK_IMPORTED_MODULE_30__["ReportListComponent"],
+                _components_search_component__WEBPACK_IMPORTED_MODULE_32__["SearchComponent"],
+                _components_tag_component__WEBPACK_IMPORTED_MODULE_33__["TagComponent"],
+                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_37__["TaskboardComponent"],
+                _components_task_card_component__WEBPACK_IMPORTED_MODULE_34__["TaskCardComponent"],
+                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_35__["TaskCreateFormComponent"],
+                _components_task_form_component__WEBPACK_IMPORTED_MODULE_36__["TaskFormComponent"],
+                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_38__["TasksByStatusPipe"],
+                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_39__["TimeEntryFormComponent"],
+                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_40__["TimesheetComponent"],
+                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_41__["TimesheetSignoffComponent"]
             ],
             imports: [
                 _app_routing__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__["BrowserModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_18__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_41__["effects"]),
-                ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_17__["DropzoneModule"],
-                angularx_flatpickr__WEBPACK_IMPORTED_MODULE_19__["FlatpickrModule"].forRoot(),
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_19__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_42__["effects"]),
+                ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_18__["DropzoneModule"],
+                angularx_flatpickr__WEBPACK_IMPORTED_MODULE_20__["FlatpickrModule"].forRoot(),
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientXsrfModule"].withOptions({
                     cookieName: 'csrftoken',
                     headerName: 'X-CSRFTOKEN'
                 }),
-                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_26__["NgxDnDModule"],
+                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_27__["NgxDnDModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_30__["RouterModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_31__["RouterModule"],
                 _ngrx_store__WEBPACK_IMPORTED_MODULE_4__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_1__["reducers"])
             ],
             providers: [],
@@ -545,16 +548,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _components_client_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/client.component */ "./src/app/components/client.component.ts");
-/* harmony import */ var _components_client_delete_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/client-delete.component */ "./src/app/components/client-delete.component.ts");
-/* harmony import */ var _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/client-detail-form.component */ "./src/app/components/client-detail-form.component.ts");
-/* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
-/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
-/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
-/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
-/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/client-contact-form.component */ "./src/app/components/client-contact-form.component.ts");
+/* harmony import */ var _components_client_delete_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/client-delete.component */ "./src/app/components/client-delete.component.ts");
+/* harmony import */ var _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/client-detail-form.component */ "./src/app/components/client-detail-form.component.ts");
+/* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
+/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
+/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
+/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
+/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -573,26 +577,29 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
-    { path: '', component: _components_taskboard_component__WEBPACK_IMPORTED_MODULE_10__["TaskboardComponent"] },
-    { path: 'clients', component: _components_client_list_component__WEBPACK_IMPORTED_MODULE_4__["ClientListComponent"] },
-    { path: 'clients/new', component: _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_3__["ClientDetailFormComponent"] },
+    { path: '', component: _components_taskboard_component__WEBPACK_IMPORTED_MODULE_11__["TaskboardComponent"] },
+    { path: 'clients', component: _components_client_list_component__WEBPACK_IMPORTED_MODULE_5__["ClientListComponent"] },
+    { path: 'clients/new', component: _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_4__["ClientDetailFormComponent"] },
     { path: 'clients/:id', component: _components_client_component__WEBPACK_IMPORTED_MODULE_1__["ClientComponent"] },
-    { path: 'clients/:id/detail', component: _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_3__["ClientDetailFormComponent"] },
-    { path: 'clients/:id/delete', component: _components_client_delete_component__WEBPACK_IMPORTED_MODULE_2__["ClientDeleteComponent"] },
-    { path: 'clients/:client_id/jobs/new', component: _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_6__["JobDetailFormComponent"] },
-    { path: 'clients/:client_id/jobs/:id/detail', component: _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_6__["JobDetailFormComponent"] },
-    { path: 'clients/:client_id/jobs/:id', component: _components_job_component__WEBPACK_IMPORTED_MODULE_5__["JobComponent"] },
-    { path: 'reporting', component: _components_report_list_component__WEBPACK_IMPORTED_MODULE_9__["ReportListComponent"] },
-    { path: 'timesheet', component: _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_11__["TimesheetComponent"] },
-    { path: '404', component: _components_not_found_component__WEBPACK_IMPORTED_MODULE_8__["NotFoundComponent"] },
+    { path: 'clients/:id/detail', component: _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_4__["ClientDetailFormComponent"] },
+    { path: 'clients/:id/delete', component: _components_client_delete_component__WEBPACK_IMPORTED_MODULE_3__["ClientDeleteComponent"] },
+    { path: 'clients/:client_id/contacts/new', component: _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_2__["ClientContactFormComponent"] },
+    { path: 'clients/:client_id/contacts/:id', component: _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_2__["ClientContactFormComponent"] },
+    { path: 'clients/:client_id/jobs/new', component: _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_7__["JobDetailFormComponent"] },
+    { path: 'clients/:client_id/jobs/:id/detail', component: _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_7__["JobDetailFormComponent"] },
+    { path: 'clients/:client_id/jobs/:id', component: _components_job_component__WEBPACK_IMPORTED_MODULE_6__["JobComponent"] },
+    { path: 'reporting', component: _components_report_list_component__WEBPACK_IMPORTED_MODULE_10__["ReportListComponent"] },
+    { path: 'timesheet', component: _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_12__["TimesheetComponent"] },
+    { path: '404', component: _components_not_found_component__WEBPACK_IMPORTED_MODULE_9__["NotFoundComponent"] },
     { path: '**', redirectTo: '/404' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_7__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_8__["NgModule"])({
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes)
             ],
@@ -1056,6 +1063,101 @@ var CalendarComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/client-contact-form.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/components/client-contact-form.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ng-container *ngIf=\"form\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <ng-container *ngIf=\"client\">\n                <span class=\"color-indicator\" [style.backgroundColor]=\"client.colour\"></span>\n                <div class=\"h2\">\n                    <a [routerLink]=\"['/clients', client.id]\" class=\"underline-dotted\">{{ client | get:'name' }}</a> /\n                    <ng-container *ngIf=\"contact\">{{ contact | get:'first_name' }} {{ contact | get:'last_name' }}</ng-container>\n                    <ng-container *ngIf=\"!contact\">New</ng-container>\n                </div>\n                <div class=\"page-header-actions\">\n                    <a class=\"button button-white\" (click)=\"form.save($event)\">Save</a>\n                    <a [routerLink]=\"['/clients', client.id]\" class=\"button button-white button-clear\">Cancel</a>\n                </div>\n            </ng-container>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li class=\"active\">Detail</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n        <label>First Name</label>\n        <input type=\"text\" [formControl]=\"form.controls.first_name\" />\n        <p class=\"c-red\" *formError=\"form.controls.first_name\">Please enter a first name</p>\n\n        <label>Last Name</label>\n        <input type=\"text\" [formControl]=\"form.controls.last_name\" />\n        <p class=\"c-red\" *formError=\"form.controls.first_name\">Please enter a last name</p>\n\n        <label>Phone Number</label>\n        <input type=\"text\" [formControl]=\"form.controls.phone_number\" />\n        <p class=\"c-red\" *formError=\"form.controls.phone_number\">Please enter a valid phone number (ie 01603 766062)</p>\n        \n        <label>Mobile Number</label>\n        <input type=\"text\" [formControl]=\"form.controls.mobile_number\" />\n        <p class=\"c-red\" *formError=\"form.controls.mobile_number\">Please enter a valid mobile number (ie 07123 456789)</p>\n        \n        <label>Email Address</label>\n        <input type=\"text\" [formControl]=\"form.controls.email_address\" />\n        <p class=\"c-red\" *formError=\"form.controls.email_address\">Please enter a valid email address</p>\n\n        <label>Address</label>\n        <textarea autoResize [formControl]=\"form.controls.address\"></textarea>\n        \n        <label>Notes</label>\n        <textarea autoResize [formControl]=\"form.controls.notes\"></textarea>\n\n    </div>\n</ng-container>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/client-contact-form.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/client-contact-form.component.ts ***!
+  \*************************************************************/
+/*! exports provided: ClientContactFormComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientContactFormComponent", function() { return ClientContactFormComponent; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _state_selectors_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../state/selectors/client */ "./src/app/state/selectors/client.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _forms_client_contact_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../forms/client-contact.form */ "./src/app/forms/client-contact.form.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var ClientContactFormComponent = /** @class */ (function () {
+    function ClientContactFormComponent(router, route, store, actionsSubject) {
+        this.router = router;
+        this.route = route;
+        this.store = store;
+        this.actionsSubject = actionsSubject;
+        this.subscriptions = [];
+    }
+    ClientContactFormComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var paramsObsv = this.route.params.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["mergeMap"])(function (params) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["combineLatest"])(Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(params), _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_client__WEBPACK_IMPORTED_MODULE_5__["getClientCollectionById"])(+params.client_id))), _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_client__WEBPACK_IMPORTED_MODULE_5__["getClientContactCollectionById"])(+params.id)))); })).subscribe(function (_a) {
+            var params = _a[0], client = _a[1], contact = _a[2];
+            _this.params = params;
+            _this.client = client;
+            _this.contact = contact;
+            _this.form = new _forms_client_contact_form__WEBPACK_IMPORTED_MODULE_7__["ClientContactForm"](_this.store, _this.actionsSubject, { alwaysEditable: true });
+            if (contact) {
+                _this.form.load(_this.contact);
+            }
+            else if (client) {
+                _this.form.load({ client: client.id });
+            }
+            _this.form.formSaved.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["take"])(1)).subscribe(function (result) {
+                _this.router.navigate(['/clients', _this.params.client_id]);
+            });
+        });
+        this.subscriptions.push(paramsObsv);
+    };
+    ClientContactFormComponent.prototype.ngOnDestroy = function () {
+        lodash__WEBPACK_IMPORTED_MODULE_0__["each"](this.subscriptions, function (s) { return s.unsubscribe(); });
+    };
+    ClientContactFormComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+            template: __webpack_require__(/*! ./client-contact-form.component.html */ "./src/app/components/client-contact-form.component.html"),
+            host: { 'class': 'd-flex flex-fill flex-column' }
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_1__["Store"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_1__["ActionsSubject"]])
+    ], ClientContactFormComponent);
+    return ClientContactFormComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/client-delete.component.html":
 /*!*********************************************************!*\
   !*** ./src/app/components/client-delete.component.html ***!
@@ -1310,7 +1412,7 @@ var ClientListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"client$ | async as client\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"client.colour\"></span>\n            <div class=\"h2\">{{ client.name }}</div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', client.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\" [routerLink]=\"['/clients', client.id, 'delete']\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'jobs'\" [class.active]=\"selectedTab == 'jobs'\">Jobs</li>\n                <li (click)=\"selectedTab = 'closed_jobs'\" [class.active]=\"selectedTab == 'closed_jobs'\">Closed Jobs</li>\n                <li (click)=\"selectedTab = 'contacts'\" [class.active]=\"selectedTab == 'contacts'\">Contacts</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Email Address</p>\n                <p>\n                    <a *ngIf=\"client.email_address; else emptyValue\" href=\"mailto://{{ client.email_address }}\" class=\"underline-dotted\">{{ client.email_address }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Phone Number</p>\n                <p>\n                    <ng-container *ngIf=\"client.phone_number; else emptyValue\">\n                        <a href=\"tel:{{ client.phone_number }}\" class=\"underline-dotted\">{{ client.phone_number }}</a>\n                        <a *ngIf=\"(me$ | async)?.is_gradwell_enabled\"><i class=\"icon-phone c-red\"></i></a>\n                    </ng-container>    \n                </p>\n                <hr/>\n                <p class=\"strong\">Website</p>\n                <p>\n                    <a *ngIf=\"client.website; else emptyValue\" href=\"{{ client.website }}\" class=\"underline-dotted\">{{ client.website }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Address</p>\n                <p class=\"ws-pre-wrap\">{{ client | get:'address' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Notes</p>\n                    <p class=\"ws-pre-wrap\">{{ client | get:'notes' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'jobs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"><search [(ngModel)]=\"openSearchTerms\"></search></div>\n                <div class=\"col-6\"><a class=\"button button-white pull-right\" [routerLink]=\"['/clients', client.id, 'jobs', 'new']\">Add Job</a></div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | openJobs | jobSearch:openSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'closed_jobs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"><search [(ngModel)]=\"closedSearchTerms\"></search></div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | closedJobs | jobSearch:closedSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'contacts'\">\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Email Address</th>\n                        <th>Phone Number</th>\n                        <th>Mobile Number</th>\n                        <th>Position</th>\n                        <th>Tags</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"contacts$ | async as contacts\">\n                <tbody *ngIf=\"contacts.length > 0; else emptyContacts\">\n                    <tr *ngFor=\"let contact of contacts\">\n                        <td>{{ contact.first_name }} {{ contact.last_name }}</td>\n                        <td>{{ contact | get:'email_address' }}</td>\n                        <td>{{ contact | get:'phone_number' }}</td>\n                        <td>{{ contact | get:'mobile_number' }}</td>\n                        <td>{{ contact | get:'_position.title' }}</td>\n                        <td><ul class=\"tags\"><li tag [id]=\"tag.tag\" class=\"tag\" *ngFor=\"let tag of contact._tags\"></li></ul></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyValue><span>-</span></ng-template>\n<ng-template #emptyJobs><tbody><tr><td colspan=\"3\">No jobs found.</td></tr></tbody></ng-template>\n<ng-template #emptyContacts><tbody><tr><td colspan=\"5\">No contacts found.</td></tr></tbody></ng-template>"
+module.exports = "<ng-container *ngIf=\"client$ | async as client\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"client.colour\"></span>\n            <div class=\"h2\">{{ client.name }}</div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', client.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\" [routerLink]=\"['/clients', client.id, 'delete']\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'jobs'\" [class.active]=\"selectedTab == 'jobs'\">Jobs</li>\n                <li (click)=\"selectedTab = 'closed_jobs'\" [class.active]=\"selectedTab == 'closed_jobs'\">Closed Jobs</li>\n                <li (click)=\"selectedTab = 'contacts'\" [class.active]=\"selectedTab == 'contacts'\">Contacts</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Email Address</p>\n                <p>\n                    <a *ngIf=\"client.email_address; else emptyValue\" href=\"mailto://{{ client.email_address }}\" class=\"underline-dotted\">{{ client.email_address }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Phone Number</p>\n                <p>\n                    <ng-container *ngIf=\"client.phone_number; else emptyValue\">\n                        <a href=\"tel:{{ client.phone_number }}\" class=\"underline-dotted\">{{ client.phone_number }}</a>\n                        <a *ngIf=\"(me$ | async)?.is_gradwell_enabled\"><i class=\"icon-phone c-red\"></i></a>\n                    </ng-container>    \n                </p>\n                <hr/>\n                <p class=\"strong\">Website</p>\n                <p>\n                    <a *ngIf=\"client.website; else emptyValue\" href=\"{{ client.website }}\" class=\"underline-dotted\">{{ client.website }}</a>\n                </p>\n                <hr/>\n                <p class=\"strong\">Address</p>\n                <p class=\"ws-pre-wrap\">{{ client | get:'address' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Notes</p>\n                    <p class=\"ws-pre-wrap\">{{ client | get:'notes' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'jobs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"><search [(ngModel)]=\"openSearchTerms\"></search></div>\n                <div class=\"col-6\"><a class=\"button button-white pull-right\" [routerLink]=\"['/clients', client.id, 'jobs', 'new']\">Add Job</a></div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | openJobs | jobSearch:openSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'closed_jobs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"><search [(ngModel)]=\"closedSearchTerms\"></search></div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th class=\"keep-min-width\">ID</th>\n                        <th>Title</th>\n                        <th class=\"keep-min-width\">Status</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"jobs$ | async | closedJobs | jobSearch:closedSearchTerms as jobs\">\n                <tbody *ngIf=\"jobs.length > 0; else emptyJobs\">\n                    <tr [routerLink]=\"['/clients', job.client, 'jobs', job.id]\" *ngFor=\"let job of jobs\">\n                        <td class=\"keep-min-width\">{{ job.id }}</td>\n                        <td>{{ job.title }}</td>\n                        <td class=\"keep-min-width\">{{ job | get:'_status.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'contacts'\">\n                <div class=\"row\">\n                    <div class=\"col\"><a class=\"button button-white pull-right\" [routerLink]=\"['/clients', client.id, 'contacts', 'new']\">Add Contact</a></div>\n                </div>\n                <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Name</th>\n                        <th>Email Address</th>\n                        <th>Phone Number</th>\n                        <th>Mobile Number</th>\n                        <th>Position</th>\n                        <th>Tags</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"contacts$ | async as contacts\">\n                <tbody *ngIf=\"contacts.length > 0; else emptyContacts\">\n                    <tr [routerLink]=\"['/clients', client.id, 'contacts', contact.id]\" *ngFor=\"let contact of contacts\">\n                        <td>{{ contact.first_name }} {{ contact.last_name }}</td>\n                        <td>{{ contact | get:'email_address' }}</td>\n                        <td>{{ contact | get:'phone_number' }}</td>\n                        <td>{{ contact | get:'mobile_number' }}</td>\n                        <td>{{ contact | get:'_position.title' }}</td>\n                        <td><ul class=\"tags\"><li tag [id]=\"tag.tag\" class=\"tag\" *ngFor=\"let tag of contact._tags\"></li></ul></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyValue><span>-</span></ng-template>\n<ng-template #emptyJobs><tbody><tr><td colspan=\"3\">No jobs found.</td></tr></tbody></ng-template>\n<ng-template #emptyContacts><tbody><tr><td colspan=\"5\">No contacts found.</td></tr></tbody></ng-template>"
 
 /***/ }),
 
@@ -2924,6 +3026,71 @@ var BaseForm = /** @class */ (function (_super) {
     };
     return BaseForm;
 }(_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/forms/client-contact.form.ts":
+/*!**********************************************!*\
+  !*** ./src/app/forms/client-contact.form.ts ***!
+  \**********************************************/
+/*! exports provided: ClientContactForm */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientContactForm", function() { return ClientContactForm; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./base.form */ "./src/app/forms/base.form.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _utils_regex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/regex */ "./src/app/utils/regex.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+
+var options = {
+    alwaysEditable: false,
+    cleanAfterMethod: _base_form__WEBPACK_IMPORTED_MODULE_2__["FormCleanAfterMethod"].loadSaved
+};
+var ClientContactForm = /** @class */ (function (_super) {
+    __extends(ClientContactForm, _super);
+    function ClientContactForm(store, actionsSubject, formOptions) {
+        var _this = _super.call(this, store, actionsSubject, {
+            id: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null),
+            client: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            first_name: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            last_name: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            phone_number: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern(_utils_regex__WEBPACK_IMPORTED_MODULE_4__["phoneReg"])),
+            mobile_number: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null),
+            email_address: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].email),
+            address: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null),
+            position: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null),
+            notes: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null),
+        }, null, null, lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, options, formOptions)) || this;
+        _this.store = store;
+        _this.actionsSubject = actionsSubject;
+        _this.createAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["ClientContactActions"].ADD;
+        _this.createSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["ClientContactActions"].ADD_SUCCESS;
+        _this.updateAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["ClientContactActions"].UPDATE;
+        _this.updateSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["ClientContactActions"].UPDATE_SUCCESS;
+        return _this;
+    }
+    return ClientContactForm;
+}(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));
 
 
 
@@ -9669,7 +9836,7 @@ function reducer(state, action) {
 /*!*******************************************!*\
   !*** ./src/app/state/selectors/client.ts ***!
   \*******************************************/
-/*! exports provided: getClientCollection, getClientCollectionById, getClientContactCollection, getClientContactCollectionForClient */
+/*! exports provided: getClientCollection, getClientCollectionById, getClientContactCollection, getClientContactCollectionById, getClientContactCollectionForClient */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9677,6 +9844,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClientCollection", function() { return getClientCollection; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClientCollectionById", function() { return getClientCollectionById; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClientContactCollection", function() { return getClientContactCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClientContactCollectionById", function() { return getClientContactCollectionById; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getClientContactCollectionForClient", function() { return getClientContactCollectionForClient; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
@@ -9697,6 +9865,7 @@ var getClientContactCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__
     });
     return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['first_name', 'last_name'], ['asc', 'asc']);
 });
+var getClientContactCollectionById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getClientContactCollection, function (contacts) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](contacts, ['id', id]); }); };
 var getClientContactCollectionForClient = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getClientContactCollection, function (contacts) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](contacts, ['client', id]); }); };
 
 

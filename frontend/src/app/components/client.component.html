@@ -100,7 +100,10 @@
         </div>
 
         <div class="panel" *ngIf="selectedTab == 'contacts'">
-            <table class="table-hover">
+                <div class="row">
+                    <div class="col"><a class="button button-white pull-right" [routerLink]="['/clients', client.id, 'contacts', 'new']">Add Contact</a></div>
+                </div>
+                <table class="table-hover">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -113,7 +116,7 @@
                 </thead>
                 <ng-container *ngIf="contacts$ | async as contacts">
                 <tbody *ngIf="contacts.length > 0; else emptyContacts">
-                    <tr *ngFor="let contact of contacts">
+                    <tr [routerLink]="['/clients', client.id, 'contacts', contact.id]" *ngFor="let contact of contacts">
                         <td>{{ contact.first_name }} {{ contact.last_name }}</td>
                         <td>{{ contact | get:'email_address' }}</td>
                         <td>{{ contact | get:'phone_number' }}</td>

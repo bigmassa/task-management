@@ -30,6 +30,11 @@ export const getClientContactCollection = createSelector(
     }
 );
 
+export const getClientContactCollectionById = (id) => createSelector(
+    getClientContactCollection,
+    (contacts) => _.find(contacts, ['id', id])
+);
+
 export const getClientContactCollectionForClient = (id) => createSelector(
     getClientContactCollection,
     (contacts) => _.filter(contacts, ['client', id])

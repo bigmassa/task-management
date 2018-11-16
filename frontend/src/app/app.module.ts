@@ -12,6 +12,7 @@ import { AvatarComponent } from './components/avatar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CalendarComponent } from './components/calendar.component';
 import { ClientComponent } from './components/client.component';
+import { ClientContactFormComponent } from './components/client-contact-form.component';
 import { ClientDeleteComponent } from './components/client-delete.component';
 import { ClientDetailFormComponent } from './components/client-detail-form.component';
 import { ClientListComponent } from './components/client-list.component';
@@ -51,6 +52,7 @@ import { effects } from './state/effects';
         CalendarComponent,
         ClosedJobsPipe,
         ClientComponent,
+        ClientContactFormComponent,
         ClientDeleteComponent,
         ClientDetailFormComponent,
         ClientListComponent,
