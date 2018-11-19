@@ -103,3 +103,8 @@ export const getJobRelationshipCollectionForJob = (id) => createSelector(
     getJobRelationshipCollection,
     (relationships) => _.filter(relationships, ['job', id])
 );
+
+export const getJobRelationshipCollectionById = (id) => createSelector(
+    getJobRelationshipCollection,
+    (relationships) => _.find(relationships, ['id', id])
+);

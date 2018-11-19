@@ -43,6 +43,7 @@ import { TimeEntryFormComponent } from './components/time-entry-form.component';
 import { TimesheetComponent } from './components/time-sheet.component';
 import { TimesheetSignoffComponent } from './components/time-sheet-signoff.component';
 import { effects } from './state/effects';
+import { JobRelationshipFormComponent } from './components/job-relationship-form.component';
 
 @NgModule({
     declarations: [
@@ -61,6 +62,7 @@ import { effects } from './state/effects';
         GetPipe,
         JobComponent,
         JobDetailFormComponent,
+        JobRelationshipFormComponent,
         JobSearchPipe,
         NotFoundComponent,
         OpenJobsPipe,

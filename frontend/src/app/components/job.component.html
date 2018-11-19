@@ -139,18 +139,26 @@
         </div>
 
         <div class="panel" *ngIf="selectedTab == 'relationships'">
-            <table class="table-hover layout-fixed">
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6">
+                    <a class="button button-white pull-right" [routerLink]="['/clients', job.client, 'jobs', job.id, 'relationships', 'add']">Add Relationship</a>
+                </div>
+            </div>
+            <table class="table-hover">
                 <thead>
                     <tr>
                         <th>User</th>
                         <th>Relationship</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <ng-container *ngIf="relationships$ | async as relationships">
                 <tbody *ngIf="relationships.length > 0; else emptyRelationships">
-                    <tr *ngFor="let relationship of relationships">
+                    <tr *ngFor="let relationship of relationships" [routerLink]="['/clients', job.client, 'jobs', job.id, 'relationships', relationship.id]">
                         <td>{{ relationship | get:'_user.full_name' }}</td>
                         <td>{{ relationship | get:'_relationship.title' }}</td>
+                        <td class="keep-min-width"><a class="pointer" (click)="deleteRelationship($event, relationship)"><i class="icon-trash"></i></a></td>
                     </tr>
                 </tbody>
                 </ng-container>
@@ -186,5 +194,5 @@
 </ng-container>
 
 <ng-template #emptyFiles><tbody><tr><td colspan="2">No files found.</td></tr></tbody></ng-template>
-<ng-template #emptyRelationships><tbody><tr><td colspan="2">No relationships found.</td></tr></tbody></ng-template>
+<ng-template #emptyRelationships><tbody><tr><td colspan="3">No relationships found.</td></tr></tbody></ng-template>
 <ng-template #emptyRecurringCosts><tbody><tr><td colspan="5">No recurring costs found.</td></tr></tbody></ng-template>

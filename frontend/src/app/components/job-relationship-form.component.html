@@ -1,0 +1,34 @@
+<ng-container *ngIf="form">
+    <div class="page-header">
+        <div class="container-fluid d-flex align-items-center py-2">
+            <ng-container>
+                <span class="color-indicator" [style.backgroundColor]="job?.colour"></span>
+                <div class="h2">{{ client | get:'name' }} / {{ job | get:'title' }}</div>
+                <div class="page-header-actions">
+                    <a class="button button-white" (click)="form.save($event)">Save</a>
+                    <a [routerLink]="['/clients', params.client_id, 'jobs', params.job_id]" class="button button-white button-clear">Cancel</a>
+                </div>
+            </ng-container>
+        </div>
+        <div class="container-fluid">
+            <ul class="tabs">
+                <li class="active">Detail</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid inner-content">
+        <label>Type</label>
+        <select [formControl]="form.controls.user">
+            <option [ngValue]="null">Please select...</option>
+            <option [ngValue]="option.id" *ngFor="let option of users$ | async">{{ option.full_name }}</option>
+        </select>
+        <p class="c-red" *formError="form.controls.user">Please choose a user</p>
+
+        <label>Status</label>
+        <select [formControl]="form.controls.relationship">
+            <option [ngValue]="null">Please select...</option>
+            <option [ngValue]="option.id" *ngFor="let option of relationships$ | async">{{ option.title }}</option>
+        </select>
+        <p class="c-red" *formError="form.controls.relationship">Please choose a relationship</p>
+    </div>
+</ng-container>

@@ -1,21 +1,22 @@
 import * as _ from 'lodash';
 import * as actions from '../state/actions';
-
-import { ActionsSubject, Store, select } from '@ngrx/store';
+import { ActionsSubject, select, Store } from '@ngrx/store';
+import { ActivatedRoute } from '@angular/router';
+import { AppState } from '../state/state';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
+import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
+import { FormCleanAfterMethod } from '../forms/base.form';
+import { getCookie } from '../utils/cookies';
 import {
     getJobCollectionById,
     getJobFilesForJob,
     getJobNoteCollectionForJob,
     getJobRecurringCostCollectionForJob,
     getJobRelationshipCollectionForJob
-} from '../state/selectors/job';
-
-import { ActivatedRoute } from '@angular/router';
-import { AppState } from '../state/state';
-import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
-import { FormCleanAfterMethod } from '../forms/base.form';
+    } from '../state/selectors/job';
+import { getTaskCollectionForJob } from '../state/selectors/task';
+import { getTaskStatusState } from './../state/state';
 import { IJob } from '../state/reducers/job';
 import { IJobFile } from '../state/reducers/jobfile';
 import { IJobNote } from './../state/reducers/jobnote';
@@ -24,10 +25,9 @@ import { IJobRelationship } from './../state/reducers/jobrelationship';
 import { ITask } from '../state/reducers/task';
 import { ITaskStatus } from '../state/reducers/taskstatus';
 import { JobNoteForm } from '../forms/job-note.form';
-import { debounceTime } from 'rxjs/operators';
-import { getCookie } from '../utils/cookies';
-import { getTaskCollectionForJob } from '../state/selectors/task';
-import { getTaskStatusState } from './../state/state';
+import { Observable, Subscription } from 'rxjs';
+
+
 
 @Component({
     selector: 'job, [job]',
@@ -136,7 +136,6 @@ export class JobComponent implements OnDestroy, OnInit {
     // notes
 
     getOrCreateEditNoteForm(note: IJobNote) {
-        console.log(note)
         if (_.has(this.jobNoteForms, note.id)) {
             return this.jobNoteForms[note.id];
         }
@@ -148,6 +147,13 @@ export class JobComponent implements OnDestroy, OnInit {
         form.load(note);
         this.jobNoteForms[note.id] = form;
         return this.jobNoteForms[note.id];
+    }
+
+    // relationships
+
+    deleteRelationship(event: Event, payload: IJobRelationship) {
+        event.stopPropagation();
+        this.store.dispatch({type: actions.JobRelationshipActions.REMOVE, payload});
     }
 
 }

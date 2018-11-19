@@ -3233,10 +3233,10 @@ Zone.__load_patch('ZoneAwarePromise', function (global, Zone, api) {
                 reject = rej;
             });
             function onResolve(value) {
-                promise && (promise =  false || resolve(value));
+                promise && (promise = null || resolve(value));
             }
             function onReject(error) {
-                promise && (promise =  false || reject(error));
+                promise && (promise = null || reject(error));
             }
             for (var _i = 0, values_1 = values; _i < values_1.length; _i++) {
                 var value = values_1[_i];
