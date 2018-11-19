@@ -1,9 +1,9 @@
 import * as _ from 'lodash';
 import * as actions from '../state/actions';
 
+import { ActionsSubject, Store, select } from '@ngrx/store';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { Store, select } from '@ngrx/store';
 import {
     getJobCollectionById,
     getJobFilesForJob,
@@ -15,6 +15,7 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { AppState } from '../state/state';
 import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
+import { FormCleanAfterMethod } from '../forms/base.form';
 import { IJob } from '../state/reducers/job';
 import { IJobFile } from '../state/reducers/jobfile';
 import { IJobNote } from './../state/reducers/jobnote';
@@ -22,6 +23,7 @@ import { IJobRecurringCost } from './../state/reducers/jobrecurringcost';
 import { IJobRelationship } from './../state/reducers/jobrelationship';
 import { ITask } from '../state/reducers/task';
 import { ITaskStatus } from '../state/reducers/taskstatus';
+import { JobNoteForm } from '../forms/job-note.form';
 import { debounceTime } from 'rxjs/operators';
 import { getCookie } from '../utils/cookies';
 import { getTaskCollectionForJob } from '../state/selectors/task';
@@ -45,6 +47,8 @@ export class JobComponent implements OnDestroy, OnInit {
     files$: Observable<IJobFile[]>;
     job$: Observable<IJob>;
     notes$: Observable<IJobNote[]>;
+    jobNoteForms = {};
+    newNoteForm: JobNoteForm;
     recurringCosts$: Observable<IJobRecurringCost[]>;
     relationships$: Observable<IJobRelationship[]>;
     selectedTab: string = 'detail';
@@ -56,20 +60,30 @@ export class JobComponent implements OnDestroy, OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private store: Store<AppState>
+        private store: Store<AppState>,
+        private actionsSubject: ActionsSubject
     ) { }
 
     ngOnInit() {
         this.statuses$ = this.store.pipe(select(getTaskStatusState));
+
         const subscription = this.route.params.subscribe(
             (params) => {
                 this.jobId = +params.id;
+                // data
                 this.files$ = this.store.pipe(select(getJobFilesForJob(this.jobId)));
                 this.job$ = this.store.pipe(select(getJobCollectionById(this.jobId)));
                 this.notes$ = this.store.pipe(select(getJobNoteCollectionForJob(this.jobId)));
                 this.recurringCosts$ = this.store.pipe(select(getJobRecurringCostCollectionForJob(this.jobId)));
                 this.relationships$ = this.store.pipe(select(getJobRelationshipCollectionForJob(this.jobId)));
                 this.tasks$ = this.store.pipe(select(getTaskCollectionForJob(this.jobId)), debounceTime(200));
+                // forms
+                this.newNoteForm = new JobNoteForm(
+                    this.store,
+                    this.actionsSubject,
+                    {cleanAfterMethod: FormCleanAfterMethod.resetToInitial}
+                );
+                this.newNoteForm.load({job: this.jobId});
             }
         );
         this.subscriptions.push(subscription);
@@ -117,6 +131,23 @@ export class JobComponent implements OnDestroy, OnInit {
 
     deleteFile(payload: IJobFile) {
         this.store.dispatch({type: actions.JobFileActions.REMOVE, payload});
+    }
+
+    // notes
+
+    getOrCreateEditNoteForm(note: IJobNote) {
+        console.log(note)
+        if (_.has(this.jobNoteForms, note.id)) {
+            return this.jobNoteForms[note.id];
+        }
+        const form = new JobNoteForm(
+            this.store,
+            this.actionsSubject,
+            {alwaysEditable: false, cleanAfterMethod: FormCleanAfterMethod.loadSaved}
+        );
+        form.load(note);
+        this.jobNoteForms[note.id] = form;
+        return this.jobNoteForms[note.id];
     }
 
 }

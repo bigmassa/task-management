@@ -1596,7 +1596,7 @@ var JobDetailFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"job$ | async as job\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'tasks'\" [class.active]=\"selectedTab == 'tasks'\">Tasks</li>\n                <li (click)=\"selectedTab = 'notes'\" [class.active]=\"selectedTab == 'notes'\">Notes</li>\n                <li (click)=\"selectedTab = 'files'\" [class.active]=\"selectedTab == 'files'\">Files</li>\n                <li (click)=\"selectedTab = 'relationships'\" [class.active]=\"selectedTab == 'relationships'\">Relationships</li>\n                <li (click)=\"selectedTab = 'recurring_costs'\" [class.active]=\"selectedTab == 'recurring_costs'\">Recurring Costs</li>\n            </ul>\n        </div>\n    </div>\n\n    <ng-container *ngIf=\"selectedTab == 'tasks'\">\n\n        <div class=\"container-fluid d-flex flex-fill\">\n            <div class=\"d-flex flex-fill mt-1 mb-1 scroll-x\">\n                <div class=\"board-column\" *ngFor=\"let status of statuses$ | async\">\n                    <div class=\"board-column-heading\">\n                        <strong>{{ status.title }}</strong>\n                        <i class=\"icon-plus ml-auto\" (click)=\"openCreateForm(status)\"></i>\n                    </div>\n                    <div class=\"board-card-wrapper\" \n                        ngxDroppable=\"status-column\"\n                        (drop)=\"droppedIntoColumn(status, tasks)\"\n                        [model]=\"tasks\"\n                        *ngIf=\"tasks$ | async | tasksByStatus:status.id as tasks\">\n                        <div task-card \n                            [id]=\"task.id\"\n                            ngxDraggable\n                            [model]=\"task\"\n                            (click)=\"selectedTaskId=task.id\"\n                            *ngFor=\"let task of tasks\">\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <task-create-form\n            [opened]=\"createFormOpen\"\n            [jobId]=\"jobId\"\n            [statusId]=\"createFormStatusId\"\n            (close)=\"createFormOpen = false\"\n            (saved)=\"selectedTaskId = $event.id\"\n            *ngIf=\"createFormOpen\">\n        </task-create-form>\n\n        <task-form\n            [id]=\"selectedTaskId\"\n            (close)=\"selectedTaskId = null\"\n            *ngIf=\"selectedTaskId\">\n        </task-form>\n\n    </ng-container>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab != 'tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hours)</p>\n                <p>-</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'files'\">\n            <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab == 'notes'\">\n            <div class=\"row mb-1-5\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\"></textarea>\n                    <button class=\"button button-primary pull-right\">Add</button>\n                </div>\n            </div>\n\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1-5\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\">{{ note.note }}</div>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <a class=\"underline-dotted\">Edit</a> |\n                        <a class=\"underline-dotted\">Delete</a>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'relationships'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'recurring_costs'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"2\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"5\">No recurring costs found.</td></tr></tbody></ng-template>"
+module.exports = "<ng-container *ngIf=\"job$ | async as job\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li (click)=\"selectedTab = 'detail'\" [class.active]=\"selectedTab == 'detail'\">Detail</li>\n                <li (click)=\"selectedTab = 'tasks'\" [class.active]=\"selectedTab == 'tasks'\">Tasks</li>\n                <li (click)=\"selectedTab = 'notes'\" [class.active]=\"selectedTab == 'notes'\">Notes</li>\n                <li (click)=\"selectedTab = 'files'\" [class.active]=\"selectedTab == 'files'\">Files</li>\n                <li (click)=\"selectedTab = 'relationships'\" [class.active]=\"selectedTab == 'relationships'\">Relationships</li>\n                <li (click)=\"selectedTab = 'recurring_costs'\" [class.active]=\"selectedTab == 'recurring_costs'\">Recurring Costs</li>\n            </ul>\n        </div>\n    </div>\n\n    <ng-container *ngIf=\"selectedTab == 'tasks'\">\n\n        <div class=\"container-fluid d-flex flex-fill\">\n            <div class=\"d-flex flex-fill mt-1 mb-1 scroll-x\">\n                <div class=\"board-column\" *ngFor=\"let status of statuses$ | async\">\n                    <div class=\"board-column-heading\">\n                        <strong>{{ status.title }}</strong>\n                        <i class=\"icon-plus ml-auto\" (click)=\"openCreateForm(status)\"></i>\n                    </div>\n                    <div class=\"board-card-wrapper\" \n                        ngxDroppable=\"status-column\"\n                        (drop)=\"droppedIntoColumn(status, tasks)\"\n                        [model]=\"tasks\"\n                        *ngIf=\"tasks$ | async | tasksByStatus:status.id as tasks\">\n                        <div task-card \n                            [id]=\"task.id\"\n                            ngxDraggable\n                            [model]=\"task\"\n                            (click)=\"selectedTaskId=task.id\"\n                            *ngFor=\"let task of tasks\">\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <task-create-form\n            [opened]=\"createFormOpen\"\n            [jobId]=\"jobId\"\n            [statusId]=\"createFormStatusId\"\n            (close)=\"createFormOpen = false\"\n            (saved)=\"selectedTaskId = $event.id\"\n            *ngIf=\"createFormOpen\">\n        </task-create-form>\n\n        <task-form\n            [id]=\"selectedTaskId\"\n            (close)=\"selectedTaskId = null\"\n            *ngIf=\"selectedTaskId\">\n        </task-form>\n\n    </ng-container>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab != 'tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab == 'detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hours)</p>\n                <p>-</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'files'\">\n            <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab == 'notes'\">\n            <div class=\"row mb-1-5\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\" [formControl]=\"newNoteForm.controls.note\"></textarea>\n                    <button class=\"button button-primary pull-right\" (click)=\"newNoteForm.save($event)\">Add</button>\n                </div>\n            </div>\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1-5\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\" *ngIf=\"!form.editable\">{{ note.note }}</div>\n                        <textarea autoResize [formControl]=\"form.controls.note\" *ngIf=\"form.editable\"></textarea>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <ng-container *ngIf=\"!form.editable\">\n                            <a class=\"button button-clear\" (click)=\"form.editable = true\">Edit</a> |\n                            <a class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</a>\n                        </ng-container>\n                        <ng-container *ngIf=\"form.editable\">\n                            <a class=\"button button-secondary\" (click)=\"form.save($event)\">Save</a>\n                            <a class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</a>\n                        </ng-container>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'relationships'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab == 'recurring_costs'\">\n            <table class=\"table-hover layout-fixed\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"2\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"5\">No recurring costs found.</td></tr></tbody></ng-template>"
 
 /***/ }),
 
@@ -1613,14 +1613,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _state_selectors_job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/selectors/job */ "./src/app/state/selectors/job.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _utils_cookies__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/cookies */ "./src/app/utils/cookies.ts");
-/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../state/selectors/task */ "./src/app/state/selectors/task.ts");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var _forms_base_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../forms/base.form */ "./src/app/forms/base.form.ts");
+/* harmony import */ var _forms_job_note_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../forms/job-note.form */ "./src/app/forms/job-note.form.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _utils_cookies__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/cookies */ "./src/app/utils/cookies.ts");
+/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../state/selectors/task */ "./src/app/state/selectors/task.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1640,31 +1642,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var JobComponent = /** @class */ (function () {
-    function JobComponent(route, store) {
+    function JobComponent(route, store, actionsSubject) {
         this.route = route;
         this.store = store;
+        this.actionsSubject = actionsSubject;
         this.dropzoneConfig = {
             url: '/api/job-files/',
             maxFilesize: 50,
-            headers: { 'X-CSRFTOKEN': Object(_utils_cookies__WEBPACK_IMPORTED_MODULE_7__["getCookie"])('csrftoken') }
+            headers: { 'X-CSRFTOKEN': Object(_utils_cookies__WEBPACK_IMPORTED_MODULE_9__["getCookie"])('csrftoken') }
         };
         this.createFormOpen = false;
+        this.jobNoteForms = {};
         this.selectedTab = 'detail';
         this.selectedTaskId = null;
         this.subscriptions = [];
     }
     JobComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.statuses$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_9__["getTaskStatusState"]));
+        this.statuses$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_11__["getTaskStatusState"]));
         var subscription = this.route.params.subscribe(function (params) {
             _this.jobId = +params.id;
-            _this.files$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobFilesForJob"])(_this.jobId)));
-            _this.job$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobCollectionById"])(_this.jobId)));
-            _this.notes$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobNoteCollectionForJob"])(_this.jobId)));
-            _this.recurringCosts$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobRecurringCostCollectionForJob"])(_this.jobId)));
-            _this.relationships$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobRelationshipCollectionForJob"])(_this.jobId)));
-            _this.tasks$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_8__["getTaskCollectionForJob"])(_this.jobId)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["debounceTime"])(200));
+            // data
+            _this.files$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobFilesForJob"])(_this.jobId)));
+            _this.job$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobCollectionById"])(_this.jobId)));
+            _this.notes$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobNoteCollectionForJob"])(_this.jobId)));
+            _this.recurringCosts$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobRecurringCostCollectionForJob"])(_this.jobId)));
+            _this.relationships$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_4__["getJobRelationshipCollectionForJob"])(_this.jobId)));
+            _this.tasks$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_10__["getTaskCollectionForJob"])(_this.jobId)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["debounceTime"])(200));
+            // forms
+            _this.newNoteForm = new _forms_job_note_form__WEBPACK_IMPORTED_MODULE_7__["JobNoteForm"](_this.store, _this.actionsSubject, { cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_6__["FormCleanAfterMethod"].resetToInitial });
+            _this.newNoteForm.load({ job: _this.jobId });
         });
         this.subscriptions.push(subscription);
     };
@@ -1705,14 +1715,26 @@ var JobComponent = /** @class */ (function () {
     JobComponent.prototype.deleteFile = function (payload) {
         this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobFileActions"].REMOVE, payload: payload });
     };
+    // notes
+    JobComponent.prototype.getOrCreateEditNoteForm = function (note) {
+        console.log(note);
+        if (lodash__WEBPACK_IMPORTED_MODULE_0__["has"](this.jobNoteForms, note.id)) {
+            return this.jobNoteForms[note.id];
+        }
+        var form = new _forms_job_note_form__WEBPACK_IMPORTED_MODULE_7__["JobNoteForm"](this.store, this.actionsSubject, { alwaysEditable: false, cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_6__["FormCleanAfterMethod"].loadSaved });
+        form.load(note);
+        this.jobNoteForms[note.id] = form;
+        return this.jobNoteForms[note.id];
+    };
     JobComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
             selector: 'job, [job]',
             template: __webpack_require__(/*! ./job.component.html */ "./src/app/components/job.component.html"),
             host: { 'class': 'd-flex flex-fill flex-column' }
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"],
-            _ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"]])
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"],
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["ActionsSubject"]])
     ], JobComponent);
     return JobComponent;
 }());
@@ -3223,6 +3245,64 @@ var JobDetailForm = /** @class */ (function (_super) {
         }
     };
     return JobDetailForm;
+}(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/forms/job-note.form.ts":
+/*!****************************************!*\
+  !*** ./src/app/forms/job-note.form.ts ***!
+  \****************************************/
+/*! exports provided: JobNoteForm */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobNoteForm", function() { return JobNoteForm; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./base.form */ "./src/app/forms/base.form.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+
+var options = {
+    alwaysEditable: true,
+    cleanAfterMethod: _base_form__WEBPACK_IMPORTED_MODULE_2__["FormCleanAfterMethod"].loadSaved
+};
+var JobNoteForm = /** @class */ (function (_super) {
+    __extends(JobNoteForm, _super);
+    function JobNoteForm(store, actionsSubject, formOptions) {
+        var _this = _super.call(this, store, actionsSubject, {
+            id: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null),
+            job: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            note: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required)
+        }, null, null, lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, options, formOptions)) || this;
+        _this.store = store;
+        _this.actionsSubject = actionsSubject;
+        _this.createAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobNoteActions"].ADD;
+        _this.createSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobNoteActions"].ADD_SUCCESS;
+        _this.updateAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobNoteActions"].UPDATE;
+        _this.updateSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobNoteActions"].UPDATE_SUCCESS;
+        _this.deleteAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobNoteActions"].REMOVE;
+        _this.deleteSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobNoteActions"].REMOVE_SUCCESS;
+        return _this;
+    }
+    return JobNoteForm;
 }(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));
 
 

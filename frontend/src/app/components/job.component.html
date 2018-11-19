@@ -114,19 +114,25 @@
             <div class="row mb-1-5">
                 <div class="col-1"></div>
                 <div class="col">
-                    <textarea autoResize placeholder="Write some notes"></textarea>
-                    <button class="button button-primary pull-right">Add</button>
+                    <textarea autoResize placeholder="Write some notes" [formControl]="newNoteForm.controls.note"></textarea>
+                    <button class="button button-primary pull-right" (click)="newNoteForm.save($event)">Add</button>
                 </div>
             </div>
-
             <ng-container *ngFor="let note of notes$ | async">
-                <div class="row mb-1-5">
+                <div class="row mb-1-5" *ngIf="getOrCreateEditNoteForm(note) as form">
                     <div class="col-1"><div avatar [id]="note.user" class="avatar"></div></div>
                     <div class="col">
-                        <div class="comment ws-pre-wrap">{{ note.note }}</div>
+                        <div class="comment ws-pre-wrap" *ngIf="!form.editable">{{ note.note }}</div>
+                        <textarea autoResize [formControl]="form.controls.note" *ngIf="form.editable"></textarea>
                         <span class="muted mr-1">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>
-                        <a class="underline-dotted">Edit</a> |
-                        <a class="underline-dotted">Delete</a>
+                        <ng-container *ngIf="!form.editable">
+                            <a class="button button-clear" (click)="form.editable = true">Edit</a> |
+                            <a class="button button-clear" *ngIf="!form.editable" (click)="form.delete($event)">Delete</a>
+                        </ng-container>
+                        <ng-container *ngIf="form.editable">
+                            <a class="button button-secondary" (click)="form.save($event)">Save</a>
+                            <a class="button button-clear" (click)="form.cancel($event)">Cancel</a>
+                        </ng-container>
                     </div>
                 </div>
             </ng-container>
