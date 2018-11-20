@@ -156,4 +156,11 @@ export class JobComponent implements OnDestroy, OnInit {
         this.store.dispatch({type: actions.JobRelationshipActions.REMOVE, payload});
     }
 
+    // recurring costs
+
+    deleteRecurringCost(event: Event, payload: IJobRecurringCost) {
+        event.stopPropagation();
+        this.store.dispatch({type: actions.JobRecurringCostActions.REMOVE, payload});
+    }
+
 }

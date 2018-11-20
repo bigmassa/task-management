@@ -1,10 +1,25 @@
 import * as _ from 'lodash';
-
-import { getBillingFrequencyState, getJobFileState, getPaymentOptionState, getRecurringCostTypeState, getUserState } from './../state';
-import { getClientState, getJobNoteState, getJobRecurringCostState, getJobRelationshipState, getJobState, getJobStatusState, getJobTypeState, getRelationshipState } from '../state';
-
 import { createSelector } from '@ngrx/store';
+import {
+    getBillingFrequencyState,
+    getJobFileState,
+    getPaymentOptionState,
+    getRecurringCostTypeState,
+    getUserState
+    } from './../state';
+import {
+    getClientState,
+    getJobNoteState,
+    getJobRecurringCostState,
+    getJobRelationshipState,
+    getJobState,
+    getJobStatusState,
+    getJobTypeState,
+    getRelationshipState
+    } from '../state';
 import { readableTextColor } from '../../utils/colour';
+
+
 
 export const getJobCollection = createSelector(
     getClientState,
@@ -67,7 +82,6 @@ export const getJobRecurringCostCollection = createSelector(
     getBillingFrequencyState,
     getPaymentOptionState,
     (costs, types, frequencies, options) => {
-        console.log(types);
         const objects = _.map(costs, (cost) => {
             return _.assign({}, cost, {
                 _type: _.find(types, ['id', cost.type]),
@@ -82,6 +96,11 @@ export const getJobRecurringCostCollection = createSelector(
 export const getJobRecurringCostCollectionForJob = (id) => createSelector(
     getJobRecurringCostCollection,
     (costs) => _.filter(costs, ['job', id])
+);
+
+export const getJobRecurringCostCollectionById = (id) => createSelector(
+    getJobRecurringCostCollection,
+    (costs) => _.find(costs, ['id', id])
 );
 
 export const getJobRelationshipCollection = createSelector(

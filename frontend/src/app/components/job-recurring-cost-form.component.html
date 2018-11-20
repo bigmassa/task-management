@@ -1,0 +1,52 @@
+<ng-container *ngIf="form">
+    <div class="page-header">
+        <div class="container-fluid d-flex align-items-center py-2">
+            <ng-container>
+                <span class="color-indicator" [style.backgroundColor]="job?.colour"></span>
+                <div class="h2">
+                    <a class="underline-dotted" [routerLink]="['/clients', params.client_id]">{{ client | get:'name' }}</a> /
+                    <a class="underline-dotted" [routerLink]="['/clients', params.client_id, 'jobs', params.job_id]">{{ job | get:'title' }}</a>
+                </div>
+                <div class="page-header-actions">
+                    <a class="button button-white" (click)="form.save($event)">Save</a>
+                    <a [routerLink]="['/clients', params.client_id, 'jobs', params.job_id]" class="button button-white button-clear">Cancel</a>
+                </div>
+            </ng-container>
+        </div>
+        <div class="container-fluid">
+            <ul class="tabs">
+                <li class="active">Detail</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid inner-content">
+        <label>Type</label>
+        <select [formControl]="form.controls.type">
+            <option [ngValue]="null">Please select...</option>
+            <option [ngValue]="option.id" *ngFor="let option of recurringCostTypes$ | async">{{ option.title }}</option>
+        </select>
+        <p class="c-red" *formError="form.controls.type">Please choose a type</p>
+
+        <label>Last Invoiced Date</label>
+        <input mwlFlatpickr type="text" [formControl]="form.controls.last_invoiced_date">
+        <p class="c-red" *formError="form.controls.last_invoiced_date">Please choose a last invoiced date</p>
+
+        <label>Billing Interval</label>
+        <input type="number" [formControl]="form.controls.billing_interval" min="0" step="1">
+        <p class="c-red" *formError="form.controls.billing_interval">Please choose a valid billing interval</p>
+
+        <label>Billing Frequency</label>
+        <select [formControl]="form.controls.billing_frequency">
+            <option [ngValue]="null">Please select...</option>
+            <option [ngValue]="option.id" *ngFor="let option of billingFrequencies$ | async">{{ option.title }}</option>
+        </select>
+        <p class="c-red" *formError="form.controls.billing_frequency">Please choose a billing frequency</p>
+
+        <label>Billing Frequency</label>
+        <select [formControl]="form.controls.payment_option">
+            <option [ngValue]="null">Please select...</option>
+            <option [ngValue]="option.id" *ngFor="let option of paymentOptions$ | async">{{ option.title }}</option>
+        </select>
+        <p class="c-red" *formError="form.controls.payment_option">Please choose a billing frequency</p>
+    </div>
+</ng-container>

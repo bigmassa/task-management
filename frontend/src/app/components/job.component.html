@@ -155,7 +155,7 @@
                 </thead>
                 <ng-container *ngIf="relationships$ | async as relationships">
                 <tbody *ngIf="relationships.length > 0; else emptyRelationships">
-                    <tr *ngFor="let relationship of relationships" [routerLink]="['/clients', job.client, 'jobs', job.id, 'relationships', relationship.id]">
+                    <tr class="pointer" [routerLink]="['/clients', job.client, 'jobs', job.id, 'relationships', relationship.id]" *ngFor="let relationship of relationships">
                         <td>{{ relationship | get:'_user.full_name' }}</td>
                         <td>{{ relationship | get:'_relationship.title' }}</td>
                         <td class="keep-min-width"><a class="pointer" (click)="deleteRelationship($event, relationship)"><i class="icon-trash"></i></a></td>
@@ -166,7 +166,13 @@
         </div>
 
         <div class="panel" *ngIf="selectedTab == 'recurring_costs'">
-            <table class="table-hover layout-fixed">
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6">
+                    <a class="button button-white pull-right" [routerLink]="['/clients', job.client, 'jobs', job.id, 'recurring-costs', 'add']">Add Recurring Cost</a>
+                </div>
+            </div>
+            <table class="table-hover">
                 <thead>
                     <tr>
                         <th>Type</th>
@@ -174,16 +180,18 @@
                         <th>Billing Interval</th>
                         <th>Billing Frequency</th>
                         <th>Payment Option</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <ng-container *ngIf="recurringCosts$ | async as recurringCosts">
                 <tbody *ngIf="recurringCosts.length > 0; else emptyRecurringCosts">
-                    <tr *ngFor="let recurringCost of recurringCosts">
+                    <tr class="pointer" [routerLink]="['/clients', job.client, 'jobs', job.id, 'recurring-costs', recurringCost.id]" *ngFor="let recurringCost of recurringCosts">
                         <td>{{ recurringCost | get:'_type.title' }}</td>
                         <td>{{ recurringCost | get:'last_invoiced_date' }}</td>
                         <td>{{ recurringCost | get:'billing_interval' }}</td>
                         <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>
                         <td>{{ recurringCost | get:'_payment_option.title' }}</td>
+                        <td class="keep-min-width"><a class="pointer" (click)="deleteRecurringCost($event, recurringCost)"><i class="icon-trash"></i></a></td>
                     </tr>
                 </tbody>
                 </ng-container>

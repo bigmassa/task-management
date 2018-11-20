@@ -3,7 +3,10 @@
         <div class="container-fluid d-flex align-items-center py-2">
             <ng-container>
                 <span class="color-indicator" [style.backgroundColor]="job?.colour"></span>
-                <div class="h2">{{ client | get:'name' }} / {{ job | get:'title' }}</div>
+                <div class="h2">
+                    <a class="underline-dotted" [routerLink]="['/clients', params.client_id]">{{ client | get:'name' }}</a> /
+                    <a class="underline-dotted" [routerLink]="['/clients', params.client_id, 'jobs', params.job_id]">{{ job | get:'title' }}</a>
+                </div>
                 <div class="page-header-actions">
                     <a class="button button-white" (click)="form.save($event)">Save</a>
                     <a [routerLink]="['/clients', params.client_id, 'jobs', params.job_id]" class="button button-white button-clear">Cancel</a>
@@ -17,14 +20,14 @@
         </div>
     </div>
     <div class="container-fluid inner-content">
-        <label>Type</label>
+        <label>User</label>
         <select [formControl]="form.controls.user">
             <option [ngValue]="null">Please select...</option>
             <option [ngValue]="option.id" *ngFor="let option of users$ | async">{{ option.full_name }}</option>
         </select>
         <p class="c-red" *formError="form.controls.user">Please choose a user</p>
 
-        <label>Status</label>
+        <label>Relationship</label>
         <select [formControl]="form.controls.relationship">
             <option [ngValue]="null">Please select...</option>
             <option [ngValue]="option.id" *ngFor="let option of relationships$ | async">{{ option.title }}</option>

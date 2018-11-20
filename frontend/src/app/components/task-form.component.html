@@ -104,7 +104,7 @@
                     <hr>
                     <p class="mb-0-5"><strong>Target Date</strong></p>
                     <div (click)="targetDateForm.editable = true">
-                        <input [formControl]="targetDateForm.controls.target_date" type="date" class="">
+                        <input mwlFlatpickr type="text" [formControl]="targetDateForm.controls.target_date">
                         <button class="button" *ngIf="targetDateForm.editable" (click)="targetDateForm.save($event)">Save</button>
                         <button class="button button-clear" *ngIf="targetDateForm.editable" (click)="targetDateForm.cancel($event)">Cancel</button>
                     </div>

@@ -5,6 +5,7 @@ import { ClientDetailFormComponent } from './components/client-detail-form.compo
 import { ClientListComponent } from './components/client-list.component';
 import { JobComponent } from './components/job.component';
 import { JobDetailFormComponent } from './components/job-detail-form.component';
+import { JobRecurringCostFormComponent } from './components/job-recurring-cost-form.component';
 import { JobRelationshipFormComponent } from './components/job-relationship-form.component';
 import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './components/not-found.component';
@@ -26,6 +27,9 @@ const routes: Routes = [
     { path: 'clients/:client_id/jobs/new', component: JobDetailFormComponent},
     { path: 'clients/:client_id/jobs/:id/detail', component: JobDetailFormComponent},
     { path: 'clients/:client_id/jobs/:id', component: JobComponent},
+    { path: 'clients/:client_id/jobs/:job_id/recurring-costs/new', component: JobRecurringCostFormComponent},
+    { path: 'clients/:client_id/jobs/:job_id/recurring-costs/:id', component: JobRecurringCostFormComponent},
+    { path: 'clients/:client_id/jobs/:job_id/relationships/new', component: JobRelationshipFormComponent},
     { path: 'clients/:client_id/jobs/:job_id/relationships/:id', component: JobRelationshipFormComponent},
     { path: 'reporting', component: ReportListComponent},
     { path: 'timesheet', component: TimesheetComponent},
