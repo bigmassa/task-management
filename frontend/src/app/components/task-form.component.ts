@@ -1,13 +1,30 @@
 import * as _ from 'lodash';
 import * as actions from '../state/actions';
-
-import { ActionsSubject, Store, select } from '@ngrx/store';
-import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { getTaskAssigneesForTask, getTaskCollectionById, getTaskFilesForTask, getTaskNotesForTask, getTaskTagsForTask } from './../state/selectors/task';
-
+import { ActionsSubject, select, Store } from '@ngrx/store';
 import { AppState } from '../state/state';
+import {
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnChanges,
+    Output,
+    SimpleChanges,
+    ViewChild
+    } from '@angular/core';
 import { DropzoneConfigInterface } from '../../../node_modules/ngx-dropzone-wrapper';
+import { filter, take } from 'rxjs/operators';
 import { FormCleanAfterMethod } from '../forms/base.form';
+import { getCookie } from '../utils/cookies';
+import { getTagCollection } from '../state/selectors/tag';
+import {
+    getTaskAssigneesForTask,
+    getTaskCollectionById,
+    getTaskFilesForTask,
+    getTaskNotesForTask,
+    getTaskTagsForTask
+    } from './../state/selectors/task';
+import { getUserState } from './../state/state';
 import { ITag } from '../state/reducers/tag';
 import { ITask } from '../state/reducers/task';
 import { ITaskAssignee } from '../state/reducers/taskassignee';
@@ -22,10 +39,6 @@ import { TaskNoteForm } from '../forms/task-note.form';
 import { TaskTagForm } from '../forms/task-tag.form';
 import { TaskTargetDateForm } from '../forms/task-target-date.form';
 import { TaskTitleForm } from '../forms/task-title.form';
-import { getCookie } from '../utils/cookies';
-import { getTagCollection } from '../state/selectors/tag';
-import { getUserState } from './../state/state';
-import { take } from 'rxjs/operators';
 
 @Component({
     selector: 'task-form, [task-form]',
@@ -56,7 +69,6 @@ export class TaskFormComponent implements OnChanges {
     targetDateForm: TaskTargetDateForm;
     newNoteForm: TaskNoteForm;
     assigneeEditForm: TaskAssigneeForm;
-    selectedClientId: number = null; 
     tagEditForm: TaskTagForm;
 
     constructor(
@@ -78,9 +90,11 @@ export class TaskFormComponent implements OnChanges {
             this.taskAssignees$ = this.store.pipe(select(getTaskAssigneesForTask(this.id)));
             this.taskNotes$ = this.store.pipe(select(getTaskNotesForTask(this.id)));
             this.taskTags$ = this.store.pipe(select(getTaskTagsForTask(this.id)));
-            this.task$.pipe(take(1)).subscribe(
+            this.task$.pipe(
+                filter(d => _.isObject(d)),
+                take(1)
+            ).subscribe(
                 d => {
-                    this.selectedClientId = d._job.client;
                     this.descriptionForm.load(d);
                     this.titleForm.load(d);
                     this.targetDateForm.load(d);

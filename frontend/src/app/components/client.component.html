@@ -9,17 +9,12 @@
             </div>
         </div>
         <div class="container-fluid">
-            <ul class="tabs">
-                <li (click)="selectedTab = 'detail'" [class.active]="selectedTab == 'detail'">Detail</li>
-                <li (click)="selectedTab = 'jobs'" [class.active]="selectedTab == 'jobs'">Jobs</li>
-                <li (click)="selectedTab = 'closed_jobs'" [class.active]="selectedTab == 'closed_jobs'">Closed Jobs</li>
-                <li (click)="selectedTab = 'contacts'" [class.active]="selectedTab == 'contacts'">Contacts</li>
-            </ul>
+            <ul [tabs]="(tabs$ | async).client" [type]="'client'" (activeTab)="selectedTab = $event" class="tabs"></ul>
         </div>
     </div>
     <div class="container-fluid inner-content">
 
-        <div class="row" *ngIf="selectedTab == 'detail'">
+        <div class="row" *ngIf="selectedTab.title == 'Detail'">
             <div class="col-lg-3">
                 <p class="strong">Email Address</p>
                 <p>
@@ -50,7 +45,7 @@
             </div>
         </div>
 
-        <div class="panel" *ngIf="selectedTab == 'jobs'">
+        <div class="panel" *ngIf="selectedTab.title == 'Jobs'">
             <div class="row">
                 <div class="col-6"><search [(ngModel)]="openSearchTerms"></search></div>
                 <div class="col-6"><a class="button button-white pull-right" [routerLink]="['/clients', client.id, 'jobs', 'new']">Add Job</a></div>
@@ -75,7 +70,7 @@
             </table>
         </div>
 
-        <div class="panel" *ngIf="selectedTab == 'closed_jobs'">
+        <div class="panel" *ngIf="selectedTab.title == 'Closed Jobs'">
             <div class="row">
                 <div class="col-6"><search [(ngModel)]="closedSearchTerms"></search></div>
             </div>
@@ -99,7 +94,7 @@
             </table>
         </div>
 
-        <div class="panel" *ngIf="selectedTab == 'contacts'">
+        <div class="panel" *ngIf="selectedTab.title == 'Contacts'">
                 <div class="row">
                     <div class="col"><a class="button button-white pull-right" [routerLink]="['/clients', client.id, 'contacts', 'new']">Add Contact</a></div>
                 </div>

@@ -2,9 +2,9 @@ import * as _ from 'lodash';
 import * as actions from '../state/actions';
 import { ActionsSubject, select, Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
-import { AppState } from '../state/state';
+import { AppState, getTabState } from '../state/state';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { debounceTime } from 'rxjs/operators';
+import { debounceTime, take } from 'rxjs/operators';
 import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { FormCleanAfterMethod } from '../forms/base.form';
 import { getCookie } from '../utils/cookies';
@@ -22,6 +22,7 @@ import { IJobFile } from '../state/reducers/jobfile';
 import { IJobNote } from './../state/reducers/jobnote';
 import { IJobRecurringCost } from './../state/reducers/jobrecurringcost';
 import { IJobRelationship } from './../state/reducers/jobrelationship';
+import { ITab, ITabs } from '../state/reducers/tabs';
 import { ITask } from '../state/reducers/task';
 import { ITaskStatus } from '../state/reducers/taskstatus';
 import { JobNoteForm } from '../forms/job-note.form';
@@ -47,11 +48,12 @@ export class JobComponent implements OnDestroy, OnInit {
     files$: Observable<IJobFile[]>;
     job$: Observable<IJob>;
     notes$: Observable<IJobNote[]>;
+    tabs$: Observable<ITabs>;
     jobNoteForms = {};
     newNoteForm: JobNoteForm;
     recurringCosts$: Observable<IJobRecurringCost[]>;
     relationships$: Observable<IJobRelationship[]>;
-    selectedTab: string = 'detail';
+    selectedTab: ITab;
     selectedTaskId: number = null;
     statuses$: Observable<ITaskStatus[]>;
     tasks$: Observable<ITask[]>;
@@ -65,9 +67,10 @@ export class JobComponent implements OnDestroy, OnInit {
     ) { }
 
     ngOnInit() {
+        this.tabs$ = this.store.pipe(select(getTabState));
         this.statuses$ = this.store.pipe(select(getTaskStatusState));
 
-        const subscription = this.route.params.subscribe(
+        const paramsSub = this.route.params.subscribe(
             (params) => {
                 this.jobId = +params.id;
                 // data
@@ -86,7 +89,16 @@ export class JobComponent implements OnDestroy, OnInit {
                 this.newNoteForm.load({job: this.jobId});
             }
         );
-        this.subscriptions.push(subscription);
+        this.subscriptions.push(paramsSub);
+
+        const querySub = this.route.queryParams.subscribe(
+            params => {
+                if (params['task']) {
+                    this.activateTabAndOpenTask(+params['task']);
+                }
+            }
+        );
+        this.subscriptions.push(querySub);
     }
 
     ngOnDestroy() {
@@ -94,6 +106,11 @@ export class JobComponent implements OnDestroy, OnInit {
     }
 
     // tasks
+
+    activateTabAndOpenTask(id: number) {
+        this.store.dispatch({type: actions.TabActions.JOB_ACTIVATE_TAB, payload: {title: 'Tasks'}});
+        this.selectedTaskId = id;
+    }
 
     droppedIntoColumn(status: ITaskStatus, tasks: ITask[]) {
         if (_.isEmpty(tasks)) {

@@ -4,4 +4,33 @@
         <div class="page-header-actions"></div>
     </div>
 </div>
-<div class="container-fluid inner-content"></div>
+<div class="container-fluid inner-content">
+    <div class="panel">
+        <table class="table-hover table-headed margin-zero">
+            <thead>
+                <tr>
+                    <th class="keep-min-width">ID</th>
+                    <th class="keep-min-width">Target Date</th>
+                    <th>Title</th>
+                    <th>Client</th>
+                    <th>Job</th>
+                    <th class="keep-min-width">Assignees</th>
+                    <th class="keep-min-width">status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="pointer" [routerLink]="['/clients', task._job.client, 'jobs', task.job]" [queryParams]="{task: task.id}" *ngFor="let task of tasks$ | async">
+                    <td class="keep-min-width">{{ task | get:'id' }}</td>
+                    <td class="keep-min-width">{{ task | get:'target_date' }}</td>
+                    <td>{{ task | get:'title' }}</td>
+                    <td>{{ task | get:'_job._client.name' }}</td>
+                    <td>{{ task | get:'_job.title' }}</td>
+                    <td class="keep-min-width">
+                        <div avatar [id]="assignee.user" class="avatar avatar-small" *ngFor="let assignee of task._assignees"></div>
+                    </td>
+                    <td class="keep-min-width">{{ task | get:'_status.title' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

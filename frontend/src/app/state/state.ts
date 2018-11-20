@@ -15,6 +15,7 @@ import * as fromPaymentOption from './reducers/paymentoption';
 import * as fromPosition from './reducers/position';
 import * as fromRecurringCostType from './reducers/recurringcosttype';
 import * as fromRelationship from './reducers/relationship';
+import * as fromTab from './reducers/tabs';
 import * as fromTag from './reducers/tag';
 import * as fromTask from './reducers/task';
 import * as fromTaskAssignee from './reducers/taskassignee';
@@ -24,8 +25,8 @@ import * as fromTaskStatus from './reducers/taskstatus';
 import * as fromTaskTag from './reducers/tasktag';
 import * as fromTimeEntry from './reducers/timeentry';
 import * as fromUser from './reducers/user';
-
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
+
 
 export interface AppState {
     billing_frequencies: fromBillingFrequency.State;
@@ -45,6 +46,7 @@ export interface AppState {
     positions: fromPosition.State;
     recurring_cost_types: fromRecurringCostType.State;
     relationships: fromRelationship.State;
+    tabs: fromTab.State;
     tags: fromTag.State;
     tasks: fromTask.State;
     task_assignees: fromTaskAssignee.State;
@@ -74,6 +76,7 @@ export const reducers: ActionReducerMap<AppState> = {
     positions: fromPosition.reducer,
     recurring_cost_types: fromRecurringCostType.reducer,
     relationships: fromRelationship.reducer,
+    tabs: fromTab.reducer,
     tags: fromTag.reducer,
     tasks: fromTask.reducer,
     task_assignees: fromTaskAssignee.reducer,
@@ -102,6 +105,7 @@ export const getPaymentOptionState = createFeatureSelector<fromPaymentOption.Sta
 export const getPositionState = createFeatureSelector<fromMe.State>('positions');
 export const getRecurringCostTypeState = createFeatureSelector<fromRecurringCostType.State>('recurring_cost_types');
 export const getRelationshipState = createFeatureSelector<fromRelationship.State>('relationships');
+export const getTabState = createFeatureSelector<fromTab.State>('tabs');
 export const getTagState = createFeatureSelector<fromTag.State>('tags');
 export const getTaskState = createFeatureSelector<fromTask.State>('tasks');
 export const getTaskAssigneeState = createFeatureSelector<fromTaskAssignee.State>('task_assignees');

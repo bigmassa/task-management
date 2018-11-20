@@ -12,18 +12,11 @@
             </div>
         </div>
         <div class="container-fluid">
-            <ul class="tabs">
-                <li (click)="selectedTab = 'detail'" [class.active]="selectedTab == 'detail'">Detail</li>
-                <li (click)="selectedTab = 'tasks'" [class.active]="selectedTab == 'tasks'">Tasks</li>
-                <li (click)="selectedTab = 'notes'" [class.active]="selectedTab == 'notes'">Notes</li>
-                <li (click)="selectedTab = 'files'" [class.active]="selectedTab == 'files'">Files</li>
-                <li (click)="selectedTab = 'relationships'" [class.active]="selectedTab == 'relationships'">Relationships</li>
-                <li (click)="selectedTab = 'recurring_costs'" [class.active]="selectedTab == 'recurring_costs'">Recurring Costs</li>
-            </ul>
+            <ul [tabs]="(tabs$ | async).job" [type]="'job'" (activeTab)="selectedTab = $event" class="tabs"></ul>
         </div>
     </div>
 
-    <ng-container *ngIf="selectedTab == 'tasks'">
+    <ng-container *ngIf="selectedTab.title == 'Tasks'">
 
         <div class="container-fluid d-flex flex-fill">
             <div class="d-flex flex-fill mt-1 mb-1 scroll-x">
@@ -66,9 +59,9 @@
 
     </ng-container>
     
-    <div class="container-fluid inner-content" *ngIf="selectedTab != 'tasks'">
+    <div class="container-fluid inner-content" *ngIf="selectedTab.title != 'Tasks'">
 
-        <div class="row" *ngIf="selectedTab == 'detail'">
+        <div class="row" *ngIf="selectedTab.title == 'Detail'">
             <div class="col-lg-3">
                 <p class="strong">Time Spent (hours)</p>
                 <p>-</p>
@@ -90,7 +83,7 @@
             </div>
         </div>
 
-        <div class="panel" *ngIf="selectedTab == 'files'">
+        <div class="panel" *ngIf="selectedTab.title == 'Files'">
             <dropzone [config]="dropzoneConfig" [message]="'Click or drag files here to upload'" (sending)="onFileSending($event)" (success)="onFileSuccess($event)"></dropzone>
             <table class="table-hover">
                 <thead>
@@ -110,7 +103,7 @@
             </table>
         </div>
         
-        <div class="panel" *ngIf="selectedTab == 'notes'">
+        <div class="panel" *ngIf="selectedTab.title == 'Notes'">
             <div class="row mb-1-5">
                 <div class="col-1"></div>
                 <div class="col">
@@ -138,7 +131,7 @@
             </ng-container>
         </div>
 
-        <div class="panel" *ngIf="selectedTab == 'relationships'">
+        <div class="panel" *ngIf="selectedTab.title == 'Relationships'">
             <div class="row">
                 <div class="col-6"></div>
                 <div class="col-6">
@@ -165,7 +158,7 @@
             </table>
         </div>
 
-        <div class="panel" *ngIf="selectedTab == 'recurring_costs'">
+        <div class="panel" *ngIf="selectedTab.title == 'Recurring Costs'">
             <div class="row">
                 <div class="col-6"></div>
                 <div class="col-6">

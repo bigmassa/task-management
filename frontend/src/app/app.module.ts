@@ -34,6 +34,7 @@ import { ReportListComponent } from './components/report-list.component';
 import { RouterModule } from '@angular/router';
 import { SearchComponent } from './components/search.component';
 import { Store, StoreModule } from '@ngrx/store';
+import { TabsComponent } from './components/tabs.component';
 import { TagComponent } from './components/tag.component';
 import { TaskboardComponent } from './components/taskboard.component';
 import { TaskCardComponent } from './components/task-card.component';
@@ -70,6 +71,7 @@ import { TimesheetSignoffComponent } from './components/time-sheet-signoff.compo
         OpenJobsPipe,
         ReportListComponent,
         SearchComponent,
+        TabsComponent,
         TagComponent,
         TaskboardComponent,
         TaskCardComponent,

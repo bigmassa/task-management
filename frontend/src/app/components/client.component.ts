@@ -1,17 +1,18 @@
 import * as _ from 'lodash';
-
-import { AppState, getMeState } from '../state/state';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { Store, select } from '@ngrx/store';
-import { getClientCollectionById, getClientContactCollectionForClient } from '../state/selectors/client';
-
 import { ActivatedRoute } from '@angular/router';
+import { AppState, getMeState, getTabState } from '../state/state';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { getClientCollectionById, getClientContactCollectionForClient } from '../state/selectors/client';
+import { getJobCollectionForClient } from '../state/selectors/job';
 import { IClient } from '../state/reducers/client';
 import { IClientContact } from '../state/reducers/clientcontact';
 import { IJob } from './../state/reducers/job';
 import { IMe } from './../state/reducers/me';
-import { getJobCollectionForClient } from '../state/selectors/job';
+import { ITab, ITabs } from '../state/reducers/tabs';
+import { Observable, Subscription } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+
+
 
 @Component({
     selector: 'client, [client]',
@@ -22,10 +23,12 @@ export class ClientComponent implements OnDestroy, OnInit {
     client$: Observable<IClient>;
     contacts$: Observable<IClientContact[]>;
     jobs$: Observable<IJob[]>;
+    me$: Observable<IMe>;
+    tabs$: Observable<ITabs>;
     openSearchTerms: string[] = [];
     closedSearchTerms: string[] = [];
-    me$: Observable<IMe>;
-    selectedTab: string = 'detail';
+    selectedTab: ITab;
+
     private subscriptions: Subscription[] = [];
 
     constructor(
@@ -43,6 +46,7 @@ export class ClientComponent implements OnDestroy, OnInit {
         );
         this.subscriptions.push(subscription);
         // data subscriptions
+        this.tabs$ = this.store.pipe(select(getTabState));
         this.me$ = this.store.pipe(select(getMeState));
     }
 
