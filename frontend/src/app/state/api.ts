@@ -1,12 +1,16 @@
 import * as _ from 'lodash';
-
 import { Actions, ofType } from '@ngrx/effects';
-import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
-
 import { APIService } from '../services/api';
-import { HttpActions } from './actions';
+import {
+    catchError,
+    filter,
+    map,
+    mergeMap
+    } from 'rxjs/operators';
+import { HttpActions, SocketActions } from './actions';
 import { IActionWithPayload } from './models';
 import { Injectable } from '@angular/core';
+import { ISocketPayload } from './effects/socket';
 import { of } from 'rxjs';
 
 @Injectable({
@@ -98,6 +102,27 @@ export class APIBaseEffects {
         )
     )
 
+    protected _socket$ = (
+        model: string, createOfType: string, updateOfType: string, removeOfType: string, payload: any = null
+    ) => this.updates$.pipe(
+        ofType(SocketActions.PROCESS_MESSAGE),
+        map((action: IActionWithPayload) => action.payload),
+        filter((res: ISocketPayload) => res.model === model),
+        map((res: ISocketPayload) => {
+            const data: any = res.data;
+            switch (res.action) {
+                case 'create':
+                    return ({type: createOfType, payload: payload || data.id});
+                case 'update':
+                    return ({type: updateOfType, payload: payload || data.id});
+                case 'delete':
+                    return ({type: removeOfType, payload: payload || data});
+                default:
+                    return ({type: 'NO_ACTION'});
+            }
+        })
+    )
+    
     constructor(
         protected updates$: Actions,
         protected service$: APIService) {

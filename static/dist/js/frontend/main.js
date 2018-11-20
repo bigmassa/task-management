@@ -309,7 +309,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n    <div class=\"container-fluid d-flex align-items-center\">\n        <a routerLink=\"\" class=\"nav-home mt-1\"><img src=\"{{ globals.appJSRoot }}assets/images/task-management-logo.svg\" width=\"35\" height=\"35\"></a>\n        <ul class=\"nav\">\n            <li><a routerLink=\"\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">Taskboard</a></li>\n            <li><a routerLink=\"clients\" routerLinkActive=\"active\">Clients</a></li>\n            <li><a routerLink=\"timesheet\" routerLinkActive=\"active\">Timesheet</a></li>\n            <li><a routerLink=\"reporting\" routerLinkActive=\"active\">Reporting</a></li>\n        </ul>\n        <div class=\"ml-auto\" *ngIf=\"me$ | async as me\">\n            <a avatar [id]=\"me.id\" class=\"avatar\" href=\"{{ globals.logoutUrl }}\">\n                <i class=\"avatar-close icon-cancel\"></i>\n            </a>\n        </div>\n    </div>\n</header>\n<router-outlet></router-outlet>"
+module.exports = "<header>\n    <div class=\"container-fluid d-flex align-items-center\">\n        <a routerLink=\"\" class=\"nav-home mt-1\"><img src=\"{{ globals.appJSRoot }}assets/images/task-management-logo.svg\" width=\"35\" height=\"35\"></a>\n        <ul class=\"nav\">\n            <li><a routerLink=\"\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">Taskboard</a></li>\n            <li><a routerLink=\"clients\" routerLinkActive=\"active\">Clients</a></li>\n            <li><a routerLink=\"timesheet\" routerLinkActive=\"active\">Timesheet</a></li>\n        </ul>\n        <div class=\"ml-auto\" *ngIf=\"me$ | async as me\">\n            <a avatar [id]=\"me.id\" class=\"avatar\" href=\"{{ globals.logoutUrl }}\">\n                <i class=\"avatar-close icon-cancel\"></i>\n            </a>\n        </div>\n    </div>\n</header>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -479,6 +479,7 @@ var AppModule = /** @class */ (function () {
     function AppModule(store) {
         this.store = store;
         store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["DataActions"].LOAD_DATA });
+        store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["SocketActions"].START });
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_28__["NgModule"])({
@@ -1512,7 +1513,7 @@ var ClientComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"form\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <ng-container *ngIf=\"job; else newJob;\">\n                <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n                <div class=\"h2\">{{ client?.name }} / {{ job.title }}</div>\n                <div class=\"page-header-actions\">\n                    <a class=\"button button-white\" (click)=\"form.save($event)\">Save</a>\n                    <a [routerLink]=\"['/clients', params.client_id, 'jobs', params.id]\" class=\"button button-white button-clear\">Cancel</a>\n                </div>\n            </ng-container>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li class=\"active\">Detail</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n        <label>Title</label>\n        <input type=\"text\" [formControl]=\"form.controls.title\" />\n        <p class=\"c-red\" *formError=\"form.controls.title\">Please enter a title</p>\n\n        <label>Description</label>\n        <textarea autoResize [formControl]=\"form.controls.description\"></textarea>\n\n        <label>Colour</label>\n        <input type=\"text\" [formControl]=\"form.controls.colour\" />\n        <p class=\"c-red\" *formError=\"form.controls.colour\">Please enter a hex colour (ie #fff or #ffffff)</p>\n\n        <label>Type</label>\n        <select [formControl]=\"form.controls.type\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of jobTypes$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.type\">Please choose a type</p>\n\n        <label>Estimated Hours</label>\n        <input type=\"number\" [formControl]=\"form.controls.estimated_hours\" />\n        <p class=\"c-red\" *formError=\"form.controls.estimated_hours\">Please enter a valid number</p>\n\n        <label>Status</label>\n        <select [formControl]=\"form.controls.status\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of jobStatuses$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.status\">Please choose a status</p>\n\n        <label>Billed To</label>\n        <input type=\"text\" mwlFlatpickr [formControl]=\"form.controls.billed_to\" />\n        <p class=\"c-red\" *formError=\"form.controls.billed_to\">Please enter a date</p>\n        \n    </div>\n</ng-container>\n\n<ng-template #newJob>\n    <span class=\"color-indicator\" [style.backgroundColor]=\"client?.colour\"></span>\n    <div class=\"h2\">{{ client?.name }} / New</div>\n    <div class=\"page-header-actions\">\n        <button class=\"button button-white\" type=\"submit\" (click)=\"form.save($event)\">Save</button>\n        <a [routerLink]=\"['/clients', params.client_id]\" class=\"button button-white button-clear\">Cancel</a>\n    </div>\n</ng-template>"
+module.exports = "<ng-container *ngIf=\"form\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <ng-container *ngIf=\"job; else newJob;\">\n                <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n                <div class=\"h2\">{{ client?.name }} / {{ job.title }}</div>\n                <div class=\"page-header-actions\">\n                    <a class=\"button button-white\" (click)=\"form.save($event)\">Save</a>\n                    <a [routerLink]=\"['/clients', params.client_id, 'jobs', params.id]\" class=\"button button-white button-clear\">Cancel</a>\n                </div>\n            </ng-container>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li class=\"active\">Detail</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n        <label>Title</label>\n        <input type=\"text\" [formControl]=\"form.controls.title\" />\n        <p class=\"c-red\" *formError=\"form.controls.title\">Please enter a title</p>\n\n        <label>Description</label>\n        <textarea autoResize [formControl]=\"form.controls.description\"></textarea>\n\n        <label>Colour</label>\n        <input type=\"text\" [formControl]=\"form.controls.colour\" />\n        <p class=\"c-red\" *formError=\"form.controls.colour\">Please enter a hex colour (ie #fff or #ffffff)</p>\n\n        <label>Type</label>\n        <select [formControl]=\"form.controls.type\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of jobTypes$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.type\">Please choose a type</p>\n\n        <label>Estimated Hours</label>\n        <input type=\"number\" [formControl]=\"form.controls.estimated_hours\" />\n        <p class=\"c-red\" *formError=\"form.controls.estimated_hours\">Please enter a valid number</p>\n\n        <label>Status</label>\n        <select [formControl]=\"form.controls.status\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of jobStatuses$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.status\">Please choose a status</p>\n\n        <label>Billed To</label>\n        <input mwlFlatpickr type=\"text\" [formControl]=\"form.controls.billed_to\" />\n        <p class=\"c-red\" *formError=\"form.controls.billed_to\">Please enter a date</p>\n        \n    </div>\n</ng-container>\n\n<ng-template #newJob>\n    <span class=\"color-indicator\" [style.backgroundColor]=\"client?.colour\"></span>\n    <div class=\"h2\">{{ client?.name }} / New</div>\n    <div class=\"page-header-actions\">\n        <button class=\"button button-white\" type=\"submit\" (click)=\"form.save($event)\">Save</button>\n        <a [routerLink]=\"['/clients', params.client_id]\" class=\"button button-white button-clear\">Cancel</a>\n    </div>\n</ng-template>"
 
 /***/ }),
 
@@ -2389,7 +2390,7 @@ var TaskCardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal {{ opened ? 'in': '' }}\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <input type=\"text\" [formControl]=\"form.controls.title\" class=\"mb-0-5\" placeholder=\"Title\">\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <textarea autoResize [formControl]=\"form.controls.description\" class=\"mb-0-5\" rows=\"2\"></textarea>\n                    </div>\n                    <button class=\"button\" (click)=\"form.save($event)\">Save</button>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ job$ | async | get:'_client.name' }}<br>{{ job$ | async | get:'title' }}</p>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <input mwlFlatpickr [formControl]=\"form.controls.target_date\" type=\"text\">\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"modal {{ opened ? 'in': '' }}\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <input type=\"text\" [formControl]=\"form.controls.title\" class=\"mb-0-5\" placeholder=\"Title\">\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <textarea autoResize [formControl]=\"form.controls.description\" class=\"mb-0-5\" rows=\"2\"></textarea>\n                    </div>\n                    <button class=\"button\" (click)=\"form.save($event)\">Save</button>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ job$ | async | get:'_client.name' }}<br>{{ job$ | async | get:'title' }}</p>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <input mwlFlatpickr type=\"text\" [formControl]=\"form.controls.target_date\">\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2496,7 +2497,7 @@ var TaskCreateFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <div (click)=\"titleForm.editable = true\">\n                        <input type=\"text\" [formControl]=\"titleForm.controls.title\" class=\"mb-0-5\">\n                        <button class=\"input-group-addon button\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <div (click)=\"descriptionForm.editable = true\">\n                            <textarea autoResize [formControl]=\"descriptionForm.controls.description\" class=\"transparent mb-0-5\" rows=\"2\"></textarea>\n                            <button class=\"button\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.cancel($event)\">Cancel</button>\n                        </div>\n                    </div>\n\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Notes</strong></p>\n                        <textarea autoResize [formControl]=\"newNoteForm.controls.note\" class=\"full-width mb-0-5\" placeholder=\"Write a note...\" rows=\"2\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of taskNotes$ | async\">\n                        <div class=\"my-1\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <div (click)=\"form.editable = true\">\n                                <textarea autoResize [formControl]=\"form.controls.note\" class=\"panel\" rows=\"1\"></textarea>\n                            </div>\n                            <div class=\"small muted\">\n                                <ng-container *ngIf=\"!form.editable\">\n                                    <button class=\"button button-clear\" (click)=\"$event.stopPropagation(); form.editable = true\">Edit</button> |\n                                    <button class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</button>\n                                </ng-container>\n                                <ng-container *ngIf=\"form.editable\">\n                                    <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                    <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                                </ng-container>\n                            </div>\n                        </div>\n                    </ng-container>\n                    \n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Files</strong></p>\n                        <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n                        <table>\n                            <ng-container *ngIf=\"taskFiles$ | async as files\">\n                            <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                                <tr *ngFor=\"let file of files\">\n                                    <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                                    <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                                </tr>\n                            </tbody>\n                            <ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n                            </ng-container>\n                        </table>\n                    </div>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ task$ | async | get:'_job._client.name' }}<br>{{ task$ | async | get:'_job.title' }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of taskAssignees$ | async\" class=\"d-inline-block text-center mr-0-5\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-0-5\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div *ngIf=\"assigneeEditForm && assigneeEditForm.editable\" class=\"mt-1\">\n                        <div class=\"input-group mb-0-5\">\n                            <select [formControl]=\"assigneeEditForm.controls.user\" class=\"mr-1 flex-fill\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of users$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                </ng-container>\n                            </select>\n                            <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\" style=\"flex: 0 0 7rem;\">\n                        </div>\n                        <div class=\"d-flex\">\n                            <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                            <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Delete</button>\n                        </div>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Time Spent (hrs)</strong></p>\n                    <p>{{ task.time_spent_hours }} of {{ task.allocated_hours }}</p>\n                    <hr>\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <div (click)=\"targetDateForm.editable = true\">\n                        <input mwlFlatpickr type=\"text\" [formControl]=\"targetDateForm.controls.target_date\">\n                        <button class=\"button\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Tags</strong></p>\n                    <ul class=\"tags\">\n                        <li tag [id]=\"tag.tag\" *ngFor=\"let tag of taskTags$ | async\" class=\"tag pointer mb-0-5\" (click)=\"editTag(tag)\"></li>\n                        <li class=\"tag outline pointer mb-0-5\" (click)=\"editTag({object_id: id})\"><i class=\"icon-plus\"></i></li>\n                    </ul>\n                    <div *ngIf=\"tagEditForm && tagEditForm.editable\" class=\"mt-1\">\n                        <p class=\"mb-0-5\">Choose a new tag</p>\n                        <ul class=\"tags mb-1\">\n                            <li tag [id]=\"tag.id\" *ngFor=\"let tag of tags$ | async\" class=\"tag outline pointer mb-0-5\" [class.active]=\"tagEditForm.value.tag == tag.id\" (click)=\"setTag($event, tag)\"></li>\n                        </ul>\n                        <div class=\"input-group\">\n                            <input #newTag type=\"text\" placeholder=\"Create a tag...\">\n                            <button class=\"button input-group-addon\" (click)=\"addNewTagOption(newTag.value)\">Add</button>\n                        </div>\n                        <ng-container *ngIf=\"tagEditForm.value.id\">\n                            <button class=\"button\" (click)=\"tagEditForm.delete($event)\">Delete</button>\n                        </ng-container>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <div (click)=\"titleForm.editable = true\">\n                        <input type=\"text\" [formControl]=\"titleForm.controls.title\" class=\"mb-0-5\">\n                        <button class=\"input-group-addon button\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <div (click)=\"descriptionForm.editable = true\">\n                            <textarea autoResize [formControl]=\"descriptionForm.controls.description\" class=\"transparent mb-0-5\" rows=\"2\"></textarea>\n                            <button class=\"button\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.cancel($event)\">Cancel</button>\n                        </div>\n                    </div>\n\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Notes</strong></p>\n                        <textarea autoResize [formControl]=\"newNoteForm.controls.note\" class=\"full-width mb-0-5\" placeholder=\"Write a note...\" rows=\"2\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of taskNotes$ | async\">\n                        <div class=\"my-1\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <div (click)=\"form.editable = true\">\n                                <textarea autoResize [formControl]=\"form.controls.note\" class=\"panel\" rows=\"1\"></textarea>\n                            </div>\n                            <div class=\"small muted\">\n                                <ng-container *ngIf=\"!form.editable\">\n                                    <button class=\"button button-clear\" (click)=\"$event.stopPropagation(); form.editable = true\">Edit</button> |\n                                    <button class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</button>\n                                </ng-container>\n                                <ng-container *ngIf=\"form.editable\">\n                                    <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                    <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                                </ng-container>\n                            </div>\n                        </div>\n                    </ng-container>\n                    \n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Files</strong></p>\n                        <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n                        <table>\n                            <ng-container *ngIf=\"taskFiles$ | async as files\">\n                            <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                                <tr *ngFor=\"let file of files\">\n                                    <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                                    <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                                </tr>\n                            </tbody>\n                            <ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n                            </ng-container>\n                        </table>\n                    </div>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ task$ | async | get:'_job._client.name' }}<br>{{ task$ | async | get:'_job.title' }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of taskAssignees$ | async\" class=\"d-inline-block text-center mr-0-5\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-0-5\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div *ngIf=\"assigneeEditForm && assigneeEditForm.editable\" class=\"mt-1\">\n                        <div class=\"input-group mb-0-5\">\n                            <select [formControl]=\"assigneeEditForm.controls.user\" class=\"mr-1 flex-fill\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of users$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                </ng-container>\n                            </select>\n                            <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\" style=\"flex: 0 0 7rem;\">\n                        </div>\n                        <div class=\"d-flex\">\n                            <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                            <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Delete</button>\n                        </div>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Time Spent (hrs)</strong></p>\n                    <p>{{ task.time_spent_hours }} of {{ task.allocated_hours }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <div (click)=\"targetDateForm.editable = true\">\n                        <input mwlFlatpickr type=\"text\" [formControl]=\"targetDateForm.controls.target_date\">\n                        <button class=\"button\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Tags</strong></p>\n                    <ul class=\"tags\">\n                        <li tag [id]=\"tag.tag\" *ngFor=\"let tag of taskTags$ | async\" class=\"tag pointer mb-0-5\" (click)=\"editTag(tag)\"></li>\n                        <li class=\"tag outline pointer mb-0-5\" (click)=\"editTag({object_id: id})\"><i class=\"icon-plus\"></i></li>\n                    </ul>\n                    <div *ngIf=\"tagEditForm && tagEditForm.editable\" class=\"mt-1\">\n                        <p class=\"mb-0-5\">Choose a new tag</p>\n                        <ul class=\"tags mb-1\">\n                            <li tag [id]=\"tag.id\" *ngFor=\"let tag of tags$ | async\" class=\"tag outline pointer mb-0-5\" [class.active]=\"tagEditForm.value.tag == tag.id\" (click)=\"setTag($event, tag)\"></li>\n                        </ul>\n                        <div class=\"input-group\">\n                            <input #newTag type=\"text\" placeholder=\"Create a tag...\">\n                            <button class=\"button input-group-addon\" (click)=\"addNewTagOption(newTag.value)\">Add</button>\n                        </div>\n                        <ng-container *ngIf=\"tagEditForm.value.id\">\n                            <button class=\"button\" (click)=\"tagEditForm.delete($event)\">Delete</button>\n                        </ng-container>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2578,7 +2579,7 @@ var TaskFormComponent = /** @class */ (function () {
             this.taskAssignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_8__["getTaskAssigneesForTask"])(this.id)));
             this.taskNotes$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_8__["getTaskNotesForTask"])(this.id)));
             this.taskTags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_8__["getTaskTagsForTask"])(this.id)));
-            this.task$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (d) { return lodash__WEBPACK_IMPORTED_MODULE_0__["isObject"](d); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1)).subscribe(function (d) {
+            this.task$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (d) { return lodash__WEBPACK_IMPORTED_MODULE_0__["isObject"](d); })).subscribe(function (d) {
                 _this.descriptionForm.load(d);
                 _this.titleForm.load(d);
                 _this.targetDateForm.load(d);
@@ -4103,16 +4104,14 @@ var TaskTargetDateForm = /** @class */ (function (_super) {
         _this.createSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].ADD_SUCCESS;
         _this.updateAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].PATCH;
         _this.updateSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].PATCH_SUCCESS;
-        // when the date field is emptied set it to null as an empty
-        // string is an invalid date format in drf.
-        var sub = _this.controls.target_date.valueChanges.subscribe(function (value) {
-            if (value === '') {
-                _this.controls.target_date.setValue(null);
-            }
-        });
-        _this._subscriptions.push(sub);
         return _this;
     }
+    TaskTargetDateForm.prototype.prepareValueForDispatch = function () {
+        // the api doesnt like empty strings for a date field
+        if (this.controls.target_date.value === '') {
+            this.controls.target_date.setValue(null);
+        }
+    };
     return TaskTargetDateForm;
 }(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));
 
@@ -5172,7 +5171,7 @@ var HttpActions = /** @class */ (function () {
 /*!****************************************!*\
   !*** ./src/app/state/actions/index.ts ***!
   \****************************************/
-/*! exports provided: BillingFrequencyActions, ClientActions, ClientContactActions, ClientContactTagActions, DataActions, FilterActions, HttpActions, JobActions, JobFileActions, JobNoteActions, JobRecurringCostActions, JobRelationshipActions, JobStatusActions, JobTypeActions, MeActions, PaymentOptionActions, PositionActions, RecurringCostTypeActions, RelationshipActions, TabActions, TagActions, TaskActions, TaskAssigneeActions, TaskFileActions, TaskNoteActions, TaskStatusActions, TaskTagActions, TimeEntryActions, UserActions, actions */
+/*! exports provided: BillingFrequencyActions, ClientActions, ClientContactActions, ClientContactTagActions, DataActions, FilterActions, HttpActions, JobActions, JobFileActions, JobNoteActions, JobRecurringCostActions, JobRelationshipActions, JobStatusActions, JobTypeActions, MeActions, PaymentOptionActions, PositionActions, RecurringCostTypeActions, RelationshipActions, SocketActions, TabActions, TagActions, TaskActions, TaskAssigneeActions, TaskFileActions, TaskNoteActions, TaskStatusActions, TaskTagActions, TimeEntryActions, UserActions, actions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5235,35 +5234,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _relationship__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./relationship */ "./src/app/state/actions/relationship.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RelationshipActions", function() { return _relationship__WEBPACK_IMPORTED_MODULE_18__["RelationshipActions"]; });
 
-/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./tabs */ "./src/app/state/actions/tabs.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabActions", function() { return _tabs__WEBPACK_IMPORTED_MODULE_19__["TabActions"]; });
+/* harmony import */ var _socket__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./socket */ "./src/app/state/actions/socket.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SocketActions", function() { return _socket__WEBPACK_IMPORTED_MODULE_19__["SocketActions"]; });
 
-/* harmony import */ var _tag__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./tag */ "./src/app/state/actions/tag.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagActions", function() { return _tag__WEBPACK_IMPORTED_MODULE_20__["TagActions"]; });
+/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./tabs */ "./src/app/state/actions/tabs.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TabActions", function() { return _tabs__WEBPACK_IMPORTED_MODULE_20__["TabActions"]; });
 
-/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./task */ "./src/app/state/actions/task.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskActions", function() { return _task__WEBPACK_IMPORTED_MODULE_21__["TaskActions"]; });
+/* harmony import */ var _tag__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./tag */ "./src/app/state/actions/tag.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagActions", function() { return _tag__WEBPACK_IMPORTED_MODULE_21__["TagActions"]; });
 
-/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/actions/taskassignee.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskAssigneeActions", function() { return _taskassignee__WEBPACK_IMPORTED_MODULE_22__["TaskAssigneeActions"]; });
+/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./task */ "./src/app/state/actions/task.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskActions", function() { return _task__WEBPACK_IMPORTED_MODULE_22__["TaskActions"]; });
 
-/* harmony import */ var _taskfile__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./taskfile */ "./src/app/state/actions/taskfile.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskFileActions", function() { return _taskfile__WEBPACK_IMPORTED_MODULE_23__["TaskFileActions"]; });
+/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/actions/taskassignee.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskAssigneeActions", function() { return _taskassignee__WEBPACK_IMPORTED_MODULE_23__["TaskAssigneeActions"]; });
 
-/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/actions/tasknote.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskNoteActions", function() { return _tasknote__WEBPACK_IMPORTED_MODULE_24__["TaskNoteActions"]; });
+/* harmony import */ var _taskfile__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./taskfile */ "./src/app/state/actions/taskfile.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskFileActions", function() { return _taskfile__WEBPACK_IMPORTED_MODULE_24__["TaskFileActions"]; });
 
-/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/actions/taskstatus.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskStatusActions", function() { return _taskstatus__WEBPACK_IMPORTED_MODULE_25__["TaskStatusActions"]; });
+/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/actions/tasknote.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskNoteActions", function() { return _tasknote__WEBPACK_IMPORTED_MODULE_25__["TaskNoteActions"]; });
 
-/* harmony import */ var _tasktag__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./tasktag */ "./src/app/state/actions/tasktag.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskTagActions", function() { return _tasktag__WEBPACK_IMPORTED_MODULE_26__["TaskTagActions"]; });
+/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/actions/taskstatus.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskStatusActions", function() { return _taskstatus__WEBPACK_IMPORTED_MODULE_26__["TaskStatusActions"]; });
 
-/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_27__["TimeEntryActions"]; });
+/* harmony import */ var _tasktag__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./tasktag */ "./src/app/state/actions/tasktag.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TaskTagActions", function() { return _tasktag__WEBPACK_IMPORTED_MODULE_27__["TaskTagActions"]; });
 
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_28__["UserActions"]; });
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_28__["TimeEntryActions"]; });
+
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_29__["UserActions"]; });
+
 
 
 
@@ -5315,16 +5318,17 @@ var actions = [
     _position__WEBPACK_IMPORTED_MODULE_16__["PositionActions"],
     _recurringcosttype__WEBPACK_IMPORTED_MODULE_17__["RecurringCostTypeActions"],
     _relationship__WEBPACK_IMPORTED_MODULE_18__["RelationshipActions"],
-    _tabs__WEBPACK_IMPORTED_MODULE_19__["TabActions"],
-    _tag__WEBPACK_IMPORTED_MODULE_20__["TagActions"],
-    _task__WEBPACK_IMPORTED_MODULE_21__["TaskActions"],
-    _taskassignee__WEBPACK_IMPORTED_MODULE_22__["TaskAssigneeActions"],
-    _taskfile__WEBPACK_IMPORTED_MODULE_23__["TaskFileActions"],
-    _tasknote__WEBPACK_IMPORTED_MODULE_24__["TaskNoteActions"],
-    _taskstatus__WEBPACK_IMPORTED_MODULE_25__["TaskStatusActions"],
-    _tasktag__WEBPACK_IMPORTED_MODULE_26__["TaskTagActions"],
-    _timeentry__WEBPACK_IMPORTED_MODULE_27__["TimeEntryActions"],
-    _user__WEBPACK_IMPORTED_MODULE_28__["UserActions"]
+    _socket__WEBPACK_IMPORTED_MODULE_19__["SocketActions"],
+    _tabs__WEBPACK_IMPORTED_MODULE_20__["TabActions"],
+    _tag__WEBPACK_IMPORTED_MODULE_21__["TagActions"],
+    _task__WEBPACK_IMPORTED_MODULE_22__["TaskActions"],
+    _taskassignee__WEBPACK_IMPORTED_MODULE_23__["TaskAssigneeActions"],
+    _taskfile__WEBPACK_IMPORTED_MODULE_24__["TaskFileActions"],
+    _tasknote__WEBPACK_IMPORTED_MODULE_25__["TaskNoteActions"],
+    _taskstatus__WEBPACK_IMPORTED_MODULE_26__["TaskStatusActions"],
+    _tasktag__WEBPACK_IMPORTED_MODULE_27__["TaskTagActions"],
+    _timeentry__WEBPACK_IMPORTED_MODULE_28__["TimeEntryActions"],
+    _user__WEBPACK_IMPORTED_MODULE_29__["UserActions"]
 ];
 
 
@@ -6218,6 +6222,53 @@ var RelationshipActions = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/state/actions/socket.ts":
+/*!*****************************************!*\
+  !*** ./src/app/state/actions/socket.ts ***!
+  \*****************************************/
+/*! exports provided: SocketActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocketActions", function() { return SocketActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var SocketActions = /** @class */ (function () {
+    function SocketActions() {
+    }
+    SocketActions_1 = SocketActions;
+    SocketActions.prototype.Start = function () {
+        return { type: SocketActions_1.START };
+    };
+    SocketActions.prototype.Stop = function () {
+        return { type: SocketActions_1.STOP };
+    };
+    SocketActions.prototype.ProcessMessage = function (payload) {
+        return { type: SocketActions_1.PROCESS_MESSAGE, payload: payload };
+    };
+    var SocketActions_1;
+    SocketActions.START = '[Socket] START';
+    SocketActions.STOP = '[Socket] STOP';
+    SocketActions.PROCESS_MESSAGE = '[Socket] PROCESS_MESSAGE';
+    SocketActions = SocketActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], SocketActions);
+    return SocketActions;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/actions/tabs.ts":
 /*!***************************************!*\
   !*** ./src/app/state/actions/tabs.ts ***!
@@ -6935,8 +6986,8 @@ var UserActions = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APIBaseEffects", function() { return APIBaseEffects; });
 /* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _services_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/api */ "./src/app/services/api.ts");
+/* harmony import */ var _services_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/api */ "./src/app/services/api.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actions */ "./src/app/state/actions/index.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
@@ -6961,24 +7012,40 @@ var APIBaseEffects = /** @class */ (function () {
         this.updates$ = updates$;
         this.service$ = service$;
         this.url = '';
-        this._all$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (payload) {
-            return _this.service$.all(_this.apiUrl, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
+        this._all$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["mergeMap"])(function (payload) {
+            return _this.service$.all(_this.apiUrl, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
         })); };
-        this._one$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (id) {
-            return _this.service$.one(_this.apiUrl, id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
+        this._one$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["mergeMap"])(function (id) {
+            return _this.service$.one(_this.apiUrl, id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
         })); };
-        this._add$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
-            return _this.service$.create(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
+        this._add$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["mergeMap"])(function (obj) {
+            return _this.service$.create(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
         })); };
-        this._update$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
-            return _this.service$.update(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
+        this._update$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["mergeMap"])(function (obj) {
+            return _this.service$.update(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
         })); };
-        this._patch$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
-            return _this.service$.patch(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
+        this._patch$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["mergeMap"])(function (obj) {
+            return _this.service$.patch(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
         })); };
-        this._remove$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
-            return _this.service$.remove(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
+        this._remove$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["mergeMap"])(function (obj) {
+            return _this.service$.remove(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
         })); };
+        this._socket$ = function (model, createOfType, updateOfType, removeOfType, payload) {
+            if (payload === void 0) { payload = null; }
+            return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(_actions__WEBPACK_IMPORTED_MODULE_3__["SocketActions"].PROCESS_MESSAGE), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(function (res) { return res.model === model; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
+                var data = res.data;
+                switch (res.action) {
+                    case 'create':
+                        return ({ type: createOfType, payload: payload || data.id });
+                    case 'update':
+                        return ({ type: updateOfType, payload: payload || data.id });
+                    case 'delete':
+                        return ({ type: removeOfType, payload: payload || data });
+                    default:
+                        return ({ type: 'NO_ACTION' });
+                }
+            }));
+        };
     }
     Object.defineProperty(APIBaseEffects.prototype, "apiUrl", {
         get: function () {
@@ -6992,7 +7059,7 @@ var APIBaseEffects = /** @class */ (function () {
             providedIn: 'root'
         }),
         __metadata("design:paramtypes", [_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Actions"],
-            _services_api__WEBPACK_IMPORTED_MODULE_2__["APIService"]])
+            _services_api__WEBPACK_IMPORTED_MODULE_1__["APIService"]])
     ], APIBaseEffects);
     return APIBaseEffects;
 }());
@@ -7127,6 +7194,7 @@ var ClientEffects = /** @class */ (function (_super) {
         _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.client', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -7149,6 +7217,10 @@ var ClientEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], ClientEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], ClientEffects.prototype, "socket$", void 0);
     ClientEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -7208,6 +7280,7 @@ var ClientContactEffects = /** @class */ (function (_super) {
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.clientcontact', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -7234,6 +7307,10 @@ var ClientContactEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], ClientContactEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], ClientContactEffects.prototype, "socket$", void 0);
     ClientContactEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -7293,6 +7370,7 @@ var ClientContactTagEffects = /** @class */ (function (_super) {
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('taggit.taggeditem', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -7319,6 +7397,10 @@ var ClientContactTagEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], ClientContactTagEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], ClientContactTagEffects.prototype, "socket$", void 0);
     ClientContactTagEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -7443,15 +7525,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _position__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./position */ "./src/app/state/effects/position.ts");
 /* harmony import */ var _recurringcosttype__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./recurringcosttype */ "./src/app/state/effects/recurringcosttype.ts");
 /* harmony import */ var _relationship__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./relationship */ "./src/app/state/effects/relationship.ts");
-/* harmony import */ var _tag__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./tag */ "./src/app/state/effects/tag.ts");
-/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/effects/taskassignee.ts");
-/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./task */ "./src/app/state/effects/task.ts");
-/* harmony import */ var _taskfile__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./taskfile */ "./src/app/state/effects/taskfile.ts");
-/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/effects/tasknote.ts");
-/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/effects/taskstatus.ts");
-/* harmony import */ var _tasktag__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./tasktag */ "./src/app/state/effects/tasktag.ts");
-/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+/* harmony import */ var _socket__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./socket */ "./src/app/state/effects/socket.ts");
+/* harmony import */ var _tag__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./tag */ "./src/app/state/effects/tag.ts");
+/* harmony import */ var _taskassignee__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./taskassignee */ "./src/app/state/effects/taskassignee.ts");
+/* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./task */ "./src/app/state/effects/task.ts");
+/* harmony import */ var _taskfile__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./taskfile */ "./src/app/state/effects/taskfile.ts");
+/* harmony import */ var _tasknote__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./tasknote */ "./src/app/state/effects/tasknote.ts");
+/* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/effects/taskstatus.ts");
+/* harmony import */ var _tasktag__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./tasktag */ "./src/app/state/effects/tasktag.ts");
+/* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+
 
 
 
@@ -7496,15 +7580,16 @@ var effects = [
     _position__WEBPACK_IMPORTED_MODULE_14__["PositionEffects"],
     _recurringcosttype__WEBPACK_IMPORTED_MODULE_15__["RecurringCostTypeEffects"],
     _relationship__WEBPACK_IMPORTED_MODULE_16__["RelationshipEffects"],
-    _tag__WEBPACK_IMPORTED_MODULE_17__["TagEffects"],
-    _task__WEBPACK_IMPORTED_MODULE_19__["TaskEffects"],
-    _taskassignee__WEBPACK_IMPORTED_MODULE_18__["TaskAssigneeEffects"],
-    _taskfile__WEBPACK_IMPORTED_MODULE_20__["TaskFileEffects"],
-    _tasknote__WEBPACK_IMPORTED_MODULE_21__["TaskNoteEffects"],
-    _taskstatus__WEBPACK_IMPORTED_MODULE_22__["TaskStatusEffects"],
-    _tasktag__WEBPACK_IMPORTED_MODULE_23__["TaskTagEffects"],
-    _timeentry__WEBPACK_IMPORTED_MODULE_24__["TimeEntryEffects"],
-    _user__WEBPACK_IMPORTED_MODULE_25__["UserEffects"]
+    _socket__WEBPACK_IMPORTED_MODULE_17__["SocketEffects"],
+    _tag__WEBPACK_IMPORTED_MODULE_18__["TagEffects"],
+    _task__WEBPACK_IMPORTED_MODULE_20__["TaskEffects"],
+    _taskassignee__WEBPACK_IMPORTED_MODULE_19__["TaskAssigneeEffects"],
+    _taskfile__WEBPACK_IMPORTED_MODULE_21__["TaskFileEffects"],
+    _tasknote__WEBPACK_IMPORTED_MODULE_22__["TaskNoteEffects"],
+    _taskstatus__WEBPACK_IMPORTED_MODULE_23__["TaskStatusEffects"],
+    _tasktag__WEBPACK_IMPORTED_MODULE_24__["TaskTagEffects"],
+    _timeentry__WEBPACK_IMPORTED_MODULE_25__["TimeEntryEffects"],
+    _user__WEBPACK_IMPORTED_MODULE_26__["UserEffects"]
 ];
 
 
@@ -7520,13 +7605,13 @@ var effects = [
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobEffects", function() { return JobEffects; });
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions */ "./src/app/state/actions/index.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _actions_task__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../actions/task */ "./src/app/state/actions/task.ts");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _actions_task__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../actions/task */ "./src/app/state/actions/task.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -7564,33 +7649,38 @@ var JobEffects = /** @class */ (function (_super) {
         _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
-        _this.sortTasks$ = _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(_this.prefix + " SORT_TASKS"), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
-            return _this.service$.post("" + _this.apiUrl + obj.id + "/sort-tasks/", obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: _actions_task__WEBPACK_IMPORTED_MODULE_5__["TaskActions"].REPLACE_MANY, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
+        _this.socket$ = _this._socket$('wip.job', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
+        _this.sortTasks$ = _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_this.prefix + " SORT_TASKS"), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
+            return _this.service$.post("" + _this.apiUrl + obj.id + "/sort-tasks/", obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: _actions_task__WEBPACK_IMPORTED_MODULE_6__["TaskActions"].REPLACE_MANY, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
         }));
         return _this;
     }
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "all$", void 0);
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "one$", void 0);
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "add$", void 0);
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "update$", void 0);
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "remove$", void 0);
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobEffects.prototype, "socket$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "sortTasks$", void 0);
     JobEffects = __decorate([
@@ -7599,7 +7689,7 @@ var JobEffects = /** @class */ (function (_super) {
         })
     ], JobEffects);
     return JobEffects;
-}(_api__WEBPACK_IMPORTED_MODULE_2__["APIBaseEffects"]));
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
 
 
 
@@ -7651,6 +7741,7 @@ var JobFileEffects = /** @class */ (function (_super) {
         _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.jobfile', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -7673,6 +7764,10 @@ var JobFileEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], JobFileEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobFileEffects.prototype, "socket$", void 0);
     JobFileEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -7731,6 +7826,7 @@ var JobNoteEffects = /** @class */ (function (_super) {
         _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.jobnote', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -7753,6 +7849,10 @@ var JobNoteEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], JobNoteEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobNoteEffects.prototype, "socket$", void 0);
     JobNoteEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -7812,6 +7912,7 @@ var JobRecurringCostEffects = /** @class */ (function (_super) {
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.jobrecurringcost', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -7838,6 +7939,10 @@ var JobRecurringCostEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], JobRecurringCostEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRecurringCostEffects.prototype, "socket$", void 0);
     JobRecurringCostEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -7897,6 +8002,7 @@ var JobRelationshipEffects = /** @class */ (function (_super) {
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.jobrelationship', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -7923,6 +8029,10 @@ var JobRelationshipEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], JobRelationshipEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], JobRelationshipEffects.prototype, "socket$", void 0);
     JobRelationshipEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -8475,6 +8585,64 @@ var RelationshipEffects = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/state/effects/socket.ts":
+/*!*****************************************!*\
+  !*** ./src/app/state/effects/socket.ts ***!
+  \*****************************************/
+/*! exports provided: SocketEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocketEffects", function() { return SocketEffects; });
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _actions_socket__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/socket */ "./src/app/state/actions/socket.ts");
+/* harmony import */ var rxjs_webSocket__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/webSocket */ "./node_modules/rxjs/_esm5/webSocket/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var SocketEffects = /** @class */ (function () {
+    function SocketEffects(updates$, actions$) {
+        var _this = this;
+        this.updates$ = updates$;
+        this.actions$ = actions$;
+        this.start$ = this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(_actions_socket__WEBPACK_IMPORTED_MODULE_4__["SocketActions"].START), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["delay"])(1), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (data) {
+            return Object(rxjs_webSocket__WEBPACK_IMPORTED_MODULE_5__["webSocket"])("ws://" + window.location.host + "/data/stream/").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["retryWhen"])(function (res) { return res.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["delay"])(30000)); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(_this.updates$.ofType(_actions_socket__WEBPACK_IMPORTED_MODULE_4__["SocketActions"].STOP)));
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function () { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(null); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["filter"])(function (res) { return !!res; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return _this.actions$.ProcessMessage(res); }));
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Effect"])(),
+        __metadata("design:type", Object)
+    ], SocketEffects.prototype, "start$", void 0);
+    SocketEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Actions"],
+            _actions_socket__WEBPACK_IMPORTED_MODULE_4__["SocketActions"]])
+    ], SocketEffects);
+    return SocketEffects;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/effects/tag.ts":
 /*!**************************************!*\
   !*** ./src/app/state/effects/tag.ts ***!
@@ -8521,6 +8689,7 @@ var TagEffects = /** @class */ (function (_super) {
         _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('taggit.tag', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -8543,6 +8712,10 @@ var TagEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], TagEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TagEffects.prototype, "socket$", void 0);
     TagEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -8602,6 +8775,7 @@ var TaskEffects = /** @class */ (function (_super) {
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.task', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -8628,6 +8802,10 @@ var TaskEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], TaskEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskEffects.prototype, "socket$", void 0);
     TaskEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -8687,6 +8865,7 @@ var TaskAssigneeEffects = /** @class */ (function (_super) {
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.taskassignee', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -8713,6 +8892,10 @@ var TaskAssigneeEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], TaskAssigneeEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskAssigneeEffects.prototype, "socket$", void 0);
     TaskAssigneeEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -8771,6 +8954,7 @@ var TaskFileEffects = /** @class */ (function (_super) {
         _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.taskfile', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -8793,6 +8977,10 @@ var TaskFileEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], TaskFileEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskFileEffects.prototype, "socket$", void 0);
     TaskFileEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -8851,6 +9039,7 @@ var TaskNoteEffects = /** @class */ (function (_super) {
         _this.add$ = _this._add$(_this.prefix + " ADD", _this.prefix + " ADD_SUCCESS");
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.tasknote', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -8873,6 +9062,10 @@ var TaskNoteEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], TaskNoteEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskNoteEffects.prototype, "socket$", void 0);
     TaskNoteEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -8997,6 +9190,7 @@ var TaskTagEffects = /** @class */ (function (_super) {
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('taggit.taggeditem', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -9023,6 +9217,10 @@ var TaskTagEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], TaskTagEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TaskTagEffects.prototype, "socket$", void 0);
     TaskTagEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -9082,6 +9280,7 @@ var TimeEntryEffects = /** @class */ (function (_super) {
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.timeentry', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         return _this;
     }
     __decorate([
@@ -9108,6 +9307,10 @@ var TimeEntryEffects = /** @class */ (function (_super) {
         Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], TimeEntryEffects.prototype, "remove$", void 0);
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeEntryEffects.prototype, "socket$", void 0);
     TimeEntryEffects = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
@@ -10755,8 +10958,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../state */ "./src/app/state/state.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../state */ "./src/app/state/state.ts");
 /* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./task */ "./src/app/state/selectors/task.ts");
 /* harmony import */ var _utils_generic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/generic */ "./src/app/utils/generic.ts");
 
@@ -10765,7 +10968,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var getEventsForUser = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeEntryState"], _task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollection"], function (entries, tasks) {
+var getEventsForUser = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], _task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollection"], function (entries, tasks) {
     var objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, ['user', id]);
     return lodash__WEBPACK_IMPORTED_MODULE_0__["map"](objs, function (obj) {
         var _task = lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', obj.task]);
@@ -10786,11 +10989,11 @@ var getEventsForUser = function (id) { return Object(_ngrx_store__WEBPACK_IMPORT
         };
     });
 }); };
-var getTasksForTimeEntry = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollection"], function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, function (t) { return t.closed == false && t._job._status.allow_new_timesheet_entries == true; }); });
+var getTasksForTimeEntry = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollection"], function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, function (t) { return t.closed == false && t._job._status.allow_new_timesheet_entries == true; }); });
 var getTasksForUser = function (id, searchTerms) {
     if (id === void 0) { id = null; }
     if (searchTerms === void 0) { searchTerms = []; }
-    return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(getTasksForTimeEntry, _state__WEBPACK_IMPORTED_MODULE_2__["getTaskAssigneeState"], function (tasks, assignees) {
+    return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTasksForTimeEntry, _state__WEBPACK_IMPORTED_MODULE_3__["getTaskAssigneeState"], function (tasks, assignees) {
         var objs = tasks;
         // apply filters (either search all or only show tasks im assigned to)
         if (searchTerms.length > 0) {
@@ -10828,13 +11031,13 @@ var getTasksForUser = function (id, searchTerms) {
         return byClientByJob;
     });
 };
-var getIsDaySignedOffRequired = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeEntryState"], function (entries) {
+var getIsDaySignedOffRequired = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) {
     var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id
         && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD')
         && e.signed_off === false; });
     return objects.length > 0;
 }); };
-var getDailyTimeTotalForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeEntryState"], function (entries) {
+var getDailyTimeTotalForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) {
     var forDay = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD'); });
     var durations = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](forDay, 'duration');
     var totalDurations = durations.slice(1).reduce(function (prev, cur) { return moment__WEBPACK_IMPORTED_MODULE_1__["duration"](cur).add(prev); }, moment__WEBPACK_IMPORTED_MODULE_1__["duration"](durations[0]));

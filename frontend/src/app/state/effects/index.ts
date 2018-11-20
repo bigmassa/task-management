@@ -15,6 +15,7 @@ import { PaymentOptionEffects } from './paymentoption';
 import { PositionEffects } from './position';
 import { RecurringCostTypeEffects } from './recurringcosttype';
 import { RelationshipEffects } from './relationship';
+import { SocketEffects } from './socket';
 import { TagEffects } from './tag';
 import { TaskAssigneeEffects } from './taskassignee';
 import { TaskEffects } from './task';
@@ -43,6 +44,7 @@ export const effects = [
     PositionEffects,
     RecurringCostTypeEffects,
     RelationshipEffects,
+    SocketEffects,
     TagEffects,
     TaskEffects,
     TaskAssigneeEffects,

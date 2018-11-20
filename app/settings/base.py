@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'migrator',
     'wip',
 
+    'channels',
     'dal',
     'dal_select2',
     'django_filters',
@@ -145,6 +146,20 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# Channels
+
+ASGI_APPLICATION = "app.routing.application"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [(environ.get('REDIS_HOST', 'localhost'), 6379)],
+        },
+    },
+}
 
 
 # Static files (CSS, JavaScript, Images)

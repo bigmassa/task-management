@@ -5,7 +5,6 @@
             <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Taskboard</a></li>
             <li><a routerLink="clients" routerLinkActive="active">Clients</a></li>
             <li><a routerLink="timesheet" routerLinkActive="active">Timesheet</a></li>
-            <li><a routerLink="reporting" routerLinkActive="active">Reporting</a></li>
         </ul>
         <div class="ml-auto" *ngIf="me$ | async as me">
             <a avatar [id]="me.id" class="avatar" href="{{ globals.logoutUrl }}">

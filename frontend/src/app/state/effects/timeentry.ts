@@ -33,5 +33,11 @@ export class TimeEntryEffects extends APIBaseEffects {
         `${this.prefix} REMOVE`,
         `${this.prefix} REMOVE_SUCCESS`
     );
+    @Effect() public socket$ = this._socket$(
+        'wip.timeentry',
+        `${this.prefix} LOAD_ONE`,
+        `${this.prefix} LOAD_ONE`,
+        `${this.prefix} REMOVE_SUCCESS`
+    );
 
 }

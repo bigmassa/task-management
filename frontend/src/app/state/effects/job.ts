@@ -1,12 +1,12 @@
-import { Effect, ofType } from '@ngrx/effects';
-import { catchError, map, mergeMap } from 'rxjs/operators';
-
 import { APIBaseEffects } from '../api';
+import { catchError, map, mergeMap } from 'rxjs/operators';
+import { Effect, ofType } from '@ngrx/effects';
 import { HttpActions } from '../actions';
 import { IActionWithPayload } from '../models';
 import { Injectable } from '@angular/core';
-import { TaskActions } from './../actions/task';
 import { of } from 'rxjs';
+import { TaskActions } from './../actions/task';
+
 
 @Injectable({
     providedIn: 'root'
@@ -33,6 +33,12 @@ export class JobEffects extends APIBaseEffects {
     );
     @Effect() remove$ = this._remove$(
         `${this.prefix} REMOVE`,
+        `${this.prefix} REMOVE_SUCCESS`
+    );
+    @Effect() public socket$ = this._socket$(
+        'wip.job',
+        `${this.prefix} LOAD_ONE`,
+        `${this.prefix} LOAD_ONE`,
         `${this.prefix} REMOVE_SUCCESS`
     );
     @Effect() sortTasks$ = this.updates$.pipe(

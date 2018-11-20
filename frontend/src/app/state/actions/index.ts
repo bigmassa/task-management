@@ -17,6 +17,7 @@ import { PaymentOptionActions } from './paymentoption';
 import { PositionActions } from './position';
 import { RecurringCostTypeActions } from './recurringcosttype';
 import { RelationshipActions } from './relationship';
+import { SocketActions } from './socket';
 import { TabActions } from './tabs';
 import { TagActions } from './tag';
 import { TaskActions } from './task';
@@ -48,6 +49,7 @@ export {
     PositionActions,
     RecurringCostTypeActions,
     RelationshipActions,
+    SocketActions,
     TabActions,
     TagActions,
     TaskActions,
@@ -80,6 +82,7 @@ export const actions = [
     PositionActions,
     RecurringCostTypeActions,
     RelationshipActions,
+    SocketActions,
     TabActions,
     TagActions,
     TaskActions,

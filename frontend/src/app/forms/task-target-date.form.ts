@@ -1,13 +1,13 @@
 import * as _ from 'lodash';
 import * as actions from '../state/actions';
-
 import { ActionsSubject, Store } from '@ngrx/store';
-import { BaseForm, FormCleanAfterMethod, IFormOptions } from './base.form';
-import { FormControl, Validators } from '@angular/forms';
-import { filter, take } from 'rxjs/operators';
-
 import { AppState } from '../state/state';
+import { BaseForm, FormCleanAfterMethod, IFormOptions } from './base.form';
+import { filter, take } from 'rxjs/operators';
+import { FormControl, Validators } from '@angular/forms';
 import { IActionWithPayload } from './../state/models';
+
+
 
 const options: IFormOptions = {
     alwaysEditable: false,
@@ -41,14 +41,12 @@ export class TaskTargetDateForm extends BaseForm {
             null,
             _.assign({}, options, formOptions)
         );
+    }
 
-        // when the date field is emptied set it to null as an empty
-        // string is an invalid date format in drf.
-        const sub = this.controls.target_date.valueChanges.subscribe(value => {
-            if (value === '') {
-                this.controls.target_date.setValue(null);
-            }
-        });
-        this._subscriptions.push(sub);
+    prepareValueForDispatch() {
+        // the api doesnt like empty strings for a date field
+        if (this.controls.target_date.value === '') {
+            this.controls.target_date.setValue(null);
+        }
     }
 }

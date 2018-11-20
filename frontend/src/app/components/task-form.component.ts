@@ -91,8 +91,7 @@ export class TaskFormComponent implements OnChanges {
             this.taskNotes$ = this.store.pipe(select(getTaskNotesForTask(this.id)));
             this.taskTags$ = this.store.pipe(select(getTaskTagsForTask(this.id)));
             this.task$.pipe(
-                filter(d => _.isObject(d)),
-                take(1)
+                filter(d => _.isObject(d))
             ).subscribe(
                 d => {
                     this.descriptionForm.load(d);

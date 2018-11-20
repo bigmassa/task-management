@@ -102,6 +102,7 @@
                     <p class="mb-0-5"><strong>Time Spent (hrs)</strong></p>
                     <p>{{ task.time_spent_hours }} of {{ task.allocated_hours }}</p>
                     <hr>
+                    
                     <p class="mb-0-5"><strong>Target Date</strong></p>
                     <div (click)="targetDateForm.editable = true">
                         <input mwlFlatpickr type="text" [formControl]="targetDateForm.controls.target_date">

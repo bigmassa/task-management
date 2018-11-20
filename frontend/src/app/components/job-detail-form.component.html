@@ -47,7 +47,7 @@
         <p class="c-red" *formError="form.controls.status">Please choose a status</p>
 
         <label>Billed To</label>
-        <input type="text" mwlFlatpickr [formControl]="form.controls.billed_to" />
+        <input mwlFlatpickr type="text" [formControl]="form.controls.billed_to" />
         <p class="c-red" *formError="form.controls.billed_to">Please enter a date</p>
         
     </div>

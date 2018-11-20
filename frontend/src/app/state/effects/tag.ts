@@ -29,5 +29,11 @@ export class TagEffects extends APIBaseEffects {
         `${this.prefix} REMOVE`,
         `${this.prefix} REMOVE_SUCCESS`
     );
+    @Effect() public socket$ = this._socket$(
+        'taggit.tag',
+        `${this.prefix} LOAD_ONE`,
+        `${this.prefix} LOAD_ONE`,
+        `${this.prefix} REMOVE_SUCCESS`
+    );
 
 }

@@ -33,5 +33,11 @@ export class TaskEffects extends APIBaseEffects {
         `${this.prefix} REMOVE`,
         `${this.prefix} REMOVE_SUCCESS`
     );
+    @Effect() public socket$ = this._socket$(
+        'wip.task',
+        `${this.prefix} LOAD_ONE`,
+        `${this.prefix} LOAD_ONE`,
+        `${this.prefix} REMOVE_SUCCESS`
+    );
 
 }

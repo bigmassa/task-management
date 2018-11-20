@@ -106,6 +106,7 @@ export class AppModule {
 
     constructor(public store: Store<AppState>) {
         store.dispatch({ type: actions.DataActions.LOAD_DATA });
+        store.dispatch({ type: actions.SocketActions.START });
     }
     
 }

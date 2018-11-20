@@ -1,11 +1,11 @@
 import * as _ from 'lodash';
 import * as moment from 'moment';
-
-import { getTaskAssigneeState, getTimeEntryState } from './../state';
-
 import { createSelector } from '@ngrx/store';
+import { getTaskAssigneeState, getTimeEntryState } from './../state';
 import { getTaskCollection } from './task';
 import { valueOr } from '../../utils/generic';
+
+
 
 export const getEventsForUser = (id: number) => createSelector(
     getTimeEntryState,

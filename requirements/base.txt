@@ -1,4 +1,6 @@
 boto3
+channels
+channels_redis
 coreapi
 django
 django-autocomplete-light
