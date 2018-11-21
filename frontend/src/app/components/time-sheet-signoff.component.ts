@@ -1,14 +1,18 @@
 import * as _ from 'lodash';
 import * as actions from '../state/actions';
-
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { getDailyTimeTotalForUser, getIsDaySignedOffRequired } from '../state/selectors/timesheet';
-
+import * as moment from 'moment';
 import { AppState } from '../state/state';
+import {
+    Component,
+    Input,
+    OnChanges,
+    SimpleChanges
+    } from '@angular/core';
+import { getDailyTimeTotalForUser, getIsDaySignedOffRequired } from '../state/selectors/timesheet';
 import { Observable } from 'rxjs';
-import { getTimeEntriesForUserAndDay } from '../state/selectors/timeentry';
-import { take } from 'rxjs/operators';
+import { select, Store } from '@ngrx/store';
+
+
 
 @Component({
     selector: 'time-sheet-signoff, [time-sheet-signoff]',
@@ -41,18 +45,7 @@ export class TimesheetSignoffComponent implements OnChanges {
     }
     
     signOff() {
-        this.store.pipe(
-            select(getTimeEntriesForUserAndDay(this.date, this.user)),
-            take(1)
-        ).subscribe(
-            objs => {
-                _.each(objs, o => {
-                    if (!o.signed_off) {
-                        const payload = { id: o.id, signed_off: true };
-                        this.store.dispatch({type: actions.TimeEntryActions.PATCH, payload});
-                    }
-                })
-            }
-        )
+        const payload = {date: moment(this.date).format('YYYY-MM-DD'), user: this.user}
+        this.store.dispatch({type: actions.TimeEntrySignoffActions.SIGNOFF, payload});
     }
 }

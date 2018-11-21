@@ -23,3 +23,4 @@ from .task_note import TaskNoteViewSet
 from .task_status import TaskStatusViewSet
 from .task_tag import TaskTagViewSet
 from .time_entry import TimeEntryViewSet
+from .time_entry_signoff import TimeEntrySignoffViewSet

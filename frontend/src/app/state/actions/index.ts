@@ -27,6 +27,7 @@ import { TaskNoteActions } from './tasknote';
 import { TaskStatusActions } from './taskstatus';
 import { TaskTagActions } from './tasktag';
 import { TimeEntryActions } from './timeentry';
+import { TimeEntrySignoffActions } from './timeentrysignoff';
 import { UserActions } from './user';
 
 export {
@@ -59,6 +60,7 @@ export {
     TaskStatusActions,
     TaskTagActions,
     TimeEntryActions,
+    TimeEntrySignoffActions,
     UserActions
 };
 
@@ -92,5 +94,6 @@ export const actions = [
     TaskStatusActions,
     TaskTagActions,
     TimeEntryActions,
+    TimeEntrySignoffActions,
     UserActions
 ];

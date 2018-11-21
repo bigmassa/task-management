@@ -1371,7 +1371,7 @@ var ClientDetailFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Clients</div>\n        <div class=\"page-header-actions\">\n            <a routerLink=\"/clients/new\" class=\"button button-white\">Add</a>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <div class=\"row\">\n            <div class=\"col-6\"><search [(ngModel)]=\"searchTerms\"></search></div>\n        </div>\n        <table class=\"table-headed table-hover margin-zero layout-fixed\">\n            <thead>\n                <tr>\n                    <th>Name</th>\n                    <th>Email Address</th>\n                    <th>Phone Number</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr [routerLink]=\"['/clients', client.id]\" *ngFor=\"let client of clients$ | async | clientSearch:searchTerms\">\n                    <td>{{ client.name }}</td>\n                    <td>{{ client | get:'email_address' }}</td>\n                    <td>{{ client | get:'phone_number' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Clients</div>\n        <div class=\"page-header-actions\">\n            <a routerLink=\"/clients/new\" class=\"button button-white\">Add</a>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <div class=\"row\">\n            <div class=\"col-6\"><search [(ngModel)]=\"searchTerms\"></search></div>\n        </div>\n        <table class=\"table-headed table-hover margin-zero layout-fixed\">\n            <thead>\n                <tr>\n                    <th>Name</th>\n                    <th>Email Address</th>\n                    <th>Phone Number</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr [routerLink]=\"['/clients', client.id]\" class=\"pointer\" *ngFor=\"let client of clients$ | async | clientSearch:searchTerms\">\n                    <td>{{ client.name }}</td>\n                    <td>{{ client | get:'email_address' }}</td>\n                    <td>{{ client | get:'phone_number' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -2701,7 +2701,7 @@ var TaskboardComponent = /** @class */ (function () {
         this.store = store;
     }
     TaskboardComponent.prototype.ngOnInit = function () {
-        this.tasks$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(Object(_state_selectors_taskboard__WEBPACK_IMPORTED_MODULE_2__["getTasksForTaskBoardForUser"])(1)));
+        this.tasks$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(_state_selectors_taskboard__WEBPACK_IMPORTED_MODULE_2__["getTasksForTaskBoardForUser"]));
     };
     TaskboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2823,14 +2823,12 @@ var TimeEntryFormComponent = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimesheetSignoffComponent", function() { return TimesheetSignoffComponent; });
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/selectors/timesheet */ "./src/app/state/selectors/timesheet.ts");
-/* harmony import */ var _state_selectors_timeentry__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../state/selectors/timeentry */ "./src/app/state/selectors/timeentry.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state/selectors/timesheet */ "./src/app/state/selectors/timesheet.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2845,28 +2843,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
 var TimesheetSignoffComponent = /** @class */ (function () {
     function TimesheetSignoffComponent(store) {
         this.store = store;
     }
     TimesheetSignoffComponent.prototype.ngOnChanges = function (changes) {
         if (this.user && this.date) {
-            this.requiresSignOff$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_4__["getIsDaySignedOffRequired"])(this.user, this.date)));
-            this.sum$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_4__["getDailyTimeTotalForUser"])(this.user, this.date)));
+            this.requiresSignOff$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_3__["getIsDaySignedOffRequired"])(this.user, this.date)));
+            this.sum$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_3__["getDailyTimeTotalForUser"])(this.user, this.date)));
         }
     };
     TimesheetSignoffComponent.prototype.signOff = function () {
-        var _this = this;
-        this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_timeentry__WEBPACK_IMPORTED_MODULE_5__["getTimeEntriesForUserAndDay"])(this.date, this.user)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["take"])(1)).subscribe(function (objs) {
-            lodash__WEBPACK_IMPORTED_MODULE_0__["each"](objs, function (o) {
-                if (!o.signed_off) {
-                    var payload = { id: o.id, signed_off: true };
-                    _this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TimeEntryActions"].PATCH, payload: payload });
-                }
-            });
-        });
+        var payload = { date: moment__WEBPACK_IMPORTED_MODULE_1__(this.date).format('YYYY-MM-DD'), user: this.user };
+        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["TimeEntrySignoffActions"].SIGNOFF, payload: payload });
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
@@ -2881,7 +2870,7 @@ var TimesheetSignoffComponent = /** @class */ (function () {
             selector: 'time-sheet-signoff, [time-sheet-signoff]',
             template: "\n    <span class=\"checkbox fc-dailycontrol\">\n        <label>\n            <input type=\"checkbox\" (change)=\"signOff()\" *ngIf=\"requiresSignOff$ | async; else complete\">\n            <ng-template #complete><input type=\"checkbox\" [checked]=\"true\" disabled></ng-template>\n            <span></span><em>{{ sum$ | async }}</em>\n        </label>\n    </span>\n    "
         }),
-        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"]])
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["Store"]])
     ], TimesheetSignoffComponent);
     return TimesheetSignoffComponent;
 }());
@@ -2897,7 +2886,7 @@ var TimesheetSignoffComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchData()\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content d-flex flex-fill flex-flow-column\">\n    <div class=\"row flex-fill\">\n        <div class=\"col-3 d-flex flex-column flex-fill\">\n            <search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchData()\"></search>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task\" [style.background-color]=\"task._job.colour\" [style.color]=\"task._job._text_colour\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <span class=\"external-event d-block\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onEventRender)=\"onEventRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div class=\"row\" style=\"flex: 0 1 50px;\">    \n        <div class=\"col-9 offset-3\">\n            <table class=\"mb-0\">\n                <tr>\n                    <td class=\"py-1\" [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></td>\n                    <td class=\"text-center px-0 py-1\" *ngFor=\"let date of viewDates\">\n                        <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchData()\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content d-flex flex-fill flex-flow-column\">\n    <div class=\"row flex-fill\">\n        <div class=\"col-3 d-flex flex-column flex-fill\">\n            <search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchData()\"></search>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task\" [style.background-color]=\"task._job.colour\" [style.color]=\"task._job._text_colour\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <span class=\"external-event d-block\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onEventRender)=\"onEventRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div class=\"row\" style=\"flex: 0 0 50px;\">    \n        <div class=\"col-9 offset-3\">\n            <table class=\"mb-0\">\n                <tr>\n                    <td class=\"py-1\" [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></td>\n                    <td class=\"text-center px-0 py-1\" *ngFor=\"let date of viewDates\">\n                        <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2917,9 +2906,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../state/selectors/timesheet */ "./src/app/state/selectors/timesheet.ts");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
-/* harmony import */ var _utils_generic__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../utils/generic */ "./src/app/utils/generic.ts");
+/* harmony import */ var _utils_generic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../utils/generic */ "./src/app/utils/generic.ts");
+/* harmony import */ var _state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../state/selectors/timesheet */ "./src/app/state/selectors/timesheet.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2947,7 +2936,7 @@ var TimesheetComponent = /** @class */ (function () {
     }
     TimesheetComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_6__["getMeState"])).subscribe(function (me) {
+        this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_7__["getMeState"])).subscribe(function (me) {
             _this.selectedUserId = me.id;
             _this.refetchData();
         });
@@ -2974,9 +2963,9 @@ var TimesheetComponent = /** @class */ (function () {
         };
     };
     TimesheetComponent.prototype.refetchData = function () {
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_6__["getUserState"]));
-        this.tasks$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_5__["getTasksForUser"])(this.selectedUserId, this.searchTerms)));
-        this.events$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_5__["getEventsForUser"])(this.selectedUserId)));
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_7__["getUserState"]));
+        this.tasks$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_6__["getTasksForUser"])(this.selectedUserId, this.searchTerms)));
+        this.events$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_6__["getEventsForUser"])(this.selectedUserId)));
     };
     TimesheetComponent.prototype.changeTask = function (task) {
         if (this.selectedEventId) {
@@ -2992,7 +2981,7 @@ var TimesheetComponent = /** @class */ (function () {
     TimesheetComponent.prototype.onDatesRender = function (info) {
         var _this = this;
         setTimeout(function () {
-            _this.viewDates = Object(_utils_generic__WEBPACK_IMPORTED_MODULE_7__["getDatesBetween"])(info.view.activeStart, moment__WEBPACK_IMPORTED_MODULE_1__(info.view.activeEnd).add(-1, "days").toDate());
+            _this.viewDates = Object(_utils_generic__WEBPACK_IMPORTED_MODULE_5__["getDatesBetween"])(info.view.activeStart, moment__WEBPACK_IMPORTED_MODULE_1__(info.view.activeEnd).add(-1, "days").toDate());
         });
     };
     TimesheetComponent.prototype.onEventRender = function (info) {
@@ -5171,7 +5160,7 @@ var HttpActions = /** @class */ (function () {
 /*!****************************************!*\
   !*** ./src/app/state/actions/index.ts ***!
   \****************************************/
-/*! exports provided: BillingFrequencyActions, ClientActions, ClientContactActions, ClientContactTagActions, DataActions, FilterActions, HttpActions, JobActions, JobFileActions, JobNoteActions, JobRecurringCostActions, JobRelationshipActions, JobStatusActions, JobTypeActions, MeActions, PaymentOptionActions, PositionActions, RecurringCostTypeActions, RelationshipActions, SocketActions, TabActions, TagActions, TaskActions, TaskAssigneeActions, TaskFileActions, TaskNoteActions, TaskStatusActions, TaskTagActions, TimeEntryActions, UserActions, actions */
+/*! exports provided: BillingFrequencyActions, ClientActions, ClientContactActions, ClientContactTagActions, DataActions, FilterActions, HttpActions, JobActions, JobFileActions, JobNoteActions, JobRecurringCostActions, JobRelationshipActions, JobStatusActions, JobTypeActions, MeActions, PaymentOptionActions, PositionActions, RecurringCostTypeActions, RelationshipActions, SocketActions, TabActions, TagActions, TaskActions, TaskAssigneeActions, TaskFileActions, TaskNoteActions, TaskStatusActions, TaskTagActions, TimeEntryActions, TimeEntrySignoffActions, UserActions, actions */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5264,8 +5253,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/actions/timeentry.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntryActions", function() { return _timeentry__WEBPACK_IMPORTED_MODULE_28__["TimeEntryActions"]; });
 
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_29__["UserActions"]; });
+/* harmony import */ var _timeentrysignoff__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./timeentrysignoff */ "./src/app/state/actions/timeentrysignoff.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TimeEntrySignoffActions", function() { return _timeentrysignoff__WEBPACK_IMPORTED_MODULE_29__["TimeEntrySignoffActions"]; });
+
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./user */ "./src/app/state/actions/user.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserActions", function() { return _user__WEBPACK_IMPORTED_MODULE_30__["UserActions"]; });
+
 
 
 
@@ -5328,7 +5321,8 @@ var actions = [
     _taskstatus__WEBPACK_IMPORTED_MODULE_26__["TaskStatusActions"],
     _tasktag__WEBPACK_IMPORTED_MODULE_27__["TaskTagActions"],
     _timeentry__WEBPACK_IMPORTED_MODULE_28__["TimeEntryActions"],
-    _user__WEBPACK_IMPORTED_MODULE_29__["UserActions"]
+    _timeentrysignoff__WEBPACK_IMPORTED_MODULE_29__["TimeEntrySignoffActions"],
+    _user__WEBPACK_IMPORTED_MODULE_30__["UserActions"]
 ];
 
 
@@ -6924,6 +6918,49 @@ var TimeEntryActions = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/state/actions/timeentrysignoff.ts":
+/*!***************************************************!*\
+  !*** ./src/app/state/actions/timeentrysignoff.ts ***!
+  \***************************************************/
+/*! exports provided: TimeEntrySignoffActions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeEntrySignoffActions", function() { return TimeEntrySignoffActions; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var TimeEntrySignoffActions = /** @class */ (function () {
+    function TimeEntrySignoffActions() {
+    }
+    TimeEntrySignoffActions_1 = TimeEntrySignoffActions;
+    TimeEntrySignoffActions.prototype.Signoff = function (payload) {
+        return { type: TimeEntrySignoffActions_1.SIGNOFF, payload: payload };
+    };
+    TimeEntrySignoffActions.prototype.SignoffSuccess = function (payload) {
+        return { type: TimeEntrySignoffActions_1.SIGNOFF_SUCCESS, payload: payload };
+    };
+    var TimeEntrySignoffActions_1;
+    TimeEntrySignoffActions.SIGNOFF = '[TimeEntrySignoff] SIGNOFF';
+    TimeEntrySignoffActions.SIGNOFF_SUCCESS = '[TimeEntrySignoff] SIGNOFF_SUCCESS';
+    TimeEntrySignoffActions = TimeEntrySignoffActions_1 = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TimeEntrySignoffActions);
+    return TimeEntrySignoffActions;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/actions/user.ts":
 /*!***************************************!*\
   !*** ./src/app/state/actions/user.ts ***!
@@ -7534,7 +7571,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _taskstatus__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./taskstatus */ "./src/app/state/effects/taskstatus.ts");
 /* harmony import */ var _tasktag__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./tasktag */ "./src/app/state/effects/tasktag.ts");
 /* harmony import */ var _timeentry__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./timeentry */ "./src/app/state/effects/timeentry.ts");
-/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+/* harmony import */ var _timeentrysignoff__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./timeentrysignoff */ "./src/app/state/effects/timeentrysignoff.ts");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./user */ "./src/app/state/effects/user.ts");
+
 
 
 
@@ -7589,7 +7628,8 @@ var effects = [
     _taskstatus__WEBPACK_IMPORTED_MODULE_23__["TaskStatusEffects"],
     _tasktag__WEBPACK_IMPORTED_MODULE_24__["TaskTagEffects"],
     _timeentry__WEBPACK_IMPORTED_MODULE_25__["TimeEntryEffects"],
-    _user__WEBPACK_IMPORTED_MODULE_26__["UserEffects"]
+    _timeentrysignoff__WEBPACK_IMPORTED_MODULE_26__["TimeEntrySignoffEffects"],
+    _user__WEBPACK_IMPORTED_MODULE_27__["UserEffects"]
 ];
 
 
@@ -9323,6 +9363,74 @@ var TimeEntryEffects = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "./src/app/state/effects/timeentrysignoff.ts":
+/*!***************************************************!*\
+  !*** ./src/app/state/effects/timeentrysignoff.ts ***!
+  \***************************************************/
+/*! exports provided: TimeEntrySignoffEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeEntrySignoffEffects", function() { return TimeEntrySignoffEffects; });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var TimeEntrySignoffEffects = /** @class */ (function (_super) {
+    __extends(TimeEntrySignoffEffects, _super);
+    function TimeEntrySignoffEffects() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.url = '/api/time-entry-signoff/';
+        _this.prefix = '[TimeEntrySignoff]';
+        _this.signoff$ = _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_this.prefix + " SIGNOFF"), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (payload) {
+            return _this.service$.post(_this.apiUrl, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: _this.prefix + " SIGNOFF_SUCCESS", payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
+        }));
+        return _this;
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
+        __metadata("design:type", Object)
+    ], TimeEntrySignoffEffects.prototype, "signoff$", void 0);
+    TimeEntrySignoffEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], TimeEntrySignoffEffects);
+    return TimeEntrySignoffEffects;
+}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/state/effects/user.ts":
 /*!***************************************!*\
   !*** ./src/app/state/effects/user.ts ***!
@@ -10896,19 +11004,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var getTasksForTaskBoard = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_task__WEBPACK_IMPORTED_MODULE_3__["getTaskCollection"], function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, function (t) { return t.closed == false; }); });
-var getTasksForTaskBoardForUser = function (id) {
-    if (id === void 0) { id = null; }
-    return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getTasksForTaskBoard, _state__WEBPACK_IMPORTED_MODULE_2__["getTaskAssigneeState"], function (tasks, assignees) {
-        var objs = tasks;
-        // only tasks assigned to user
-        var ids = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['user', id]), 'task');
-        objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](objs, function (o) { return lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](ids, o.id); });
-        var mappedObjs = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](objs, function (o) { return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, o, {
-            _assignees: lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['task', o.id])
-        }); });
-        return mappedObjs;
-    });
-};
+var getTasksForTaskBoardForUser = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getTasksForTaskBoard, _state__WEBPACK_IMPORTED_MODULE_2__["getTaskAssigneeState"], _state__WEBPACK_IMPORTED_MODULE_2__["getMeState"], function (tasks, assignees, me) {
+    var objs = tasks;
+    // only tasks assigned to user
+    var ids = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['user', me.id]), 'task');
+    objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](objs, function (o) { return lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](ids, o.id); });
+    var mappedObjs = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](objs, function (o) { return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, o, {
+        _assignees: lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['task', o.id])
+    }); });
+    return mappedObjs;
+});
 
 
 /***/ }),
@@ -10917,25 +11022,20 @@ var getTasksForTaskBoardForUser = function (id) {
 /*!**********************************************!*\
   !*** ./src/app/state/selectors/timeentry.ts ***!
   \**********************************************/
-/*! exports provided: getTimeEntryById, getTimeEntriesForUserAndDay */
+/*! exports provided: getTimeEntryById */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeEntryById", function() { return getTimeEntryById; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTimeEntriesForUserAndDay", function() { return getTimeEntriesForUserAndDay; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state */ "./src/app/state/state.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../state */ "./src/app/state/state.ts");
 
 
 
-
-var getTimeEntryById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](entries, ['id', id]); }); };
-var getTimeEntriesForUserAndDay = function (date, id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD'); }); }); };
+var getTimeEntryById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getTimeEntryState"], function (entries) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](entries, ['id', id]); }); };
 
 
 /***/ }),
@@ -10969,6 +11069,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var getEventsForUser = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], _task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollection"], function (entries, tasks) {
+    console.log('getEventsForUser');
     var objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, ['user', id]);
     return lodash__WEBPACK_IMPORTED_MODULE_0__["map"](objs, function (obj) {
         var _task = lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', obj.task]);
@@ -10994,6 +11095,7 @@ var getTasksForUser = function (id, searchTerms) {
     if (id === void 0) { id = null; }
     if (searchTerms === void 0) { searchTerms = []; }
     return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTasksForTimeEntry, _state__WEBPACK_IMPORTED_MODULE_3__["getTaskAssigneeState"], function (tasks, assignees) {
+        console.log('getTasksForUser');
         var objs = tasks;
         // apply filters (either search all or only show tasks im assigned to)
         if (searchTerms.length > 0) {
@@ -11032,12 +11134,14 @@ var getTasksForUser = function (id, searchTerms) {
     });
 };
 var getIsDaySignedOffRequired = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) {
+    console.log('getIsDaySignedOffRequired');
     var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id
         && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD')
         && e.signed_off === false; });
     return objects.length > 0;
 }); };
 var getDailyTimeTotalForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) {
+    console.log('getDailyTimeTotalForUser');
     var forDay = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD'); });
     var durations = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](forDay, 'duration');
     var totalDurations = durations.slice(1).reduce(function (prev, cur) { return moment__WEBPACK_IMPORTED_MODULE_1__["duration"](cur).add(prev); }, moment__WEBPACK_IMPORTED_MODULE_1__["duration"](durations[0]));

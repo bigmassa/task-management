@@ -1,17 +1,25 @@
 import * as actions from '../state/actions';
 import * as moment from 'moment';
-
-import { ActionsSubject, Store, select } from '@ngrx/store';
-import { CalendarOptions, DatesRenderInfo, DropInfo, EventClickInfo, EventDropInfo, EventObject, EventRenderInfo, EventResizeInfo, ViewSkeletonRenderInfo } from './calendar.component';
+import { ActionsSubject, select, Store } from '@ngrx/store';
+import { AppState } from '../state/state';
+import {
+    CalendarOptions,
+    DatesRenderInfo,
+    DropInfo,
+    EventClickInfo,
+    EventDropInfo,
+    EventObject,
+    EventRenderInfo,
+    EventResizeInfo,
+    ViewSkeletonRenderInfo
+    } from './calendar.component';
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
+import { getDatesBetween } from './../utils/generic';
 import { getEventsForUser, getTasksForUser } from '../state/selectors/timesheet';
 import { getMeState, getUserState } from './../state/state';
-
-import { AppState } from '../state/state';
 import { IUser } from '../state/reducers/user';
-import { getDatesBetween } from './../utils/generic';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
     selector: 'time-sheet, [time-sheet]',

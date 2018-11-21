@@ -18,6 +18,6 @@ export class TaskboardComponent {
     ) { }
 
     ngOnInit() {
-        this.tasks$ = this.store.pipe(select(getTasksForTaskBoardForUser(1)));
+        this.tasks$ = this.store.pipe(select(getTasksForTaskBoardForUser));
     }
 }

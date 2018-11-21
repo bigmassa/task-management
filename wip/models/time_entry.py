@@ -70,12 +70,12 @@ def update_signed_off_date(instance, **kwargs):
 @receiver(post_save, sender=TimeEntry)
 @receiver(post_delete, sender=TimeEntry)
 def update_time_spent_hours(instance, **kwargs):
-    task_id = instance.task_id
-
     def do():
         from wip.models import Task
-        task = Task.objects.with_time_spent().get(pk=task_id)
-        task.time_spent_hours = duration_to_decimal_hrs(task.qs_time_spent)
-        task.save()
+        task = Task.objects.with_time_spent().get(pk=instance.task_id)
+        time_spent = duration_to_decimal_hrs(task.qs_time_spent)
+        if task.time_spent_hours != time_spent:
+            task.time_spent_hours = time_spent
+            task.save()
 
     transaction.on_commit(do)

@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr [routerLink]="['/clients', client.id]" *ngFor="let client of clients$ | async | clientSearch:searchTerms">
+                <tr [routerLink]="['/clients', client.id]" class="pointer" *ngFor="let client of clients$ | async | clientSearch:searchTerms">
                     <td>{{ client.name }}</td>
                     <td>{{ client | get:'email_address' }}</td>
                     <td>{{ client | get:'phone_number' }}</td>

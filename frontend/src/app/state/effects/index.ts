@@ -24,6 +24,7 @@ import { TaskNoteEffects } from './tasknote';
 import { TaskStatusEffects } from './taskstatus';
 import { TaskTagEffects } from './tasktag';
 import { TimeEntryEffects } from './timeentry';
+import { TimeEntrySignoffEffects } from './timeentrysignoff';
 import { UserEffects } from './user';
 
 export const effects = [
@@ -53,5 +54,6 @@ export const effects = [
     TaskStatusEffects,
     TaskTagEffects,
     TimeEntryEffects,
+    TimeEntrySignoffEffects,
     UserEffects
 ];

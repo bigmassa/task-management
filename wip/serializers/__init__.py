@@ -20,3 +20,4 @@ from .task_file import TaskFileSerializer
 from .task_note import TaskNoteSerializer
 from .task_status import TaskStatusSerializer
 from .time_entry import TimeEntrySerializer
+from .time_entry_signoff import TimeEntrySignoffSerializer

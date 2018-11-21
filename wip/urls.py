@@ -29,6 +29,7 @@ router.register(r'task-notes', api.TaskNoteViewSet)
 router.register(r'task-statuses', api.TaskStatusViewSet)
 router.register(r'task-tags', api.TaskTagViewSet, base_name='tasktag')
 router.register(r'time-entries', api.TimeEntryViewSet)
+router.register(r'time-entry-signoff', api.TimeEntrySignoffViewSet, base_name='timeentrysignoff')
 
 # DESKTOP
 app_name = 'wip'
