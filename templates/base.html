@@ -1,13 +1,14 @@
 {% load i18n static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <base href="/">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>WIP | {% block page_title %}{% endblock %}</title>
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <link href="{% static 'dist/css/karma.min.css' %}" type="text/css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Accent WIP, project management and time tracking">
+        <link rel="icon" type="image/png" href="{% static 'dist/img/favicon.png' %}">
+        <link rel="stylesheet" href="{% static 'dist/css/karma.min.css' %}">
         {% block extra_css %}{% endblock %}
     </head>
     <body class="{% block body_class %}{% endblock %}">
