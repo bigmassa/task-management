@@ -11,7 +11,6 @@ export const getEventsForUser = (id: number) => createSelector(
     getTimeEntryState,
     getTaskCollection,
     (entries, tasks) => {
-        console.log('getEventsForUser');
         const objs = _.filter(entries, ['user', id]);
         return _.map(objs, (obj) => {
             const _task = _.find(tasks, ['id', obj.task]);
@@ -43,8 +42,6 @@ export const getTasksForUser = (id: number = null, searchTerms: string[] = []) =
     getTasksForTimeEntry,
     getTaskAssigneeState,
     (tasks, assignees) => {
-        console.log('getTasksForUser');
-
         let objs = tasks;
         
         // apply filters (either search all or only show tasks im assigned to)
@@ -92,7 +89,6 @@ export const getTasksForUser = (id: number = null, searchTerms: string[] = []) =
 export const getIsDaySignedOffRequired = (id: number, date: Date) => createSelector(
     getTimeEntryState,
     (entries) => {
-        console.log('getIsDaySignedOffRequired');
         const objects = _.filter(
             entries,
             e => e.user === id
@@ -106,7 +102,6 @@ export const getIsDaySignedOffRequired = (id: number, date: Date) => createSelec
 export const getDailyTimeTotalForUser = (id: number, date: Date) => createSelector(
     getTimeEntryState,
     (entries) => {
-        console.log('getDailyTimeTotalForUser');
         const forDay = _.filter(
             entries,
             e => e.user === id && moment(e.started_at).format('YYYY-MM-DD') === moment(date).format('YYYY-MM-DD')

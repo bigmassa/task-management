@@ -103,7 +103,7 @@ export class APIBaseEffects {
     )
 
     protected _socket$ = (
-        model: string, createOfType: string, updateOfType: string, removeOfType: string, payload: any = null
+        model: string, createAction: string, updateAction: string, removeAction: string, batchUpdateAction: string = null
     ) => this.updates$.pipe(
         ofType(SocketActions.PROCESS_MESSAGE),
         map((action: IActionWithPayload) => action.payload),
@@ -112,11 +112,13 @@ export class APIBaseEffects {
             const data: any = res.data;
             switch (res.action) {
                 case 'create':
-                    return ({type: createOfType, payload: payload || data.id});
+                    return ({type: createAction, payload: data.id});
                 case 'update':
-                    return ({type: updateOfType, payload: payload || data.id});
+                    return ({type: updateAction, payload: data.id});
                 case 'delete':
-                    return ({type: removeOfType, payload: payload || data});
+                    return ({type: removeAction, payload: data});
+                case 'batch_update':
+                    return ({type: batchUpdateAction, payload: data});
                 default:
                     return ({type: 'NO_ACTION'});
             }

@@ -1,8 +1,8 @@
-import { IActionWithHTTPData, IActionWithPayload } from '../models';
-
 import { Action } from '@ngrx/store';
-import { ITimeEntry } from '../reducers/timeentry';
+import { IActionWithHTTPData, IActionWithPayload } from '../models';
 import { Injectable } from '@angular/core';
+import { ITimeEntry } from '../reducers/timeentry';
+
 
 @Injectable({
     providedIn: 'root'
@@ -21,6 +21,7 @@ export class TimeEntryActions {
     static PATCH_SUCCESS = '[TimeEntry] PATCH_SUCCESS';
     static REMOVE = '[TimeEntry] REMOVE';
     static REMOVE_SUCCESS = '[TimeEntry] REMOVE_SUCCESS';
+    static REPLACE_MANY = '[TimeEntry] REPLACE_MANY';
 
     LoadAll(payload: IActionWithHTTPData): IActionWithPayload {
         return { type: TimeEntryActions.LOAD_ALL, payload };
@@ -68,5 +69,9 @@ export class TimeEntryActions {
 
     RemoveSuccess(payload: ITimeEntry): IActionWithPayload {
         return { type: TimeEntryActions.REMOVE_SUCCESS, payload };
+    }
+
+    ReplaceMany(payload: ITimeEntry[]): IActionWithPayload {
+        return { type: TimeEntryActions.REPLACE_MANY, payload };
     }
 }

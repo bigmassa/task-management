@@ -37,7 +37,8 @@ export class TimeEntryEffects extends APIBaseEffects {
         'wip.timeentry',
         `${this.prefix} LOAD_ONE`,
         `${this.prefix} LOAD_ONE`,
-        `${this.prefix} REMOVE_SUCCESS`
+        `${this.prefix} REMOVE_SUCCESS`,
+        `${this.prefix} REPLACE_MANY`
     );
 
 }

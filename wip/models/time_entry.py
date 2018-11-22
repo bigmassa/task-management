@@ -1,11 +1,28 @@
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models, transaction
-from django.db.models.signals import post_save, post_delete, pre_save
+from django.db.models.manager import BaseManager
+from django.db.models.signals import post_delete, post_save, pre_save
 from django.dispatch import receiver
 from django.utils import timezone
 
+from wip.signals import post_bulk_update, pre_bulk_update
 from wip.utils import duration_to_decimal_hrs
+
+
+class TimeEntryQueryset(models.QuerySet):
+    def update(self, **kwargs):
+        pre_bulk_update.send(sender=self.model, queryset=self, update_kwargs=kwargs, using=self.db)
+        updated_pks = list(self.values_list('pk', flat=True))
+        res = super().update(**kwargs)
+        post_bulk_update.send(sender=self.model, updated_pks=updated_pks, update_kwargs=kwargs, using=self.db)
+        return res
+
+
+class TimeEntryManager(BaseManager.from_queryset(TimeEntryQueryset)):
+    """ Custom manager from queryset """
+
+    pass
 
 
 class TimeEntry(models.Model):
@@ -35,6 +52,8 @@ class TimeEntry(models.Model):
         blank=True,
         editable=False
     )
+
+    objects = TimeEntryManager()
 
     class Meta:
         permissions = (

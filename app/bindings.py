@@ -7,6 +7,7 @@ from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
 
 
+BATCH_UPDATE = 'batch_update'
 CREATE = 'create'
 UPDATE = 'update'
 DELETE = 'delete'
@@ -70,8 +71,16 @@ class BaseModelBinding(metaclass=BindingMetaclass):
         async_to_sync(channel_layer.group_send)(cls.group_name, payload)
 
     @classmethod
+    def process_batch_message(cls, instances, action):
+        """ Prepare and send the msg payload to the channel layer """
+
+        payload = cls.prepare_batch_payload(instances, action)
+        channel_layer = get_channel_layer()
+        async_to_sync(channel_layer.group_send)(cls.group_name, payload)
+
+    @classmethod
     def prepare_payload(cls, instance, action):
-        """ Prepare data payload """
+        """ Prepare data payload for a single object """
 
         return {
             'type': 'data.binding',
@@ -79,4 +88,16 @@ class BaseModelBinding(metaclass=BindingMetaclass):
             'pk': instance.pk,
             'model': cls._get_model_label(),
             'data': cls.serializer(instance=instance).data
+        }
+
+    @classmethod
+    def prepare_batch_payload(cls, instances, action):
+        """ Prepare data payload for many onjects """
+
+        return {
+            'type': 'data.binding',
+            'action': action,
+            'pks': [instance.pk for instance in instances],
+            'model': cls._get_model_label(),
+            'data': cls.serializer(instance=instances, many=True).data
         }

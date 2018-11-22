@@ -6893,6 +6893,9 @@ var TimeEntryActions = /** @class */ (function () {
     TimeEntryActions.prototype.RemoveSuccess = function (payload) {
         return { type: TimeEntryActions_1.REMOVE_SUCCESS, payload: payload };
     };
+    TimeEntryActions.prototype.ReplaceMany = function (payload) {
+        return { type: TimeEntryActions_1.REPLACE_MANY, payload: payload };
+    };
     var TimeEntryActions_1;
     TimeEntryActions.LOAD_ALL = '[TimeEntry] LOAD_ALL';
     TimeEntryActions.LOAD_ALL_SUCCESS = '[TimeEntry] LOAD_ALL_SUCCESS';
@@ -6906,6 +6909,7 @@ var TimeEntryActions = /** @class */ (function () {
     TimeEntryActions.PATCH_SUCCESS = '[TimeEntry] PATCH_SUCCESS';
     TimeEntryActions.REMOVE = '[TimeEntry] REMOVE';
     TimeEntryActions.REMOVE_SUCCESS = '[TimeEntry] REMOVE_SUCCESS';
+    TimeEntryActions.REPLACE_MANY = '[TimeEntry] REPLACE_MANY';
     TimeEntryActions = TimeEntryActions_1 = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -7067,17 +7071,19 @@ var APIBaseEffects = /** @class */ (function () {
         this._remove$ = function (actionOfType, successOfType) { return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(actionOfType), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["mergeMap"])(function (obj) {
             return _this.service$.remove(_this.apiUrl, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return ({ type: successOfType, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
         })); };
-        this._socket$ = function (model, createOfType, updateOfType, removeOfType, payload) {
-            if (payload === void 0) { payload = null; }
+        this._socket$ = function (model, createAction, updateAction, removeAction, batchUpdateAction) {
+            if (batchUpdateAction === void 0) { batchUpdateAction = null; }
             return _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(_actions__WEBPACK_IMPORTED_MODULE_3__["SocketActions"].PROCESS_MESSAGE), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["filter"])(function (res) { return res.model === model; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) {
                 var data = res.data;
                 switch (res.action) {
                     case 'create':
-                        return ({ type: createOfType, payload: payload || data.id });
+                        return ({ type: createAction, payload: data.id });
                     case 'update':
-                        return ({ type: updateOfType, payload: payload || data.id });
+                        return ({ type: updateAction, payload: data.id });
                     case 'delete':
-                        return ({ type: removeOfType, payload: payload || data });
+                        return ({ type: removeAction, payload: data });
+                    case 'batch_update':
+                        return ({ type: batchUpdateAction, payload: data });
                     default:
                         return ({ type: 'NO_ACTION' });
                 }
@@ -9320,7 +9326,7 @@ var TimeEntryEffects = /** @class */ (function (_super) {
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
-        _this.socket$ = _this._socket$('wip.timeentry', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.timeentry', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS", _this.prefix + " REPLACE_MANY");
         return _this;
     }
     __decorate([
@@ -11069,7 +11075,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var getEventsForUser = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], _task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollection"], function (entries, tasks) {
-    console.log('getEventsForUser');
     var objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, ['user', id]);
     return lodash__WEBPACK_IMPORTED_MODULE_0__["map"](objs, function (obj) {
         var _task = lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', obj.task]);
@@ -11095,7 +11100,6 @@ var getTasksForUser = function (id, searchTerms) {
     if (id === void 0) { id = null; }
     if (searchTerms === void 0) { searchTerms = []; }
     return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTasksForTimeEntry, _state__WEBPACK_IMPORTED_MODULE_3__["getTaskAssigneeState"], function (tasks, assignees) {
-        console.log('getTasksForUser');
         var objs = tasks;
         // apply filters (either search all or only show tasks im assigned to)
         if (searchTerms.length > 0) {
@@ -11134,14 +11138,12 @@ var getTasksForUser = function (id, searchTerms) {
     });
 };
 var getIsDaySignedOffRequired = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) {
-    console.log('getIsDaySignedOffRequired');
     var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id
         && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD')
         && e.signed_off === false; });
     return objects.length > 0;
 }); };
 var getDailyTimeTotalForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) {
-    console.log('getDailyTimeTotalForUser');
     var forDay = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD'); });
     var durations = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](forDay, 'duration');
     var totalDurations = durations.slice(1).reduce(function (prev, cur) { return moment__WEBPACK_IMPORTED_MODULE_1__["duration"](cur).add(prev); }, moment__WEBPACK_IMPORTED_MODULE_1__["duration"](durations[0]));
