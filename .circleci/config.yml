@@ -5,12 +5,13 @@ jobs:
     docker:
       - image: accent/python-mssql:3.6
         environment:
+          DEV_MODE: on
           ALLOWED_HOSTS: "*"
           RDS_HOSTNAME: 127.0.0.1
           RDS_PORT: 5432
-          RDS_DB_NAME: db
+          RDS_DB_NAME: postgres
           RDS_USERNAME: postgres
-          RDS_PASSWORD: password
+          RDS_PASSWORD: postgres
       - image: circleci/postgres:9.6
         environment:
           POSTGRES_USER: postgres

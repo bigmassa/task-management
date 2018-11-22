@@ -9,7 +9,7 @@ django-pyodbc-azure
 django-storages
 django-taggit
 django-taggit-serializer
-djangorestframework>=3.9
+djangorestframework
 markdown
 pillow
 psycopg2-binary

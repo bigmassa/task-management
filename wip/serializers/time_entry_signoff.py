@@ -4,16 +4,23 @@ from authentication.models import User
 from wip.models import TimeEntry
 
 
-def get_users():
-    choices = ()
-    for user in User.objects.all():
-        choices += ((user.id, str(user)),)
-    return choices
+class UserChoiceField(serializers.RelatedField):
+    queryset = User.objects.all()
+
+    def to_internal_value(self, data):
+        if data:
+            return self.queryset.get(pk=data)
+        return None
+
+    def to_representation(self, value):
+        if value:
+            return value.pk
+        return None
 
 
 class TimeEntrySignoffSerializer(serializers.Serializer):
     date = serializers.DateField()
-    user = serializers.ChoiceField(choices=get_users())
+    user = UserChoiceField()
 
     def create(self, validated_data):
         pass  # just stub out

@@ -20,6 +20,7 @@ DEBUG_TOOLBAR_CONFIG = {
 }
 
 INSTALLED_APPS += [
+    'migrator',
     'debug_toolbar',
 ]
 
