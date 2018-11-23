@@ -2,10 +2,8 @@ import * as _ from 'lodash';
 import * as moment from 'moment';
 import { createSelector } from '@ngrx/store';
 import { getTaskAssigneeState, getTimeEntryState } from './../state';
-import { getTaskCollection } from './task';
+import { getTaskCollection, getTaskCollectionOpen } from './task';
 import { valueOr } from '../../utils/generic';
-
-
 
 export const getEventsForUser = (id: number) => createSelector(
     getTimeEntryState,
@@ -34,14 +32,15 @@ export const getEventsForUser = (id: number) => createSelector(
 );
 
 export const getTasksForTimeEntry = createSelector(
-    getTaskCollection,
-    (tasks) => _.filter(tasks, t => t.closed == false && t._job._status.allow_new_timesheet_entries == true)
+    getTaskCollectionOpen,
+    (tasks) => _.filter(tasks, t => t._job._status.allow_new_timesheet_entries == true)
 )
 
 export const getTasksForUser = (id: number = null, searchTerms: string[] = []) => createSelector(
     getTasksForTimeEntry,
     getTaskAssigneeState,
     (tasks, assignees) => {
+
         let objs = tasks;
         
         // apply filters (either search all or only show tasks im assigned to)
@@ -89,11 +88,12 @@ export const getTasksForUser = (id: number = null, searchTerms: string[] = []) =
 export const getIsDaySignedOffRequired = (id: number, date: Date) => createSelector(
     getTimeEntryState,
     (entries) => {
+        const dt = moment(date).format('YYYY-MM-DD');
         const objects = _.filter(
             entries,
             e => e.user === id
-            && moment(e.started_at).format('YYYY-MM-DD') === moment(date).format('YYYY-MM-DD')
             && e.signed_off === false
+            && _.startsWith(e.started_at, dt)
         );
         return objects.length > 0;
     }
@@ -102,9 +102,11 @@ export const getIsDaySignedOffRequired = (id: number, date: Date) => createSelec
 export const getDailyTimeTotalForUser = (id: number, date: Date) => createSelector(
     getTimeEntryState,
     (entries) => {
+        const dt = moment(date).format('YYYY-MM-DD');
         const forDay = _.filter(
             entries,
-            e => e.user === id && moment(e.started_at).format('YYYY-MM-DD') === moment(date).format('YYYY-MM-DD')
+            e => e.user === id
+            && _.startsWith(e.started_at, dt)
         );
         const durations: string[] = _.map(forDay, 'duration');
         const totalDurations = durations.slice(1).reduce((prev, cur) => moment.duration(cur).add(prev), moment.duration(durations[0]));

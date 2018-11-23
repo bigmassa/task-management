@@ -2900,7 +2900,7 @@ var TimesheetSignoffComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchData()\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content d-flex flex-fill flex-flow-column\">\n    <div class=\"row flex-fill\">\n        <div class=\"col-3 d-flex flex-column flex-fill\">\n            <search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchData()\"></search>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task\" [style.background-color]=\"task._job.colour\" [style.color]=\"task._job._text_colour\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <span class=\"external-event d-block\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onEventRender)=\"onEventRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div class=\"row\" style=\"flex: 0 0 50px;\">    \n        <div class=\"col-9 offset-3\">\n            <table class=\"mb-0\">\n                <tr>\n                    <td class=\"py-1\" [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></td>\n                    <td class=\"text-center px-0 py-1\" *ngFor=\"let date of viewDates\">\n                        <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchEvents(); refetchTasks();\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content d-flex flex-fill flex-flow-column\">\n    <div class=\"row flex-fill\">\n        <div class=\"col-3 d-flex flex-column flex-fill\">\n            <search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchTasks()\"></search>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task\" [style.background-color]=\"task._job.colour\" [style.color]=\"task._job._text_colour\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <span class=\"external-event d-block\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onEventRender)=\"onEventRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div class=\"row\" style=\"flex: 0 0 50px;\">    \n        <div class=\"col-9 offset-3\">\n            <table class=\"mb-0\">\n                <tr>\n                    <td class=\"py-1\" [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></td>\n                    <td class=\"text-center px-0 py-1\" *ngFor=\"let date of viewDates\">\n                        <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2952,9 +2952,11 @@ var TimesheetComponent = /** @class */ (function () {
     }
     TimesheetComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_user__WEBPACK_IMPORTED_MODULE_8__["getActiveUsers"]));
         this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_7__["getMeState"])).subscribe(function (me) {
             _this.selectedUserId = me.id;
-            _this.refetchData();
+            _this.refetchEvents();
+            _this.refetchTasks();
         });
         this.options = {
             defaultView: 'agendaWeek',
@@ -2978,9 +2980,10 @@ var TimesheetComponent = /** @class */ (function () {
             eventOverlap: false
         };
     };
-    TimesheetComponent.prototype.refetchData = function () {
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_user__WEBPACK_IMPORTED_MODULE_8__["getActiveUsers"]));
+    TimesheetComponent.prototype.refetchTasks = function () {
         this.tasks$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_6__["getTasksForUser"])(this.selectedUserId, this.searchTerms)));
+    };
+    TimesheetComponent.prototype.refetchEvents = function () {
         this.events$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_6__["getEventsForUser"])(this.selectedUserId)));
     };
     TimesheetComponent.prototype.changeTask = function (task) {
@@ -11251,13 +11254,14 @@ var getTagById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MOD
 /*!*****************************************!*\
   !*** ./src/app/state/selectors/task.ts ***!
   \*****************************************/
-/*! exports provided: getTaskAssigneesForTask, getTaskCollection, getTaskCollectionById, getTaskCollectionForJob, getTaskFilesForTask, getTaskNotes, getTaskNotesForTask, getTaskTagsForTask, getTaskTimingsById */
+/*! exports provided: getTaskAssigneesForTask, getTaskCollection, getTaskCollectionOpen, getTaskCollectionById, getTaskCollectionForJob, getTaskFilesForTask, getTaskNotes, getTaskNotesForTask, getTaskTagsForTask, getTaskTimingsById */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskAssigneesForTask", function() { return getTaskAssigneesForTask; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollection", function() { return getTaskCollection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionOpen", function() { return getTaskCollectionOpen; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionById", function() { return getTaskCollectionById; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionForJob", function() { return getTaskCollectionForJob; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskFilesForTask", function() { return getTaskFilesForTask; });
@@ -11289,6 +11293,7 @@ var getTaskCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createS
     });
     return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['order'], ['asc']);
 });
+var getTaskCollectionOpen = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, function (t) { return t.closed == false; }); });
 var getTaskCollectionById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', id]); }); };
 var getTaskCollectionForJob = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, ['job', id]); }); };
 var getTaskFilesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskFileState"], function (files) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](files, ['task', id]); }); };
@@ -11304,12 +11309,11 @@ var getTaskTimingsById = function (id) { return Object(_ngrx_store__WEBPACK_IMPO
 /*!**********************************************!*\
   !*** ./src/app/state/selectors/taskboard.ts ***!
   \**********************************************/
-/*! exports provided: getTasksForTaskBoard, getTasksForTaskBoardForUser */
+/*! exports provided: getTasksForTaskBoardForUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTasksForTaskBoard", function() { return getTasksForTaskBoard; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTasksForTaskBoardForUser", function() { return getTasksForTaskBoardForUser; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
@@ -11320,8 +11324,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var getTasksForTaskBoard = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_task__WEBPACK_IMPORTED_MODULE_3__["getTaskCollection"], function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, function (t) { return t.closed == false; }); });
-var getTasksForTaskBoardForUser = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getTasksForTaskBoard, _state__WEBPACK_IMPORTED_MODULE_2__["getTaskAssigneeState"], _state__WEBPACK_IMPORTED_MODULE_2__["getMeState"], function (tasks, assignees, me) {
+var getTasksForTaskBoardForUser = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_task__WEBPACK_IMPORTED_MODULE_3__["getTaskCollectionOpen"], _state__WEBPACK_IMPORTED_MODULE_2__["getTaskAssigneeState"], _state__WEBPACK_IMPORTED_MODULE_2__["getMeState"], function (tasks, assignees, me) {
     var objs = tasks;
     // only tasks assigned to user
     var ids = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['user', me.id]), 'task');
@@ -11407,7 +11410,7 @@ var getEventsForUser = function (id) { return Object(_ngrx_store__WEBPACK_IMPORT
         };
     });
 }); };
-var getTasksForTimeEntry = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollection"], function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, function (t) { return t.closed == false && t._job._status.allow_new_timesheet_entries == true; }); });
+var getTasksForTimeEntry = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_task__WEBPACK_IMPORTED_MODULE_4__["getTaskCollectionOpen"], function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, function (t) { return t._job._status.allow_new_timesheet_entries == true; }); });
 var getTasksForUser = function (id, searchTerms) {
     if (id === void 0) { id = null; }
     if (searchTerms === void 0) { searchTerms = []; }
@@ -11450,13 +11453,16 @@ var getTasksForUser = function (id, searchTerms) {
     });
 };
 var getIsDaySignedOffRequired = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) {
+    var dt = moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD');
     var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id
-        && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD')
-        && e.signed_off === false; });
+        && e.signed_off === false
+        && lodash__WEBPACK_IMPORTED_MODULE_0__["startsWith"](e.started_at, dt); });
     return objects.length > 0;
 }); };
 var getDailyTimeTotalForUser = function (id, date) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryState"], function (entries) {
-    var forDay = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id && moment__WEBPACK_IMPORTED_MODULE_1__(e.started_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD'); });
+    var dt = moment__WEBPACK_IMPORTED_MODULE_1__(date).format('YYYY-MM-DD');
+    var forDay = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](entries, function (e) { return e.user === id
+        && lodash__WEBPACK_IMPORTED_MODULE_0__["startsWith"](e.started_at, dt); });
     var durations = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](forDay, 'duration');
     var totalDurations = durations.slice(1).reduce(function (prev, cur) { return moment__WEBPACK_IMPORTED_MODULE_1__["duration"](cur).add(prev); }, moment__WEBPACK_IMPORTED_MODULE_1__["duration"](durations[0]));
     return moment__WEBPACK_IMPORTED_MODULE_1__["utc"](totalDurations.asMilliseconds()).format("HH:mm");

@@ -48,9 +48,11 @@ export class TimesheetComponent implements OnInit {
     ) { }
     
     ngOnInit() {
+        this.users$ = this.store.pipe(select(getActiveUsers));
         this.store.pipe(select(getMeState)).subscribe(me => {
             this.selectedUserId = me.id;
-            this.refetchData();
+            this.refetchEvents();
+            this.refetchTasks();
         });
 
         this.options = {
@@ -76,9 +78,11 @@ export class TimesheetComponent implements OnInit {
         };
     }
 
-    refetchData() {
-        this.users$ = this.store.pipe(select(getActiveUsers));
-        this.tasks$ = this.store.pipe(select(getTasksForUser(this.selectedUserId, this.searchTerms)))
+    refetchTasks() {
+        this.tasks$ = this.store.pipe(select(getTasksForUser(this.selectedUserId, this.searchTerms)));
+    }
+
+    refetchEvents() {
         this.events$ = this.store.pipe(select(getEventsForUser(this.selectedUserId)));
     }
 

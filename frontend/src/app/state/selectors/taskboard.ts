@@ -1,15 +1,10 @@
 import * as _ from 'lodash';
 import { createSelector } from '@ngrx/store';
 import { getMeState, getTaskAssigneeState } from '../state';
-import { getTaskCollection } from './task';
-
-export const getTasksForTaskBoard = createSelector(
-    getTaskCollection,
-    (tasks) => _.filter(tasks, t => t.closed == false)
-)
+import { getTaskCollectionOpen } from './task';
 
 export const getTasksForTaskBoardForUser = createSelector(
-    getTasksForTaskBoard,
+    getTaskCollectionOpen,
     getTaskAssigneeState,
     getMeState,
     (tasks, assignees, me) => {

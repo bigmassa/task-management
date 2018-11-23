@@ -31,6 +31,11 @@ export const getTaskCollection = createSelector(
     }
 );
 
+export const getTaskCollectionOpen = createSelector(
+    getTaskCollection,
+    (tasks) => _.filter(tasks, t => t.closed == false)
+)
+
 export const getTaskCollectionById = (id) => createSelector(
     getTaskCollection,
     (tasks) => _.find(tasks, ['id', id])
