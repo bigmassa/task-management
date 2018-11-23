@@ -12,14 +12,11 @@ export interface ITask {
     target_date?: string;
     closed?: boolean;
     not_chargeable?: boolean;
-    time_spent_hours?: string;
-    allocated_hours?: string;
     is_overdue?: boolean;
     order: number;
     tags: string[];
     _job?: IJob;
     _status?: ITaskStatus;
-    _is_over_allocated_hours?: boolean;
 }
 
 export type State = ITask[];

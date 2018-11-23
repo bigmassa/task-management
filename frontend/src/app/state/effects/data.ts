@@ -23,6 +23,7 @@ export class DataEffects {
                 }
                 return [
                     new actions.TaskActions().LoadAll(),
+                    new actions.TaskTimingActions().LoadAll(),
                     new actions.TaskNoteActions().LoadAll(),
                     new actions.JobActions().LoadAll(),
                     new actions.JobNoteActions().LoadAll(),

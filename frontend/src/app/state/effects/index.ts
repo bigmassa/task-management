@@ -23,6 +23,7 @@ import { TaskFileEffects } from './taskfile';
 import { TaskNoteEffects } from './tasknote';
 import { TaskStatusEffects } from './taskstatus';
 import { TaskTagEffects } from './tasktag';
+import { TaskTimingEffects } from './tasktiming';
 import { TimeEntryEffects } from './timeentry';
 import { TimeEntrySignoffEffects } from './timeentrysignoff';
 import { UserEffects } from './user';
@@ -53,6 +54,7 @@ export const effects = [
     TaskNoteEffects,
     TaskStatusEffects,
     TaskTagEffects,
+    TaskTimingEffects,
     TimeEntryEffects,
     TimeEntrySignoffEffects,
     UserEffects

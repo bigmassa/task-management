@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import { getTaskAssigneeState, getTaskTagState } from './../state';
+import { getTaskAssigneeState, getTaskTagState, getTaskTimingState } from './../state';
 import { getTaskFileState, getTaskNoteState, getTaskState } from '../state';
 
 import { createSelector } from '@ngrx/store';
@@ -24,8 +24,7 @@ export const getTaskCollection = createSelector(
         const objects = _.map(tasks, (task) => {
             return _.assign({}, task, {
                 _job: _.find(jobs, ['id', task.job]),
-                _status: _.find(statuses, ['id', task.status]),
-                _is_over_allocated_hours: +task.time_spent_hours > +task.allocated_hours
+                _status: _.find(statuses, ['id', task.status])
             });
         });
         return _.orderBy(objects, ['order'], ['asc']);
@@ -60,4 +59,9 @@ export const getTaskNotesForTask = (id) => createSelector(
 export const getTaskTagsForTask = (id) => createSelector(
     getTaskTagState,
     (tags) => _.filter(tags, ['object_id', id])
+);
+
+export const getTaskTimingsById = (id) => createSelector(
+    getTaskTimingState,
+    (tasks) => _.find(tasks, ['task', id])
 );

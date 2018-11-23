@@ -22,7 +22,8 @@ import {
     getTaskCollectionById,
     getTaskFilesForTask,
     getTaskNotesForTask,
-    getTaskTagsForTask
+    getTaskTagsForTask,
+    getTaskTimingsById
     } from './../state/selectors/task';
 import { getUserState } from './../state/state';
 import { ITag } from '../state/reducers/tag';
@@ -39,6 +40,7 @@ import { TaskNoteForm } from '../forms/task-note.form';
 import { TaskTagForm } from '../forms/task-tag.form';
 import { TaskTargetDateForm } from '../forms/task-target-date.form';
 import { TaskTitleForm } from '../forms/task-title.form';
+import { ITaskTiming } from '../state/reducers/tasktiming';
 
 @Component({
     selector: 'task-form, [task-form]',
@@ -62,6 +64,7 @@ export class TaskFormComponent implements OnChanges {
     taskFiles$: Observable<ITaskFile[]>;
     taskNotes$: Observable<ITaskNote[]>;
     taskTags$: Observable<ITaskTag[]>;
+    taskTiming$: Observable<ITaskTiming>;
     tags$: Observable<ITag[]>;
     taskNoteForms = {};
     descriptionForm: TaskDescriptionForm;
@@ -90,6 +93,7 @@ export class TaskFormComponent implements OnChanges {
             this.taskAssignees$ = this.store.pipe(select(getTaskAssigneesForTask(this.id)));
             this.taskNotes$ = this.store.pipe(select(getTaskNotesForTask(this.id)));
             this.taskTags$ = this.store.pipe(select(getTaskTagsForTask(this.id)));
+            this.taskTiming$ = this.store.pipe(select(getTaskTimingsById(this.id)));
             this.task$.pipe(
                 filter(d => _.isObject(d))
             ).subscribe(

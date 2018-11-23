@@ -23,6 +23,7 @@ import * as fromTaskFile from './reducers/taskfile';
 import * as fromTaskNote from './reducers/tasknote';
 import * as fromTaskStatus from './reducers/taskstatus';
 import * as fromTaskTag from './reducers/tasktag';
+import * as fromTaskTiming from './reducers/tasktiming';
 import * as fromTimeEntry from './reducers/timeentry';
 import * as fromUser from './reducers/user';
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
@@ -54,6 +55,7 @@ export interface AppState {
     task_notes: fromTaskNote.State;
     task_statuses: fromTaskStatus.State;
     task_tags: fromTaskTag.State;
+    task_timings: fromTaskTiming.State;
     time_entries: fromTimeEntry.State;
     users: fromUser.State;
 }
@@ -84,6 +86,7 @@ export const reducers: ActionReducerMap<AppState> = {
     task_notes: fromTaskNote.reducer,
     task_statuses: fromTaskStatus.reducer,
     task_tags: fromTaskTag.reducer,
+    task_timings: fromTaskTiming.reducer,
     time_entries: fromTimeEntry.reducer,
     users: fromUser.reducer
 };
@@ -113,5 +116,6 @@ export const getTaskFileState = createFeatureSelector<fromTaskFile.State>('task_
 export const getTaskNoteState = createFeatureSelector<fromTaskNote.State>('task_notes');
 export const getTaskStatusState = createFeatureSelector<fromTaskStatus.State>('task_statuses');
 export const getTaskTagState = createFeatureSelector<fromTaskTag.State>('task_tags');
+export const getTaskTimingState = createFeatureSelector<fromTaskTiming.State>('task_timings');
 export const getTimeEntryState = createFeatureSelector<fromTimeEntry.State>('time_entries');
 export const getUserState = createFeatureSelector<fromUser.State>('users');
