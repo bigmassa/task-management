@@ -52,9 +52,9 @@ class JobViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             # sort the tasks
             for index, pk in enumerate(serializer.data['tasks']):
-                obj = Task.objects.get(pk=pk)
-                obj.order = index + 1
-                obj.save()
+                # use update so we dont push them all over the sockets
+                obj = Task.objects.filter(pk=pk)
+                obj.update(order=index + 1)
 
             # return the tasks as the response using their correct serializer
             tasks = Task.objects.filter(pk__in=serializer.data['tasks'])
