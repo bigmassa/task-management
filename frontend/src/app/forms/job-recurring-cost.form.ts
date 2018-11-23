@@ -52,10 +52,9 @@ export class JobRecurringCostForm extends BaseForm {
         );
     }
 
-    prepareValueForDispatch() {
-        // the api doesnt like empty strings for a date field
-        if (this.controls.last_invoiced_date.value === '') {
-            this.controls.last_invoiced_date.setValue(null);
-        }
+    getValuePayload() {
+        return _.assign({}, this.value, {
+            last_invoiced_date: this.value.last_invoiced_date instanceof Date ? this.value.last_invoiced_date.toISOString().slice(0, 10) : this.value.last_invoiced_date
+        })
     }
 }
