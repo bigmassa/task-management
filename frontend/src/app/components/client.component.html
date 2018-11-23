@@ -84,7 +84,7 @@
                 </thead>
                 <ng-container *ngIf="jobs$ | async | closedJobs | jobSearch:closedSearchTerms as jobs">
                 <tbody *ngIf="jobs.length > 0; else emptyJobs">
-                    <tr [routerLink]="['/clients', job.client, 'jobs', job.id]" *ngFor="let job of jobs">
+                    <tr class="pointer" [routerLink]="['/clients', job.client, 'jobs', job.id]" *ngFor="let job of jobs">
                         <td class="keep-min-width">{{ job.id }}</td>
                         <td>{{ job.title }}</td>
                         <td class="keep-min-width">{{ job | get:'_status.title' }}</td>
@@ -111,7 +111,7 @@
                 </thead>
                 <ng-container *ngIf="contacts$ | async as contacts">
                 <tbody *ngIf="contacts.length > 0; else emptyContacts">
-                    <tr [routerLink]="['/clients', client.id, 'contacts', contact.id]" *ngFor="let contact of contacts">
+                    <tr class="pointer" [routerLink]="['/clients', client.id, 'contacts', contact.id]" *ngFor="let contact of contacts">
                         <td>{{ contact.first_name }} {{ contact.last_name }}</td>
                         <td>{{ contact | get:'email_address' }}</td>
                         <td>{{ contact | get:'phone_number' }}</td>
