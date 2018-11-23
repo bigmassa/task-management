@@ -16,7 +16,6 @@ import { ClosedJobsPipe } from './pipes/closed-jobs.pipe';
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { effects } from './state/effects';
 import { EffectsModule } from '@ngrx/effects';
-import { FlatpickrModule } from 'angularx-flatpickr';
 import { FormErrorDirective } from './directives/formerror.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GetPipe } from './pipes/get.pipe';
@@ -44,8 +43,8 @@ import { TasksByStatusPipe } from './pipes/tasks-by-status.pipe';
 import { TimeEntryFormComponent } from './components/time-entry-form.component';
 import { TimesheetComponent } from './components/time-sheet.component';
 import { TimesheetSignoffComponent } from './components/time-sheet-signoff.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material';
 
 @NgModule({
     declarations: [
@@ -84,22 +83,26 @@ import { TimesheetSignoffComponent } from './components/time-sheet-signoff.compo
     ],
     imports: [
         AppRoutingModule,
+        BrowserAnimationsModule,
         BrowserModule,
         EffectsModule.forRoot(effects),
         DropzoneModule,
-        FlatpickrModule.forRoot(),
         FormsModule,
         HttpClientModule,
         HttpClientXsrfModule.withOptions({
             cookieName: 'csrftoken',
             headerName: 'X-CSRFTOKEN'
         }),
+        MatDatepickerModule,
+        MatNativeDateModule,
         NgxDnDModule,
         ReactiveFormsModule,
         RouterModule,
         StoreModule.forRoot(reducers)
     ],
-    providers: [],
+    providers: [
+        { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

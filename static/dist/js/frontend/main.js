@@ -392,34 +392,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-dropzone-wrapper */ "./node_modules/ngx-dropzone-wrapper/dist/ngx-dropzone-wrapper.es5.js");
 /* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
 /* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var angularx_flatpickr__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! angularx-flatpickr */ "./node_modules/angularx-flatpickr/fesm5/angularx-flatpickr.js");
-/* harmony import */ var _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./directives/formerror.directive */ "./src/app/directives/formerror.directive.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
-/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
-/* harmony import */ var _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/job-recurring-cost-form.component */ "./src/app/components/job-recurring-cost-form.component.ts");
-/* harmony import */ var _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/job-relationship-form.component */ "./src/app/components/job-relationship-form.component.ts");
-/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
-/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
-/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
-/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _components_tabs_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/tabs.component */ "./src/app/components/tabs.component.ts");
-/* harmony import */ var _components_tag_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/tag.component */ "./src/app/components/tag.component.ts");
-/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
-/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
-/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
-/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
-/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
-/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
-/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
+/* harmony import */ var _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./directives/formerror.directive */ "./src/app/directives/formerror.directive.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
+/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
+/* harmony import */ var _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/job-recurring-cost-form.component */ "./src/app/components/job-recurring-cost-form.component.ts");
+/* harmony import */ var _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/job-relationship-form.component */ "./src/app/components/job-relationship-form.component.ts");
+/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
+/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
+/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
+/* harmony import */ var _components_report_list_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/report-list.component */ "./src/app/components/report-list.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _components_tabs_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/tabs.component */ "./src/app/components/tabs.component.ts");
+/* harmony import */ var _components_tag_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/tag.component */ "./src/app/components/tag.component.ts");
+/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
+/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
+/* harmony import */ var _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/task-create-form.component */ "./src/app/components/task-create-form.component.ts");
+/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
+/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
+/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -475,6 +476,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule(store) {
         this.store = store;
@@ -482,7 +484,7 @@ var AppModule = /** @class */ (function () {
         store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_0__["SocketActions"].START });
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_28__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_27__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_1__["AppComponent"],
                 _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_4__["AutoResizeDirective"],
@@ -495,49 +497,53 @@ var AppModule = /** @class */ (function () {
                 _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_11__["ClientDetailFormComponent"],
                 _components_client_list_component__WEBPACK_IMPORTED_MODULE_12__["ClientListComponent"],
                 _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_13__["ClientSearchPipe"],
-                _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_19__["FormErrorDirective"],
-                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_21__["GetPipe"],
-                _components_job_component__WEBPACK_IMPORTED_MODULE_23__["JobComponent"],
-                _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_24__["JobDetailFormComponent"],
-                _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_25__["JobRecurringCostFormComponent"],
-                _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_26__["JobRelationshipFormComponent"],
-                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_27__["JobSearchPipe"],
-                _components_not_found_component__WEBPACK_IMPORTED_MODULE_30__["NotFoundComponent"],
-                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_31__["OpenJobsPipe"],
-                _components_report_list_component__WEBPACK_IMPORTED_MODULE_32__["ReportListComponent"],
-                _components_search_component__WEBPACK_IMPORTED_MODULE_34__["SearchComponent"],
-                _components_tabs_component__WEBPACK_IMPORTED_MODULE_36__["TabsComponent"],
-                _components_tag_component__WEBPACK_IMPORTED_MODULE_37__["TagComponent"],
-                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_38__["TaskboardComponent"],
-                _components_task_card_component__WEBPACK_IMPORTED_MODULE_39__["TaskCardComponent"],
-                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_40__["TaskCreateFormComponent"],
-                _components_task_form_component__WEBPACK_IMPORTED_MODULE_41__["TaskFormComponent"],
-                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_42__["TasksByStatusPipe"],
-                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_43__["TimeEntryFormComponent"],
-                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_44__["TimesheetComponent"],
-                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_45__["TimesheetSignoffComponent"]
+                _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_18__["FormErrorDirective"],
+                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_20__["GetPipe"],
+                _components_job_component__WEBPACK_IMPORTED_MODULE_22__["JobComponent"],
+                _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_23__["JobDetailFormComponent"],
+                _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_24__["JobRecurringCostFormComponent"],
+                _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_25__["JobRelationshipFormComponent"],
+                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_26__["JobSearchPipe"],
+                _components_not_found_component__WEBPACK_IMPORTED_MODULE_29__["NotFoundComponent"],
+                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_30__["OpenJobsPipe"],
+                _components_report_list_component__WEBPACK_IMPORTED_MODULE_31__["ReportListComponent"],
+                _components_search_component__WEBPACK_IMPORTED_MODULE_33__["SearchComponent"],
+                _components_tabs_component__WEBPACK_IMPORTED_MODULE_35__["TabsComponent"],
+                _components_tag_component__WEBPACK_IMPORTED_MODULE_36__["TagComponent"],
+                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_37__["TaskboardComponent"],
+                _components_task_card_component__WEBPACK_IMPORTED_MODULE_38__["TaskCardComponent"],
+                _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_39__["TaskCreateFormComponent"],
+                _components_task_form_component__WEBPACK_IMPORTED_MODULE_40__["TaskFormComponent"],
+                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_41__["TasksByStatusPipe"],
+                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_42__["TimeEntryFormComponent"],
+                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_43__["TimesheetComponent"],
+                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_44__["TimesheetSignoffComponent"]
             ],
             imports: [
                 _app_routing__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_45__["BrowserAnimationsModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["BrowserModule"],
                 _ngrx_effects__WEBPACK_IMPORTED_MODULE_17__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_16__["effects"]),
                 ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_15__["DropzoneModule"],
-                angularx_flatpickr__WEBPACK_IMPORTED_MODULE_18__["FlatpickrModule"].forRoot(),
-                _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormsModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_22__["HttpClientModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_22__["HttpClientXsrfModule"].withOptions({
+                _angular_forms__WEBPACK_IMPORTED_MODULE_19__["FormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_21__["HttpClientModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_21__["HttpClientXsrfModule"].withOptions({
                     cookieName: 'csrftoken',
                     headerName: 'X-CSRFTOKEN'
                 }),
-                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_29__["NgxDnDModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_20__["ReactiveFormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_33__["RouterModule"],
-                _ngrx_store__WEBPACK_IMPORTED_MODULE_35__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_3__["reducers"])
+                _angular_material__WEBPACK_IMPORTED_MODULE_46__["MatDatepickerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_46__["MatNativeDateModule"],
+                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_28__["NgxDnDModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_19__["ReactiveFormsModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_32__["RouterModule"],
+                _ngrx_store__WEBPACK_IMPORTED_MODULE_34__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_3__["reducers"])
             ],
-            providers: [],
+            providers: [
+                { provide: _angular_material__WEBPACK_IMPORTED_MODULE_46__["MAT_DATE_LOCALE"], useValue: 'en-GB' }
+            ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__["AppComponent"]]
         }),
-        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_35__["Store"]])
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_34__["Store"]])
     ], AppModule);
     return AppModule;
 }());
@@ -1513,7 +1519,7 @@ var ClientComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"form\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <ng-container *ngIf=\"job; else newJob;\">\n                <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n                <div class=\"h2\">{{ client?.name }} / {{ job.title }}</div>\n                <div class=\"page-header-actions\">\n                    <a class=\"button button-white\" (click)=\"form.save($event)\">Save</a>\n                    <a [routerLink]=\"['/clients', params.client_id, 'jobs', params.id]\" class=\"button button-white button-clear\">Cancel</a>\n                </div>\n            </ng-container>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li class=\"active\">Detail</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n        <label>Title</label>\n        <input type=\"text\" [formControl]=\"form.controls.title\" />\n        <p class=\"c-red\" *formError=\"form.controls.title\">Please enter a title</p>\n\n        <label>Description</label>\n        <textarea autoResize [formControl]=\"form.controls.description\"></textarea>\n\n        <label>Colour</label>\n        <input type=\"text\" [formControl]=\"form.controls.colour\" />\n        <p class=\"c-red\" *formError=\"form.controls.colour\">Please enter a hex colour (ie #fff or #ffffff)</p>\n\n        <label>Type</label>\n        <select [formControl]=\"form.controls.type\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of jobTypes$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.type\">Please choose a type</p>\n\n        <label>Estimated Hours</label>\n        <input type=\"number\" [formControl]=\"form.controls.estimated_hours\" />\n        <p class=\"c-red\" *formError=\"form.controls.estimated_hours\">Please enter a valid number</p>\n\n        <label>Status</label>\n        <select [formControl]=\"form.controls.status\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of jobStatuses$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.status\">Please choose a status</p>\n\n        <label>Billed To</label>\n        <input mwlFlatpickr type=\"text\" [formControl]=\"form.controls.billed_to\" />\n        <p class=\"c-red\" *formError=\"form.controls.billed_to\">Please enter a date</p>\n        \n    </div>\n</ng-container>\n\n<ng-template #newJob>\n    <span class=\"color-indicator\" [style.backgroundColor]=\"client?.colour\"></span>\n    <div class=\"h2\">{{ client?.name }} / New</div>\n    <div class=\"page-header-actions\">\n        <button class=\"button button-white\" type=\"submit\" (click)=\"form.save($event)\">Save</button>\n        <a [routerLink]=\"['/clients', params.client_id]\" class=\"button button-white button-clear\">Cancel</a>\n    </div>\n</ng-template>"
+module.exports = "<ng-container *ngIf=\"form\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <ng-container *ngIf=\"job; else newJob;\">\n                <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n                <div class=\"h2\">{{ client?.name }} / {{ job.title }}</div>\n                <div class=\"page-header-actions\">\n                    <a class=\"button button-white\" (click)=\"form.save($event)\">Save</a>\n                    <a [routerLink]=\"['/clients', params.client_id, 'jobs', params.id]\" class=\"button button-white button-clear\">Cancel</a>\n                </div>\n            </ng-container>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li class=\"active\">Detail</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n        <label>Title</label>\n        <input type=\"text\" [formControl]=\"form.controls.title\" />\n        <p class=\"c-red\" *formError=\"form.controls.title\">Please enter a title</p>\n\n        <label>Description</label>\n        <textarea autoResize [formControl]=\"form.controls.description\"></textarea>\n\n        <label>Colour</label>\n        <input type=\"text\" [formControl]=\"form.controls.colour\" />\n        <p class=\"c-red\" *formError=\"form.controls.colour\">Please enter a hex colour (ie #fff or #ffffff)</p>\n\n        <label>Type</label>\n        <select [formControl]=\"form.controls.type\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of jobTypes$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.type\">Please choose a type</p>\n\n        <label>Estimated Hours</label>\n        <input type=\"number\" [formControl]=\"form.controls.estimated_hours\" />\n        <p class=\"c-red\" *formError=\"form.controls.estimated_hours\">Please enter a valid number</p>\n\n        <label>Status</label>\n        <select [formControl]=\"form.controls.status\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of jobStatuses$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.status\">Please choose a status</p>\n\n        <label>Billed To</label>\n        <div class=\"input-group\">\n            <input [matDatepicker]=\"picker\" type=\"text\" [formControl]=\"form.controls.billed_to\">\n            <a class=\"input-group-addon pointer\" (click)=\"picker.open()\"><i class=\"icon-calendar\"></i></a>\n            <mat-datepicker #picker></mat-datepicker>\n        </div>\n        <p class=\"c-red\" *formError=\"form.controls.billed_to\">Please enter a date</p>\n        \n    </div>\n</ng-container>\n\n<ng-template #newJob>\n    <span class=\"color-indicator\" [style.backgroundColor]=\"client?.colour\"></span>\n    <div class=\"h2\">{{ client?.name }} / New</div>\n    <div class=\"page-header-actions\">\n        <button class=\"button button-white\" type=\"submit\" (click)=\"form.save($event)\">Save</button>\n        <a [routerLink]=\"['/clients', params.client_id]\" class=\"button button-white button-clear\">Cancel</a>\n    </div>\n</ng-template>"
 
 /***/ }),
 
@@ -2391,7 +2397,7 @@ var TaskCardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal {{ opened ? 'in': '' }}\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <input type=\"text\" [formControl]=\"form.controls.title\" class=\"mb-0-5\" placeholder=\"Title\">\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <textarea autoResize [formControl]=\"form.controls.description\" class=\"mb-0-5\" rows=\"2\"></textarea>\n                    </div>\n                    <button class=\"button\" (click)=\"form.save($event)\">Save</button>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ job$ | async | get:'_client.name' }}<br>{{ job$ | async | get:'title' }}</p>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <input mwlFlatpickr type=\"text\" [formControl]=\"form.controls.target_date\">\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"modal {{ opened ? 'in': '' }}\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <input type=\"text\" [formControl]=\"form.controls.title\" class=\"mb-0-5\" placeholder=\"Title\">\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <textarea autoResize [formControl]=\"form.controls.description\" class=\"mb-0-5\" rows=\"2\"></textarea>\n                    </div>\n                    <button class=\"button\" (click)=\"form.save($event)\">Save</button>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ job$ | async | get:'_client.name' }}<br>{{ job$ | async | get:'title' }}</p>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <div class=\"input-group\">\n                        <input [matDatepicker]=\"picker\" type=\"text\" [formControl]=\"form.controls.target_date\">\n                        <a class=\"input-group-addon pointer\" (click)=\"picker.open()\"><i class=\"icon-calendar\"></i></a>\n                        <mat-datepicker #picker></mat-datepicker>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2498,7 +2504,7 @@ var TaskCreateFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <div (click)=\"titleForm.editable = true\">\n                        <input type=\"text\" [formControl]=\"titleForm.controls.title\" class=\"mb-0-5\">\n                        <button class=\"input-group-addon button\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <div (click)=\"descriptionForm.editable = true\">\n                            <textarea autoResize [formControl]=\"descriptionForm.controls.description\" class=\"transparent mb-0-5\" rows=\"2\"></textarea>\n                            <button class=\"button\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.cancel($event)\">Cancel</button>\n                        </div>\n                    </div>\n\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Notes</strong></p>\n                        <textarea autoResize [formControl]=\"newNoteForm.controls.note\" class=\"full-width mb-0-5\" placeholder=\"Write a note...\" rows=\"2\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of taskNotes$ | async\">\n                        <div class=\"my-1\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <div (click)=\"form.editable = true\">\n                                <textarea autoResize [formControl]=\"form.controls.note\" class=\"panel\" rows=\"1\"></textarea>\n                            </div>\n                            <div class=\"small muted\">\n                                <ng-container *ngIf=\"!form.editable\">\n                                    <button class=\"button button-clear\" (click)=\"$event.stopPropagation(); form.editable = true\">Edit</button> |\n                                    <button class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</button>\n                                </ng-container>\n                                <ng-container *ngIf=\"form.editable\">\n                                    <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                    <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                                </ng-container>\n                            </div>\n                        </div>\n                    </ng-container>\n                    \n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Files</strong></p>\n                        <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n                        <table>\n                            <ng-container *ngIf=\"taskFiles$ | async as files\">\n                            <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                                <tr *ngFor=\"let file of files\">\n                                    <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                                    <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                                </tr>\n                            </tbody>\n                            <ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n                            </ng-container>\n                        </table>\n                    </div>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ task$ | async | get:'_job._client.name' }}<br>{{ task$ | async | get:'_job.title' }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of taskAssignees$ | async\" class=\"d-inline-block text-center mr-0-5\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-0-5\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div *ngIf=\"assigneeEditForm && assigneeEditForm.editable\" class=\"mt-1\">\n                        <div class=\"input-group mb-0-5\">\n                            <select [formControl]=\"assigneeEditForm.controls.user\" class=\"mr-1 flex-fill\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of users$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                </ng-container>\n                            </select>\n                            <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\" style=\"flex: 0 0 7rem;\">\n                        </div>\n                        <div class=\"d-flex\">\n                            <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                            <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Delete</button>\n                        </div>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Time Spent (hrs)</strong></p>\n                    <p [class.c-red]=\"taskTiming.is_over_allocated_hours\" *ngIf=\"taskTiming$ | async as taskTiming\">{{ taskTiming.time_spent_hours }} of {{ taskTiming.allocated_hours }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <div (click)=\"targetDateForm.editable = true\">\n                        <input mwlFlatpickr type=\"text\" [formControl]=\"targetDateForm.controls.target_date\">\n                        <button class=\"button\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Tags</strong></p>\n                    <ul class=\"tags\">\n                        <li tag [id]=\"tag.tag\" *ngFor=\"let tag of taskTags$ | async\" class=\"tag pointer mb-0-5\" (click)=\"editTag(tag)\"></li>\n                        <li class=\"tag outline pointer mb-0-5\" (click)=\"editTag({object_id: id})\"><i class=\"icon-plus\"></i></li>\n                    </ul>\n                    <div *ngIf=\"tagEditForm && tagEditForm.editable\" class=\"mt-1\">\n                        <p class=\"mb-0-5\">Choose a new tag</p>\n                        <ul class=\"tags mb-1\">\n                            <li tag [id]=\"tag.id\" *ngFor=\"let tag of tags$ | async\" class=\"tag outline pointer mb-0-5\" [class.active]=\"tagEditForm.value.tag == tag.id\" (click)=\"setTag($event, tag)\"></li>\n                        </ul>\n                        <div class=\"input-group\">\n                            <input #newTag type=\"text\" placeholder=\"Create a tag...\">\n                            <button class=\"button input-group-addon\" (click)=\"addNewTagOption(newTag.value)\">Add</button>\n                        </div>\n                        <ng-container *ngIf=\"tagEditForm.value.id\">\n                            <button class=\"button\" (click)=\"tagEditForm.delete($event)\">Delete</button>\n                        </ng-container>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container\">\n            <div class=\"row mb-2\">\n                <div class=\"col\">\n                    <div (click)=\"titleForm.editable = true\">\n                        <input type=\"text\" [formControl]=\"titleForm.controls.title\" class=\"mb-0-5\">\n                        <button class=\"input-group-addon button\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"titleForm.editable\" (click)=\"titleForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row\">\n                <div class=\"col-8\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Description</strong></p>\n                        <div (click)=\"descriptionForm.editable = true\">\n                            <textarea autoResize [formControl]=\"descriptionForm.controls.description\" class=\"transparent mb-0-5\" rows=\"2\"></textarea>\n                            <button class=\"button\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" *ngIf=\"descriptionForm.editable\" (click)=\"descriptionForm.cancel($event)\">Cancel</button>\n                        </div>\n                    </div>\n\n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Notes</strong></p>\n                        <textarea autoResize [formControl]=\"newNoteForm.controls.note\" class=\"full-width mb-0-5\" placeholder=\"Write a note...\" rows=\"2\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of taskNotes$ | async\">\n                        <div class=\"my-1\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <div (click)=\"form.editable = true\">\n                                <textarea autoResize [formControl]=\"form.controls.note\" class=\"panel\" rows=\"1\"></textarea>\n                            </div>\n                            <div class=\"small muted\">\n                                <ng-container *ngIf=\"!form.editable\">\n                                    <button class=\"button button-clear\" (click)=\"$event.stopPropagation(); form.editable = true\">Edit</button> |\n                                    <button class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</button>\n                                </ng-container>\n                                <ng-container *ngIf=\"form.editable\">\n                                    <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                    <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                                </ng-container>\n                            </div>\n                        </div>\n                    </ng-container>\n                    \n                    <div class=\"mb-2\">\n                        <p class=\"mb-0-5\"><strong>Files</strong></p>\n                        <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n                        <table>\n                            <ng-container *ngIf=\"taskFiles$ | async as files\">\n                            <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                                <tr *ngFor=\"let file of files\">\n                                    <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                                    <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                                </tr>\n                            </tbody>\n                            <ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n                            </ng-container>\n                        </table>\n                    </div>\n                </div>\n                <div class=\"col-4\">\n                    <p class=\"mb-0-5\"><strong>Job</strong></p>\n                    <p>{{ task$ | async | get:'_job._client.name' }}<br>{{ task$ | async | get:'_job.title' }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of taskAssignees$ | async\" class=\"d-inline-block text-center mr-0-5\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-0-5\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div *ngIf=\"assigneeEditForm && assigneeEditForm.editable\" class=\"mt-1\">\n                        <div class=\"input-group mb-0-5\">\n                            <select [formControl]=\"assigneeEditForm.controls.user\" class=\"mr-1 flex-fill\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of users$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                </ng-container>\n                            </select>\n                            <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\" style=\"flex: 0 0 7rem;\">\n                        </div>\n                        <div class=\"d-flex\">\n                            <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                            <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                            <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Delete</button>\n                        </div>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Time Spent (hrs)</strong></p>\n                    <p [class.c-red]=\"taskTiming.is_over_allocated_hours\" *ngIf=\"taskTiming$ | async as taskTiming\">{{ taskTiming.time_spent_hours }} of {{ taskTiming.allocated_hours }}</p>\n                    <hr>\n                    \n                    <p class=\"mb-0-5\"><strong>Target Date</strong></p>\n                    <div (click)=\"targetDateForm.editable = true\">\n                        <div class=\"input-group\">\n                            <input [matDatepicker]=\"picker\" type=\"text\" [formControl]=\"targetDateForm.controls.target_date\">\n                            <a class=\"input-group-addon pointer\" (click)=\"picker.open()\"><i class=\"icon-calendar\"></i></a>\n                            <mat-datepicker #picker></mat-datepicker>\n                        </div>\n                        <button class=\"button\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" *ngIf=\"targetDateForm.editable\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                    </div>\n                    <hr>\n\n                    <p class=\"mb-0-5\"><strong>Tags</strong></p>\n                    <ul class=\"tags\">\n                        <li tag [id]=\"tag.tag\" *ngFor=\"let tag of taskTags$ | async\" class=\"tag pointer mb-0-5\" (click)=\"editTag(tag)\"></li>\n                        <li class=\"tag outline pointer mb-0-5\" (click)=\"editTag({object_id: id})\"><i class=\"icon-plus\"></i></li>\n                    </ul>\n                    <div *ngIf=\"tagEditForm && tagEditForm.editable\" class=\"mt-1\">\n                        <p class=\"mb-0-5\">Choose a new tag</p>\n                        <ul class=\"tags mb-1\">\n                            <li tag [id]=\"tag.id\" *ngFor=\"let tag of tags$ | async\" class=\"tag outline pointer mb-0-5\" [class.active]=\"tagEditForm.value.tag == tag.id\" (click)=\"setTag($event, tag)\"></li>\n                        </ul>\n                        <div class=\"input-group\">\n                            <input #newTag type=\"text\" placeholder=\"Create a tag...\">\n                            <button class=\"button input-group-addon\" (click)=\"addNewTagOption(newTag.value)\">Add</button>\n                        </div>\n                        <ng-container *ngIf=\"tagEditForm.value.id\">\n                            <button class=\"button\" (click)=\"tagEditForm.delete($event)\">Delete</button>\n                        </ng-container>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -3289,11 +3295,11 @@ var BaseForm = /** @class */ (function (_super) {
         this.prepareValueForDispatch();
         if (this.createAction && !this.value.id) {
             // create a new record as we have no id
-            this.store.dispatch({ type: this.createAction, payload: this.value });
+            this.store.dispatch({ type: this.createAction, payload: this.getValuePayload() });
         }
         else if (this.updateAction && this.value.id) {
             // update or patch the record
-            this.store.dispatch({ type: this.updateAction, payload: this.value });
+            this.store.dispatch({ type: this.updateAction, payload: this.getValuePayload() });
         }
         else {
             return;
@@ -3303,6 +3309,10 @@ var BaseForm = /** @class */ (function (_super) {
     };
     BaseForm.prototype.prepareValueForDispatch = function () {
         // use as a trigger point to ammend and values before save
+    };
+    BaseForm.prototype.getValuePayload = function () {
+        // returns the pata to post to the api
+        return this.value;
     };
     BaseForm.prototype.cancel = function (event) {
         event.stopPropagation();
@@ -3318,7 +3328,7 @@ var BaseForm = /** @class */ (function (_super) {
             return;
         }
         // delete the record
-        this.store.dispatch({ type: this.deleteAction, payload: this.value });
+        this.store.dispatch({ type: this.deleteAction, payload: this.getValuePayload() });
         // wait for the result
         this.waitForResult(event);
     };
@@ -3562,11 +3572,10 @@ var JobDetailForm = /** @class */ (function (_super) {
         _this.updateSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobActions"].UPDATE_SUCCESS;
         return _this;
     }
-    JobDetailForm.prototype.prepareValueForDispatch = function () {
-        // the api doesnt like empty strings for a date field
-        if (this.controls.billed_to.value === '') {
-            this.controls.billed_to.setValue(null);
-        }
+    JobDetailForm.prototype.getValuePayload = function () {
+        return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, this.value, {
+            billed_to: this.value.billed_to instanceof Date ? this.value.billed_to.toISOString().slice(0, 10) : this.value.billed_to
+        });
     };
     return JobDetailForm;
 }(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));
@@ -3871,6 +3880,11 @@ var TaskCreateForm = /** @class */ (function (_super) {
         _this.createSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].ADD_SUCCESS;
         return _this;
     }
+    TaskCreateForm.prototype.getValuePayload = function () {
+        return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, this.value, {
+            target_date: this.value.target_date instanceof Date ? this.value.target_date.toISOString().slice(0, 10) : this.value.target_date
+        });
+    };
     return TaskCreateForm;
 }(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));
 
@@ -4097,11 +4111,10 @@ var TaskTargetDateForm = /** @class */ (function (_super) {
         _this.updateSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].PATCH_SUCCESS;
         return _this;
     }
-    TaskTargetDateForm.prototype.prepareValueForDispatch = function () {
-        // the api doesnt like empty strings for a date field
-        if (this.controls.target_date.value === '') {
-            this.controls.target_date.setValue(null);
-        }
+    TaskTargetDateForm.prototype.getValuePayload = function () {
+        return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, this.value, {
+            target_date: this.value.target_date instanceof Date ? this.value.target_date.toISOString().slice(0, 10) : this.value.target_date
+        });
     };
     return TaskTargetDateForm;
 }(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));

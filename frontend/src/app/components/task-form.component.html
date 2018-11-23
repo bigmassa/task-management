@@ -105,7 +105,11 @@
                     
                     <p class="mb-0-5"><strong>Target Date</strong></p>
                     <div (click)="targetDateForm.editable = true">
-                        <input mwlFlatpickr type="text" [formControl]="targetDateForm.controls.target_date">
+                        <div class="input-group">
+                            <input [matDatepicker]="picker" type="text" [formControl]="targetDateForm.controls.target_date">
+                            <a class="input-group-addon pointer" (click)="picker.open()"><i class="icon-calendar"></i></a>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </div>
                         <button class="button" *ngIf="targetDateForm.editable" (click)="targetDateForm.save($event)">Save</button>
                         <button class="button button-clear" *ngIf="targetDateForm.editable" (click)="targetDateForm.cancel($event)">Cancel</button>
                     </div>

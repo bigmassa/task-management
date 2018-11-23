@@ -47,7 +47,11 @@
         <p class="c-red" *formError="form.controls.status">Please choose a status</p>
 
         <label>Billed To</label>
-        <input mwlFlatpickr type="text" [formControl]="form.controls.billed_to" />
+        <div class="input-group">
+            <input [matDatepicker]="picker" type="text" [formControl]="form.controls.billed_to">
+            <a class="input-group-addon pointer" (click)="picker.open()"><i class="icon-calendar"></i></a>
+            <mat-datepicker #picker></mat-datepicker>
+        </div>
         <p class="c-red" *formError="form.controls.billed_to">Please enter a date</p>
         
     </div>

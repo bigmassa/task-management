@@ -20,7 +20,11 @@
                     <hr>
 
                     <p class="mb-0-5"><strong>Target Date</strong></p>
-                    <input mwlFlatpickr type="text" [formControl]="form.controls.target_date">
+                    <div class="input-group">
+                        <input [matDatepicker]="picker" type="text" [formControl]="form.controls.target_date">
+                        <a class="input-group-addon pointer" (click)="picker.open()"><i class="icon-calendar"></i></a>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </div>
                 </div>
             </div>
         </div>

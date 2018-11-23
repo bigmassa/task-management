@@ -56,10 +56,9 @@ export class JobDetailForm extends BaseForm {
         );
     }
 
-    prepareValueForDispatch() {
-        // the api doesnt like empty strings for a date field
-        if (this.controls.billed_to.value === '') {
-            this.controls.billed_to.setValue(null);
-        }
+    getValuePayload() {
+        return _.assign({}, this.value, {
+            billed_to: this.value.billed_to instanceof Date ? this.value.billed_to.toISOString().slice(0, 10) : this.value.billed_to
+        })
     }
 }

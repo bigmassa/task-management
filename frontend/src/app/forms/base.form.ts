@@ -109,10 +109,10 @@ export class BaseForm extends FormGroup implements OnDestroy {
 
         if (this.createAction && !this.value.id) {
             // create a new record as we have no id
-            this.store.dispatch({ type: this.createAction, payload: this.value });
+            this.store.dispatch({ type: this.createAction, payload: this.getValuePayload() });
         } else if (this.updateAction && this.value.id) {
             // update or patch the record
-            this.store.dispatch({ type: this.updateAction, payload: this.value });
+            this.store.dispatch({ type: this.updateAction, payload: this.getValuePayload() });
         } else {
             return;
         }
@@ -123,6 +123,11 @@ export class BaseForm extends FormGroup implements OnDestroy {
 
     prepareValueForDispatch() {
         // use as a trigger point to ammend and values before save
+    }
+
+    getValuePayload() {
+        // returns the pata to post to the api
+        return this.value;
     }
 
     cancel(event: Event) {
@@ -144,7 +149,7 @@ export class BaseForm extends FormGroup implements OnDestroy {
         }
 
         // delete the record
-        this.store.dispatch({ type: this.deleteAction, payload: this.value });
+        this.store.dispatch({ type: this.deleteAction, payload: this.getValuePayload() });
         
         // wait for the result
         this.waitForResult(event);
