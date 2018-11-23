@@ -4,9 +4,8 @@
             <ng-container *ngIf="client">
                 <span class="color-indicator" [style.backgroundColor]="client.colour"></span>
                 <div class="h2">
-                    <a [routerLink]="['/clients', client.id]" class="underline-dotted">{{ client | get:'name' }}</a> /
-                    <ng-container *ngIf="contact">{{ contact | get:'first_name' }} {{ contact | get:'last_name' }}</ng-container>
-                    <ng-container *ngIf="!contact">New</ng-container>
+                    <a [routerLink]="['/clients', client.id]" class="underline-dotted">{{ client | get:'name' }}</a>
+                    <ng-container *ngIf="contact">/ {{ contact | get:'first_name' }} {{ contact | get:'last_name' }}</ng-container>
                 </div>
                 <div class="page-header-actions">
                     <a class="button button-white" (click)="form.save($event)">Save</a>
@@ -16,7 +15,7 @@
         </div>
         <div class="container-fluid">
             <ul class="tabs">
-                <li class="active">Detail</li>
+                <li class="active">Contact Detail</li>
             </ul>
         </div>
     </div>
