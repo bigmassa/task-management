@@ -100,7 +100,7 @@
                     <hr>
 
                     <p class="mb-0-5"><strong>Time Spent (hrs)</strong></p>
-                    <p *ngIf="taskTiming$ | async as taskTiming">{{ taskTiming.time_spent_hours }} of {{ taskTiming.allocated_hours }}</p>
+                    <p [class.c-red]="taskTiming.is_over_allocated_hours" *ngIf="taskTiming$ | async as taskTiming">{{ taskTiming.time_spent_hours }} of {{ taskTiming.allocated_hours }}</p>
                     <hr>
                     
                     <p class="mb-0-5"><strong>Target Date</strong></p>

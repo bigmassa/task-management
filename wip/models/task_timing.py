@@ -63,3 +63,7 @@ class TaskTiming(models.Model):
     )
 
     objects = TaskTimingManager()
+
+    @property
+    def is_over_allocated_hours(self):
+        return self.time_spent_hours > self.allocated_hours

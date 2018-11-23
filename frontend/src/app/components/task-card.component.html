@@ -6,7 +6,7 @@
     <div class="d-flex">
         <div class="mr-auto">
             <span class="uppercase mr-1" [class.c-red]="task.is_overdue" *ngIf="task.target_date"><i class="icon-bell"></i> {{ task.target_date | date:'d MMM' }}</span>
-            <span class="uppercase" [class.c-red]="task._is_over_allocated_hours" *ngIf="timing$ | async as timing">
+            <span class="uppercase" [class.c-red]="timing.is_over_allocated_hours" *ngIf="timing$ | async as timing">
                 <i class="icon-clock"></i> {{ timing.time_spent_hours }}/{{ timing.allocated_hours }}
             </span>
         </div>

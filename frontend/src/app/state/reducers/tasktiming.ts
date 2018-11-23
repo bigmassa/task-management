@@ -5,6 +5,7 @@ export interface ITaskTiming {
     task: number;
     time_spent_hours: string;
     allocated_hours: string;
+    is_over_allocated_hours: boolean;
 }
 
 export type State = ITaskTiming[];

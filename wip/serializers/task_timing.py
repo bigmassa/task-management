@@ -10,5 +10,6 @@ class TaskTimingSerializer(serializers.ModelSerializer):
             'id',
             'task',
             'allocated_hours',
-            'time_spent_hours'
+            'time_spent_hours',
+            'is_over_allocated_hours'
         ]
