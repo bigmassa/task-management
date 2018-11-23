@@ -7728,7 +7728,7 @@ var DataEffects = /** @class */ (function () {
         this.loadData$ = this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_actions__WEBPACK_IMPORTED_MODULE_0__["DataActions"].LOAD_DATA), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["mergeMap"])(function () {
             var fromDate = {
                 params: {
-                    date_from: moment__WEBPACK_IMPORTED_MODULE_1__().add(-2, 'months').format('YYYY-MM-DD')
+                    date_from: moment__WEBPACK_IMPORTED_MODULE_1__().add(-5, 'weeks').format('YYYY-MM-DD')
                 }
             };
             return [

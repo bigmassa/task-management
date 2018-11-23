@@ -18,7 +18,7 @@ export class DataEffects {
             () => {
                 const fromDate: IActionWithHTTPData = {
                     params: {
-                        date_from: moment().add(-2, 'months').format('YYYY-MM-DD')
+                        date_from: moment().add(-5, 'weeks').format('YYYY-MM-DD')
                     }
                 }
                 return [
