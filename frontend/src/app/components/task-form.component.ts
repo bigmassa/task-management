@@ -25,7 +25,6 @@ import {
     getTaskTagsForTask,
     getTaskTimingsById
     } from './../state/selectors/task';
-import { getUserState } from './../state/state';
 import { ITag } from '../state/reducers/tag';
 import { ITask } from '../state/reducers/task';
 import { ITaskAssignee } from '../state/reducers/taskassignee';
@@ -41,6 +40,7 @@ import { TaskTagForm } from '../forms/task-tag.form';
 import { TaskTargetDateForm } from '../forms/task-target-date.form';
 import { TaskTitleForm } from '../forms/task-title.form';
 import { ITaskTiming } from '../state/reducers/tasktiming';
+import { getActiveUsers } from '../state/selectors/user';
 
 @Component({
     selector: 'task-form, [task-form]',
@@ -79,7 +79,7 @@ export class TaskFormComponent implements OnChanges {
         private actionsSubject: ActionsSubject
     ) {
         this.tags$ = this.store.pipe(select(getTagCollection));
-        this.users$ = this.store.pipe(select(getUserState));
+        this.users$ = this.store.pipe(select(getActiveUsers));
         this.descriptionForm = new TaskDescriptionForm(this.store, this.actionsSubject);
         this.titleForm = new TaskTitleForm(this.store, this.actionsSubject);
         this.targetDateForm = new TaskTargetDateForm(this.store, this.actionsSubject);

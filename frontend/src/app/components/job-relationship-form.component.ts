@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { ActionsSubject, select, Store } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppState, getRelationshipState, getUserState } from './../state/state';
+import { AppState, getRelationshipState } from './../state/state';
 import {
     combineLatest,
     Observable,
@@ -19,6 +19,7 @@ import { IRelationship } from '../state/reducers/relationship';
 import { IUser } from '../state/reducers/user';
 import { JobRelationshipForm } from '../forms/job-relationship.form';
 import { mergeMap, take } from 'rxjs/operators';
+import { getActiveUsers } from '../state/selectors/user';
 
 @Component({
     templateUrl: './job-relationship-form.component.html',
@@ -45,7 +46,7 @@ export class JobRelationshipFormComponent implements OnDestroy, OnInit {
 
     ngOnInit() {
         this.relationships$ = this.store.pipe(select(getRelationshipState));
-        this.users$ = this.store.pipe(select(getUserState));
+        this.users$ = this.store.pipe(select(getActiveUsers));
         
         const paramsObsv = this.route.params.pipe(
             mergeMap(

@@ -13,5 +13,6 @@ class UserSerializer(serializers.ModelSerializer):
             'id',
             'full_name',
             'initials',
+            'is_active',
             'is_gradwell_enabled'
         ]

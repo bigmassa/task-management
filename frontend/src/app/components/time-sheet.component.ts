@@ -17,9 +17,10 @@ import { Component, OnInit } from '@angular/core';
 import { filter, take } from 'rxjs/operators';
 import { getDatesBetween } from './../utils/generic';
 import { getEventsForUser, getTasksForUser } from '../state/selectors/timesheet';
-import { getMeState, getUserState } from './../state/state';
+import { getMeState } from './../state/state';
 import { IUser } from '../state/reducers/user';
 import { Observable, Subscription } from 'rxjs';
+import { getActiveUsers } from '../state/selectors/user';
 
 @Component({
     selector: 'time-sheet, [time-sheet]',
@@ -76,7 +77,7 @@ export class TimesheetComponent implements OnInit {
     }
 
     refetchData() {
-        this.users$ = this.store.pipe(select(getUserState));
+        this.users$ = this.store.pipe(select(getActiveUsers));
         this.tasks$ = this.store.pipe(select(getTasksForUser(this.selectedUserId, this.searchTerms)))
         this.events$ = this.store.pipe(select(getEventsForUser(this.selectedUserId)));
     }

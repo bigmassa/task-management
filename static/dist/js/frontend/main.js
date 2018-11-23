@@ -1748,6 +1748,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _state_selectors_job__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../state/selectors/job */ "./src/app/state/selectors/job.ts");
 /* harmony import */ var _forms_job_relationship_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../forms/job-relationship.form */ "./src/app/forms/job-relationship.form.ts");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _state_selectors_user__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../state/selectors/user */ "./src/app/state/selectors/user.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1757,6 +1758,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1778,7 +1780,7 @@ var JobRelationshipFormComponent = /** @class */ (function () {
     JobRelationshipFormComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.relationships$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getRelationshipState"]));
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getUserState"]));
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_selectors_user__WEBPACK_IMPORTED_MODULE_10__["getActiveUsers"]));
         var paramsObsv = this.route.params.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["mergeMap"])(function (params) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["combineLatest"])(Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(params), _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_client__WEBPACK_IMPORTED_MODULE_6__["getClientCollectionById"])(+params.client_id))), _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_7__["getJobCollectionById"])(+params.job_id))), _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_7__["getJobRelationshipCollectionById"])(+params.id)))); })).subscribe(function (_a) {
             var params = _a[0], client = _a[1], job = _a[2], relationship = _a[3];
             _this.params = params;
@@ -2528,13 +2530,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_cookies__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/cookies */ "./src/app/utils/cookies.ts");
 /* harmony import */ var _state_selectors_tag__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../state/selectors/tag */ "./src/app/state/selectors/tag.ts");
 /* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../state/selectors/task */ "./src/app/state/selectors/task.ts");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
-/* harmony import */ var _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../forms/task-assignee.form */ "./src/app/forms/task-assignee.form.ts");
-/* harmony import */ var _forms_task_description_form__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../forms/task-description.form */ "./src/app/forms/task-description.form.ts");
-/* harmony import */ var _forms_task_note_form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../forms/task-note.form */ "./src/app/forms/task-note.form.ts");
-/* harmony import */ var _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../forms/task-tag.form */ "./src/app/forms/task-tag.form.ts");
-/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
-/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
+/* harmony import */ var _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../forms/task-assignee.form */ "./src/app/forms/task-assignee.form.ts");
+/* harmony import */ var _forms_task_description_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../forms/task-description.form */ "./src/app/forms/task-description.form.ts");
+/* harmony import */ var _forms_task_note_form__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../forms/task-note.form */ "./src/app/forms/task-note.form.ts");
+/* harmony import */ var _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../forms/task-tag.form */ "./src/app/forms/task-tag.form.ts");
+/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
+/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
+/* harmony import */ var _state_selectors_user__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../state/selectors/user */ "./src/app/state/selectors/user.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2572,11 +2574,11 @@ var TaskFormComponent = /** @class */ (function () {
         };
         this.taskNoteForms = {};
         this.tags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_tag__WEBPACK_IMPORTED_MODULE_7__["getTagCollection"]));
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_9__["getUserState"]));
-        this.descriptionForm = new _forms_task_description_form__WEBPACK_IMPORTED_MODULE_11__["TaskDescriptionForm"](this.store, this.actionsSubject);
-        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_15__["TaskTitleForm"](this.store, this.actionsSubject);
-        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_14__["TaskTargetDateForm"](this.store, this.actionsSubject);
-        this.newNoteForm = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_12__["TaskNoteForm"](this.store, this.actionsSubject);
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_user__WEBPACK_IMPORTED_MODULE_15__["getActiveUsers"]));
+        this.descriptionForm = new _forms_task_description_form__WEBPACK_IMPORTED_MODULE_10__["TaskDescriptionForm"](this.store, this.actionsSubject);
+        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_14__["TaskTitleForm"](this.store, this.actionsSubject);
+        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_13__["TaskTargetDateForm"](this.store, this.actionsSubject);
+        this.newNoteForm = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_11__["TaskNoteForm"](this.store, this.actionsSubject);
     }
     TaskFormComponent.prototype.ngOnChanges = function (changes) {
         var _this = this;
@@ -2605,7 +2607,7 @@ var TaskFormComponent = /** @class */ (function () {
     };
     TaskFormComponent.prototype.getOrCreateEditNoteForm = function (note) {
         if (!lodash__WEBPACK_IMPORTED_MODULE_0__["has"](this.taskNoteForms, note.id)) {
-            var form = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_12__["TaskNoteForm"](this.store, this.actionsSubject, { alwaysEditable: false, cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_5__["FormCleanAfterMethod"].loadSaved });
+            var form = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_11__["TaskNoteForm"](this.store, this.actionsSubject, { alwaysEditable: false, cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_5__["FormCleanAfterMethod"].loadSaved });
             form.load(note);
             this.taskNoteForms[note.id] = form;
             return this.taskNoteForms[note.id];
@@ -2613,7 +2615,7 @@ var TaskFormComponent = /** @class */ (function () {
         return this.taskNoteForms[note.id];
     };
     TaskFormComponent.prototype.editAssignee = function (assignee) {
-        this.assigneeEditForm = new _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_10__["TaskAssigneeForm"](this.store, this.actionsSubject);
+        this.assigneeEditForm = new _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_9__["TaskAssigneeForm"](this.store, this.actionsSubject);
         this.assigneeEditForm.editable = true;
         this.assigneeEditForm.load(assignee);
     };
@@ -2630,7 +2632,7 @@ var TaskFormComponent = /** @class */ (function () {
     };
     // tags
     TaskFormComponent.prototype.editTag = function (tag) {
-        this.tagEditForm = new _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_13__["TaskTagForm"](this.store, this.actionsSubject);
+        this.tagEditForm = new _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_12__["TaskTagForm"](this.store, this.actionsSubject);
         this.tagEditForm.editable = true;
         this.tagEditForm.load(tag);
     };
@@ -2917,6 +2919,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_generic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../utils/generic */ "./src/app/utils/generic.ts");
 /* harmony import */ var _state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../state/selectors/timesheet */ "./src/app/state/selectors/timesheet.ts");
 /* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var _state_selectors_user__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../state/selectors/user */ "./src/app/state/selectors/user.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2926,6 +2929,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -2971,7 +2975,7 @@ var TimesheetComponent = /** @class */ (function () {
         };
     };
     TimesheetComponent.prototype.refetchData = function () {
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_7__["getUserState"]));
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_user__WEBPACK_IMPORTED_MODULE_8__["getActiveUsers"]));
         this.tasks$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_6__["getTasksForUser"])(this.selectedUserId, this.searchTerms)));
         this.events$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_6__["getEventsForUser"])(this.selectedUserId)));
     };
@@ -11405,11 +11409,12 @@ var getDailyTimeTotalForUser = function (id, date) { return Object(_ngrx_store__
 /*!*****************************************!*\
   !*** ./src/app/state/selectors/user.ts ***!
   \*****************************************/
-/*! exports provided: getUserById */
+/*! exports provided: getActiveUsers, getUserById */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getActiveUsers", function() { return getActiveUsers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUserById", function() { return getUserById; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
@@ -11418,6 +11423,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var getActiveUsers = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getUserState"], function (users) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](users, ['is_active', true]); });
 var getUserById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_2__["getUserState"], function (users) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](users, ['id', id]); }); };
 
 
