@@ -421,6 +421,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./pipes/task-search.pipe */ "./src/app/pipes/task-search.pipe.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -430,6 +431,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -515,6 +517,7 @@ var AppModule = /** @class */ (function () {
                 _components_task_create_form_component__WEBPACK_IMPORTED_MODULE_39__["TaskCreateFormComponent"],
                 _components_task_form_component__WEBPACK_IMPORTED_MODULE_40__["TaskFormComponent"],
                 _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_41__["TasksByStatusPipe"],
+                _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_47__["TaskSearchPipe"],
                 _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_42__["TimeEntryFormComponent"],
                 _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_43__["TimesheetComponent"],
                 _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_44__["TimesheetSignoffComponent"]
@@ -2681,7 +2684,7 @@ var TaskFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Taskboard</div>\n        <div class=\"page-header-actions\"></div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <table class=\"table-hover table-headed margin-zero\">\n            <thead>\n                <tr>\n                    <th class=\"keep-min-width\">ID</th>\n                    <th class=\"keep-min-width\">Target Date</th>\n                    <th>Title</th>\n                    <th>Client</th>\n                    <th>Job</th>\n                    <th class=\"keep-min-width\">Assignees</th>\n                    <th class=\"keep-min-width\">status</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr class=\"pointer\" [routerLink]=\"['/clients', task._job.client, 'jobs', task.job]\" [queryParams]=\"{task: task.id}\" *ngFor=\"let task of tasks$ | async\">\n                    <td class=\"keep-min-width\">{{ task | get:'id' }}</td>\n                    <td class=\"keep-min-width\">{{ task | get:'target_date' }}</td>\n                    <td>{{ task | get:'title' }}</td>\n                    <td>{{ task | get:'_job._client.name' }}</td>\n                    <td>{{ task | get:'_job.title' }}</td>\n                    <td class=\"keep-min-width\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of task._assignees\"></div>\n                    </td>\n                    <td class=\"keep-min-width\">{{ task | get:'_status.title' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Taskboard</div>\n        <div class=\"page-header-actions\"></div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <div class=\"row\">\n            <div class=\"col-6\"><search [(ngModel)]=\"searchTerms\"></search></div>\n            <div class=\"col-6\"></div>\n        </div>\n        <table class=\"table-hover table-headed margin-zero\">\n            <thead>\n                <tr>\n                    <th class=\"keep-min-width\">ID</th>\n                    <th class=\"keep-min-width\">Target Date</th>\n                    <th>Title</th>\n                    <th>Client</th>\n                    <th>Job</th>\n                    <th class=\"keep-min-width\">Assignees</th>\n                    <th class=\"keep-min-width\">status</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr class=\"pointer\" [routerLink]=\"['/clients', task._job.client, 'jobs', task.job]\" [queryParams]=\"{task: task.id}\" *ngFor=\"let task of tasks$ | async | taskSearch:searchTerms\">\n                    <td class=\"keep-min-width\">{{ task | get:'id' }}</td>\n                    <td class=\"keep-min-width\">{{ task | get:'target_date' }}</td>\n                    <td>{{ task | get:'title' }}</td>\n                    <td>{{ task | get:'_job._client.name' }}</td>\n                    <td>{{ task | get:'_job.title' }}</td>\n                    <td class=\"keep-min-width\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of task._assignees\"></div>\n                    </td>\n                    <td class=\"keep-min-width\">{{ task | get:'_status.title' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2713,6 +2716,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var TaskboardComponent = /** @class */ (function () {
     function TaskboardComponent(store) {
         this.store = store;
+        this.searchTerms = [];
     }
     TaskboardComponent.prototype.ngOnInit = function () {
         this.tasks$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(_state_selectors_taskboard__WEBPACK_IMPORTED_MODULE_2__["getTasksForTaskBoardForUser"]));
@@ -4577,6 +4581,65 @@ var OpenJobsPipe = /** @class */ (function () {
         })
     ], OpenJobsPipe);
     return OpenJobsPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/task-search.pipe.ts":
+/*!*******************************************!*\
+  !*** ./src/app/pipes/task-search.pipe.ts ***!
+  \*******************************************/
+/*! exports provided: TaskSearchPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskSearchPipe", function() { return TaskSearchPipe; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _utils_generic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/generic */ "./src/app/utils/generic.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var TaskSearchPipe = /** @class */ (function () {
+    function TaskSearchPipe() {
+        this.filterObject = function (value, terms) {
+            var found = true;
+            lodash__WEBPACK_IMPORTED_MODULE_0__["each"](terms, function (term) {
+                if (!lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](value.id.toString(), term.toLowerCase()) &&
+                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](value.title.toLowerCase(), term.toLowerCase()) &&
+                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value._job.title).toLowerCase(), term.toLowerCase()) &&
+                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value._job._client.name).toLowerCase(), term.toLowerCase()) &&
+                    !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_2__["valueOr"])(value._status.title).toLowerCase(), term.toLowerCase())) {
+                    found = false;
+                }
+            });
+            return found;
+        };
+    }
+    TaskSearchPipe.prototype.transform = function (array, terms) {
+        var _this = this;
+        if (!terms || terms.length == 0) {
+            return array;
+        }
+        return array.filter(function (ob) { return _this.filterObject(ob, terms); });
+    };
+    TaskSearchPipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'taskSearch',
+            pure: true
+        })
+    ], TaskSearchPipe);
+    return TaskSearchPipe;
 }());
 
 

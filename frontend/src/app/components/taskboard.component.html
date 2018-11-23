@@ -6,6 +6,10 @@
 </div>
 <div class="container-fluid inner-content">
     <div class="panel">
+        <div class="row">
+            <div class="col-6"><search [(ngModel)]="searchTerms"></search></div>
+            <div class="col-6"></div>
+        </div>
         <table class="table-hover table-headed margin-zero">
             <thead>
                 <tr>
@@ -19,7 +23,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="pointer" [routerLink]="['/clients', task._job.client, 'jobs', task.job]" [queryParams]="{task: task.id}" *ngFor="let task of tasks$ | async">
+                <tr class="pointer" [routerLink]="['/clients', task._job.client, 'jobs', task.job]" [queryParams]="{task: task.id}" *ngFor="let task of tasks$ | async | taskSearch:searchTerms">
                     <td class="keep-min-width">{{ task | get:'id' }}</td>
                     <td class="keep-min-width">{{ task | get:'target_date' }}</td>
                     <td>{{ task | get:'title' }}</td>

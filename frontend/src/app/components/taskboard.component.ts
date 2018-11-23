@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 export class TaskboardComponent {
 
     tasks$: Observable<ITask[]>;
+    searchTerms: string[] = [];
     
     constructor(
         private store: Store<AppState>

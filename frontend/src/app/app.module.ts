@@ -45,6 +45,7 @@ import { TimesheetComponent } from './components/time-sheet.component';
 import { TimesheetSignoffComponent } from './components/time-sheet-signoff.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material';
+import { TaskSearchPipe } from './pipes/task-search.pipe';
 
 @NgModule({
     declarations: [
@@ -77,6 +78,7 @@ import { MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE } from '@angu
         TaskCreateFormComponent,
         TaskFormComponent,
         TasksByStatusPipe,
+        TaskSearchPipe,
         TimeEntryFormComponent,
         TimesheetComponent,
         TimesheetSignoffComponent
