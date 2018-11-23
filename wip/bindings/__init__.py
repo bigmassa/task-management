@@ -11,4 +11,5 @@ from .task import TaskBinding
 from .task_assignee import TaskAssigneeBinding
 from .task_note import TaskNoteBinding
 from .task_file import TaskFileBinding
+from .task_timing import TaskTimingBinding
 from .time_entry import TimeEntryBinding
