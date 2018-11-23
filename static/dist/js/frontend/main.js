@@ -11270,7 +11270,8 @@ var getTasksForTaskBoardForUser = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1_
     var mappedObjs = lodash__WEBPACK_IMPORTED_MODULE_0__["map"](objs, function (o) { return lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, o, {
         _assignees: lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['task', o.id])
     }); });
-    return mappedObjs;
+    return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](mappedObjs, ['target_date'], ['asc']);
+    ;
 });
 
 

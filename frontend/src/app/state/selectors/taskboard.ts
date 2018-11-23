@@ -23,6 +23,6 @@ export const getTasksForTaskBoardForUser = createSelector(
             _assignees: _.filter(assignees, ['task', o.id])
         }))
 
-        return mappedObjs;
+        return _.orderBy(mappedObjs, ['target_date'], ['asc']);;
     }
 )
