@@ -3,6 +3,7 @@ import * as fromClient from './reducers/client';
 import * as fromClientContact from './reducers/clientcontact';
 import * as fromClientContactTag from './reducers/clientcontacttag';
 import * as fromFilter from './reducers/filter';
+import * as fromHttp from './reducers/http';
 import * as fromJob from './reducers/job';
 import * as fromJobFile from './reducers/jobfile';
 import * as fromJobNote from './reducers/jobnote';
@@ -35,6 +36,7 @@ export interface AppState {
     client_contacts: fromClientContact.State;
     client_contact_tags: fromClientContactTag.State;
     filters: fromFilter.State;
+    http: fromHttp.State;
     jobs: fromJob.State;
     job_files: fromJobFile.State;
     job_notes: fromJobNote.State;
@@ -66,6 +68,7 @@ export const reducers: ActionReducerMap<AppState> = {
     client_contacts: fromClientContact.reducer,
     client_contact_tags: fromClientContactTag.reducer,
     filters: fromFilter.reducer,
+    http: fromHttp.reducer,
     jobs: fromJob.reducer,
     job_files: fromJobFile.reducer,
     job_notes: fromJobNote.reducer,
@@ -96,6 +99,7 @@ export const getClientState = createFeatureSelector<fromClient.State>('clients')
 export const getClientContactState = createFeatureSelector<fromClientContact.State>('client_contacts');
 export const getClientContactTagState = createFeatureSelector<fromClientContactTag.State>('client_contact_tags');
 export const getFilterState = createFeatureSelector<fromFilter.State>('filters');
+export const getHttpState = createFeatureSelector<fromHttp.IHttp>('http');
 export const getJobState = createFeatureSelector<fromJob.State>('jobs');
 export const getJobFileState = createFeatureSelector<fromJobFile.State>('job_files');
 export const getJobNoteState = createFeatureSelector<fromJobNote.State>('job_notes');

@@ -1,10 +1,12 @@
-import { AppState, getMeState } from './state/state';
+import { Observable } from 'rxjs';
+
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 
 import { Globals } from './services/globals';
+import * as actions from './state/actions';
 import { IMe } from './state/reducers/me';
-import { Observable } from 'rxjs';
+import { AppState, getMeState } from './state/state';
 
 @Component({
     selector: 'app-root',
@@ -22,6 +24,8 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.me$ = this.store.pipe(select(getMeState))
+        this.store.dispatch({ type: actions.DataActions.LOAD_DATA });
+        this.store.dispatch({ type: actions.SocketActions.START });
     }
 
 }

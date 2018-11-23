@@ -5,8 +5,4 @@ import { Globals } from '../services/globals';
     templateUrl: './not-found.component.html',
     host: {'class': 'd-flex flex-fill flex-column'}
 })
-export class NotFoundComponent {
-
-    constructor(public globals: Globals) { }
-
-}
+export class NotFoundComponent { }

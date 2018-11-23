@@ -1,6 +1,6 @@
 <header>
     <div class="container-fluid d-flex align-items-center">
-        <a routerLink="" class="nav-home mt-1"><img src="{{ globals.appJSRoot }}assets/images/task-management-logo.svg" width="35" height="35"></a>
+        <a routerLink="" class="nav-home mt-1"><logo width="35px" height="35px"></logo></a>
         <ul class="nav">
             <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Taskboard</a></li>
             <li><a routerLink="clients" routerLinkActive="active">Clients</a></li>
@@ -14,3 +14,4 @@
     </div>
 </header>
 <router-outlet></router-outlet>
+<loading-splash></loading-splash>

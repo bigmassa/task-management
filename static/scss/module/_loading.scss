@@ -1,0 +1,11 @@
+// Loading
+// -----------------------------------------
+
+
+.loading-splash {
+  @include position(0, 0, 0, 0);
+  z-index: zindex("top");
+  display: flex;
+  align-items: center;
+  background: color("arsenic");
+}

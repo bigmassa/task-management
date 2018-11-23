@@ -2416,6 +2416,20 @@ a.c-wildwillow:hover {
   color: #6fa235;
 }
 
+.loading-splash {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 11;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #393d48;
+}
+
 .login-page {
   background-color: #393d48;
 }
