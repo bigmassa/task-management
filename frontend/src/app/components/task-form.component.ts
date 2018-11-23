@@ -41,6 +41,7 @@ import { TaskTargetDateForm } from '../forms/task-target-date.form';
 import { TaskTitleForm } from '../forms/task-title.form';
 import { ITaskTiming } from '../state/reducers/tasktiming';
 import { getActiveUsers } from '../state/selectors/user';
+import { TaskClosedForm } from '../forms/task-close.form';
 
 @Component({
     selector: 'task-form, [task-form]',
@@ -67,6 +68,7 @@ export class TaskFormComponent implements OnChanges {
     taskTiming$: Observable<ITaskTiming>;
     tags$: Observable<ITag[]>;
     taskNoteForms = {};
+    closedForm: TaskClosedForm;
     descriptionForm: TaskDescriptionForm;
     titleForm: TaskTitleForm;
     targetDateForm: TaskTargetDateForm;
@@ -80,6 +82,7 @@ export class TaskFormComponent implements OnChanges {
     ) {
         this.tags$ = this.store.pipe(select(getTagCollection));
         this.users$ = this.store.pipe(select(getActiveUsers));
+        this.closedForm = new TaskClosedForm(this.store, this.actionsSubject, { alwaysEditable: true });
         this.descriptionForm = new TaskDescriptionForm(this.store, this.actionsSubject);
         this.titleForm = new TaskTitleForm(this.store, this.actionsSubject);
         this.targetDateForm = new TaskTargetDateForm(this.store, this.actionsSubject);
@@ -98,6 +101,7 @@ export class TaskFormComponent implements OnChanges {
                 filter(d => _.isObject(d))
             ).subscribe(
                 d => {
+                    this.closedForm.load(d);
                     this.descriptionForm.load(d);
                     this.titleForm.load(d);
                     this.targetDateForm.load(d);

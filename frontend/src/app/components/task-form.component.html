@@ -133,6 +133,20 @@
                             <button class="button" (click)="tagEditForm.delete($event)">Delete</button>
                         </ng-container>
                     </div>
+                    <hr>
+
+                    <p class="mb-0-5"><strong>Closed</strong></p>
+                    <p>Closing the task means its no longer available to add time.</p>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" [formControl]="closedForm.controls.closed">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div *ngIf="closedForm.dirty">
+                        <button class="button" (click)="closedForm.save($event)">Save</button>
+                        <button class="button button-clear" (click)="closedForm.cancel($event)">Cancel</button>
+                    </div>
                 </div>
             </div>
         </div>
