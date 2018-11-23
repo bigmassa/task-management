@@ -1,7 +1,7 @@
-import re
 from datetime import datetime, timedelta
 from decimal import Decimal, InvalidOperation
 from io import StringIO
+import re
 
 from django.core.exceptions import ValidationError
 from django.core.management import call_command
@@ -10,6 +10,7 @@ from django.db import connection, transaction
 from authentication import models as a_models
 from migrator import models as m_models
 from wip import models as w_models
+from wip.utils import duration_to_decimal_hrs
 
 
 def format_url(url):
@@ -258,6 +259,21 @@ def tidyup():
         if obj.jobs.count() > 0:
             obj.colour = obj.jobs.first().colour
             obj.save()
+
+    print('add task timings')
+    new_timings = []
+    for task in w_models.Task.objects.all():
+        new_timing = w_models.TaskTiming(
+            task=task
+        )
+        new_timings.append(new_timing)
+    w_models.TaskTiming.objects.bulk_create(new_timings)
+
+    print('set timing defaults')
+    for timing in w_models.TaskTiming.objects.with_calculated().all():
+        timing.allocated_hours = timing.qs_allocated_hours or Decimal('0.00')
+        timing.time_spent_hours = duration_to_decimal_hrs(timing.qs_time_spent_hours)
+        timing.save()
 
 
 def reset_sequences():

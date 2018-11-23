@@ -31,7 +31,7 @@ class TaskTimingQueryset(models.QuerySet):
 
         return self.annotate(
             qs_allocated_hours=models.Subquery(allocated_query),
-            qs_time_spent=time_spent_query
+            qs_time_spent_hours=time_spent_query
         )
 
 
@@ -66,4 +66,6 @@ class TaskTiming(models.Model):
 
     @property
     def is_over_allocated_hours(self):
-        return self.time_spent_hours > self.allocated_hours
+        if self.time_spent_hours and self.allocated_hours:
+            return self.time_spent_hours > self.allocated_hours
+        return False

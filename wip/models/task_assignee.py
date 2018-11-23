@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.conf import settings
 from django.db import models, transaction
 from django.db.models.manager import BaseManager
@@ -52,7 +54,7 @@ def update_allocated_hours(instance, **kwargs):
         if timing.allocated_hours == timing.qs_allocated_hours:
             return
 
-        timing.allocated_hours = timing.qs_allocated_hours
+        timing.allocated_hours = timing.qs_allocated_hours or Decimal('0.00')
         timing.save()
 
     transaction.on_commit(do)

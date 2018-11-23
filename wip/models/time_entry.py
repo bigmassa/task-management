@@ -92,7 +92,7 @@ def update_time_spent_hours(instance, **kwargs):
         from wip.models import TaskTiming
 
         timing = TaskTiming.objects.with_calculated().get(task_id=instance.task_id)
-        time_spent = duration_to_decimal_hrs(timing.qs_time_spent)
+        time_spent = duration_to_decimal_hrs(timing.qs_time_spent_hours)
 
         if timing.time_spent_hours == time_spent:
             return
