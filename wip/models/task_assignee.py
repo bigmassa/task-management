@@ -45,9 +45,14 @@ def update_allocated_hours(instance, **kwargs):
     task_id = instance.task_id
 
     def do():
-        from wip.models import Task
-        task = Task.objects.with_allocated().get(pk=task_id)
-        task.allocated_hours = task.qs_allocated_hours
-        task.save()
+        from wip.models import TaskTiming
+
+        timing = TaskTiming.objects.with_calculated().get(task_id=task_id)
+
+        if timing.allocated_hours == timing.qs_allocated_hours:
+            return
+
+        timing.allocated_hours = timing.qs_allocated_hours
+        timing.save()
 
     transaction.on_commit(do)

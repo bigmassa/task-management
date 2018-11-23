@@ -19,7 +19,5 @@ class TaskSerializer(taggit_serializers.TaggitSerializer, serializers.ModelSeria
             'closed_date',
             'not_chargeable',
             'is_overdue',
-            'allocated_hours',
-            'time_spent_hours',
             'order'
         ]

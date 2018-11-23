@@ -2,7 +2,7 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models, transaction
 from django.db.models.manager import BaseManager
-from django.db.models.signals import post_delete, post_save, pre_save
+from django.db.models.signals import post_delete, post_save
 from django.dispatch import receiver
 from django.utils import timezone
 
@@ -68,7 +68,14 @@ class TimeEntry(models.Model):
             raise ValidationError('End date cannot be before Start date')
 
     def save(self, **kwargs):
+        # clean model
         self.clean()
+        # update the signed off date
+        if self.signed_off:
+            self.signed_off_date = self.signed_off_date or timezone.now()
+        else:
+            self.signed_off_date = None
+        # call save
         return super().save(**kwargs)
 
     @property
@@ -78,23 +85,19 @@ class TimeEntry(models.Model):
         return self.ended_at - self.started_at
 
 
-@receiver(pre_save, sender=TimeEntry)
-def update_signed_off_date(instance, **kwargs):
-    if instance.signed_off and not instance.signed_off_date:
-        instance.signed_off_date = timezone.now()
-    elif not instance.signed_off:
-        instance.signed_off_date = None
-
-
 @receiver(post_save, sender=TimeEntry)
 @receiver(post_delete, sender=TimeEntry)
 def update_time_spent_hours(instance, **kwargs):
     def do():
-        from wip.models import Task
-        task = Task.objects.with_time_spent().get(pk=instance.task_id)
-        time_spent = duration_to_decimal_hrs(task.qs_time_spent)
-        if task.time_spent_hours != time_spent:
-            task.time_spent_hours = time_spent
-            task.save()
+        from wip.models import TaskTiming
+
+        timing = TaskTiming.objects.with_calculated().get(task_id=instance.task_id)
+        time_spent = duration_to_decimal_hrs(timing.qs_time_spent)
+
+        if timing.time_spent_hours == time_spent:
+            return
+
+        timing.time_spent_hours = time_spent
+        timing.save()
 
     transaction.on_commit(do)

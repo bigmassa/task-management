@@ -56,20 +56,6 @@ class TestModel(AppTestCase):
         self.assertModelField(field, models.BooleanField)
         self.assertFalse(field.default)
 
-    def test_allocated_hours(self):
-        field = Task._meta.get_field('allocated_hours')
-        self.assertModelField(field, models.DecimalField, null=True, default='0.00')
-        self.assertEqual(field.max_digits, 10)
-        self.assertEqual(field.decimal_places, 2)
-        self.assertFalse(field.editable)
-
-    def test_time_spent_hours(self):
-        field = Task._meta.get_field('time_spent_hours')
-        self.assertModelField(field, models.DecimalField, null=True, default='0.00')
-        self.assertEqual(field.max_digits, 10)
-        self.assertEqual(field.decimal_places, 2)
-        self.assertFalse(field.editable)
-
     def test_order(self):
         field = Task._meta.get_field('order')
         self.assertModelField(field, models.PositiveIntegerField)

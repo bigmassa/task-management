@@ -165,6 +165,15 @@
     }
 
 -
+    model: wip.tasktiming
+    pk: 1
+    fields: {
+      task: 1,
+      allocated_hours: "10.00",
+      time_spent_hours: "0.00"
+    }
+
+-
     model: wip.tasknote
     pk: 1
     fields: {

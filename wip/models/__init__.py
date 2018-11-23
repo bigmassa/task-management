@@ -16,4 +16,5 @@ from .task_assignee import TaskAssignee
 from .task_file import TaskFile
 from .task_note import TaskNote
 from .task_status import TaskStatus
+from .task_timing import TaskTiming
 from .time_entry import TimeEntry

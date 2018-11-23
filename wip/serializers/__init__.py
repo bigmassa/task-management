@@ -19,5 +19,6 @@ from .task_assignee import TaskAssigneeSerializer
 from .task_file import TaskFileSerializer
 from .task_note import TaskNoteSerializer
 from .task_status import TaskStatusSerializer
+from .task_timing import TaskTimingSerializer
 from .time_entry import TimeEntrySerializer
 from .time_entry_signoff import TimeEntrySignoffSerializer
