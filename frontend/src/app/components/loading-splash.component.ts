@@ -19,7 +19,7 @@ export class LoadingSplashComponent implements OnInit {
         this.store.pipe(select(getHttpState)).subscribe(
             (data) => {
                 this.pendingRequests = data.pendingRequests;
-                if (this.pendingRequests > 1) {
+                if (this.pendingRequests > 2) {
                     // only show if we have more than x number of concurrent requests
                     this.show = true;
                 } else if (this.pendingRequests == 0) {

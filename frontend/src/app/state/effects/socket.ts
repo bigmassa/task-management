@@ -12,6 +12,7 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { SocketActions } from '../actions/socket';
 import { webSocket } from 'rxjs/webSocket';
+import { Globals } from 'src/app/services/globals';
 
 export interface ISocketPayload {
     type: string;
@@ -28,7 +29,8 @@ export class SocketEffects {
 
     constructor(
         private updates$: Actions,
-        private actions$: SocketActions
+        private actions$: SocketActions,
+        private glogals: Globals
     ) {}
 
     @Effect() public start$ = this.updates$.pipe(
@@ -36,8 +38,8 @@ export class SocketEffects {
         delay(1),
         mergeMap(
             (data) =>
-                webSocket(`ws://${window.location.host}/data/stream/`).pipe(
-                    retryWhen((res) => res.pipe(delay(30000))),
+                webSocket(this.glogals.dataSocketUrl).pipe(
+                    retryWhen((res) => res.pipe(delay(this.glogals.dataSocketRetryDelay))),
                     takeUntil(this.updates$.ofType(SocketActions.STOP))
                 )
             ),

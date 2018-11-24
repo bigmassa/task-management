@@ -2047,7 +2047,7 @@ var LoadingSplashComponent = /** @class */ (function () {
         var _this = this;
         this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_0__["getHttpState"])).subscribe(function (data) {
             _this.pendingRequests = data.pendingRequests;
-            if (_this.pendingRequests > 1) {
+            if (_this.pendingRequests > 2) {
                 // only show if we have more than x number of concurrent requests
                 _this.show = true;
             }
@@ -4955,6 +4955,9 @@ var Globals = /** @class */ (function () {
     function Globals() {
         this.appJSRoot = window['appJSRoot'];
         this.logoutUrl = window['logoutUrl'];
+        this.wsScheme = window.location.protocol === 'https:' ? 'wss' : 'ws';
+        this.host = window.location.host;
+        this.dataSocketUrl = this.wsScheme + "://" + this.host + "/data/stream/";
     }
     Globals = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -9064,6 +9067,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var _actions_socket__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/socket */ "./src/app/state/actions/socket.ts");
 /* harmony import */ var rxjs_webSocket__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/webSocket */ "./node_modules/rxjs/_esm5/webSocket/index.js");
+/* harmony import */ var src_app_services_globals__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/globals */ "./src/app/services/globals.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9079,13 +9083,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SocketEffects = /** @class */ (function () {
-    function SocketEffects(updates$, actions$) {
+    function SocketEffects(updates$, actions$, glogals) {
         var _this = this;
         this.updates$ = updates$;
         this.actions$ = actions$;
+        this.glogals = glogals;
         this.start$ = this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(_actions_socket__WEBPACK_IMPORTED_MODULE_4__["SocketActions"].START), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["delay"])(1), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (data) {
-            return Object(rxjs_webSocket__WEBPACK_IMPORTED_MODULE_5__["webSocket"])("ws://" + window.location.host + "/data/stream/").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["retryWhen"])(function (res) { return res.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["delay"])(30000)); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(_this.updates$.ofType(_actions_socket__WEBPACK_IMPORTED_MODULE_4__["SocketActions"].STOP)));
+            return Object(rxjs_webSocket__WEBPACK_IMPORTED_MODULE_5__["webSocket"])(_this.glogals.dataSocketUrl).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["retryWhen"])(function (res) { return res.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["delay"])(_this.glogals.dataSocketRetryDelay)); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["takeUntil"])(_this.updates$.ofType(_actions_socket__WEBPACK_IMPORTED_MODULE_4__["SocketActions"].STOP)));
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function () { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(null); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["filter"])(function (res) { return !!res; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (res) { return _this.actions$.ProcessMessage(res); }));
     }
     __decorate([
@@ -9097,7 +9103,8 @@ var SocketEffects = /** @class */ (function () {
             providedIn: 'root'
         }),
         __metadata("design:paramtypes", [_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Actions"],
-            _actions_socket__WEBPACK_IMPORTED_MODULE_4__["SocketActions"]])
+            _actions_socket__WEBPACK_IMPORTED_MODULE_4__["SocketActions"],
+            src_app_services_globals__WEBPACK_IMPORTED_MODULE_6__["Globals"]])
     ], SocketEffects);
     return SocketEffects;
 }());
