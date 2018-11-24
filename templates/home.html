@@ -10,7 +10,7 @@
     <style>html { height: 100%; }</style>
     {% is_debug_mode as is_debug %}
     {% if not is_debug %}
-        <style type="text/css" href="{% static 'dist/js/frontend/styles.css' %}"></style>
+    <link rel="stylesheet" href="{% static 'dist/js/frontend/styles.css' %}">
     {% endif %}
 {% endblock %}
 
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="{% static 'dist/js/frontend/polyfills.js' %}"></script>
     {% is_debug_mode as is_debug %}
     {% if is_debug %}
-        <script type="text/javascript" src="{% static 'dist/js/frontend/styles.js' %}"></script>
-        <script type="text/javascript" src="{% static 'dist/js/frontend/vendor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/js/frontend/styles.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/js/frontend/vendor.js' %}"></script>
     {% endif %}
     <script type="text/javascript" src="{% static 'dist/js/frontend/main.js' %}"></script>
 {% endblock %}
