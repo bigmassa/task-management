@@ -37,7 +37,8 @@ export class TaskEffects extends APIBaseEffects {
         'wip.task',
         `${this.prefix} LOAD_ONE`,
         `${this.prefix} LOAD_ONE`,
-        `${this.prefix} REMOVE_SUCCESS`
+        `${this.prefix} REMOVE_SUCCESS`,
+        `${this.prefix} REPLACE_MANY`
     );
 
 }

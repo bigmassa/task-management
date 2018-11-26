@@ -8174,7 +8174,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions */ "./src/app/state/actions/index.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _actions_task__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../actions/task */ "./src/app/state/actions/task.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -8200,7 +8199,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var JobEffects = /** @class */ (function (_super) {
     __extends(JobEffects, _super);
     function JobEffects() {
@@ -8214,7 +8212,7 @@ var JobEffects = /** @class */ (function (_super) {
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
         _this.socket$ = _this._socket$('wip.job', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
         _this.sortTasks$ = _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_this.prefix + " SORT_TASKS"), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
-            return _this.service$.post("" + _this.apiUrl + obj.id + "/sort-tasks/", obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: _actions_task__WEBPACK_IMPORTED_MODULE_6__["TaskActions"].REPLACE_MANY, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
+            return _this.service$.post("" + _this.apiUrl + obj.id + "/sort-tasks/", obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: _this.prefix + " SORT_TASKS_SUCCESS", payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
         }));
         return _this;
     }
@@ -9342,7 +9340,7 @@ var TaskEffects = /** @class */ (function (_super) {
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.patch$ = _this._patch$(_this.prefix + " PATCH", _this.prefix + " PATCH_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
-        _this.socket$ = _this._socket$('wip.task', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
+        _this.socket$ = _this._socket$('wip.task', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS", _this.prefix + " REPLACE_MANY");
         return _this;
     }
     __decorate([

@@ -46,7 +46,7 @@ export class JobEffects extends APIBaseEffects {
         map((action: IActionWithPayload) => action.payload),
         mergeMap(obj =>
             this.service$.post(`${this.apiUrl}${obj.id}/sort-tasks/`, obj).pipe(
-                map(data => ({type: TaskActions.REPLACE_MANY, payload: data})),
+                map(data => ({type: `${this.prefix} SORT_TASKS_SUCCESS`, payload: data})),
                 catchError(res => of({type: HttpActions.HTTP_ERROR, payload: {err: res, data: obj}}))
             )
         )

@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 import { IActionWithPayload } from '../models';
-import { ITask } from '../reducers/task';
 import { Injectable } from '@angular/core';
+import { ITask } from '../reducers/task';
 
 @Injectable({
     providedIn: 'root'

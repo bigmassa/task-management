@@ -1,5 +1,6 @@
 import coreapi
 import coreschema
+from django_bulk_update.helper import bulk_update
 from django_filters import FilterSet
 from django_filters import rest_framework as filters
 from rest_framework import viewsets, status
@@ -9,6 +10,7 @@ from rest_framework.schemas import ManualSchema
 
 from wip.models import Job, Task
 from wip.serializers import JobSerializer, JobTaskSortSerializer, TaskSerializer
+from wip.signals import post_bulk_update, pre_bulk_update
 
 
 class JobFilter(FilterSet):
@@ -51,14 +53,15 @@ class JobViewSet(viewsets.ModelViewSet):
         serializer = JobTaskSortSerializer(data=request.data)
         if serializer.is_valid():
             # sort the tasks
-            for index, pk in enumerate(serializer.data['tasks']):
-                # use update so we dont push them all over the sockets
-                obj = Task.objects.filter(pk=pk)
-                obj.update(order=index + 1)
+            task_ids = serializer.data['tasks']
+            tasks = Task.objects.filter(pk__in=task_ids)
+            for task in tasks:
+                task.order = task_ids.index(task.pk) + 1
 
-            # return the tasks as the response using their correct serializer
-            tasks = Task.objects.filter(pk__in=serializer.data['tasks'])
-            task_serializer = TaskSerializer(instance=tasks, many=True)
-            return Response(task_serializer.data, status=status.HTTP_200_OK)
+            pre_bulk_update.send(sender=Task, queryset=tasks, update_kwargs={})
+            bulk_update(tasks)
+            post_bulk_update.send(sender=Task, updated_pks=task_ids, update_kwargs={})
+
+            return Response({'status': 'ok'}, status=status.HTTP_200_OK)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
