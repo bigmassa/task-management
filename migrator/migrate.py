@@ -275,6 +275,12 @@ def tidyup():
         timing.time_spent_hours = duration_to_decimal_hrs(timing.qs_time_spent_hours)
         timing.save()
 
+    print('sign off timesheets')
+    w_models.TimeEntry.objects.filter(started_at__date__lt='2018-11-18').update(
+        signed_off=True,
+        signed_off_date=datetime.today().date()
+    )
+
 
 def reset_sequences():
     """ reset the sql sequences """
