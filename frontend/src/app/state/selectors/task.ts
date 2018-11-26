@@ -41,9 +41,12 @@ export const getTaskCollectionById = (id) => createSelector(
     (tasks) => _.find(tasks, ['id', id])
 );
 
-export const getTaskCollectionForJob = (id) => createSelector(
-    getTaskCollection,
-    (tasks) => _.filter(tasks, ['job', id])
+export const getTaskStateForJob = (id) => createSelector(
+    getTaskState,
+    (tasks) => {
+        const objects = _.filter(tasks, ['job', id]);
+        return _.orderBy(objects, ['order'], ['asc']);
+    }
 );
 
 export const getTaskFilesForTask = (id) => createSelector(

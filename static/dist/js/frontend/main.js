@@ -2012,7 +2012,7 @@ var JobComponent = /** @class */ (function () {
             _this.notes$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_9__["getJobNoteCollectionForJob"])(_this.jobId)));
             _this.recurringCosts$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_9__["getJobRecurringCostCollectionForJob"])(_this.jobId)));
             _this.relationships$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_9__["getJobRelationshipCollectionForJob"])(_this.jobId)));
-            _this.tasks$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_10__["getTaskCollectionForJob"])(_this.jobId)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["debounceTime"])(200));
+            _this.tasks$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_10__["getTaskStateForJob"])(_this.jobId)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["debounceTime"])(200));
             // forms
             _this.newNoteForm = new _forms_job_note_form__WEBPACK_IMPORTED_MODULE_11__["JobNoteForm"](_this.store, _this.actionsSubject, { cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_7__["FormCleanAfterMethod"].resetToInitial });
             _this.newNoteForm.load({ job: _this.jobId });
@@ -11763,7 +11763,7 @@ var getTagById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MOD
 /*!*****************************************!*\
   !*** ./src/app/state/selectors/task.ts ***!
   \*****************************************/
-/*! exports provided: getTaskAssigneesForTask, getTaskCollection, getTaskCollectionOpen, getTaskCollectionById, getTaskCollectionForJob, getTaskFilesForTask, getTaskNotes, getTaskNotesForTask, getTaskTagsForTask, getTaskTimingsById */
+/*! exports provided: getTaskAssigneesForTask, getTaskCollection, getTaskCollectionOpen, getTaskCollectionById, getTaskStateForJob, getTaskFilesForTask, getTaskNotes, getTaskNotesForTask, getTaskTagsForTask, getTaskTimingsById */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11772,7 +11772,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollection", function() { return getTaskCollection; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionOpen", function() { return getTaskCollectionOpen; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionById", function() { return getTaskCollectionById; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionForJob", function() { return getTaskCollectionForJob; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskStateForJob", function() { return getTaskStateForJob; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskFilesForTask", function() { return getTaskFilesForTask; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNotes", function() { return getTaskNotes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskNotesForTask", function() { return getTaskNotesForTask; });
@@ -11804,7 +11804,10 @@ var getTaskCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createS
 });
 var getTaskCollectionOpen = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, function (t) { return t.closed == false; }); });
 var getTaskCollectionById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', id]); }); };
-var getTaskCollectionForJob = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, ['job', id]); }); };
+var getTaskStateForJob = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskState"], function (tasks) {
+    var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, ['job', id]);
+    return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['order'], ['asc']);
+}); };
 var getTaskFilesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskFileState"], function (files) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](files, ['task', id]); }); };
 var getTaskNotes = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskNoteState"], function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](notes, ['updated_at'], ['desc']); });
 var getTaskNotesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskNotes, function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](notes, ['task', id]); }); };

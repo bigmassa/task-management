@@ -55,11 +55,13 @@ class JobViewSet(viewsets.ModelViewSet):
             # sort the tasks
             task_ids = serializer.data['tasks']
             tasks = Task.objects.filter(pk__in=task_ids)
-            for task in tasks:
-                task.order = task_ids.index(task.pk) + 1
 
             pre_bulk_update.send(sender=Task, queryset=tasks, update_kwargs={})
+
+            for task in tasks:
+                task.order = task_ids.index(task.pk) + 1
             bulk_update(tasks)
+
             post_bulk_update.send(sender=Task, updated_pks=task_ids, update_kwargs={})
 
             return Response({'status': 'ok'}, status=status.HTTP_200_OK)

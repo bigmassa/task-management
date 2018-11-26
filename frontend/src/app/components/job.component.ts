@@ -15,7 +15,7 @@ import {
     getJobRecurringCostCollectionForJob,
     getJobRelationshipCollectionForJob
     } from '../state/selectors/job';
-import { getTaskCollectionForJob } from '../state/selectors/task';
+import { getTaskStateForJob } from '../state/selectors/task';
 import { getTaskStatusState } from './../state/state';
 import { IJob } from '../state/reducers/job';
 import { IJobFile } from '../state/reducers/jobfile';
@@ -79,7 +79,7 @@ export class JobComponent implements OnDestroy, OnInit {
                 this.notes$ = this.store.pipe(select(getJobNoteCollectionForJob(this.jobId)));
                 this.recurringCosts$ = this.store.pipe(select(getJobRecurringCostCollectionForJob(this.jobId)));
                 this.relationships$ = this.store.pipe(select(getJobRelationshipCollectionForJob(this.jobId)));
-                this.tasks$ = this.store.pipe(select(getTaskCollectionForJob(this.jobId)), debounceTime(200));
+                this.tasks$ = this.store.pipe(select(getTaskStateForJob(this.jobId)), debounceTime(200));
                 // forms
                 this.newNoteForm = new JobNoteForm(
                     this.store,
