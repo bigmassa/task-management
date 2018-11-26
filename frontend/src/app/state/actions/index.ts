@@ -12,6 +12,7 @@ import { JobRecurringCostActions } from './jobrecurringcost';
 import { JobRelationshipActions } from './jobrelationship';
 import { JobStatusActions } from './jobstatus';
 import { JobTypeActions } from './jobtype';
+import { MakeCallActions } from './makecall';
 import { MeActions } from './me';
 import { PaymentOptionActions } from './paymentoption';
 import { PositionActions } from './position';
@@ -46,6 +47,7 @@ export {
     JobRelationshipActions,
     JobStatusActions,
     JobTypeActions,
+    MakeCallActions,
     MeActions,
     PaymentOptionActions,
     PositionActions,
@@ -81,6 +83,7 @@ export const actions = [
     JobRelationshipActions,
     JobStatusActions,
     JobTypeActions,
+    MakeCallActions,
     MeActions,
     PaymentOptionActions,
     PositionActions,

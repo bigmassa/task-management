@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+import * as actions from '../state/actions';
 import { ActivatedRoute } from '@angular/router';
 import { AppState, getMeState, getTabState } from '../state/state';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -7,6 +8,7 @@ import { getJobCollectionForClient } from '../state/selectors/job';
 import { IClient } from '../state/reducers/client';
 import { IClientContact } from '../state/reducers/clientcontact';
 import { IJob } from './../state/reducers/job';
+import { IMakeCall } from '../state/models';
 import { IMe } from './../state/reducers/me';
 import { ITab, ITabs } from '../state/reducers/tabs';
 import { Observable, Subscription } from 'rxjs';
@@ -54,4 +56,8 @@ export class ClientComponent implements OnDestroy, OnInit {
         _.each(this.subscriptions, s => s.unsubscribe());
     }
 
+    call(number: string) {
+        const payload: IMakeCall = {telephone_number: number};
+        this.store.dispatch({type: actions.MakeCallActions.MAKE_CALL, payload})
+    }
 }

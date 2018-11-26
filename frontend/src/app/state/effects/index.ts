@@ -10,6 +10,7 @@ import { JobRecurringCostEffects } from './jobrecurringcost';
 import { JobRelationshipEffects } from './jobrelationship';
 import { JobStatusEffects } from './jobstatus';
 import { JobTypeEffects } from './jobtype';
+import { MakeCallEffects } from './makecall';
 import { MeEffects } from './me';
 import { PaymentOptionEffects } from './paymentoption';
 import { PositionEffects } from './position';
@@ -41,6 +42,7 @@ export const effects = [
     JobRelationshipEffects,
     JobStatusEffects,
     JobTypeEffects,
+    MakeCallEffects,
     MeEffects,
     PaymentOptionEffects,
     PositionEffects,

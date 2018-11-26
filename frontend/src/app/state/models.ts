@@ -7,3 +7,7 @@ export interface IActionWithPayload extends Action {
 export interface IActionWithHTTPData {
     params?: any
 }
+
+export interface IMakeCall {
+    telephone_number: string;
+}
