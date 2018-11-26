@@ -4,6 +4,7 @@ import { ClientDeleteComponent } from './components/client-delete.component';
 import { ClientDetailFormComponent } from './components/client-detail-form.component';
 import { ClientListComponent } from './components/client-list.component';
 import { JobComponent } from './components/job.component';
+import { JobDeleteComponent } from './components/job-delete.component';
 import { JobDetailFormComponent } from './components/job-detail-form.component';
 import { JobRecurringCostFormComponent } from './components/job-recurring-cost-form.component';
 import { JobRelationshipFormComponent } from './components/job-relationship-form.component';
@@ -13,7 +14,6 @@ import { ReportListComponent } from './components/report-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TaskboardComponent } from './components/taskboard.component';
 import { TimesheetComponent } from './components/time-sheet.component';
-
 
 const routes: Routes = [
     { path: '', component: TaskboardComponent },
@@ -26,6 +26,7 @@ const routes: Routes = [
     { path: 'clients/:client_id/contacts/:id', component: ClientContactFormComponent},
     { path: 'clients/:client_id/jobs/new', component: JobDetailFormComponent},
     { path: 'clients/:client_id/jobs/:id/detail', component: JobDetailFormComponent},
+    { path: 'clients/:client_id/jobs/:id/delete', component: JobDeleteComponent},
     { path: 'clients/:client_id/jobs/:id', component: JobComponent},
     { path: 'clients/:client_id/jobs/:job_id/recurring-costs/new', component: JobRecurringCostFormComponent},
     { path: 'clients/:client_id/jobs/:job_id/recurring-costs/:id', component: JobRecurringCostFormComponent},

@@ -1,0 +1,34 @@
+<ng-container *ngIf="job">
+    <div class="page-header">
+        <div class="container-fluid d-flex align-items-center py-2">
+            <span class="color-indicator" [style.backgroundColor]="job.colour"></span>
+            <div class="h2">
+                <a class="underline-dotted" [routerLink]="['/clients', job.client]">{{ job | get:'_client.name' }}</a> /
+                <a class="underline-dotted" [routerLink]="['/clients', job.client, 'jobs', job.id]">{{ job | get:'title' }}</a>
+            </div>
+            <div class="page-header-actions">
+                <a *ngIf="canDelete" class="button button-white" (click)="delete()">Confirm</a>
+                <a [routerLink]="['/clients', job.client, 'jobs', job.id]" class="button button-white button-clear">Cancel</a>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <ul class="tabs">
+                <li class="active">Delete</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid inner-content">
+        <div class="row">
+            <div class="col">
+                <div class="panel panel-dark" *ngIf="canDelete">
+                    <p class="strong">Confirm</p>
+                    <p class="ws-pre-wrap">Please confirm you wish to delete this job</p>
+                </div>
+                <div class="panel panel-dark" *ngIf="!canDelete">
+                    <p class="strong">Oops</p>
+                    <p class="ws-pre-wrap">You cannot delete this job until all related data has been deleted first</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

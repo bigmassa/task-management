@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class DeletableService {
 
     public static CLIENT = { app_label: 'wip', model_name: 'client' };
+    public static JOB = { app_label: 'wip', model_name: 'job' };
 
     private baseUrl: string = '/api/protected/';
 
