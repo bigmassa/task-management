@@ -1,7 +1,9 @@
 from decimal import Decimal
 
-from django.db import models
+from django.db import models, transaction
 from django.db.models.manager import BaseManager
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 from wip.fields import ColorField
 from wip.utils import duration_to_decimal_hrs
@@ -115,3 +117,12 @@ class Job(models.Model):
 
         value = getattr(self, 'qs_time_spent', None)
         return duration_to_decimal_hrs(value)
+
+
+@receiver(post_save, sender=Job)
+def add_timing(instance, **kwargs):
+    def do():
+        from wip.models import JobTiming
+        JobTiming.objects.get_or_create(job=instance)
+
+    transaction.on_commit(do)

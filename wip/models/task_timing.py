@@ -1,6 +1,6 @@
-from django.db import models
+from django.db import models, transaction
 from django.db.models.manager import BaseManager
-from django.db.models.signals import pre_save
+from django.db.models.signals import post_delete, post_save, pre_save
 from django.dispatch import receiver
 from django.utils import timezone
 
@@ -69,3 +69,18 @@ class TaskTiming(models.Model):
         if self.time_spent_hours and self.allocated_hours:
             return self.time_spent_hours > self.allocated_hours
         return False
+
+
+@receiver(post_save, sender=TaskTiming)
+@receiver(post_delete, sender=TaskTiming)
+def update_job_timings(instance, **kwargs):
+    def do():
+        from wip.models import JobTiming
+
+        timing = JobTiming.objects.with_calculated().get(job_id=instance.task.job_id)
+
+        timing.allocated_hours = timing.qs_allocated_hours
+        timing.time_spent_hours = timing.qs_time_spent_hours
+        timing.save()
+
+    transaction.on_commit(do)

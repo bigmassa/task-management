@@ -5,6 +5,7 @@ from .job_file import JobFileBinding
 from .job_note import JobNoteBinding
 from .job_recurring_cost import JobRecurringCostBinding
 from .job_relationship import JobRelationshipBinding
+from .job_timing import JobTimingBinding
 from .tag import TagBinding
 from .tagged_item import TaggedItemBinding
 from .task import TaskBinding

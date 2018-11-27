@@ -6,6 +6,7 @@ from .job_note import JobNoteSerializer
 from .job_recurring_cost import JobRecurringCostSerializer
 from .job_relationship import JobRelationshipSerializer
 from .job_status import JobStatusSerializer
+from .job_timing import JobTimingSerializer
 from .job_type import JobTypeSerializer
 from .make_call import MakeCallSerializer
 from .payment_option import PaymentOptionSerializer

@@ -80,6 +80,15 @@
     }
 
 -
+    model: wip.jobtiming
+    pk: 1
+    fields: {
+      job: 1,
+      allocated_hours: "10.00",
+      time_spent_hours: "0.00"
+    }
+
+-
     model: wip.relationship
     pk: 1
     fields: {

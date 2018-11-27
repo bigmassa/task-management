@@ -6,6 +6,7 @@ from .job_note import JobNote
 from .job_recurring_cost import JobRecurringCost
 from .job_relationship import JobRelationship
 from .job_status import JobStatus
+from .job_timing import JobTiming
 from .job_type import JobType
 from .payment_option import PaymentOption
 from .position import Position

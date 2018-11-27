@@ -8,6 +8,7 @@ from .job_note import JobNoteViewSet
 from .job_recurring_cost import JobRecurringCostViewSet
 from .job_relationship import JobRelationshipViewSet
 from .job_status import JobStatusViewSet
+from .job_timing import JobTimingViewSet
 from .job_type import JobTypeViewSet
 from .make_call import MakeCallViewSet
 from .payment_option import PaymentOptionViewSet
