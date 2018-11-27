@@ -1,15 +1,20 @@
 import * as _ from 'lodash';
-
-import { getTaskAssigneeState, getTaskTagState, getTaskTimingState } from './../state';
-import { getTaskFileState, getTaskNoteState, getTaskState } from '../state';
-
 import { createSelector } from '@ngrx/store';
 import { getJobCollection } from './job';
+import { getTaskAssigneeState, getTaskTagState, getTaskTimingState } from './../state';
+import { getTaskFileState, getTaskNoteState, getTaskState } from '../state';
 import { getTaskStatusState } from '../state';
+
+
 
 export const getTaskAssigneesForTask = (id) => createSelector(
     getTaskAssigneeState,
     (assignees) => _.filter(assignees, ['task', id])
+);
+
+export const getTaskById = (id) => createSelector(
+    getTaskState,
+    (tasks) => _.find(tasks, ['id', id])
 );
 
 export const getTaskCollection = createSelector(

@@ -1965,7 +1965,7 @@ a.avatar:hover .avatar-close {
 }
 
 .board-card-desc {
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   font-size: 14px;
   line-height: 1.8rem;
 }

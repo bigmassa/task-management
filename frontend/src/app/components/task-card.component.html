@@ -1,7 +1,4 @@
 <div class="board-card d-flex flex-column pointer" *ngIf="task$ | async as task">
-    <div class="d-flex align-items-center">
-        <span class="small uppercase"><strong>{{ task._job?._client?.name }} / {{ task._job?.title }}</strong></span>
-    </div>
     <p class="board-card-desc">{{ task.title }}</p>
     <div class="d-flex">
         <div class="mr-auto">

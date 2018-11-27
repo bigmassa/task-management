@@ -13,8 +13,9 @@ import {
     ViewChild
     } from '@angular/core';
 import { DropzoneConfigInterface } from '../../../node_modules/ngx-dropzone-wrapper';
-import { filter, take } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 import { FormCleanAfterMethod } from '../forms/base.form';
+import { getActiveUsers } from '../state/selectors/user';
 import { getCookie } from '../utils/cookies';
 import { getTagCollection } from '../state/selectors/tag';
 import {
@@ -31,17 +32,16 @@ import { ITaskAssignee } from '../state/reducers/taskassignee';
 import { ITaskFile } from './../state/reducers/taskfile';
 import { ITaskNote } from '../state/reducers/tasknote';
 import { ITaskTag } from './../state/reducers/tasktag';
+import { ITaskTiming } from '../state/reducers/tasktiming';
 import { IUser } from '../state/reducers/user';
 import { Observable } from 'rxjs';
 import { TaskAssigneeForm } from '../forms/task-assignee.form';
+import { TaskClosedForm } from '../forms/task-close.form';
 import { TaskDescriptionForm } from '../forms/task-description.form';
 import { TaskNoteForm } from '../forms/task-note.form';
 import { TaskTagForm } from '../forms/task-tag.form';
 import { TaskTargetDateForm } from '../forms/task-target-date.form';
 import { TaskTitleForm } from '../forms/task-title.form';
-import { ITaskTiming } from '../state/reducers/tasktiming';
-import { getActiveUsers } from '../state/selectors/user';
-import { TaskClosedForm } from '../forms/task-close.form';
 
 @Component({
     selector: 'task-form, [task-form]',

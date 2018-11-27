@@ -2541,7 +2541,7 @@ var TagComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"board-card d-flex flex-column pointer\" *ngIf=\"task$ | async as task\">\n    <div class=\"d-flex align-items-center\">\n        <span class=\"small uppercase\"><strong>{{ task._job?._client?.name }} / {{ task._job?.title }}</strong></span>\n    </div>\n    <p class=\"board-card-desc\">{{ task.title }}</p>\n    <div class=\"d-flex\">\n        <div class=\"mr-auto\">\n            <span class=\"uppercase mr-1\" [class.c-red]=\"task.is_overdue\" *ngIf=\"task.target_date\"><i class=\"icon-bell\"></i> {{ task.target_date | date:'d MMM' }}</span>\n            <span class=\"uppercase\" [class.c-red]=\"timing.is_over_allocated_hours\" *ngIf=\"timing$ | async as timing\">\n                <i class=\"icon-clock\"></i> {{ timing.time_spent_hours }}/{{ timing.allocated_hours }}\n            </span>\n        </div>\n        <div>\n            <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of assignees$ | async\"></div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"board-card d-flex flex-column pointer\" *ngIf=\"task$ | async as task\">\n    <p class=\"board-card-desc\">{{ task.title }}</p>\n    <div class=\"d-flex\">\n        <div class=\"mr-auto\">\n            <span class=\"uppercase mr-1\" [class.c-red]=\"task.is_overdue\" *ngIf=\"task.target_date\"><i class=\"icon-bell\"></i> {{ task.target_date | date:'d MMM' }}</span>\n            <span class=\"uppercase\" [class.c-red]=\"timing.is_over_allocated_hours\" *ngIf=\"timing$ | async as timing\">\n                <i class=\"icon-clock\"></i> {{ timing.time_spent_hours }}/{{ timing.allocated_hours }}\n            </span>\n        </div>\n        <div>\n            <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of assignees$ | async\"></div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2558,8 +2558,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../state/selectors/task */ "./src/app/state/selectors/task.ts");
+/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../state/selectors/task */ "./src/app/state/selectors/task.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2579,9 +2579,9 @@ var TaskCardComponent = /** @class */ (function () {
     }
     TaskCardComponent.prototype.ngOnChanges = function (changes) {
         if (lodash__WEBPACK_IMPORTED_MODULE_0__["has"](changes, 'id.currentValue')) {
-            this.assignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_3__["getTaskAssigneesForTask"])(this.id)));
-            this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_3__["getTaskCollectionById"])(this.id)));
-            this.timing$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_3__["getTaskTimingsById"])(this.id)));
+            this.assignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_2__["getTaskAssigneesForTask"])(this.id)));
+            this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_2__["getTaskById"])(this.id)));
+            this.timing$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_2__["getTaskTimingsById"])(this.id)));
         }
     };
     __decorate([
@@ -2593,7 +2593,7 @@ var TaskCardComponent = /** @class */ (function () {
             selector: 'task-card, [task-card]',
             template: __webpack_require__(/*! ./task-card.component.html */ "./src/app/components/task-card.component.html")
         }),
-        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]])
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"]])
     ], TaskCardComponent);
     return TaskCardComponent;
 }());
@@ -2737,17 +2737,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /* harmony import */ var _forms_base_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../forms/base.form */ "./src/app/forms/base.form.ts");
-/* harmony import */ var _utils_cookies__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/cookies */ "./src/app/utils/cookies.ts");
-/* harmony import */ var _state_selectors_tag__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../state/selectors/tag */ "./src/app/state/selectors/tag.ts");
-/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../state/selectors/task */ "./src/app/state/selectors/task.ts");
-/* harmony import */ var _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../forms/task-assignee.form */ "./src/app/forms/task-assignee.form.ts");
-/* harmony import */ var _forms_task_description_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../forms/task-description.form */ "./src/app/forms/task-description.form.ts");
-/* harmony import */ var _forms_task_note_form__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../forms/task-note.form */ "./src/app/forms/task-note.form.ts");
-/* harmony import */ var _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../forms/task-tag.form */ "./src/app/forms/task-tag.form.ts");
-/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
-/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
-/* harmony import */ var _state_selectors_user__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../state/selectors/user */ "./src/app/state/selectors/user.ts");
-/* harmony import */ var _forms_task_close_form__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../forms/task-close.form */ "./src/app/forms/task-close.form.ts");
+/* harmony import */ var _state_selectors_user__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../state/selectors/user */ "./src/app/state/selectors/user.ts");
+/* harmony import */ var _utils_cookies__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/cookies */ "./src/app/utils/cookies.ts");
+/* harmony import */ var _state_selectors_tag__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../state/selectors/tag */ "./src/app/state/selectors/tag.ts");
+/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../state/selectors/task */ "./src/app/state/selectors/task.ts");
+/* harmony import */ var _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../forms/task-assignee.form */ "./src/app/forms/task-assignee.form.ts");
+/* harmony import */ var _forms_task_close_form__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../forms/task-close.form */ "./src/app/forms/task-close.form.ts");
+/* harmony import */ var _forms_task_description_form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../forms/task-description.form */ "./src/app/forms/task-description.form.ts");
+/* harmony import */ var _forms_task_note_form__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../forms/task-note.form */ "./src/app/forms/task-note.form.ts");
+/* harmony import */ var _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../forms/task-tag.form */ "./src/app/forms/task-tag.form.ts");
+/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
+/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2782,26 +2782,26 @@ var TaskFormComponent = /** @class */ (function () {
         this.dropzoneConfig = {
             url: '/api/task-files/',
             maxFilesize: 50,
-            headers: { 'X-CSRFTOKEN': Object(_utils_cookies__WEBPACK_IMPORTED_MODULE_6__["getCookie"])('csrftoken') }
+            headers: { 'X-CSRFTOKEN': Object(_utils_cookies__WEBPACK_IMPORTED_MODULE_7__["getCookie"])('csrftoken') }
         };
         this.taskNoteForms = {};
-        this.tags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_tag__WEBPACK_IMPORTED_MODULE_7__["getTagCollection"]));
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_user__WEBPACK_IMPORTED_MODULE_15__["getActiveUsers"]));
-        this.closedForm = new _forms_task_close_form__WEBPACK_IMPORTED_MODULE_16__["TaskClosedForm"](this.store, this.actionsSubject, { alwaysEditable: true });
-        this.descriptionForm = new _forms_task_description_form__WEBPACK_IMPORTED_MODULE_10__["TaskDescriptionForm"](this.store, this.actionsSubject);
-        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_14__["TaskTitleForm"](this.store, this.actionsSubject);
-        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_13__["TaskTargetDateForm"](this.store, this.actionsSubject);
-        this.newNoteForm = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_11__["TaskNoteForm"](this.store, this.actionsSubject);
+        this.tags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_tag__WEBPACK_IMPORTED_MODULE_8__["getTagCollection"]));
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_user__WEBPACK_IMPORTED_MODULE_6__["getActiveUsers"]));
+        this.closedForm = new _forms_task_close_form__WEBPACK_IMPORTED_MODULE_11__["TaskClosedForm"](this.store, this.actionsSubject, { alwaysEditable: true });
+        this.descriptionForm = new _forms_task_description_form__WEBPACK_IMPORTED_MODULE_12__["TaskDescriptionForm"](this.store, this.actionsSubject);
+        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_16__["TaskTitleForm"](this.store, this.actionsSubject);
+        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_15__["TaskTargetDateForm"](this.store, this.actionsSubject);
+        this.newNoteForm = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_13__["TaskNoteForm"](this.store, this.actionsSubject);
     }
     TaskFormComponent.prototype.ngOnChanges = function (changes) {
         var _this = this;
         if (lodash__WEBPACK_IMPORTED_MODULE_0__["has"](changes, 'id.currentValue')) {
-            this.taskFiles$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_8__["getTaskFilesForTask"])(this.id)));
-            this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_8__["getTaskCollectionById"])(this.id)));
-            this.taskAssignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_8__["getTaskAssigneesForTask"])(this.id)));
-            this.taskNotes$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_8__["getTaskNotesForTask"])(this.id)));
-            this.taskTags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_8__["getTaskTagsForTask"])(this.id)));
-            this.taskTiming$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_8__["getTaskTimingsById"])(this.id)));
+            this.taskFiles$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_9__["getTaskFilesForTask"])(this.id)));
+            this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_9__["getTaskCollectionById"])(this.id)));
+            this.taskAssignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_9__["getTaskAssigneesForTask"])(this.id)));
+            this.taskNotes$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_9__["getTaskNotesForTask"])(this.id)));
+            this.taskTags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_9__["getTaskTagsForTask"])(this.id)));
+            this.taskTiming$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_9__["getTaskTimingsById"])(this.id)));
             this.task$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (d) { return lodash__WEBPACK_IMPORTED_MODULE_0__["isObject"](d); })).subscribe(function (d) {
                 _this.closedForm.load(d);
                 _this.descriptionForm.load(d);
@@ -2821,7 +2821,7 @@ var TaskFormComponent = /** @class */ (function () {
     };
     TaskFormComponent.prototype.getOrCreateEditNoteForm = function (note) {
         if (!lodash__WEBPACK_IMPORTED_MODULE_0__["has"](this.taskNoteForms, note.id)) {
-            var form = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_11__["TaskNoteForm"](this.store, this.actionsSubject, { alwaysEditable: false, cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_5__["FormCleanAfterMethod"].loadSaved });
+            var form = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_13__["TaskNoteForm"](this.store, this.actionsSubject, { alwaysEditable: false, cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_5__["FormCleanAfterMethod"].loadSaved });
             form.load(note);
             this.taskNoteForms[note.id] = form;
             return this.taskNoteForms[note.id];
@@ -2829,7 +2829,7 @@ var TaskFormComponent = /** @class */ (function () {
         return this.taskNoteForms[note.id];
     };
     TaskFormComponent.prototype.editAssignee = function (assignee) {
-        this.assigneeEditForm = new _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_9__["TaskAssigneeForm"](this.store, this.actionsSubject);
+        this.assigneeEditForm = new _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_10__["TaskAssigneeForm"](this.store, this.actionsSubject);
         this.assigneeEditForm.editable = true;
         this.assigneeEditForm.load(assignee);
     };
@@ -2846,7 +2846,7 @@ var TaskFormComponent = /** @class */ (function () {
     };
     // tags
     TaskFormComponent.prototype.editTag = function (tag) {
-        this.tagEditForm = new _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_12__["TaskTagForm"](this.store, this.actionsSubject);
+        this.tagEditForm = new _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_14__["TaskTagForm"](this.store, this.actionsSubject);
         this.tagEditForm.editable = true;
         this.tagEditForm.load(tag);
     };
@@ -11996,12 +11996,13 @@ var getTagById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MOD
 /*!*****************************************!*\
   !*** ./src/app/state/selectors/task.ts ***!
   \*****************************************/
-/*! exports provided: getTaskAssigneesForTask, getTaskCollection, getTaskCollectionOpen, getTaskCollectionById, getTaskStateForJob, getTaskFilesForTask, getTaskNotes, getTaskNotesForTask, getTaskTagsForTask, getTaskTimingsById */
+/*! exports provided: getTaskAssigneesForTask, getTaskById, getTaskCollection, getTaskCollectionOpen, getTaskCollectionById, getTaskStateForJob, getTaskFilesForTask, getTaskNotes, getTaskNotesForTask, getTaskTagsForTask, getTaskTimingsById */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskAssigneesForTask", function() { return getTaskAssigneesForTask; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskById", function() { return getTaskById; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollection", function() { return getTaskCollection; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionOpen", function() { return getTaskCollectionOpen; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskCollectionById", function() { return getTaskCollectionById; });
@@ -12013,17 +12014,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTaskTimingsById", function() { return getTaskTimingsById; });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../state */ "./src/app/state/state.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _job__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./job */ "./src/app/state/selectors/job.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _job__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./job */ "./src/app/state/selectors/job.ts");
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../state */ "./src/app/state/state.ts");
 
 
 
 
 
 
-var getTaskAssigneesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskAssigneeState"], function (assignees) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['task', id]); }); };
-var getTaskCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_job__WEBPACK_IMPORTED_MODULE_3__["getJobCollection"], _state__WEBPACK_IMPORTED_MODULE_1__["getTaskState"], _state__WEBPACK_IMPORTED_MODULE_1__["getTaskStatusState"], function (jobs, tasks, statuses) {
+var getTaskAssigneesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTaskAssigneeState"], function (assignees) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](assignees, ['task', id]); }); };
+var getTaskById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTaskState"], function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', id]); }); };
+var getTaskCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_job__WEBPACK_IMPORTED_MODULE_2__["getJobCollection"], _state__WEBPACK_IMPORTED_MODULE_3__["getTaskState"], _state__WEBPACK_IMPORTED_MODULE_3__["getTaskStatusState"], function (jobs, tasks, statuses) {
     if (lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](jobs) || lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](tasks) || lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](statuses)) {
         return [];
     }
@@ -12035,17 +12037,17 @@ var getTaskCollection = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createS
     });
     return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['order'], ['asc']);
 });
-var getTaskCollectionOpen = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, function (t) { return t.closed == false; }); });
-var getTaskCollectionById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', id]); }); };
-var getTaskStateForJob = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskState"], function (tasks) {
+var getTaskCollectionOpen = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, function (t) { return t.closed == false; }); });
+var getTaskCollectionById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getTaskCollection, function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['id', id]); }); };
+var getTaskStateForJob = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTaskState"], function (tasks) {
     var objects = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, ['job', id]);
     return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](objects, ['order'], ['asc']);
 }); };
-var getTaskFilesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskFileState"], function (files) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](files, ['task', id]); }); };
-var getTaskNotes = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskNoteState"], function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](notes, ['updated_at'], ['desc']); });
-var getTaskNotesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTaskNotes, function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](notes, ['task', id]); }); };
-var getTaskTagsForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskTagState"], function (tags) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tags, ['object_id', id]); }); };
-var getTaskTimingsById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_1__["getTaskTimingState"], function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['task', id]); }); };
+var getTaskFilesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTaskFileState"], function (files) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](files, ['task', id]); }); };
+var getTaskNotes = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTaskNoteState"], function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["orderBy"](notes, ['updated_at'], ['desc']); });
+var getTaskNotesForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(getTaskNotes, function (notes) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](notes, ['task', id]); }); };
+var getTaskTagsForTask = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTaskTagState"], function (tags) { return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tags, ['object_id', id]); }); };
+var getTaskTimingsById = function (id) { return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["createSelector"])(_state__WEBPACK_IMPORTED_MODULE_3__["getTaskTimingState"], function (tasks) { return lodash__WEBPACK_IMPORTED_MODULE_0__["find"](tasks, ['task', id]); }); };
 
 
 /***/ }),
