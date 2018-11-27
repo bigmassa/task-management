@@ -36,6 +36,8 @@ export class TimesheetComponent implements OnInit {
     selectedEventId: number;
     selectedTaskId: number;
     selectedUserId: number;
+    slotDuration: number = 5;
+    formattedSlotDuration: string = '00:05:00';
     subscriptions: Subscription[] = [];
     tasks$: Observable<any>;
     users$: Observable<IUser[]>;
@@ -143,6 +145,11 @@ export class TimesheetComponent implements OnInit {
 
     onEventClick(info: EventClickInfo) {
         this.selectedEventId = info.event.extendedProps.id;
+    }
+
+    onChangeSlotDuration(event: any) {
+        const duration = moment.utc(moment.duration(event, 'minutes').as('milliseconds')).format('HH:mm:ss');
+        this.formattedSlotDuration = duration;
     }
 
     private updateEvent(info: any, payload: any) {

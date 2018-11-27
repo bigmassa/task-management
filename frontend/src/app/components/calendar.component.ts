@@ -263,7 +263,7 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewChecked, D
         if (this.calendar) {
             for (const propName in changes) {
                 if (propName !== 'events') {
-                    this.calendar.option(propName, changes[propName].currentValue);
+                    this.calendar.setOption(propName, changes[propName].currentValue);
                 }
             }
         }
