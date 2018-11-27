@@ -31,6 +31,7 @@ export class DataEffects {
                     // lookups
                     new actions.BillingFrequencyActions().LoadAll(),
                     new actions.JobStatusActions().LoadAll(),
+                    new actions.JobTimingActions().LoadAll(),
                     new actions.JobTypeActions().LoadAll(),
                     new actions.PaymentOptionActions().LoadAll(),
                     new actions.PositionActions().LoadAll(),

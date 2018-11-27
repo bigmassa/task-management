@@ -3,6 +3,7 @@ import { createSelector } from '@ngrx/store';
 import {
     getBillingFrequencyState,
     getJobFileState,
+    getJobTimingState,
     getPaymentOptionState,
     getRecurringCostTypeState,
     getUserState
@@ -126,4 +127,9 @@ export const getJobRelationshipCollectionForJob = (id) => createSelector(
 export const getJobRelationshipCollectionById = (id) => createSelector(
     getJobRelationshipCollection,
     (relationships) => _.find(relationships, ['id', id])
+);
+
+export const getJobTimingsById = (id) => createSelector(
+    getJobTimingState,
+    (jobs) => _.find(jobs, ['job', id])
 );

@@ -13,7 +13,8 @@ import {
     getJobFilesForJob,
     getJobNoteCollectionForJob,
     getJobRecurringCostCollectionForJob,
-    getJobRelationshipCollectionForJob
+    getJobRelationshipCollectionForJob,
+    getJobTimingsById
     } from '../state/selectors/job';
 import { getTaskStateForJob } from '../state/selectors/task';
 import { getTaskStatusState } from './../state/state';
@@ -22,6 +23,7 @@ import { IJobFile } from '../state/reducers/jobfile';
 import { IJobNote } from './../state/reducers/jobnote';
 import { IJobRecurringCost } from './../state/reducers/jobrecurringcost';
 import { IJobRelationship } from './../state/reducers/jobrelationship';
+import { IJobTiming } from '../state/reducers/jobtiming';
 import { ITab, ITabs } from '../state/reducers/tabs';
 import { ITask } from '../state/reducers/task';
 import { ITaskStatus } from '../state/reducers/taskstatus';
@@ -49,6 +51,7 @@ export class JobComponent implements OnDestroy, OnInit {
     job$: Observable<IJob>;
     notes$: Observable<IJobNote[]>;
     tabs$: Observable<ITabs>;
+    timings$: Observable<IJobTiming>;
     jobNoteForms = {};
     newNoteForm: JobNoteForm;
     recurringCosts$: Observable<IJobRecurringCost[]>;
@@ -80,6 +83,7 @@ export class JobComponent implements OnDestroy, OnInit {
                 this.recurringCosts$ = this.store.pipe(select(getJobRecurringCostCollectionForJob(this.jobId)));
                 this.relationships$ = this.store.pipe(select(getJobRelationshipCollectionForJob(this.jobId)));
                 this.tasks$ = this.store.pipe(select(getTaskStateForJob(this.jobId)), debounceTime(200));
+                this.timings$ = this.store.pipe(select(getJobTimingsById(this.jobId)));
                 // forms
                 this.newNoteForm = new JobNoteForm(
                     this.store,

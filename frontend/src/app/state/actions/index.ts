@@ -11,6 +11,7 @@ import { JobNoteActions } from './jobnote';
 import { JobRecurringCostActions } from './jobrecurringcost';
 import { JobRelationshipActions } from './jobrelationship';
 import { JobStatusActions } from './jobstatus';
+import { JobTimingActions } from './jobtiming';
 import { JobTypeActions } from './jobtype';
 import { MakeCallActions } from './makecall';
 import { MeActions } from './me';
@@ -46,6 +47,7 @@ export {
     JobRecurringCostActions,
     JobRelationshipActions,
     JobStatusActions,
+    JobTimingActions,
     JobTypeActions,
     MakeCallActions,
     MeActions,
@@ -82,6 +84,7 @@ export const actions = [
     JobRecurringCostActions,
     JobRelationshipActions,
     JobStatusActions,
+    JobTimingActions,
     JobTypeActions,
     MakeCallActions,
     MeActions,

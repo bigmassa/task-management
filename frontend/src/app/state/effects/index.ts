@@ -9,6 +9,7 @@ import { JobNoteEffects } from './jobnote';
 import { JobRecurringCostEffects } from './jobrecurringcost';
 import { JobRelationshipEffects } from './jobrelationship';
 import { JobStatusEffects } from './jobstatus';
+import { JobTimingEffects } from './jobtiming';
 import { JobTypeEffects } from './jobtype';
 import { MakeCallEffects } from './makecall';
 import { MeEffects } from './me';
@@ -41,6 +42,7 @@ export const effects = [
     JobRecurringCostEffects,
     JobRelationshipEffects,
     JobStatusEffects,
+    JobTimingEffects,
     JobTypeEffects,
     MakeCallEffects,
     MeEffects,

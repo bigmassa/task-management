@@ -261,6 +261,21 @@ def tidyup():
             obj.colour = obj.jobs.first().colour
             obj.save()
 
+    print('add job timings')
+    new_timings = []
+    for job in w_models.Job.objects.all():
+        new_timing = w_models.JobTiming(
+            job=job
+        )
+        new_timings.append(new_timing)
+    w_models.JobTiming.objects.bulk_create(new_timings)
+
+    print('set job timing defaults')
+    for timing in w_models.JobTiming.objects.with_calculated().all():
+        timing.allocated_hours = timing.qs_allocated_hours or Decimal('0.00')
+        timing.time_spent_hours = timing.qs_time_spent_hours or Decimal('0.00')
+        timing.save()
+
     print('add task timings')
     new_timings = []
     for task in w_models.Task.objects.all():
@@ -285,21 +300,6 @@ def tidyup():
         else:
             task.closed_date = task.created_at
         task.save()
-
-    print('add job timings')
-    new_timings = []
-    for job in w_models.Job.objects.all():
-        new_timing = w_models.JobTiming(
-            job=job
-        )
-        new_timings.append(new_timing)
-    w_models.JobTiming.objects.bulk_create(new_timings)
-
-    print('set job timing defaults')
-    for timing in w_models.JobTiming.objects.with_calculated().all():
-        timing.allocated_hours = timing.qs_allocated_hours or Decimal('0.00')
-        timing.time_spent_hours = timing.qs_time_spent_hours or Decimal('0.00')
-        timing.save()
 
     print('sign off timesheets')
     w_models.TimeEntry.objects.filter(started_at__date__lt='2018-11-18').update(

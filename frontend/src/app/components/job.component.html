@@ -63,8 +63,11 @@
 
         <div class="row" *ngIf="selectedTab.title == 'Detail'">
             <div class="col-lg-3">
-                <p class="strong">Time Spent (hours)</p>
-                <p>-</p>
+                <p class="strong">Time Spent (hrs)</p>
+                <p [class.c-red]="timings.is_over_allocated_hours" *ngIf="timings$ | async as timings">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>
+                <hr>
+                <p class="strong">Estimated (hrs)</p>
+                <p>{{ job | get:'estimated_hours' }}</p>
                 <hr/>
                 <p class="strong">Type</p>
                 <p>{{ job | get:'_type.title' }}</p>

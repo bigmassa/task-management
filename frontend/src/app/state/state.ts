@@ -10,6 +10,7 @@ import * as fromJobNote from './reducers/jobnote';
 import * as fromJobRecurringCost from './reducers/jobrecurringcost';
 import * as fromJobRelationship from './reducers/jobrelationship';
 import * as fromJobStatus from './reducers/jobstatus';
+import * as fromJobTiming from './reducers/jobtiming';
 import * as fromJobType from './reducers/jobtype';
 import * as fromMe from './reducers/me';
 import * as fromPaymentOption from './reducers/paymentoption';
@@ -43,6 +44,7 @@ export interface AppState {
     job_recurring_costs: fromJobRecurringCost.State;
     job_relationships: fromJobRelationship.State;
     job_statuses: fromJobStatus.State;
+    job_timings: fromJobTiming.State;
     job_types: fromJobType.State;
     me: fromMe.State;
     payment_options: fromPaymentOption.State;
@@ -75,6 +77,7 @@ export const reducers: ActionReducerMap<AppState> = {
     job_recurring_costs: fromJobRecurringCost.reducer,
     job_relationships: fromJobRelationship.reducer,
     job_statuses: fromJobStatus.reducer,
+    job_timings: fromJobTiming.reducer,
     job_types: fromJobType.reducer,
     me: fromMe.reducer,
     payment_options: fromPaymentOption.reducer,
@@ -106,6 +109,7 @@ export const getJobNoteState = createFeatureSelector<fromJobNote.State>('job_not
 export const getJobRecurringCostState = createFeatureSelector<fromJobRecurringCost.State>('job_recurring_costs');
 export const getJobRelationshipState = createFeatureSelector<fromJobRelationship.State>('job_relationships');
 export const getJobStatusState = createFeatureSelector<fromJobStatus.State>('job_statuses');
+export const getJobTimingState = createFeatureSelector<fromJobTiming.State>('job_timings');
 export const getJobTypeState = createFeatureSelector<fromJobType.State>('job_types');
 export const getMeState = createFeatureSelector<fromMe.State>('me');
 export const getPaymentOptionState = createFeatureSelector<fromPaymentOption.State>('payment_options');
