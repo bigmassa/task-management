@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-4">
                     <p class="mb-0-5"><strong>Job</strong></p>
-                    <p>{{ task$ | async | get:'_job._client.name' }}<br>{{ task$ | async | get:'_job.title' }}</p>
+                    <p>{{ task | get:'_job._client.name' }}<br>{{ task | get:'_job.title' }}</p>
                     <hr>
                     
                     <p class="mb-0-5"><strong>Assignees</strong></p>
