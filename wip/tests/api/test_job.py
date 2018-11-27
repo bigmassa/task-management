@@ -5,7 +5,7 @@ from rest_framework.test import APIClient
 from tests.test_case import AppTestCase
 from wip.api import JobViewSet
 from wip.api.job import JobFilter
-from wip.models import Job, Task
+from wip.models import Job, Task, TaskStatus
 from wip.serializers import JobSerializer
 
 
@@ -79,7 +79,9 @@ class TestAPI(AppTestCase):
             order=0
         )
 
-        data = {'tasks': [task2.pk, task1.pk, task3.pk]}
+        task_status = TaskStatus.objects.create(title='new')
+
+        data = {'status': task_status.pk, 'tasks': [task2.pk, task1.pk, task3.pk]}
         response = self.client.post(self.test_object_url + 'sort-tasks/', data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
@@ -90,3 +92,7 @@ class TestAPI(AppTestCase):
         self.assertEqual(task2.order, 1)
         self.assertEqual(task1.order, 2)
         self.assertEqual(task3.order, 3)
+
+        self.assertEqual(task2.status, task_status)
+        self.assertEqual(task1.status, task_status)
+        self.assertEqual(task3.status, task_status)

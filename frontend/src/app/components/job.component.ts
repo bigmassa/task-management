@@ -116,18 +116,9 @@ export class JobComponent implements OnDestroy, OnInit {
         if (_.isEmpty(tasks)) {
             return;
         }
-        // ensure their status is correct
-        _.each(tasks, (task, i) => {
-            if (task.status != status.id) {
-                const payload = {id: task.id, status: status.id, order: i+1};
-                this.store.dispatch({type: actions.TaskActions.PATCH, payload});
-            }
-        });
         // sort all tasks for this status
-        // use a timeout to ensure the api gets a chance to update the status
-        // as the data can come back with the original status
-        let sortData = { id: tasks[0].job, tasks: _.map(tasks, 'id') };
-        setTimeout(() => this.store.dispatch({type: actions.JobActions.SORT_TASKS, payload: sortData}), 100)
+        let sortData = { id: tasks[0].job, status: status.id, tasks: _.map(tasks, 'id') };
+        this.store.dispatch({type: actions.JobActions.SORT_TASKS, payload: sortData});
     }
 
     openCreateForm(status: ITaskStatus) {

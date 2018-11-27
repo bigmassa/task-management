@@ -2034,22 +2034,12 @@ var JobComponent = /** @class */ (function () {
         this.selectedTaskId = id;
     };
     JobComponent.prototype.droppedIntoColumn = function (status, tasks) {
-        var _this = this;
         if (lodash__WEBPACK_IMPORTED_MODULE_0__["isEmpty"](tasks)) {
             return;
         }
-        // ensure their status is correct
-        lodash__WEBPACK_IMPORTED_MODULE_0__["each"](tasks, function (task, i) {
-            if (task.status != status.id) {
-                var payload = { id: task.id, status: status.id, order: i + 1 };
-                _this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].PATCH, payload: payload });
-            }
-        });
         // sort all tasks for this status
-        // use a timeout to ensure the api gets a chance to update the status
-        // as the data can come back with the original status
-        var sortData = { id: tasks[0].job, tasks: lodash__WEBPACK_IMPORTED_MODULE_0__["map"](tasks, 'id') };
-        setTimeout(function () { return _this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobActions"].SORT_TASKS, payload: sortData }); }, 100);
+        var sortData = { id: tasks[0].job, status: status.id, tasks: lodash__WEBPACK_IMPORTED_MODULE_0__["map"](tasks, 'id') };
+        this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["JobActions"].SORT_TASKS, payload: sortData });
     };
     JobComponent.prototype.openCreateForm = function (status) {
         this.createFormStatusId = status.id;

@@ -29,6 +29,15 @@ sort_schema = ManualSchema(
             )
         ),
         coreapi.Field(
+            "status",
+            required=True,
+            location="path",
+            schema=coreschema.Integer(
+                title="Status",
+                description="Task Status ID",
+            )
+        ),
+        coreapi.Field(
             "tasks",
             required=True,
             location='form',
@@ -53,12 +62,14 @@ class JobViewSet(viewsets.ModelViewSet):
         serializer = JobTaskSortSerializer(data=request.data)
         if serializer.is_valid():
             # sort the tasks
+            status_id = serializer.data['status']
             task_ids = serializer.data['tasks']
             tasks = Task.objects.filter(pk__in=task_ids)
 
             pre_bulk_update.send(sender=Task, queryset=tasks, update_kwargs={})
 
             for task in tasks:
+                task.status_id = status_id
                 task.order = task_ids.index(task.pk) + 1
             bulk_update(tasks)
 
