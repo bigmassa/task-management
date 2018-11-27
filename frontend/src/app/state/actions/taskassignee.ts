@@ -1,7 +1,6 @@
-import { Action } from '@ngrx/store';
-import { IActionWithPayload } from '../models';
-import { ITaskAssignee } from '../reducers/taskassignee';
+import { IActionWithHTTPData, IActionWithPayload } from '../models';
 import { Injectable } from '@angular/core';
+import { ITaskAssignee } from '../reducers/taskassignee';
 
 @Injectable({
     providedIn: 'root'
@@ -21,8 +20,8 @@ export class TaskAssigneeActions {
     static REMOVE = '[TaskAssignee] REMOVE';
     static REMOVE_SUCCESS = '[TaskAssignee] REMOVE_SUCCESS';
 
-    LoadAll(): Action {
-        return { type: TaskAssigneeActions.LOAD_ALL };
+    LoadAll(payload: IActionWithHTTPData): IActionWithPayload {
+        return { type: TaskAssigneeActions.LOAD_ALL, payload };
     }
 
     LoadAllSuccess(payload: ITaskAssignee[]): IActionWithPayload {

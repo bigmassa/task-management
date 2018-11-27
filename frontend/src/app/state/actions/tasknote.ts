@@ -1,7 +1,6 @@
-import { Action } from '@ngrx/store';
-import { IActionWithPayload } from '../models';
-import { ITaskNote } from '../reducers/tasknote';
+import { IActionWithHTTPData, IActionWithPayload } from '../models';
 import { Injectable } from '@angular/core';
+import { ITaskNote } from '../reducers/tasknote';
 
 @Injectable({
     providedIn: 'root'
@@ -19,8 +18,8 @@ export class TaskNoteActions {
     static REMOVE = '[TaskNote] REMOVE';
     static REMOVE_SUCCESS = '[TaskNote] REMOVE_SUCCESS';
 
-    LoadAll(): Action {
-        return { type: TaskNoteActions.LOAD_ALL };
+    LoadAll(payload: IActionWithHTTPData): IActionWithPayload {
+        return { type: TaskNoteActions.LOAD_ALL, payload };
     }
 
     LoadAllSuccess(payload: ITaskNote[]): IActionWithPayload {

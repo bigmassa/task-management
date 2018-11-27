@@ -1,5 +1,4 @@
-import { Action } from '@ngrx/store';
-import { IActionWithPayload } from '../models';
+import { IActionWithHTTPData, IActionWithPayload } from '../models';
 import { Injectable } from '@angular/core';
 import { ITask } from '../reducers/task';
 
@@ -22,8 +21,8 @@ export class TaskActions {
     static REMOVE_SUCCESS = '[Task] REMOVE_SUCCESS';
     static REPLACE_MANY = '[Task] REPLACE_MANY';
 
-    LoadAll(): Action {
-        return { type: TaskActions.LOAD_ALL };
+    LoadAll(payload: IActionWithHTTPData): IActionWithPayload {
+        return { type: TaskActions.LOAD_ALL, payload };
     }
 
     LoadAllSuccess(payload: ITask[]): IActionWithPayload {

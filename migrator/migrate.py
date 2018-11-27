@@ -179,6 +179,7 @@ def load():
                 description=obj.description,
                 job_id=obj.jobid.jobnumber,
                 status_id=obj.taskstatusid_id,
+                created_at=obj.created_at,
                 target_date=obj.tasktargetdate.date() if obj.tasktargetdate else None,
                 closed=obj.is_closed,
                 not_chargeable=False,
@@ -274,6 +275,16 @@ def tidyup():
         timing.allocated_hours = timing.qs_allocated_hours or Decimal('0.00')
         timing.time_spent_hours = duration_to_decimal_hrs(timing.qs_time_spent_hours)
         timing.save()
+
+    print('closed date of tasks')
+    tasks = w_models.Task.objects.filter(closed=True)
+    for task in tasks:
+        last_entry = task.time_entries.last()
+        if last_entry:
+            task.closed_date = last_entry.ended_at
+        else:
+            task.closed_date = task.created_at
+        task.save()
 
     print('sign off timesheets')
     w_models.TimeEntry.objects.filter(started_at__date__lt='2018-11-18').update(

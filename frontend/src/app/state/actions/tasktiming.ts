@@ -1,7 +1,6 @@
-import { Action } from '@ngrx/store';
-import { IActionWithPayload } from '../models';
-import { ITaskTiming } from '../reducers/tasktiming';
+import { IActionWithHTTPData, IActionWithPayload } from '../models';
 import { Injectable } from '@angular/core';
+import { ITaskTiming } from '../reducers/tasktiming';
 
 @Injectable({
     providedIn: 'root'
@@ -22,8 +21,8 @@ export class TaskTimingActions {
     static REMOVE_SUCCESS = '[TaskTiming] REMOVE_SUCCESS';
     static REPLACE_MANY = '[TaskTiming] REPLACE_MANY';
 
-    LoadAll(): Action {
-        return { type: TaskTimingActions.LOAD_ALL };
+    LoadAll(payload: IActionWithHTTPData): IActionWithPayload {
+        return { type: TaskTimingActions.LOAD_ALL, payload };
     }
 
     LoadAllSuccess(payload: ITaskTiming[]): IActionWithPayload {

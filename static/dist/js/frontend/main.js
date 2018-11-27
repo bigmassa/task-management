@@ -6883,8 +6883,8 @@ var TaskActions = /** @class */ (function () {
     function TaskActions() {
     }
     TaskActions_1 = TaskActions;
-    TaskActions.prototype.LoadAll = function () {
-        return { type: TaskActions_1.LOAD_ALL };
+    TaskActions.prototype.LoadAll = function (payload) {
+        return { type: TaskActions_1.LOAD_ALL, payload: payload };
     };
     TaskActions.prototype.LoadAllSuccess = function (payload) {
         return { type: TaskActions_1.LOAD_ALL_SUCCESS, payload: payload };
@@ -6970,8 +6970,8 @@ var TaskAssigneeActions = /** @class */ (function () {
     function TaskAssigneeActions() {
     }
     TaskAssigneeActions_1 = TaskAssigneeActions;
-    TaskAssigneeActions.prototype.LoadAll = function () {
-        return { type: TaskAssigneeActions_1.LOAD_ALL };
+    TaskAssigneeActions.prototype.LoadAll = function (payload) {
+        return { type: TaskAssigneeActions_1.LOAD_ALL, payload: payload };
     };
     TaskAssigneeActions.prototype.LoadAllSuccess = function (payload) {
         return { type: TaskAssigneeActions_1.LOAD_ALL_SUCCESS, payload: payload };
@@ -7053,8 +7053,8 @@ var TaskFileActions = /** @class */ (function () {
     function TaskFileActions() {
     }
     TaskFileActions_1 = TaskFileActions;
-    TaskFileActions.prototype.LoadAll = function () {
-        return { type: TaskFileActions_1.LOAD_ALL };
+    TaskFileActions.prototype.LoadAll = function (payload) {
+        return { type: TaskFileActions_1.LOAD_ALL, payload: payload };
     };
     TaskFileActions.prototype.LoadAllSuccess = function (payload) {
         return { type: TaskFileActions_1.LOAD_ALL_SUCCESS, payload: payload };
@@ -7128,8 +7128,8 @@ var TaskNoteActions = /** @class */ (function () {
     function TaskNoteActions() {
     }
     TaskNoteActions_1 = TaskNoteActions;
-    TaskNoteActions.prototype.LoadAll = function () {
-        return { type: TaskNoteActions_1.LOAD_ALL };
+    TaskNoteActions.prototype.LoadAll = function (payload) {
+        return { type: TaskNoteActions_1.LOAD_ALL, payload: payload };
     };
     TaskNoteActions.prototype.LoadAllSuccess = function (payload) {
         return { type: TaskNoteActions_1.LOAD_ALL_SUCCESS, payload: payload };
@@ -7337,8 +7337,8 @@ var TaskTimingActions = /** @class */ (function () {
     function TaskTimingActions() {
     }
     TaskTimingActions_1 = TaskTimingActions;
-    TaskTimingActions.prototype.LoadAll = function () {
-        return { type: TaskTimingActions_1.LOAD_ALL };
+    TaskTimingActions.prototype.LoadAll = function (payload) {
+        return { type: TaskTimingActions_1.LOAD_ALL, payload: payload };
     };
     TaskTimingActions.prototype.LoadAllSuccess = function (payload) {
         return { type: TaskTimingActions_1.LOAD_ALL_SUCCESS, payload: payload };
@@ -8057,38 +8057,46 @@ var DataEffects = /** @class */ (function () {
     function DataEffects(updates$) {
         this.updates$ = updates$;
         this.loadData$ = this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_actions__WEBPACK_IMPORTED_MODULE_0__["DataActions"].LOAD_DATA), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["mergeMap"])(function () {
-            var fromDate = {
+            var timeEntryParams = {
                 params: {
                     date_from: moment__WEBPACK_IMPORTED_MODULE_1__().add(-5, 'weeks').format('YYYY-MM-DD')
                 }
             };
+            var taskParams = {
+                params: {
+                    live_at_date: moment__WEBPACK_IMPORTED_MODULE_1__().add(-5, 'weeks').format('YYYY-MM-DD')
+                }
+            };
             return [
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskTimingActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskNoteActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobNoteActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["TimeEntryActions"]().LoadAll(fromDate),
+                // user
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["MeActions"]().Load(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["UserActions"]().LoadAll(),
+                // lookups
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["BillingFrequencyActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientContactActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientContactTagActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobFileActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobRecurringCostActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobRelationshipActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["JobStatusActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["JobTypeActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["MeActions"]().Load(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["PaymentOptionActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["PositionActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["RecurringCostTypeActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["RelationshipActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TagActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskAssigneeActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskFileActions"]().LoadAll(),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskStatusActions"]().LoadAll(),
+                // main data
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientContactActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["ClientContactTagActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobFileActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobNoteActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobRecurringCostActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["JobRelationshipActions"]().LoadAll(),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskActions"]().LoadAll(taskParams),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskAssigneeActions"]().LoadAll(taskParams),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskFileActions"]().LoadAll(taskParams),
                 new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskTagActions"]().LoadAll(),
-                new _actions__WEBPACK_IMPORTED_MODULE_0__["UserActions"]().LoadAll()
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskNoteActions"]().LoadAll(taskParams),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TaskTimingActions"]().LoadAll(taskParams),
+                new _actions__WEBPACK_IMPORTED_MODULE_0__["TimeEntryActions"]().LoadAll(timeEntryParams)
             ];
         }));
     }
@@ -12340,7 +12348,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

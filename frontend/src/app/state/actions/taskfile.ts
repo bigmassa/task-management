@@ -1,7 +1,6 @@
-import { Action } from '@ngrx/store';
-import { IActionWithPayload } from '../models';
-import { ITaskFile } from '../reducers/taskfile';
+import { IActionWithHTTPData, IActionWithPayload } from '../models';
 import { Injectable } from '@angular/core';
+import { ITaskFile } from '../reducers/taskfile';
 
 @Injectable({
     providedIn: 'root'
@@ -19,8 +18,8 @@ export class TaskFileActions {
     static REMOVE = '[TaskFile] REMOVE';
     static REMOVE_SUCCESS = '[TaskFile] REMOVE_SUCCESS';
 
-    LoadAll(): Action {
-        return { type: TaskFileActions.LOAD_ALL };
+    LoadAll(payload: IActionWithHTTPData): IActionWithPayload {
+        return { type: TaskFileActions.LOAD_ALL, payload };
     }
 
     LoadAllSuccess(payload: ITaskFile[]): IActionWithPayload {
