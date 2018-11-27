@@ -186,6 +186,8 @@ def load():
                 order=order
             )
             new_task.full_clean()
+            # turn off auto_now_add
+            new_task._meta.get_field('created_at').auto_now_add = False
             new_tasks.append(new_task)
 
             order += 1
