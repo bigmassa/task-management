@@ -304,7 +304,7 @@ def tidyup():
         task.save()
 
     print('sign off timesheets')
-    w_models.TimeEntry.objects.filter(started_at__date__lt='2018-11-18').update(
+    w_models.TimeEntry.objects.filter(started_at__date__lte='2018-11-25').update(
         signed_off=True,
         signed_off_date=datetime.today().date()
     )
