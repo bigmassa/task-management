@@ -17,13 +17,16 @@ import { select, Store } from '@ngrx/store';
 @Component({
     selector: 'time-sheet-signoff, [time-sheet-signoff]',
     template: `
-    <span class="checkbox fc-dailycontrol">
-        <label>
-            <input type="checkbox" (change)="signOff()" *ngIf="requiresSignOff$ | async; else complete">
-            <ng-template #complete><input type="checkbox" [checked]="true" disabled></ng-template>
-            <span></span><em>{{ sum$ | async }}</em>
-        </label>
-    </span>
+    <ng-container *ngIf="requiresSignOff$ | async; else complete">
+        <a class="pointer d-inline-block" (click)="signOff()" title="Requires Signoff">
+            <i class="icon-circle mr-0-5"></i><em>{{ sum$ | async }}</em>
+        </a>
+    </ng-container>
+    <ng-template #complete>
+        <span class="d-inline-block c-olive">
+            <i class="icon-ok-circled mr-0-5"></i><em>{{ sum$ | async }}</em>
+        </span>
+    </ng-template>
     `
 })
 export class TimesheetSignoffComponent implements OnChanges {

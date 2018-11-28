@@ -3106,7 +3106,7 @@ var TimesheetSignoffComponent = /** @class */ (function () {
     TimesheetSignoffComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'time-sheet-signoff, [time-sheet-signoff]',
-            template: "\n    <span class=\"checkbox fc-dailycontrol\">\n        <label>\n            <input type=\"checkbox\" (change)=\"signOff()\" *ngIf=\"requiresSignOff$ | async; else complete\">\n            <ng-template #complete><input type=\"checkbox\" [checked]=\"true\" disabled></ng-template>\n            <span></span><em>{{ sum$ | async }}</em>\n        </label>\n    </span>\n    "
+            template: "\n    <ng-container *ngIf=\"requiresSignOff$ | async; else complete\">\n        <a class=\"pointer d-inline-block\" (click)=\"signOff()\" title=\"Requires Signoff\">\n            <i class=\"icon-circle mr-0-5\"></i><em>{{ sum$ | async }}</em>\n        </a>\n    </ng-container>\n    <ng-template #complete>\n        <span class=\"d-inline-block c-olive\">\n            <i class=\"icon-ok-circled mr-0-5\"></i><em>{{ sum$ | async }}</em>\n        </span>\n    </ng-template>\n    "
         }),
         __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["Store"]])
     ], TimesheetSignoffComponent);
@@ -12605,7 +12605,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })
