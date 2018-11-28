@@ -43,6 +43,7 @@
                 (onEventDrop)="onEventDrop($event)"
                 (onEventResize)="onEventResize($event)"
                 (onEventClick)="onEventClick($event)"
+                (onWindowResize)="onWindowResize($event)"
                 externalEventsWrapperId="external-events"
                 externalEventItemClass=".external-event">
             </div>
@@ -66,12 +67,14 @@
         </div>
         <div class="col-9">
             <table class="mb-0">
-                <tr>
-                    <td class="py-1" [style.width.px]="viewAxisWidth" [style.max-width.px]="viewAxisWidth"></td>
-                    <td class="text-center px-0 py-1" *ngFor="let date of viewDates">
-                        <time-sheet-signoff [user]="selectedUserId" [date]="date"></time-sheet-signoff>
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th [style.width.px]="viewAxisWidth" [style.max-width.px]="viewAxisWidth"></th>
+                        <th class="text-center px-0" *ngFor="let date of viewDates">
+                            <time-sheet-signoff [user]="selectedUserId" [date]="date"></time-sheet-signoff>
+                        </th>
+                    </tr>
+                </thead>                    
             </table>
         </div>
     </div>

@@ -96,7 +96,13 @@ export class TimesheetComponent implements OnInit {
 
     onViewSkeletonRender(info: ViewSkeletonRenderInfo) {
         setTimeout(() => {
-            this.viewAxisWidth = info.view.axisWidth;
+            this.viewAxisWidth = info.view.axisWidth + 10;
+        });
+    }
+
+    onWindowResize(info: any) {
+        setTimeout(() => {
+            this.viewAxisWidth = info.axisWidth + 10;
         });
     }
 

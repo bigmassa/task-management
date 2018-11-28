@@ -207,6 +207,7 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewChecked, D
     @Output() onEventDrop: EventEmitter<EventDropInfo> = new EventEmitter<EventDropInfo>();
     @Output() onEventClick: EventEmitter<EventClickInfo> = new EventEmitter<EventClickInfo>();
     @Output() onEventResize: EventEmitter<EventResizeInfo> = new EventEmitter<EventResizeInfo>();
+    @Output() onWindowResize: EventEmitter<any> = new EventEmitter<any>();
     // tslint:enable:no-output-on-prefix
   
     calendar: any;
@@ -248,6 +249,10 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewChecked, D
         
         this.config.eventClick = (info: EventClickInfo) => {
             this.onEventClick.emit(info);
+        };
+        
+        this.config.windowResize = (info: any) => {
+            this.onWindowResize.emit(info);
         };
     }
   
@@ -296,6 +301,11 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewChecked, D
         });
 
         this.calendar.render();
+
+        // this will redraw the size of the calender
+        // fixes an issue where the height: 'parent' option
+        // is not doing as expected
+        setTimeout(() => this.calendar.updateSize(), 0);
 
         if (this.events) {
             this.calendar.addEventSource(this.events);

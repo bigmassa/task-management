@@ -777,6 +777,7 @@ var CalendarComponent = /** @class */ (function () {
         this.onEventDrop = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.onEventClick = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.onEventResize = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.onWindowResize = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.eventDiffer = differs.find([]).create(null);
         this.initialized = false;
     }
@@ -803,6 +804,9 @@ var CalendarComponent = /** @class */ (function () {
         };
         this.config.eventClick = function (info) {
             _this.onEventClick.emit(info);
+        };
+        this.config.windowResize = function (info) {
+            _this.onWindowResize.emit(info);
         };
     };
     CalendarComponent.prototype.ngOnDestroy = function () {
@@ -837,12 +841,17 @@ var CalendarComponent = /** @class */ (function () {
         }
     };
     CalendarComponent.prototype.initialize = function () {
+        var _this = this;
         this.calendar = new fullcalendar__WEBPACK_IMPORTED_MODULE_1__["Calendar"](this.el.nativeElement, this.config);
         var externalEventsEl = document.getElementById(this.externalEventsWrapperId);
         new fullcalendar__WEBPACK_IMPORTED_MODULE_1__["Draggable"](externalEventsEl, {
             itemSelector: this.externalEventItemClass
         });
         this.calendar.render();
+        // this will redraw the size of the calender
+        // fixes an issue where the height: 'parent' option
+        // is not doing as expected
+        setTimeout(function () { return _this.calendar.updateSize(); }, 0);
         if (this.events) {
             this.calendar.addEventSource(this.events);
         }
@@ -1086,6 +1095,10 @@ var CalendarComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
     ], CalendarComponent.prototype, "onEventResize", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
+    ], CalendarComponent.prototype, "onWindowResize", void 0);
     CalendarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'calendar, [calendar]',
@@ -3111,7 +3124,7 @@ var TimesheetSignoffComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchEvents(); refetchTasks();\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content d-flex flex-fill flex-flow-column\">\n    <div class=\"row flex-fill\">\n        <div class=\"col-3 d-flex flex-column flex-fill\">\n            <search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchTasks()\"></search>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task\" [style.background-color]=\"task._job.colour\" [style.color]=\"task._job._text_colour\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <span class=\"external-event d-block\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [slotDuration]=\"formattedSlotDuration\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onEventRender)=\"onEventRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div class=\"row\" style=\"flex: 0 0 50px;\">    \n        <div class=\"col-3 pt-1-5\">\n            <div class=\"input-group margin-zero\">\n                <div class=\"input-group-addon\">Slot</div>\n                <input type=\"range\" min=\"1\" max=\"30\" [(ngModel)]=\"slotDuration\" (ngModelChange)=\"onChangeSlotDuration($event)\" name=\"slotDuration\">\n                <div class=\"input-group-addon\">{{ slotDuration }} mins</div>\n            </div>\n        </div>\n        <div class=\"col-9\">\n            <table class=\"mb-0\">\n                <tr>\n                    <td class=\"py-1\" [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></td>\n                    <td class=\"text-center px-0 py-1\" *ngFor=\"let date of viewDates\">\n                        <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchEvents(); refetchTasks();\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content d-flex flex-fill flex-flow-column\">\n    <div class=\"row flex-fill\">\n        <div class=\"col-3 d-flex flex-column flex-fill\">\n            <search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchTasks()\"></search>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task\" [style.background-color]=\"task._job.colour\" [style.color]=\"task._job._text_colour\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <span class=\"external-event d-block\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [slotDuration]=\"formattedSlotDuration\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onEventRender)=\"onEventRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                (onWindowResize)=\"onWindowResize($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div class=\"row\" style=\"flex: 0 0 50px;\">    \n        <div class=\"col-3 pt-1-5\">\n            <div class=\"input-group margin-zero\">\n                <div class=\"input-group-addon\">Slot</div>\n                <input type=\"range\" min=\"1\" max=\"30\" [(ngModel)]=\"slotDuration\" (ngModelChange)=\"onChangeSlotDuration($event)\" name=\"slotDuration\">\n                <div class=\"input-group-addon\">{{ slotDuration }} mins</div>\n            </div>\n        </div>\n        <div class=\"col-9\">\n            <table class=\"mb-0\">\n                <thead>\n                    <tr>\n                        <th [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></th>\n                        <th class=\"text-center px-0\" *ngFor=\"let date of viewDates\">\n                            <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                        </th>\n                    </tr>\n                </thead>                    \n            </table>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -3207,7 +3220,13 @@ var TimesheetComponent = /** @class */ (function () {
     TimesheetComponent.prototype.onViewSkeletonRender = function (info) {
         var _this = this;
         setTimeout(function () {
-            _this.viewAxisWidth = info.view.axisWidth;
+            _this.viewAxisWidth = info.view.axisWidth + 10;
+        });
+    };
+    TimesheetComponent.prototype.onWindowResize = function (info) {
+        var _this = this;
+        setTimeout(function () {
+            _this.viewAxisWidth = info.axisWidth + 10;
         });
     };
     TimesheetComponent.prototype.onDatesRender = function (info) {
