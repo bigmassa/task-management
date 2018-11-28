@@ -12193,9 +12193,9 @@ var getTasksForUser = function (id, searchTerms) {
             objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](objs, function (obj) {
                 var found = true;
                 lodash__WEBPACK_IMPORTED_MODULE_0__["each"](searchTerms, function (term) {
-                    if (!lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_5__["valueOr"])(obj.title).toLowerCase(), term) &&
-                        !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_5__["valueOr"])(obj._job.title).toLowerCase(), term) &&
-                        !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_5__["valueOr"])(obj._job._client.name).toLowerCase(), term)) {
+                    if (!lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_5__["valueOr"])(obj.title).toLowerCase(), term.toLowerCase()) &&
+                        !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_5__["valueOr"])(obj._job.title).toLowerCase(), term.toLowerCase()) &&
+                        !lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](Object(_utils_generic__WEBPACK_IMPORTED_MODULE_5__["valueOr"])(obj._job._client.name).toLowerCase(), term.toLowerCase())) {
                         found = false;
                     }
                 });
@@ -12605,7 +12605,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/dave/Sites/task_management/frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

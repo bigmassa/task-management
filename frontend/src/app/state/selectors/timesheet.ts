@@ -48,9 +48,9 @@ export const getTasksForUser = (id: number = null, searchTerms: string[] = []) =
             objs = _.filter(objs, obj => {
                 let found = true;
                 _.each(searchTerms, (term) => {
-                    if (!_.includes(valueOr(obj.title).toLowerCase(), term) &&
-                        !_.includes(valueOr(obj._job.title).toLowerCase(), term) &&
-                        !_.includes(valueOr(obj._job._client.name).toLowerCase(), term)
+                    if (!_.includes(valueOr(obj.title).toLowerCase(), term.toLowerCase()) &&
+                        !_.includes(valueOr(obj._job.title).toLowerCase(), term.toLowerCase()) &&
+                        !_.includes(valueOr(obj._job._client.name).toLowerCase(), term.toLowerCase())
                     ) {
                         found = false;
                     }
