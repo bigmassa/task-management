@@ -12,6 +12,7 @@ import {
     SimpleChanges,
     ViewChild
     } from '@angular/core';
+import { DeletableService } from '../services/deletable';
 import { DropzoneConfigInterface } from '../../../node_modules/ngx-dropzone-wrapper';
 import { filter } from 'rxjs/operators';
 import { FormCleanAfterMethod } from '../forms/base.form';
@@ -54,33 +55,34 @@ export class TaskFormComponent implements OnChanges {
 
     @ViewChild('modalPanel') modalPanelRef: ElementRef;
 
-    activeTab: string = 'detail';
-
+    activeTab: string;
+    assigneeEditForm: TaskAssigneeForm;
+    canDelete: boolean = false;
+    closedForm: TaskClosedForm;
+    descriptionForm: TaskDescriptionForm;
     dropzoneConfig: DropzoneConfigInterface = {
         url: '/api/task-files/',
         maxFilesize: 50,
         headers: { 'X-CSRFTOKEN': getCookie('csrftoken') }
     };
-    users$: Observable<IUser[]>;
+    newNoteForm: TaskNoteForm;
+    tagEditForm: TaskTagForm;
+    tags$: Observable<ITag[]>;
+    targetDateForm: TaskTargetDateForm;
     task$: Observable<ITask>;
     taskAssignees$: Observable<ITaskAssignee[]>;
     taskFiles$: Observable<ITaskFile[]>;
     taskNotes$: Observable<ITaskNote[]>;
     taskTags$: Observable<ITaskTag[]>;
     taskTiming$: Observable<ITaskTiming>;
-    tags$: Observable<ITag[]>;
     taskNoteForms = {};
-    closedForm: TaskClosedForm;
-    descriptionForm: TaskDescriptionForm;
     titleForm: TaskTitleForm;
-    targetDateForm: TaskTargetDateForm;
-    newNoteForm: TaskNoteForm;
-    assigneeEditForm: TaskAssigneeForm;
-    tagEditForm: TaskTagForm;
+    users$: Observable<IUser[]>;
 
     constructor(
         private store: Store<AppState>,
-        private actionsSubject: ActionsSubject
+        private actionsSubject: ActionsSubject,
+        private deletable: DeletableService
     ) {
         this.tags$ = this.store.pipe(select(getTagCollection));
         this.users$ = this.store.pipe(select(getActiveUsers));
@@ -93,6 +95,7 @@ export class TaskFormComponent implements OnChanges {
 
     ngOnChanges(changes: SimpleChanges) {
         if (_.has(changes, 'id.currentValue')) {
+            this.activeTab = 'detail';
             this.taskFiles$ = this.store.pipe(select(getTaskFilesForTask(this.id)));
             this.task$ = this.store.pipe(select(getTaskCollectionById(this.id)));
             this.taskAssignees$ = this.store.pipe(select(getTaskAssigneesForTask(this.id)));
@@ -110,6 +113,7 @@ export class TaskFormComponent implements OnChanges {
                     this.newNoteForm.load({task: d.id});
                 }
             );
+            this.deletable.check(DeletableService.TASK, this.id).then(check => this.canDelete = check);
         }
     }
 
@@ -120,6 +124,8 @@ export class TaskFormComponent implements OnChanges {
             this.close.emit(event);
         }
     }
+
+    // note
 
     getOrCreateEditNoteForm(note: ITaskNote) {
         if (!_.has(this.taskNoteForms, note.id)) {
@@ -134,6 +140,8 @@ export class TaskFormComponent implements OnChanges {
         }
         return this.taskNoteForms[note.id];
     }
+
+    // assignee
 
     editAssignee(assignee: ITaskAssignee) {
         this.assigneeEditForm = new TaskAssigneeForm(
@@ -168,5 +176,11 @@ export class TaskFormComponent implements OnChanges {
         );
         this.tagEditForm.editable = true;
         this.tagEditForm.load(tag);
+    }
+
+    // task
+
+    delete(task: ITask) {
+        this.store.dispatch({type: actions.TaskActions.REMOVE, payload: task});
     }
 }

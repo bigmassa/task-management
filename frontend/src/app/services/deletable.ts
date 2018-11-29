@@ -8,6 +8,7 @@ export class DeletableService {
 
     public static CLIENT = { app_label: 'wip', model_name: 'client' };
     public static JOB = { app_label: 'wip', model_name: 'job' };
+    public static TASK = { app_label: 'wip', model_name: 'task' };
 
     private baseUrl: string = '/api/protected/';
 
