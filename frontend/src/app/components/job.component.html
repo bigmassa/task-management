@@ -16,48 +16,17 @@
         </div>
     </div>
 
-    <ng-container *ngIf="selectedTab.title == 'Tasks'">
-
-        <div class="container-fluid d-flex flex-fill">
-            <div class="d-flex flex-fill mt-1 mb-1 scroll-x">
-                <div class="board-column" *ngFor="let status of statuses$ | async">
-                    <div class="board-column-heading">
-                        <strong>{{ status.title }}</strong>
-                        <i class="icon-plus ml-auto" (click)="openCreateForm(status)"></i>
-                    </div>
-                    <div class="board-card-wrapper" 
-                        ngxDroppable="status-column"
-                        (drop)="droppedIntoColumn(status, tasks)"
-                        [model]="tasks"
-                        *ngIf="tasks$ | async | tasksByStatus:status.id as tasks">
-                        <div task-card 
-                            [id]="task.id"
-                            ngxDraggable
-                            [model]="task"
-                            (click)="selectedTaskId=task.id"
-                            *ngFor="let task of tasks">
-                        </div>
-                    </div>
-                </div>
+    <div class="container-fluid d-flex flex-fill" *ngIf="selectedTab.title == 'Tasks'">
+        <div class="d-flex flex-fill mt-1 mb-1 scroll-x">
+            <div class="board-column"
+                job-board-column
+                [jobId]="jobId"
+                [status]="status"
+                [tasks]="tasks$ | async | tasksByStatus:status.id"
+                *ngFor="let status of statuses$ | async">
             </div>
         </div>
-
-        <task-create-form
-            [opened]="createFormOpen"
-            [jobId]="jobId"
-            [statusId]="createFormStatusId"
-            (close)="createFormOpen = false"
-            (saved)="selectedTaskId = $event.id"
-            *ngIf="createFormOpen">
-        </task-create-form>
-
-        <task-form
-            [id]="selectedTaskId"
-            (close)="selectedTaskId = null"
-            *ngIf="selectedTaskId">
-        </task-form>
-
-    </ng-container>
+    </div>
     
     <div class="container-fluid inner-content" *ngIf="selectedTab.title != 'Tasks'">
 

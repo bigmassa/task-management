@@ -4,7 +4,6 @@ import { ActionsSubject, select, Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { AppState, getTabState } from '../state/state';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { debounceTime, take } from 'rxjs/operators';
 import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { FormCleanAfterMethod } from '../forms/base.form';
 import { getCookie } from '../utils/cookies';
@@ -45,8 +44,6 @@ export class JobComponent implements OnDestroy, OnInit {
         headers: { 'X-CSRFTOKEN': getCookie('csrftoken') }
     };
     jobId: number;
-    createFormOpen = false;
-    createFormStatusId: number;
     files$: Observable<IJobFile[]>;
     job$: Observable<IJob>;
     notes$: Observable<IJobNote[]>;
@@ -82,7 +79,7 @@ export class JobComponent implements OnDestroy, OnInit {
                 this.notes$ = this.store.pipe(select(getJobNoteCollectionForJob(this.jobId)));
                 this.recurringCosts$ = this.store.pipe(select(getJobRecurringCostCollectionForJob(this.jobId)));
                 this.relationships$ = this.store.pipe(select(getJobRelationshipCollectionForJob(this.jobId)));
-                this.tasks$ = this.store.pipe(select(getTaskStateForJob(this.jobId)), debounceTime(200));
+                this.tasks$ = this.store.pipe(select(getTaskStateForJob(this.jobId)));
                 this.timings$ = this.store.pipe(select(getJobTimingsById(this.jobId)));
                 // forms
                 this.newNoteForm = new JobNoteForm(
@@ -114,20 +111,6 @@ export class JobComponent implements OnDestroy, OnInit {
     activateTabAndOpenTask(id: number) {
         this.store.dispatch({type: actions.TabActions.JOB_ACTIVATE_TAB, payload: {title: 'Tasks'}});
         this.selectedTaskId = id;
-    }
-
-    droppedIntoColumn(status: ITaskStatus, tasks: ITask[]) {
-        if (_.isEmpty(tasks)) {
-            return;
-        }
-        // sort all tasks for this status
-        let sortData = { id: tasks[0].job, status: status.id, tasks: _.map(tasks, 'id') };
-        this.store.dispatch({type: actions.JobActions.SORT_TASKS, payload: sortData});
-    }
-
-    openCreateForm(status: ITaskStatus) {
-        this.createFormStatusId = status.id;
-        this.createFormOpen = true;
     }
 
     // files

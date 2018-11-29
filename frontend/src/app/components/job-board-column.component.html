@@ -1,0 +1,32 @@
+<div class="board-column-heading">
+    <strong>{{ status.title }}</strong>
+</div>
+
+<div class="board-card pointer text-center" (click)="newTask()">
+    <i class="icon-plus"></i>
+</div>
+
+<div class="board-card" *ngIf="newFormOpen">
+    <textarea autoResize [formControl]="newForm.controls.title"></textarea>
+    <button class="button" (click)="newForm.save($event)">Save</button>
+</div>
+
+<div class="board-card-wrapper" 
+    ngxDroppable="status-column"
+    (drop)="dropTask($event)"
+    [model]="tasks"
+    *ngIf="tasks">
+    <div task-card 
+        [id]="task.id"
+        ngxDraggable
+        [model]="task"
+        (click)="selectedTaskId=task.id"
+        *ngFor="let task of tasks">
+    </div>
+</div>
+
+<task-form
+    [id]="selectedTaskId"
+    (close)="selectedTaskId = null"
+    *ngIf="selectedTaskId">
+</task-form>

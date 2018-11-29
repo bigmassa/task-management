@@ -17,10 +17,9 @@ export class TaskCreateForm extends BaseForm {
     controls: {
         id: FormControl
         title: FormControl
-        description: FormControl
         job: FormControl
-        target_date: FormControl
         status: FormControl
+        order: FormControl
     };
     createAction = actions.TaskActions.ADD;
     createSuccessAction = actions.TaskActions.ADD_SUCCESS;
@@ -36,20 +35,13 @@ export class TaskCreateForm extends BaseForm {
             {
                 id: new FormControl(null),
                 title: new FormControl('', Validators.required),
-                description: new FormControl(''),
                 job: new FormControl(null, Validators.required),
-                target_date: new FormControl(null),
-                status: new FormControl(null, Validators.required)
+                status: new FormControl(null, Validators.required),
+                order: new FormControl(null, Validators.required)
             },
             null,
             null,
             _.assign({}, options, formOptions)
         );
-    }
-
-    getValuePayload() {
-        return _.assign({}, this.value, {
-            target_date: this.value.target_date instanceof Date ? this.value.target_date.toISOString().slice(0, 10) : this.value.target_date
-        })
     }
 }
