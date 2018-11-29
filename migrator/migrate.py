@@ -330,6 +330,8 @@ def tidyup():
 def reset_sequences():
     """ reset the sql sequences """
 
+    print('reset_sequences')
+
     app_names = ['authentication', 'wip']
 
     for app_name in app_names:
@@ -343,5 +345,3 @@ def reset_sequences():
 
         with connection.cursor() as cursor:
             cursor.execute(sql)
-
-    print('reset_sequences')
