@@ -8,7 +8,7 @@
   height: 3rem;
   line-height: 3rem;
   text-align: center;
-  background: color("shadylady");
+  background: color("primary");
   border-radius: 50%;
 
   .avatar-text {
@@ -24,10 +24,10 @@
 
 .avatar.new {
   background: transparent;
-  border: dotted 1px color("shadylady");
+  border: dotted 1px color("primary");
 
   .avatar-text {
-    color: color("shadylady");
+    color: color("primary");
   }
 }
 

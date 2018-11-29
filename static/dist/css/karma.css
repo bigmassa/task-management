@@ -1875,7 +1875,7 @@ ul.radios input[type=radio] + span:after {
   height: 3rem;
   line-height: 3rem;
   text-align: center;
-  background: #979797;
+  background: #292c36;
   border-radius: 50%;
 }
 
@@ -1892,11 +1892,11 @@ ul.radios input[type=radio] + span:after {
 
 .avatar.new {
   background: transparent;
-  border: dotted 1px #979797;
+  border: dotted 1px #292c36;
 }
 
 .avatar.new .avatar-text {
-  color: #979797;
+  color: #292c36;
 }
 
 a.avatar:hover {
@@ -2025,9 +2025,6 @@ select[disabled]:not(:hover) {
 
 textarea[disabled]:not(:hover) {
   resize: none;
-}
-
-textarea[disabled]:not(:hover).transparent {
   background: #e8e8e8;
   border-color: transparent;
 }
@@ -2472,10 +2469,9 @@ a.c-wildwillow:hover {
 
 .modal-panel {
   max-width: 800px;
-  padding: 3rem 1.5rem;
   margin: auto;
   margin-top: 4rem;
-  background-color: #f0f0f0;
+  background-color: white;
 }
 
 .modal-panel .button-secondary:hover, .modal-panel .button-secondary:focus {
@@ -2488,6 +2484,16 @@ a.c-wildwillow:hover {
 .modal-panel .panel {
   padding: 2rem;
   margin-bottom: .5rem;
+}
+
+.modal-panel .panel.panel-popup {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  z-index: 11;
 }
 
 .page-fs {
@@ -2660,6 +2666,15 @@ td textarea {
   background: #f0f0f1;
 }
 
+.tabs.tabs-light li,
+.tabs.tabs-light li.active {
+  color: inherit;
+}
+
+.tabs.tabs-light li.active {
+  background: white;
+}
+
 .tags {
   margin-bottom: 0;
   list-style-type: none;
@@ -2670,20 +2685,15 @@ td textarea {
   padding: .2rem .5rem;
   margin-right: .5rem;
   color: white;
-  background: #979797;
-  border: 1px solid #979797;
+  background: #292c36;
+  border: 1px solid #292c36;
   border-radius: 0.25rem;
 }
 
 .tags .tag.outline {
-  color: #979797;
-  background: transparent;
-  border: dotted 1px #979797;
-}
-
-.tags .tag.active {
   color: #292c36;
-  border-color: #292c36;
+  background: transparent;
+  border: dotted 1px #292c36;
 }
 
 .client-list-wrapper {
@@ -2832,6 +2842,11 @@ td textarea {
 .px-0-5 {
   padding-right: .5rem;
   padding-left: .5rem;
+}
+
+.px-2 {
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 .py-1 {

@@ -54,6 +54,8 @@ export class TaskFormComponent implements OnChanges {
 
     @ViewChild('modalPanel') modalPanelRef: ElementRef;
 
+    activeTab: string = 'detail';
+
     dropzoneConfig: DropzoneConfigInterface = {
         url: '/api/task-files/',
         maxFilesize: 50,
@@ -166,14 +168,5 @@ export class TaskFormComponent implements OnChanges {
         );
         this.tagEditForm.editable = true;
         this.tagEditForm.load(tag);
-    }
-
-    setTag(event: any, tag: ITag) {
-        this.tagEditForm.controls.tag.setValue(tag.id);
-        this.tagEditForm.save(event);
-    }
-
-    addNewTagOption(title: string) {
-        this.store.dispatch({type: actions.TagActions.ADD, payload: {name: title}});
     }
 }

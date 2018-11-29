@@ -14,10 +14,9 @@
 
 .modal-panel {
   max-width: 800px;
-  padding: 3rem 1.5rem;
   margin: auto;
   margin-top: 4rem;
-  background-color: color("secondary");
+  background-color: color("white");
 
   .button-secondary {
     @include button-hover(color("primary"), color("white"), color("shadylady"));
@@ -28,4 +27,9 @@
     margin-bottom: .5rem;
   }
 
+  .panel.panel-popup {
+    @include box-shadow(0, 1px, 1px, rgba(0, 0, 0, .12));
+    @include position($left: 0, $right: 0);
+    z-index: zindex("top");
+  }
 }

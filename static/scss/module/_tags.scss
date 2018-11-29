@@ -10,19 +10,14 @@
     padding: .2rem .5rem;
     margin-right: .5rem;
     color: color("white");
-    background: color("shadylady");
-    border: 1px solid color("shadylady");
+    background: color("primary");
+    border: 1px solid color("primary");
     border-radius: $global-radius;
   }
 
   .tag.outline {
-    color: color("shadylady");
-    background: transparent;
-    border: dotted 1px color("shadylady");
-  }
-
-  .tag.active {
     color: color("primary");
-    border-color: color("primary");
+    background: transparent;
+    border: dotted 1px color("primary");
   }
 }

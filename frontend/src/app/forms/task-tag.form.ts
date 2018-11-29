@@ -1,11 +1,13 @@
 import * as _ from 'lodash';
 import * as actions from '../state/actions';
-
 import { ActionsSubject, Store } from '@ngrx/store';
-import { BaseForm, FormCleanAfterMethod, IFormOptions } from './base.form';
-import { FormControl, Validators } from '@angular/forms';
-
 import { AppState } from '../state/state';
+import { BaseForm, FormCleanAfterMethod, IFormOptions } from './base.form';
+import { filter, take } from 'rxjs/operators';
+import { FormControl, Validators } from '@angular/forms';
+import { IActionWithPayload } from '../state/models';
+
+
 
 const options: IFormOptions = {
     alwaysEditable: false,
@@ -42,6 +44,18 @@ export class TaskTagForm extends BaseForm {
             null,
             null,
             _.assign({}, options, formOptions)
+        );
+    }
+
+    addNew(title: string) {
+        this.store.dispatch({type: actions.TagActions.ADD, payload: {name: title}});
+        this.actionsSubject.pipe(
+            filter((action: IActionWithPayload) => action.type == actions.TagActions.ADD_SUCCESS),
+            take(1)
+        ).subscribe(
+            action => {
+                this.controls.tag.setValue(action.payload.id)
+            }
         );
     }
 }

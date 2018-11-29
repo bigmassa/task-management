@@ -32,10 +32,8 @@ select[disabled]:not(:hover) {
 
 textarea[disabled]:not(:hover) {
   resize: none;
-  &.transparent {
-    background: color-darken("secondary", 3%);
-    border-color: transparent;
-  }
+  background: color-darken("secondary", 3%);
+  border-color: transparent;
 }
 
 input[disabled]:hover,

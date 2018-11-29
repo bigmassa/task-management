@@ -22,4 +22,11 @@
     background: $body-background;
   }
 
+  &.tabs-light li,
+  &.tabs-light li.active {
+    color: inherit;
+  }
+  &.tabs-light li.active {
+    background: color("white");
+  }
 }

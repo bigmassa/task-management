@@ -74,13 +74,15 @@ class TaskTiming(models.Model):
 @receiver(post_save, sender=TaskTiming)
 @receiver(post_delete, sender=TaskTiming)
 def update_job_timings(instance, **kwargs):
-    def do():
+    def do(job):
         from wip.models import JobTiming
 
-        timing = JobTiming.objects.with_calculated().get(job_id=instance.task.job_id)
+        timing = JobTiming.objects.with_calculated().get(job=job)
 
         timing.allocated_hours = timing.qs_allocated_hours
         timing.time_spent_hours = timing.qs_time_spent_hours
         timing.save()
 
-    transaction.on_commit(do)
+    job = instance.task.job
+
+    transaction.on_commit(lambda: do(job))
