@@ -59,8 +59,8 @@ class Task(models.Model):
     not_chargeable = models.BooleanField(
         default=False
     )
-    order = models.PositiveIntegerField(
-        default=0
+    order = models.FloatField(
+        default=16384
     )
 
     objects = TaskManager()

@@ -703,11 +703,11 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/src/styles.css */"./src/styles.css");
-__webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/node_modules/@angular/material/prebuilt-themes/indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
-__webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/node_modules/@swimlane/ngx-dnd/release/index.css */"./node_modules/@swimlane/ngx-dnd/release/index.css");
-__webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/node_modules/dragula/dist/dragula.min.css */"./node_modules/dragula/dist/dragula.min.css");
-module.exports = __webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/node_modules/fullcalendar/dist/fullcalendar.min.css */"./node_modules/fullcalendar/dist/fullcalendar.min.css");
+__webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/src/styles.css */"./src/styles.css");
+__webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/node_modules/@angular/material/prebuilt-themes/indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
+__webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/node_modules/@swimlane/ngx-dnd/release/index.css */"./node_modules/@swimlane/ngx-dnd/release/index.css");
+__webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/node_modules/dragula/dist/dragula.min.css */"./node_modules/dragula/dist/dragula.min.css");
+module.exports = __webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/node_modules/fullcalendar/dist/fullcalendar.min.css */"./node_modules/fullcalendar/dist/fullcalendar.min.css");
 
 
 /***/ })

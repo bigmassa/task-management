@@ -170,9 +170,28 @@ def load():
 
         print('add tasks')
         new_tasks = []
+        tasks = m_models.Task.objects.using('legacy').order_by(
+            'jobid_id',
+            'taskstatusid_id',
+            'display_order',
+            'title'
+        ).select_related(
+            'jobid'
+        )
+        job = None
+        status = None
         order = 0
-        tasks = m_models.Task.objects.using('legacy').all().select_related('jobid').order_by('display_order', 'title')
         for obj in tasks:
+
+            # increment the order or reset on a status change
+            if obj.taskstatusid_id != status or obj.jobid_id != job:
+                order = 16384
+            else:
+                order += 16384
+            # set the status and job
+            status = obj.taskstatusid_id
+            job = obj.jobid_id
+
             new_task = w_models.Task(
                 id=obj.taskid,
                 title=obj.title,
@@ -189,8 +208,6 @@ def load():
             # turn off auto_now_add
             new_task._meta.get_field('created_at').auto_now_add = False
             new_tasks.append(new_task)
-
-            order += 1
 
         w_models.Task.objects.bulk_create(new_tasks)
 

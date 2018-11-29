@@ -2,13 +2,17 @@ import * as _ from 'lodash';
 import * as actions from '../state/actions';
 import { ActionsSubject, Store } from '@ngrx/store';
 import { AppState } from '../state/state';
-import { Component, OnDestroy, OnInit, Input } from '@angular/core';
-
-import { Subscription } from 'rxjs';
-import { ITaskStatus } from '../state/reducers/taskstatus';
+import {
+    Component,
+    Input,
+    OnDestroy,
+    OnInit
+    } from '@angular/core';
 import { ITask } from '../state/reducers/task';
+import { ITaskStatus } from '../state/reducers/taskstatus';
+import { Subscription } from 'rxjs';
 import { TaskCreateForm } from '../forms/task-create.form';
-import { IFormActionResult } from '../forms/base.form';
+
 
 
 
@@ -24,7 +28,7 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
 
     newForm: TaskCreateForm;
     newFormOpen = false;
-    selectedTask: ITask = null;
+    selectedTaskId: number = null;
 
     private subscriptions: Subscription[] = [];
 

@@ -58,8 +58,8 @@ class TestModel(AppTestCase):
 
     def test_order(self):
         field = Task._meta.get_field('order')
-        self.assertModelField(field, models.PositiveIntegerField)
-        self.assertEqual(field.default, 0)
+        self.assertModelField(field, models.FloatField)
+        self.assertEqual(field.default, 16384)
 
     def test_tags(self):
         field = Task._meta.get_field('tags')

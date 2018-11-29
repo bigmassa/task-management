@@ -1551,7 +1551,7 @@ var ClientComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"board-column-heading\">\n    <strong>{{ status.title }}</strong>\n</div>\n\n<div class=\"board-card pointer text-center\" (click)=\"newTask()\">\n    <i class=\"icon-plus\"></i>\n</div>\n\n<div class=\"board-card\" *ngIf=\"newFormOpen\">\n    <textarea autoResize [formControl]=\"newForm.controls.title\"></textarea>\n    <button class=\"button\" (click)=\"newForm.save($event)\">Save</button>\n</div>\n\n<div class=\"board-card-wrapper\" \n    ngxDroppable=\"status-column\"\n    (drop)=\"dropTask($event)\"\n    [model]=\"tasks\"\n    *ngIf=\"tasks\">\n    <div task-card \n        [id]=\"task.id\"\n        ngxDraggable\n        [model]=\"task\"\n        (click)=\"selectedTaskId=task.id\"\n        *ngFor=\"let task of tasks\">\n    </div>\n</div>\n\n<task-form\n    [id]=\"selectedTaskId\"\n    (close)=\"selectedTaskId = null\"\n    *ngIf=\"selectedTaskId\">\n</task-form>"
+module.exports = "<div class=\"board-column-heading\">\n    <strong>{{ status.title }}</strong>\n</div>\n\n<div class=\"board-card pointer text-center\" (click)=\"newTask()\">\n    <i class=\"icon-plus\"></i>\n</div>\n\n<div class=\"board-card\" *ngIf=\"newFormOpen\">\n    <textarea autoResize [formControl]=\"newForm.controls.title\" (keydown.enter)=\"false\"></textarea>\n    <button class=\"button\" (click)=\"newForm.save($event)\">Save</button>\n</div>\n\n<div class=\"board-card-wrapper\" \n    ngxDroppable=\"status-column\"\n    (drop)=\"dropTask($event)\"\n    [model]=\"tasks\"\n    *ngIf=\"tasks\">\n    <div task-card \n        [id]=\"task.id\"\n        ngxDraggable\n        [model]=\"task\"\n        (click)=\"selectedTaskId=task.id\"\n        *ngFor=\"let task of tasks\">\n    </div>\n</div>\n\n<task-form\n    [id]=\"selectedTaskId\"\n    (close)=\"selectedTaskId = null\"\n    *ngIf=\"selectedTaskId\">\n</task-form>"
 
 /***/ }),
 
@@ -1590,7 +1590,7 @@ var JobBoardColumnComponent = /** @class */ (function () {
         this.store = store;
         this.actionsSubject = actionsSubject;
         this.newFormOpen = false;
-        this.selectedTask = null;
+        this.selectedTaskId = null;
         this.subscriptions = [];
     }
     JobBoardColumnComponent.prototype.ngOnInit = function () {
@@ -2668,7 +2668,7 @@ var TagComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"board-card d-flex flex-column pointer\" *ngIf=\"task$ | async as task\">\n    <p class=\"board-card-desc\">{{ task.title }} <small class=\"muted\">{{ task.order }}</small></p>\n    <div class=\"d-flex\">\n        <div class=\"mr-auto\">\n            <span class=\"uppercase mr-1\" [class.c-red]=\"task.is_overdue\" *ngIf=\"task.target_date\"><i class=\"icon-bell\"></i> {{ task.target_date | date:'d MMM' }}</span>\n            <span class=\"uppercase\" [class.c-red]=\"timing.is_over_allocated_hours\" *ngIf=\"timing$ | async as timing\">\n                <i class=\"icon-clock\"></i> {{ timing.time_spent_hours }}/{{ timing.allocated_hours }}\n            </span>\n        </div>\n        <div>\n            <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of assignees$ | async\"></div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"board-card d-flex flex-column pointer\" *ngIf=\"task$ | async as task\">\n    <p class=\"board-card-desc\">{{ task.title }}</p>\n    <div class=\"d-flex\">\n        <div class=\"mr-auto\">\n            <span class=\"uppercase mr-1\" [class.c-red]=\"task.is_overdue\" *ngIf=\"task.target_date\"><i class=\"icon-bell\"></i> {{ task.target_date | date:'d MMM' }}</span>\n            <span class=\"uppercase\" [class.c-red]=\"timing.is_over_allocated_hours\" *ngIf=\"timing$ | async as timing\">\n                <i class=\"icon-clock\"></i> {{ timing.time_spent_hours }}/{{ timing.allocated_hours }}\n            </span>\n        </div>\n        <div>\n            <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of assignees$ | async\"></div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -12606,7 +12606,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -7,7 +7,7 @@
 </div>
 
 <div class="board-card" *ngIf="newFormOpen">
-    <textarea autoResize [formControl]="newForm.controls.title"></textarea>
+    <textarea autoResize [formControl]="newForm.controls.title" (keydown.enter)="false"></textarea>
     <button class="button" (click)="newForm.save($event)">Save</button>
 </div>
 

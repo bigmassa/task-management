@@ -1,5 +1,5 @@
 <div class="board-card d-flex flex-column pointer" *ngIf="task$ | async as task">
-    <p class="board-card-desc">{{ task.title }} <small class="muted">{{ task.order }}</small></p>
+    <p class="board-card-desc">{{ task.title }}</p>
     <div class="d-flex">
         <div class="mr-auto">
             <span class="uppercase mr-1" [class.c-red]="task.is_overdue" *ngIf="task.target_date"><i class="icon-bell"></i> {{ task.target_date | date:'d MMM' }}</span>
