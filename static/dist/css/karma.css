@@ -1526,7 +1526,7 @@ strong {
 }
 
 small {
-  font-size: 80%;
+  font-size: 85%;
 }
 
 sub,
@@ -2415,6 +2415,14 @@ a.c-dodgerblue:hover {
   color: #008ccc;
 }
 
+a.c-whitelilac {
+  color: #f0f0f1;
+}
+
+a.c-whitelilac:hover {
+  color: #bbbbc0;
+}
+
 a.c-wildwillow {
   color: #a2cf6e;
 }
@@ -2821,6 +2829,11 @@ td textarea {
   padding-left: 0;
 }
 
+.px-0-5 {
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
+
 .py-1 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -3173,6 +3186,14 @@ td textarea {
   color: #33bfff;
 }
 
+.b-whitelilac {
+  background-color: #f0f0f1;
+}
+
+.c-whitelilac {
+  color: #f0f0f1;
+}
+
 .b-wildwillow {
   background-color: #a2cf6e;
 }
@@ -3474,7 +3495,7 @@ td textarea {
 }
 
 .small {
-  font-size: 80%;
+  font-size: 85%;
 }
 
 .uppercase {
