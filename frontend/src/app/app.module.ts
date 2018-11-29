@@ -29,7 +29,6 @@ import { JobComponent } from './components/job.component';
 import { LoadingSplashComponent } from './components/loading-splash.component';
 import { LogoComponent } from './components/logo';
 import { NotFoundComponent } from './components/not-found.component';
-import { ReportListComponent } from './components/report-list.component';
 import { SearchComponent } from './components/search.component';
 import { TabsComponent } from './components/tabs.component';
 import { TagComponent } from './components/tag.component';
@@ -78,7 +77,6 @@ import { reducers } from './state/state';
         LogoComponent,
         NotFoundComponent,
         OpenJobsPipe,
-        ReportListComponent,
         SearchComponent,
         TabsComponent,
         TagComponent,
