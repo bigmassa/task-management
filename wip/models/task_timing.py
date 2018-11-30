@@ -1,3 +1,4 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models, transaction
 from django.db.models.manager import BaseManager
 from django.db.models.signals import post_delete, post_save, pre_save
@@ -77,11 +78,13 @@ def update_job_timings(instance, **kwargs):
     def do(job):
         from wip.models import JobTiming
 
-        timing = JobTiming.objects.with_calculated().get(job=job)
-
-        timing.allocated_hours = timing.qs_allocated_hours
-        timing.time_spent_hours = timing.qs_time_spent_hours
-        timing.save()
+        try:
+            timing = JobTiming.objects.with_calculated().get(job=job)
+            timing.allocated_hours = timing.qs_allocated_hours
+            timing.time_spent_hours = timing.qs_time_spent_hours
+            timing.save()
+        except ObjectDoesNotExist:
+            pass
 
     job = instance.task.job
 

@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.core.exceptions import ValidationError
+from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.db import models, transaction
 from django.db.models.manager import BaseManager
 from django.db.models.signals import post_delete, post_save
@@ -91,13 +91,13 @@ def update_time_spent_hours(instance, **kwargs):
     def do():
         from wip.models import TaskTiming
 
-        timing = TaskTiming.objects.with_calculated().get(task_id=instance.task_id)
-        time_spent = duration_to_decimal_hrs(timing.qs_time_spent_hours)
-
-        if timing.time_spent_hours == time_spent:
-            return
-
-        timing.time_spent_hours = time_spent
-        timing.save()
+        try:
+            timing = TaskTiming.objects.with_calculated().get(task_id=instance.task_id)
+            time_spent = duration_to_decimal_hrs(timing.qs_time_spent_hours)
+            if timing.time_spent_hours != time_spent:
+                timing.time_spent_hours = time_spent
+                timing.save()
+        except ObjectDoesNotExist:
+            pass
 
     transaction.on_commit(do)
