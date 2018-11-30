@@ -6,12 +6,14 @@ import {
     Component,
     Input,
     OnDestroy,
-    OnInit
+    OnInit,
+    HostListener
     } from '@angular/core';
 import { ITask } from '../state/reducers/task';
 import { ITaskStatus } from '../state/reducers/taskstatus';
 import { Subscription } from 'rxjs';
 import { TaskCreateForm } from '../forms/task-create.form';
+import { DrakeStoreService } from '@swimlane/ngx-dnd';
 
 @Component({
     selector: 'job-board-column, [job-board-column]',
@@ -31,7 +33,8 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
 
     constructor(
         private store: Store<AppState>,
-        private actionsSubject: ActionsSubject
+        private actionsSubject: ActionsSubject,
+        private drakeStore: DrakeStoreService
     ) { }
 
     ngOnInit() {
@@ -67,6 +70,11 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
             order: order
         }
         this.store.dispatch({type: actions.TaskActions.PATCH, payload});
+    }
+
+    @HostListener('document:keydown.escape', ['$event']) 
+    cancelDrag(event: KeyboardEvent) {
+        (this.drakeStore as any).drake.cancel(true);
     }
 
     newTask() {
