@@ -13,9 +13,6 @@ import { ITaskStatus } from '../state/reducers/taskstatus';
 import { Subscription } from 'rxjs';
 import { TaskCreateForm } from '../forms/task-create.form';
 
-
-
-
 @Component({
     selector: 'job-board-column, [job-board-column]',
     templateUrl: './job-board-column.component.html'

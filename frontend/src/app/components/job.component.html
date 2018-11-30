@@ -17,7 +17,7 @@
     </div>
 
     <div class="container-fluid d-flex flex-fill" *ngIf="selectedTab.title == 'Tasks'">
-        <div class="d-flex flex-fill mt-1 mb-1 scroll-x">
+        <div autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40" class="d-flex flex-fill mt-1 mb-1 scroll-x">
             <div class="board-column"
                 job-board-column
                 [jobId]="jobId"

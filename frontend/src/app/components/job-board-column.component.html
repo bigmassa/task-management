@@ -11,7 +11,7 @@
     <button class="button" (click)="newForm.save($event)">Save</button>
 </div>
 
-<div class="board-card-wrapper" 
+<div autoScroll class="board-card-wrapper" 
     ngxDroppable="status-column"
     (drop)="dropTask($event)"
     [model]="tasks"
