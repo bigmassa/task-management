@@ -4,7 +4,6 @@ channels_redis
 coreapi
 django
 django-autocomplete-light
-django-bulk-update
 django-filter
 django-pyodbc-azure
 django-storages

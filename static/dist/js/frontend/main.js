@@ -5911,9 +5911,6 @@ var JobActions = /** @class */ (function () {
     JobActions.prototype.RemoveSuccess = function (payload) {
         return { type: JobActions_1.REMOVE_SUCCESS, payload: payload };
     };
-    JobActions.prototype.SortTasks = function (payload) {
-        return { type: JobActions_1.SORT_TASKS, payload: payload };
-    };
     var JobActions_1;
     JobActions.LOAD_ALL = '[Job] LOAD_ALL';
     JobActions.LOAD_ALL_SUCCESS = '[Job] LOAD_ALL_SUCCESS';
@@ -5925,7 +5922,6 @@ var JobActions = /** @class */ (function () {
     JobActions.UPDATE_SUCCESS = '[Job] UPDATE_SUCCESS';
     JobActions.REMOVE = '[Job] REMOVE';
     JobActions.REMOVE_SUCCESS = '[Job] REMOVE_SUCCESS';
-    JobActions.SORT_TASKS = '[Job] SORT_TASKS';
     JobActions = JobActions_1 = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -8419,11 +8415,8 @@ var effects = [
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobEffects", function() { return JobEffects; });
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions */ "./src/app/state/actions/index.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -8446,9 +8439,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
-
 var JobEffects = /** @class */ (function (_super) {
     __extends(JobEffects, _super);
     function JobEffects() {
@@ -8461,41 +8451,34 @@ var JobEffects = /** @class */ (function (_super) {
         _this.update$ = _this._update$(_this.prefix + " UPDATE", _this.prefix + " UPDATE_SUCCESS");
         _this.remove$ = _this._remove$(_this.prefix + " REMOVE", _this.prefix + " REMOVE_SUCCESS");
         _this.socket$ = _this._socket$('wip.job', _this.prefix + " LOAD_ONE", _this.prefix + " LOAD_ONE", _this.prefix + " REMOVE_SUCCESS");
-        _this.sortTasks$ = _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_this.prefix + " SORT_TASKS"), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (obj) {
-            return _this.service$.post("" + _this.apiUrl + obj.id + "/sort-tasks/", obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: _this.prefix + " SORT_TASKS_SUCCESS", payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: { err: res, data: obj } }); }));
-        }));
         return _this;
     }
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "all$", void 0);
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "one$", void 0);
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "add$", void 0);
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "update$", void 0);
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "remove$", void 0);
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
         __metadata("design:type", Object)
     ], JobEffects.prototype, "socket$", void 0);
-    __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
-        __metadata("design:type", Object)
-    ], JobEffects.prototype, "sortTasks$", void 0);
     JobEffects = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
         })
     ], JobEffects);

@@ -1,6 +1,6 @@
 from .client import ClientSerializer
 from .client_contact import ClientContactSerializer
-from .job import JobSerializer, JobTaskSortSerializer
+from .job import JobSerializer
 from .job_file import JobFileSerializer
 from .job_note import JobNoteSerializer
 from .job_recurring_cost import JobRecurringCostSerializer
