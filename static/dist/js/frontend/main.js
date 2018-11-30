@@ -380,55 +380,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _app_routing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.routing */ "./src/app/app.routing.ts");
-/* harmony import */ var _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./directives/auto-resize.directive */ "./src/app/directives/auto-resize.directive.ts");
-/* harmony import */ var _directives_auto_scroll_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./directives/auto-scroll.directive */ "./src/app/directives/auto-scroll.directive.ts");
-/* harmony import */ var _components_avatar_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/avatar.component */ "./src/app/components/avatar.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _components_calendar_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/calendar.component */ "./src/app/components/calendar.component.ts");
-/* harmony import */ var _components_client_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/client.component */ "./src/app/components/client.component.ts");
-/* harmony import */ var _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/client-contact-form.component */ "./src/app/components/client-contact-form.component.ts");
-/* harmony import */ var _components_client_delete_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/client-delete.component */ "./src/app/components/client-delete.component.ts");
-/* harmony import */ var _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/client-detail-form.component */ "./src/app/components/client-detail-form.component.ts");
-/* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
-/* harmony import */ var _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pipes/client-search.pipe */ "./src/app/pipes/client-search.pipe.ts");
-/* harmony import */ var _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pipes/closed-jobs.pipe */ "./src/app/pipes/closed-jobs.pipe.ts");
-/* harmony import */ var ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-dropzone-wrapper */ "./node_modules/ngx-dropzone-wrapper/dist/ngx-dropzone-wrapper.es5.js");
-/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./directives/formerror.directive */ "./src/app/directives/formerror.directive.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _components_job_board_column_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/job-board-column.component */ "./src/app/components/job-board-column.component.ts");
-/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
-/* harmony import */ var _components_job_delete_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/job-delete.component */ "./src/app/components/job-delete.component.ts");
-/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
-/* harmony import */ var _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/job-recurring-cost-form.component */ "./src/app/components/job-recurring-cost-form.component.ts");
-/* harmony import */ var _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/job-relationship-form.component */ "./src/app/components/job-relationship-form.component.ts");
-/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
-/* harmony import */ var _services_interceptors__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./services/interceptors */ "./src/app/services/interceptors.ts");
-/* harmony import */ var _components_loading_splash_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/loading-splash.component */ "./src/app/components/loading-splash.component.ts");
-/* harmony import */ var _components_logo__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/logo */ "./src/app/components/logo.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
-/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
-/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./state/state */ "./src/app/state/state.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _components_tabs_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/tabs.component */ "./src/app/components/tabs.component.ts");
-/* harmony import */ var _components_tag_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./components/tag.component */ "./src/app/components/tag.component.ts");
-/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
-/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
-/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
-/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
-/* harmony import */ var _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./pipes/task-search.pipe */ "./src/app/pipes/task-search.pipe.ts");
-/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
-/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
+/* harmony import */ var _directives_auto_focus_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./directives/auto-focus.directive */ "./src/app/directives/auto-focus.directive.ts");
+/* harmony import */ var _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./directives/auto-resize.directive */ "./src/app/directives/auto-resize.directive.ts");
+/* harmony import */ var _directives_auto_scroll_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./directives/auto-scroll.directive */ "./src/app/directives/auto-scroll.directive.ts");
+/* harmony import */ var _components_avatar_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/avatar.component */ "./src/app/components/avatar.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _components_calendar_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/calendar.component */ "./src/app/components/calendar.component.ts");
+/* harmony import */ var _components_client_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/client.component */ "./src/app/components/client.component.ts");
+/* harmony import */ var _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/client-contact-form.component */ "./src/app/components/client-contact-form.component.ts");
+/* harmony import */ var _components_client_delete_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/client-delete.component */ "./src/app/components/client-delete.component.ts");
+/* harmony import */ var _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/client-detail-form.component */ "./src/app/components/client-detail-form.component.ts");
+/* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
+/* harmony import */ var _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pipes/client-search.pipe */ "./src/app/pipes/client-search.pipe.ts");
+/* harmony import */ var _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pipes/closed-jobs.pipe */ "./src/app/pipes/closed-jobs.pipe.ts");
+/* harmony import */ var ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ngx-dropzone-wrapper */ "./node_modules/ngx-dropzone-wrapper/dist/ngx-dropzone-wrapper.es5.js");
+/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./directives/formerror.directive */ "./src/app/directives/formerror.directive.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _components_job_board_column_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/job-board-column.component */ "./src/app/components/job-board-column.component.ts");
+/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
+/* harmony import */ var _components_job_delete_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/job-delete.component */ "./src/app/components/job-delete.component.ts");
+/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
+/* harmony import */ var _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/job-recurring-cost-form.component */ "./src/app/components/job-recurring-cost-form.component.ts");
+/* harmony import */ var _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/job-relationship-form.component */ "./src/app/components/job-relationship-form.component.ts");
+/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
+/* harmony import */ var _services_interceptors__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./services/interceptors */ "./src/app/services/interceptors.ts");
+/* harmony import */ var _components_loading_splash_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/loading-splash.component */ "./src/app/components/loading-splash.component.ts");
+/* harmony import */ var _components_logo__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/logo */ "./src/app/components/logo.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
+/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
+/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./state/state */ "./src/app/state/state.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _components_tabs_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./components/tabs.component */ "./src/app/components/tabs.component.ts");
+/* harmony import */ var _components_tag_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./components/tag.component */ "./src/app/components/tag.component.ts");
+/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
+/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
+/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
+/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
+/* harmony import */ var _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./pipes/task-search.pipe */ "./src/app/pipes/task-search.pipe.ts");
+/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -486,71 +487,73 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_33__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_34__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_0__["AppComponent"],
-                _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_2__["AutoResizeDirective"],
-                _directives_auto_scroll_directive__WEBPACK_IMPORTED_MODULE_3__["AutoScrollDirective"],
-                _components_avatar_component__WEBPACK_IMPORTED_MODULE_4__["AvatarComponent"],
-                _components_calendar_component__WEBPACK_IMPORTED_MODULE_7__["CalendarComponent"],
-                _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_14__["ClosedJobsPipe"],
-                _components_client_component__WEBPACK_IMPORTED_MODULE_8__["ClientComponent"],
-                _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_9__["ClientContactFormComponent"],
-                _components_client_delete_component__WEBPACK_IMPORTED_MODULE_10__["ClientDeleteComponent"],
-                _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_11__["ClientDetailFormComponent"],
-                _components_client_list_component__WEBPACK_IMPORTED_MODULE_12__["ClientListComponent"],
-                _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_13__["ClientSearchPipe"],
-                _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_18__["FormErrorDirective"],
-                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_20__["GetPipe"],
-                _components_job_board_column_component__WEBPACK_IMPORTED_MODULE_22__["JobBoardColumnComponent"],
-                _components_job_component__WEBPACK_IMPORTED_MODULE_23__["JobComponent"],
-                _components_job_delete_component__WEBPACK_IMPORTED_MODULE_24__["JobDeleteComponent"],
-                _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_25__["JobDetailFormComponent"],
-                _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_26__["JobRecurringCostFormComponent"],
-                _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_27__["JobRelationshipFormComponent"],
-                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_28__["JobSearchPipe"],
-                _components_loading_splash_component__WEBPACK_IMPORTED_MODULE_30__["LoadingSplashComponent"],
-                _components_logo__WEBPACK_IMPORTED_MODULE_31__["LogoComponent"],
-                _components_not_found_component__WEBPACK_IMPORTED_MODULE_35__["NotFoundComponent"],
-                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_36__["OpenJobsPipe"],
-                _components_search_component__WEBPACK_IMPORTED_MODULE_39__["SearchComponent"],
-                _components_tabs_component__WEBPACK_IMPORTED_MODULE_41__["TabsComponent"],
-                _components_tag_component__WEBPACK_IMPORTED_MODULE_42__["TagComponent"],
-                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_43__["TaskboardComponent"],
-                _components_task_card_component__WEBPACK_IMPORTED_MODULE_44__["TaskCardComponent"],
-                _components_task_form_component__WEBPACK_IMPORTED_MODULE_45__["TaskFormComponent"],
-                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_46__["TasksByStatusPipe"],
-                _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_47__["TaskSearchPipe"],
-                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_48__["TimeEntryFormComponent"],
-                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_49__["TimesheetComponent"],
-                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_50__["TimesheetSignoffComponent"]
+                _directives_auto_focus_directive__WEBPACK_IMPORTED_MODULE_2__["AutofocusDirective"],
+                _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_3__["AutoResizeDirective"],
+                _directives_auto_scroll_directive__WEBPACK_IMPORTED_MODULE_4__["AutoScrollDirective"],
+                _components_avatar_component__WEBPACK_IMPORTED_MODULE_5__["AvatarComponent"],
+                _components_calendar_component__WEBPACK_IMPORTED_MODULE_8__["CalendarComponent"],
+                _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_15__["ClosedJobsPipe"],
+                _components_client_component__WEBPACK_IMPORTED_MODULE_9__["ClientComponent"],
+                _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_10__["ClientContactFormComponent"],
+                _components_client_delete_component__WEBPACK_IMPORTED_MODULE_11__["ClientDeleteComponent"],
+                _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_12__["ClientDetailFormComponent"],
+                _components_client_list_component__WEBPACK_IMPORTED_MODULE_13__["ClientListComponent"],
+                _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_14__["ClientSearchPipe"],
+                _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_19__["FormErrorDirective"],
+                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_21__["GetPipe"],
+                _components_job_board_column_component__WEBPACK_IMPORTED_MODULE_23__["JobBoardColumnComponent"],
+                _components_job_component__WEBPACK_IMPORTED_MODULE_24__["JobComponent"],
+                _components_job_delete_component__WEBPACK_IMPORTED_MODULE_25__["JobDeleteComponent"],
+                _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_26__["JobDetailFormComponent"],
+                _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_27__["JobRecurringCostFormComponent"],
+                _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_28__["JobRelationshipFormComponent"],
+                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_29__["JobSearchPipe"],
+                _components_loading_splash_component__WEBPACK_IMPORTED_MODULE_31__["LoadingSplashComponent"],
+                _components_logo__WEBPACK_IMPORTED_MODULE_32__["LogoComponent"],
+                _components_not_found_component__WEBPACK_IMPORTED_MODULE_36__["NotFoundComponent"],
+                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_37__["OpenJobsPipe"],
+                _components_search_component__WEBPACK_IMPORTED_MODULE_40__["SearchComponent"],
+                _components_tabs_component__WEBPACK_IMPORTED_MODULE_42__["TabsComponent"],
+                _components_tag_component__WEBPACK_IMPORTED_MODULE_43__["TagComponent"],
+                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_44__["TaskboardComponent"],
+                _components_task_card_component__WEBPACK_IMPORTED_MODULE_45__["TaskCardComponent"],
+                _components_task_form_component__WEBPACK_IMPORTED_MODULE_46__["TaskFormComponent"],
+                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_47__["TasksByStatusPipe"],
+                _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_48__["TaskSearchPipe"],
+                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_49__["TimeEntryFormComponent"],
+                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_50__["TimesheetComponent"],
+                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_51__["TimesheetSignoffComponent"]
             ],
             imports: [
                 _app_routing__WEBPACK_IMPORTED_MODULE_1__["AppRoutingModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["BrowserModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_17__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_16__["effects"]),
-                ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_15__["DropzoneModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_19__["FormsModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_21__["HttpClientModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_21__["HttpClientXsrfModule"].withOptions({
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__["BrowserModule"],
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_18__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_17__["effects"]),
+                ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_16__["DropzoneModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_20__["FormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_22__["HttpClientModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_22__["HttpClientXsrfModule"].withOptions({
                     cookieName: 'csrftoken',
                     headerName: 'X-CSRFTOKEN'
                 }),
-                _angular_material__WEBPACK_IMPORTED_MODULE_32__["MatDatepickerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_32__["MatNativeDateModule"],
-                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_34__["NgxDnDModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_19__["ReactiveFormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_38__["RouterModule"],
-                _ngrx_store__WEBPACK_IMPORTED_MODULE_40__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_37__["reducers"])
+                _angular_material__WEBPACK_IMPORTED_MODULE_33__["MatDatepickerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_33__["MatNativeDateModule"],
+                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_35__["NgxDnDModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_20__["ReactiveFormsModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_39__["RouterModule"],
+                _ngrx_store__WEBPACK_IMPORTED_MODULE_41__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_38__["reducers"])
             ],
             providers: [
-                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_21__["HTTP_INTERCEPTORS"], useClass: _services_interceptors__WEBPACK_IMPORTED_MODULE_29__["LoadingInterceptor"], multi: true },
-                { provide: _angular_material__WEBPACK_IMPORTED_MODULE_32__["MAT_DATE_LOCALE"], useValue: 'en-GB' }
+                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_22__["HTTP_INTERCEPTORS"], useClass: _services_interceptors__WEBPACK_IMPORTED_MODULE_30__["LoadingInterceptor"], multi: true },
+                { provide: _angular_material__WEBPACK_IMPORTED_MODULE_33__["MAT_DATE_LOCALE"], useValue: 'en-GB' }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__["AppComponent"]]
         })
@@ -1548,7 +1551,7 @@ var ClientComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"board-column-heading\">\n    <strong>{{ status.title }}</strong>\n</div>\n\n<div class=\"board-card pointer text-center\" (click)=\"newTask()\">\n    <i class=\"icon-plus\"></i>\n</div>\n\n<div class=\"board-card\" *ngIf=\"newFormOpen\">\n    <textarea autoResize [formControl]=\"newForm.controls.title\" (keydown.enter)=\"false\"></textarea>\n    <button class=\"button\" (click)=\"newForm.save($event)\">Save</button>\n</div>\n\n<div autoScroll class=\"board-card-wrapper\" \n    ngxDroppable=\"status-column\"\n    (drop)=\"dropTask($event)\"\n    [model]=\"tasks\"\n    *ngIf=\"tasks\">\n    <div task-card \n        [id]=\"task.id\"\n        ngxDraggable\n        [model]=\"task\"\n        (click)=\"selectedTaskId=task.id\"\n        *ngFor=\"let task of tasks\">\n    </div>\n</div>\n\n<task-form\n    [id]=\"selectedTaskId\"\n    (close)=\"selectedTaskId = null\"\n    *ngIf=\"selectedTaskId\">\n</task-form>"
+module.exports = "<div class=\"board-column-heading\">\n    <strong>{{ status.title }}</strong>\n</div>\n\n<div class=\"board-card pointer text-center\" (click)=\"newTask()\">\n    <i class=\"icon-plus\"></i>\n</div>\n\n<div class=\"board-card\" *ngIf=\"newFormOpen\">\n    <textarea autoFocus autoResize [formControl]=\"newForm.controls.title\" (keydown.enter)=\"false\"></textarea>\n    <button class=\"button\" (click)=\"newForm.save($event)\">Save</button>\n</div>\n\n<div autoScroll class=\"board-card-wrapper\" \n    ngxDroppable=\"status-column\"\n    (drop)=\"dropTask($event)\"\n    [model]=\"tasks\"\n    *ngIf=\"tasks\">\n    <div task-card \n        [id]=\"task.id\"\n        ngxDraggable\n        [model]=\"task\"\n        (click)=\"selectedTaskId=task.id\"\n        *ngFor=\"let task of tasks\">\n    </div>\n</div>\n\n<task-form\n    [id]=\"selectedTaskId\"\n    (close)=\"selectedTaskId = null\"\n    *ngIf=\"selectedTaskId\">\n</task-form>"
 
 /***/ }),
 
@@ -3252,6 +3255,47 @@ var TimesheetComponent = /** @class */ (function () {
             _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["ActionsSubject"]])
     ], TimesheetComponent);
     return TimesheetComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/directives/auto-focus.directive.ts":
+/*!****************************************************!*\
+  !*** ./src/app/directives/auto-focus.directive.ts ***!
+  \****************************************************/
+/*! exports provided: AutofocusDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AutofocusDirective", function() { return AutofocusDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AutofocusDirective = /** @class */ (function () {
+    function AutofocusDirective(el) {
+        this.el = el;
+    }
+    AutofocusDirective.prototype.ngAfterViewInit = function () {
+        this.el.nativeElement.focus();
+    };
+    AutofocusDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: 'autoFocus, [autoFocus]'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]])
+    ], AutofocusDirective);
+    return AutofocusDirective;
 }());
 
 

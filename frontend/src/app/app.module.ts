@@ -1,5 +1,6 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
+import { AutofocusDirective } from './directives/auto-focus.directive';
 import { AutoResizeDirective } from './directives/auto-resize.directive';
 import { AutoScrollDirective } from './directives/auto-scroll.directive';
 import { AvatarComponent } from './components/avatar.component';
@@ -53,6 +54,7 @@ import { TimesheetSignoffComponent } from './components/time-sheet-signoff.compo
 @NgModule({
     declarations: [
         AppComponent,
+        AutofocusDirective,
         AutoResizeDirective,
         AutoScrollDirective,
         AvatarComponent,
