@@ -1,15 +1,14 @@
 <div class="page-header py-2">
     <div class="container-fluid d-flex align-items-center">
         <div class="h2">Clients</div>
-        <div class="page-header-actions">
-            <a routerLink="/clients/new" class="button button-white">Add</a>
-        </div>
+        <div class="page-header-actions"></div>
     </div>
 </div>
 <div class="container-fluid inner-content">
     <div class="panel">
         <div class="row">
             <div class="col-6"><search [(ngModel)]="searchTerms"></search></div>
+            <div class="col-6"><a routerLink="/clients/new" class="button button-white pull-right">Add Client</a></div>
         </div>
         <table class="table-headed table-hover margin-zero layout-fixed">
             <thead>
