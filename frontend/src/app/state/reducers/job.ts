@@ -14,8 +14,6 @@ export interface IJob {
     colour: string;
     status: number;
     billed_to?: string;
-    allocated_hours?: string;
-    time_spent_hours?: string;
     _client?: IClient;
     _status?: IJobStatus;
     _type?: IJobType
