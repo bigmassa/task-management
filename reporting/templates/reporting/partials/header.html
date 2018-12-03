@@ -1,0 +1,17 @@
+{% load i18n static %}
+<header>
+    <div class="container-fluid d-flex align-items-center">
+        <a class="nav-home mt-1 " href="/">
+            <img src="{% static 'dist/img/task-management-logo.svg' %}" width="35" height="35">
+        </a>
+        <ul class="nav">
+            <li><a href="{% url 'reporting:list' %}" class="active">{% trans 'Reporting' %}</a></li>
+        </ul>
+        <div class="ml-auto">
+            <a class="avatar" href="{% url 'logout' %}">
+                <div class="avatar-text">{{ user.get_initials }}</div>
+                <i class="avatar-close icon-cancel"></i>
+            </a>
+        </div>
+    </div>
+</header>

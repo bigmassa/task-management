@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load i18n static wip_tags %}
+{% block page_title %}Reporting - Moneyworks Timesheet Export{% endblock %}
+{% block body_class %}{% endblock %}
+{% block content %}
+{% include 'reporting/partials/header.html' %}
+<div class="page-header py-2">
+    <div class="container-fluid d-flex align-items-center">
+        <div class="h2">{% trans 'Moneyworks Timesheet Export' %}</div>
+        <div class="page-header-actions"></div>
+    </div>
+</div>
+<div class="container-fluid inner-content">
+  <div class="panel">
+      <form method="post" novalidate>
+          {% csrf_token %}
+          <div class="row">
+          {% for field in form %}
+              <div class="col-3">
+                  {{ field.label_tag }}
+                  {{ field }}
+                  {{ field.errors }}
+              </div>
+          {% endfor %}
+          </div>
+          <hr/>
+          <div class="row pt-1-5">
+              <div class="col text-right">
+                  <button class="button button-primary" type="submit">{% trans 'Download CSV' %}</button>
+              </div>
+          </div>
+      </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+    {{ form.media }}
+{% endblock %}

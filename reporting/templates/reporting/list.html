@@ -3,22 +3,7 @@
 {% block page_title %}Reporting{% endblock %}
 {% block body_class %}{% endblock %}
 {% block content %}
-<header>
-    <div class="container-fluid d-flex align-items-center">
-        <a class="nav-home mt-1 " href="/">
-            <img src="{% static 'dist/img/task-management-logo.svg' %}" width="35" height="35">
-        </a>
-        <ul class="nav">
-            <li><a href="{% url 'reporting:list' %}" class="active">{% trans 'Reporting' %}</a></li>
-        </ul>
-        <div class="ml-auto">
-            <a class="avatar" href="{% url 'logout' %}">
-                <div class="avatar-text">{{ user.get_initials }}</div>
-                <i class="avatar-close icon-cancel"></i>
-            </a>
-        </div>
-    </div>
-</header>
+{% include 'reporting/partials/header.html' %}
 <div class="page-header py-2">
     <div class="container-fluid d-flex align-items-center">
         <div class="h2">{% trans 'Reporting' %}</div>
@@ -28,11 +13,11 @@
 <div class="container-fluid inner-content">
     <ul class="list-style-none">
         <li>
-            <p class="h3"><a href="" class="underline-dotted">{% trans 'Job Time Analysis Report' %}</a></p>
+            <p class="h3"><a href="{% url 'reporting:job-time-analysis' %}" class="underline-dotted">{% trans 'Job Time Analysis' %}</a></p>
             <p>{% blocktrans %}Report that shows time spent for a job over a period of time. Includes allocated and chargeable time.{% endblocktrans %}</p>
         </li>
         <li>
-            <p class="h3"><a href="" class="underline-dotted">{% trans 'Moneyworks Timesheet Export' %}</a></p>
+            <p class="h3"><a href="{% url 'reporting:moneyworks-timesheet-export' %}" class="underline-dotted">{% trans 'Moneyworks Timesheet Export' %}</a></p>
             <p>{% blocktrans %}Report that exports users timesheets in the format that Moneyworks can import.{% endblocktrans %}</p>
         </li>
     </ul>
