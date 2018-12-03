@@ -12,12 +12,7 @@
         {% block extra_css %}{% endblock %}
     </head>
     <body class="{% block body_class %}{% endblock %}">
-        {% block full_outer_content %}
-            {% include 'partials/header.html' %}
-            {% block inner_content %}{% endblock %}
-            {% include 'partials/footer.html' %}
-        {% endblock %}
-        {% include 'partials/messages.html' %}
+        {% block content %}{% endblock %}
         {% block extra_js %}{% endblock %}
     </body>
 </html>
