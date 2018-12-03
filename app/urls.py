@@ -34,6 +34,7 @@ urlpatterns = [
     path('api/docs/', include_docs_urls(title=API_TITLE)),
     path('api/schema.json', schema_view),
     path('auth/', include('authentication.urls')),
+    path('reporting/', include('reporting.urls')),
 ]
 
 if settings.DEBUG:  # pragma: no cover
