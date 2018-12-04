@@ -112,6 +112,25 @@
             </div>
             <div class="row mb-1-5">
                 <div class="col-12">
+                    <p class="mb-0-5"><strong>Not Chargeable</strong></p>
+                </div>
+                <div class="col">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" [formControl]="notChargeableForm.controls.not_chargeable">
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-right" *ngIf="notChargeableForm.dirty">
+                        <button class="button" (click)="notChargeableForm.save($event)">Save</button>
+                        <button class="button button-clear" (click)="notChargeableForm.cancel($event)">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-1-5">
+                <div class="col-12">
                     <p class="mb-0-5"><strong>Closed</strong></p>
                 </div>
                 <div class="col">

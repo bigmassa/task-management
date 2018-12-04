@@ -39,6 +39,7 @@ import { Observable } from 'rxjs';
 import { TaskAssigneeForm } from '../forms/task-assignee.form';
 import { TaskClosedForm } from '../forms/task-close.form';
 import { TaskDescriptionForm } from '../forms/task-description.form';
+import { TaskNotChargeableForm } from '../forms/task-not-chargeable.form';
 import { TaskNoteForm } from '../forms/task-note.form';
 import { TaskTagForm } from '../forms/task-tag.form';
 import { TaskTargetDateForm } from '../forms/task-target-date.form';
@@ -66,6 +67,7 @@ export class TaskFormComponent implements OnChanges {
         headers: { 'X-CSRFTOKEN': getCookie('csrftoken') }
     };
     newNoteForm: TaskNoteForm;
+    notChargeableForm: TaskNotChargeableForm;
     tagEditForm: TaskTagForm;
     tags$: Observable<ITag[]>;
     targetDateForm: TaskTargetDateForm;
@@ -91,6 +93,7 @@ export class TaskFormComponent implements OnChanges {
         this.titleForm = new TaskTitleForm(this.store, this.actionsSubject);
         this.targetDateForm = new TaskTargetDateForm(this.store, this.actionsSubject);
         this.newNoteForm = new TaskNoteForm(this.store, this.actionsSubject);
+        this.notChargeableForm = new TaskNotChargeableForm(this.store, this.actionsSubject, { alwaysEditable: true });
     }
 
     ngOnChanges(changes: SimpleChanges) {
@@ -111,6 +114,7 @@ export class TaskFormComponent implements OnChanges {
                     this.titleForm.load(d);
                     this.targetDateForm.load(d);
                     this.newNoteForm.load({task: d.id});
+                    this.notChargeableForm.load(d);
                 }
             );
             this.deletable.check(DeletableService.TASK, this.id).then(check => this.canDelete = check);
