@@ -136,7 +136,7 @@ export class TaskFormComponent implements OnChanges {
             const form = new TaskNoteForm(
                 this.store,
                 this.actionsSubject,
-                {alwaysEditable: false, cleanAfterMethod: FormCleanAfterMethod.loadSaved}
+                { cleanAfterMethod: FormCleanAfterMethod.loadSaved }
             );
             form.load(note);
             this.taskNoteForms[note.id] = form;

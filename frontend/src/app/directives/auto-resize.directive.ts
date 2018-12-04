@@ -1,4 +1,10 @@
-import { AfterViewInit, Directive, ElementRef, HostListener, Input } from '@angular/core';
+import {
+    AfterViewInit,
+    Directive,
+    ElementRef,
+    HostListener,
+    Input
+    } from '@angular/core';
 
 @Directive({
     selector: 'textarea[autoResize]'

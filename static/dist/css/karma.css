@@ -1257,11 +1257,6 @@ input[type="checkbox"], input[type="radio"] {
   opacity: 1;
 }
 
-:-ms-input-placeholder {
-  color: #b9b9b9;
-  opacity: 1;
-}
-
 ::-ms-input-placeholder {
   color: #b9b9b9;
   opacity: 1;
@@ -2015,29 +2010,23 @@ input[type="time"]:focus {
   outline: 0;
 }
 
-input[disabled]:not(:hover) {
-  background: #e8e8e8;
-  border-color: transparent;
-}
-
-select[disabled]:not(:hover) {
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-  background: #e8e8e8;
-  border-color: transparent;
-}
-
-textarea[disabled]:not(:hover) {
+textarea.toggleable:not(:focus):not(.ng-dirty) {
   resize: none;
   background: #e8e8e8;
   border-color: transparent;
 }
 
-input[disabled]:hover,
-select[disabled]:hover,
-textarea[disabled]:hover {
-  cursor: pointer;
+input.toggleable:not(:focus):not(.ng-dirty):not([aria-owns]) {
+  background: #e8e8e8;
+  border-color: transparent;
+}
+
+select.toggleable:not(:focus):not(.ng-dirty):not([aria-owns]) {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  background: #e8e8e8;
+  border-color: transparent;
 }
 
 textarea {

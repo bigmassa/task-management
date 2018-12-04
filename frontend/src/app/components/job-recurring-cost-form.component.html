@@ -28,11 +28,14 @@
         <p class="c-red" *formError="form.controls.type">Please choose a type</p>
 
         <label>Last Invoiced Date</label>
-        <div class="input-group">
-            <input [matDatepicker]="picker" type="text" [formControl]="form.controls.last_invoiced_date">
-            <a class="input-group-addon pointer" (click)="picker.open()"><i class="icon-calendar"></i></a>
-            <mat-datepicker #picker></mat-datepicker>
+        <div class="icon-input">
+            <input type="text"
+                [matDatepicker]="picker"
+                [formControl]="form.controls.last_invoiced_date"
+                (click)="picker.open()">
+            <span class="icon-calendar"></span>
         </div>
+        <mat-datepicker #picker></mat-datepicker>
         <p class="c-red" *formError="form.controls.last_invoiced_date">Please choose a last invoiced date</p>
 
         <label>Billing Interval</label>

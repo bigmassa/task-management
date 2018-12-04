@@ -3,11 +3,12 @@
         <div class="container b-secondary px-2 py-2">
             <div class="row">
                 <div class="col">
-                    <div (click)="titleForm.editable = true">
-                        <input type="text" [formControl]="titleForm.controls.title" class="mb-0-5">
+                    <div>
+                        <textarea autoResize rows="1" class="toggleable"
+                            [formControl]="titleForm.controls.title"
+                            (blur)="titleForm.dirty ? titleForm.save($event) : false"
+                            (keydown.enter)="false"></textarea>
                         <p class="small muted">{{ task | get:'_job._client.name' }} / {{ task | get:'_job.title' }}</p>
-                        <button class="input-group-addon button" *ngIf="titleForm.editable" (click)="titleForm.save($event)">Save</button>
-                        <button class="button button-clear" *ngIf="titleForm.editable" (click)="titleForm.cancel($event)">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -85,29 +86,28 @@
             <div class="row mb-1-5">
                 <div class="col">
                     <p class="mb-0-5"><strong>Target Date</strong></p>
-                    <div (click)="targetDateForm.editable = true">
-                        <div class="input-group">
-                            <input [matDatepicker]="picker" type="text" [formControl]="targetDateForm.controls.target_date">
-                            <a class="input-group-addon pointer" (click)="picker.open()"><i class="icon-calendar"></i></a>
-                            <mat-datepicker #picker></mat-datepicker>
-                        </div>
-                        <button class="button" *ngIf="targetDateForm.editable" (click)="targetDateForm.save($event)">Save</button>
-                        <button class="button button-clear" *ngIf="targetDateForm.editable" (click)="targetDateForm.cancel($event)">Cancel</button>
+                    <div class="icon-input">
+                        <input type="text" class="toggleable"
+                            [matDatepicker]="picker"
+                            [formControl]="targetDateForm.controls.target_date"
+                            (click)="picker.open()">
+                        <span class="icon-calendar"></span>
                     </div>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <button class="button" *ngIf="targetDateForm.dirty" (click)="targetDateForm.save($event)">Save</button>
+                    <button class="button button-clear" *ngIf="targetDateForm.dirty" (click)="targetDateForm.cancel($event)">Cancel</button>
                 </div>
                 <div class="col">
-                    <p class="mb-0-5"><strong>Time Spent (hrs)</strong></p>
+                    <p class="mb-1"><strong>Time Spent (hrs)</strong></p>
                     <p [class.c-red]="taskTiming.is_over_allocated_hours" *ngIf="taskTiming$ | async as taskTiming">{{ taskTiming.time_spent_hours }} of {{ taskTiming.allocated_hours }}</p>        
                 </div>
             </div>
             <div class="row mb-1-5">
                 <div class="col">
                     <p class="mb-0-5"><strong>Description</strong></p>
-                    <div (click)="descriptionForm.editable = true">
-                        <textarea autoResize [formControl]="descriptionForm.controls.description" rows="2"></textarea>
-                        <button class="button" *ngIf="descriptionForm.editable" (click)="descriptionForm.save($event)">Save</button>
-                        <button class="button button-clear" *ngIf="descriptionForm.editable" (click)="descriptionForm.cancel($event)">Cancel</button>
-                    </div>
+                    <textarea autoResize class="toggleable" rows="2"
+                        [formControl]="descriptionForm.controls.description"
+                        (blur)="descriptionForm.dirty ? descriptionForm.save($event) : false"></textarea>
                 </div>
             </div>
             <div class="row mb-1-5">
@@ -152,32 +152,25 @@
         </div>
 
         <div class="container px-2 py-2" *ngIf="activeTab == 'notes'">
-            <div class="row mb-1-5">
+            <div class="row">
                 <div class="col">
                     <div class="mb-2">
                         <p class="mb-0-5"><strong>Notes</strong></p>
-                        <textarea autoResize [formControl]="newNoteForm.controls.note" class="full-width mb-0-5" placeholder="Write a note..." rows="2"></textarea>
+                        <textarea autoResize placeholder="Write a note..." rows="2"
+                            [formControl]="newNoteForm.controls.note"></textarea>
                         <button class="button button-secondary" (click)="newNoteForm.save($event)">Add</button>
                     </div>
                     
                     <ng-container *ngFor="let note of taskNotes$ | async">
-                        <div class="my-1" *ngIf="getOrCreateEditNoteForm(note) as form">
+                        <div class="mb-2" *ngIf="getOrCreateEditNoteForm(note) as form">
                             <div class="d-flex align-items-center mb-1">
                                 <div avatar [id]="note.user" class="avatar mr-1"></div>
                                 <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>
                             </div>
-                            <div (click)="form.editable = true">
-                                <textarea autoResize [formControl]="form.controls.note" class="panel" rows="1"></textarea>
-                            </div>
-                            <div class="small muted">
-                                <ng-container *ngIf="!form.editable">
-                                    <button class="button button-clear" (click)="$event.stopPropagation(); form.editable = true">Edit</button> |
-                                    <button class="button button-clear" *ngIf="!form.editable" (click)="form.delete($event)">Delete</button>
-                                </ng-container>
-                                <ng-container *ngIf="form.editable">
-                                    <button class="button button-secondary" (click)="form.save($event)">Save</button>
-                                    <button class="button button-clear" (click)="form.cancel($event)">Cancel</button>
-                                </ng-container>
+                            <textarea autoResize class="toggleable" rows="1" [formControl]="form.controls.note"></textarea>
+                            <div *ngIf="form.dirty">
+                                <button class="button button-secondary" (click)="form.save($event)">Save</button>
+                                <button class="button button-clear" (click)="form.cancel($event)">Cancel</button>
                             </div>
                         </div>
                     </ng-container>
