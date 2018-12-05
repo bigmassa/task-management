@@ -17,7 +17,6 @@ import { select, Store } from '@ngrx/store';
 
 
 @Component({
-    selector: 'client, [client]',
     templateUrl: './client.component.html'
 })
 export class ClientComponent implements OnDestroy, OnInit {

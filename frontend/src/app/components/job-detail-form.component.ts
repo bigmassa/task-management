@@ -17,8 +17,7 @@ import { getClientCollectionById } from '../state/selectors/client';
 import { getJobCollectionById } from '../state/selectors/job';
 
 @Component({
-    templateUrl: './job-detail-form.component.html',
-    host: {'class': 'd-flex flex-fill flex-column'}
+    templateUrl: './job-detail-form.component.html'
 })
 export class JobDetailFormComponent implements OnDestroy, OnInit {
 

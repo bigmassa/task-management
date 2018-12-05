@@ -13,8 +13,7 @@ import { Subscription } from 'rxjs';
 import { getClientCollectionById } from '../state/selectors/client';
 
 @Component({
-    templateUrl: './client-delete.component.html',
-    host: {'class': 'd-flex flex-fill flex-column'}
+    templateUrl: './client-delete.component.html'
 })
 export class ClientDeleteComponent implements OnDestroy, OnInit {
 

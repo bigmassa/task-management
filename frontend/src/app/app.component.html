@@ -1,12 +1,14 @@
 <header>
-    <div class="container-fluid d-flex align-items-center">
-        <a routerLink="" class="nav-home mt-1"><logo width="35px" height="35px"></logo></a>
+    <div class="container-fluid header-inner">
+        <div class="nav-home">
+            <a routerLink="" logo [width]="'37px'" [height]="'37px'"></a>
+        </div>
         <ul class="nav">
             <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Taskboard</a></li>
             <li><a routerLink="clients" routerLinkActive="active">Clients</a></li>
             <li><a routerLink="timesheet" routerLinkActive="active">Timesheet</a></li>
         </ul>
-        <div class="ml-auto" *ngIf="me$ | async as me">
+        <div class="user-nav" *ngIf="me$ | async as me">
             <a avatar [id]="me.id" class="avatar" href="{{ globals.logoutUrl }}">
                 <i class="avatar-close icon-cancel"></i>
             </a>

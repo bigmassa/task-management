@@ -29,12 +29,8 @@ import { ITaskStatus } from '../state/reducers/taskstatus';
 import { JobNoteForm } from '../forms/job-note.form';
 import { Observable, Subscription } from 'rxjs';
 
-
-
 @Component({
-    selector: 'job, [job]',
-    templateUrl: './job.component.html',
-    host: {'class': 'd-flex flex-fill flex-column'}
+    templateUrl: './job.component.html'
 })
 export class JobComponent implements OnDestroy, OnInit {
 

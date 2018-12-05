@@ -289,11 +289,6 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewChecked, D
 
         this.calendar.render();
 
-        // this will redraw the size of the calender
-        // fixes an issue where the height: 'parent' option
-        // is not doing as expected
-        setTimeout(() => this.calendar.updateSize(), 0);
-
         this.setEvents();
         
         this.initialized = true;
@@ -390,4 +385,5 @@ export class CalendarComponent implements OnInit, OnDestroy, AfterViewChecked, D
             this.copyableDraggable.destroy();
         }
     }
+
 }

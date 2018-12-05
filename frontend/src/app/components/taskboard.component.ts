@@ -6,7 +6,6 @@ import { ITask } from '../state/reducers/task';
 import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'taskboard, [taskboard]',
     templateUrl: './taskboard.component.html'
 })
 export class TaskboardComponent {

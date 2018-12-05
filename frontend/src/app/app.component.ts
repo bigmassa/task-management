@@ -10,8 +10,7 @@ import { AppState, getMeState } from './state/state';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
-    host: {'class': 'd-flex flex-fill flex-column'}
+    templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
 

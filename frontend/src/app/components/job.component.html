@@ -17,9 +17,10 @@
         </div>
     </div>
 
-    <div class="container-fluid d-flex flex-fill" *ngIf="selectedTab.title == 'Tasks'">
-        <div autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40" class="d-flex flex-fill mt-1 mb-1 scroll-x">
+    <div class="container-fluid" *ngIf="selectedTab.title == 'Tasks'">
+        <div autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40" class="scroll-x">
             <div class="board-column"
+                style="height: calc(100vh - (55px + 120px))"
                 job-board-column
                 [jobId]="jobId"
                 [status]="status"

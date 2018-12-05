@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
 import { getClientState } from './../state/state';
 
 @Component({
-    selector: 'client-list, [client-list]',
-    templateUrl: './client-list.component.html',
-    host: {'class': 'd-flex flex-fill flex-column'}
+    templateUrl: './client-list.component.html'
 })
 export class ClientListComponent implements OnInit {
 

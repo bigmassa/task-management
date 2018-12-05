@@ -46,7 +46,7 @@
                                         <option [ngValue]="option.id">{{ option.full_name }}</option>
                                     </ng-container>
                                 </select>
-                                <input type="number" [formControl]="assigneeEditForm.controls.allocated_hours" style="flex: 0 0 10rem;">
+                                <input type="number" [formControl]="assigneeEditForm.controls.allocated_hours">
                             </div>
                             <div class="d-flex">
                                 <button class="button button-secondary" (click)="assigneeEditForm.save($event)">Save</button>

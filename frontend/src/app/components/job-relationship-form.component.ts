@@ -22,8 +22,7 @@ import { mergeMap, take } from 'rxjs/operators';
 import { getActiveUsers } from '../state/selectors/user';
 
 @Component({
-    templateUrl: './job-relationship-form.component.html',
-    host: {'class': 'd-flex flex-fill flex-column'}
+    templateUrl: './job-relationship-form.component.html'
 })
 export class JobRelationshipFormComponent implements OnDestroy, OnInit {
 

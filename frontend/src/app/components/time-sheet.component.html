@@ -8,10 +8,10 @@
         </div>
     </div>
 </div>
-<div class="container-fluid inner-content d-flex flex-fill flex-flow-column">
-    <div class="row flex-fill">
-        <div class="col-3 d-flex flex-column flex-fill">
-            <search [(ngModel)]="searchTerms" (ngModelChange)="refetchTasks()"></search>
+<div class="container-fluid">
+    <div class="row pt-2" style="height: calc(100vh - (55px + 80px + 50px))">
+        <div class="col-3 full-height d-flex flex-column">
+            <div search [(ngModel)]="searchTerms" (ngModelChange)="refetchTasks()"></div>
             <div class="client-list-wrapper" id="external-events">
                 <ul class="client-list">
                     <li *ngFor="let client of tasks$ | async | keyvalue">
@@ -31,7 +31,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-9 relative">
+        <div class="col-9 full-height relative">
             <div calendar
                 class="timesheet"
                 [options]="options"
@@ -58,7 +58,7 @@
             </div>
         </div>
     </div>    
-    <div class="row" style="flex: 0 0 50px;">    
+    <div class="row" style="height: 50px;">    
         <div class="col-3 pt-1-5">
             <div class="input-group margin-zero">
                 <div class="input-group-addon">Slot</div>

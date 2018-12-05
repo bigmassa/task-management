@@ -11,8 +11,7 @@ import { select, Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
 @Component({
-    templateUrl: './job-delete.component.html',
-    host: {'class': 'd-flex flex-fill flex-column'}
+    templateUrl: './job-delete.component.html'
 })
 export class JobDeleteComponent implements OnDestroy, OnInit {
 

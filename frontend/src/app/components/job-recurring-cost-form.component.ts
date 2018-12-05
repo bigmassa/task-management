@@ -27,8 +27,7 @@ import { JobRecurringCostForm } from '../forms/job-recurring-cost.form';
 import { mergeMap, take } from 'rxjs/operators';
 
 @Component({
-    templateUrl: './job-recurring-cost-form.component.html',
-    host: {'class': 'd-flex flex-fill flex-column'}
+    templateUrl: './job-recurring-cost-form.component.html'
 })
 export class JobRecurringCostFormComponent implements OnDestroy, OnInit {
 

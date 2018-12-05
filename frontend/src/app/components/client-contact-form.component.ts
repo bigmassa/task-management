@@ -14,8 +14,7 @@ import { IClientContact } from './../state/reducers/clientcontact';
 import { IFormActionResult } from '../forms/base.form';
 
 @Component({
-    templateUrl: './client-contact-form.component.html',
-    host: {'class': 'd-flex flex-fill flex-column'}
+    templateUrl: './client-contact-form.component.html'
 })
 export class ClientContactFormComponent implements OnDestroy, OnInit {
 
