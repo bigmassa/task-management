@@ -2,8 +2,9 @@
     <strong>{{ status.title }}</strong>
 </div>
 
-<div class="board-card pointer text-center" (click)="newTask()">
-    <i class="icon-plus"></i>
+<div class="muted-button pointer text-center" (click)="newTask()">
+    <i class="icon-plus"></i> 
+    <span>Add Task</span>
 </div>
 
 <div class="board-card" *ngIf="newFormOpen">
