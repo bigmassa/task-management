@@ -53,12 +53,18 @@
             <table class="table-hover">
                 <thead>
                     <tr>
-                        <th class="keep-min-width">ID</th>
-                        <th>Title</th>
-                        <th class="keep-min-width">Status</th>
+                        <th class="keep-min-width pointer" (click)="orderOpenJobs('id')">
+                            ID <i *ngIf="openOrderBy == 'id'" [class.icon-up-dir]="openOrderType == 'asc'" [class.icon-down-dir]="openOrderType == 'desc'"></i>
+                        </th>
+                        <th class="pointer" (click)="orderOpenJobs('title')">
+                            Title <i *ngIf="openOrderBy == 'title'" [class.icon-up-dir]="openOrderType == 'asc'" [class.icon-down-dir]="openOrderType == 'desc'"></i>
+                        </th>
+                        <th class="keep-min-width pointer" (click)="orderOpenJobs('_status.title')">
+                            Status <i *ngIf="openOrderBy == '_status.title'" [class.icon-up-dir]="openOrderType == 'asc'" [class.icon-down-dir]="openOrderType == 'desc'"></i>
+                        </th>
                     </tr>
                 </thead>
-                <ng-container *ngIf="jobs$ | async | openJobs | jobSearch:openSearchTerms as jobs">
+                <ng-container *ngIf="jobs$ | async | openJobs | jobSearch:openSearchTerms | orderBy : [openOrderBy] : [openOrderType] as jobs">
                 <tbody *ngIf="jobs.length > 0; else emptyJobs">
                     <tr class="pointer" [routerLink]="['/clients', job.client, 'jobs', job.id]" *ngFor="let job of jobs">
                         <td class="keep-min-width">{{ job.id }}</td>
@@ -77,12 +83,18 @@
             <table class="table-hover">
                 <thead>
                     <tr>
-                        <th class="keep-min-width">ID</th>
-                        <th>Title</th>
-                        <th class="keep-min-width">Status</th>
+                        <th class="keep-min-width pointer" (click)="orderClosedJobs('id')">
+                            ID <i *ngIf="closedOrderBy == 'id'" [class.icon-up-dir]="closedOrderType == 'asc'" [class.icon-down-dir]="closedOrderType == 'desc'"></i>
+                        </th>
+                        <th class="pointer" (click)="orderClosedJobs('title')">
+                            Title <i *ngIf="closedOrderBy == 'title'" [class.icon-up-dir]="closedOrderType == 'asc'" [class.icon-down-dir]="closedOrderType == 'desc'"></i>
+                        </th>
+                        <th class="keep-min-width pointer" (click)="orderClosedJobs('_status.title')">
+                            Status <i *ngIf="closedOrderBy == '_status.title'" [class.icon-up-dir]="closedOrderType == 'asc'" [class.icon-down-dir]="closedOrderType == 'desc'"></i>
+                        </th>
                     </tr>
                 </thead>
-                <ng-container *ngIf="jobs$ | async | closedJobs | jobSearch:closedSearchTerms as jobs">
+                <ng-container *ngIf="jobs$ | async | closedJobs | jobSearch:closedSearchTerms | orderBy : [closedOrderBy] : [closedOrderType] as jobs">
                 <tbody *ngIf="jobs.length > 0; else emptyJobs">
                     <tr class="pointer" [routerLink]="['/clients', job.client, 'jobs', job.id]" *ngFor="let job of jobs">
                         <td class="keep-min-width">{{ job.id }}</td>
