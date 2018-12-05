@@ -1942,6 +1942,21 @@ a.avatar:hover .avatar-close {
   font-size: 14px;
 }
 
+.muted-button {
+  padding: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  border: 1px dashed #d2d2d2;
+}
+
+.muted-button span {
+  color: #393d48;
+}
+
+.muted-button:hover span {
+  color: #979797;
+}
+
 .board-card-wrapper {
   display: -ms-flexbox;
   display: flex;

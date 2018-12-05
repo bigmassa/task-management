@@ -21,6 +21,21 @@
   font-size: 14px;
 }
 
+.muted-button {
+  padding: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  border: 1px dashed color("lightgrey");
+
+  span {
+    color: color("arsenic");
+  }
+
+  &:hover span {
+    color: color("shadylady");
+  }
+}
+
 .board-card-wrapper {
   display: flex;
   flex: 1 1 auto;
