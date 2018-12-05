@@ -44,6 +44,9 @@
                 <p class="strong">Status</p>
                 <p>{{ job | get:'_status.title' }}</p>
                 <hr/>
+                <p class="strong">Created at</p>
+                <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>
+                <hr/>
                 <p class="strong">Billed To</p>
                 <p>{{ job | get:'billed_to' }}</p>
             </div>
