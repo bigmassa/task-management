@@ -2942,7 +2942,7 @@ var TaskFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Taskboard</div>\n        <div class=\"page-header-actions\"></div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <div class=\"row\">\n            <div class=\"col-6\"><search [(ngModel)]=\"searchTerms\"></search></div>\n            <div class=\"col-6\"></div>\n        </div>\n        <table class=\"table-hover table-headed margin-zero\">\n            <thead>\n                <tr>\n                    <th class=\"keep-min-width\">ID</th>\n                    <th class=\"keep-min-width\">Target Date</th>\n                    <th>Title</th>\n                    <th>Client</th>\n                    <th>Job</th>\n                    <th class=\"keep-min-width\">Assignees</th>\n                    <th class=\"keep-min-width\">status</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr class=\"pointer\" [routerLink]=\"['/clients', task._job.client, 'jobs', task.job]\" [queryParams]=\"{task: task.id}\" *ngFor=\"let task of tasks$ | async | taskSearch:searchTerms\">\n                    <td class=\"keep-min-width\">{{ task | get:'id' }}</td>\n                    <td class=\"keep-min-width\">{{ task | get:'target_date' }}</td>\n                    <td>{{ task | get:'title' }}</td>\n                    <td>{{ task | get:'_job._client.name' }}</td>\n                    <td>{{ task | get:'_job.title' }}</td>\n                    <td class=\"keep-min-width\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of task._assignees\"></div>\n                    </td>\n                    <td class=\"keep-min-width\">{{ task | get:'_status.title' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Taskboard</div>\n        <div class=\"page-header-actions\"></div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <div class=\"row\">\n            <div class=\"col-6\"><search [(ngModel)]=\"searchTerms\"></search></div>\n            <div class=\"col-6\"></div>\n        </div>\n        <table class=\"table-hover table-headed margin-zero\">\n            <thead>\n                <tr>\n                    <th class=\"keep-min-width pointer\" (click)=\"orderTasksBy('id')\">\n                        ID <i *ngIf=\"orderBy == 'id'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"keep-min-width pointer\" (click)=\"orderTasksBy('target_date')\">\n                        Target Date <i *ngIf=\"orderBy == 'target_date'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"pointer\" (click)=\"orderTasksBy('title')\">\n                        Title <i *ngIf=\"orderBy == 'title'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"pointer\" (click)=\"orderTasksBy('_job._client.name')\">\n                        Client <i *ngIf=\"orderBy == '_job._client.name'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"pointer\" (click)=\"orderTasksBy('_job.title')\">\n                        Job <i *ngIf=\"orderBy == '_job.title'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"keep-min-width\">Assignees</th>\n                    <th class=\"keep-min-width pointer\" (click)=\"orderTasksBy('id')\">\n                        status <i *ngIf=\"orderBy == 'id'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr class=\"pointer\" [routerLink]=\"['/clients', task._job.client, 'jobs', task.job]\" [queryParams]=\"{task: task.id}\" *ngFor=\"let task of tasks$ | async | taskSearch:searchTerms | orderBy : [orderBy] : [orderType]\">\n                    <td class=\"keep-min-width\">{{ task | get:'id' }}</td>\n                    <td class=\"keep-min-width\">{{ task | get:'target_date' }}</td>\n                    <td>{{ task | get:'title' }}</td>\n                    <td>{{ task | get:'_job._client.name' }}</td>\n                    <td>{{ task | get:'_job.title' }}</td>\n                    <td class=\"keep-min-width\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small\" *ngFor=\"let assignee of task._assignees\"></div>\n                    </td>\n                    <td class=\"keep-min-width\">{{ task | get:'_status.title' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2974,10 +2974,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var TaskboardComponent = /** @class */ (function () {
     function TaskboardComponent(store) {
         this.store = store;
+        this.orderBy = 'target_date';
+        this.orderType = 'asc';
         this.searchTerms = [];
     }
     TaskboardComponent.prototype.ngOnInit = function () {
         this.tasks$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(_state_selectors_taskboard__WEBPACK_IMPORTED_MODULE_2__["getTasksForTaskBoardForUser"]));
+    };
+    TaskboardComponent.prototype.orderTasksBy = function (by) {
+        if (by != this.orderBy) {
+            this.orderType = 'asc';
+        }
+        else {
+            this.orderType = this.orderType == 'asc' ? 'desc' : 'asc';
+        }
+        this.orderBy = by;
     };
     TaskboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -12838,7 +12849,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/adam/Repos/task_management/frontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

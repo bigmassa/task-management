@@ -11,6 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class TaskboardComponent {
 
+    orderBy: string = 'target_date';
+    orderType: string = 'asc';
     tasks$: Observable<ITask[]>;
     searchTerms: string[] = [];
     
@@ -20,5 +22,14 @@ export class TaskboardComponent {
 
     ngOnInit() {
         this.tasks$ = this.store.pipe(select(getTasksForTaskBoardForUser));
+    }
+
+    orderTasksBy(by: string) {
+        if (by != this.orderBy) {
+            this.orderType = 'asc';
+        } else {
+            this.orderType = this.orderType == 'asc' ? 'desc' : 'asc';
+        }
+        this.orderBy = by;
     }
 }
