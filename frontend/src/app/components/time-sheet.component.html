@@ -22,7 +22,7 @@
                                 <ul *ngIf="job.value.visible">
                                     <li class="task d-flex" (click)="changeTask(task.id)" *ngFor="let task of job.value.tasks">
                                         <div class="color-indicator" [style.background-color]="task._job.colour"></div>
-                                        <span class="external-event" [attr.data-task]="task.id">{{ task.title }}</span>
+                                        <span class="external-event flex-fill" [attr.data-task]="task.id">{{ task.title }}</span>
                                     </li>
                                 </ul>
                             </li>
