@@ -3,6 +3,7 @@
         <div class="container-fluid d-flex align-items-center py-2">
             <span class="color-indicator" [style.backgroundColor]="job.colour"></span>
             <div class="h2">
+                <span>{{ job.id }} : </span>
                 <a class="underline-dotted" [routerLink]="['/clients', job.client]">{{ job | get:'_client.name' }}</a> /
                 <a class="underline-dotted" [routerLink]="['/clients', job.client, 'jobs', job.id]">{{ job | get:'title' }}</a>
             </div>

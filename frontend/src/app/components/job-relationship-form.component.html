@@ -4,6 +4,7 @@
             <ng-container>
                 <span class="color-indicator" [style.backgroundColor]="job?.colour"></span>
                 <div class="h2">
+                    <span>{{ params.job_id }} : </span>
                     <a class="underline-dotted" [routerLink]="['/clients', params.client_id]">{{ client | get:'name' }}</a> /
                     <a class="underline-dotted" [routerLink]="['/clients', params.client_id, 'jobs', params.job_id]">{{ job | get:'title' }}</a>
                 </div>
