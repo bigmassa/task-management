@@ -1,10 +1,5 @@
-<div class="board-column-heading">
-    <strong>{{ status.title }}</strong>
-</div>
-
-<div class="muted-button pointer text-center" (click)="newTask()">
-    <i class="icon-plus"></i> 
-    <span>Add Task</span>
+<div class="button button-shadylady button-outline border-style-dotted mt-h mb-1" (click)="newTask()">
+    <i class="icon-plus"></i> {{ status.title }}
 </div>
 
 <div class="board-card" *ngIf="newFormOpen">

@@ -1942,33 +1942,6 @@ a.avatar:hover .avatar-close {
   overflow-y: hidden;
 }
 
-.board-column-heading {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex: 0 0 30px;
-  flex: 0 0 30px;
-  font-size: 14px;
-}
-
-.board-column-heading .icon-plus {
-  font-size: 14px;
-}
-
-.muted-button {
-  padding: 1rem;
-  margin-top: .5rem;
-  margin-bottom: .5rem;
-  border: 1px dashed #d2d2d2;
-}
-
-.muted-button span {
-  color: #393d48;
-}
-
-.muted-button:hover span {
-  color: #979797;
-}
-
 .board-card-wrapper {
   display: -ms-flexbox;
   display: flex;
@@ -3241,6 +3214,10 @@ body > .fc-event.fc-dragging {
 
 .ws-pre-wrap {
   white-space: pre-wrap;
+}
+
+.border-style-dotted {
+  border-style: dotted !important;
 }
 
 /* karma-css utilities */
