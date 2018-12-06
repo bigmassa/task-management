@@ -48,6 +48,13 @@
   }
 }
 
+.flex-fill-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 55px);
+  overflow: hidden;
+}
+
 .inner-content {
   margin-top: 5rem;
 

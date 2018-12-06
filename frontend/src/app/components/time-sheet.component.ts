@@ -24,7 +24,8 @@ import { Observable, Subscription } from 'rxjs';
 import { getActiveUsers } from '../state/selectors/user';
 
 @Component({
-    templateUrl: './time-sheet.component.html'
+    templateUrl: './time-sheet.component.html',
+    host: {'class': 'flex-fill-container'}
 })
 export class TimesheetComponent implements OnInit {
 

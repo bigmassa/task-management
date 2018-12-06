@@ -1,6 +1,6 @@
 <div class="board-card d-flex flex-column pointer" *ngIf="task$ | async as task">
     <p class="board-card-desc">
-        <span class="small strong uppercase b-whitelilac px-0-5" *ngIf="task.closed">closed</span>
+        <span class="small strong uppercase b-whitelilac px-h" *ngIf="task.closed">closed</span>
         {{ task.title }}
     </p>
     <div class="d-flex">

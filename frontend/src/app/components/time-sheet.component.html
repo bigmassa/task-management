@@ -1,4 +1,4 @@
-<div #pageHeader class="page-header py-2">
+<div class="page-header py-2">
     <div class="container-fluid d-flex align-items-center">
         <div class="h2">Timesheet</div>
         <div class="page-header-actions">
@@ -8,9 +8,9 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
-    <div class="row pt-2" [ngStyle]="{'height': 'calc(100vh - (' + pageHeader.offsetHeight + 'px + 55px + ' + pageFooter.offsetHeight + 'px))'}">
-        <div class="col-3 full-height d-flex flex-column">
+<div class="container-fluid d-flex flex-column flex-fill ov-hidden">
+    <div class="row d-flex flex-fill full-height pt-2 ov-hidden">
+        <div class="col-3 d-flex flex-column full-height">
             <div search [(ngModel)]="searchTerms" (ngModelChange)="refetchTasks()"></div>
             <div class="client-list-wrapper" id="external-events">
                 <ul class="client-list">
@@ -65,8 +65,8 @@
             </div>
         </div>
     </div>    
-    <div #pageFooter class="row" style="height: 50px;">    
-        <div class="col-3 pt-1-5">
+    <div class="row">    
+        <div class="col-3 pt-1h">
             <div class="input-group margin-zero">
                 <div class="input-group-addon">Slot</div>
                 <input type="range" min="1" max="30" [(ngModel)]="slotDuration" (ngModelChange)="onChangeSlotDuration($event)" name="slotDuration">

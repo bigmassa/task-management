@@ -1,5 +1,5 @@
 <ng-container *ngIf="job$ | async as job">
-    <div #pageHeader class="page-header">
+    <div class="page-header">
         <div class="container-fluid d-flex align-items-center py-2">
             <span class="color-indicator" [style.backgroundColor]="job.colour"></span>
             <div class="h2">
@@ -17,8 +17,8 @@
         </div>
     </div>
 
-    <div class="container-fluid" *ngIf="selectedTab.title == 'Tasks'">
-        <div class="board-column-wrapper" autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40" [ngStyle]="{'height': 'calc(100vh - (' + pageHeader.offsetHeight + 'px + 55px))'}">
+    <div class="container-fluid ov-hidden full-height" *ngIf="selectedTab.title == 'Tasks'">
+        <div class="board-column-wrapper" autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40">
             <div class="board-column"
                 job-board-column
                 [jobId]="jobId"
@@ -80,7 +80,7 @@
         </div>
         
         <div class="panel" *ngIf="selectedTab.title == 'Notes'">
-            <div class="row mb-1-5">
+            <div class="row mb-1h">
                 <div class="col-1"></div>
                 <div class="col">
                     <textarea autoResize placeholder="Write some notes" [formControl]="newNoteForm.controls.note"></textarea>
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <ng-container *ngFor="let note of notes$ | async">
-                <div class="row mb-1-5" *ngIf="getOrCreateEditNoteForm(note) as form">
+                <div class="row mb-1h" *ngIf="getOrCreateEditNoteForm(note) as form">
                     <div class="col-1"><div avatar [id]="note.user" class="avatar"></div></div>
                     <div class="col">
                         <div class="comment ws-pre-wrap" *ngIf="!form.editable">{{ note.note }}</div>

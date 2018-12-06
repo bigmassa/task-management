@@ -30,7 +30,8 @@ import { JobNoteForm } from '../forms/job-note.form';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
-    templateUrl: './job.component.html'
+    templateUrl: './job.component.html',
+    host: {'class': 'flex-fill-container'}
 })
 export class JobComponent implements OnDestroy, OnInit {
 
@@ -91,7 +92,7 @@ export class JobComponent implements OnDestroy, OnInit {
         const querySub = this.route.queryParams.subscribe(
             params => {
                 if (params['task']) {
-                    setTimeout(() => this.activateTabAndOpenTask(+params['task']), 0);
+                    this.activateTabAndOpenTask(+params['task']);
                 }
             }
         );

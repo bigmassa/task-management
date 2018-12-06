@@ -19,12 +19,12 @@ import { select, Store } from '@ngrx/store';
     template: `
     <ng-container *ngIf="requiresSignOff$ | async; else complete">
         <a class="pointer d-inline-block" (click)="signOff()" title="Requires Signoff">
-            <i class="icon-circle mr-0-5"></i><em>{{ sum$ | async }}</em>
+            <i class="icon-circle mr-h"></i><em>{{ sum$ | async }}</em>
         </a>
     </ng-container>
     <ng-template #complete>
         <span class="d-inline-block c-olive">
-            <i class="icon-ok-circled mr-0-5"></i><em>{{ sum$ | async }}</em>
+            <i class="icon-ok-circled mr-h"></i><em>{{ sum$ | async }}</em>
         </span>
     </ng-template>
     `
