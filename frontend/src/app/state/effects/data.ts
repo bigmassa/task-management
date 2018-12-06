@@ -21,7 +21,7 @@ export class DataEffects {
                 }
                 const taskParams: IActionWithHTTPData = {
                     params: {
-                        live_at_date: moment().add(-5, 'weeks').format('YYYY-MM-DD')
+                        live_at_date: moment().add(-12, 'weeks').format('YYYY-MM-DD')
                     }
                 }
                 return [

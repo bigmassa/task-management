@@ -8412,7 +8412,7 @@ var DataEffects = /** @class */ (function () {
             };
             var taskParams = {
                 params: {
-                    live_at_date: moment__WEBPACK_IMPORTED_MODULE_1__().add(-5, 'weeks').format('YYYY-MM-DD')
+                    live_at_date: moment__WEBPACK_IMPORTED_MODULE_1__().add(-12, 'weeks').format('YYYY-MM-DD')
                 }
             };
             return [
