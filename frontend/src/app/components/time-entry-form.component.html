@@ -11,11 +11,13 @@
     <div class="row">
         <div class="col">
             <label>Start Time</label>
-            <input [formControl]="form.controls.started_at_time" type="time" />
+            <input [formControl]="form.controls.started_at_time" type="text" mask="00:00" [showMaskTyped]="true" [dropSpecialCharacters]="false" />
+            <p class="c-red" *formError="form.controls.started_at_time">ie 00:00 - 23:59</p>
         </div>
         <div class="col">
             <label>End Time</label>
-            <input [formControl]="form.controls.ended_at_time" type="time" />
+            <input [formControl]="form.controls.ended_at_time" type="text" mask="00:00" [showMaskTyped]="true" [dropSpecialCharacters]="false" />
+            <p class="c-red" *formError="form.controls.ended_at_time">ie 00:00 - 23:59</p>
         </div>
     </div>
     <label>Comments</label>

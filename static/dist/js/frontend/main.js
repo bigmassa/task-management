@@ -378,58 +378,59 @@ var AppComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ngx-dropzone-wrapper */ "./node_modules/ngx-dropzone-wrapper/dist/ngx-dropzone-wrapper.es5.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _app_routing__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app.routing */ "./src/app/app.routing.ts");
-/* harmony import */ var _components_avatar_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/avatar.component */ "./src/app/components/avatar.component.ts");
-/* harmony import */ var _components_calendar_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/calendar.component */ "./src/app/components/calendar.component.ts");
-/* harmony import */ var _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/client-contact-form.component */ "./src/app/components/client-contact-form.component.ts");
-/* harmony import */ var _components_client_delete_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/client-delete.component */ "./src/app/components/client-delete.component.ts");
-/* harmony import */ var _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/client-detail-form.component */ "./src/app/components/client-detail-form.component.ts");
-/* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
-/* harmony import */ var _components_client_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/client.component */ "./src/app/components/client.component.ts");
-/* harmony import */ var _components_job_board_column_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/job-board-column.component */ "./src/app/components/job-board-column.component.ts");
-/* harmony import */ var _components_job_delete_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/job-delete.component */ "./src/app/components/job-delete.component.ts");
-/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
-/* harmony import */ var _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/job-recurring-cost-form.component */ "./src/app/components/job-recurring-cost-form.component.ts");
-/* harmony import */ var _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/job-relationship-form.component */ "./src/app/components/job-relationship-form.component.ts");
-/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
-/* harmony import */ var _components_loading_splash_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/loading-splash.component */ "./src/app/components/loading-splash.component.ts");
-/* harmony import */ var _components_logo__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/logo */ "./src/app/components/logo.ts");
-/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
-/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
-/* harmony import */ var _components_tabs_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/tabs.component */ "./src/app/components/tabs.component.ts");
-/* harmony import */ var _components_tag_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/tag.component */ "./src/app/components/tag.component.ts");
-/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
-/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
-/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
-/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
-/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
-/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
-/* harmony import */ var _directives_auto_focus_directive__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./directives/auto-focus.directive */ "./src/app/directives/auto-focus.directive.ts");
-/* harmony import */ var _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./directives/auto-resize.directive */ "./src/app/directives/auto-resize.directive.ts");
-/* harmony import */ var _directives_auto_scroll_directive__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./directives/auto-scroll.directive */ "./src/app/directives/auto-scroll.directive.ts");
-/* harmony import */ var _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./directives/formerror.directive */ "./src/app/directives/formerror.directive.ts");
-/* harmony import */ var _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./pipes/client-search.pipe */ "./src/app/pipes/client-search.pipe.ts");
-/* harmony import */ var _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./pipes/closed-jobs.pipe */ "./src/app/pipes/closed-jobs.pipe.ts");
-/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
-/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
-/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
-/* harmony import */ var _pipes_order_by_pipe__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./pipes/order-by.pipe */ "./src/app/pipes/order-by.pipe.ts");
-/* harmony import */ var _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./pipes/task-search.pipe */ "./src/app/pipes/task-search.pipe.ts");
-/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
-/* harmony import */ var _services_interceptors__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./services/interceptors */ "./src/app/services/interceptors.ts");
-/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./state/state */ "./src/app/state/state.ts");
+/* harmony import */ var ngx_mask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-mask */ "./node_modules/ngx-mask/fesm5/ngx-mask.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_routing__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./app.routing */ "./src/app/app.routing.ts");
+/* harmony import */ var _components_avatar_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/avatar.component */ "./src/app/components/avatar.component.ts");
+/* harmony import */ var _components_calendar_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/calendar.component */ "./src/app/components/calendar.component.ts");
+/* harmony import */ var _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/client-contact-form.component */ "./src/app/components/client-contact-form.component.ts");
+/* harmony import */ var _components_client_delete_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/client-delete.component */ "./src/app/components/client-delete.component.ts");
+/* harmony import */ var _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/client-detail-form.component */ "./src/app/components/client-detail-form.component.ts");
+/* harmony import */ var _components_client_list_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/client-list.component */ "./src/app/components/client-list.component.ts");
+/* harmony import */ var _components_client_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/client.component */ "./src/app/components/client.component.ts");
+/* harmony import */ var _components_job_board_column_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/job-board-column.component */ "./src/app/components/job-board-column.component.ts");
+/* harmony import */ var _components_job_delete_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/job-delete.component */ "./src/app/components/job-delete.component.ts");
+/* harmony import */ var _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/job-detail-form.component */ "./src/app/components/job-detail-form.component.ts");
+/* harmony import */ var _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/job-recurring-cost-form.component */ "./src/app/components/job-recurring-cost-form.component.ts");
+/* harmony import */ var _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/job-relationship-form.component */ "./src/app/components/job-relationship-form.component.ts");
+/* harmony import */ var _components_job_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/job.component */ "./src/app/components/job.component.ts");
+/* harmony import */ var _components_loading_splash_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/loading-splash.component */ "./src/app/components/loading-splash.component.ts");
+/* harmony import */ var _components_logo__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/logo */ "./src/app/components/logo.ts");
+/* harmony import */ var _components_not_found_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/not-found.component */ "./src/app/components/not-found.component.ts");
+/* harmony import */ var _components_search_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/search.component */ "./src/app/components/search.component.ts");
+/* harmony import */ var _components_tabs_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/tabs.component */ "./src/app/components/tabs.component.ts");
+/* harmony import */ var _components_tag_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/tag.component */ "./src/app/components/tag.component.ts");
+/* harmony import */ var _components_task_card_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/task-card.component */ "./src/app/components/task-card.component.ts");
+/* harmony import */ var _components_task_form_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/task-form.component */ "./src/app/components/task-form.component.ts");
+/* harmony import */ var _components_taskboard_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/taskboard.component */ "./src/app/components/taskboard.component.ts");
+/* harmony import */ var _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/time-entry-form.component */ "./src/app/components/time-entry-form.component.ts");
+/* harmony import */ var _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/time-sheet-signoff.component */ "./src/app/components/time-sheet-signoff.component.ts");
+/* harmony import */ var _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./components/time-sheet.component */ "./src/app/components/time-sheet.component.ts");
+/* harmony import */ var _directives_auto_focus_directive__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./directives/auto-focus.directive */ "./src/app/directives/auto-focus.directive.ts");
+/* harmony import */ var _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./directives/auto-resize.directive */ "./src/app/directives/auto-resize.directive.ts");
+/* harmony import */ var _directives_auto_scroll_directive__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./directives/auto-scroll.directive */ "./src/app/directives/auto-scroll.directive.ts");
+/* harmony import */ var _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./directives/formerror.directive */ "./src/app/directives/formerror.directive.ts");
+/* harmony import */ var _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./pipes/client-search.pipe */ "./src/app/pipes/client-search.pipe.ts");
+/* harmony import */ var _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./pipes/closed-jobs.pipe */ "./src/app/pipes/closed-jobs.pipe.ts");
+/* harmony import */ var _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./pipes/get.pipe */ "./src/app/pipes/get.pipe.ts");
+/* harmony import */ var _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./pipes/job-search.pipe */ "./src/app/pipes/job-search.pipe.ts");
+/* harmony import */ var _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./pipes/open-jobs.pipe */ "./src/app/pipes/open-jobs.pipe.ts");
+/* harmony import */ var _pipes_order_by_pipe__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./pipes/order-by.pipe */ "./src/app/pipes/order-by.pipe.ts");
+/* harmony import */ var _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./pipes/task-search.pipe */ "./src/app/pipes/task-search.pipe.ts");
+/* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
+/* harmony import */ var _services_interceptors__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./services/interceptors */ "./src/app/services/interceptors.ts");
+/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./state/state */ "./src/app/state/state.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -489,75 +490,77 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"],
-                _directives_auto_focus_directive__WEBPACK_IMPORTED_MODULE_38__["AutofocusDirective"],
-                _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_39__["AutoResizeDirective"],
-                _directives_auto_scroll_directive__WEBPACK_IMPORTED_MODULE_40__["AutoScrollDirective"],
-                _components_avatar_component__WEBPACK_IMPORTED_MODULE_13__["AvatarComponent"],
-                _components_calendar_component__WEBPACK_IMPORTED_MODULE_14__["CalendarComponent"],
-                _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_43__["ClosedJobsPipe"],
-                _components_client_component__WEBPACK_IMPORTED_MODULE_19__["ClientComponent"],
-                _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_15__["ClientContactFormComponent"],
-                _components_client_delete_component__WEBPACK_IMPORTED_MODULE_16__["ClientDeleteComponent"],
-                _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_17__["ClientDetailFormComponent"],
-                _components_client_list_component__WEBPACK_IMPORTED_MODULE_18__["ClientListComponent"],
-                _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_42__["ClientSearchPipe"],
-                _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_41__["FormErrorDirective"],
-                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_44__["GetPipe"],
-                _components_job_board_column_component__WEBPACK_IMPORTED_MODULE_20__["JobBoardColumnComponent"],
-                _components_job_component__WEBPACK_IMPORTED_MODULE_25__["JobComponent"],
-                _components_job_delete_component__WEBPACK_IMPORTED_MODULE_21__["JobDeleteComponent"],
-                _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_22__["JobDetailFormComponent"],
-                _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_23__["JobRecurringCostFormComponent"],
-                _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_24__["JobRelationshipFormComponent"],
-                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_45__["JobSearchPipe"],
-                _components_loading_splash_component__WEBPACK_IMPORTED_MODULE_26__["LoadingSplashComponent"],
-                _components_logo__WEBPACK_IMPORTED_MODULE_27__["LogoComponent"],
-                _components_not_found_component__WEBPACK_IMPORTED_MODULE_28__["NotFoundComponent"],
-                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_46__["OpenJobsPipe"],
-                _pipes_order_by_pipe__WEBPACK_IMPORTED_MODULE_47__["OrderByPipe"],
-                _components_search_component__WEBPACK_IMPORTED_MODULE_29__["SearchComponent"],
-                _components_tabs_component__WEBPACK_IMPORTED_MODULE_30__["TabsComponent"],
-                _components_tag_component__WEBPACK_IMPORTED_MODULE_31__["TagComponent"],
-                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_34__["TaskboardComponent"],
-                _components_task_card_component__WEBPACK_IMPORTED_MODULE_32__["TaskCardComponent"],
-                _components_task_form_component__WEBPACK_IMPORTED_MODULE_33__["TaskFormComponent"],
-                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_49__["TasksByStatusPipe"],
-                _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_48__["TaskSearchPipe"],
-                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_35__["TimeEntryFormComponent"],
-                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_37__["TimesheetComponent"],
-                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_36__["TimesheetSignoffComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"],
+                _directives_auto_focus_directive__WEBPACK_IMPORTED_MODULE_39__["AutofocusDirective"],
+                _directives_auto_resize_directive__WEBPACK_IMPORTED_MODULE_40__["AutoResizeDirective"],
+                _directives_auto_scroll_directive__WEBPACK_IMPORTED_MODULE_41__["AutoScrollDirective"],
+                _components_avatar_component__WEBPACK_IMPORTED_MODULE_14__["AvatarComponent"],
+                _components_calendar_component__WEBPACK_IMPORTED_MODULE_15__["CalendarComponent"],
+                _pipes_closed_jobs_pipe__WEBPACK_IMPORTED_MODULE_44__["ClosedJobsPipe"],
+                _components_client_component__WEBPACK_IMPORTED_MODULE_20__["ClientComponent"],
+                _components_client_contact_form_component__WEBPACK_IMPORTED_MODULE_16__["ClientContactFormComponent"],
+                _components_client_delete_component__WEBPACK_IMPORTED_MODULE_17__["ClientDeleteComponent"],
+                _components_client_detail_form_component__WEBPACK_IMPORTED_MODULE_18__["ClientDetailFormComponent"],
+                _components_client_list_component__WEBPACK_IMPORTED_MODULE_19__["ClientListComponent"],
+                _pipes_client_search_pipe__WEBPACK_IMPORTED_MODULE_43__["ClientSearchPipe"],
+                _directives_formerror_directive__WEBPACK_IMPORTED_MODULE_42__["FormErrorDirective"],
+                _pipes_get_pipe__WEBPACK_IMPORTED_MODULE_45__["GetPipe"],
+                _components_job_board_column_component__WEBPACK_IMPORTED_MODULE_21__["JobBoardColumnComponent"],
+                _components_job_component__WEBPACK_IMPORTED_MODULE_26__["JobComponent"],
+                _components_job_delete_component__WEBPACK_IMPORTED_MODULE_22__["JobDeleteComponent"],
+                _components_job_detail_form_component__WEBPACK_IMPORTED_MODULE_23__["JobDetailFormComponent"],
+                _components_job_recurring_cost_form_component__WEBPACK_IMPORTED_MODULE_24__["JobRecurringCostFormComponent"],
+                _components_job_relationship_form_component__WEBPACK_IMPORTED_MODULE_25__["JobRelationshipFormComponent"],
+                _pipes_job_search_pipe__WEBPACK_IMPORTED_MODULE_46__["JobSearchPipe"],
+                _components_loading_splash_component__WEBPACK_IMPORTED_MODULE_27__["LoadingSplashComponent"],
+                _components_logo__WEBPACK_IMPORTED_MODULE_28__["LogoComponent"],
+                _components_not_found_component__WEBPACK_IMPORTED_MODULE_29__["NotFoundComponent"],
+                _pipes_open_jobs_pipe__WEBPACK_IMPORTED_MODULE_47__["OpenJobsPipe"],
+                _pipes_order_by_pipe__WEBPACK_IMPORTED_MODULE_48__["OrderByPipe"],
+                _components_search_component__WEBPACK_IMPORTED_MODULE_30__["SearchComponent"],
+                _components_tabs_component__WEBPACK_IMPORTED_MODULE_31__["TabsComponent"],
+                _components_tag_component__WEBPACK_IMPORTED_MODULE_32__["TagComponent"],
+                _components_taskboard_component__WEBPACK_IMPORTED_MODULE_35__["TaskboardComponent"],
+                _components_task_card_component__WEBPACK_IMPORTED_MODULE_33__["TaskCardComponent"],
+                _components_task_form_component__WEBPACK_IMPORTED_MODULE_34__["TaskFormComponent"],
+                _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_50__["TasksByStatusPipe"],
+                _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_49__["TaskSearchPipe"],
+                _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_36__["TimeEntryFormComponent"],
+                _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_38__["TimesheetComponent"],
+                _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_37__["TimesheetSignoffComponent"]
             ],
             imports: [
-                _app_routing__WEBPACK_IMPORTED_MODULE_12__["AppRoutingModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["BrowserModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_8__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_51__["effects"]),
+                _app_routing__WEBPACK_IMPORTED_MODULE_13__["AppRoutingModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["BrowserModule"],
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_9__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_52__["effects"]),
                 ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_0__["DropzoneModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientXsrfModule"].withOptions({
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientXsrfModule"].withOptions({
                     cookieName: 'csrftoken',
                     headerName: 'X-CSRFTOKEN'
                 }),
-                _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDatepickerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatNativeDateModule"],
-                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_10__["NgxDnDModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"],
-                _ngrx_store__WEBPACK_IMPORTED_MODULE_9__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_52__["reducers"])
+                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDatepickerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatNativeDateModule"],
+                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_11__["NgxDnDModule"],
+                ngx_mask__WEBPACK_IMPORTED_MODULE_1__["NgxMaskModule"].forRoot({}),
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"],
+                _ngrx_store__WEBPACK_IMPORTED_MODULE_10__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_53__["reducers"])
             ],
             providers: [
-                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HTTP_INTERCEPTORS"], useClass: _services_interceptors__WEBPACK_IMPORTED_MODULE_50__["LoadingInterceptor"], multi: true },
-                { provide: _angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DATE_LOCALE"], useValue: 'en-GB' }
+                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HTTP_INTERCEPTORS"], useClass: _services_interceptors__WEBPACK_IMPORTED_MODULE_51__["LoadingInterceptor"], multi: true },
+                { provide: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MAT_DATE_LOCALE"], useValue: 'en-GB' }
             ],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -2136,7 +2139,7 @@ var JobRelationshipFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"job$ | async as job\">\n    <div #pageHeader class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <span>{{ job.id }} : </span>\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'delete']\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul [tabs]=\"(tabs$ | async).job\" [type]=\"'job'\" (activeTab)=\"selectedTab = $event\" class=\"tabs\"></ul>\n        </div>\n    </div>\n\n    <div class=\"container-fluid\" *ngIf=\"selectedTab.title == 'Tasks'\">\n        <div autoScroll [scrollMargin]=\"100\" [scrollMaxSpeed]=\"40\" class=\"scroll-x\">\n            <div class=\"board-column\"\n                [ngStyle]=\"{'height': 'calc(100vh - (' + pageHeader.offsetHeight + 'px + 55px))'}\"\n                job-board-column\n                [jobId]=\"jobId\"\n                [status]=\"status\"\n                [tasks]=\"tasks$ | async | tasksByStatus:status.id\"\n                *ngFor=\"let status of statuses$ | async\">\n            </div>\n        </div>\n    </div>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab.title != 'Tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab.title == 'Detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hrs)</p>\n                <p [class.c-red]=\"timings.is_over_allocated_hours\" *ngIf=\"timings$ | async as timings\">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>\n                <hr>\n                <p class=\"strong\">Estimated (hrs)</p>\n                <p>{{ job | get:'estimated_hours' }}</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Created at</p>\n                <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Files'\">\n            <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Notes'\">\n            <div class=\"row mb-1-5\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\" [formControl]=\"newNoteForm.controls.note\"></textarea>\n                    <button class=\"button button-primary pull-right\" (click)=\"newNoteForm.save($event)\">Add</button>\n                </div>\n            </div>\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1-5\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\" *ngIf=\"!form.editable\">{{ note.note }}</div>\n                        <textarea autoResize [formControl]=\"form.controls.note\" *ngIf=\"form.editable\"></textarea>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <ng-container *ngIf=\"!form.editable\">\n                            <a class=\"button button-clear\" (click)=\"form.editable = true\">Edit</a> |\n                            <a class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</a>\n                        </ng-container>\n                        <ng-container *ngIf=\"form.editable\">\n                            <a class=\"button button-secondary\" (click)=\"form.save($event)\">Save</a>\n                            <a class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</a>\n                        </ng-container>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Relationships'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', 'add']\">Add Relationship</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', relationship.id]\" *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRelationship($event, relationship)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Recurring Costs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', 'add']\">Add Recurring Cost</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', recurringCost.id]\" *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRecurringCost($event, recurringCost)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"3\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"6\">No recurring costs found.</td></tr></tbody></ng-template>\n\n<task-form [id]=\"selectedTaskId\" (close)=\"selectedTaskId = null\" *ngIf=\"selectedTaskId\"></task-form>"
+module.exports = "<ng-container *ngIf=\"job$ | async as job\">\n    <div #pageHeader class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <span>{{ job.id }} : </span>\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'delete']\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul [tabs]=\"(tabs$ | async).job\" [type]=\"'job'\" (activeTab)=\"selectedTab = $event\" class=\"tabs\"></ul>\n        </div>\n    </div>\n\n    <div class=\"container-fluid\" *ngIf=\"selectedTab.title == 'Tasks'\">\n        <div class=\"board-column-wrapper\" autoScroll [scrollMargin]=\"100\" [scrollMaxSpeed]=\"40\" [ngStyle]=\"{'height': 'calc(100vh - (' + pageHeader.offsetHeight + 'px + 55px))'}\">\n            <div class=\"board-column\"\n                job-board-column\n                [jobId]=\"jobId\"\n                [status]=\"status\"\n                [tasks]=\"tasks$ | async | tasksByStatus:status.id\"\n                *ngFor=\"let status of statuses$ | async\">\n            </div>\n        </div>\n    </div>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab.title != 'Tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab.title == 'Detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hrs)</p>\n                <p [class.c-red]=\"timings.is_over_allocated_hours\" *ngIf=\"timings$ | async as timings\">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>\n                <hr>\n                <p class=\"strong\">Estimated (hrs)</p>\n                <p>{{ job | get:'estimated_hours' }}</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Created at</p>\n                <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Files'\">\n            <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Notes'\">\n            <div class=\"row mb-1-5\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\" [formControl]=\"newNoteForm.controls.note\"></textarea>\n                    <button class=\"button button-primary pull-right\" (click)=\"newNoteForm.save($event)\">Add</button>\n                </div>\n            </div>\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1-5\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\" *ngIf=\"!form.editable\">{{ note.note }}</div>\n                        <textarea autoResize [formControl]=\"form.controls.note\" *ngIf=\"form.editable\"></textarea>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <ng-container *ngIf=\"!form.editable\">\n                            <a class=\"button button-clear\" (click)=\"form.editable = true\">Edit</a> |\n                            <a class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</a>\n                        </ng-container>\n                        <ng-container *ngIf=\"form.editable\">\n                            <a class=\"button button-secondary\" (click)=\"form.save($event)\">Save</a>\n                            <a class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</a>\n                        </ng-container>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Relationships'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', 'add']\">Add Relationship</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', relationship.id]\" *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRelationship($event, relationship)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Recurring Costs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', 'add']\">Add Recurring Cost</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', recurringCost.id]\" *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRecurringCost($event, recurringCost)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</ng-container>\n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"3\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"6\">No recurring costs found.</td></tr></tbody></ng-template>\n\n<task-form [id]=\"selectedTaskId\" (close)=\"selectedTaskId = null\" *ngIf=\"selectedTaskId\"></task-form>"
 
 /***/ }),
 
@@ -2991,7 +2994,7 @@ var TaskboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"overlay-header d-flex align-items-top\">\n    <ng-container *ngIf=\"form.task$ | async as task\">\n        <div class=\"color-indicator\" [style.backgroundColor]=\"task._job.colour\"></div>\n        <div class=\"title h4\">{{ task.title }}</div>\n    </ng-container>\n    <a class=\"close ml-auto\" (click)=\"closeEvent($event)\"><i class=\"icon-cancel\"></i></a>\n</div>\n<div class=\"overlay-body\">\n    <p class=\"muted\">To change the task click one from the main list</p>\n    <input type=\"hidden\" name=\"task\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label>Start Time</label>\n            <input [formControl]=\"form.controls.started_at_time\" type=\"time\" />\n        </div>\n        <div class=\"col\">\n            <label>End Time</label>\n            <input [formControl]=\"form.controls.ended_at_time\" type=\"time\" />\n        </div>\n    </div>\n    <label>Comments</label>\n    <textarea [formControl]=\"form.controls.comments\" name=\"comments\" rows=\"3\"></textarea>\n    <div class=\"text-right\">\n        <a class=\"button button-primary\" (click)=\"form.save($event)\">Update</a>\n        <a class=\"delete button button-primary button-clear\" (click)=\"form.delete($event)\">Delete <i class=\"icon-trash\"></i></a>\n    </div>\n</div>"
+module.exports = "<div class=\"overlay-header d-flex align-items-top\">\n    <ng-container *ngIf=\"form.task$ | async as task\">\n        <div class=\"color-indicator\" [style.backgroundColor]=\"task._job.colour\"></div>\n        <div class=\"title h4\">{{ task.title }}</div>\n    </ng-container>\n    <a class=\"close ml-auto\" (click)=\"closeEvent($event)\"><i class=\"icon-cancel\"></i></a>\n</div>\n<div class=\"overlay-body\">\n    <p class=\"muted\">To change the task click one from the main list</p>\n    <input type=\"hidden\" name=\"task\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label>Start Time</label>\n            <input [formControl]=\"form.controls.started_at_time\" type=\"text\" mask=\"00:00\" [showMaskTyped]=\"true\" [dropSpecialCharacters]=\"false\" />\n            <p class=\"c-red\" *formError=\"form.controls.started_at_time\">ie 00:00 - 23:59</p>\n        </div>\n        <div class=\"col\">\n            <label>End Time</label>\n            <input [formControl]=\"form.controls.ended_at_time\" type=\"text\" mask=\"00:00\" [showMaskTyped]=\"true\" [dropSpecialCharacters]=\"false\" />\n            <p class=\"c-red\" *formError=\"form.controls.ended_at_time\">ie 00:00 - 23:59</p>\n        </div>\n    </div>\n    <label>Comments</label>\n    <textarea [formControl]=\"form.controls.comments\" name=\"comments\" rows=\"3\"></textarea>\n    <div class=\"text-right\">\n        <a class=\"button button-primary\" (click)=\"form.save($event)\">Update</a>\n        <a class=\"delete button button-primary button-clear\" (click)=\"form.delete($event)\">Delete <i class=\"icon-trash\"></i></a>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -4696,6 +4699,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./base.form */ "./src/app/forms/base.form.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../state/selectors/task */ "./src/app/state/selectors/task.ts");
+/* harmony import */ var _utils_regex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/regex */ "./src/app/utils/regex.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -4706,6 +4710,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+
 
 
 
@@ -4724,9 +4729,9 @@ var TimeEntryForm = /** @class */ (function (_super) {
             id: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
             task: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
             started_at: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
-            started_at_time: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+            started_at_time: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern(_utils_regex__WEBPACK_IMPORTED_MODULE_7__["time24Reg"])]),
             ended_at: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
-            ended_at_time: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required),
+            ended_at_time: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].pattern(_utils_regex__WEBPACK_IMPORTED_MODULE_7__["time24Reg"])]),
             comments: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](null),
             signed_off: new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"](false),
         }, null, null, lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, options, formOptions)) || this;
@@ -12758,7 +12763,7 @@ var valueOr = function (value, ifNull) {
 /*!********************************!*\
   !*** ./src/app/utils/regex.ts ***!
   \********************************/
-/*! exports provided: decimal10at2, hexReg, integerReg, phoneReg, urlReg */
+/*! exports provided: decimal10at2, hexReg, integerReg, phoneReg, time24Reg, urlReg */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12767,11 +12772,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hexReg", function() { return hexReg; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "integerReg", function() { return integerReg; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "phoneReg", function() { return phoneReg; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "time24Reg", function() { return time24Reg; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "urlReg", function() { return urlReg; });
 var decimal10at2 = '^[0-9]{1,7}(\\.[0-9]{0,2})?$';
 var hexReg = '#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})';
 var integerReg = '^[0-9]*$';
 var phoneReg = '[0-9 ]*';
+var time24Reg = '([01]?[0-9]|2[0-3]):[0-5][0-9]';
 var urlReg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
 
 

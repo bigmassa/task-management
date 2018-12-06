@@ -1,14 +1,20 @@
 // board
 // ------------------------------------------
 
+.board-column-wrapper {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .board-column {
   display: flex;
-  flex: 1 1 auto;
   flex-direction: column;
+  width: 355px;
   min-width: 355px;
-  max-width: 355px;
   padding: 8px;
   margin-right: 2rem;
+  overflow-y: hidden;
 }
 
 .board-column-heading {

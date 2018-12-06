@@ -1917,17 +1917,23 @@ a.avatar:hover .avatar-close {
   line-height: 2.2rem;
 }
 
+.board-column-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .board-column {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 355px;
   min-width: 355px;
-  max-width: 355px;
   padding: 8px;
   margin-right: 2rem;
+  overflow-y: hidden;
 }
 
 .board-column-heading {

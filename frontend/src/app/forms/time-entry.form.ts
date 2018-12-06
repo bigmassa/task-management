@@ -5,13 +5,12 @@ import * as moment from 'moment';
 import { ActionsSubject, Store, select } from '@ngrx/store';
 import { BaseForm, FormCleanAfterMethod, IFormOptions } from './base.form';
 import { FormControl, Validators } from '@angular/forms';
-import { filter, take } from 'rxjs/operators';
 
 import { AppState } from '../state/state';
-import { IActionWithPayload } from './../state/models';
 import { ITask } from './../state/reducers/task';
 import { Observable } from '../../../node_modules/rxjs';
 import { getTaskCollectionById } from '../state/selectors/task';
+import { time24Reg } from '../utils/regex';
 
 const options: IFormOptions = {
     alwaysEditable: true,
@@ -49,9 +48,9 @@ export class TimeEntryForm extends BaseForm {
                 id: new FormControl(null, Validators.required),
                 task: new FormControl(null, Validators.required),
                 started_at: new FormControl(null, Validators.required),
-                started_at_time: new FormControl(null, Validators.required),
+                started_at_time: new FormControl(null, [Validators.required, Validators.pattern(time24Reg)]),
                 ended_at: new FormControl(null, Validators.required),
-                ended_at_time: new FormControl(null, Validators.required),
+                ended_at_time: new FormControl(null, [Validators.required, Validators.pattern(time24Reg)]),
                 comments: new FormControl(null),
                 signed_off: new FormControl(false),
             },

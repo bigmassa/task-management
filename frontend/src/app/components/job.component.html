@@ -18,9 +18,8 @@
     </div>
 
     <div class="container-fluid" *ngIf="selectedTab.title == 'Tasks'">
-        <div autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40" class="scroll-x">
+        <div class="board-column-wrapper" autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40" [ngStyle]="{'height': 'calc(100vh - (' + pageHeader.offsetHeight + 'px + 55px))'}">
             <div class="board-column"
-                [ngStyle]="{'height': 'calc(100vh - (' + pageHeader.offsetHeight + 'px + 55px))'}"
                 job-board-column
                 [jobId]="jobId"
                 [status]="status"
