@@ -12396,7 +12396,9 @@ var getEventsForUser = function (id) { return Object(_ngrx_store__WEBPACK_IMPORT
             id: obj.id.toString(),
             start: new Date(obj.started_at),
             end: new Date(obj.ended_at),
-            title: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job.title', '') + ' - ' + lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, 'title', ''),
+            title: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job._client.name', '') + ' - ' +
+                lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job.title', '') + ' - ' +
+                lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, 'title', ''),
             backgroundColor: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job.colour', ''),
             borderColor: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job.colour', ''),
             textColor: lodash__WEBPACK_IMPORTED_MODULE_0__["get"](_task, '_job._text_colour', ''),

@@ -16,7 +16,9 @@ export const getEventsForUser = (id: number) => createSelector(
                 id: obj.id.toString(),
                 start: new Date(obj.started_at),
                 end: new Date(obj.ended_at),
-                title: _.get(_task, '_job.title', '') + ' - ' + _.get(_task, 'title', ''),
+                title: _.get(_task, '_job._client.name', '') + ' - ' +
+                       _.get(_task, '_job.title', '') + ' - ' +
+                       _.get(_task, 'title', ''),
                 backgroundColor: _.get(_task, '_job.colour', ''),
                 borderColor: _.get(_task, '_job.colour', ''),
                 textColor: _.get(_task, '_job._text_colour', ''),
