@@ -30,6 +30,10 @@ export class TimesheetComponent implements OnInit {
 
     events$: Observable<EventObject[]>;
     currentUpdateRequest: Subscription;
+    expanded: any = {
+        clients: [],
+        jobs: []
+    }
     headerHeight: number;
     options: CalendarOptions;
     searchTerms: string[] = [];
@@ -86,6 +90,19 @@ export class TimesheetComponent implements OnInit {
 
     refetchEvents() {
         this.events$ = this.store.pipe(select(getEventsForUser(this.selectedUserId)));
+    }
+
+    isNodeExpanded(type: string, id: number) {
+        return this.searchTerms.length > 0 || _.indexOf(this.expanded[type], id) >= 0;
+    }
+
+    toggleNode(type: string, id: number) {
+        const index = _.indexOf(this.expanded[type], id);
+        if (index >= 0) {
+            this.expanded[type].splice(index, 1);
+        } else {
+            this.expanded[type].push(id);
+        }
     }
 
     changeTask(task: number) {

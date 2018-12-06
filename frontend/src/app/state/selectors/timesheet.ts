@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import * as moment from 'moment';
 import { createSelector } from '@ngrx/store';
-import { getTaskAssigneeState, getTimeEntryState } from './../state';
+import { getTaskAssigneeState, getTimeEntryState, getClientState, getJobState } from './../state';
 import { getTaskCollection, getTaskCollectionOpen } from './task';
 import { valueOr } from '../../utils/generic';
 
@@ -41,7 +41,9 @@ export const getTasksForTimeEntry = createSelector(
 export const getTasksForUser = (id: number = null, searchTerms: string[] = []) => createSelector(
     getTasksForTimeEntry,
     getTaskAssigneeState,
-    (tasks, assignees) => {
+    getClientState,
+    getJobState,
+    (tasks, assignees, clients, jobs) => {
 
         let objs = tasks;
         
@@ -65,18 +67,17 @@ export const getTasksForUser = (id: number = null, searchTerms: string[] = []) =
         }
 
         // group the tasks by client
-        const autoShow = searchTerms.length > 0;
-        const byClient = _.groupBy(objs, '_job._client.name');
+        const byClient = _.groupBy(objs, '_job.client');
         const byClientByJob = {};
 
         // then for each client group the tasks by job
         _.forEach(byClient, (tasks, key) => {
-            const byJob = _.groupBy(tasks, '_job.title');
+            const byJob = _.groupBy(tasks, 'job');
             byClientByJob[key] = {
-                visible: autoShow,
+                data: _.find(clients, ['id', +key]),
                 jobs: _.transform(
                     byJob, (result, value, key) => result[key] = {
-                        visible: autoShow,
+                        data: _.find(jobs, ['id', +key]),
                         tasks: value
                     }
                 )

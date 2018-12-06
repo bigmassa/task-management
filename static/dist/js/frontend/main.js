@@ -3156,7 +3156,7 @@ var TimesheetSignoffComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div #pageHeader class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchEvents(); refetchTasks();\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid\">\n    <div class=\"row pt-2\" [ngStyle]=\"{'height': 'calc(100vh - (' + pageHeader.offsetHeight + 'px + 55px + ' + pageFooter.offsetHeight + 'px))'}\">\n        <div class=\"col-3 full-height d-flex flex-column\">\n            <div search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchTasks()\"></div>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"client.value.visible = !client.value.visible\">{{ client.key }}</a>\n                        <ul *ngIf=\"client.value.visible\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"job.value.visible = !job.value.visible\">{{ job.key }}</a>\n                                <ul *ngIf=\"job.value.visible\">\n                                    <li class=\"task d-flex\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <div class=\"color-indicator\" [style.background-color]=\"task._job.colour\"></div>\n                                        <span class=\"external-event flex-fill\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 full-height relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [slotDuration]=\"formattedSlotDuration\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onEventRender)=\"onEventRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                (onWindowResize)=\"onWindowResize($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div #pageFooter class=\"row\" style=\"height: 50px;\">    \n        <div class=\"col-3 pt-1-5\">\n            <div class=\"input-group margin-zero\">\n                <div class=\"input-group-addon\">Slot</div>\n                <input type=\"range\" min=\"1\" max=\"30\" [(ngModel)]=\"slotDuration\" (ngModelChange)=\"onChangeSlotDuration($event)\" name=\"slotDuration\">\n                <div class=\"input-group-addon\">{{ slotDuration }} mins</div>\n            </div>\n        </div>\n        <div class=\"col-9\">\n            <table class=\"mb-0\">\n                <thead>\n                    <tr>\n                        <th [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></th>\n                        <th class=\"text-center px-0\" *ngFor=\"let date of viewDates\">\n                            <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                        </th>\n                    </tr>\n                </thead>                    \n            </table>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div #pageHeader class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Timesheet</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchEvents(); refetchTasks();\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid\">\n    <div class=\"row pt-2\" [ngStyle]=\"{'height': 'calc(100vh - (' + pageHeader.offsetHeight + 'px + 55px + ' + pageFooter.offsetHeight + 'px))'}\">\n        <div class=\"col-3 full-height d-flex flex-column\">\n            <div search [(ngModel)]=\"searchTerms\" (ngModelChange)=\"refetchTasks()\"></div>\n            <div class=\"client-list-wrapper\" id=\"external-events\">\n                <ul class=\"client-list\">\n                    <li *ngFor=\"let client of tasks$ | async | keyvalue\">\n                        <a class=\"client\" (click)=\"toggleNode('clients', client.key)\">{{ client | get : 'value.data.name' }}</a>\n                        <ul *ngIf=\"isNodeExpanded('clients', client.key)\">\n                            <li *ngFor=\"let job of client.value.jobs | keyvalue\">\n                                <a class=\"job\" (click)=\"toggleNode('jobs', job.key)\">{{ job | get : 'value.data.title' }}</a>\n                                <ul *ngIf=\"isNodeExpanded('jobs', job.key)\">\n                                    <li class=\"task d-flex\" (click)=\"changeTask(task.id)\" *ngFor=\"let task of job.value.tasks\">\n                                        <div class=\"color-indicator\" [style.background-color]=\"task._job.colour\"></div>\n                                        <span class=\"external-event flex-fill\" [attr.data-task]=\"task.id\">{{ task.title }}</span>\n                                    </li>\n                                </ul>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"col-9 full-height relative\">\n            <div calendar\n                class=\"timesheet\"\n                [options]=\"options\"\n                [slotDuration]=\"formattedSlotDuration\"\n                [events]=\"events$ | async\"\n                (onViewSkeletonRender)=\"onViewSkeletonRender($event)\"\n                (onDatesRender)=\"onDatesRender($event)\"\n                (onEventRender)=\"onEventRender($event)\"\n                (onDrop)=\"onDrop($event)\"\n                (onEventDrop)=\"onEventDrop($event)\"\n                (onEventResize)=\"onEventResize($event)\"\n                (onEventClick)=\"onEventClick($event)\"\n                (onWindowResize)=\"onWindowResize($event)\"\n                externalEventsWrapperId=\"external-events\"\n                externalEventItemClass=\".external-event\">\n            </div>\n            <div time-entry-form\n                [id]=\"selectedEventId\"\n                [newTaskId]=\"selectedTaskId\"\n                class=\"timesheet-event-overlay\"\n                [class.in]=\"selectedEventId\"\n                (close)=\"selectedEventId = null; selectedTaskId = null\"\n                *ngIf=\"selectedEventId\">\n            </div>\n        </div>\n    </div>    \n    <div #pageFooter class=\"row\" style=\"height: 50px;\">    \n        <div class=\"col-3 pt-1-5\">\n            <div class=\"input-group margin-zero\">\n                <div class=\"input-group-addon\">Slot</div>\n                <input type=\"range\" min=\"1\" max=\"30\" [(ngModel)]=\"slotDuration\" (ngModelChange)=\"onChangeSlotDuration($event)\" name=\"slotDuration\">\n                <div class=\"input-group-addon\">{{ slotDuration }} mins</div>\n            </div>\n        </div>\n        <div class=\"col-9\">\n            <table class=\"mb-0\">\n                <thead>\n                    <tr>\n                        <th [style.width.px]=\"viewAxisWidth\" [style.max-width.px]=\"viewAxisWidth\"></th>\n                        <th class=\"text-center px-0\" *ngFor=\"let date of viewDates\">\n                            <time-sheet-signoff [user]=\"selectedUserId\" [date]=\"date\"></time-sheet-signoff>\n                        </th>\n                    </tr>\n                </thead>                    \n            </table>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -3205,6 +3205,10 @@ var TimesheetComponent = /** @class */ (function () {
     function TimesheetComponent(store, actionsSubject) {
         this.store = store;
         this.actionsSubject = actionsSubject;
+        this.expanded = {
+            clients: [],
+            jobs: []
+        };
         this.searchTerms = [];
         this.slotDuration = 5;
         this.formattedSlotDuration = '00:05:00';
@@ -3246,6 +3250,18 @@ var TimesheetComponent = /** @class */ (function () {
     };
     TimesheetComponent.prototype.refetchEvents = function () {
         this.events$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_timesheet__WEBPACK_IMPORTED_MODULE_7__["getEventsForUser"])(this.selectedUserId)));
+    };
+    TimesheetComponent.prototype.isNodeExpanded = function (type, id) {
+        return this.searchTerms.length > 0 || lodash__WEBPACK_IMPORTED_MODULE_2__["indexOf"](this.expanded[type], id) >= 0;
+    };
+    TimesheetComponent.prototype.toggleNode = function (type, id) {
+        var index = lodash__WEBPACK_IMPORTED_MODULE_2__["indexOf"](this.expanded[type], id);
+        if (index >= 0) {
+            this.expanded[type].splice(index, 1);
+        }
+        else {
+            this.expanded[type].push(id);
+        }
     };
     TimesheetComponent.prototype.changeTask = function (task) {
         if (this.selectedEventId) {
@@ -12415,7 +12431,7 @@ var getTasksForTimeEntry = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["crea
 var getTasksForUser = function (id, searchTerms) {
     if (id === void 0) { id = null; }
     if (searchTerms === void 0) { searchTerms = []; }
-    return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTasksForTimeEntry, _state__WEBPACK_IMPORTED_MODULE_3__["getTaskAssigneeState"], function (tasks, assignees) {
+    return Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["createSelector"])(getTasksForTimeEntry, _state__WEBPACK_IMPORTED_MODULE_3__["getTaskAssigneeState"], _state__WEBPACK_IMPORTED_MODULE_3__["getClientState"], _state__WEBPACK_IMPORTED_MODULE_3__["getJobState"], function (tasks, assignees, clients, jobs) {
         var objs = tasks;
         // apply filters (either search all or only show tasks im assigned to)
         if (searchTerms.length > 0) {
@@ -12436,16 +12452,15 @@ var getTasksForUser = function (id, searchTerms) {
             objs = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](objs, function (o) { return lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](ids_1, o.id); });
         }
         // group the tasks by client
-        var autoShow = searchTerms.length > 0;
-        var byClient = lodash__WEBPACK_IMPORTED_MODULE_0__["groupBy"](objs, '_job._client.name');
+        var byClient = lodash__WEBPACK_IMPORTED_MODULE_0__["groupBy"](objs, '_job.client');
         var byClientByJob = {};
         // then for each client group the tasks by job
         lodash__WEBPACK_IMPORTED_MODULE_0__["forEach"](byClient, function (tasks, key) {
-            var byJob = lodash__WEBPACK_IMPORTED_MODULE_0__["groupBy"](tasks, '_job.title');
+            var byJob = lodash__WEBPACK_IMPORTED_MODULE_0__["groupBy"](tasks, 'job');
             byClientByJob[key] = {
-                visible: autoShow,
+                data: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](clients, ['id', +key]),
                 jobs: lodash__WEBPACK_IMPORTED_MODULE_0__["transform"](byJob, function (result, value, key) { return result[key] = {
-                    visible: autoShow,
+                    data: lodash__WEBPACK_IMPORTED_MODULE_0__["find"](jobs, ['id', +key]),
                     tasks: value
                 }; })
             };
