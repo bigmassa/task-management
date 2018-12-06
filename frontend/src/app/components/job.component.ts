@@ -91,7 +91,7 @@ export class JobComponent implements OnDestroy, OnInit {
         const querySub = this.route.queryParams.subscribe(
             params => {
                 if (params['task']) {
-                    this.activateTabAndOpenTask(+params['task']);
+                    setTimeout(() => this.activateTabAndOpenTask(+params['task']), 0);
                 }
             }
         );

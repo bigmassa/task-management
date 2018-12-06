@@ -15,14 +15,21 @@
             <div class="client-list-wrapper" id="external-events">
                 <ul class="client-list">
                     <li *ngFor="let client of tasks$ | async | keyvalue">
-                        <a class="client" (click)="toggleNode('clients', client.key)">{{ client | get : 'value.data.name' }}</a>
+                        <div class="client">
+                            <a class="client-list-toggle" (click)="toggleNode('clients', client.key)">{{ client | get : 'value.data.name' }}</a>
+                            <a class="client-list-link" [routerLink]="['/clients', client.key]"><i class="icon-eye"></i></a>
+                        </div>
                         <ul *ngIf="isNodeExpanded('clients', client.key)">
                             <li *ngFor="let job of client.value.jobs | keyvalue">
-                                <a class="job" (click)="toggleNode('jobs', job.key)">{{ job | get : 'value.data.title' }}</a>
+                                <div class="job">
+                                    <a class="client-list-toggle" (click)="toggleNode('jobs', job.key)">{{ job | get : 'value.data.title' }}</a>
+                                    <a class="client-list-link" [routerLink]="['/clients', client.key, 'jobs', job.key]"><i class="icon-eye"></i></a>
+                                </div>
                                 <ul *ngIf="isNodeExpanded('jobs', job.key)">
-                                    <li class="task d-flex" (click)="changeTask(task.id)" *ngFor="let task of job.value.tasks">
+                                    <li class="task" (click)="changeTask(task.id)" *ngFor="let task of job.value.tasks">
                                         <div class="color-indicator" [style.background-color]="task._job.colour"></div>
-                                        <span class="external-event flex-fill" [attr.data-task]="task.id">{{ task.title }}</span>
+                                        <span class="task-title external-event" [attr.data-task]="task.id">{{ task.title }}</span>
+                                        <a class="client-list-link" [routerLink]="['/clients', client.key, 'jobs', job.key]" [queryParams]="{task: task.id}"><i class="icon-eye"></i></a>
                                     </li>
                                 </ul>
                             </li>

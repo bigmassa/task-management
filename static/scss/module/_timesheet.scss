@@ -14,45 +14,57 @@
   list-style-type: none;
 }
 
-.client-list a:hover {
-  background-color: color-a("primary", .24);
+.client-list .client-list-link {
+  flex: 0 0 40px;
+  padding: 1rem;
+  visibility: hidden;
+}
+
+.client-list .client,
+.client-list .job,
+.client-list .task {
+  display: flex;
+  margin-bottom: .3rem;
+  cursor: pointer;
+  &:hover .client-list-link {
+    visibility: visible;
+  }
 }
 
 .client-list .client {
-  display: block;
-  padding: 1rem 1rem;
-  margin-bottom: .3rem;
   font-weight: 700;
-  cursor: pointer;
   background-color: color("gainsboro");
+  &:hover {
+    background-color: color-a("primary", .24);
+  }
 }
 
 .client-list .job {
-  display: block;
-  padding: 1rem 1rem;
-  margin-bottom: .3rem;
-  cursor: pointer;
   border-bottom: 1px solid $border-color;
+  &:hover {
+    background-color: color-a("primary", .24);
+  }
 }
 
 .client-list .task {
-  padding: 0;
-  margin-bottom: .3rem;
-  cursor: pointer;
   background-color: color("lightgrey");
   border-radius: .25rem;
   &:hover {
     @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, .24));
   }
+  .color-indicator {
+    margin-top: 1.2rem;
+    margin-left: 1rem;
+  }
+  .task-title {
+    flex: 1 1 auto;
+    padding: 1rem 1rem 1rem 0;
+  }
 }
 
-.client-list .task .color-indicator {
-  margin-top: 1.2rem;
-  margin-left: 1rem;
-}
-
-.client-list .task span {
-  padding: 1rem 1rem 1rem 0;
+.client-list .client-list-toggle {
+  flex: 1 1 auto;
+  padding: 1rem;
 }
 
 .timesheet {

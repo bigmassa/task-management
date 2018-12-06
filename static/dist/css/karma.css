@@ -1749,8 +1749,8 @@ ul.radios input[type=radio] + span:after {
 /* add your custom modules here */
 @font-face {
   font-family: 'fontello';
-  src: url("../font/fontello.eot?92272378");
-  src: url("../font/fontello.eot?92272378#iefix") format("embedded-opentype"), url("../font/fontello.woff2?92272378") format("woff2"), url("../font/fontello.woff?92272378") format("woff"), url("../font/fontello.ttf?92272378") format("truetype"), url("../font/fontello.svg?92272378#fontello") format("svg");
+  src: url("../font/fontello.eot?60106394");
+  src: url("../font/fontello.eot?60106394#iefix") format("embedded-opentype"), url("../font/fontello.woff2?60106394") format("woff2"), url("../font/fontello.woff?60106394") format("woff"), url("../font/fontello.ttf?60106394") format("truetype"), url("../font/fontello.svg?60106394#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1761,7 +1761,7 @@ ul.radios input[type=radio] + span:after {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?92272378#fontello') format('svg');
+    src: url('../font/fontello.svg?60106394#fontello') format('svg');
   }
 }
 */
@@ -1853,6 +1853,11 @@ ul.radios input[type=radio] + span:after {
 }
 
 /* '' */
+.icon-eye:before {
+  content: '\e80c';
+}
+
+/* '' */
 .icon-bell:before {
   content: '\f0f3';
 }
@@ -2758,31 +2763,46 @@ td textarea {
   list-style-type: none;
 }
 
-.client-list a:hover {
-  background-color: rgba(41, 44, 54, 0.24);
+.client-list .client-list-link {
+  -ms-flex: 0 0 40px;
+  flex: 0 0 40px;
+  padding: 1rem;
+  visibility: hidden;
+}
+
+.client-list .client,
+.client-list .job,
+.client-list .task {
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: .3rem;
+  cursor: pointer;
+}
+
+.client-list .client:hover .client-list-link,
+.client-list .job:hover .client-list-link,
+.client-list .task:hover .client-list-link {
+  visibility: visible;
 }
 
 .client-list .client {
-  display: block;
-  padding: 1rem 1rem;
-  margin-bottom: .3rem;
   font-weight: 700;
-  cursor: pointer;
   background-color: #e2e2e2;
 }
 
+.client-list .client:hover {
+  background-color: rgba(41, 44, 54, 0.24);
+}
+
 .client-list .job {
-  display: block;
-  padding: 1rem 1rem;
-  margin-bottom: .3rem;
-  cursor: pointer;
   border-bottom: 1px solid #e6e6e6;
 }
 
+.client-list .job:hover {
+  background-color: rgba(41, 44, 54, 0.24);
+}
+
 .client-list .task {
-  padding: 0;
-  margin-bottom: .3rem;
-  cursor: pointer;
   background-color: #d2d2d2;
   border-radius: .25rem;
 }
@@ -2796,8 +2816,16 @@ td textarea {
   margin-left: 1rem;
 }
 
-.client-list .task span {
+.client-list .task .task-title {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   padding: 1rem 1rem 1rem 0;
+}
+
+.client-list .client-list-toggle {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1rem;
 }
 
 .timesheet {
