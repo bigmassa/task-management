@@ -1,5 +1,5 @@
 <ng-container *ngIf="job$ | async as job">
-    <div class="page-header">
+    <div #pageHeader class="page-header">
         <div class="container-fluid d-flex align-items-center py-2">
             <span class="color-indicator" [style.backgroundColor]="job.colour"></span>
             <div class="h2">
@@ -20,7 +20,7 @@
     <div class="container-fluid" *ngIf="selectedTab.title == 'Tasks'">
         <div autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40" class="scroll-x">
             <div class="board-column"
-                style="height: calc(100vh - (55px + 120px))"
+                [ngStyle]="{'height': 'calc(100vh - (' + pageHeader.offsetHeight + 'px + 55px))'}"
                 job-board-column
                 [jobId]="jobId"
                 [status]="status"

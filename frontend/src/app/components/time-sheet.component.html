@@ -1,4 +1,4 @@
-<div class="page-header py-2">
+<div #pageHeader class="page-header py-2">
     <div class="container-fluid d-flex align-items-center">
         <div class="h2">Timesheet</div>
         <div class="page-header-actions">
@@ -9,7 +9,7 @@
     </div>
 </div>
 <div class="container-fluid">
-    <div class="row pt-2" style="height: calc(100vh - (55px + 80px + 50px))">
+    <div class="row pt-2" [ngStyle]="{'height': 'calc(100vh - (' + pageHeader.offsetHeight + 'px + 55px + ' + pageFooter.offsetHeight + 'px))'}">
         <div class="col-3 full-height d-flex flex-column">
             <div search [(ngModel)]="searchTerms" (ngModelChange)="refetchTasks()"></div>
             <div class="client-list-wrapper" id="external-events">
@@ -58,7 +58,7 @@
             </div>
         </div>
     </div>    
-    <div class="row" style="height: 50px;">    
+    <div #pageFooter class="row" style="height: 50px;">    
         <div class="col-3 pt-1-5">
             <div class="input-group margin-zero">
                 <div class="input-group-addon">Slot</div>

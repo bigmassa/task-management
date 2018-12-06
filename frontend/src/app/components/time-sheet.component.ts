@@ -30,6 +30,7 @@ export class TimesheetComponent implements OnInit {
 
     events$: Observable<EventObject[]>;
     currentUpdateRequest: Subscription;
+    headerHeight: number;
     options: CalendarOptions;
     searchTerms: string[] = [];
     selectedEventId: number;
