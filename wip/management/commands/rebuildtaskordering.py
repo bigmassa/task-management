@@ -5,7 +5,7 @@ from wip.models import Task
 
 
 class Command(BaseCommand):
-    help = 'Closes the specified poll for voting'
+    help = 'Reorder tasks by resetting the order'
 
     def add_arguments(self, parser):
         pass

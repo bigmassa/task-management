@@ -2,14 +2,20 @@
     <div class="modal-panel" #modalPanel>
         <div class="container b-secondary px-2 py-2">
             <div class="row">
-                <div class="col">
-                    <div>
-                        <textarea autoResize rows="1" class="toggleable"
-                            [formControl]="titleForm.controls.title"
-                            (blur)="titleForm.dirty ? titleForm.save($event) : false"
-                            (keydown.enter)="false"></textarea>
-                        <p class="small muted">{{ task | get:'_job._client.name' }} / {{ task | get:'_job.title' }}</p>
-                    </div>
+                <div class="col-12">
+                    <textarea autoResize rows="1" class="toggleable"
+                        [formControl]="titleForm.controls.title"
+                        (blur)="titleForm.dirty ? titleForm.save($event) : false"
+                        (keydown.enter)="false">
+                    </textarea>
+                </div>
+                <div class="col-9">
+                    <p class="small muted">{{ task | get:'_job._client.name' }} / {{ task | get:'_job.title' }}</p>
+                </div>
+                <div class="col-3">
+                    <select class="toggleable" [formControl]="statusForm.controls.status" (blur)="statusForm.save($event)">
+                        <option [ngValue]="option.id" *ngFor="let option of taskStatuses$ | async">{{ option.title }}</option>
+                    </select>
                 </div>
             </div>
         </div>

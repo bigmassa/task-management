@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import * as actions from '../state/actions';
 import { ActionsSubject, select, Store } from '@ngrx/store';
-import { AppState } from '../state/state';
+import { AppState, getTaskStatusState } from '../state/state';
 import {
     Component,
     ElementRef,
@@ -44,6 +44,8 @@ import { TaskNoteForm } from '../forms/task-note.form';
 import { TaskTagForm } from '../forms/task-tag.form';
 import { TaskTargetDateForm } from '../forms/task-target-date.form';
 import { TaskTitleForm } from '../forms/task-title.form';
+import { TaskStatusForm } from '../forms/task-status.form';
+import { ITaskStatus } from '../state/reducers/taskstatus';
 
 @Component({
     selector: 'task-form, [task-form]',
@@ -53,6 +55,7 @@ export class TaskFormComponent implements OnChanges {
     @Input() id: number;
 
     @Output() close = new EventEmitter();
+    @Output() moveStatuses = new EventEmitter();
 
     @ViewChild('modalPanel') modalPanelRef: ElementRef;
 
@@ -68,6 +71,7 @@ export class TaskFormComponent implements OnChanges {
     };
     newNoteForm: TaskNoteForm;
     notChargeableForm: TaskNotChargeableForm;
+    statusForm: TaskStatusForm;
     tagEditForm: TaskTagForm;
     tags$: Observable<ITag[]>;
     targetDateForm: TaskTargetDateForm;
@@ -75,6 +79,7 @@ export class TaskFormComponent implements OnChanges {
     taskAssignees$: Observable<ITaskAssignee[]>;
     taskFiles$: Observable<ITaskFile[]>;
     taskNotes$: Observable<ITaskNote[]>;
+    taskStatuses$: Observable<ITaskStatus[]>;
     taskTags$: Observable<ITaskTag[]>;
     taskTiming$: Observable<ITaskTiming>;
     taskNoteForms = {};
@@ -86,10 +91,13 @@ export class TaskFormComponent implements OnChanges {
         private actionsSubject: ActionsSubject,
         private deletable: DeletableService
     ) {
+        this.taskStatuses$ = this.store.pipe(select(getTaskStatusState));
         this.tags$ = this.store.pipe(select(getTagCollection));
         this.users$ = this.store.pipe(select(getActiveUsers));
+
         this.closedForm = new TaskClosedForm(this.store, this.actionsSubject, { alwaysEditable: true });
         this.descriptionForm = new TaskDescriptionForm(this.store, this.actionsSubject);
+        this.statusForm = new TaskStatusForm(this.store, this.actionsSubject);
         this.titleForm = new TaskTitleForm(this.store, this.actionsSubject);
         this.targetDateForm = new TaskTargetDateForm(this.store, this.actionsSubject);
         this.newNoteForm = new TaskNoteForm(this.store, this.actionsSubject);
@@ -111,10 +119,11 @@ export class TaskFormComponent implements OnChanges {
                 d => {
                     this.closedForm.load(d);
                     this.descriptionForm.load(d);
-                    this.titleForm.load(d);
-                    this.targetDateForm.load(d);
                     this.newNoteForm.load({task: d.id});
                     this.notChargeableForm.load(d);
+                    this.statusForm.load(d);
+                    this.titleForm.load(d);
+                    this.targetDateForm.load(d);
                 }
             );
             this.deletable.check(DeletableService.TASK, this.id).then(check => this.canDelete = check);
@@ -187,4 +196,5 @@ export class TaskFormComponent implements OnChanges {
     delete(task: ITask) {
         this.store.dispatch({type: actions.TaskActions.REMOVE, payload: task});
     }
+
 }

@@ -1624,6 +1624,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _forms_task_create_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../forms/task-create.form */ "./src/app/forms/task-create.form.ts");
 /* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
+/* harmony import */ var _utils_task__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/task */ "./src/app/utils/task.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1633,6 +1634,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1654,32 +1656,10 @@ var JobBoardColumnComponent = /** @class */ (function () {
         this.subscriptions.push(this.newForm.formSaved.subscribe(function () { return _this.newFormOpen = false; }));
     };
     JobBoardColumnComponent.prototype.dropTask = function (event) {
-        var dropPos = event.dropIndex;
-        var initialOrder = 16384;
-        var lastIndex = lodash__WEBPACK_IMPORTED_MODULE_0__["findLastIndex"](this.tasks);
-        var task = event.value;
-        var order = 0;
-        if (this.tasks.length === 1) {
-            // this is the only task so order is default
-            order = initialOrder;
-        }
-        else if (dropPos === 0) {
-            // task moved to start so half the next order value
-            order = this.tasks[dropPos + 1].order / 2;
-        }
-        else if (dropPos === lastIndex) {
-            // task was moved to the end so add the default to the second from last
-            order = this.tasks[dropPos - 1].order + initialOrder;
-        }
-        else {
-            // task is in the middle so find the diff between the adjacent tasks
-            var prev = this.tasks[dropPos - 1].order;
-            var next = this.tasks[dropPos + 1].order;
-            order = ((next - prev) / 2) + prev;
-        }
+        var order = Object(_utils_task__WEBPACK_IMPORTED_MODULE_6__["calculateOrder"])(event.dropIndex, this.tasks, event.value);
         // dispatch an action to patch the task's new order and status
         var payload = {
-            id: task.id,
+            id: event.value.id,
             status: this.status.id,
             order: order
         };
@@ -2741,7 +2721,7 @@ var TaskCardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container b-secondary px-2 py-2\">\n            <div class=\"row\">\n                <div class=\"col\">\n                    <div>\n                        <textarea autoResize rows=\"1\" class=\"toggleable\"\n                            [formControl]=\"titleForm.controls.title\"\n                            (blur)=\"titleForm.dirty ? titleForm.save($event) : false\"\n                            (keydown.enter)=\"false\"></textarea>\n                        <p class=\"small muted\">{{ task | get:'_job._client.name' }} / {{ task | get:'_job.title' }}</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container b-secondary px-2\">\n            <ul class=\"tabs tabs-light\">\n                <li [class.active]=\"activeTab == 'detail'\" (click)=\"activeTab = 'detail'\">Detail</li>\n                <li [class.active]=\"activeTab == 'notes'\" (click)=\"activeTab = 'notes'\">Notes</li>\n                <li [class.active]=\"activeTab == 'files'\" (click)=\"activeTab = 'files'\">Files</li>\n                <li [class.active]=\"activeTab == 'delete'\" (click)=\"activeTab = 'delete'\" *ngIf=\"canDelete\">Delete</li>\n            </ul>\n        </div>\n\n        <div class=\"container px-2 py-2\" *ngIf=\"activeTab == 'detail'\">\n            <div class=\"row mb-1h\">\n                <div class=\"col\">\n                    <p class=\"mb-h\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of taskAssignees$ | async\" class=\"d-inline-block text-center mr-h\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-h\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div class=\"relative\">\n                        <div class=\"panel panel-popup mt-1 mt-1\" *ngIf=\"assigneeEditForm && assigneeEditForm.editable\">\n                            <div class=\"input-group\">\n                                <select [formControl]=\"assigneeEditForm.controls.user\" class=\"mr-1 flex-fill\">\n                                    <option [ngValue]=\"null\">Select...</option>\n                                    <ng-container *ngFor=\"let option of users$ | async\">\n                                        <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                    </ng-container>\n                                </select>\n                                <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\">\n                            </div>\n                            <div class=\"d-flex\">\n                                <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                                <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                                <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Remove</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col\">\n                    <p class=\"mb-h\"><strong>Tags</strong></p>\n                    <ul class=\"tags\">\n                        <li tag [id]=\"tag.tag\" *ngFor=\"let tag of taskTags$ | async\" class=\"tag pointer mb-h\" (click)=\"editTag(tag)\"></li>\n                        <li class=\"tag outline pointer mb-h\" (click)=\"editTag({object_id: id})\"><i class=\"icon-plus\"></i></li>\n                    </ul>\n                    <div class=\"relative\">\n                        <div class=\"panel panel-popup mt-1\" *ngIf=\"tagEditForm && tagEditForm.editable\">\n                            <select [formControl]=\"tagEditForm.controls.tag\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of tags$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.name }}</option>\n                                </ng-container>\n                            </select>\n                            <div class=\"input-group\">\n                                <input #newTag type=\"text\" placeholder=\"Create a new tag...\">\n                                <button class=\"button input-group-addon\" (click)=\"tagEditForm.addNew(newTag.value)\">Add</button>\n                            </div>\n                            <div class=\"d-flex\">\n                                <button class=\"button button-secondary\" (click)=\"tagEditForm.save($event)\">Save</button>\n                                <button class=\"button button-clear\" (click)=\"tagEditForm.cancel($event)\">Cancel</button>\n                                <button class=\"button button-clear ml-auto\" *ngIf=\"tagEditForm.value.id\" (click)=\"tagEditForm.delete($event)\">Remove</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row mb-1h\">\n                <div class=\"col\">\n                    <p class=\"mb-h\"><strong>Target Date</strong></p>\n                    <div class=\"icon-input\">\n                        <input type=\"text\" class=\"toggleable\"\n                            [matDatepicker]=\"picker\"\n                            [formControl]=\"targetDateForm.controls.target_date\"\n                            (click)=\"picker.open()\">\n                        <span class=\"icon-calendar\"></span>\n                    </div>\n                    <mat-datepicker #picker></mat-datepicker>\n                    <button class=\"button\" *ngIf=\"targetDateForm.dirty\" (click)=\"targetDateForm.save($event)\">Save</button>\n                    <button class=\"button button-clear\" *ngIf=\"targetDateForm.dirty\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                </div>\n                <div class=\"col\">\n                    <p class=\"mb-1\"><strong>Time Spent (hrs)</strong></p>\n                    <p [class.c-red]=\"taskTiming.is_over_allocated_hours\" *ngIf=\"taskTiming$ | async as taskTiming\">{{ taskTiming.time_spent_hours }} of {{ taskTiming.allocated_hours }}</p>        \n                </div>\n            </div>\n            <div class=\"row mb-1h\">\n                <div class=\"col\">\n                    <p class=\"mb-h\"><strong>Description</strong></p>\n                    <textarea autoResize class=\"toggleable\" rows=\"2\"\n                        [formControl]=\"descriptionForm.controls.description\"\n                        (blur)=\"descriptionForm.dirty ? descriptionForm.save($event) : false\"></textarea>\n                </div>\n            </div>\n            <div class=\"row mb-1h\">\n                <div class=\"col-12\">\n                    <p class=\"mb-h\"><strong>Not Chargeable</strong></p>\n                </div>\n                <div class=\"col\">\n                    <div class=\"checkbox\">\n                        <label>\n                            <input type=\"checkbox\" [formControl]=\"notChargeableForm.controls.not_chargeable\">\n                            <span></span>\n                        </label>\n                    </div>\n                </div>\n                <div class=\"col\">\n                    <div class=\"text-right\" *ngIf=\"notChargeableForm.dirty\">\n                        <button class=\"button\" (click)=\"notChargeableForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" (click)=\"notChargeableForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row mb-1h\">\n                <div class=\"col-12\">\n                    <p class=\"mb-h\"><strong>Closed</strong></p>\n                </div>\n                <div class=\"col\">\n                    <p>Closing the task means its no longer available to add time.</p>\n                    <div class=\"checkbox\">\n                        <label>\n                            <input type=\"checkbox\" [formControl]=\"closedForm.controls.closed\">\n                            <span></span>\n                        </label>\n                    </div>\n                </div>\n                <div class=\"col\">\n                    <div class=\"text-right\" *ngIf=\"closedForm.dirty\">\n                        <button class=\"button\" (click)=\"closedForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" (click)=\"closedForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container px-2 py-2\" *ngIf=\"activeTab == 'notes'\">\n            <div class=\"row\">\n                <div class=\"col\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-h\"><strong>Notes</strong></p>\n                        <textarea autoResize placeholder=\"Write a note...\" rows=\"2\"\n                            [formControl]=\"newNoteForm.controls.note\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of taskNotes$ | async\">\n                        <div class=\"mb-2\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <textarea autoResize class=\"toggleable\" rows=\"1\" [formControl]=\"form.controls.note\"></textarea>\n                            <div *ngIf=\"form.dirty\">\n                                <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                            </div>\n                        </div>\n                    </ng-container>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container px-2 py-2\" *ngIf=\"activeTab == 'files'\">\n            <div class=\"row mb-1h\">\n                <div class=\"col\">\n                    <p class=\"mb-h\"><strong>Files</strong></p>\n                    <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n                    <table>\n                        <ng-container *ngIf=\"taskFiles$ | async as files\">\n                        <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                            <tr *ngFor=\"let file of files\">\n                                <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                                <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                            </tr>\n                        </tbody>\n                        <ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n                        </ng-container>\n                    </table>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container px-2 py-2\" *ngIf=\"activeTab == 'delete'\">\n            <div class=\"row mb-1h\">\n                <div class=\"col\">\n                    <p class=\"mb-h\">Delete this task?</p>\n                    <a (click)=\"delete(task)\" class=\"button button-primary\">Delete</a>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"modal {{ id ? 'in': '' }}\" *ngIf=\"task$ | async as task\" (click)=\"closeEvent($event)\">\n    <div class=\"modal-panel\" #modalPanel>\n        <div class=\"container b-secondary px-2 py-2\">\n            <div class=\"row\">\n                <div class=\"col-12\">\n                    <textarea autoResize rows=\"1\" class=\"toggleable\"\n                        [formControl]=\"titleForm.controls.title\"\n                        (blur)=\"titleForm.dirty ? titleForm.save($event) : false\"\n                        (keydown.enter)=\"false\">\n                    </textarea>\n                </div>\n                <div class=\"col-9\">\n                    <p class=\"small muted\">{{ task | get:'_job._client.name' }} / {{ task | get:'_job.title' }}</p>\n                </div>\n                <div class=\"col-3\">\n                    <select class=\"toggleable\" [formControl]=\"statusForm.controls.status\" (blur)=\"statusForm.save($event)\">\n                        <option [ngValue]=\"option.id\" *ngFor=\"let option of taskStatuses$ | async\">{{ option.title }}</option>\n                    </select>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container b-secondary px-2\">\n            <ul class=\"tabs tabs-light\">\n                <li [class.active]=\"activeTab == 'detail'\" (click)=\"activeTab = 'detail'\">Detail</li>\n                <li [class.active]=\"activeTab == 'notes'\" (click)=\"activeTab = 'notes'\">Notes</li>\n                <li [class.active]=\"activeTab == 'files'\" (click)=\"activeTab = 'files'\">Files</li>\n                <li [class.active]=\"activeTab == 'delete'\" (click)=\"activeTab = 'delete'\" *ngIf=\"canDelete\">Delete</li>\n            </ul>\n        </div>\n\n        <div class=\"container px-2 py-2\" *ngIf=\"activeTab == 'detail'\">\n            <div class=\"row mb-1h\">\n                <div class=\"col\">\n                    <p class=\"mb-h\"><strong>Assignees</strong></p>\n                    <div *ngFor=\"let assignee of taskAssignees$ | async\" class=\"d-inline-block text-center mr-h\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar pointer d-block\" (click)=\"editAssignee(assignee)\"></div>\n                        <small>{{ assignee.allocated_hours }}</small>\n                    </div>\n                    <div class=\"d-inline-block text-center mr-h\">\n                        <div class=\"avatar new pointer d-block\" (click)=\"editAssignee({task: task.id})\">\n                            <div class=\"avatar-text\"><i class=\"icon-plus\"></i></div>\n                        </div>\n                        <small>&nbsp;</small>\n                    </div>\n                    <div class=\"relative\">\n                        <div class=\"panel panel-popup mt-1 mt-1\" *ngIf=\"assigneeEditForm && assigneeEditForm.editable\">\n                            <div class=\"input-group\">\n                                <select [formControl]=\"assigneeEditForm.controls.user\" class=\"mr-1 flex-fill\">\n                                    <option [ngValue]=\"null\">Select...</option>\n                                    <ng-container *ngFor=\"let option of users$ | async\">\n                                        <option [ngValue]=\"option.id\">{{ option.full_name }}</option>\n                                    </ng-container>\n                                </select>\n                                <input type=\"number\" [formControl]=\"assigneeEditForm.controls.allocated_hours\">\n                            </div>\n                            <div class=\"d-flex\">\n                                <button class=\"button button-secondary\" (click)=\"assigneeEditForm.save($event)\">Save</button>\n                                <button class=\"button button-clear\" (click)=\"assigneeEditForm.cancel($event)\">Cancel</button>\n                                <button class=\"button button-clear ml-auto\" *ngIf=\"assigneeEditForm.value.id\" (click)=\"assigneeEditForm.delete($event)\">Remove</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col\">\n                    <p class=\"mb-h\"><strong>Tags</strong></p>\n                    <ul class=\"tags\">\n                        <li tag [id]=\"tag.tag\" *ngFor=\"let tag of taskTags$ | async\" class=\"tag pointer mb-h\" (click)=\"editTag(tag)\"></li>\n                        <li class=\"tag outline pointer mb-h\" (click)=\"editTag({object_id: id})\"><i class=\"icon-plus\"></i></li>\n                    </ul>\n                    <div class=\"relative\">\n                        <div class=\"panel panel-popup mt-1\" *ngIf=\"tagEditForm && tagEditForm.editable\">\n                            <select [formControl]=\"tagEditForm.controls.tag\">\n                                <option [ngValue]=\"null\">Select...</option>\n                                <ng-container *ngFor=\"let option of tags$ | async\">\n                                    <option [ngValue]=\"option.id\">{{ option.name }}</option>\n                                </ng-container>\n                            </select>\n                            <div class=\"input-group\">\n                                <input #newTag type=\"text\" placeholder=\"Create a new tag...\">\n                                <button class=\"button input-group-addon\" (click)=\"tagEditForm.addNew(newTag.value)\">Add</button>\n                            </div>\n                            <div class=\"d-flex\">\n                                <button class=\"button button-secondary\" (click)=\"tagEditForm.save($event)\">Save</button>\n                                <button class=\"button button-clear\" (click)=\"tagEditForm.cancel($event)\">Cancel</button>\n                                <button class=\"button button-clear ml-auto\" *ngIf=\"tagEditForm.value.id\" (click)=\"tagEditForm.delete($event)\">Remove</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row mb-1h\">\n                <div class=\"col\">\n                    <p class=\"mb-h\"><strong>Target Date</strong></p>\n                    <div class=\"icon-input\">\n                        <input type=\"text\" class=\"toggleable\"\n                            [matDatepicker]=\"picker\"\n                            [formControl]=\"targetDateForm.controls.target_date\"\n                            (click)=\"picker.open()\">\n                        <span class=\"icon-calendar\"></span>\n                    </div>\n                    <mat-datepicker #picker></mat-datepicker>\n                    <button class=\"button\" *ngIf=\"targetDateForm.dirty\" (click)=\"targetDateForm.save($event)\">Save</button>\n                    <button class=\"button button-clear\" *ngIf=\"targetDateForm.dirty\" (click)=\"targetDateForm.cancel($event)\">Cancel</button>\n                </div>\n                <div class=\"col\">\n                    <p class=\"mb-1\"><strong>Time Spent (hrs)</strong></p>\n                    <p [class.c-red]=\"taskTiming.is_over_allocated_hours\" *ngIf=\"taskTiming$ | async as taskTiming\">{{ taskTiming.time_spent_hours }} of {{ taskTiming.allocated_hours }}</p>        \n                </div>\n            </div>\n            <div class=\"row mb-1h\">\n                <div class=\"col\">\n                    <p class=\"mb-h\"><strong>Description</strong></p>\n                    <textarea autoResize class=\"toggleable\" rows=\"2\"\n                        [formControl]=\"descriptionForm.controls.description\"\n                        (blur)=\"descriptionForm.dirty ? descriptionForm.save($event) : false\"></textarea>\n                </div>\n            </div>\n            <div class=\"row mb-1h\">\n                <div class=\"col-12\">\n                    <p class=\"mb-h\"><strong>Not Chargeable</strong></p>\n                </div>\n                <div class=\"col\">\n                    <div class=\"checkbox\">\n                        <label>\n                            <input type=\"checkbox\" [formControl]=\"notChargeableForm.controls.not_chargeable\">\n                            <span></span>\n                        </label>\n                    </div>\n                </div>\n                <div class=\"col\">\n                    <div class=\"text-right\" *ngIf=\"notChargeableForm.dirty\">\n                        <button class=\"button\" (click)=\"notChargeableForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" (click)=\"notChargeableForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n            <div class=\"row mb-1h\">\n                <div class=\"col-12\">\n                    <p class=\"mb-h\"><strong>Closed</strong></p>\n                </div>\n                <div class=\"col\">\n                    <p>Closing the task means its no longer available to add time.</p>\n                    <div class=\"checkbox\">\n                        <label>\n                            <input type=\"checkbox\" [formControl]=\"closedForm.controls.closed\">\n                            <span></span>\n                        </label>\n                    </div>\n                </div>\n                <div class=\"col\">\n                    <div class=\"text-right\" *ngIf=\"closedForm.dirty\">\n                        <button class=\"button\" (click)=\"closedForm.save($event)\">Save</button>\n                        <button class=\"button button-clear\" (click)=\"closedForm.cancel($event)\">Cancel</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container px-2 py-2\" *ngIf=\"activeTab == 'notes'\">\n            <div class=\"row\">\n                <div class=\"col\">\n                    <div class=\"mb-2\">\n                        <p class=\"mb-h\"><strong>Notes</strong></p>\n                        <textarea autoResize placeholder=\"Write a note...\" rows=\"2\"\n                            [formControl]=\"newNoteForm.controls.note\"></textarea>\n                        <button class=\"button button-secondary\" (click)=\"newNoteForm.save($event)\">Add</button>\n                    </div>\n                    \n                    <ng-container *ngFor=\"let note of taskNotes$ | async\">\n                        <div class=\"mb-2\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                            <div class=\"d-flex align-items-center mb-1\">\n                                <div avatar [id]=\"note.user\" class=\"avatar mr-1\"></div>\n                                <div>{{ note.updated_at | date:'MMM d, y, h:mm a' }}</div>\n                            </div>\n                            <textarea autoResize class=\"toggleable\" rows=\"1\" [formControl]=\"form.controls.note\"></textarea>\n                            <div *ngIf=\"form.dirty\">\n                                <button class=\"button button-secondary\" (click)=\"form.save($event)\">Save</button>\n                                <button class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</button>\n                            </div>\n                        </div>\n                    </ng-container>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container px-2 py-2\" *ngIf=\"activeTab == 'files'\">\n            <div class=\"row mb-1h\">\n                <div class=\"col\">\n                    <p class=\"mb-h\"><strong>Files</strong></p>\n                    <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n                    <table>\n                        <ng-container *ngIf=\"taskFiles$ | async as files\">\n                        <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                            <tr *ngFor=\"let file of files\">\n                                <td><a href=\"{{ file.file }}\" target=\"_blank\">{{ file.file }}</a></td>\n                                <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                            </tr>\n                        </tbody>\n                        <ng-template #emptyFiles><tbody><tr><td colspan=\"2\">No files found.</td></tr></tbody></ng-template>\n                        </ng-container>\n                    </table>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"container px-2 py-2\" *ngIf=\"activeTab == 'delete'\">\n            <div class=\"row mb-1h\">\n                <div class=\"col\">\n                    <p class=\"mb-h\">Delete this task?</p>\n                    <a (click)=\"delete(task)\" class=\"button button-primary\">Delete</a>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2759,22 +2739,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_deletable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/deletable */ "./src/app/services/deletable.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _forms_base_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../forms/base.form */ "./src/app/forms/base.form.ts");
-/* harmony import */ var _state_selectors_user__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../state/selectors/user */ "./src/app/state/selectors/user.ts");
-/* harmony import */ var _utils_cookies__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/cookies */ "./src/app/utils/cookies.ts");
-/* harmony import */ var _state_selectors_tag__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../state/selectors/tag */ "./src/app/state/selectors/tag.ts");
-/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./../state/selectors/task */ "./src/app/state/selectors/task.ts");
-/* harmony import */ var _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../forms/task-assignee.form */ "./src/app/forms/task-assignee.form.ts");
-/* harmony import */ var _forms_task_close_form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../forms/task-close.form */ "./src/app/forms/task-close.form.ts");
-/* harmony import */ var _forms_task_description_form__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../forms/task-description.form */ "./src/app/forms/task-description.form.ts");
-/* harmony import */ var _forms_task_not_chargeable_form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../forms/task-not-chargeable.form */ "./src/app/forms/task-not-chargeable.form.ts");
-/* harmony import */ var _forms_task_note_form__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../forms/task-note.form */ "./src/app/forms/task-note.form.ts");
-/* harmony import */ var _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../forms/task-tag.form */ "./src/app/forms/task-tag.form.ts");
-/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
-/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_deletable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/deletable */ "./src/app/services/deletable.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _forms_base_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../forms/base.form */ "./src/app/forms/base.form.ts");
+/* harmony import */ var _state_selectors_user__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../state/selectors/user */ "./src/app/state/selectors/user.ts");
+/* harmony import */ var _utils_cookies__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/cookies */ "./src/app/utils/cookies.ts");
+/* harmony import */ var _state_selectors_tag__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../state/selectors/tag */ "./src/app/state/selectors/tag.ts");
+/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./../state/selectors/task */ "./src/app/state/selectors/task.ts");
+/* harmony import */ var _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../forms/task-assignee.form */ "./src/app/forms/task-assignee.form.ts");
+/* harmony import */ var _forms_task_close_form__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../forms/task-close.form */ "./src/app/forms/task-close.form.ts");
+/* harmony import */ var _forms_task_description_form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../forms/task-description.form */ "./src/app/forms/task-description.form.ts");
+/* harmony import */ var _forms_task_not_chargeable_form__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../forms/task-not-chargeable.form */ "./src/app/forms/task-not-chargeable.form.ts");
+/* harmony import */ var _forms_task_note_form__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../forms/task-note.form */ "./src/app/forms/task-note.form.ts");
+/* harmony import */ var _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../forms/task-tag.form */ "./src/app/forms/task-tag.form.ts");
+/* harmony import */ var _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../forms/task-target-date.form */ "./src/app/forms/task-target-date.form.ts");
+/* harmony import */ var _forms_task_title_form__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../forms/task-title.form */ "./src/app/forms/task-title.form.ts");
+/* harmony import */ var _forms_task_status_form__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../forms/task-status.form */ "./src/app/forms/task-status.form.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2803,47 +2785,53 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var TaskFormComponent = /** @class */ (function () {
     function TaskFormComponent(store, actionsSubject, deletable) {
         this.store = store;
         this.actionsSubject = actionsSubject;
         this.deletable = deletable;
-        this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
+        this.close = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
+        this.moveStatuses = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
         this.canDelete = false;
         this.dropzoneConfig = {
             url: '/api/task-files/',
             maxFilesize: 50,
-            headers: { 'X-CSRFTOKEN': Object(_utils_cookies__WEBPACK_IMPORTED_MODULE_8__["getCookie"])('csrftoken') }
+            headers: { 'X-CSRFTOKEN': Object(_utils_cookies__WEBPACK_IMPORTED_MODULE_9__["getCookie"])('csrftoken') }
         };
         this.taskNoteForms = {};
-        this.tags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_tag__WEBPACK_IMPORTED_MODULE_9__["getTagCollection"]));
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_user__WEBPACK_IMPORTED_MODULE_7__["getActiveUsers"]));
-        this.closedForm = new _forms_task_close_form__WEBPACK_IMPORTED_MODULE_12__["TaskClosedForm"](this.store, this.actionsSubject, { alwaysEditable: true });
-        this.descriptionForm = new _forms_task_description_form__WEBPACK_IMPORTED_MODULE_13__["TaskDescriptionForm"](this.store, this.actionsSubject);
-        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_18__["TaskTitleForm"](this.store, this.actionsSubject);
-        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_17__["TaskTargetDateForm"](this.store, this.actionsSubject);
-        this.newNoteForm = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_15__["TaskNoteForm"](this.store, this.actionsSubject);
-        this.notChargeableForm = new _forms_task_not_chargeable_form__WEBPACK_IMPORTED_MODULE_14__["TaskNotChargeableForm"](this.store, this.actionsSubject, { alwaysEditable: true });
+        this.taskStatuses$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_3__["getTaskStatusState"]));
+        this.tags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_tag__WEBPACK_IMPORTED_MODULE_10__["getTagCollection"]));
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(_state_selectors_user__WEBPACK_IMPORTED_MODULE_8__["getActiveUsers"]));
+        this.closedForm = new _forms_task_close_form__WEBPACK_IMPORTED_MODULE_13__["TaskClosedForm"](this.store, this.actionsSubject, { alwaysEditable: true });
+        this.descriptionForm = new _forms_task_description_form__WEBPACK_IMPORTED_MODULE_14__["TaskDescriptionForm"](this.store, this.actionsSubject);
+        this.statusForm = new _forms_task_status_form__WEBPACK_IMPORTED_MODULE_20__["TaskStatusForm"](this.store, this.actionsSubject);
+        this.titleForm = new _forms_task_title_form__WEBPACK_IMPORTED_MODULE_19__["TaskTitleForm"](this.store, this.actionsSubject);
+        this.targetDateForm = new _forms_task_target_date_form__WEBPACK_IMPORTED_MODULE_18__["TaskTargetDateForm"](this.store, this.actionsSubject);
+        this.newNoteForm = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_16__["TaskNoteForm"](this.store, this.actionsSubject);
+        this.notChargeableForm = new _forms_task_not_chargeable_form__WEBPACK_IMPORTED_MODULE_15__["TaskNotChargeableForm"](this.store, this.actionsSubject, { alwaysEditable: true });
     }
     TaskFormComponent.prototype.ngOnChanges = function (changes) {
         var _this = this;
         if (lodash__WEBPACK_IMPORTED_MODULE_0__["has"](changes, 'id.currentValue')) {
             this.activeTab = 'detail';
-            this.taskFiles$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_10__["getTaskFilesForTask"])(this.id)));
-            this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_10__["getTaskCollectionById"])(this.id)));
-            this.taskAssignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_10__["getTaskAssigneesForTask"])(this.id)));
-            this.taskNotes$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_10__["getTaskNotesForTask"])(this.id)));
-            this.taskTags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_10__["getTaskTagsForTask"])(this.id)));
-            this.taskTiming$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_10__["getTaskTimingsById"])(this.id)));
-            this.task$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["filter"])(function (d) { return lodash__WEBPACK_IMPORTED_MODULE_0__["isObject"](d); })).subscribe(function (d) {
+            this.taskFiles$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_11__["getTaskFilesForTask"])(this.id)));
+            this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_11__["getTaskCollectionById"])(this.id)));
+            this.taskAssignees$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_11__["getTaskAssigneesForTask"])(this.id)));
+            this.taskNotes$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_11__["getTaskNotesForTask"])(this.id)));
+            this.taskTags$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_11__["getTaskTagsForTask"])(this.id)));
+            this.taskTiming$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_11__["getTaskTimingsById"])(this.id)));
+            this.task$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["filter"])(function (d) { return lodash__WEBPACK_IMPORTED_MODULE_0__["isObject"](d); })).subscribe(function (d) {
                 _this.closedForm.load(d);
                 _this.descriptionForm.load(d);
-                _this.titleForm.load(d);
-                _this.targetDateForm.load(d);
                 _this.newNoteForm.load({ task: d.id });
                 _this.notChargeableForm.load(d);
+                _this.statusForm.load(d);
+                _this.titleForm.load(d);
+                _this.targetDateForm.load(d);
             });
-            this.deletable.check(_services_deletable__WEBPACK_IMPORTED_MODULE_4__["DeletableService"].TASK, this.id).then(function (check) { return _this.canDelete = check; });
+            this.deletable.check(_services_deletable__WEBPACK_IMPORTED_MODULE_5__["DeletableService"].TASK, this.id).then(function (check) { return _this.canDelete = check; });
         }
     };
     TaskFormComponent.prototype.closeEvent = function (event) {
@@ -2857,7 +2845,7 @@ var TaskFormComponent = /** @class */ (function () {
     // note
     TaskFormComponent.prototype.getOrCreateEditNoteForm = function (note) {
         if (!lodash__WEBPACK_IMPORTED_MODULE_0__["has"](this.taskNoteForms, note.id)) {
-            var form = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_15__["TaskNoteForm"](this.store, this.actionsSubject, { cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_6__["FormCleanAfterMethod"].loadSaved });
+            var form = new _forms_task_note_form__WEBPACK_IMPORTED_MODULE_16__["TaskNoteForm"](this.store, this.actionsSubject, { cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_7__["FormCleanAfterMethod"].loadSaved });
             form.load(note);
             this.taskNoteForms[note.id] = form;
             return this.taskNoteForms[note.id];
@@ -2866,7 +2854,7 @@ var TaskFormComponent = /** @class */ (function () {
     };
     // assignee
     TaskFormComponent.prototype.editAssignee = function (assignee) {
-        this.assigneeEditForm = new _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_11__["TaskAssigneeForm"](this.store, this.actionsSubject);
+        this.assigneeEditForm = new _forms_task_assignee_form__WEBPACK_IMPORTED_MODULE_12__["TaskAssigneeForm"](this.store, this.actionsSubject);
         this.assigneeEditForm.editable = true;
         this.assigneeEditForm.load(assignee);
     };
@@ -2883,7 +2871,7 @@ var TaskFormComponent = /** @class */ (function () {
     };
     // tags
     TaskFormComponent.prototype.editTag = function (tag) {
-        this.tagEditForm = new _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_16__["TaskTagForm"](this.store, this.actionsSubject);
+        this.tagEditForm = new _forms_task_tag_form__WEBPACK_IMPORTED_MODULE_17__["TaskTagForm"](this.store, this.actionsSubject);
         this.tagEditForm.editable = true;
         this.tagEditForm.load(tag);
     };
@@ -2892,25 +2880,29 @@ var TaskFormComponent = /** @class */ (function () {
         this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].REMOVE, payload: task });
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"])(),
         __metadata("design:type", Number)
     ], TaskFormComponent.prototype, "id", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"])(),
         __metadata("design:type", Object)
     ], TaskFormComponent.prototype, "close", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"])('modalPanel'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"])
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"])(),
+        __metadata("design:type", Object)
+    ], TaskFormComponent.prototype, "moveStatuses", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"])('modalPanel'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"])
     ], TaskFormComponent.prototype, "modalPanelRef", void 0);
     TaskFormComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
             selector: 'task-form, [task-form]',
             template: __webpack_require__(/*! ./task-form.component.html */ "./src/app/components/task-form.component.html")
         }),
         __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"],
             _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["ActionsSubject"],
-            _services_deletable__WEBPACK_IMPORTED_MODULE_4__["DeletableService"]])
+            _services_deletable__WEBPACK_IMPORTED_MODULE_5__["DeletableService"]])
     ], TaskFormComponent);
     return TaskFormComponent;
 }());
@@ -4510,6 +4502,144 @@ var TaskNoteForm = /** @class */ (function (_super) {
     }
     return TaskNoteForm;
 }(_base_form__WEBPACK_IMPORTED_MODULE_2__["BaseForm"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/forms/task-status.form.ts":
+/*!*******************************************!*\
+  !*** ./src/app/forms/task-status.form.ts ***!
+  \*******************************************/
+/*! exports provided: TaskStatusForm */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskStatusForm", function() { return TaskStatusForm; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../state/selectors/task */ "./src/app/state/selectors/task.ts");
+/* harmony import */ var _utils_task__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/task */ "./src/app/utils/task.ts");
+/* harmony import */ var _base_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./base.form */ "./src/app/forms/base.form.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+var options = {
+    alwaysEditable: true,
+    cleanAfterMethod: _base_form__WEBPACK_IMPORTED_MODULE_7__["FormCleanAfterMethod"].loadSaved
+};
+var TaskStatusForm = /** @class */ (function (_super) {
+    __extends(TaskStatusForm, _super);
+    function TaskStatusForm(store, actionsSubject, formOptions) {
+        var _this = _super.call(this, store, actionsSubject, {
+            id: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null),
+            status: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+            order: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+        }, null, null, lodash__WEBPACK_IMPORTED_MODULE_0__["assign"]({}, options, formOptions)) || this;
+        _this.store = store;
+        _this.actionsSubject = actionsSubject;
+        _this.updateAction = _state_actions__WEBPACK_IMPORTED_MODULE_4__["TaskActions"].PATCH;
+        _this.updateSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_4__["TaskActions"].PATCH_SUCCESS;
+        return _this;
+    }
+    TaskStatusForm.prototype.prepareValueForDispatch = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_5__["getTaskStateForJob"])(this.initialData.job)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["take"])(1)).toPromise().then(function (tasks) {
+                        tasks = lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](tasks, ['status', _this.value.status]);
+                        tasks = [_this.value].concat(tasks);
+                        var order = Object(_utils_task__WEBPACK_IMPORTED_MODULE_6__["calculateOrder"])(0, tasks, _this.value);
+                        _this.controls.order.setValue(order);
+                    })];
+            });
+        });
+    };
+    TaskStatusForm.prototype.save = function (event) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        // save the form data
+                        event.stopPropagation();
+                        if (!this.valid) {
+                            // set the controls to touched so we can display the errors
+                            lodash__WEBPACK_IMPORTED_MODULE_0__["forEach"](this.controls, function (c, k) {
+                                _this.controls[k].markAsTouched();
+                                _this.controls[k].updateValueAndValidity();
+                            });
+                            // just return out
+                            return [2 /*return*/];
+                        }
+                        return [4 /*yield*/, this.prepareValueForDispatch()];
+                    case 1:
+                        _a.sent();
+                        this.store.dispatch({ type: this.updateAction, payload: this.getValuePayload() });
+                        // wait for the result
+                        this.waitForResult(event);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return TaskStatusForm;
+}(_base_form__WEBPACK_IMPORTED_MODULE_7__["BaseForm"]));
 
 
 
@@ -12798,6 +12928,47 @@ var integerReg = '^[0-9]*$';
 var phoneReg = '[0-9 ]*';
 var time24Reg = '([01]?[0-9]|2[0-3]):[0-5][0-9]';
 var urlReg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
+
+
+/***/ }),
+
+/***/ "./src/app/utils/task.ts":
+/*!*******************************!*\
+  !*** ./src/app/utils/task.ts ***!
+  \*******************************/
+/*! exports provided: calculateOrder */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calculateOrder", function() { return calculateOrder; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+
+var calculateOrder = function (dropIndex, tasks, task) {
+    var initialOrder = 16384;
+    var lastIndex = lodash__WEBPACK_IMPORTED_MODULE_0__["findLastIndex"](tasks);
+    var order = 0;
+    if (tasks.length === 1) {
+        // this is the only task so order is default
+        order = initialOrder;
+    }
+    else if (dropIndex === 0) {
+        // task moved to start so half the next order value
+        order = tasks[dropIndex + 1].order / 2;
+    }
+    else if (dropIndex === lastIndex) {
+        // task was moved to the end so add the default to the second from last
+        order = tasks[dropIndex - 1].order + initialOrder;
+    }
+    else {
+        // task is in the middle so find the diff between the adjacent tasks
+        var prev = tasks[dropIndex - 1].order;
+        var next = tasks[dropIndex + 1].order;
+        order = ((next - prev) / 2) + prev;
+    }
+    return order;
+};
 
 
 /***/ }),
