@@ -1,4 +1,4 @@
-<ng-container *ngIf="job$ | async as job">
+<div [class.flex-fill-container]="selectedTab.title == 'Tasks'" *ngIf="job$ | async as job">
     <div class="page-header">
         <div class="container-fluid d-flex align-items-center py-2">
             <span class="color-indicator" [style.backgroundColor]="job.colour"></span>
@@ -168,7 +168,7 @@
         </div>
 
     </div>
-</ng-container>
+</div>    
 
 <ng-template #emptyFiles><tbody><tr><td colspan="2">No files found.</td></tr></tbody></ng-template>
 <ng-template #emptyRelationships><tbody><tr><td colspan="3">No relationships found.</td></tr></tbody></ng-template>

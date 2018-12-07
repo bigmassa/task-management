@@ -30,8 +30,7 @@ import { JobNoteForm } from '../forms/job-note.form';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
-    templateUrl: './job.component.html',
-    host: {'class': 'flex-fill-container'}
+    templateUrl: './job.component.html'
 })
 export class JobComponent implements OnDestroy, OnInit {
 
