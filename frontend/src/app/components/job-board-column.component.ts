@@ -6,15 +6,14 @@ import {
     Component,
     Input,
     OnDestroy,
-    OnInit,
-    HostListener
+    OnInit
     } from '@angular/core';
 import { ITask } from '../state/reducers/task';
 import { ITaskStatus } from '../state/reducers/taskstatus';
 import { Subscription } from 'rxjs';
 import { TaskCreateForm } from '../forms/task-create.form';
-import { DrakeStoreService } from '@swimlane/ngx-dnd';
 import { calculateOrder } from '../utils/task';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
     selector: 'job-board-column, [job-board-column]',
@@ -34,8 +33,7 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
 
     constructor(
         private store: Store<AppState>,
-        private actionsSubject: ActionsSubject,
-        private drakeStore: DrakeStoreService
+        private actionsSubject: ActionsSubject
     ) { }
 
     ngOnInit() {
@@ -43,20 +41,31 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
         this.subscriptions.push(this.newForm.formSaved.subscribe(() => this.newFormOpen = false));
     }
 
-    dropTask(event: any) {
-        let order = calculateOrder(event.dropIndex, this.tasks, event.value);
+    dropTask(event: CdkDragDrop<ITask[]>) {
+        // move the item in the ui
+        if (event.previousContainer === event.container) {
+            moveItemInArray(
+                event.container.data,
+                event.previousIndex,
+                event.currentIndex
+            );
+          } else {
+            transferArrayItem(
+                event.previousContainer.data,
+                event.container.data,
+                event.previousIndex,
+                event.currentIndex
+            );
+        }
+        // calculate the correct order
+        let order = calculateOrder(event.currentIndex, event.container.data, event.item.data);
         // dispatch an action to patch the task's new order and status
         const payload = {
-            id: event.value.id,
+            id: event.item.data.id,
             status: this.status.id,
             order: order
         }
         this.store.dispatch({type: actions.TaskActions.PATCH, payload});
-    }
-
-    @HostListener('document:keydown.escape', ['$event']) 
-    cancelDrag(event: KeyboardEvent) {
-        (this.drakeStore as any).drake.cancel(true);
     }
 
     newTask() {

@@ -7,15 +7,15 @@
     <button class="button" (click)="newForm.save($event)">Save</button>
 </div>
 
-<div autoScroll class="board-card-wrapper" 
-    ngxDroppable="status-column"
-    (drop)="dropTask($event)"
-    [model]="tasks"
+<div class="board-card-wrapper"
+    cdkDropList
+    [cdkDropListData]="tasks"
+    (cdkDropListDropped)="dropTask($event)"
     *ngIf="tasks">
     <div task-card 
         [id]="task.id"
-        ngxDraggable
-        [model]="task"
+        cdkDrag
+        [cdkDragData]="task"
         (click)="selectedTaskId=task.id"
         *ngFor="let task of tasks">
     </div>

@@ -18,7 +18,7 @@
     </div>
 
     <div class="container-fluid ov-hidden full-height" *ngIf="selectedTab.title == 'Tasks'">
-        <div class="board-column-wrapper" autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40">
+        <div class="board-column-wrapper" cdkDropListGroup>
             <div class="board-column"
                 job-board-column
                 [jobId]="jobId"

@@ -1,6 +1,7 @@
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { NgxMaskModule } from 'ngx-mask';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { NgxDnDModule } from '@swimlane/ngx-dnd';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
@@ -101,6 +101,7 @@ import { reducers } from './state/state';
         BrowserAnimationsModule,
         BrowserModule,
         EffectsModule.forRoot(effects),
+        DragDropModule,
         DropzoneModule,
         FormsModule,
         HttpClientModule,
@@ -110,7 +111,6 @@ import { reducers } from './state/state';
         }),
         MatDatepickerModule,
         MatNativeDateModule,
-        NgxDnDModule,
         NgxMaskModule.forRoot({}),
         ReactiveFormsModule,
         RouterModule,

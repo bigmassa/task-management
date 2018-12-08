@@ -1990,6 +1990,16 @@ a.avatar:hover .avatar-close {
   line-height: 1.8rem;
 }
 
+.cdk-drag-placeholder {
+  opacity: .5;
+}
+
+.cdk-drop-list-dragging .cdk-drag {
+  transition: -webkit-transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
 /* stylelint-disable declaration-no-important, selector-type-no-unknown  */
 dropzone > .dropzone.dz-wrapper .dz-message {
   background-color: #f0f0f1 !important;

@@ -379,16 +379,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ngx-dropzone-wrapper */ "./node_modules/ngx-dropzone-wrapper/dist/ngx-dropzone-wrapper.es5.js");
 /* harmony import */ var ngx_mask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-mask */ "./node_modules/ngx-mask/fesm5/ngx-mask.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/drag-drop */ "./node_modules/@angular/cdk/esm5/drag-drop.es5.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _app_routing__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./app.routing */ "./src/app/app.routing.ts");
 /* harmony import */ var _components_avatar_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/avatar.component */ "./src/app/components/avatar.component.ts");
@@ -495,7 +495,7 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"],
                 _directives_auto_focus_directive__WEBPACK_IMPORTED_MODULE_39__["AutofocusDirective"],
@@ -538,27 +538,27 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 _app_routing__WEBPACK_IMPORTED_MODULE_13__["AppRoutingModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["BrowserModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_9__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_52__["effects"]),
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__["BrowserAnimationsModule"],
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__["BrowserModule"],
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_10__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_52__["effects"]),
+                _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__["DragDropModule"],
                 ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_0__["DropzoneModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientXsrfModule"].withOptions({
+                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientXsrfModule"].withOptions({
                     cookieName: 'csrftoken',
                     headerName: 'X-CSRFTOKEN'
                 }),
-                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDatepickerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatNativeDateModule"],
-                _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_11__["NgxDnDModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDatepickerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatNativeDateModule"],
                 ngx_mask__WEBPACK_IMPORTED_MODULE_1__["NgxMaskModule"].forRoot({}),
-                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"],
-                _ngrx_store__WEBPACK_IMPORTED_MODULE_10__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_53__["reducers"])
+                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"],
+                _ngrx_store__WEBPACK_IMPORTED_MODULE_11__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_53__["reducers"])
             ],
             providers: [
-                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HTTP_INTERCEPTORS"], useClass: _services_interceptors__WEBPACK_IMPORTED_MODULE_51__["LoadingInterceptor"], multi: true },
-                { provide: _angular_material__WEBPACK_IMPORTED_MODULE_5__["MAT_DATE_LOCALE"], useValue: 'en-GB' }
+                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HTTP_INTERCEPTORS"], useClass: _services_interceptors__WEBPACK_IMPORTED_MODULE_51__["LoadingInterceptor"], multi: true },
+                { provide: _angular_material__WEBPACK_IMPORTED_MODULE_6__["MAT_DATE_LOCALE"], useValue: 'en-GB' }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_12__["AppComponent"]]
         })
@@ -1608,7 +1608,7 @@ var ClientComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"button button-shadylady button-outline border-style-dotted mt-h mb-1\" (click)=\"newTask()\">\n    <i class=\"icon-plus\"></i> {{ status.title }}\n</div>\n\n<div class=\"board-card\" *ngIf=\"newFormOpen\">\n    <textarea autoFocus autoResize [formControl]=\"newForm.controls.title\" (keydown.enter)=\"newForm.save($event); false\"></textarea>\n    <button class=\"button\" (click)=\"newForm.save($event)\">Save</button>\n</div>\n\n<div autoScroll class=\"board-card-wrapper\" \n    ngxDroppable=\"status-column\"\n    (drop)=\"dropTask($event)\"\n    [model]=\"tasks\"\n    *ngIf=\"tasks\">\n    <div task-card \n        [id]=\"task.id\"\n        ngxDraggable\n        [model]=\"task\"\n        (click)=\"selectedTaskId=task.id\"\n        *ngFor=\"let task of tasks\">\n    </div>\n</div>\n\n<task-form\n    [id]=\"selectedTaskId\"\n    (close)=\"selectedTaskId = null\"\n    *ngIf=\"selectedTaskId\">\n</task-form>"
+module.exports = "<div class=\"button button-shadylady button-outline border-style-dotted mt-h mb-1\" (click)=\"newTask()\">\n    <i class=\"icon-plus\"></i> {{ status.title }}\n</div>\n\n<div class=\"board-card\" *ngIf=\"newFormOpen\">\n    <textarea autoFocus autoResize [formControl]=\"newForm.controls.title\" (keydown.enter)=\"newForm.save($event); false\"></textarea>\n    <button class=\"button\" (click)=\"newForm.save($event)\">Save</button>\n</div>\n\n<div class=\"board-card-wrapper\"\n    cdkDropList\n    [cdkDropListData]=\"tasks\"\n    (cdkDropListDropped)=\"dropTask($event)\"\n    *ngIf=\"tasks\">\n    <div task-card \n        [id]=\"task.id\"\n        cdkDrag\n        [cdkDragData]=\"task\"\n        (click)=\"selectedTaskId=task.id\"\n        *ngFor=\"let task of tasks\">\n    </div>\n</div>\n\n<task-form\n    [id]=\"selectedTaskId\"\n    (close)=\"selectedTaskId = null\"\n    *ngIf=\"selectedTaskId\">\n</task-form>\n"
 
 /***/ }),
 
@@ -1628,8 +1628,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _forms_task_create_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../forms/task-create.form */ "./src/app/forms/task-create.form.ts");
-/* harmony import */ var _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @swimlane/ngx-dnd */ "./node_modules/@swimlane/ngx-dnd/fesm5/swimlane-ngx-dnd.js");
-/* harmony import */ var _utils_task__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/task */ "./src/app/utils/task.ts");
+/* harmony import */ var _utils_task__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/task */ "./src/app/utils/task.ts");
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/drag-drop */ "./node_modules/@angular/cdk/esm5/drag-drop.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1647,10 +1647,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var JobBoardColumnComponent = /** @class */ (function () {
-    function JobBoardColumnComponent(store, actionsSubject, drakeStore) {
+    function JobBoardColumnComponent(store, actionsSubject) {
         this.store = store;
         this.actionsSubject = actionsSubject;
-        this.drakeStore = drakeStore;
         this.newFormOpen = false;
         this.selectedTaskId = null;
         this.subscriptions = [];
@@ -1661,17 +1660,22 @@ var JobBoardColumnComponent = /** @class */ (function () {
         this.subscriptions.push(this.newForm.formSaved.subscribe(function () { return _this.newFormOpen = false; }));
     };
     JobBoardColumnComponent.prototype.dropTask = function (event) {
-        var order = Object(_utils_task__WEBPACK_IMPORTED_MODULE_6__["calculateOrder"])(event.dropIndex, this.tasks, event.value);
+        // move the item in the ui
+        if (event.previousContainer === event.container) {
+            Object(_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_6__["moveItemInArray"])(event.container.data, event.previousIndex, event.currentIndex);
+        }
+        else {
+            Object(_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_6__["transferArrayItem"])(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
+        }
+        // calculate the correct order
+        var order = Object(_utils_task__WEBPACK_IMPORTED_MODULE_5__["calculateOrder"])(event.currentIndex, event.container.data, event.item.data);
         // dispatch an action to patch the task's new order and status
         var payload = {
-            id: event.value.id,
+            id: event.item.data.id,
             status: this.status.id,
             order: order
         };
         this.store.dispatch({ type: _state_actions__WEBPACK_IMPORTED_MODULE_1__["TaskActions"].PATCH, payload: payload });
-    };
-    JobBoardColumnComponent.prototype.cancelDrag = function (event) {
-        this.drakeStore.drake.cancel(true);
     };
     JobBoardColumnComponent.prototype.newTask = function () {
         if (this.newFormOpen) {
@@ -1701,20 +1705,13 @@ var JobBoardColumnComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"])(),
         __metadata("design:type", Array)
     ], JobBoardColumnComponent.prototype, "tasks", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["HostListener"])('document:keydown.escape', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [KeyboardEvent]),
-        __metadata("design:returntype", void 0)
-    ], JobBoardColumnComponent.prototype, "cancelDrag", null);
     JobBoardColumnComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
             selector: 'job-board-column, [job-board-column]',
             template: __webpack_require__(/*! ./job-board-column.component.html */ "./src/app/components/job-board-column.component.html")
         }),
         __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"],
-            _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["ActionsSubject"],
-            _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_5__["DrakeStoreService"]])
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["ActionsSubject"]])
     ], JobBoardColumnComponent);
     return JobBoardColumnComponent;
 }());
@@ -1919,7 +1916,7 @@ var JobDetailFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"form\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <ng-container>\n                <span class=\"color-indicator\" [style.backgroundColor]=\"job?.colour\"></span>\n                <div class=\"h2\">\n                    <span>{{ params.job_id }} : </span>\n                    <a class=\"underline-dotted\" [routerLink]=\"['/clients', params.client_id]\">{{ client | get:'name' }}</a> /\n                    <a class=\"underline-dotted\" [routerLink]=\"['/clients', params.client_id, 'jobs', params.job_id]\">{{ job | get:'title' }}</a>\n                </div>\n                <div class=\"page-header-actions\">\n                    <a class=\"button button-white\" (click)=\"form.save($event)\">Save</a>\n                    <a [routerLink]=\"['/clients', params.client_id, 'jobs', params.job_id]\" class=\"button button-white button-clear\">Cancel</a>\n                </div>\n            </ng-container>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li class=\"active\">Recurring Cost Detail</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n        <label>Type</label>\n        <select [formControl]=\"form.controls.type\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of recurringCostTypes$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.type\">Please choose a type</p>\n\n        <label>Last Invoiced Date</label>\n        <div class=\"icon-input\">\n            <input type=\"text\"\n                [matDatepicker]=\"picker\"\n                [formControl]=\"form.controls.last_invoiced_date\"\n                (click)=\"picker.open()\">\n            <span class=\"icon-calendar\"></span>\n        </div>\n        <mat-datepicker #picker></mat-datepicker>\n        <p class=\"c-red\" *formError=\"form.controls.last_invoiced_date\">Please choose a last invoiced date</p>\n\n        <label>Billing Interval</label>\n        <input type=\"number\" [formControl]=\"form.controls.billing_interval\" min=\"0\" step=\"1\">\n        <p class=\"c-red\" *formError=\"form.controls.billing_interval\">Please choose a valid billing interval</p>\n\n        <label>Billing Frequency</label>\n        <select [formControl]=\"form.controls.billing_frequency\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of billingFrequencies$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.billing_frequency\">Please choose a billing frequency</p>\n\n        <label>Billing Frequency</label>\n        <select [formControl]=\"form.controls.payment_option\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of paymentOptions$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.payment_option\">Please choose a billing frequency</p>\n    </div>\n</ng-container>"
+module.exports = "<ng-container *ngIf=\"form\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <ng-container>\n                <span class=\"color-indicator\" [style.backgroundColor]=\"job?.colour\"></span>\n                <div class=\"h2\">\n                    <span>{{ params.job_id }} : </span>\n                    <a class=\"underline-dotted\" [routerLink]=\"['/clients', params.client_id]\">{{ client | get:'name' }}</a> /\n                    <a class=\"underline-dotted\" [routerLink]=\"['/clients', params.client_id, 'jobs', params.job_id]\">{{ job | get:'title' }}</a>\n                </div>\n                <div class=\"page-header-actions\">\n                    <a class=\"button button-white\" (click)=\"form.save($event)\">Save</a>\n                    <a [routerLink]=\"['/clients', params.client_id, 'jobs', params.job_id]\" class=\"button button-white button-clear\">Cancel</a>\n                </div>\n            </ng-container>\n        </div>\n        <div class=\"container-fluid\">\n            <ul class=\"tabs\">\n                <li class=\"active\">Recurring Cost Detail</li>\n            </ul>\n        </div>\n    </div>\n    <div class=\"container-fluid inner-content\">\n        <label>Type</label>\n        <select [formControl]=\"form.controls.type\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of recurringCostTypes$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.type\">Please choose a type</p>\n\n        <label>Last Invoiced Date</label>\n        <div class=\"icon-input\">\n            <input type=\"text\"\n                [matDatepicker]=\"picker\"\n                [formControl]=\"form.controls.last_invoiced_date\"\n                (click)=\"picker.open()\">\n            <span class=\"icon-calendar\"></span>\n        </div>\n        <mat-datepicker #picker></mat-datepicker>\n        <p class=\"c-red\" *formError=\"form.controls.last_invoiced_date\">Please choose a last invoiced date</p>\n\n        <label>Billing Interval</label>\n        <input type=\"number\" [formControl]=\"form.controls.billing_interval\" min=\"0\" step=\"1\">\n        <p class=\"c-red\" *formError=\"form.controls.billing_interval\">Please choose a valid billing interval</p>\n\n        <label>Billing Frequency</label>\n        <select [formControl]=\"form.controls.billing_frequency\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of billingFrequencies$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.billing_frequency\">Please choose a billing frequency</p>\n\n        <label>Payment Option</label>\n        <select [formControl]=\"form.controls.payment_option\">\n            <option [ngValue]=\"null\">Please select...</option>\n            <option [ngValue]=\"option.id\" *ngFor=\"let option of paymentOptions$ | async\">{{ option.title }}</option>\n        </select>\n        <p class=\"c-red\" *formError=\"form.controls.payment_option\">Please choose a billing frequency</p>\n    </div>\n</ng-container>\n"
 
 /***/ }),
 
@@ -2124,7 +2121,7 @@ var JobRelationshipFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [class.flex-fill-container]=\"selectedTab.title == 'Tasks'\" *ngIf=\"job$ | async as job\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <span>{{ job.id }} : </span>\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'delete']\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul [tabs]=\"(tabs$ | async).job\" [type]=\"'job'\" (activeTab)=\"selectedTab = $event\" class=\"tabs\"></ul>\n        </div>\n    </div>\n\n    <div class=\"container-fluid ov-hidden full-height\" *ngIf=\"selectedTab.title == 'Tasks'\">\n        <div class=\"board-column-wrapper\" autoScroll [scrollMargin]=\"100\" [scrollMaxSpeed]=\"40\">\n            <div class=\"board-column\"\n                job-board-column\n                [jobId]=\"jobId\"\n                [status]=\"status\"\n                [tasks]=\"tasks$ | async | tasksByStatus:status.id\"\n                *ngFor=\"let status of statuses$ | async\">\n            </div>\n        </div>\n\n        <div task-form [id]=\"selectedTaskId\" (close)=\"selectedTaskId = null\" *ngIf=\"selectedTaskId != null\"></div>\n    \n    </div>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab.title != 'Tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab.title == 'Detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hrs)</p>\n                <p [class.c-red]=\"timings.is_over_allocated_hours\" *ngIf=\"timings$ | async as timings\">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>\n                <hr>\n                <p class=\"strong\">Estimated (hrs)</p>\n                <p>{{ job | get:'estimated_hours' }}</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Created at</p>\n                <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Files'\">\n            <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                        <th class=\"keep-min-width\">Size</th>\n                        <th class=\"keep-min-width\"></th>\n                        <th class=\"keep-min-width\"></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td>{{ file.name }}</td>\n                        <td class=\"keep-min-width\">{{ file.size_mb }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"downloadFile(file)\"><i class=\"icon-download\"></i></a></td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Notes'\">\n            <div class=\"row mb-1h\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\" [formControl]=\"newNoteForm.controls.note\"></textarea>\n                    <button class=\"button button-primary pull-right\" (click)=\"newNoteForm.save($event)\">Add</button>\n                </div>\n            </div>\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1h\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\" *ngIf=\"!form.editable\">{{ note.note }}</div>\n                        <textarea autoResize [formControl]=\"form.controls.note\" *ngIf=\"form.editable\"></textarea>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <ng-container *ngIf=\"!form.editable\">\n                            <a class=\"button button-clear\" (click)=\"form.editable = true\">Edit</a> |\n                            <a class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</a>\n                        </ng-container>\n                        <ng-container *ngIf=\"form.editable\">\n                            <a class=\"button button-secondary\" (click)=\"form.save($event)\">Save</a>\n                            <a class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</a>\n                        </ng-container>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Relationships'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', 'add']\">Add Relationship</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', relationship.id]\" *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRelationship($event, relationship)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Recurring Costs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', 'add']\">Add Recurring Cost</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', recurringCost.id]\" *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRecurringCost($event, recurringCost)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</div>    \n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"4\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"3\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"6\">No recurring costs found.</td></tr></tbody></ng-template>"
+module.exports = "<div [class.flex-fill-container]=\"selectedTab.title == 'Tasks'\" *ngIf=\"job$ | async as job\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <span>{{ job.id }} : </span>\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'delete']\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul [tabs]=\"(tabs$ | async).job\" [type]=\"'job'\" (activeTab)=\"selectedTab = $event\" class=\"tabs\"></ul>\n        </div>\n    </div>\n\n    <div class=\"container-fluid ov-hidden full-height\" *ngIf=\"selectedTab.title == 'Tasks'\">\n        <div class=\"board-column-wrapper\" cdkDropListGroup>\n            <div class=\"board-column\"\n                job-board-column\n                [jobId]=\"jobId\"\n                [status]=\"status\"\n                [tasks]=\"tasks$ | async | tasksByStatus:status.id\"\n                *ngFor=\"let status of statuses$ | async\">\n            </div>\n        </div>\n\n        <div task-form [id]=\"selectedTaskId\" (close)=\"selectedTaskId = null\" *ngIf=\"selectedTaskId != null\"></div>\n    \n    </div>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab.title != 'Tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab.title == 'Detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hrs)</p>\n                <p [class.c-red]=\"timings.is_over_allocated_hours\" *ngIf=\"timings$ | async as timings\">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>\n                <hr>\n                <p class=\"strong\">Estimated (hrs)</p>\n                <p>{{ job | get:'estimated_hours' }}</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Created at</p>\n                <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Files'\">\n            <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                        <th class=\"keep-min-width\">Size</th>\n                        <th class=\"keep-min-width\"></th>\n                        <th class=\"keep-min-width\"></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td>{{ file.name }}</td>\n                        <td class=\"keep-min-width\">{{ file.size_mb }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"downloadFile(file)\"><i class=\"icon-download\"></i></a></td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Notes'\">\n            <div class=\"row mb-1h\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\" [formControl]=\"newNoteForm.controls.note\"></textarea>\n                    <button class=\"button button-primary pull-right\" (click)=\"newNoteForm.save($event)\">Add</button>\n                </div>\n            </div>\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1h\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\" *ngIf=\"!form.editable\">{{ note.note }}</div>\n                        <textarea autoResize [formControl]=\"form.controls.note\" *ngIf=\"form.editable\"></textarea>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <ng-container *ngIf=\"!form.editable\">\n                            <a class=\"button button-clear\" (click)=\"form.editable = true\">Edit</a> |\n                            <a class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</a>\n                        </ng-container>\n                        <ng-container *ngIf=\"form.editable\">\n                            <a class=\"button button-secondary\" (click)=\"form.save($event)\">Save</a>\n                            <a class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</a>\n                        </ng-container>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Relationships'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', 'add']\">Add Relationship</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', relationship.id]\" *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRelationship($event, relationship)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Recurring Costs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', 'add']\">Add Recurring Cost</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', recurringCost.id]\" *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRecurringCost($event, recurringCost)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</div>    \n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"4\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"3\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"6\">No recurring costs found.</td></tr></tbody></ng-template>"
 
 /***/ }),
 
@@ -3624,7 +3621,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -3830,7 +3827,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -3898,7 +3895,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -3964,7 +3961,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4035,7 +4032,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4097,7 +4094,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4168,7 +4165,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4230,7 +4227,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4292,7 +4289,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4350,7 +4347,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4409,7 +4406,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4467,7 +4464,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4525,7 +4522,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4590,7 +4587,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4728,7 +4725,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4797,7 +4794,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4860,7 +4857,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -4923,7 +4920,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -8257,7 +8254,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -8340,7 +8337,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -8428,7 +8425,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -8521,7 +8518,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -8818,7 +8815,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -8906,7 +8903,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -8994,7 +8991,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -9082,7 +9079,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -9175,7 +9172,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -9268,7 +9265,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -9351,7 +9348,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -9444,7 +9441,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -9530,7 +9527,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -9598,7 +9595,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -9661,7 +9658,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -9744,7 +9741,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -9827,7 +9824,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -9910,7 +9907,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10053,7 +10050,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10141,7 +10138,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10234,7 +10231,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10327,7 +10324,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10415,7 +10412,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10503,7 +10500,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10571,7 +10568,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10664,7 +10661,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10757,7 +10754,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10853,7 +10850,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10921,7 +10918,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -13173,7 +13170,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/stuart/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/stuartgeorge/ENV/task_management/frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })
