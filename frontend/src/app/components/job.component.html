@@ -27,6 +27,9 @@
                 *ngFor="let status of statuses$ | async">
             </div>
         </div>
+
+        <div task-form [id]="selectedTaskId" (close)="selectedTaskId = null" *ngIf="selectedTaskId != null"></div>
+    
     </div>
     
     <div class="container-fluid inner-content" *ngIf="selectedTab.title != 'Tasks'">
@@ -173,5 +176,3 @@
 <ng-template #emptyFiles><tbody><tr><td colspan="2">No files found.</td></tr></tbody></ng-template>
 <ng-template #emptyRelationships><tbody><tr><td colspan="3">No relationships found.</td></tr></tbody></ng-template>
 <ng-template #emptyRecurringCosts><tbody><tr><td colspan="6">No recurring costs found.</td></tr></tbody></ng-template>
-
-<task-form [id]="selectedTaskId" (close)="selectedTaskId = null" *ngIf="selectedTaskId"></task-form>
