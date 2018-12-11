@@ -23,8 +23,8 @@
         <div class="container b-secondary px-2">
             <ul class="tabs tabs-light">
                 <li [class.active]="activeTab == 'detail'" (click)="activeTab = 'detail'">Detail</li>
-                <li [class.active]="activeTab == 'notes'" (click)="activeTab = 'notes'">Notes</li>
-                <li [class.active]="activeTab == 'files'" (click)="activeTab = 'files'">Files</li>
+                <li [class.active]="activeTab == 'notes'" (click)="activeTab = 'notes'">Notes ({{ (taskNotes$ | async).length }})</li>
+                <li [class.active]="activeTab == 'files'" (click)="activeTab = 'files'">Files ({{ (taskFiles$ | async).length }})</li>
                 <li [class.active]="activeTab == 'delete'" (click)="activeTab = 'delete'" *ngIf="canDelete">Delete</li>
             </ul>
         </div>
