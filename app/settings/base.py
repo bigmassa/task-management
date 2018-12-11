@@ -166,7 +166,7 @@ MEDIA_URL = "/media/"
 
 # File Storage
 
-DEFAULT_FILE_STORAGE = 'app.storages.S3PublicStorage'
+DEFAULT_FILE_STORAGE = 'app.storages.S3PrivateStorage'
 FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880  # 5MB - Cloudflare limit on existing plan is 100MB
 AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
@@ -176,8 +176,8 @@ AWS_S3_CUSTOM_DOMAIN = None  # Add for cloudfront etc
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
-AWS_QUERYSTRING_AUTH = False
-AWS_QUERYSTRING_EXPIRE = 3600
+AWS_QUERYSTRING_AUTH = True
+AWS_QUERYSTRING_EXPIRE = 30
 AWS_S3_FILE_OVERWRITE = False
 AWS_IS_GZIPPED = True
 AWS_AUTO_CREATE_BUCKET = True
