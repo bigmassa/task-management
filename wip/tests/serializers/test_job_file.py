@@ -22,7 +22,9 @@ class TestSerializer(AppTestCase):
             [
                 'id',
                 'job',
+                'name',
                 'file',
+                'size_mb',
                 'uploaded_by',
                 'uploaded_on'
             ]
@@ -42,7 +44,9 @@ class TestSerializer(AppTestCase):
             {
                 'id': instance.pk,
                 'job': instance.job.pk,
+                'name': instance.name,
                 'file': instance.file.url,
+                'size_mb': instance.size_mb,
                 'uploaded_by': instance.uploaded_by.pk,
                 'uploaded_on': localtime(instance.uploaded_on).isoformat()[:-6] + 'Z'
             }

@@ -10,7 +10,9 @@ class TaskFileSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'task',
+            'name',
             'file',
+            'size_mb',
             'uploaded_by',
             'uploaded_on'
         ]

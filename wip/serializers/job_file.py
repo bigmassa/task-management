@@ -10,7 +10,9 @@ class JobFileSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'job',
+            'name',
             'file',
+            'size_mb',
             'uploaded_by',
             'uploaded_on'
         ]

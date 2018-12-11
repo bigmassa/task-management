@@ -1,3 +1,5 @@
+from os.path import basename
+
 from django.conf import settings
 from django.db import models
 from django.db.models.signals import post_delete
@@ -34,6 +36,10 @@ class JobFile(models.Model):
 
     def __str__(self):
         return self.file.name
+
+    @property
+    def name(self):
+        return basename(self.file.name)
 
     @property
     def size_mb(self):
