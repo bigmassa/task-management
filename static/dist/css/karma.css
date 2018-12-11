@@ -1982,6 +1982,12 @@ a.avatar:hover .avatar-close {
   line-height: 1.8rem;
 }
 
+/* stylelint-disable declaration-no-important, selector-type-no-unknown  */
+dropzone > .dropzone.dz-wrapper .dz-message {
+  background-color: #f0f0f1 !important;
+  border: 1px dashed #e6e6e6 !important;
+}
+
 /* stylelint-disable declaration-no-important, selector-no-qualifying-type  */
 input[type="color"] {
   width: 10rem;

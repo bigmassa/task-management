@@ -1,0 +1,9 @@
+// dropzone
+// -----------------------------------------
+
+/* stylelint-disable declaration-no-important, selector-type-no-unknown  */
+
+dropzone > .dropzone.dz-wrapper .dz-message {
+  background-color: color("whitelilac") !important;
+  border: 1px dashed $border-color !important;
+}
