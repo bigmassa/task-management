@@ -39,12 +39,16 @@ class JobFile(models.Model):
 
     @property
     def name(self):
-        return basename(self.file.name)
+        if self.file:
+            return basename(self.file.name)
+        return ''
 
     @property
     def size_mb(self):
-        size = round(self.file.size / 1024 / 1024, 3)
-        return f'{size} MB'
+        if self.file:
+            size = round(self.file.size / 1024 / 1024, 3)
+            return f'{size} MB'
+        return '0.000 MB'
 
 
 @receiver(post_delete, sender=JobFile)

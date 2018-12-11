@@ -12,6 +12,7 @@
 .icon-calendar:before { content: '\e80a'; } /* '' */
 .icon-ok-circled:before { content: '\e80b'; } /* '' */
 .icon-eye:before { content: '\e80c'; } /* '' */
+.icon-download:before { content: '\e80d'; } /* '' */
 .icon-bell:before { content: '\f0f3'; } /* '' */
 .icon-circle:before { content: '\f111'; } /* '' */
 .icon-trash:before { content: '\f1f8'; } /* '' */

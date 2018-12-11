@@ -189,15 +189,17 @@
                 <div class="col">
                     <p class="mb-h"><strong>Files</strong></p>
                     <dropzone [config]="dropzoneConfig" [message]="'Click or drag files here to upload'" (sending)="onFileSending($event)" (success)="onFileSuccess($event)"></dropzone>
-                    <table>
+                    <table class="table-hover">
                         <ng-container *ngIf="taskFiles$ | async as files">
                         <tbody *ngIf="files.length > 0; else emptyFiles">
                             <tr *ngFor="let file of files">
-                                <td><a href="{{ file.file }}" target="_blank">{{ file.file }}</a></td>
+                                <td>{{ file.name }}</td>
+                                <td class="keep-min-width">{{ file.size_mb }}</td>
+                                <td class="keep-min-width"><a class="pointer" (click)="downloadFile(file)"><i class="icon-download"></i></a></td>
                                 <td class="keep-min-width"><a class="pointer" (click)="deleteFile(file)"><i class="icon-trash"></i></a></td>
                             </tr>
                         </tbody>
-                        <ng-template #emptyFiles><tbody><tr><td colspan="2">No files found.</td></tr></tbody></ng-template>
+                        <ng-template #emptyFiles><tbody><tr><td colspan="4">No files found.</td></tr></tbody></ng-template>
                         </ng-container>
                     </table>
                 </div>

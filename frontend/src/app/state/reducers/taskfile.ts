@@ -3,7 +3,9 @@ import { reduceState } from '../generics';
 export interface ITaskFile {
     id?: number;
     task: number;
+    name: string;
     file: string;
+    size_mb: string;
     uploaded_by?: number;
     uploaded_on?: string;
 }

@@ -68,13 +68,17 @@
                 <thead>
                     <tr>
                         <th>File</th>
-                        <th></th>
+                        <th class="keep-min-width">Size</th>
+                        <th class="keep-min-width"></th>
+                        <th class="keep-min-width"></th>
                     </tr>
                 </thead>
                 <ng-container *ngIf="files$ | async as files">
                 <tbody *ngIf="files.length > 0; else emptyFiles">
                     <tr *ngFor="let file of files">
-                        <td><a href="{{ file.file }}" target="_blank">{{ file.file }}</a></td>
+                        <td>{{ file.name }}</td>
+                        <td class="keep-min-width">{{ file.size_mb }}</td>
+                        <td class="keep-min-width"><a class="pointer" (click)="downloadFile(file)"><i class="icon-download"></i></a></td>
                         <td class="keep-min-width"><a class="pointer" (click)="deleteFile(file)"><i class="icon-trash"></i></a></td>
                     </tr>
                 </tbody>
@@ -173,6 +177,6 @@
     </div>
 </div>    
 
-<ng-template #emptyFiles><tbody><tr><td colspan="2">No files found.</td></tr></tbody></ng-template>
+<ng-template #emptyFiles><tbody><tr><td colspan="4">No files found.</td></tr></tbody></ng-template>
 <ng-template #emptyRelationships><tbody><tr><td colspan="3">No relationships found.</td></tr></tbody></ng-template>
 <ng-template #emptyRecurringCosts><tbody><tr><td colspan="6">No recurring costs found.</td></tr></tbody></ng-template>

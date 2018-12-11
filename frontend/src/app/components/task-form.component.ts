@@ -14,7 +14,7 @@ import {
     } from '@angular/core';
 import { DeletableService } from '../services/deletable';
 import { DropzoneConfigInterface } from '../../../node_modules/ngx-dropzone-wrapper';
-import { filter } from 'rxjs/operators';
+import { filter, take } from 'rxjs/operators';
 import { FormCleanAfterMethod } from '../forms/base.form';
 import { getActiveUsers } from '../state/selectors/user';
 import { getCookie } from '../utils/cookies';
@@ -46,6 +46,7 @@ import { TaskTargetDateForm } from '../forms/task-target-date.form';
 import { TaskTitleForm } from '../forms/task-title.form';
 import { TaskStatusForm } from '../forms/task-status.form';
 import { ITaskStatus } from '../state/reducers/taskstatus';
+import { IActionWithPayload } from '../state/models';
 
 @Component({
     selector: 'task-form, [task-form]',
@@ -178,6 +179,14 @@ export class TaskFormComponent implements OnChanges {
 
     deleteFile(payload: ITaskFile) {
         this.store.dispatch({type: actions.TaskFileActions.REMOVE, payload});
+    }
+
+    downloadFile(payload: ITaskFile) {
+        this.store.dispatch({type: actions.TaskFileActions.LOAD_ONE, payload: payload.id});
+        this.actionsSubject.pipe(
+            filter((action: IActionWithPayload) => action.type === actions.TaskFileActions.LOAD_ONE_SUCCESS),
+            take(1)
+        ).subscribe(action => window.open(action.payload.file, "_blank"));
     }
 
     // tags

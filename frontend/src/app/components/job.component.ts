@@ -28,6 +28,8 @@ import { ITask } from '../state/reducers/task';
 import { ITaskStatus } from '../state/reducers/taskstatus';
 import { JobNoteForm } from '../forms/job-note.form';
 import { Observable, Subscription } from 'rxjs';
+import { filter, take } from 'rxjs/operators';
+import { IActionWithPayload } from '../state/models';
 
 @Component({
     templateUrl: './job.component.html'
@@ -122,6 +124,14 @@ export class JobComponent implements OnDestroy, OnInit {
 
     deleteFile(payload: IJobFile) {
         this.store.dispatch({type: actions.JobFileActions.REMOVE, payload});
+    }
+
+    downloadFile(payload: IJobFile) {
+        this.store.dispatch({type: actions.JobFileActions.LOAD_ONE, payload: payload.id});
+        this.actionsSubject.pipe(
+            filter((action: IActionWithPayload) => action.type === actions.JobFileActions.LOAD_ONE_SUCCESS),
+            take(1)
+        ).subscribe(action => window.open(action.payload.file, "_blank"));
     }
 
     // notes
