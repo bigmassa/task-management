@@ -20,7 +20,7 @@ DEBUG_TOOLBAR_CONFIG = {
 }
 
 INSTALLED_APPS += [
-    'migrator',
+    # 'migrator',
     'debug_toolbar',
 ]
 
@@ -40,18 +40,18 @@ DATABASES = {
         'USER': environ.get('RDS_USERNAME'),
         'PASSWORD': environ.get('RDS_PASSWORD'),
     },
-    'legacy': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'wip',
-        'USER': 'accent_sql_main',
-        'PASSWORD': '4-|7wzx66H61aB^2-C',
-        'HOST': 'accent-vps-sql.cd75fdxnizaa.eu-west-1.rds.amazonaws.com',
-        'PORT': '1433',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-            'MARS_Connection': 'True',
-        },
-    }
+    # 'legacy': {
+    #     'ENGINE': 'sql_server.pyodbc',
+    #     'NAME': 'wip',
+    #     'USER': 'accent_sql_main',
+    #     'PASSWORD': '4-|7wzx66H61aB^2-C',
+    #     'HOST': 'accent-vps-sql.cd75fdxnizaa.eu-west-1.rds.amazonaws.com',
+    #     'PORT': '1433',
+    #     'OPTIONS': {
+    #         'driver': 'ODBC Driver 17 for SQL Server',
+    #         'MARS_Connection': 'True',
+    #     },
+    # }
 }
 
 

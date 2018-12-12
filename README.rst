@@ -41,7 +41,7 @@ Create yourself a superuser::
 
 Run python migrations manually::
 
-    docker-compose exec app bash
+    docker-compose exec app sh
     python manage.py migrate
 
 

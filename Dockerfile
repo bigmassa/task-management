@@ -1,4 +1,5 @@
-FROM        accent/python-mssql:3.6
+# Dockerfile
+FROM        python:3.6-alpine
 
 # Build args
 ARG         REQUIREMENTS_FILE=/build/requirements/base.txt
@@ -6,19 +7,29 @@ ARG         REQUIREMENTS_FILE=/build/requirements/base.txt
 # Copy in your requirements folder
 ADD         requirements /build/requirements/
 
-# Install dependencies
+# Install runtime, build & python dependencies
 RUN         set -ex \
-            && apt-get update \
-            && apt-get install -y \
-                gcc \
-                libjpeg62 \
-                libjpeg62-turbo-dev \
-                libpq-dev \
+            && apk update \
+            && apk add --no-cache \
+                # postgres
+                libpq \
                 postgresql-client \
+                # pillow
+                jpeg-dev \
+                zlib-dev \
+                # misc
+                make \
                 supervisor \
-            --no-install-recommends \
-            && apt-get clean \
-            && pip install --no-cache-dir -r $REQUIREMENTS_FILE
+            && apk add --no-cache --virtual .build-deps \
+                gcc \
+                git \
+                libc-dev \
+                linux-headers \
+                musl-dev \
+                postgresql-dev \
+                python3-dev \
+            && pip install --no-cache-dir -r $REQUIREMENTS_FILE \
+            && apk del .build-deps
 
 # Copy your application code to the container
 RUN         mkdir /code/
