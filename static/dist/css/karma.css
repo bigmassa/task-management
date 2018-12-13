@@ -2839,6 +2839,13 @@ td textarea {
   cursor: move;
 }
 
+.external-event.fc-dragging {
+  max-width: 12rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 body > .fc-event.fc-dragging {
   background: transparent !important;
   border: none !important;

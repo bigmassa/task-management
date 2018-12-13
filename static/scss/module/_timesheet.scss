@@ -83,6 +83,9 @@
 .external-event {
   cursor: move;
 }
+.external-event.fc-dragging {
+  @include truncate(12rem);
+}
 
 body > .fc-event.fc-dragging {
   background: transparent !important;
