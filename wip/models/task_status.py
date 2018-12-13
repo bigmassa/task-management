@@ -6,6 +6,14 @@ class TaskStatus(models.Model):
         max_length=50,
         unique=True
     )
+    notify_job_relationships = models.BooleanField(
+        default=False,
+        help_text='Send an email to all job relationships when a task changes to this status'
+    )
+    notify_task_assignees = models.BooleanField(
+        default=False,
+        help_text='Send an email to all task assignees when a task changes to this status'
+    )
     order = models.PositiveIntegerField(
         default=0
     )

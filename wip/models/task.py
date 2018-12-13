@@ -6,6 +6,8 @@ from django.utils import timezone
 
 from taggit.managers import TaggableManager
 
+from app.tasks import notify_status_change
+
 
 class TaskQueryset(models.QuerySet):
     """ Custom queryset """
@@ -69,6 +71,13 @@ class Task(models.Model):
     class Meta:
         ordering = ['order']
 
+    __original_status = None
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # set initial data so we can check it after saving
+        self.__original_status = getattr(self, 'status', None)
+
     def __str__(self):
         return self.title
 
@@ -78,8 +87,16 @@ class Task(models.Model):
             self.closed_date = timezone.now()
         elif not self.closed:
             self.closed_date = None
-        # call save
-        return super().save(**kwargs)
+
+        # save
+        super().save(**kwargs)
+
+        # check for the status changing to notify.
+        if self.status != self.__original_status:
+            notify_status_change(self)
+
+        # reset the original data incase a second save is called
+        self.__original_status = self.status
 
     @property
     def is_overdue(self):

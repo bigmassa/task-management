@@ -10,10 +10,12 @@ django-storages
 django-taggit
 django-taggit-serializer
 djangorestframework
+huey[backends]
 markdown
 pillow
 psycopg2-binary
 python-dateutil
+redis
 requests
 sentry-sdk
 uwsgi

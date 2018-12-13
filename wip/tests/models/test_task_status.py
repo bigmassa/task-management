@@ -14,6 +14,16 @@ class ModelTests(AppTestCase):
         self.assertEqual(field.max_length, 50)
         self.assertTrue(field.unique)
 
+    def test_notify_job_relationships(self):
+        field = TaskStatus._meta.get_field('notify_job_relationships')
+        self.assertModelField(field, models.BooleanField)
+        self.assertFalse(field.default)
+
+    def test_notify_task_assignees(self):
+        field = TaskStatus._meta.get_field('notify_task_assignees')
+        self.assertModelField(field, models.BooleanField)
+        self.assertFalse(field.default)
+
     def test_order(self):
         field = TaskStatus._meta.get_field('order')
         self.assertModelField(field, models.PositiveIntegerField)
