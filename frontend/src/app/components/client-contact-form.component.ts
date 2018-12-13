@@ -3,15 +3,16 @@ import * as _ from 'lodash';
 import { ActionsSubject, Store, select } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription, combineLatest, of } from 'rxjs';
+import { Subscription, combineLatest, of, Observable } from 'rxjs';
 import { getClientCollectionById, getClientContactCollectionById } from '../state/selectors/client';
 import { mergeMap, take } from 'rxjs/operators';
 
-import { AppState } from '../state/state';
+import { AppState, getPositionState } from '../state/state';
 import { ClientContactForm } from './../forms/client-contact.form';
 import { IClient } from './../state/reducers/client';
 import { IClientContact } from './../state/reducers/clientcontact';
 import { IFormActionResult } from '../forms/base.form';
+import { IPosition } from '../state/reducers/position';
 
 @Component({
     templateUrl: './client-contact-form.component.html'
@@ -22,6 +23,7 @@ export class ClientContactFormComponent implements OnDestroy, OnInit {
     contact: IClientContact;
     form: ClientContactForm;
     params: any;
+    positions$: Observable<IPosition[]>;
     private subscriptions: Subscription[] = [];
 
     constructor(
@@ -29,7 +31,9 @@ export class ClientContactFormComponent implements OnDestroy, OnInit {
         private route: ActivatedRoute,
         private store: Store<AppState>,
         private actionsSubject: ActionsSubject
-    ) { }
+    ) {
+        this.positions$ = store.pipe(select(getPositionState));
+    }
 
     ngOnInit() {
         const paramsObsv = this.route.params.pipe(

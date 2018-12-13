@@ -5,7 +5,7 @@
                 <span class="color-indicator" [style.backgroundColor]="client.colour"></span>
                 <div class="h2">
                     <a [routerLink]="['/clients', client.id]" class="underline-dotted">{{ client | get:'name' }}</a>
-                    <ng-container *ngIf="contact">/ {{ contact | get:'first_name' }} {{ contact | get:'last_name' }}</ng-container>
+                    <ng-container *ngIf="contact"> / {{ contact | get:'first_name' }} {{ contact | get:'last_name' }}</ng-container>
                 </div>
                 <div class="page-header-actions">
                     <a class="button button-white" (click)="form.save($event)">Save</a>
@@ -39,6 +39,12 @@
         <label>Email Address</label>
         <input type="text" [formControl]="form.controls.email_address" />
         <p class="c-red" *formError="form.controls.email_address">Please enter a valid email address</p>
+        
+        <label>Position</label>
+        <select [formControl]="form.controls.position">
+            <option [ngValue]="null">Please select...</option>
+            <option [ngValue]="option.id" *ngFor="let option of positions$ | async">{{ option.title }}</option>
+        </select>
 
         <label>Address</label>
         <textarea autoResize [formControl]="form.controls.address"></textarea>
