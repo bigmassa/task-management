@@ -9,5 +9,5 @@ export class Globals {
   wsScheme: string = window.location.protocol === 'https:' ? 'wss' : 'ws';
   host: string = window.location.host;
   dataSocketUrl: string = `${this.wsScheme}://${this.host}/data/stream/`;
-  dataSocketRetryDelay: 10000;
+  dataSocketRetryDelay: 1000;
 }
