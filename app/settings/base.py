@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'dal',
     'dal_select2',
     'django_filters',
+    'huey.contrib.djhuey',
     'rest_framework',
     'storages',
     'taggit',
