@@ -33,6 +33,7 @@ export class ClientContactFormComponent implements OnDestroy, OnInit {
         private actionsSubject: ActionsSubject
     ) {
         this.positions$ = store.pipe(select(getPositionState));
+        this.form = new ClientContactForm(this.store, this.actionsSubject, {alwaysEditable: true});
     }
 
     ngOnInit() {
@@ -49,7 +50,6 @@ export class ClientContactFormComponent implements OnDestroy, OnInit {
                 this.params = params
                 this.client = client;
                 this.contact = contact;
-                this.form = new ClientContactForm(this.store, this.actionsSubject, {alwaysEditable: true});
                 if (contact) {
                     this.form.load(this.contact);
                 } else if (client) {

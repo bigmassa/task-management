@@ -35,7 +35,9 @@ export class JobDetailFormComponent implements OnDestroy, OnInit {
         private route: ActivatedRoute,
         private store: Store<AppState>,
         private actionsSubject: ActionsSubject
-    ) { }
+    ) {
+        this.form = new JobDetailForm(this.store, this.actionsSubject, {alwaysEditable: true});
+    }
 
     ngOnInit() {
         this.jobStatuses$ = this.store.pipe(select(getJobStatusState));
@@ -54,7 +56,6 @@ export class JobDetailFormComponent implements OnDestroy, OnInit {
                 this.params = params
                 this.client = client;
                 this.job = job;
-                this.form = new JobDetailForm(this.store, this.actionsSubject, {alwaysEditable: true});
                 if (job) {
                     this.form.load(this.job);
                 } else if (client) {

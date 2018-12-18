@@ -47,7 +47,9 @@ export class JobRecurringCostFormComponent implements OnDestroy, OnInit {
         private route: ActivatedRoute,
         private store: Store<AppState>,
         private actionsSubject: ActionsSubject
-    ) { }
+    ) {
+        this.form = new JobRecurringCostForm(this.store, this.actionsSubject, {alwaysEditable: true});
+    }
 
     ngOnInit() {
         this.billingFrequencies$ = this.store.pipe(select(getBillingFrequencyState));
@@ -69,7 +71,6 @@ export class JobRecurringCostFormComponent implements OnDestroy, OnInit {
                 this.client = client;
                 this.job = job;
                 this.recurringCost = recurringCost;
-                this.form = new JobRecurringCostForm(this.store, this.actionsSubject, {alwaysEditable: true});
                 if (recurringCost) {
                     this.form.load(recurringCost);
                 } else if (job) {

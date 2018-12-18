@@ -41,7 +41,9 @@ export class JobRelationshipFormComponent implements OnDestroy, OnInit {
         private route: ActivatedRoute,
         private store: Store<AppState>,
         private actionsSubject: ActionsSubject
-    ) { }
+    ) {
+        this.form = new JobRelationshipForm(this.store, this.actionsSubject, {alwaysEditable: true});
+    }
 
     ngOnInit() {
         this.relationships$ = this.store.pipe(select(getRelationshipState));
@@ -62,7 +64,6 @@ export class JobRelationshipFormComponent implements OnDestroy, OnInit {
                 this.client = client;
                 this.job = job;
                 this.relationship = relationship;
-                this.form = new JobRelationshipForm(this.store, this.actionsSubject, {alwaysEditable: true});
                 if (relationship) {
                     this.form.load(relationship);
                 } else if (job) {

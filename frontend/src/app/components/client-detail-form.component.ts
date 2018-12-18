@@ -26,7 +26,9 @@ export class ClientDetailFormComponent implements OnDestroy, OnInit {
         private route: ActivatedRoute,
         private store: Store<AppState>,
         private actionsSubject: ActionsSubject
-    ) { }
+    ) {
+        this.form = new ClientDetailForm(this.store, this.actionsSubject, {alwaysEditable: true});
+    }
 
     ngOnInit() {
         const existingClient = this.route.params.pipe(
@@ -36,7 +38,6 @@ export class ClientDetailFormComponent implements OnDestroy, OnInit {
             client => {
                 if (!client) { return; }
                 this.client = client;
-                this.form = new ClientDetailForm(this.store, this.actionsSubject, {alwaysEditable: true});
                 this.form.load(this.client);
                 this.form.formSaved.pipe(take(1)).subscribe(
                     (result: IFormActionResult) => {
@@ -50,7 +51,6 @@ export class ClientDetailFormComponent implements OnDestroy, OnInit {
         const newClient = this.route.params.subscribe(
             params => {
                 if (params.id) { return; }
-                this.form = new ClientDetailForm(this.store, this.actionsSubject, {alwaysEditable: true});
                 this.form.formSaved.pipe(take(1)).subscribe(
                     (result: IFormActionResult) => {
                         this.router.navigate(['/clients', result.payload.id])

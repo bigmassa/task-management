@@ -1209,6 +1209,7 @@ var ClientContactFormComponent = /** @class */ (function () {
         this.actionsSubject = actionsSubject;
         this.subscriptions = [];
         this.positions$ = store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_7__["getPositionState"]));
+        this.form = new _forms_client_contact_form__WEBPACK_IMPORTED_MODULE_8__["ClientContactForm"](this.store, this.actionsSubject, { alwaysEditable: true });
     }
     ClientContactFormComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1217,7 +1218,6 @@ var ClientContactFormComponent = /** @class */ (function () {
             _this.params = params;
             _this.client = client;
             _this.contact = contact;
-            _this.form = new _forms_client_contact_form__WEBPACK_IMPORTED_MODULE_8__["ClientContactForm"](_this.store, _this.actionsSubject, { alwaysEditable: true });
             if (contact) {
                 _this.form.load(_this.contact);
             }
@@ -1390,6 +1390,7 @@ var ClientDetailFormComponent = /** @class */ (function () {
         this.store = store;
         this.actionsSubject = actionsSubject;
         this.subscriptions = [];
+        this.form = new _forms_client_detail_form__WEBPACK_IMPORTED_MODULE_5__["ClientDetailForm"](this.store, this.actionsSubject, { alwaysEditable: true });
     }
     ClientDetailFormComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1398,7 +1399,6 @@ var ClientDetailFormComponent = /** @class */ (function () {
                 return;
             }
             _this.client = client;
-            _this.form = new _forms_client_detail_form__WEBPACK_IMPORTED_MODULE_5__["ClientDetailForm"](_this.store, _this.actionsSubject, { alwaysEditable: true });
             _this.form.load(_this.client);
             _this.form.formSaved.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1)).subscribe(function (result) {
                 _this.router.navigate(['/clients', result.payload.id]);
@@ -1409,7 +1409,6 @@ var ClientDetailFormComponent = /** @class */ (function () {
             if (params.id) {
                 return;
             }
-            _this.form = new _forms_client_detail_form__WEBPACK_IMPORTED_MODULE_5__["ClientDetailForm"](_this.store, _this.actionsSubject, { alwaysEditable: true });
             _this.form.formSaved.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1)).subscribe(function (result) {
                 _this.router.navigate(['/clients', result.payload.id]);
             });
@@ -1871,6 +1870,7 @@ var JobDetailFormComponent = /** @class */ (function () {
         this.store = store;
         this.actionsSubject = actionsSubject;
         this.subscriptions = [];
+        this.form = new _forms_job_detail_form__WEBPACK_IMPORTED_MODULE_7__["JobDetailForm"](this.store, this.actionsSubject, { alwaysEditable: true });
     }
     JobDetailFormComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1881,7 +1881,6 @@ var JobDetailFormComponent = /** @class */ (function () {
             _this.params = params;
             _this.client = client;
             _this.job = job;
-            _this.form = new _forms_job_detail_form__WEBPACK_IMPORTED_MODULE_7__["JobDetailForm"](_this.store, _this.actionsSubject, { alwaysEditable: true });
             if (job) {
                 _this.form.load(_this.job);
             }
@@ -1971,6 +1970,7 @@ var JobRecurringCostFormComponent = /** @class */ (function () {
         this.store = store;
         this.actionsSubject = actionsSubject;
         this.subscriptions = [];
+        this.form = new _forms_job_recurring_cost_form__WEBPACK_IMPORTED_MODULE_8__["JobRecurringCostForm"](this.store, this.actionsSubject, { alwaysEditable: true });
     }
     JobRecurringCostFormComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -1983,7 +1983,6 @@ var JobRecurringCostFormComponent = /** @class */ (function () {
             _this.client = client;
             _this.job = job;
             _this.recurringCost = recurringCost;
-            _this.form = new _forms_job_recurring_cost_form__WEBPACK_IMPORTED_MODULE_8__["JobRecurringCostForm"](_this.store, _this.actionsSubject, { alwaysEditable: true });
             if (recurringCost) {
                 _this.form.load(recurringCost);
             }
@@ -2075,6 +2074,7 @@ var JobRelationshipFormComponent = /** @class */ (function () {
         this.store = store;
         this.actionsSubject = actionsSubject;
         this.subscriptions = [];
+        this.form = new _forms_job_relationship_form__WEBPACK_IMPORTED_MODULE_8__["JobRelationshipForm"](this.store, this.actionsSubject, { alwaysEditable: true });
     }
     JobRelationshipFormComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2086,7 +2086,6 @@ var JobRelationshipFormComponent = /** @class */ (function () {
             _this.client = client;
             _this.job = job;
             _this.relationship = relationship;
-            _this.form = new _forms_job_relationship_form__WEBPACK_IMPORTED_MODULE_8__["JobRelationshipForm"](_this.store, _this.actionsSubject, { alwaysEditable: true });
             if (relationship) {
                 _this.form.load(relationship);
             }
@@ -2187,6 +2186,7 @@ var JobComponent = /** @class */ (function () {
         this.jobNoteForms = {};
         this.selectedTaskId = null;
         this.subscriptions = [];
+        this.newNoteForm = new _forms_job_note_form__WEBPACK_IMPORTED_MODULE_10__["JobNoteForm"](this.store, this.actionsSubject, { cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_6__["FormCleanAfterMethod"].resetToInitial });
     }
     JobComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2203,7 +2203,6 @@ var JobComponent = /** @class */ (function () {
             _this.tasks$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_9__["getTaskStateForJob"])(_this.jobId)));
             _this.timings$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["select"])(Object(_state_selectors_job__WEBPACK_IMPORTED_MODULE_8__["getJobTimingsById"])(_this.jobId)));
             // forms
-            _this.newNoteForm = new _forms_job_note_form__WEBPACK_IMPORTED_MODULE_10__["JobNoteForm"](_this.store, _this.actionsSubject, { cleanAfterMethod: _forms_base_form__WEBPACK_IMPORTED_MODULE_6__["FormCleanAfterMethod"].resetToInitial });
             _this.newNoteForm.load({ job: _this.jobId });
         });
         this.subscriptions.push(paramsSub);
@@ -3692,6 +3691,10 @@ var BaseForm = /** @class */ (function (_super) {
         configurable: true
     });
     BaseForm.prototype.load = function (data) {
+        // if the form is dirty dont load the changes in
+        if (!this.pristine) {
+            return;
+        }
         // set the initial data incase we need to reset it
         this.initialData = data;
         // patch the form as no all fields will be defined

@@ -85,6 +85,11 @@ export class BaseForm extends FormGroup implements OnDestroy {
     }
 
     load(data: any) {
+        // if the form is dirty dont load the changes in
+        if (!this.pristine) {
+            return;
+        }
+
         // set the initial data incase we need to reset it
         this.initialData = data;
         // patch the form as no all fields will be defined

@@ -62,7 +62,13 @@ export class JobComponent implements OnDestroy, OnInit {
         private route: ActivatedRoute,
         private store: Store<AppState>,
         private actionsSubject: ActionsSubject
-    ) { }
+    ) {
+        this.newNoteForm = new JobNoteForm(
+            this.store,
+            this.actionsSubject,
+            {cleanAfterMethod: FormCleanAfterMethod.resetToInitial}
+        );
+    }
 
     ngOnInit() {
         this.tabs$ = this.store.pipe(select(getTabState));
@@ -80,11 +86,6 @@ export class JobComponent implements OnDestroy, OnInit {
                 this.tasks$ = this.store.pipe(select(getTaskStateForJob(this.jobId)));
                 this.timings$ = this.store.pipe(select(getJobTimingsById(this.jobId)));
                 // forms
-                this.newNoteForm = new JobNoteForm(
-                    this.store,
-                    this.actionsSubject,
-                    {cleanAfterMethod: FormCleanAfterMethod.resetToInitial}
-                );
                 this.newNoteForm.load({job: this.jobId});
             }
         );
