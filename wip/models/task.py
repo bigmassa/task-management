@@ -76,7 +76,7 @@ class Task(models.Model):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # set initial data so we can check it after saving
-        self.__original_status = getattr(self, 'status', None)
+        self.__original_status_id = self.status_id
 
     def __str__(self):
         return self.title
@@ -92,11 +92,11 @@ class Task(models.Model):
         super().save(**kwargs)
 
         # check for the status changing to notify.
-        if self.status != self.__original_status:
+        if self.status_id != self.__original_status_id:
             notify_status_change(self)
 
         # reset the original data incase a second save is called
-        self.__original_status = self.status
+        self.__original_status_id = self.status_id
 
     @property
     def is_overdue(self):
