@@ -8,29 +8,6 @@ from wip.models import Client
 
 class ModelTests(AppTestCase):
 
-    # manager
-
-    def test_search(self):
-        c1 = Client.objects.create(name='Foo', email_address='foo@mail.com')
-        c2 = Client.objects.create(name='Some Client', website='http://some.com')
-
-        search = Client.objects.search(query_args=[], empty_query_args_returns_none=False)
-        self.assertEqual(search.count(), 2)
-
-        search = Client.objects.search(query_args=[], empty_query_args_returns_none=True)
-        self.assertEqual(search.count(), 0)
-
-        search = Client.objects.search(query_args=['Foo'])
-        self.assertEqual(search.count(), 1)
-        self.assertEqual(search[0], c1)
-
-        search = Client.objects.search(query_args=['.com'])
-        self.assertEqual(search.count(), 2)
-
-        search = Client.objects.search(query_args=['Client', '.com'])
-        self.assertEqual(search.count(), 1)
-        self.assertEqual(search[0], c2)
-
     # fields
 
     def test_name(self):
