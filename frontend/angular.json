@@ -24,13 +24,12 @@
             "styles": [
               "src/styles.css",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/@swimlane/dragula/dist/dragula.css",
               "./node_modules/@swimlane/ngx-dnd/release/index.css",
-              "./node_modules/dragula/dist/dragula.min.css",
               "./node_modules/fullcalendar/dist/fullcalendar.min.css"
             ],
             "scripts": [
               "./node_modules/moment/min/moment.min.js",
-              "./node_modules/dragula/dist/dragula.min.js",
               "./node_modules/fullcalendar/dist/fullcalendar.min.js"
             ]
           },
