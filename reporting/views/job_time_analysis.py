@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db import models
+from django.db.models import F, Q, Sum
 from django.views.generic import TemplateView
 
 from authentication.models import User
@@ -21,15 +21,17 @@ class JobTimeAnalysis(LoginRequiredMixin, TemplateView):
         form = self.get_filter_form()
 
         if form.is_valid():
+            date_from = form.cleaned_data['date_from']
+            date_to = form.cleaned_data['date_to']
+            job = form.cleaned_data['job']
             return (
                 User.objects
                 .annotate(
-                    time_spent=models.Sum(
-                        models.F('time_entries__ended_at') - models.F('time_entries__started_at'),
+                    time_spent=Sum(
+                        F('time_entries__ended_at') - F('time_entries__started_at'),
                         filter=(
-                            models.Q(time_entries__started_at__date__gte=form.cleaned_data['date_from']) &
-                            models.Q(time_entries__ended_at__date__lte=form.cleaned_data['date_to']) &
-                            models.Q(time_entries__task__job=form.cleaned_data['job'])
+                            Q(time_entries__started_at__date__range=(date_from, date_to)) &
+                            Q(time_entries__task__job=job)
                         )
                     )
                 )
@@ -43,24 +45,26 @@ class JobTimeAnalysis(LoginRequiredMixin, TemplateView):
         form = self.get_filter_form()
 
         if form.is_valid():
+            date_from = form.cleaned_data['date_from']
+            date_to = form.cleaned_data['date_to']
+            job = form.cleaned_data['job']
             return (
                 Task.objects
                 .annotate(
-                    time_spent_in_period=models.Sum(
-                        models.F('time_entries__ended_at') - models.F('time_entries__started_at'),
+                    time_spent_in_period=Sum(
+                        F('time_entries__ended_at') - F('time_entries__started_at'),
                         filter=(
-                            models.Q(time_entries__started_at__date__gte=form.cleaned_data['date_from']) &
-                            models.Q(time_entries__ended_at__date__lte=form.cleaned_data['date_to'])
+                            Q(time_entries__started_at__date__range=(date_from, date_to))
                         )
                     ),
-                    time_spent_to_date=models.Sum(
-                        models.F('time_entries__ended_at') - models.F('time_entries__started_at'),
+                    time_spent_to_date=Sum(
+                        F('time_entries__ended_at') - F('time_entries__started_at'),
                         filter=(
-                            models.Q(time_entries__ended_at__date__lte=form.cleaned_data['date_to'])
+                            Q(time_entries__ended_at__date__lte=date_to)
                         )
                     )
                 )
-                .filter(time_spent_in_period__isnull=False, job=form.cleaned_data['job'])
+                .filter(time_spent_in_period__isnull=False, job=job)
             )
         return Task.objects.none()
 
