@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load i18n reporting_tags static wip_tags %}
+{% block page_title %}Reporting - Timesheet Analysis{% endblock %}
+{% block body_class %}{% endblock %}
+{% block content %}
+{% include 'reporting/partials/header.html' %}
+<div class="page-header py-2">
+    <div class="container-fluid d-flex align-items-center">
+        <div class="h2">{% trans 'Timesheet Analysis' %}</div>
+        <div class="page-header-actions"></div>
+    </div>
+</div>
+<div class="container-fluid inner-content">
+    <div class="panel">
+        <form method="get" novalidate>
+            <div class="row">
+            {% for field in form %}
+                <div class="col-3">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+            {% endfor %}
+            </div>
+            <hr/>
+            <div class="row pt-1-5">
+                <div class="col text-right">
+                    <button class="button button-primary" type="submit">{% trans 'Refresh' %}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="panel">
+        <h3>{% trans 'Time by Staff' %}</h3>
+        <table class="table-headed table-hover">
+            <thead>
+                <tr>
+                    <th>{% trans 'User' %}</th>
+                    <th class="keep-min-width">{% trans 'Total (hrs)' %}</th>
+                    <th class="keep-min-width">{% trans 'Chargeable (hrs)' %}</th>
+                    <th class="keep-min-width">{% trans 'Chargeable (%)' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in by_staff %}
+                    <tr class="pointer filter-user" data-id="{{ user.id }}">
+                        <td>{{ user.get_full_name }}</td>
+                        <td class="text-right">{{ user.total_time|duration_decimal|default:'-' }}</td>
+                        <td class="text-right">{{ user.chargeable_time|duration_decimal|default:'-' }}</td>
+                        <td class="text-right">{{ user.chargeable_time|divide:user.total_time|multiply:100|floatformat:0 }}%</td>
+                    </tr>
+                {% empty %}
+                    <tr><td colspan="4">{% trans 'No records found' %}</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="panel">
+        <h3>{% trans 'Time by Client' %}</h3>
+        <table class="table-headed table-hover">
+            <thead>
+                <tr>
+                    <th>{% trans 'Client > Job > Task' %}</th>
+                    <th class="keep-min-width">{% trans 'Total (hrs)' %}</th>
+                    <th class="keep-min-width">{% trans 'Chargeable (hrs)' %}</th>
+                    <th class="keep-min-width">{% trans 'Chargeable (%)' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in by_client %}
+                <tr class="pointer" data-id="client_{{ client.id }}">
+                    <td class="pl-1"><i class="toggle icon-right-dir"></i>{{ client }}</td>
+                    <td class="text-right">{{ client.total_time|duration_decimal|default:'-' }}</td>
+                    <td class="text-right">{{ client.chargeable_time|duration_decimal|default:'-' }}</td>
+                    <td class="text-right">{{ client.chargeable_time|divide:client.total_time|multiply:100|floatformat:0 }}%</td>
+                </tr>
+                {% for job in client.jobs.all %}
+                <tr class="pointer" data-id="job_{{ job.id }}" data-parent="client_{{ client.id }}" style="display:none;">
+                    <td class="pl-2"><i class="toggle icon-right-dir"></i>{{ job }}</td>
+                    <td class="text-right">{{ job.total_time|duration_decimal|default:'-' }}</td>
+                    <td class="text-right">{{ job.chargeable_time|duration_decimal|default:'-' }}</td>
+                    <td class="text-right">{{ job.chargeable_time|divide:job.total_time|multiply:100|floatformat:0 }}%</td>
+                </tr>
+                {% for task in job.tasks.all %}
+                <tr class="pointer" data-id="task_{{ task.id }}" data-parent="job_{{ job.id }}" style="display:none;">
+                    <td class="pl-3"><i class="toggle icon-right-dir"></i>{{ task }}</td>
+                    <td class="text-right">{{ task.total_time|duration_decimal|default:'-' }}</td>
+                    <td class="text-right">{{ task.chargeable_time|duration_decimal|default:'-' }}</td>
+                    <td class="text-right">{{ task.chargeable_time|divide:task.total_time|multiply:100|floatformat:0 }}%</td>
+                </tr>
+                <tr class="no-hover" data-parent="task_{{ task.id }}" style="display:none;">
+                    <td class="pl-6" colspan="4">
+                        <table class="table-headed mb-0">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'User' %}</th>
+                                    <th>{% trans 'Date' %}</th>
+                                    <th>{% trans 'Time' %}</th>
+                                    <th>{% trans 'Duration' %}</th>
+                                    <th>{% trans 'Notes' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for entry in task.time_entries.all %}
+                                <tr>
+                                    <td>{{ entry.user.get_full_name }}</td>
+                                    <td>{{ entry.started_at|date:"d/m/Y" }}</td>
+                                    <td>{{ entry.started_at|time:"H:i" }} to {{ entry.ended_at|time:"H:i" }}</td>
+                                    <td>{{ entry.duration|duration_decimal }}</td>
+                                    <td>{{ entry.notes|linebreaksbr }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% endfor %}
+                {% empty %}
+                <tr><td colspan="4">{% trans 'No records found' %}</td></tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr><td colspan="4"></td></tr>
+            </tfoot>
+        </table>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+    {{ form.media }}
+    <script>
+        function show(id) {
+            $('tr[data-id="'+id+'"] .toggle').addClass('icon-down-dir');
+            $('tr[data-id="'+id+'"] .toggle').removeClass('icon-right-dir');
+            $('tr[data-parent="'+id+'"]').show();
+        }
+        function hide(id) {
+            $('tr[data-id="'+id+'"] .toggle').addClass('icon-right-dir');
+            $('tr[data-id="'+id+'"] .toggle').removeClass('icon-down-dir');
+            $('tr[data-parent="'+id+'"]').hide();
+            $('tr[data-parent="'+id+'"]').each(function() {
+                if ($(this).data('id')) {
+                    hide($(this).data('id'));
+                }
+            })
+        }
+        $(document).on('click', 'tr[data-id]', function() {
+            var id = $(this).data('id');
+            var hiddenChildren = $(this).parent().find('tr[data-parent="'+id+'"]:hidden');
+            if (hiddenChildren.length > 0) {
+                show(id);
+            } else {
+                hide(id);
+            }
+        })
+        $(document).on('click', '.filter-user', function(e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+            $('form #id_user').val(id);
+            $('form').submit();
+        });
+    </script>
+{% endblock %}

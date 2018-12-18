@@ -31,3 +31,11 @@ td select,
 td textarea {
   margin-bottom: 0 !important;
 }
+
+.table-hover > tbody > tr.no-hover:hover {
+  background-color: inherit;
+}
+
+table i.toggle {
+  margin-right: 1rem;
+}

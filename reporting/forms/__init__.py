@@ -1,1 +1,1 @@
-from .filters import DateFilterForm, JobDateFilterForm
+from .filters import DateFilterForm, JobDateFilterForm, UserDateFilterForm

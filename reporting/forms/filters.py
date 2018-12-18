@@ -1,6 +1,7 @@
 from dal import autocomplete
 from django import forms
 
+from authentication.models import User
 from reporting.forms.widgets import DatePicker
 from wip.models import Client, Job
 
@@ -19,6 +20,11 @@ class DateFilterForm(forms.Form):
 class JobModelChoiceField(forms.ModelChoiceField):
     def label_from_instance(self, obj):
         return obj.full_title
+
+
+class UserModelChoiceField(forms.ModelChoiceField):
+    def label_from_instance(self, obj):
+        return obj.get_full_name
 
 
 class JobDateFilterForm(DateFilterForm):
@@ -46,3 +52,11 @@ class JobDateFilterForm(DateFilterForm):
             return Job.objects.get(id=self.data.get('job'))
         except Job.DoesNotExist:
             return None
+
+
+class UserDateFilterForm(DateFilterForm):
+    user = UserModelChoiceField(
+        queryset=User.objects.all(),
+        required=False,
+        empty_label='-- All --'
+    )
