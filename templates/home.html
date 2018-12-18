@@ -21,12 +21,18 @@
         window.appJSRoot = "{% static 'dist/js/frontend/' %}";
         window.logoutUrl = "{% url 'logout' %}";
     </script>
-    <script type="text/javascript" src="{% static 'dist/js/frontend/runtime.js' %}"></script>
-    <script type="text/javascript" src="{% static 'dist/js/frontend/polyfills.js' %}"></script>
     {% is_debug_mode as is_debug %}
     {% if is_debug %}
+    <script type="text/javascript" src="{% static 'frontend/runtime.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/polyfills.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/styles.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/vendor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/main.js' %}"></script>
+    {% else %}
+    <script type="text/javascript" src="{% static 'dist/js/frontend/runtime.js' %}"></script>
+    <script type="text/javascript" src="{% static 'dist/js/frontend/polyfills.js' %}"></script>
     <script type="text/javascript" src="{% static 'dist/js/frontend/styles.js' %}"></script>
     <script type="text/javascript" src="{% static 'dist/js/frontend/vendor.js' %}"></script>
-    {% endif %}
     <script type="text/javascript" src="{% static 'dist/js/frontend/main.js' %}"></script>
+    {% endif %}
 {% endblock %}
