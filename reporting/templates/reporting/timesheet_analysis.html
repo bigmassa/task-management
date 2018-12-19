@@ -12,7 +12,7 @@
 </div>
 <div class="container-fluid inner-content">
     <div class="panel">
-        <form method="get" novalidate>
+        <form class="filter-form" method="GET" novalidate>
             <div class="row">
             {% for field in form %}
                 <div class="col-3">
@@ -159,10 +159,9 @@
             }
         })
         $(document).on('click', '.filter-user', function(e) {
-            e.preventDefault();
             var id = $(this).data('id');
-            $('form #id_user').val(id);
-            $('form').submit();
+            $('.filter-form #id_user').val(id);
+            $('.filter-form').submit();
         });
     </script>
 {% endblock %}
