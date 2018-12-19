@@ -15,6 +15,33 @@ class TimesheetAnalysis(LoginRequiredMixin, TemplateView):
             return UserDateFilterForm(self.request.GET)
         return UserDateFilterForm()
 
+    def get_time_totals(self):
+        """ Get time by staff for the allocated period """
+
+        form = self.get_filter_form()
+
+        if form.is_valid():
+            date_from = form.cleaned_data['date_from']
+            date_to = form.cleaned_data['date_to']
+            user = form.cleaned_data.get('user')
+
+            filters = Q().add(Q(started_at__date__range=(date_from, date_to)), Q.AND)
+            if user:
+                filters.add(Q(user=user), Q.AND)
+
+            return (
+                TimeEntry.objects
+                .filter(filters)
+                .aggregate(
+                    total_time=Sum(F('ended_at') - F('started_at')),
+                    chargeable_time=Sum(
+                        F('ended_at') - F('started_at'),
+                        filter=Q(task__not_chargeable=False)
+                    )
+                )
+            )
+        return TimeEntry.objects.none()
+
     def get_time_by_staff(self):
         """ Get time by staff for the allocated period """
 
@@ -138,6 +165,7 @@ class TimesheetAnalysis(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         context.update({
             'form': self.get_filter_form(),
+            'totals': self.get_time_totals(),
             'by_staff': self.get_time_by_staff(),
             'by_client': self.get_time_by_client()
         })

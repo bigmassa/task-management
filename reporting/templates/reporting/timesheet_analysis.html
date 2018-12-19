@@ -54,6 +54,14 @@
                     <tr><td colspan="4">{% trans 'No records found' %}</td></tr>
                 {% endfor %}
             </tbody>
+            <tfoot>
+                <tr class="strong">
+                    <td>{% trans 'Total' %}</td>
+                    <td class="text-right">{{ totals.total_time|duration_decimal|default:'-' }}</td>
+                    <td class="text-right">{{ totals.chargeable_time|duration_decimal|default:'-' }}</td>
+                    <td class="text-right">{{ totals.chargeable_time|divide:totals.total_time|multiply:100|floatformat:0 }}%</td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 
