@@ -2172,13 +2172,16 @@ header {
 .nav li {
   display: inline-block;
   margin-right: .5rem;
-  background: #292c36;
 }
 
 .nav li a {
   display: block;
   padding: 1rem 2rem;
   color: white;
+}
+
+.nav li a:not(.external) {
+  background: #292c36;
 }
 
 .nav li a.active {

@@ -28,13 +28,16 @@ header {
   li {
     display: inline-block;
     margin-right: .5rem;
-    background: color("primary");
   }
 
   li a {
     display: block;
     padding: 1rem 2rem;
     color: color("white");
+  }
+
+  li a:not(.external) {
+    background: color("primary");
   }
 
   li a.active {
