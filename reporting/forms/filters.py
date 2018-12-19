@@ -56,7 +56,7 @@ class JobDateFilterForm(DateFilterForm):
 
 class UserDateFilterForm(DateFilterForm):
     user = UserModelChoiceField(
-        queryset=User.objects.all(),
+        queryset=User.objects.filter(is_active=True),
         required=False,
         empty_label='-- All --'
     )
