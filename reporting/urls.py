@@ -20,4 +20,7 @@ urlpatterns = [
     path('moneyworks-timesheet-export/',
          views.MoneyworksTimesheetExport.as_view(),
          name='moneyworks-timesheet-export'),
+    path('timesheet-analysis/',
+         views.TimesheetAnalysis.as_view(),
+         name='timesheet-analysis'),
 ]

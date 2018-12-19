@@ -2,7 +2,7 @@
 /* karma-css */
 @import url("https://fonts.googleapis.com/css?family=Inconsolata|Nunito:400,400i,700,700i");
 /* karma-css core */
-/*! Karma-CSS v1.9.7 MIT License | http://karmacss.com | https://github.com/accentdesign/karma-css */
+/*! Karma-CSS v1.9.8 MIT License | http://karmacss.com | https://github.com/accentdesign/karma-css */
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -1429,15 +1429,18 @@ td {
   border: solid 1px rgba(0, 0, 0, 0.12);
 }
 
-.table-headed th {
+/* stylelint-disable selector-max-type */
+.table-headed > thead > tr > th,
+.table-headed > tbody > tr > th {
   background-color: rgba(0, 0, 0, 0.12);
 }
 
-.table-striped tbody tr:nth-child(odd) {
+/* stylelint-enable selector-max-type */
+.table-striped > tbody > tr:nth-child(odd) {
   background-color: #fafafa;
 }
 
-.table-hover tbody tr:hover {
+.table-hover > tbody > tr:hover {
   background-color: #fef9e8;
 }
 
@@ -1749,8 +1752,8 @@ ul.radios input[type=radio] + span:after {
 /* add your custom modules here */
 @font-face {
   font-family: 'fontello';
-  src: url("../font/fontello.eot?92412735");
-  src: url("../font/fontello.eot?92412735#iefix") format("embedded-opentype"), url("../font/fontello.woff2?92412735") format("woff2"), url("../font/fontello.woff?92412735") format("woff"), url("../font/fontello.ttf?92412735") format("truetype"), url("../font/fontello.svg?92412735#fontello") format("svg");
+  src: url("../font/fontello.eot?4281811");
+  src: url("../font/fontello.eot?4281811#iefix") format("embedded-opentype"), url("../font/fontello.woff2?4281811") format("woff2"), url("../font/fontello.woff?4281811") format("woff"), url("../font/fontello.ttf?4281811") format("truetype"), url("../font/fontello.svg?4281811#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1761,7 +1764,7 @@ ul.radios input[type=radio] + span:after {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?92412735#fontello') format('svg');
+    src: url('../font/fontello.svg?4281811#fontello') format('svg');
   }
 }
 */
@@ -1863,6 +1866,11 @@ ul.radios input[type=radio] + span:after {
 }
 
 /* '' */
+.icon-right-dir:before {
+  content: '\e80f';
+}
+
+/* '' */
 .icon-bell:before {
   content: '\f0f3';
 }
@@ -2164,13 +2172,16 @@ header {
 .nav li {
   display: inline-block;
   margin-right: .5rem;
-  background: #292c36;
 }
 
 .nav li a {
   display: block;
   padding: 1rem 2rem;
   color: white;
+}
+
+.nav li a:not(.external) {
+  background: #292c36;
 }
 
 .nav li a.active {
@@ -2693,6 +2704,14 @@ td textarea {
   margin-bottom: 0 !important;
 }
 
+.table-hover > tbody > tr.no-hover:hover {
+  background-color: inherit;
+}
+
+table i.toggle {
+  margin-right: 1rem;
+}
+
 /* stylelint-disable selector-no-qualifying-type  */
 .tabs {
   z-index: 10;
@@ -3210,6 +3229,126 @@ body > .fc-event.fc-dragging {
 
 .ml-2 {
   margin-left: 2rem !important;
+}
+
+.p-3 {
+  padding: 3rem !important;
+}
+
+.m-3 {
+  margin: 3rem !important;
+}
+
+.px-3 {
+  padding-right: 3rem !important;
+  padding-left: 3rem !important;
+}
+
+.mx-3 {
+  margin-right: 3rem !important;
+  margin-left: 3rem !important;
+}
+
+.py-3 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.my-3 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.pt-3 {
+  padding-top: 3rem !important;
+}
+
+.mt-3 {
+  margin-top: 3rem !important;
+}
+
+.pr-3 {
+  padding-right: 3rem !important;
+}
+
+.mr-3 {
+  margin-right: 3rem !important;
+}
+
+.pb-3 {
+  padding-bottom: 3rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 3rem !important;
+}
+
+.pl-3 {
+  padding-left: 3rem !important;
+}
+
+.ml-3 {
+  margin-left: 3rem !important;
+}
+
+.p-6 {
+  padding: 6rem !important;
+}
+
+.m-6 {
+  margin: 6rem !important;
+}
+
+.px-6 {
+  padding-right: 6rem !important;
+  padding-left: 6rem !important;
+}
+
+.mx-6 {
+  margin-right: 6rem !important;
+  margin-left: 6rem !important;
+}
+
+.py-6 {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+.my-6 {
+  margin-top: 6rem !important;
+  margin-bottom: 6rem !important;
+}
+
+.pt-6 {
+  padding-top: 6rem !important;
+}
+
+.mt-6 {
+  margin-top: 6rem !important;
+}
+
+.pr-6 {
+  padding-right: 6rem !important;
+}
+
+.mr-6 {
+  margin-right: 6rem !important;
+}
+
+.pb-6 {
+  padding-bottom: 6rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 6rem !important;
+}
+
+.pl-6 {
+  padding-left: 6rem !important;
+}
+
+.ml-6 {
+  margin-left: 6rem !important;
 }
 
 .w-auto {
