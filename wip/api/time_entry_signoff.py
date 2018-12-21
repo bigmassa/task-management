@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework.schemas import ManualSchema
 
 from wip.models import TimeEntry
-from wip.serializers import TimeEntrySignoffSerializer
+from wip.serializers import TimeEntrySerializer, TimeEntrySignoffSerializer
 
 
 class TimeEntrySignoffViewSet(viewsets.ViewSet):
@@ -32,12 +32,16 @@ class TimeEntrySignoffViewSet(viewsets.ViewSet):
 
     def signoff(self, serializer):
         data = serializer.validated_data
-        TimeEntry.objects.filter(
+        entries = TimeEntry.objects.filter(
             started_at__date=data['date'],
             user=data['user'],
             signed_off=False
-        ).update(signed_off=True)
-        return Response({'status': 'ok'}, status=status.HTTP_200_OK)
+        )
+        entry_pks = [e.pk for e in entries]
+        entries.update(signed_off=True)
+        updates_entries = TimeEntry.objects.filter(pk__in=entry_pks)
+        serializer = TimeEntrySerializer(instance=updates_entries, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def create(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data)

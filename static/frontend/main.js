@@ -8078,12 +8078,8 @@ var TimeEntrySignoffActions = /** @class */ (function () {
     TimeEntrySignoffActions.prototype.Signoff = function (payload) {
         return { type: TimeEntrySignoffActions_1.SIGNOFF, payload: payload };
     };
-    TimeEntrySignoffActions.prototype.SignoffSuccess = function (payload) {
-        return { type: TimeEntrySignoffActions_1.SIGNOFF_SUCCESS, payload: payload };
-    };
     var TimeEntrySignoffActions_1;
     TimeEntrySignoffActions.SIGNOFF = '[TimeEntrySignoff] SIGNOFF';
-    TimeEntrySignoffActions.SIGNOFF_SUCCESS = '[TimeEntrySignoff] SIGNOFF_SUCCESS';
     TimeEntrySignoffActions = TimeEntrySignoffActions_1 = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -10845,12 +10841,12 @@ var TimeEntryEffects = /** @class */ (function (_super) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeEntrySignoffEffects", function() { return TimeEntrySignoffEffects; });
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions */ "./src/app/state/actions/index.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions */ "./src/app/state/actions/index.ts");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../api */ "./src/app/state/api.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -10885,22 +10881,22 @@ var TimeEntrySignoffEffects = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.url = '/api/time-entry-signoff/';
         _this.prefix = '[TimeEntrySignoff]';
-        _this.signoff$ = _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_this.prefix + " SIGNOFF"), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (payload) {
-            return _this.service$.post(_this.apiUrl, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: _this.prefix + " SIGNOFF_SUCCESS", payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_3__["HttpActions"].HTTP_ERROR, payload: res }); }));
+        _this.signoff$ = _this.updates$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_3__["ofType"])(_this.prefix + " SIGNOFF"), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (action) { return action.payload; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["mergeMap"])(function (payload) {
+            return _this.service$.post(_this.apiUrl, payload).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return ({ type: _actions__WEBPACK_IMPORTED_MODULE_4__["TimeEntryActions"].REPLACE_MANY, payload: data }); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["catchError"])(function (res) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["of"])({ type: _actions__WEBPACK_IMPORTED_MODULE_4__["HttpActions"].HTTP_ERROR, payload: res }); }));
         }));
         return _this;
     }
     __decorate([
-        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Effect"])(),
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_3__["Effect"])(),
         __metadata("design:type", Object)
     ], TimeEntrySignoffEffects.prototype, "signoff$", void 0);
     TimeEntrySignoffEffects = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
             providedIn: 'root'
         })
     ], TimeEntrySignoffEffects);
     return TimeEntrySignoffEffects;
-}(_api__WEBPACK_IMPORTED_MODULE_0__["APIBaseEffects"]));
+}(_api__WEBPACK_IMPORTED_MODULE_5__["APIBaseEffects"]));
 
 
 
