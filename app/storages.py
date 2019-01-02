@@ -1,4 +1,4 @@
-from django.conf import settings
+from django.conf import settings as base_settings
 
 from storages.backends.s3boto3 import S3Boto3Storage
 
@@ -18,15 +18,28 @@ class S3PrivateStorage(S3Boto3Storage):
     """
 
     def __init__(self, acl='private', bucket=None, **settings):
-        settings.update({'custom_domain': None})
+        settings.update({
+            'custom_domain': None
+        })
         super().__init__(acl, bucket, **settings)
 
 
 class S3PublicStorage(S3Boto3Storage):
     """ Just subclass or use original class """
 
+    def __init__(self, acl=None, bucket=None, **settings):
+        settings.update({
+            'querystring_auth': False
+        })
+        super().__init__(acl, bucket, **settings)
+
 
 class S3StaticStorage(S3Boto3Storage):
     """ Stores files with the path prefix STATICFILES_LOCATION """
 
-    location = settings.STATICFILES_LOCATION
+    def __init__(self, acl=None, bucket=None, **settings):
+        settings.update({
+            'querystring_auth': False,
+            'location': base_settings.STATICFILES_LOCATION
+        })
+        super().__init__(acl, bucket, **settings)
