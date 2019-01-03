@@ -99,7 +99,7 @@ class TimesheetAnalysis(LoginRequiredMixin, TemplateView):
                     )
                 )
                 .filter(total_time__isnull=False)
-                .order_by('title')
+                .order_by('-total_time')
             )
 
             job_filters = Q().add(Q(tasks__time_entries__started_at__date__range=(date_from, date_to)), Q.AND)
@@ -119,7 +119,7 @@ class TimesheetAnalysis(LoginRequiredMixin, TemplateView):
                     )
                 )
                 .filter(total_time__isnull=False)
-                .order_by('title')
+                .order_by('-total_time')
             )
 
             client_filters = Q().add(Q(jobs__tasks__time_entries__started_at__date__range=(date_from, date_to)), Q.AND)
@@ -139,7 +139,7 @@ class TimesheetAnalysis(LoginRequiredMixin, TemplateView):
                     )
                 )
                 .filter(total_time__isnull=False)
-                .order_by('name')
+                .order_by('-total_time')
             )
 
             time_entry_filters = Q().add(Q(started_at__date__range=(date_from, date_to)), Q.AND)
