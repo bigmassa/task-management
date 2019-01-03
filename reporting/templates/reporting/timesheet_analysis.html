@@ -109,7 +109,7 @@
                                     <th>{% trans 'Date' %}</th>
                                     <th>{% trans 'Time' %}</th>
                                     <th>{% trans 'Duration' %}</th>
-                                    <th>{% trans 'Notes' %}</th>
+                                    <th>{% trans 'Comments' %}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -119,7 +119,7 @@
                                     <td>{{ entry.started_at|date:"d/m/Y" }}</td>
                                     <td>{{ entry.started_at|time:"H:i" }} to {{ entry.ended_at|time:"H:i" }}</td>
                                     <td>{{ entry.duration|duration_decimal }}</td>
-                                    <td>{{ entry.notes|linebreaksbr }}</td>
+                                    <td>{{ entry.comments|default:'-'|linebreaksbr }}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
