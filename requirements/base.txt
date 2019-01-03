@@ -5,7 +5,7 @@ coreapi
 django
 django-autocomplete-light
 django-filter
-# django-pyodbc-azure
+django-reversion
 django-storages
 django-taggit
 django-taggit-serializer

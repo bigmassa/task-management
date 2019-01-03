@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django_filters',
     'huey.contrib.djhuey',
     'rest_framework',
+    'reversion',
     'storages',
     'taggit',
     'taggit_serializer',
@@ -48,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'reversion.middleware.RevisionMiddleware',
 
     'authentication.middleware.current_user.CurrentUserMiddleware',
 ]
