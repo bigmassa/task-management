@@ -14,13 +14,33 @@
     <div class="panel">
         <form class="filter-form" method="GET" novalidate>
             <div class="row">
-            {% for field in form %}
-                <div class="col-3">
-                    {{ field.label_tag }}
-                    {{ field }}
-                    {{ field.errors }}
+                <div class="col-12 col-lg-3">
+                    {{ form.date_from.label_tag }}
+                    {{ form.date_from }}
+                    {{ form.date_from.errors }}
                 </div>
-            {% endfor %}
+                <div class="col-12 col-lg-3">
+                    {{ form.date_to.label_tag }}
+                    {{ form.date_to }}
+                    {{ form.date_to.errors }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-3">
+                    {{ form.client.label_tag }}
+                    {{ form.client }}
+                    {{ form.client.errors }}
+                </div>
+                <div class="col-12 col-lg-3">
+                    {{ form.job.label_tag }}
+                    {{ form.job }}
+                    {{ form.job.errors }}
+                </div>
+                <div class="col-12 col-lg-3">
+                    {{ form.user.label_tag }}
+                    {{ form.user }}
+                    {{ form.user.errors }}
+                </div>
             </div>
             <hr/>
             <div class="row pt-1-5">

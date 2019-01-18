@@ -48,5 +48,8 @@ class AutoCompleteJob(autocomplete.Select2QuerySetView):
     def get_result_label(self, item):
         return item.full_title
 
+    def get_selected_result_label(self, item):
+        return item.full_title
+
     def has_add_permission(self, request):
         return False

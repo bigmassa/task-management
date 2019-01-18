@@ -1,1 +1,5 @@
-from .filters import DateFilterForm, JobDateFilterForm, UserDateFilterForm
+from .filters import (
+    DateFilterForm,
+    JobTimeAnalysisFilterForm,
+    TimesheetAnalysisFilterForm
+)

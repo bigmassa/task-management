@@ -3,7 +3,7 @@ from django.db.models import F, Q, Sum
 from django.views.generic import TemplateView
 
 from authentication.models import User
-from reporting.forms import JobDateFilterForm
+from reporting.forms import JobTimeAnalysisFilterForm
 from wip.models import Task
 
 
@@ -12,8 +12,8 @@ class JobTimeAnalysis(LoginRequiredMixin, TemplateView):
 
     def get_filter_form(self):
         if 'date_from' in self.request.GET:
-            return JobDateFilterForm(self.request.GET)
-        return JobDateFilterForm()
+            return JobTimeAnalysisFilterForm(self.request.GET)
+        return JobTimeAnalysisFilterForm()
 
     def get_time_by_staff(self):
         """ Get time by staff for the allocated period """

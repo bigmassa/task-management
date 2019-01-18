@@ -6,7 +6,14 @@ from reporting.forms.widgets import DatePicker
 from wip.models import Client, Job
 
 
+class UserModelChoiceField(forms.ModelChoiceField):
+    """ a user choice field that replaces the default choice text """
+    def label_from_instance(self, obj):
+        return obj.get_full_name
+
+
 class DateFilterForm(forms.Form):
+    """ form to include a date range """
     date_from = forms.DateField(
         widget=DatePicker,
         input_formats=('%d/%m/%Y',)
@@ -17,44 +24,47 @@ class DateFilterForm(forms.Form):
     )
 
 
-class JobModelChoiceField(forms.ModelChoiceField):
-    def label_from_instance(self, obj):
-        return obj.full_title
-
-
-class UserModelChoiceField(forms.ModelChoiceField):
-    def label_from_instance(self, obj):
-        return obj.get_full_name
-
-
-class JobDateFilterForm(DateFilterForm):
+class JobFilterForm(forms.Form):
+    """ form to include a cascading client > job autocomplete """
     client = forms.ModelChoiceField(
         queryset=Client.objects.all(),
         widget=autocomplete.ModelSelect2('reporting:autocomplete-client')
     )
-    job = JobModelChoiceField(
+    job = forms.ModelChoiceField(
         queryset=Job.objects.all(),
         widget=autocomplete.ModelSelect2('reporting:autocomplete-job', forward=['client'])
     )
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
+    def get_jobs(self):
         if 'client' in self.data:
             try:
                 client_id = int(self.data.get('client'))
-                self.fields['job'].queryset = Job.objects.filter(client_id=client_id).order_by('title')
+                return Job.objects.filter(client_id=client_id).order_by('title')
             except (ValueError, TypeError):
                 pass
 
-    def get_job(self):
-        try:
-            return Job.objects.get(id=self.data.get('job'))
-        except Job.DoesNotExist:
-            return None
+        return Job.objects.none()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['job'].queryset = self.get_jobs()
 
 
-class UserDateFilterForm(DateFilterForm):
+class JobTimeAnalysisFilterForm(JobFilterForm, DateFilterForm):
+    pass
+
+
+class TimesheetAnalysisFilterForm(JobFilterForm, DateFilterForm):
+    client = forms.ModelChoiceField(
+        queryset=Client.objects.all(),
+        widget=autocomplete.ModelSelect2('reporting:autocomplete-client'),
+        required=False
+    )
+    job = forms.ModelChoiceField(
+        queryset=Job.objects.all(),
+        widget=autocomplete.ModelSelect2('reporting:autocomplete-job', forward=['client']),
+        required=False
+    )
     user = UserModelChoiceField(
         queryset=User.objects.filter(is_active=True),
         required=False,
