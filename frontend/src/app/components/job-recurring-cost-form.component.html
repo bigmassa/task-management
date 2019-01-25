@@ -50,7 +50,7 @@
         </select>
         <p class="c-red" *formError="form.controls.billing_frequency">Please choose a billing frequency</p>
 
-        <label>Billing Frequency</label>
+        <label>Payment Option</label>
         <select [formControl]="form.controls.payment_option">
             <option [ngValue]="null">Please select...</option>
             <option [ngValue]="option.id" *ngFor="let option of paymentOptions$ | async">{{ option.title }}</option>
