@@ -29,8 +29,8 @@
                         Job <i *ngIf="orderBy == '_job.title'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
                     </th>
                     <th class="keep-min-width">Assignees</th>
-                    <th class="keep-min-width pointer" (click)="orderTasksBy('_status.title')">
-                        Status <i *ngIf="orderBy == '_status.title'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
+                    <th class="keep-min-width pointer" (click)="orderTasksBy('_status.order')">
+                        Status <i *ngIf="orderBy == '_status.order'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
                     </th>
                 </tr>
             </thead>
