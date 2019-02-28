@@ -29,6 +29,9 @@
                     <th class="pointer" (click)="orderTasksBy('_job._client.name')">
                         Client <i *ngIf="orderBy == '_job._client.name'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
                     </th>
+                    <th class="pointer" (click)="orderTasksBy('job')">
+                        Job No. <i *ngIf="orderBy == 'job'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
+                    </th>
                     <th class="pointer" (click)="orderTasksBy('_job.title')">
                         Job <i *ngIf="orderBy == '_job.title'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
                     </th>
@@ -44,6 +47,7 @@
                     <td class="keep-min-width">{{ task | get:'target_date' }}</td>
                     <td>{{ task | get:'title' }}</td>
                     <td>{{ task | get:'_job._client.name' }}</td>
+                    <td>{{ task | get:'job' }}</td>
                     <td>{{ task | get:'_job.title' }}</td>
                     <td class="keep-min-width">
                         <div avatar [id]="assignee.user" class="avatar avatar-small" *ngFor="let assignee of task._assignees"></div>
