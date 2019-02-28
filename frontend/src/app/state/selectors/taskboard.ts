@@ -1,17 +1,16 @@
 import * as _ from 'lodash';
 import { createSelector } from '@ngrx/store';
-import { getMeState, getTaskAssigneeState } from '../state';
+import { getTaskAssigneeState } from '../state';
 import { getTaskCollectionOpen } from './task';
 
-export const getTasksForTaskBoardForUser = createSelector(
+export const getTasksForTaskBoardForUser = (user: number) => createSelector(
     getTaskCollectionOpen,
     getTaskAssigneeState,
-    getMeState,
-    (tasks, assignees, me) => {
+    (tasks, assignees) => {
         let objs = tasks;
         
         // only tasks assigned to user
-        let ids = _.map(_.filter(assignees, ['user', me.id]), 'task');
+        let ids = _.map(_.filter(assignees, ['user', user]), 'task');
         objs = _.filter(objs, o => _.includes(ids, o.id));
 
         const mappedObjs = _.map(objs, o => _.assign({}, o, {

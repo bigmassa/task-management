@@ -1,9 +1,11 @@
-import { ActionsSubject, select, Store } from '@ngrx/store';
-import { AppState } from '../state/state';
+import { select, Store } from '@ngrx/store';
+import { AppState, getMeState } from '../state/state';
 import { Component } from '@angular/core';
 import { getTasksForTaskBoardForUser } from '../state/selectors/taskboard';
 import { ITask } from '../state/reducers/task';
 import { Observable } from 'rxjs';
+import { IUser } from '../state/reducers/user';
+import { getActiveUsers } from '../state/selectors/user';
 
 @Component({
     templateUrl: './taskboard.component.html'
@@ -12,15 +14,25 @@ export class TaskboardComponent {
 
     orderBy: string = 'target_date';
     orderType: string = 'asc';
-    tasks$: Observable<ITask[]>;
     searchTerms: string[] = [];
-    
+    selectedUserId: number;
+    tasks$: Observable<ITask[]>;
+    users$: Observable<IUser[]>;
+
     constructor(
         private store: Store<AppState>
     ) { }
 
     ngOnInit() {
-        this.tasks$ = this.store.pipe(select(getTasksForTaskBoardForUser));
+        this.users$ = this.store.pipe(select(getActiveUsers));
+        this.store.pipe(select(getMeState)).subscribe(me => {
+            this.selectedUserId = me.id;
+            this.refetchTasks();
+        });
+    }
+
+    refetchTasks() {
+        this.tasks$ = this.store.pipe(select(getTasksForTaskBoardForUser(this.selectedUserId)));
     }
 
     orderTasksBy(by: string) {

@@ -1,7 +1,11 @@
 <div class="page-header py-2">
     <div class="container-fluid d-flex align-items-center">
         <div class="h2">Taskboard</div>
-        <div class="page-header-actions"></div>
+        <div class="page-header-actions">
+            <select [(ngModel)]="selectedUserId" (ngModelChange)="refetchTasks()" class="mb-0">
+                <option *ngFor="let user of users$ | async" [ngValue]="user.id">{{ user.full_name }}</option>
+            </select>
+        </div>
     </div>
 </div>
 <div class="container-fluid inner-content">
