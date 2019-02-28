@@ -50,7 +50,7 @@
                     <td>{{ task | get:'job' }}</td>
                     <td>{{ task | get:'_job.title' }}</td>
                     <td class="keep-min-width">
-                        <div avatar [id]="assignee.user" class="avatar avatar-small" *ngFor="let assignee of task._assignees"></div>
+                        <div avatar [id]="assignee.user" class="avatar avatar-small mr-h" *ngFor="let assignee of task._assignees"></div>
                     </td>
                     <td class="keep-min-width">{{ task | get:'_status.title' }}</td>
                 </tr>
