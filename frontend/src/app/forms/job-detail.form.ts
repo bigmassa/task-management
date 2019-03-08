@@ -25,6 +25,7 @@ export class JobDetailForm extends BaseForm {
         colour: FormControl
         status: FormControl
         billed_to: FormControl
+        slack_channel_id: FormControl
     };
     createAction = actions.JobActions.ADD;
     createSuccessAction = actions.JobActions.ADD_SUCCESS;
@@ -49,6 +50,7 @@ export class JobDetailForm extends BaseForm {
                 colour: new FormControl('', [Validators.required, Validators.pattern(hexReg)]),
                 status: new FormControl('', Validators.required),
                 billed_to: new FormControl(null),
+                slack_channel_id: new FormControl('', [Validators.minLength(9), Validators.maxLength(9)])
             },
             null,
             null,

@@ -14,6 +14,7 @@ export interface IJob {
     colour: string;
     status: number;
     billed_to?: string;
+    slack_channel_id?: string;
     _client?: IClient;
     _status?: IJobStatus;
     _type?: IJobType
