@@ -27,7 +27,8 @@ class TestSerializer(AppTestCase):
                 'estimated_hours',
                 'colour',
                 'status',
-                'billed_to'
+                'billed_to',
+                'slack_channel_id'
             ]
         )
 
@@ -46,6 +47,7 @@ class TestSerializer(AppTestCase):
                 'estimated_hours': str(instance.estimated_hours),
                 'colour': instance.colour,
                 'status': instance.status.pk,
-                'billed_to': instance.billed_to.isoformat()
+                'billed_to': instance.billed_to.isoformat(),
+                'slack_channel_id': instance.slack_channel_id
             }
         )

@@ -76,7 +76,8 @@
       estimated_hours: 0,
       colour: "#bed600",
       status: 1,
-      billed_to: "2018-01-01"
+      billed_to: "2018-01-01",
+      slack_channel_id: "DE98FGXS0"
     }
 
 -

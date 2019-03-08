@@ -91,6 +91,11 @@ class Job(models.Model):
         null=True,
         blank=True
     )
+    slack_channel_id = models.CharField(
+        max_length=9,
+        null=True,
+        blank=True
+    )
 
     objects = JobManager()
 
