@@ -61,8 +61,6 @@ def notify_status_change(task, to=None):
     notify_job_relationships = task.status.notify_job_relationships
     notify_task_assignees = task.status.notify_task_assignees
 
-    print(notify_job_relationships, notify_task_assignees)
-
     # if the task doesnt notify anyone quit early
     if not any([notify_job_relationships, notify_task_assignees]):
         return
