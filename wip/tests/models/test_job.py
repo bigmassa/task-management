@@ -53,6 +53,11 @@ class ModelTests(AppTestCase):
         field = Job._meta.get_field('billed_to')
         self.assertModelField(field, models.DateField, null=True, blank=True)
 
+    def test_slack_channel_id(self):
+        field = Job._meta.get_field('slack_channel_id')
+        self.assertModelField(field, models.CharField, null=True, blank=True)
+        self.assertEqual(field.max_length, 9)
+
     # meta
 
     def test_ordering(self):

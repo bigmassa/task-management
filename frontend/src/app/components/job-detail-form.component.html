@@ -57,6 +57,9 @@
         <mat-datepicker #picker></mat-datepicker>
         <p class="c-red" *formError="form.controls.billed_to">Please enter a date</p>
         
+        <label>Slack Channel ID</label>
+        <input type="text" [formControl]="form.controls.slack_channel_id" />
+        <p class="c-red" *formError="form.controls.slack_channel_id">Please enter a valid slack channel id</p>
     </div>
 </ng-container>
 

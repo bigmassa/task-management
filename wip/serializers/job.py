@@ -16,5 +16,6 @@ class JobSerializer(serializers.ModelSerializer):
             'estimated_hours',
             'colour',
             'status',
-            'billed_to'
+            'billed_to',
+            'slack_channel_id'
         ]
