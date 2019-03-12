@@ -25,7 +25,7 @@ export class TaskboardComponent {
     users$: Observable<IUser[]>;
 
     taskStatuses$: Observable<ITaskStatus[]>;
-    filteredStatuses: number[] = [];
+    filteredStatuses: string[] = [];
 
     constructor(
         private store: Store<AppState>
@@ -53,13 +53,13 @@ export class TaskboardComponent {
         this.orderBy = by;
     }
 
-    filterTaskStatusesBy(by: number) {
-        if (_.includes(this.filteredStatuses, by)) {
-            this.filteredStatuses = _.pull(this.filteredStatuses, by);
+    filterTaskStatusesBy(by: string) {
+        if (_.includes(this.filteredStatuses, by.toString())) {
+            _.pull(this.filteredStatuses, by.toString());
         } else {
-            this.filteredStatuses.push(by);
+            this.filteredStatuses.push(by.toString());
         }
 
-        console.log(this.filteredStatuses);
+        this.filteredStatuses = [].concat(this.filteredStatuses);
     }
 }

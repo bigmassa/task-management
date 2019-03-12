@@ -51,6 +51,7 @@ import { OpenJobsPipe } from './pipes/open-jobs.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { TaskSearchPipe } from './pipes/task-search.pipe';
 import { TasksByStatusPipe } from './pipes/tasks-by-status.pipe';
+import { TaskFilterStatusPipe } from './pipes/task-filter-status.pipe';
 import { LoadingInterceptor } from './services/interceptors';
 import { effects } from './state/effects';
 import { reducers } from './state/state';
@@ -92,6 +93,7 @@ import { reducers } from './state/state';
         TaskFormComponent,
         TasksByStatusPipe,
         TaskSearchPipe,
+        TaskFilterStatusPipe,
         TimeEntryFormComponent,
         TimesheetComponent,
         TimesheetSignoffComponent

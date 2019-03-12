@@ -52,7 +52,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="pointer" [routerLink]="['/clients', task._job.client, 'jobs', task.job]" [queryParams]="{task: task.id}" *ngFor="let task of tasks$ | async | taskSearch:searchTerms | orderBy : [orderBy] : [orderType]">
+                <tr class="pointer" [routerLink]="['/clients', task._job.client, 'jobs', task.job]" [queryParams]="{task: task.id}" *ngFor="let task of tasks$ | async | taskFilterStatus:filteredStatuses | taskSearch:searchTerms | orderBy : [orderBy] : [orderType]">
                     <td class="keep-min-width">{{ task | get:'id' }}</td>
                     <td class="keep-min-width">{{ task | get:'target_date' }}</td>
                     <td>{{ task | get:'title' }}</td>
