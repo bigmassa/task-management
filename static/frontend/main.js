@@ -2941,7 +2941,7 @@ var TaskFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Taskboard</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchTasks()\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <div class=\"row\">\n            <div class=\"col-6\"><search [(ngModel)]=\"searchTerms\"></search></div>\n            <div class=\"col-6\"></div>\n        </div>\n        <table class=\"table-hover table-headed margin-zero\">\n            <thead>\n                <tr>\n                    <th class=\"keep-min-width pointer\" (click)=\"orderTasksBy('id')\">\n                        ID <i *ngIf=\"orderBy == 'id'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"keep-min-width pointer\" (click)=\"orderTasksBy('target_date')\">\n                        Target Date <i *ngIf=\"orderBy == 'target_date'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"pointer\" (click)=\"orderTasksBy('title')\">\n                        Title <i *ngIf=\"orderBy == 'title'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"pointer\" (click)=\"orderTasksBy('_job._client.name')\">\n                        Client <i *ngIf=\"orderBy == '_job._client.name'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"pointer\" (click)=\"orderTasksBy('job')\">\n                        Job No. <i *ngIf=\"orderBy == 'job'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"pointer\" (click)=\"orderTasksBy('_job.title')\">\n                        Job <i *ngIf=\"orderBy == '_job.title'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"keep-min-width\">Assignees</th>\n                    <th class=\"keep-min-width pointer\" (click)=\"orderTasksBy('_status.order')\">\n                        Status <i *ngIf=\"orderBy == '_status.order'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr class=\"pointer\" [routerLink]=\"['/clients', task._job.client, 'jobs', task.job]\" [queryParams]=\"{task: task.id}\" *ngFor=\"let task of tasks$ | async | taskSearch:searchTerms | orderBy : [orderBy] : [orderType]\">\n                    <td class=\"keep-min-width\">{{ task | get:'id' }}</td>\n                    <td class=\"keep-min-width\">{{ task | get:'target_date' }}</td>\n                    <td>{{ task | get:'title' }}</td>\n                    <td>{{ task | get:'_job._client.name' }}</td>\n                    <td>{{ task | get:'job' }}</td>\n                    <td>{{ task | get:'_job.title' }}</td>\n                    <td class=\"keep-min-width\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small mr-h\" *ngFor=\"let assignee of task._assignees\"></div>\n                    </td>\n                    <td class=\"keep-min-width\">{{ task | get:'_status.title' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n"
+module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-fluid d-flex align-items-center\">\n        <div class=\"h2\">Taskboard</div>\n        <div class=\"page-header-actions\">\n            <select [(ngModel)]=\"selectedUserId\" (ngModelChange)=\"refetchTasks()\" class=\"mb-0\">\n                <option *ngFor=\"let user of users$ | async\" [ngValue]=\"user.id\">{{ user.full_name }}</option>\n            </select>\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid inner-content\">\n    <div class=\"panel\">\n        <div class=\"row\">\n            <div class=\"col-3\"><search [(ngModel)]=\"searchTerms\"></search></div>\n            <div class=\"col-9\">\n                <div class=\"row\">\n                    <div class=\"checkbox\" *ngFor=\"let status of taskStatuses$ | async | orderBy : order : asc\">\n                        <label>\n                            {{ status.title }}\n                            <input type=\"checkbox\" value=\"{{ status.id }}\" (click)=\"filterTaskStatusesBy(status.id)\">\n                            <span></span>\n                        </label>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <table class=\"table-hover table-headed margin-zero\">\n            <thead>\n                <tr>\n                    <th class=\"keep-min-width pointer\" (click)=\"orderTasksBy('id')\">\n                        ID <i *ngIf=\"orderBy == 'id'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"keep-min-width pointer\" (click)=\"orderTasksBy('target_date')\">\n                        Target Date <i *ngIf=\"orderBy == 'target_date'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"pointer\" (click)=\"orderTasksBy('title')\">\n                        Title <i *ngIf=\"orderBy == 'title'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"pointer\" (click)=\"orderTasksBy('_job._client.name')\">\n                        Client <i *ngIf=\"orderBy == '_job._client.name'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"pointer\" (click)=\"orderTasksBy('job')\">\n                        Job No. <i *ngIf=\"orderBy == 'job'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"pointer\" (click)=\"orderTasksBy('_job.title')\">\n                        Job <i *ngIf=\"orderBy == '_job.title'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                    <th class=\"keep-min-width\">Assignees</th>\n                    <th class=\"keep-min-width pointer\" (click)=\"orderTasksBy('_status.order')\">\n                        Status <i *ngIf=\"orderBy == '_status.order'\" [class.icon-up-dir]=\"orderType == 'asc'\" [class.icon-down-dir]=\"orderType == 'desc'\"></i>\n                    </th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr class=\"pointer\" [routerLink]=\"['/clients', task._job.client, 'jobs', task.job]\" [queryParams]=\"{task: task.id}\" *ngFor=\"let task of tasks$ | async | taskSearch:searchTerms | orderBy : [orderBy] : [orderType]\">\n                    <td class=\"keep-min-width\">{{ task | get:'id' }}</td>\n                    <td class=\"keep-min-width\">{{ task | get:'target_date' }}</td>\n                    <td>{{ task | get:'title' }}</td>\n                    <td>{{ task | get:'_job._client.name' }}</td>\n                    <td>{{ task | get:'job' }}</td>\n                    <td>{{ task | get:'_job.title' }}</td>\n                    <td class=\"keep-min-width\">\n                        <div avatar [id]=\"assignee.user\" class=\"avatar avatar-small mr-h\" *ngFor=\"let assignee of task._assignees\"></div>\n                    </td>\n                    <td class=\"keep-min-width\">{{ task | get:'_status.title' }}</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2955,11 +2955,13 @@ module.exports = "<div class=\"page-header py-2\">\n    <div class=\"container-f
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskboardComponent", function() { return TaskboardComponent; });
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/state */ "./src/app/state/state.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _state_selectors_taskboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state/selectors/taskboard */ "./src/app/state/selectors/taskboard.ts");
-/* harmony import */ var _state_selectors_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/selectors/user */ "./src/app/state/selectors/user.ts");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../state/state */ "./src/app/state/state.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _state_selectors_taskboard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/selectors/taskboard */ "./src/app/state/selectors/taskboard.ts");
+/* harmony import */ var _state_selectors_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../state/selectors/user */ "./src/app/state/selectors/user.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2974,23 +2976,26 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var TaskboardComponent = /** @class */ (function () {
     function TaskboardComponent(store) {
         this.store = store;
         this.orderBy = 'target_date';
         this.orderType = 'asc';
         this.searchTerms = [];
+        this.filteredStatuses = [];
     }
     TaskboardComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(_state_selectors_user__WEBPACK_IMPORTED_MODULE_4__["getActiveUsers"]));
-        this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_1__["getMeState"])).subscribe(function (me) {
+        this.users$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_selectors_user__WEBPACK_IMPORTED_MODULE_5__["getActiveUsers"]));
+        this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_2__["getMeState"])).subscribe(function (me) {
             _this.selectedUserId = me.id;
             _this.refetchTasks();
         });
+        this.taskStatuses$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_state__WEBPACK_IMPORTED_MODULE_2__["getTaskStatusState"]));
     };
     TaskboardComponent.prototype.refetchTasks = function () {
-        this.tasks$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(Object(_state_selectors_taskboard__WEBPACK_IMPORTED_MODULE_3__["getTasksForTaskBoardForUser"])(this.selectedUserId)));
+        this.tasks$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(Object(_state_selectors_taskboard__WEBPACK_IMPORTED_MODULE_4__["getTasksForTaskBoardForUser"])(this.selectedUserId)));
     };
     TaskboardComponent.prototype.orderTasksBy = function (by) {
         if (by != this.orderBy) {
@@ -3001,11 +3006,20 @@ var TaskboardComponent = /** @class */ (function () {
         }
         this.orderBy = by;
     };
+    TaskboardComponent.prototype.filterTaskStatusesBy = function (by) {
+        if (lodash__WEBPACK_IMPORTED_MODULE_0__["includes"](this.filteredStatuses, by)) {
+            this.filteredStatuses = lodash__WEBPACK_IMPORTED_MODULE_0__["pull"](this.filteredStatuses, by);
+        }
+        else {
+            this.filteredStatuses.push(by);
+        }
+        console.log(this.filteredStatuses);
+    };
     TaskboardComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
             template: __webpack_require__(/*! ./taskboard.component.html */ "./src/app/components/taskboard.component.html")
         }),
-        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["Store"]])
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["Store"]])
     ], TaskboardComponent);
     return TaskboardComponent;
 }());
