@@ -1,10 +1,15 @@
+import * as _ from 'lodash';
+
 import { select, Store } from '@ngrx/store';
-import { AppState, getMeState } from '../state/state';
+import { AppState, getMeState, getTaskStatusState } from '../state/state';
 import { Component } from '@angular/core';
-import { getTasksForTaskBoardForUser } from '../state/selectors/taskboard';
-import { ITask } from '../state/reducers/task';
 import { Observable } from 'rxjs';
+
+import { ITask } from '../state/reducers/task';
 import { IUser } from '../state/reducers/user';
+import { ITaskStatus } from '../state/reducers/taskstatus';
+
+import { getTasksForTaskBoardForUser } from '../state/selectors/taskboard';
 import { getActiveUsers } from '../state/selectors/user';
 
 @Component({
@@ -19,6 +24,9 @@ export class TaskboardComponent {
     tasks$: Observable<ITask[]>;
     users$: Observable<IUser[]>;
 
+    taskStatuses$: Observable<ITaskStatus[]>;
+    filteredStatuses: string[] = [];
+
     constructor(
         private store: Store<AppState>
     ) { }
@@ -29,6 +37,7 @@ export class TaskboardComponent {
             this.selectedUserId = me.id;
             this.refetchTasks();
         });
+        this.taskStatuses$ = this.store.pipe(select(getTaskStatusState));
     }
 
     refetchTasks() {
@@ -42,5 +51,15 @@ export class TaskboardComponent {
             this.orderType = this.orderType == 'asc' ? 'desc' : 'asc';
         }
         this.orderBy = by;
+    }
+
+    filterTaskStatusesBy(by: string) {
+        if (_.includes(this.filteredStatuses, by.toString())) {
+            _.pull(this.filteredStatuses, by.toString());
+        } else {
+            this.filteredStatuses.push(by.toString());
+        }
+
+        this.filteredStatuses = [].concat(this.filteredStatuses);
     }
 }
