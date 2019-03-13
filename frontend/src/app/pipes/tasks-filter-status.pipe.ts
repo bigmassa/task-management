@@ -6,10 +6,10 @@ import { ITask } from '../state/reducers/task';
 import { valueOr } from '../utils/generic';
 
 @Pipe({
-    name: 'taskFilterStatus',
+    name: 'tasksFilterStatus',
     pure: true
 })
-export class TaskFilterStatusPipe implements PipeTransform {
+export class TasksFilterStatusPipe implements PipeTransform {
     public transform(array: ITask[], ids: string[]): any {
         if (!ids || ids.length == 0) {
             return array;
