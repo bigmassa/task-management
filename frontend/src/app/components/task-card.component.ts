@@ -6,8 +6,14 @@ import {
     OnChanges,
     SimpleChanges
     } from '@angular/core';
-import { getTaskAssigneesForTask, getTaskById, getTaskTimingsById } from './../state/selectors/task';
+import {
+    getTaskAssigneesForTask,
+    getTaskById,
+    getTaskTimingsById, 
+    getTaskTagsForTask
+    } from './../state/selectors/task';
 import { ITask } from '../state/reducers/task';
+import { ITaskTag } from './../state/reducers/tasktag';
 import { ITaskAssignee } from './../state/reducers/taskassignee';
 import { ITaskTiming } from '../state/reducers/tasktiming';
 import { Observable } from 'rxjs';
@@ -22,6 +28,7 @@ export class TaskCardComponent implements OnChanges {
 
     assignees$: Observable<ITaskAssignee[]>;
     task$: Observable<ITask>;
+    taskTags$: Observable<ITaskTag[]>;
     timing$: Observable<ITaskTiming>;
 
     constructor(private store: Store<AppState>) {}
@@ -30,6 +37,7 @@ export class TaskCardComponent implements OnChanges {
         if (_.has(changes, 'id.currentValue')) {
             this.assignees$ = this.store.pipe(select(getTaskAssigneesForTask(this.id)));
             this.task$ = this.store.pipe(select(getTaskById(this.id)));
+            this.taskTags$ = this.store.pipe(select(getTaskTagsForTask(this.id)));
             this.timing$ = this.store.pipe(select(getTaskTimingsById(this.id)));
         }
     }
