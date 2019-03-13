@@ -16,7 +16,7 @@
             </div>
             <div class="col-8">
                 <div class="row">
-                    <div class="checkbox" *ngFor="let status of taskStatuses$ | async | orderBy : order : asc">
+                    <div class="checkbox" *ngFor="let status of taskStatuses$ | async">
                         <label>
                             {{ status.title }} ({{ (tasks$ | async | taskHasStatus:status.id).length }})
                             <input type="checkbox" value="{{ status.id }}" (click)="filterTaskStatusesBy(status.id)">
