@@ -10,6 +10,7 @@ django-storages
 django-taggit
 django-taggit-serializer
 djangorestframework
+flatbuffers
 huey[backends]
 markdown
 pillow
