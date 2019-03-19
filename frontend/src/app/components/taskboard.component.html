@@ -12,14 +12,14 @@
     <div class="panel">
         <div class="row align-items-center">
             <div class="col-4">
-                <search [(ngModel)]="searchTerms"></search>
+                <search [(ngModel)]="searchTerms" (ngModelChange)="setSearch()"></search>
             </div>
             <div class="col-8">
                 <div class="row">
                     <div class="checkbox" *ngFor="let status of taskStatuses$ | async">
                         <label>
                             {{ status.title }} ({{ (tasks$ | async | taskHasStatus:status.id).length }})
-                            <input type="checkbox" value="{{ status.id }}" (click)="filterTaskStatusesBy(status.id)">
+                            <input type="checkbox" (click)="toggleStatus(status.id)" [checked]="(filters$ | async).taskboard_statuses.indexOf(status.id) != -1">
                             <span></span>
                         </label>
                     </div>
@@ -54,7 +54,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="pointer" [routerLink]="['/clients', task._job.client, 'jobs', task.job]" [queryParams]="{task: task.id}" *ngFor="let task of tasks$ | async | tasksFilterStatus:filteredStatuses | taskSearch:searchTerms | orderBy : [orderBy] : [orderType]">
+                <tr class="pointer" [routerLink]="['/clients', task._job.client, 'jobs', task.job]" [queryParams]="{task: task.id}" *ngFor="let task of tasks$ | async | tasksFilterStatus : filteredStatuses">
                     <td class="keep-min-width">{{ task | get:'id' }}</td>
                     <td class="keep-min-width">{{ task | get:'target_date' }}</td>
                     <td>{{ task | get:'title' }}</td>

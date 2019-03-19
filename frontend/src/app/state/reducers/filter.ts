@@ -5,6 +5,9 @@ export interface IFilter {
     job: number;
     overdue: boolean;
     user: number;
+    taskboard_search: string[];
+    taskboard_statuses: number[];
+    taskboard_orderby: {by: string, type: 'asc' | 'desc'};
 }
 
 export type State = IFilter;
@@ -13,7 +16,10 @@ export const initialState: State = {
     client: null,
     job: null,
     overdue: null,
-    user: null
+    user: null,
+    taskboard_search: [],
+    taskboard_statuses: [],
+    taskboard_orderby: {by: 'target_date', type: 'asc'}
 };
 
 export function reducer(state = initialState, action: any): State {
@@ -37,6 +43,25 @@ export function reducer(state = initialState, action: any): State {
             return _.assign({}, state, { user: action.payload })
         }
 
+        case `${actionPrefix} TASKBOARD_ORDERBY`: {
+            return _.assign({}, state, { taskboard_orderby: action.payload })
+        }
+
+        case `${actionPrefix} TASKBOARD_SEARCH`: {
+            return _.assign({}, state, { taskboard_search: action.payload })
+        }
+
+        case `${actionPrefix} TASKBOARD_TOGGLE_STATUS`: {
+            const index = _.indexOf(state.taskboard_statuses, action.payload);
+            let statuses: number[] = [];
+            if (index >= 0) {
+                statuses = state.taskboard_statuses.slice(0, index);
+            } else {
+                statuses = [...state.taskboard_statuses, action.payload];
+            }
+            return _.assign({}, state, { taskboard_statuses: statuses })
+        }
+        
         default:
             return state;
     }

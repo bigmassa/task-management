@@ -2,7 +2,7 @@
 /* karma-css */
 @import url("https://fonts.googleapis.com/css?family=Inconsolata|Nunito:400,400i,700,700i");
 /* karma-css core */
-/*! Karma-CSS v1.9.8 MIT License | http://karmacss.com | https://github.com/accentdesign/karma-css */
+/*! Karma-CSS v1.9.7 MIT License | http://karmacss.com | https://github.com/accentdesign/karma-css */
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -2068,7 +2068,11 @@ output {
 }
 
 .checkbox input {
-  position: relative;
+  display: none;
+}
+
+.checkbox label {
+  padding: 0 1.5rem 0 3rem;
 }
 
 .field-wrapper {

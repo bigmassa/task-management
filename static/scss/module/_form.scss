@@ -54,7 +54,10 @@ output {
 .checkbox {
   margin-bottom: $input-margin-bottom;
   input {
-    position: relative;
+    display: none;
+  }
+  label {
+    padding: 0 1.5rem 0 3rem;
   }
 }
 

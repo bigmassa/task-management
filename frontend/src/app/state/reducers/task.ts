@@ -1,6 +1,7 @@
 import { IJob } from './job';
 import { ITaskStatus } from './taskstatus';
 import { reduceState } from '../generics';
+import { ITaskAssignee } from './taskassignee';
 
 export interface ITask {
     id?: number;
@@ -15,6 +16,7 @@ export interface ITask {
     is_overdue?: boolean;
     order: number;
     tags: string[];
+    _assignees?: ITaskAssignee[]; 
     _job?: IJob;
     _status?: ITaskStatus;
 }
