@@ -1,43 +1,65 @@
 import * as _ from 'lodash';
+import { Observable, Subscription } from 'rxjs';
 
+import { Component, OnDestroy } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { AppState, getMeState, getTaskStatusState } from '../state/state';
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
 
+import * as actions from '../state/actions';
+import { IFilter } from '../state/reducers/filter';
 import { ITask } from '../state/reducers/task';
-import { IUser } from '../state/reducers/user';
 import { ITaskStatus } from '../state/reducers/taskstatus';
-
+import { IUser } from '../state/reducers/user';
 import { getTasksForTaskBoardForUser } from '../state/selectors/taskboard';
 import { getActiveUsers } from '../state/selectors/user';
+import { AppState, getFilterState, getMeState, getTaskStatusState } from '../state/state';
 
 @Component({
     templateUrl: './taskboard.component.html'
 })
-export class TaskboardComponent {
+export class TaskboardComponent implements OnDestroy {
 
-    orderBy: string = 'target_date';
-    orderType: string = 'asc';
+    filteredStatuses: number[];
+    orderBy: string;
+    orderType: string;
     searchTerms: string[] = [];
     selectedUserId: number;
+    subscriptions: Subscription[] = [];
+    
+    filters$: Observable<IFilter>;
+    taskStatuses$: Observable<ITaskStatus[]>;
     tasks$: Observable<ITask[]>;
     users$: Observable<IUser[]>;
-
-    taskStatuses$: Observable<ITaskStatus[]>;
-    filteredStatuses: string[] = [];
 
     constructor(
         private store: Store<AppState>
     ) { }
 
     ngOnInit() {
-        this.users$ = this.store.pipe(select(getActiveUsers));
-        this.store.pipe(select(getMeState)).subscribe(me => {
-            this.selectedUserId = me.id;
-            this.refetchTasks();
-        });
+        this.filters$ = this.store.pipe(select(getFilterState));
         this.taskStatuses$ = this.store.pipe(select(getTaskStatusState));
+        this.users$ = this.store.pipe(select(getActiveUsers));
+        this.subscriptions.push(
+            this.store.pipe(select(getMeState)).subscribe(me => {
+                this.selectedUserId = me.id;
+                this.refetchTasks();
+            })
+        )
+        // assign current filters to local values
+        // to more easily use in template
+        this.subscriptions.push(
+            this.filters$.subscribe(
+                f => {
+                    this.filteredStatuses = f.taskboard_statuses;
+                    this.searchTerms = f.taskboard_search;
+                    this.orderBy = f.taskboard_orderby.by;
+                    this.orderType = f.taskboard_orderby.type;
+                }
+            )
+        )
+    }
+
+    ngOnDestroy() {
+        _.each(this.subscriptions, s => s.unsubscribe());
     }
 
     refetchTasks() {
@@ -51,15 +73,19 @@ export class TaskboardComponent {
             this.orderType = this.orderType == 'asc' ? 'desc' : 'asc';
         }
         this.orderBy = by;
+
+        this.store.dispatch({
+            type: actions.FilterActions.TASKBOARD_ORDERBY,
+            payload: {by, type: this.orderType}
+        });
     }
 
-    filterTaskStatusesBy(by: string) {
-        if (_.includes(this.filteredStatuses, by.toString())) {
-            _.pull(this.filteredStatuses, by.toString());
-        } else {
-            this.filteredStatuses.push(by.toString());
-        }
-
-        this.filteredStatuses = [].concat(this.filteredStatuses);
+    setSearch = () => {
+        this.store.dispatch({type: actions.FilterActions.TASKBOARD_SEARCH, payload: this.searchTerms});
     }
+
+    toggleStatus = (id: number) => {
+        this.store.dispatch({type: actions.FilterActions.TASKBOARD_TOGGLE_STATUS, payload: id});
+    }
+
 }
