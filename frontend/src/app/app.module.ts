@@ -1,5 +1,4 @@
 import { DropzoneModule } from 'ngx-dropzone-wrapper';
-import { NgxMaskModule } from 'ngx-mask';
 
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -115,7 +114,6 @@ import { reducers } from './state/state';
         MatDatepickerModule,
         MatNativeDateModule,
         NgxDnDModule,
-        NgxMaskModule.forRoot({}),
         ReactiveFormsModule,
         RouterModule,
         StoreModule.forRoot(reducers)
