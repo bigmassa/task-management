@@ -24,7 +24,7 @@ export class TimeEntryFormComponent implements OnChanges {
     
     entry$: Observable<ITimeEntry>;
     form: TimeEntryForm;
-    timing$: Observable<ITaskTiming>
+    timing$: Observable<ITaskTiming>;
 
     constructor(
         private store: Store<AppState>,
