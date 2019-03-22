@@ -8,6 +8,14 @@
 <div class="overlay-body">
     <p class="muted">To change the task click one from the main list</p>
     <input type="hidden" name="task">
+    <div class="row" *ngIf="form.task$ | async as task">
+        <div class="col">
+            <p class="mb-h"><i class="icon-calendar"></i><strong>Target Date</strong>: {{ task.target_date | date:'dd/MM/yy' }}</p>
+            <p *ngIf="timing$ | async as timing">
+                <i class="icon-clock"></i><strong>Target Hours</strong>: <span [class.c-red]="timing.is_over_allocated_hours">{{ timing.time_spent_hours }}/{{ timing.allocated_hours }}</span>
+            </p>
+        </div>
+    </div>
     <div class="row">
         <div class="col">
             <label>Start Time</label>
