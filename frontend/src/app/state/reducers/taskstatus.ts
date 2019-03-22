@@ -4,6 +4,7 @@ export interface ITaskStatus {
     id: number;
     title: string;
     order: number;
+    show_on_job_dashboard: boolean;
 }
 
 export type State = ITaskStatus[];

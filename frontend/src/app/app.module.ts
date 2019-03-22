@@ -51,7 +51,9 @@ import { OrderByPipe } from './pipes/order-by.pipe';
 import { TaskSearchPipe } from './pipes/task-search.pipe';
 import { TasksByStatusPipe } from './pipes/tasks-by-status.pipe';
 import { TasksFilterStatusPipe } from './pipes/tasks-filter-status.pipe';
+import { ShowStatusOnDashboardPipe } from './pipes/show-status-on-dashboard.pipe';
 import { TaskHasStatusPipe } from './pipes/task-has-status.pipe';
+import { TaskIsOverduePipe } from './pipes/task-is-overdue.pipe';
 import { LoadingInterceptor } from './services/interceptors';
 import { effects } from './state/effects';
 import { reducers } from './state/state';
@@ -95,6 +97,8 @@ import { reducers } from './state/state';
         TaskSearchPipe,
         TasksFilterStatusPipe,
         TaskHasStatusPipe,
+        TaskIsOverduePipe,
+        ShowStatusOnDashboardPipe,
         TimeEntryFormComponent,
         TimesheetComponent,
         TimesheetSignoffComponent

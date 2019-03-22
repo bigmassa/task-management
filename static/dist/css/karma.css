@@ -1990,6 +1990,10 @@ a.avatar:hover .avatar-close {
   line-height: 1.8rem;
 }
 
+.statistic {
+  font-size: 3rem;
+}
+
 /* stylelint-disable declaration-no-important, selector-type-no-unknown  */
 dropzone > .dropzone.dz-wrapper .dz-message {
   background-color: #f0f0f1 !important;

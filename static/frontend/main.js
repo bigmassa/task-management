@@ -436,16 +436,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./pipes/task-search.pipe */ "./src/app/pipes/task-search.pipe.ts");
 /* harmony import */ var _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./pipes/tasks-by-status.pipe */ "./src/app/pipes/tasks-by-status.pipe.ts");
 /* harmony import */ var _pipes_tasks_filter_status_pipe__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./pipes/tasks-filter-status.pipe */ "./src/app/pipes/tasks-filter-status.pipe.ts");
-/* harmony import */ var _pipes_task_has_status_pipe__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./pipes/task-has-status.pipe */ "./src/app/pipes/task-has-status.pipe.ts");
-/* harmony import */ var _services_interceptors__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./services/interceptors */ "./src/app/services/interceptors.ts");
-/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
-/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./state/state */ "./src/app/state/state.ts");
+/* harmony import */ var _pipes_show_status_on_dashboard_pipe__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./pipes/show-status-on-dashboard.pipe */ "./src/app/pipes/show-status-on-dashboard.pipe.ts");
+/* harmony import */ var _pipes_task_has_status_pipe__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./pipes/task-has-status.pipe */ "./src/app/pipes/task-has-status.pipe.ts");
+/* harmony import */ var _pipes_task_is_overdue_pipe__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./pipes/task-is-overdue.pipe */ "./src/app/pipes/task-is-overdue.pipe.ts");
+/* harmony import */ var _services_interceptors__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./services/interceptors */ "./src/app/services/interceptors.ts");
+/* harmony import */ var _state_effects__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./state/effects */ "./src/app/state/effects/index.ts");
+/* harmony import */ var _state_state__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./state/state */ "./src/app/state/state.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -543,7 +547,9 @@ var AppModule = /** @class */ (function () {
                 _pipes_tasks_by_status_pipe__WEBPACK_IMPORTED_MODULE_49__["TasksByStatusPipe"],
                 _pipes_task_search_pipe__WEBPACK_IMPORTED_MODULE_48__["TaskSearchPipe"],
                 _pipes_tasks_filter_status_pipe__WEBPACK_IMPORTED_MODULE_50__["TasksFilterStatusPipe"],
-                _pipes_task_has_status_pipe__WEBPACK_IMPORTED_MODULE_51__["TaskHasStatusPipe"],
+                _pipes_task_has_status_pipe__WEBPACK_IMPORTED_MODULE_52__["TaskHasStatusPipe"],
+                _pipes_task_is_overdue_pipe__WEBPACK_IMPORTED_MODULE_53__["TaskIsOverduePipe"],
+                _pipes_show_status_on_dashboard_pipe__WEBPACK_IMPORTED_MODULE_51__["ShowStatusOnDashboardPipe"],
                 _components_time_entry_form_component__WEBPACK_IMPORTED_MODULE_35__["TimeEntryFormComponent"],
                 _components_time_sheet_component__WEBPACK_IMPORTED_MODULE_37__["TimesheetComponent"],
                 _components_time_sheet_signoff_component__WEBPACK_IMPORTED_MODULE_36__["TimesheetSignoffComponent"]
@@ -552,7 +558,7 @@ var AppModule = /** @class */ (function () {
                 _app_routing__WEBPACK_IMPORTED_MODULE_12__["AppRoutingModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["BrowserModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_8__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_53__["effects"]),
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_8__["EffectsModule"].forRoot(_state_effects__WEBPACK_IMPORTED_MODULE_55__["effects"]),
                 ngx_dropzone_wrapper__WEBPACK_IMPORTED_MODULE_0__["DropzoneModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"],
@@ -565,10 +571,10 @@ var AppModule = /** @class */ (function () {
                 _swimlane_ngx_dnd__WEBPACK_IMPORTED_MODULE_10__["NgxDnDModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"],
-                _ngrx_store__WEBPACK_IMPORTED_MODULE_9__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_54__["reducers"])
+                _ngrx_store__WEBPACK_IMPORTED_MODULE_9__["StoreModule"].forRoot(_state_state__WEBPACK_IMPORTED_MODULE_56__["reducers"])
             ],
             providers: [
-                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HTTP_INTERCEPTORS"], useClass: _services_interceptors__WEBPACK_IMPORTED_MODULE_52__["LoadingInterceptor"], multi: true },
+                { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HTTP_INTERCEPTORS"], useClass: _services_interceptors__WEBPACK_IMPORTED_MODULE_54__["LoadingInterceptor"], multi: true },
                 { provide: _angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DATE_LOCALE"], useValue: 'en-GB' }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"]]
@@ -2135,7 +2141,7 @@ var JobRelationshipFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [class.flex-fill-container]=\"selectedTab.title == 'Tasks'\" *ngIf=\"job$ | async as job\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <span>{{ job.id }} : </span>\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'delete']\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul [tabs]=\"(tabs$ | async).job\" [type]=\"'job'\" (activeTab)=\"selectedTab = $event\" class=\"tabs\"></ul>\n        </div>\n    </div>\n\n    <div class=\"container-fluid ov-hidden full-height\" *ngIf=\"selectedTab.title == 'Tasks'\">\n        <div class=\"board-column-wrapper\" autoScroll [scrollMargin]=\"100\" [scrollMaxSpeed]=\"40\">\n            <div class=\"board-column\"\n                job-board-column\n                [jobId]=\"jobId\"\n                [status]=\"status\"\n                [tasks]=\"tasks$ | async | tasksByStatus:status.id\"\n                *ngFor=\"let status of statuses$ | async\">\n            </div>\n        </div>\n\n        <div task-form [id]=\"selectedTaskId\" (close)=\"selectedTaskId = null\" *ngIf=\"selectedTaskId != null\"></div>\n    \n    </div>\n    \n    <div class=\"container-fluid inner-content\" *ngIf=\"selectedTab.title != 'Tasks'\">\n\n        <div class=\"row\" *ngIf=\"selectedTab.title == 'Detail'\">\n            <div class=\"col-lg-3\">\n                <p class=\"strong\">Time Spent (hrs)</p>\n                <p [class.c-red]=\"timings.is_over_allocated_hours\" *ngIf=\"timings$ | async as timings\">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>\n                <hr>\n                <p class=\"strong\">Estimated (hrs)</p>\n                <p>{{ job | get:'estimated_hours' }}</p>\n                <hr/>\n                <p class=\"strong\">Type</p>\n                <p>{{ job | get:'_type.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Status</p>\n                <p>{{ job | get:'_status.title' }}</p>\n                <hr/>\n                <p class=\"strong\">Created at</p>\n                <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>\n                <hr/>\n                <p class=\"strong\">Billed To</p>\n                <p>{{ job | get:'billed_to' }}</p>\n                <hr/>\n                <p class=\"strong\">Slack Channel ID</p>\n                <p>{{ job | get:'slack_channel_id' }}</p>\n            </div>\n            <div class=\"col-lg-9\">\n                <div class=\"panel panel-dark\">\n                    <p class=\"strong\">Description</p>\n                    <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Files'\">\n            <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                        <th class=\"keep-min-width\">Size</th>\n                        <th class=\"keep-min-width\"></th>\n                        <th class=\"keep-min-width\"></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td>{{ file.name }}</td>\n                        <td class=\"keep-min-width\">{{ file.size_mb }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"downloadFile(file)\"><i class=\"icon-download\"></i></a></td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Notes'\">\n            <div class=\"row mb-1h\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\" [formControl]=\"newNoteForm.controls.note\"></textarea>\n                    <button class=\"button button-primary pull-right\" (click)=\"newNoteForm.save($event)\">Add</button>\n                </div>\n            </div>\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1h\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\" *ngIf=\"!form.editable\">{{ note.note }}</div>\n                        <textarea autoResize [formControl]=\"form.controls.note\" *ngIf=\"form.editable\"></textarea>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <ng-container *ngIf=\"!form.editable\">\n                            <a class=\"button button-clear\" (click)=\"form.editable = true\">Edit</a> |\n                            <a class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</a>\n                        </ng-container>\n                        <ng-container *ngIf=\"form.editable\">\n                            <a class=\"button button-secondary\" (click)=\"form.save($event)\">Save</a>\n                            <a class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</a>\n                        </ng-container>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Relationships'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', 'add']\">Add Relationship</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', relationship.id]\" *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRelationship($event, relationship)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Recurring Costs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', 'add']\">Add Recurring Cost</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', recurringCost.id]\" *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRecurringCost($event, recurringCost)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</div>    \n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"4\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"3\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"6\">No recurring costs found.</td></tr></tbody></ng-template>"
+module.exports = "<div [class.flex-fill-container]=\"selectedTab.title == 'Tasks'\" *ngIf=\"job$ | async as job\">\n    <div class=\"page-header\">\n        <div class=\"container-fluid d-flex align-items-center py-2\">\n            <span class=\"color-indicator\" [style.backgroundColor]=\"job.colour\"></span>\n            <div class=\"h2\">\n                <span>{{ job.id }} : </span>\n                <a [routerLink]=\"['/clients', job.client]\" class=\"underline-dotted\">{{ job | get:'_client.name' }}</a> /\n                <a>{{ job.title }}</a>\n            </div>\n            <div class=\"page-header-actions\">\n                <a class=\"button button-white\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'detail']\">Edit</a>\n                <a class=\"button button-white button-clear\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'delete']\">Delete</a>\n            </div>\n        </div>\n        <div class=\"container-fluid\">\n            <ul [tabs]=\"(tabs$ | async).job\" [type]=\"'job'\" (activeTab)=\"selectedTab = $event\" class=\"tabs\"></ul>\n        </div>\n    </div>\n\n    <div class=\"container-fluid ov-hidden full-height\" *ngIf=\"selectedTab.title == 'Tasks'\">\n        <div class=\"board-column-wrapper\" autoScroll [scrollMargin]=\"100\" [scrollMaxSpeed]=\"40\">\n            <div class=\"board-column\"\n                job-board-column\n                [jobId]=\"jobId\"\n                [status]=\"status\"\n                [tasks]=\"tasks$ | async | tasksByStatus:status.id\"\n                *ngFor=\"let status of statuses$ | async\">\n            </div>\n        </div>\n\n        <div task-form [id]=\"selectedTaskId\" (close)=\"selectedTaskId = null\" *ngIf=\"selectedTaskId != null\"></div>\n    \n    </div>\n    \n    <div class=\"container inner-content\" *ngIf=\"selectedTab.title != 'Tasks'\">\n        <div *ngIf=\"selectedTab.title == 'Dashboard'\">\n            <div class=\"row\">\n                <div class=\"col-lg-3 col-sm-6\" *ngFor=\"let status of statuses$ | async | showStatusOnDashboard\">\n                    <div class=\"panel\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"col\">\n                                <p class=\"statistic mb-0\">{{ (tasks$ | async | taskHasStatus:status.id).length }}</p>\n                                <p class=\"muted mb-0\"><strong>{{ status.title }} tasks</strong></p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-lg-3 col-sm-6\">\n                    <div class=\"panel\">\n                        <div class=\"row align-items-center\">\n                            <div class=\"col\">\n                                <p class=\"statistic mb-0\">{{ (tasks$ | async | taskIsOverdue).length }}</p>\n                                <p class=\"muted mb-0\"><strong>Overdue tasks</strong></p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"row\">\n                <div class=\"col-lg-3\">\n                    <div class=\"panel\">\n                        <p class=\"strong\">Details</p>\n                        <p class=\"strong margin-zero\">Time Spent (hrs)</p>\n                        <p [class.c-red]=\"timings.is_over_allocated_hours\" *ngIf=\"timings$ | async as timings\">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>\n                        <p class=\"strong margin-zero\">Estimated (hrs)</p>\n                        <p>{{ job | get:'estimated_hours' }}</p>\n                        <p class=\"strong margin-zero\">Type</p>\n                        <p>{{ job | get:'_type.title' }}</p>\n                        <p class=\"strong margin-zero\">Status</p>\n                        <p>{{ job | get:'_status.title' }}</p>\n                        <p class=\"strong margin-zero\">Created at</p>\n                        <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>\n                        <p class=\"strong margin-zero\">Billed To</p>\n                        <p>{{ job | get:'billed_to' }}</p>\n                        <p class=\"strong margin-zero\">Slack Channel ID</p>\n                        <p>{{ job | get:'slack_channel_id' }}</p>\n                    </div>\n                </div>\n                <div class=\"col\">\n                    <div class=\"panel\">\n                        <p class=\"strong\">Description</p>\n                        <p class=\"ws-pre-wrap\">{{ job | get:'description' }}</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Files'\">\n            <dropzone [config]=\"dropzoneConfig\" [message]=\"'Click or drag files here to upload'\" (sending)=\"onFileSending($event)\" (success)=\"onFileSuccess($event)\"></dropzone>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>File</th>\n                        <th class=\"keep-min-width\">Size</th>\n                        <th class=\"keep-min-width\"></th>\n                        <th class=\"keep-min-width\"></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"files$ | async as files\">\n                <tbody *ngIf=\"files.length > 0; else emptyFiles\">\n                    <tr *ngFor=\"let file of files\">\n                        <td>{{ file.name }}</td>\n                        <td class=\"keep-min-width\">{{ file.size_mb }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"downloadFile(file)\"><i class=\"icon-download\"></i></a></td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteFile(file)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n        \n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Notes'\">\n            <div class=\"row mb-1h\">\n                <div class=\"col-1\"></div>\n                <div class=\"col\">\n                    <textarea autoResize placeholder=\"Write some notes\" [formControl]=\"newNoteForm.controls.note\"></textarea>\n                    <button class=\"button button-primary pull-right\" (click)=\"newNoteForm.save($event)\">Add</button>\n                </div>\n            </div>\n            <ng-container *ngFor=\"let note of notes$ | async\">\n                <div class=\"row mb-1h\" *ngIf=\"getOrCreateEditNoteForm(note) as form\">\n                    <div class=\"col-1\"><div avatar [id]=\"note.user\" class=\"avatar\"></div></div>\n                    <div class=\"col\">\n                        <div class=\"comment ws-pre-wrap\" *ngIf=\"!form.editable\">{{ note.note }}</div>\n                        <textarea autoResize [formControl]=\"form.controls.note\" *ngIf=\"form.editable\"></textarea>\n                        <span class=\"muted mr-1\">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>\n                        <ng-container *ngIf=\"!form.editable\">\n                            <a class=\"button button-clear\" (click)=\"form.editable = true\">Edit</a> |\n                            <a class=\"button button-clear\" *ngIf=\"!form.editable\" (click)=\"form.delete($event)\">Delete</a>\n                        </ng-container>\n                        <ng-container *ngIf=\"form.editable\">\n                            <a class=\"button button-secondary\" (click)=\"form.save($event)\">Save</a>\n                            <a class=\"button button-clear\" (click)=\"form.cancel($event)\">Cancel</a>\n                        </ng-container>\n                    </div>\n                </div>\n            </ng-container>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Relationships'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', 'add']\">Add Relationship</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>User</th>\n                        <th>Relationship</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"relationships$ | async as relationships\">\n                <tbody *ngIf=\"relationships.length > 0; else emptyRelationships\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'relationships', relationship.id]\" *ngFor=\"let relationship of relationships\">\n                        <td>{{ relationship | get:'_user.full_name' }}</td>\n                        <td>{{ relationship | get:'_relationship.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRelationship($event, relationship)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n        <div class=\"panel\" *ngIf=\"selectedTab.title == 'Recurring Costs'\">\n            <div class=\"row\">\n                <div class=\"col-6\"></div>\n                <div class=\"col-6\">\n                    <a class=\"button button-white pull-right\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', 'add']\">Add Recurring Cost</a>\n                </div>\n            </div>\n            <table class=\"table-hover\">\n                <thead>\n                    <tr>\n                        <th>Type</th>\n                        <th>Last Invoiced Date</th>\n                        <th>Billing Interval</th>\n                        <th>Billing Frequency</th>\n                        <th>Payment Option</th>\n                        <th></th>\n                    </tr>\n                </thead>\n                <ng-container *ngIf=\"recurringCosts$ | async as recurringCosts\">\n                <tbody *ngIf=\"recurringCosts.length > 0; else emptyRecurringCosts\">\n                    <tr class=\"pointer\" [routerLink]=\"['/clients', job.client, 'jobs', job.id, 'recurring-costs', recurringCost.id]\" *ngFor=\"let recurringCost of recurringCosts\">\n                        <td>{{ recurringCost | get:'_type.title' }}</td>\n                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>\n                        <td>{{ recurringCost | get:'billing_interval' }}</td>\n                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>\n                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>\n                        <td class=\"keep-min-width\"><a class=\"pointer\" (click)=\"deleteRecurringCost($event, recurringCost)\"><i class=\"icon-trash\"></i></a></td>\n                    </tr>\n                </tbody>\n                </ng-container>\n            </table>\n        </div>\n\n    </div>\n</div>    \n\n<ng-template #emptyFiles><tbody><tr><td colspan=\"4\">No files found.</td></tr></tbody></ng-template>\n<ng-template #emptyRelationships><tbody><tr><td colspan=\"3\">No relationships found.</td></tr></tbody></ng-template>\n<ng-template #emptyRecurringCosts><tbody><tr><td colspan=\"6\">No recurring costs found.</td></tr></tbody></ng-template>"
 
 /***/ }),
 
@@ -5336,6 +5342,46 @@ var OrderByPipe = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/pipes/show-status-on-dashboard.pipe.ts":
+/*!********************************************************!*\
+  !*** ./src/app/pipes/show-status-on-dashboard.pipe.ts ***!
+  \********************************************************/
+/*! exports provided: ShowStatusOnDashboardPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShowStatusOnDashboardPipe", function() { return ShowStatusOnDashboardPipe; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var ShowStatusOnDashboardPipe = /** @class */ (function () {
+    function ShowStatusOnDashboardPipe() {
+    }
+    ShowStatusOnDashboardPipe.prototype.transform = function (array) {
+        return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](array, ['show_on_job_dashboard', true]);
+    };
+    ShowStatusOnDashboardPipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'showStatusOnDashboard',
+            pure: true
+        })
+    ], ShowStatusOnDashboardPipe);
+    return ShowStatusOnDashboardPipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/pipes/task-has-status.pipe.ts":
 /*!***********************************************!*\
   !*** ./src/app/pipes/task-has-status.pipe.ts ***!
@@ -5370,6 +5416,46 @@ var TaskHasStatusPipe = /** @class */ (function () {
         })
     ], TaskHasStatusPipe);
     return TaskHasStatusPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/task-is-overdue.pipe.ts":
+/*!***********************************************!*\
+  !*** ./src/app/pipes/task-is-overdue.pipe.ts ***!
+  \***********************************************/
+/*! exports provided: TaskIsOverduePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskIsOverduePipe", function() { return TaskIsOverduePipe; });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var TaskIsOverduePipe = /** @class */ (function () {
+    function TaskIsOverduePipe() {
+    }
+    TaskIsOverduePipe.prototype.transform = function (array) {
+        return lodash__WEBPACK_IMPORTED_MODULE_0__["filter"](array, ['is_overdue', true]);
+    };
+    TaskIsOverduePipe = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'taskIsOverdue',
+            pure: true
+        })
+    ], TaskIsOverduePipe);
+    return TaskIsOverduePipe;
 }());
 
 
@@ -12082,7 +12168,7 @@ var initialState = {
         { title: 'Contacts', active: false }
     ],
     job: [
-        { title: 'Detail', active: true },
+        { title: 'Dashboard', active: true },
         { title: 'Tasks', active: false },
         { title: 'Notes', active: false },
         { title: 'Files', active: false },

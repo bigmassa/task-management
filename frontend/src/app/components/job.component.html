@@ -32,35 +32,56 @@
     
     </div>
     
-    <div class="container-fluid inner-content" *ngIf="selectedTab.title != 'Tasks'">
-
-        <div class="row" *ngIf="selectedTab.title == 'Detail'">
-            <div class="col-lg-3">
-                <p class="strong">Time Spent (hrs)</p>
-                <p [class.c-red]="timings.is_over_allocated_hours" *ngIf="timings$ | async as timings">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>
-                <hr>
-                <p class="strong">Estimated (hrs)</p>
-                <p>{{ job | get:'estimated_hours' }}</p>
-                <hr/>
-                <p class="strong">Type</p>
-                <p>{{ job | get:'_type.title' }}</p>
-                <hr/>
-                <p class="strong">Status</p>
-                <p>{{ job | get:'_status.title' }}</p>
-                <hr/>
-                <p class="strong">Created at</p>
-                <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>
-                <hr/>
-                <p class="strong">Billed To</p>
-                <p>{{ job | get:'billed_to' }}</p>
-                <hr/>
-                <p class="strong">Slack Channel ID</p>
-                <p>{{ job | get:'slack_channel_id' }}</p>
+    <div class="container inner-content" *ngIf="selectedTab.title != 'Tasks'">
+        <div *ngIf="selectedTab.title == 'Dashboard'">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6" *ngFor="let status of statuses$ | async | showStatusOnDashboard">
+                    <div class="panel">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <p class="statistic mb-0">{{ (tasks$ | async | taskHasStatus:status.id).length }}</p>
+                                <p class="muted mb-0"><strong>{{ status.title }} tasks</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="panel">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <p class="statistic mb-0">{{ (tasks$ | async | taskIsOverdue).length }}</p>
+                                <p class="muted mb-0"><strong>Overdue tasks</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-9">
-                <div class="panel panel-dark">
-                    <p class="strong">Description</p>
-                    <p class="ws-pre-wrap">{{ job | get:'description' }}</p>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="panel">
+                        <p class="strong">Details</p>
+                        <p class="strong margin-zero">Time Spent (hrs)</p>
+                        <p [class.c-red]="timings.is_over_allocated_hours" *ngIf="timings$ | async as timings">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>
+                        <p class="strong margin-zero">Estimated (hrs)</p>
+                        <p>{{ job | get:'estimated_hours' }}</p>
+                        <p class="strong margin-zero">Type</p>
+                        <p>{{ job | get:'_type.title' }}</p>
+                        <p class="strong margin-zero">Status</p>
+                        <p>{{ job | get:'_status.title' }}</p>
+                        <p class="strong margin-zero">Created at</p>
+                        <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>
+                        <p class="strong margin-zero">Billed To</p>
+                        <p>{{ job | get:'billed_to' }}</p>
+                        <p class="strong margin-zero">Slack Channel ID</p>
+                        <p>{{ job | get:'slack_channel_id' }}</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="panel">
+                        <p class="strong">Description</p>
+                        <p class="ws-pre-wrap">{{ job | get:'description' }}</p>
+                    </div>
                 </div>
             </div>
         </div>
