@@ -17,6 +17,10 @@ class TaskStatus(models.Model):
     order = models.PositiveIntegerField(
         default=0
     )
+    show_on_job_dashboard = models.BooleanField(
+        default=True,
+        help_text='Designates whether this status should be displayed on the job dashboard'
+    )
 
     class Meta:
         ordering = ['order']

@@ -29,6 +29,12 @@ class ModelTests(AppTestCase):
         self.assertModelField(field, models.PositiveIntegerField)
         self.assertEqual(field.default, 0)
 
+    def test_show_on_job_dashboard(self):
+        field = TaskStatus._meta.get_field('show_on_job_dashboard')
+        self.assertModelField(field, models.BooleanField)
+        self.assertTrue(field.default, True)
+        self.assertTrue(field.help_text, 'Designates whether this status should be displayed on the job dashboard')
+
     # meta
 
     def test_ordering(self):

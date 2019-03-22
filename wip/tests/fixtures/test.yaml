@@ -147,7 +147,8 @@
     pk: 1
     fields: {
       title: "Ongoing",
-      order: 0
+      order: 0,
+      show_on_job_dashboard: true
     }
 
 -
