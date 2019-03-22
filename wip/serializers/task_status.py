@@ -10,6 +10,8 @@ class TaskStatusSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'title',
+            'icon',
+            'colour',
             'order',
             'show_on_job_dashboard'
         ]

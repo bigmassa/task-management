@@ -1,10 +1,22 @@
 from django.db import models
 
+from wip.fields import ColorField
+
 
 class TaskStatus(models.Model):
     title = models.CharField(
         max_length=50,
         unique=True
+    )
+    icon = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+        help_text='An icon representing this status'
+    )
+    colour = ColorField(
+        null=True,
+        blank=True
     )
     notify_job_relationships = models.BooleanField(
         default=False,
