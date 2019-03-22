@@ -4,11 +4,9 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { AppState } from './../state/state';
 import { FormCleanAfterMethod } from '../forms/base.form';
 import { ITimeEntry } from '../state/reducers/timeentry';
-import { ITaskTiming } from '../state/reducers/tasktiming';
 import { Observable } from 'rxjs';
 import { TimeEntryForm } from '../forms/time-entry.form';
 import { getTimeEntryById } from '../state/selectors/timeentry';
-import { getTaskTimingsById } from '../state/selectors/task';
 import { take } from 'rxjs/operators';
 
 @Component({
@@ -24,7 +22,6 @@ export class TimeEntryFormComponent implements OnChanges {
     
     entry$: Observable<ITimeEntry>;
     form: TimeEntryForm;
-    timing$: Observable<ITaskTiming>;
 
     constructor(
         private store: Store<AppState>,
@@ -40,10 +37,7 @@ export class TimeEntryFormComponent implements OnChanges {
     ngOnChanges(changes: SimpleChanges) {
         for (const propName in changes) {
             if (propName === 'id') {
-                const id = changes[propName].currentValue;
-
-                this.entry$ = this.store.pipe(select(getTimeEntryById(id)));
-                this.timing$ = this.store.pipe(select(getTaskTimingsById(id)));
+                this.entry$ = this.store.pipe(select(getTimeEntryById(changes[propName].currentValue)));
                 this.entry$.pipe(take(1)).subscribe(
                     d => {
                         this.form.load(d);

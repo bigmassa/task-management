@@ -8,8 +8,12 @@ import { FormControl, Validators } from '@angular/forms';
 
 import { AppState } from '../state/state';
 import { ITask } from './../state/reducers/task';
+import { ITaskTiming } from '../state/reducers/tasktiming';
 import { Observable } from '../../../node_modules/rxjs';
-import { getTaskCollectionById } from '../state/selectors/task';
+import {
+    getTaskCollectionById, 
+    getTaskTimingsById 
+} from '../state/selectors/task';
 import { time24Reg } from '../utils/regex';
 
 const options: IFormOptions = {
@@ -35,6 +39,7 @@ export class TimeEntryForm extends BaseForm {
     deleteSuccessAction = actions.TimeEntryActions.REMOVE_SUCCESS;
 
     task$: Observable<ITask>;
+    timing$: Observable<ITaskTiming>;
 
     constructor(
         protected store: Store<AppState>,
@@ -80,6 +85,7 @@ export class TimeEntryForm extends BaseForm {
         this.controls.task.valueChanges.subscribe(
             value => {
                 this.task$ = this.store.pipe(select(getTaskCollectionById(value)));
+                this.timing$ = this.store.pipe(select(getTaskTimingsById(value)));
             }
         )
     }
@@ -95,6 +101,7 @@ export class TimeEntryForm extends BaseForm {
         this.controls.signed_off.setValue(false);
         // load the selected task data
         this.task$ = this.store.pipe(select(getTaskCollectionById(data.task)));
+        this.timing$ = this.store.pipe(select(getTaskTimingsById(data.task)));
     }
 
 }

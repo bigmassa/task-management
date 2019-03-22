@@ -3053,7 +3053,7 @@ var TaskboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"overlay-header d-flex align-items-top\">\n    <ng-container *ngIf=\"form.task$ | async as task\">\n        <div class=\"color-indicator\" [style.backgroundColor]=\"task._job.colour\"></div>\n        <div class=\"title h4\">{{ task.title }}</div>\n    </ng-container>\n    <a class=\"close ml-auto\" (click)=\"closeEvent($event)\"><i class=\"icon-cancel\"></i></a>\n</div>\n<div class=\"overlay-body\">\n    <p class=\"muted\">To change the task click one from the main list</p>\n    <input type=\"hidden\" name=\"task\">\n    <div class=\"row\" *ngIf=\"form.task$ | async as task\">\n        <div class=\"col\">\n            <p class=\"mb-h\"><i class=\"icon-calendar\"></i><strong>Target Date</strong>: {{ task.target_date | date:'dd/MM/yy' }}</p>\n            <p *ngIf=\"timing$ | async as timing\">\n                <i class=\"icon-clock\"></i><strong>Target Hours</strong>: <span [class.c-red]=\"timing.is_over_allocated_hours\">{{ timing.time_spent_hours }}/{{ timing.allocated_hours }}</span>\n            </p>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <label>Start Time</label>\n            <input [formControl]=\"form.controls.started_at_time\" type=\"text\" placeholder=\"hh:mm\" />\n            <p class=\"c-red\" *formError=\"form.controls.started_at_time\">ie 00:00 - 23:59</p>\n        </div>\n        <div class=\"col\">\n            <label>End Time</label>\n            <input [formControl]=\"form.controls.ended_at_time\" type=\"text\" placeholder=\"hh:mm\" />\n            <p class=\"c-red\" *formError=\"form.controls.ended_at_time\">ie 00:00 - 23:59</p>\n        </div>\n    </div>\n    <label>Comments</label>\n    <textarea [formControl]=\"form.controls.comments\" name=\"comments\" rows=\"3\"></textarea>\n    <div class=\"text-right\">\n        <a class=\"button button-primary\" (click)=\"form.save($event)\">Update</a>\n        <a class=\"delete button button-primary button-clear\" (click)=\"form.delete($event)\">Delete <i class=\"icon-trash\"></i></a>\n    </div>\n</div>"
+module.exports = "<div class=\"overlay-header d-flex align-items-top\">\n    <ng-container *ngIf=\"form.task$ | async as task\">\n        <div class=\"color-indicator\" [style.backgroundColor]=\"task._job.colour\"></div>\n        <div class=\"title h4\">{{ task.title }}</div>\n    </ng-container>\n    <a class=\"close ml-auto\" (click)=\"closeEvent($event)\"><i class=\"icon-cancel\"></i></a>\n</div>\n<div class=\"overlay-body\">\n    <p class=\"muted\">To change the task click one from the main list</p>\n    <input type=\"hidden\" name=\"task\">\n    <div class=\"row\" *ngIf=\"form.task$ | async as task\">\n        <div class=\"col\">\n            <p *ngIf=\"task.target_date\" class=\"margin-zero\"><i class=\"icon-calendar\"></i><strong>Target Date</strong>: {{ task.target_date | date:'dd/MM/yy' }}</p>\n            <p *ngIf=\"(form.timing$ | async)?.time_spent_hours != '0.00' && (form.timing$ | async) as timing\" class=\"margin-zero mt-h\">\n                <i class=\"icon-clock\"></i><strong>Target Hours</strong>: <span [class.c-red]=\"timing.is_over_allocated_hours\">{{ timing.time_spent_hours }}/{{ timing.allocated_hours }}</span>\n            </p>\n        </div>\n    </div>\n    <div class=\"row mt-1h\">\n        <div class=\"col\">\n            <label>Start Time</label>\n            <input [formControl]=\"form.controls.started_at_time\" type=\"text\" placeholder=\"hh:mm\" />\n            <p class=\"c-red\" *formError=\"form.controls.started_at_time\">ie 00:00 - 23:59</p>\n        </div>\n        <div class=\"col\">\n            <label>End Time</label>\n            <input [formControl]=\"form.controls.ended_at_time\" type=\"text\" placeholder=\"hh:mm\" />\n            <p class=\"c-red\" *formError=\"form.controls.ended_at_time\">ie 00:00 - 23:59</p>\n        </div>\n    </div>\n    <label>Comments</label>\n    <textarea [formControl]=\"form.controls.comments\" name=\"comments\" rows=\"3\"></textarea>\n    <div class=\"text-right\">\n        <a class=\"button button-primary\" (click)=\"form.save($event)\">Update</a>\n        <a class=\"delete button button-primary button-clear\" (click)=\"form.delete($event)\">Delete <i class=\"icon-trash\"></i></a>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -3071,8 +3071,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _forms_time_entry_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../forms/time-entry.form */ "./src/app/forms/time-entry.form.ts");
 /* harmony import */ var _state_selectors_timeentry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../state/selectors/timeentry */ "./src/app/state/selectors/timeentry.ts");
-/* harmony import */ var _state_selectors_task__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/selectors/task */ "./src/app/state/selectors/task.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3082,7 +3081,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -3104,10 +3102,8 @@ var TimeEntryFormComponent = /** @class */ (function () {
         var _this = this;
         for (var propName in changes) {
             if (propName === 'id') {
-                var id = changes[propName].currentValue;
-                this.entry$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(Object(_state_selectors_timeentry__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryById"])(id)));
-                this.timing$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_4__["getTaskTimingsById"])(id)));
-                this.entry$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["take"])(1)).subscribe(function (d) {
+                this.entry$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["select"])(Object(_state_selectors_timeentry__WEBPACK_IMPORTED_MODULE_3__["getTimeEntryById"])(changes[propName].currentValue)));
+                this.entry$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["take"])(1)).subscribe(function (d) {
                     _this.form.load(d);
                 });
             }
@@ -5040,6 +5036,7 @@ var TimeEntryForm = /** @class */ (function (_super) {
         // reload the selected task data
         _this.controls.task.valueChanges.subscribe(function (value) {
             _this.task$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_6__["getTaskCollectionById"])(value)));
+            _this.timing$ = _this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_6__["getTaskTimingsById"])(value)));
         });
         return _this;
     }
@@ -5054,6 +5051,7 @@ var TimeEntryForm = /** @class */ (function (_super) {
         this.controls.signed_off.setValue(false);
         // load the selected task data
         this.task$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_6__["getTaskCollectionById"])(data.task)));
+        this.timing$ = this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["select"])(Object(_state_selectors_task__WEBPACK_IMPORTED_MODULE_6__["getTaskTimingsById"])(data.task)));
     };
     return TimeEntryForm;
 }(_base_form__WEBPACK_IMPORTED_MODULE_4__["BaseForm"]));

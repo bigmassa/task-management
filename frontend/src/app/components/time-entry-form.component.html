@@ -10,13 +10,13 @@
     <input type="hidden" name="task">
     <div class="row" *ngIf="form.task$ | async as task">
         <div class="col">
-            <p class="mb-h"><i class="icon-calendar"></i><strong>Target Date</strong>: {{ task.target_date | date:'dd/MM/yy' }}</p>
-            <p *ngIf="timing$ | async as timing">
+            <p *ngIf="task.target_date" class="margin-zero"><i class="icon-calendar"></i><strong>Target Date</strong>: {{ task.target_date | date:'dd/MM/yy' }}</p>
+            <p *ngIf="(form.timing$ | async)?.time_spent_hours != '0.00' && (form.timing$ | async) as timing" class="margin-zero mt-h">
                 <i class="icon-clock"></i><strong>Target Hours</strong>: <span [class.c-red]="timing.is_over_allocated_hours">{{ timing.time_spent_hours }}/{{ timing.allocated_hours }}</span>
             </p>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-1h">
         <div class="col">
             <label>Start Time</label>
             <input [formControl]="form.controls.started_at_time" type="text" placeholder="hh:mm" />
