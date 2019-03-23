@@ -1994,6 +1994,12 @@ a.avatar:hover .avatar-close {
   font-size: 3rem;
 }
 
+.circle-border {
+  padding: .8rem;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
 /* stylelint-disable declaration-no-important, selector-type-no-unknown  */
 dropzone > .dropzone.dz-wrapper .dz-message {
   background-color: #f0f0f1 !important;
