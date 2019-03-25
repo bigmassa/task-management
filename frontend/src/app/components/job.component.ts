@@ -17,6 +17,7 @@ import {
     } from '../state/selectors/job';
 import { getTaskStateForJob } from '../state/selectors/task';
 import { getTaskStatusState } from './../state/state';
+import { I18nPluralPipe } from '@angular/common';
 import { IJob } from '../state/reducers/job';
 import { IJobFile } from '../state/reducers/jobfile';
 import { IJobNote } from './../state/reducers/jobnote';
@@ -55,6 +56,9 @@ export class JobComponent implements OnDestroy, OnInit {
     selectedTaskId: number = null;
     statuses$: Observable<ITaskStatus[]>;
     tasks$: Observable<ITask[]>;
+
+    taskPluralMapping: {[k: string]: string} 
+        = {'=0': 'tasks', '=1': 'task', 'other': 'tasks'};
 
     private subscriptions: Subscription[] = [];
 

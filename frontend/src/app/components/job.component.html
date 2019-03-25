@@ -43,7 +43,9 @@
                             </div>
                             <div class="col">
                                 <p class="statistic mb-0">{{ (tasks$ | async | taskHasStatus:status.id).length }}</p>
-                                <p class="muted mb-0"><strong>{{ status.title }} tasks</strong></p>
+                                <p class="muted mb-0"><strong>
+                                    {{ status.title }} {{ (tasks$ | async | taskHasStatus:status.id).length | i18nPlural: taskPluralMapping }}
+                                </strong></p>
                             </div>
                         </div>
                     </div>
@@ -52,7 +54,7 @@
                     <div class="panel">
                         <div class="row align-items-center">
                             <div class="col-3">
-                                <span class="h2 icon-calendar c-red circle-border"></span>
+                                <span class="h2 icon-attention-alt c-red circle-border"></span>
                             </div>
                             <div class="col">
                                 <p class="statistic mb-0">{{ (tasks$ | async | taskIsOverdue).length }}</p>
@@ -84,18 +86,44 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="panel">
-                        <p class="strong">Description</p>
-                        <p class="ws-pre-wrap">{{ job | get:'description' }}</p>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="panel">
+                                <p class="strong">Description</p>
+                                <p class="ws-pre-wrap">{{ job | get:'description' }}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4" *ngIf="relationships$ | async as relationships">
+                            <div class="panel">
+                                <p class="strong m-0">Relationships</p>
+                                <div *ngIf="relationships.length > 0; else emptyRelationships">
+                                    <div *ngFor="let relationship of relationships" class="d-flex align-items-center mt-2">
+                                        <span avatar [id]="relationship | get:'_user.id'" class="avatar mr-1"></span>
+                                        <p class="margin-zero">
+                                            <strong>{{ relationship | get:'_user.full_name' }}</strong>
+                                            <span class="muted d-block">{{ relationship | get:'_relationship.title' }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div *ngIf="relationships$ | async as relationships" class="col">
-                    <div class="panel">
-                        <p class="strong">Relationships</p>
-                        <div *ngIf="relationships.length > 0; else emptyRelationships">
-                            <div *ngFor="let relationship of relationships" class="d-flex align-items-center">
-                                <span avatar [id]="relationship | get:'_user.id'" class="avatar mr-1"></span>
-                                <p class="margin-zero"><strong>{{ relationship | get:'_user.full_name' }}</strong> <br> {{ relationship | get:'_relationship.title' }}</p>
+                    <div class="row">
+                        <div class="col-lg-8" *ngIf="notes$ | async as notes">
+                            <div class="panel">
+                                <p class="strong m-0">Recent Notes</p>
+                                <ng-container *ngFor="let note of notes | slice:0:2">
+                                    <div class="row mt-2" *ngIf="getOrCreateEditNoteForm(note) as form">
+                                        <div class="col-1">
+                                            <div avatar [id]="note.user" class="avatar"></div>
+                                        </div>
+                                        <div class="col">
+                                            <span class="d-block"><strong>{{ note._user.full_name }}</strong></span>
+                                            <span class="muted d-block">{{ note.updated_at | date:'MMM d, y, h:mm a' }}</span>
+                                            <div class="ws-pre-wrap mt-1">{{ note.note }}</div>
+                                        </div>
+                                    </div>
+                                </ng-container>
                             </div>
                         </div>
                     </div>
