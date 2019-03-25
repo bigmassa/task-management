@@ -1905,6 +1905,8 @@ ul.radios input[type=radio] + span:after {
   text-align: center;
   background: #292c36;
   border-radius: 50%;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .avatar .avatar-text {

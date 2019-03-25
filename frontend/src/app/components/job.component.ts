@@ -58,7 +58,7 @@ export class JobComponent implements OnDestroy, OnInit {
     tasks$: Observable<ITask[]>;
 
     taskPluralMapping: {[k: string]: string} 
-        = {'=0': 'tasks', '=1': 'task', 'other': 'tasks'};
+        = {'=1': 'task', 'other': 'tasks'};
 
     private subscriptions: Subscription[] = [];
 

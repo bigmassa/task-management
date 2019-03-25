@@ -28,6 +28,7 @@ import { JobRelationshipFormComponent } from './components/job-relationship-form
 import { JobComponent } from './components/job.component';
 import { LoadingSplashComponent } from './components/loading-splash.component';
 import { LogoComponent } from './components/logo';
+import { UserContentComponent } from './components/user-content.component';
 import { NotFoundComponent } from './components/not-found.component';
 import { SearchComponent } from './components/search.component';
 import { TabsComponent } from './components/tabs.component';
@@ -101,7 +102,8 @@ import { reducers } from './state/state';
         ShowStatusOnDashboardPipe,
         TimeEntryFormComponent,
         TimesheetComponent,
-        TimesheetSignoffComponent
+        TimesheetSignoffComponent,
+        UserContentComponent,
     ],
     imports: [
         AppRoutingModule,
