@@ -132,9 +132,12 @@
                                 <p class="strong m-0">Recurring Costs</p>
                                 <ng-container *ngIf="recurringCosts$ | async as recurringCosts">
                                     <div *ngIf="recurringCosts.length > 0; else dashboardEmptyRecurringCosts">
-                                        <div class="mt-1" *ngFor="let recurringCost of recurringCosts">
+                                        <div class="mt-1h" *ngFor="let recurringCost of recurringCosts">
                                             <span class="d-block"><strong>{{ recurringCost | get:'_type.title' }}</strong></span>
-                                            <span>{{ recurringCost | get:'_billing_frequency.title' }} &rarr; {{ recurringCost | get:'last_invoiced_date' }}</span>
+                                            <span>
+                                                {{ recurringCost | get:'billing_interval' }} {{ recurringCost | get:'_billing_frequency.title' }} 
+                                                to <strong>{{ recurringCost | get:'last_invoiced_date' }}</strong>
+                                            </span>
                                         </div>
                                     </div>
                                 </ng-container>
@@ -264,6 +267,6 @@
 <ng-template #emptyRelationships><tbody><tr><td colspan="3">No relationships found.</td></tr></tbody></ng-template>
 <ng-template #emptyRecurringCosts><tbody><tr><td colspan="6">No recurring costs found.</td></tr></tbody></ng-template>
 
-<ng-template #dashboardEmptyNotes><p class="mt-1">No notes found.</p></ng-template>
-<ng-template #dashboardEmptyRelationships><p class="mt-1">No relationships found.</p></ng-template>
-<ng-template #dashboardEmptyRecurringCosts><p class="mt-1">No recurring costs found.</p></ng-template>
+<ng-template #dashboardEmptyNotes><p class="muted mt-1">This job has no notes.</p></ng-template>
+<ng-template #dashboardEmptyRelationships><p class="muted mt-1">This job has no relationships.</p></ng-template>
+<ng-template #dashboardEmptyRecurringCosts><p class="muted mt-1">This job has no recurring costs.</p></ng-template>
