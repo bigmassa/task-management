@@ -67,7 +67,7 @@ export class TimeEntryForm extends BaseForm {
         // subscribe to the time changes and update the full date time fields
         this.controls.started_at_time.valueChanges.subscribe(
             value => {
-                if (!value) { return };
+                if (!value || !this.controls.started_at_time.valid) { return };
                 const timeSplit = value.split(':');
                 const date = moment(this.controls.started_at.value).set({h: timeSplit[0], m: timeSplit[1]});
                 this.controls.started_at.setValue(date.toISOString());
@@ -75,7 +75,7 @@ export class TimeEntryForm extends BaseForm {
         )
         this.controls.ended_at_time.valueChanges.subscribe(
             value => {
-                if (!value) { return };
+                if (!value || !this.controls.ended_at_time.valid) { return };
                 const timeSplit = value.split(':');
                 const date = moment(this.controls.ended_at.value).set({h: timeSplit[0], m: timeSplit[1]});
                 this.controls.ended_at.setValue(date.toISOString());

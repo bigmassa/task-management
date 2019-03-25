@@ -5016,7 +5016,7 @@ var TimeEntryForm = /** @class */ (function (_super) {
         _this.deleteSuccessAction = _state_actions__WEBPACK_IMPORTED_MODULE_1__["TimeEntryActions"].REMOVE_SUCCESS;
         // subscribe to the time changes and update the full date time fields
         _this.controls.started_at_time.valueChanges.subscribe(function (value) {
-            if (!value) {
+            if (!value || !_this.controls.started_at_time.valid) {
                 return;
             }
             ;
@@ -5025,7 +5025,7 @@ var TimeEntryForm = /** @class */ (function (_super) {
             _this.controls.started_at.setValue(date.toISOString());
         });
         _this.controls.ended_at_time.valueChanges.subscribe(function (value) {
-            if (!value) {
+            if (!value || !_this.controls.ended_at_time.valid) {
                 return;
             }
             ;
