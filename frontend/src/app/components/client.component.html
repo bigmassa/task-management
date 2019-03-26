@@ -12,35 +12,96 @@
             <ul [tabs]="(tabs$ | async).client" [type]="'client'" (activeTab)="selectedTab = $event" class="tabs"></ul>
         </div>
     </div>
-    <div class="container-fluid inner-content">
-
-        <div class="row" *ngIf="selectedTab.title == 'Detail'">
-            <div class="col-lg-3">
-                <p class="strong">Email Address</p>
-                <p>
-                    <a *ngIf="client.email_address; else emptyValue" href="mailto://{{ client.email_address }}" class="underline-dotted">{{ client.email_address }}</a>
-                </p>
-                <hr/>
-                <p class="strong">Phone Number</p>
-                <p>
-                    <ng-container *ngIf="client.phone_number; else emptyValue">
-                        <a href="tel:{{ client.phone_number }}" class="underline-dotted">{{ client.phone_number }}</a>
-                        <a *ngIf="(me$ | async)?.is_gradwell_enabled" (click)="call(client.phone_number)" class="pointer"><i class="icon-phone c-red"></i></a>
-                    </ng-container>    
-                </p>
-                <hr/>
-                <p class="strong">Website</p>
-                <p>
-                    <a *ngIf="client.website; else emptyValue" href="{{ client.website }}" class="underline-dotted">{{ client.website }}</a>
-                </p>
-                <hr/>
-                <p class="strong">Address</p>
-                <p class="ws-pre-wrap">{{ client | get:'address' }}</p>
+    <div class="container inner-content">
+        <div *ngIf="selectedTab.title == 'Detail'">  
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <dashboard-statistic
+                        icon="icon-attention-alt"
+                        [statistic]="(jobs$ | async | openJobs).length"
+                        description="Open jobs">
+                    </dashboard-statistic>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <dashboard-statistic
+                        icon="icon-ok"
+                        [statistic]="(jobs$ | async | closedJobs).length"
+                        description="Closed jobs">
+                    </dashboard-statistic>
+                </div>
             </div>
-            <div class="col-lg-9">
-                <div class="panel panel-dark">
-                    <p class="strong">Notes</p>
-                    <p class="ws-pre-wrap">{{ client | get:'notes' }}</p>
+
+            <div class="row">
+                <div class="col-lg-3"> <!-- Left column -->
+                    <dashboard-panel description="Details">
+                        <p class="strong">Email Address</p>
+                        <p>
+                            <a *ngIf="client.email_address; else emptyValue" href="mailto://{{ client.email_address }}" class="underline-dotted">{{ client.email_address }}</a>
+                        </p>
+                        <hr/>
+                        <p class="strong">Phone Number</p>
+                        <p>
+                            <ng-container *ngIf="client.phone_number; else emptyValue">
+                                <a href="tel:{{ client.phone_number }}" class="underline-dotted">{{ client.phone_number }}</a>
+                                <a *ngIf="(me$ | async)?.is_gradwell_enabled" (click)="call(client.phone_number)" class="pointer"><i class="icon-phone c-red"></i></a>
+                            </ng-container>    
+                        </p>
+                        <hr/>
+                        <p class="strong">Website</p>
+                        <p>
+                            <a *ngIf="client.website; else emptyValue" href="{{ client.website }}" class="underline-dotted">{{ client.website }}</a>
+                        </p>
+                        <hr/>
+                        <p class="strong">Address</p>
+                        <p class="ws-pre-wrap">{{ client | get:'address' }}</p>
+                    </dashboard-panel>
+                </div>
+                
+                <div class="col"> <!-- Center column  -->
+                    <div class="row">
+                        <div class="col">
+                            <dashboard-panel description="Notes">
+                                <p class="ws-pre-wrap">{{ job | get:'notes' }}</p>
+                            </dashboard-panel>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3"> <!-- Right column -->
+                    <div class="row">
+                        <div class="col">
+                            <dashboard-panel description="Contacts">
+                                <ng-container *ngIf="contacts$ | async as contacts">
+                                    <div *ngIf="contacts.length > 0; else emptyContacts">
+                                        <div *ngFor="let contact of contacts; let last=last;">
+                                            <p class="mb-1">
+                                                <strong>{{ contact.first_name }} {{ contact.last_name }}</strong>
+                                            </p>
+                                            <p class="m-0" *ngIf="contact | get:'email_address' as email">
+                                                <strong>Email</strong>: 
+                                                <a class="underline-dotted" href="mailto://{{ email }}">{{ email }}</a>
+                                            </p>
+                                            <p class="m-0" *ngIf="contact | get:'phone_number' as phone">
+                                                <strong>Tel</strong>: 
+                                                <a class="underline-dotted" href="tel://{{ phone }}">{{ phone }}</a>
+                                            </p>
+                                            <p class="m-0" *ngIf="contact | get:'mobile_number' as mobile">
+                                                <strong>Mobile</strong>: 
+                                                <a class="underline-dotted" href="tel://{{ mobile }}">{{ mobile }}</a>
+                                            </p>
+                                            <p class="m-0" *ngIf="contact | get:'_position.title' as position">
+                                                <strong>Title</strong>: {{ position }}
+                                            </p>
+
+                                            <ul class="tags mt-1"><li tag [id]="tag.tag" class="tag" *ngFor="let tag of contact._tags"></li></ul>
+
+                                            <hr *ngIf="!last"/>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </dashboard-panel>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
