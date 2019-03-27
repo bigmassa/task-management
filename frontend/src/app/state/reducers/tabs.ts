@@ -20,7 +20,7 @@ export const initialState: State = {
         { title: 'Contacts', active: false }
     ],
     job: [
-        { title: 'Detail', active: true },
+        { title: 'Dashboard', active: true },
         { title: 'Tasks', active: false },
         { title: 'Notes', active: false },
         { title: 'Files', active: false },

@@ -147,7 +147,10 @@
     pk: 1
     fields: {
       title: "Ongoing",
-      order: 0
+      icon: "icon-calendar",
+      colour: "#ff0000",
+      order: 0,
+      show_on_job_dashboard: true
     }
 
 -

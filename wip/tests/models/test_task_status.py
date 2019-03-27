@@ -1,6 +1,7 @@
 from django.db import models
 
 from wip.models import TaskStatus
+from wip.fields import ColorField
 from tests.test_case import AppTestCase
 
 
@@ -13,6 +14,16 @@ class ModelTests(AppTestCase):
         self.assertModelField(field, models.CharField)
         self.assertEqual(field.max_length, 50)
         self.assertTrue(field.unique)
+
+    def test_icon(self):
+        field = TaskStatus._meta.get_field('icon')
+        self.assertModelField(field, models.CharField, True, True)
+        self.assertEqual(field.max_length, 255)
+        self.assertTrue(field.help_text, 'An icon representing this status')
+
+    def test_colour(self):
+        field = TaskStatus._meta.get_field('colour')
+        self.assertModelField(field, ColorField, True, True)
 
     def test_notify_job_relationships(self):
         field = TaskStatus._meta.get_field('notify_job_relationships')
@@ -28,6 +39,12 @@ class ModelTests(AppTestCase):
         field = TaskStatus._meta.get_field('order')
         self.assertModelField(field, models.PositiveIntegerField)
         self.assertEqual(field.default, 0)
+
+    def test_show_on_job_dashboard(self):
+        field = TaskStatus._meta.get_field('show_on_job_dashboard')
+        self.assertModelField(field, models.BooleanField)
+        self.assertTrue(field.default, True)
+        self.assertTrue(field.help_text, 'Designates whether this status should be displayed on the job dashboard')
 
     # meta
 

@@ -16,55 +16,138 @@
             <ul [tabs]="(tabs$ | async).job" [type]="'job'" (activeTab)="selectedTab = $event" class="tabs"></ul>
         </div>
     </div>
-
+    
     <div class="container-fluid ov-hidden full-height" *ngIf="selectedTab.title == 'Tasks'">
         <div class="board-column-wrapper" autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40">
             <div class="board-column"
-                job-board-column
-                [jobId]="jobId"
-                [status]="status"
-                [tasks]="tasks$ | async | tasksByStatus:status.id"
-                *ngFor="let status of statuses$ | async">
-            </div>
+            job-board-column
+            [jobId]="jobId"
+            [status]="status"
+            [tasks]="tasks$ | async | tasksByStatus:status.id"
+            *ngFor="let status of statuses$ | async"></div>
         </div>
-
         <div task-form [id]="selectedTaskId" (close)="selectedTaskId = null" *ngIf="selectedTaskId != null"></div>
-    
     </div>
-    
-    <div class="container-fluid inner-content" *ngIf="selectedTab.title != 'Tasks'">
-
-        <div class="row" *ngIf="selectedTab.title == 'Detail'">
-            <div class="col-lg-3">
-                <p class="strong">Time Spent (hrs)</p>
-                <p [class.c-red]="timings.is_over_allocated_hours" *ngIf="timings$ | async as timings">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>
-                <hr>
-                <p class="strong">Estimated (hrs)</p>
-                <p>{{ job | get:'estimated_hours' }}</p>
-                <hr/>
-                <p class="strong">Type</p>
-                <p>{{ job | get:'_type.title' }}</p>
-                <hr/>
-                <p class="strong">Status</p>
-                <p>{{ job | get:'_status.title' }}</p>
-                <hr/>
-                <p class="strong">Created at</p>
-                <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>
-                <hr/>
-                <p class="strong">Billed To</p>
-                <p>{{ job | get:'billed_to' }}</p>
-                <hr/>
-                <p class="strong">Slack Channel ID</p>
-                <p>{{ job | get:'slack_channel_id' }}</p>
+    <div class="container inner-content" *ngIf="selectedTab.title != 'Tasks'">
+        <div *ngIf="selectedTab.title == 'Dashboard'">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6" *ngFor="let status of statuses$ | async | showStatusOnDashboard">
+                    <div class="panel">
+                        <div class="row align-items-center">
+                            <div *ngIf="status.icon" class="col-3">
+                                <span [ngClass]="status.icon" [style.color]="status.colour" class="h2 circle-border"></span>
+                            </div>
+                            <div class="col">
+                                <p class="statistic mb-0">{{ (tasks$ | async | taskHasStatus:status.id).length }}</p>
+                                <p class="muted mb-0"><strong>
+                                    {{ status.title }} {{ (tasks$ | async | taskHasStatus:status.id).length | i18nPlural: taskPluralMapping }}
+                                </strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="panel">
+                        <div class="row align-items-center">
+                            <div class="col-3">
+                                <span class="h2 icon-attention-alt c-red circle-border"></span>
+                            </div>
+                            <div class="col">
+                                <p class="statistic mb-0">{{ (tasks$ | async | taskIsOverdue).length }}</p>
+                                <p class="muted mb-0"><strong>Overdue tasks</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-9">
-                <div class="panel panel-dark">
-                    <p class="strong">Description</p>
-                    <p class="ws-pre-wrap">{{ job | get:'description' }}</p>
+            
+            <div class="row">
+                <div class="col-lg-3"> <!-- Left column -->
+                    <div class="panel">
+                        <p class="strong">Details</p>
+                        <p class="strong margin-zero">Time Spent (hrs)</p>
+                        <p [class.c-red]="timings.is_over_allocated_hours" *ngIf="timings$ | async as timings">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>
+                        <p class="strong margin-zero">Estimated (hrs)</p>
+                        <p>{{ job | get:'estimated_hours' }}</p>
+                        <p class="strong margin-zero">Type</p>
+                        <p>{{ job | get:'_type.title' }}</p>
+                        <p class="strong margin-zero">Status</p>
+                        <p>{{ job | get:'_status.title' }}</p>
+                        <p class="strong margin-zero">Created at</p>
+                        <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>
+                        <p class="strong margin-zero">Billed To</p>
+                        <p>{{ job | get:'billed_to' }}</p>
+                        <p class="strong margin-zero">Slack Channel ID</p>
+                        <p>{{ job | get:'slack_channel_id' }}</p>
+                    </div>
+                </div>
+                
+                <div class="col"> <!-- Center column  -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="panel">
+                                <p class="strong">Description</p>
+                                <p class="ws-pre-wrap">{{ job | get:'description' }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" *ngIf="notes$ | async as notes">
+                            <div class="panel">
+                                <p class="strong m-0">Recent Notes</p>
+                                <div *ngIf="notes.length > 0; else dashboardEmptyNotes"></div>
+                                <ng-container *ngFor="let note of notes | slice:0:3">
+                                    <div class="row" *ngIf="getOrCreateEditNoteForm(note) as form">
+                                        <user-content
+                                        [user_id]="note.user"
+                                        [title]="note._user.full_name" 
+                                        [subtitle]="note.updated_at | date:'MMM d, y, h:mm a'">{{ note.note }}</user-content>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3"> <!-- Right column -->
+                    <div class="row">
+                        <div class="col" *ngIf="relationships$ | async as relationships">
+                            <div class="panel">
+                                <p class="strong m-0">Relationships</p>
+                                <div *ngIf="relationships.length > 0; else dashboardEmptyRelationships"></div>
+                                <ng-container *ngFor="let relationship of relationships">
+                                    <div class="row">
+                                        <user-content
+                                        [user_id]="relationship | get:'_user.id'"
+                                        [title]="relationship | get:'_user.full_name'"
+                                        [subtitle]="relationship | get:'_relationship.title'"></user-content>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="panel">
+                                <p class="strong m-0">Recurring Costs</p>
+                                <ng-container *ngIf="recurringCosts$ | async as recurringCosts">
+                                    <div *ngIf="recurringCosts.length > 0; else dashboardEmptyRecurringCosts">
+                                        <div class="mt-1h" *ngFor="let recurringCost of recurringCosts">
+                                            <span class="d-block"><strong>{{ recurringCost | get:'_type.title' }}</strong></span>
+                                            <span>
+                                                {{ recurringCost | get:'billing_interval' }} {{ recurringCost | get:'_billing_frequency.title' }} 
+                                                to <strong>{{ recurringCost | get:'last_invoiced_date' }}</strong>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
+        
         <div class="panel" *ngIf="selectedTab.title == 'Files'">
             <dropzone [config]="dropzoneConfig" [message]="'Click or drag files here to upload'" (sending)="onFileSending($event)" (success)="onFileSuccess($event)"></dropzone>
             <table class="table-hover">
@@ -77,14 +160,14 @@
                     </tr>
                 </thead>
                 <ng-container *ngIf="files$ | async as files">
-                <tbody *ngIf="files.length > 0; else emptyFiles">
-                    <tr *ngFor="let file of files">
-                        <td>{{ file.name }}</td>
-                        <td class="keep-min-width">{{ file.size_mb }}</td>
-                        <td class="keep-min-width"><a class="pointer" (click)="downloadFile(file)"><i class="icon-download"></i></a></td>
-                        <td class="keep-min-width"><a class="pointer" (click)="deleteFile(file)"><i class="icon-trash"></i></a></td>
-                    </tr>
-                </tbody>
+                    <tbody *ngIf="files.length > 0; else emptyFiles">
+                        <tr *ngFor="let file of files">
+                            <td>{{ file.name }}</td>
+                            <td class="keep-min-width">{{ file.size_mb }}</td>
+                            <td class="keep-min-width"><a class="pointer" (click)="downloadFile(file)"><i class="icon-download"></i></a></td>
+                            <td class="keep-min-width"><a class="pointer" (click)="deleteFile(file)"><i class="icon-trash"></i></a></td>
+                        </tr>
+                    </tbody>
                 </ng-container>
             </table>
         </div>
@@ -116,7 +199,7 @@
                 </div>
             </ng-container>
         </div>
-
+        
         <div class="panel" *ngIf="selectedTab.title == 'Relationships'">
             <div class="row">
                 <div class="col-6"></div>
@@ -133,17 +216,17 @@
                     </tr>
                 </thead>
                 <ng-container *ngIf="relationships$ | async as relationships">
-                <tbody *ngIf="relationships.length > 0; else emptyRelationships">
-                    <tr class="pointer" [routerLink]="['/clients', job.client, 'jobs', job.id, 'relationships', relationship.id]" *ngFor="let relationship of relationships">
-                        <td>{{ relationship | get:'_user.full_name' }}</td>
-                        <td>{{ relationship | get:'_relationship.title' }}</td>
-                        <td class="keep-min-width"><a class="pointer" (click)="deleteRelationship($event, relationship)"><i class="icon-trash"></i></a></td>
-                    </tr>
-                </tbody>
+                    <tbody *ngIf="relationships.length > 0; else emptyRelationships">
+                        <tr class="pointer" [routerLink]="['/clients', job.client, 'jobs', job.id, 'relationships', relationship.id]" *ngFor="let relationship of relationships">
+                            <td>{{ relationship | get:'_user.full_name' }}</td>
+                            <td>{{ relationship | get:'_relationship.title' }}</td>
+                            <td class="keep-min-width"><a class="pointer" (click)="deleteRelationship($event, relationship)"><i class="icon-trash"></i></a></td>
+                        </tr>
+                    </tbody>
                 </ng-container>
             </table>
         </div>
-
+        
         <div class="panel" *ngIf="selectedTab.title == 'Recurring Costs'">
             <div class="row">
                 <div class="col-6"></div>
@@ -163,23 +246,27 @@
                     </tr>
                 </thead>
                 <ng-container *ngIf="recurringCosts$ | async as recurringCosts">
-                <tbody *ngIf="recurringCosts.length > 0; else emptyRecurringCosts">
-                    <tr class="pointer" [routerLink]="['/clients', job.client, 'jobs', job.id, 'recurring-costs', recurringCost.id]" *ngFor="let recurringCost of recurringCosts">
-                        <td>{{ recurringCost | get:'_type.title' }}</td>
-                        <td>{{ recurringCost | get:'last_invoiced_date' }}</td>
-                        <td>{{ recurringCost | get:'billing_interval' }}</td>
-                        <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>
-                        <td>{{ recurringCost | get:'_payment_option.title' }}</td>
-                        <td class="keep-min-width"><a class="pointer" (click)="deleteRecurringCost($event, recurringCost)"><i class="icon-trash"></i></a></td>
-                    </tr>
-                </tbody>
+                    <tbody *ngIf="recurringCosts.length > 0; else emptyRecurringCosts">
+                        <tr class="pointer" [routerLink]="['/clients', job.client, 'jobs', job.id, 'recurring-costs', recurringCost.id]" *ngFor="let recurringCost of recurringCosts">
+                            <td>{{ recurringCost | get:'_type.title' }}</td>
+                            <td>{{ recurringCost | get:'last_invoiced_date' }}</td>
+                            <td>{{ recurringCost | get:'billing_interval' }}</td>
+                            <td>{{ recurringCost | get:'_billing_frequency.title' }}</td>
+                            <td>{{ recurringCost | get:'_payment_option.title' }}</td>
+                            <td class="keep-min-width"><a class="pointer" (click)="deleteRecurringCost($event, recurringCost)"><i class="icon-trash"></i></a></td>
+                        </tr>
+                    </tbody>
                 </ng-container>
             </table>
         </div>
-
     </div>
-</div>    
+</div>
+
 
 <ng-template #emptyFiles><tbody><tr><td colspan="4">No files found.</td></tr></tbody></ng-template>
 <ng-template #emptyRelationships><tbody><tr><td colspan="3">No relationships found.</td></tr></tbody></ng-template>
 <ng-template #emptyRecurringCosts><tbody><tr><td colspan="6">No recurring costs found.</td></tr></tbody></ng-template>
+
+<ng-template #dashboardEmptyNotes><p class="muted mt-1">This job has no notes.</p></ng-template>
+<ng-template #dashboardEmptyRelationships><p class="muted mt-1">This job has no relationships.</p></ng-template>
+<ng-template #dashboardEmptyRecurringCosts><p class="muted mt-1">This job has no recurring costs.</p></ng-template>

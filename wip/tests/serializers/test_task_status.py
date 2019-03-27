@@ -20,7 +20,10 @@ class TestSerializer(AppTestCase):
             [
                 'id',
                 'title',
-                'order'
+                'icon',
+                'colour',
+                'order',
+                'show_on_job_dashboard'
             ]
         )
 
@@ -32,6 +35,9 @@ class TestSerializer(AppTestCase):
             {
                 'id': instance.pk,
                 'title': instance.title,
-                'order': instance.order
+                'icon': instance.icon,
+                'colour': instance.colour,
+                'order': instance.order,
+                'show_on_job_dashboard': instance.show_on_job_dashboard
             }
         )

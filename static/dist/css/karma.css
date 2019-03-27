@@ -1752,8 +1752,8 @@ ul.radios input[type=radio] + span:after {
 /* add your custom modules here */
 @font-face {
   font-family: 'fontello';
-  src: url("../font/fontello.eot?4281811");
-  src: url("../font/fontello.eot?4281811#iefix") format("embedded-opentype"), url("../font/fontello.woff2?4281811") format("woff2"), url("../font/fontello.woff?4281811") format("woff"), url("../font/fontello.ttf?4281811") format("truetype"), url("../font/fontello.svg?4281811#fontello") format("svg");
+  src: url("../font/fontello.eot?63318316");
+  src: url("../font/fontello.eot?63318316#iefix") format("embedded-opentype"), url("../font/fontello.woff2?63318316") format("woff2"), url("../font/fontello.woff?63318316") format("woff"), url("../font/fontello.ttf?63318316") format("truetype"), url("../font/fontello.svg?63318316#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1764,7 +1764,7 @@ ul.radios input[type=radio] + span:after {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?4281811#fontello') format('svg');
+    src: url('../font/fontello.svg?63318316#fontello') format('svg');
   }
 }
 */
@@ -1881,11 +1881,21 @@ ul.radios input[type=radio] + span:after {
 }
 
 /* '' */
+.icon-attention-alt:before {
+  content: '\f12a';
+}
+
+/* '' */
 .icon-trash:before {
   content: '\f1f8';
 }
 
 /* '' */
+.icon-hourglass-2:before {
+  content: '\f252';
+}
+
+/* '' */
 /* stylelint-disable selector-no-qualifying-type  */
 .avatar {
   display: inline-block;
@@ -1895,6 +1905,8 @@ ul.radios input[type=radio] + span:after {
   text-align: center;
   background: #292c36;
   border-radius: 50%;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .avatar .avatar-text {
@@ -1988,6 +2000,16 @@ a.avatar:hover .avatar-close {
   margin-bottom: 1rem;
   font-size: 14px;
   line-height: 1.8rem;
+}
+
+.statistic {
+  font-size: 3rem;
+}
+
+.circle-border {
+  padding: .8rem;
+  border: 1px solid;
+  border-radius: 50%;
 }
 
 /* stylelint-disable declaration-no-important, selector-type-no-unknown  */

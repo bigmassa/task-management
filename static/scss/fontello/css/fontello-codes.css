@@ -16,4 +16,6 @@
 .icon-right-dir:before { content: '\e80f'; } /* '' */
 .icon-bell:before { content: '\f0f3'; } /* '' */
 .icon-circle:before { content: '\f111'; } /* '' */
+.icon-attention-alt:before { content: '\f12a'; } /* '' */
 .icon-trash:before { content: '\f1f8'; } /* '' */
+.icon-hourglass-2:before { content: '\f252'; } /* '' */

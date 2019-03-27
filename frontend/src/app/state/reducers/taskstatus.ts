@@ -3,7 +3,10 @@ import { reduceState } from '../generics';
 export interface ITaskStatus {
     id: number;
     title: string;
+    icon: string;
+    colour: string;
     order: number;
+    show_on_job_dashboard: boolean;
 }
 
 export type State = ITaskStatus[];

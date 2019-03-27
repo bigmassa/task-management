@@ -28,6 +28,7 @@ import { JobRelationshipFormComponent } from './components/job-relationship-form
 import { JobComponent } from './components/job.component';
 import { LoadingSplashComponent } from './components/loading-splash.component';
 import { LogoComponent } from './components/logo';
+import { UserContentComponent } from './components/user-content.component';
 import { NotFoundComponent } from './components/not-found.component';
 import { SearchComponent } from './components/search.component';
 import { TabsComponent } from './components/tabs.component';
@@ -51,7 +52,9 @@ import { OrderByPipe } from './pipes/order-by.pipe';
 import { TaskSearchPipe } from './pipes/task-search.pipe';
 import { TasksByStatusPipe } from './pipes/tasks-by-status.pipe';
 import { TasksFilterStatusPipe } from './pipes/tasks-filter-status.pipe';
+import { ShowStatusOnDashboardPipe } from './pipes/show-status-on-dashboard.pipe';
 import { TaskHasStatusPipe } from './pipes/task-has-status.pipe';
+import { TaskIsOverduePipe } from './pipes/task-is-overdue.pipe';
 import { LoadingInterceptor } from './services/interceptors';
 import { effects } from './state/effects';
 import { reducers } from './state/state';
@@ -95,9 +98,12 @@ import { reducers } from './state/state';
         TaskSearchPipe,
         TasksFilterStatusPipe,
         TaskHasStatusPipe,
+        TaskIsOverduePipe,
+        ShowStatusOnDashboardPipe,
         TimeEntryFormComponent,
         TimesheetComponent,
-        TimesheetSignoffComponent
+        TimesheetSignoffComponent,
+        UserContentComponent,
     ],
     imports: [
         AppRoutingModule,
