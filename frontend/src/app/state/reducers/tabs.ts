@@ -14,7 +14,7 @@ export type State = ITabs;
 
 export const initialState: State = {
     client: [
-        { title: 'Detail', active: true },
+        { title: 'Dashboard', active: true },
         { title: 'Jobs', active: false },
         { title: 'Closed Jobs', active: false },
         { title: 'Contacts', active: false }

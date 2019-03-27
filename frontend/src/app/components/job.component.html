@@ -36,7 +36,7 @@
                         [icon]="status.icon"
                         [colour]="status.colour"
                         [statistic]="(tasks$ | async | taskHasStatus:status.id).length"
-                        [description]="status.title + ' ' + (tasks$ | async | taskHasStatus:status.id).length | i18nPlural: taskPluralMapping">
+                        description="{{ status.title }} {{ (tasks$ | async | taskHasStatus:status.id).length | i18nPlural: taskPluralMapping }} ">
                     </dashboard-statistic>
                 </div>
                 <div class="col-lg-3 col-sm-6">
