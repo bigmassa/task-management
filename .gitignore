@@ -7,4 +7,5 @@ db.sqlite3
 .coverage
 htmlcov
 app/local_settings.py
+static/frontend/*
 .DS_Store
