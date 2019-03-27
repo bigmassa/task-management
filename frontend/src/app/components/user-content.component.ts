@@ -1,10 +1,6 @@
 import * as _ from 'lodash';
 
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-
-import { AppState } from '../state/state';
-import { Observable } from 'rxjs';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'user-content, [user-content]',
@@ -15,5 +11,5 @@ export class UserContentComponent {
     @Input() title: string;
     @Input() subtitle: string;
 
-    constructor(private store: Store<AppState>) {}
+    constructor() {}
 }
