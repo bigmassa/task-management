@@ -94,7 +94,9 @@
                                         <user-content
                                         [user_id]="note.user"
                                         [title]="note._user.full_name" 
-                                        [subtitle]="note.updated_at | date:'MMM d, y, h:mm a'">{{ note.note }}</user-content>
+                                        [subtitle]="note.updated_at | date:'MMM d, y, h:mm a'">
+                                            <div class="ws-pre-wrap">{{ note.note }}</div>
+                                        </user-content>
                                     </div>
                                 </ng-container>
                             </dashboard-panel>
