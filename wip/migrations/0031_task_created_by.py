@@ -6,22 +6,6 @@ from django.db import migrations, models
 import django.db.models.deletion
 
 
-def set_default_created_by(apps, schema_editor):
-    Version = apps.get_model('reversion', 'Version')
-    Task = apps.get_model('wip', 'Task')
-    ContentType = apps.get_model('contenttypes', 'ContentType')
-
-    db_alias = schema_editor.connection.alias
-
-    for task in Task.objects.using(db_alias).all():
-        content_type = ContentType.objects.get_for_model(task)
-        initial_revision = Version.objects.using(db_alias).filter(object_id=task.pk, content_type_id=content_type.pk).first()
-
-        if initial_revision and initial_revision.revision and initial_revision.revision.user:
-            task.created_by = initial_revision.revision.user
-            task.save()
-
-
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -35,5 +19,4 @@ class Migration(migrations.Migration):
             name='created_by',
             field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL),
         ),
-        migrations.RunPython(set_default_created_by)
     ]
