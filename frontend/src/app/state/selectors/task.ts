@@ -4,6 +4,7 @@ import { getJobCollection } from './job';
 import { getTaskAssigneeState, getTaskTagState, getTaskTimingState } from './../state';
 import { getTaskFileState, getTaskNoteState, getTaskState } from '../state';
 import { getTaskStatusState } from '../state';
+import { getUserState } from '../state';
 
 
 
@@ -21,7 +22,8 @@ export const getTaskCollection = createSelector(
     getJobCollection,
     getTaskState,
     getTaskStatusState,
-    (jobs, tasks, statuses) => {
+    getUserState,
+    (jobs, tasks, statuses, users) => {
         if (_.isEmpty(jobs) || _.isEmpty(tasks) || _.isEmpty(statuses)) {
             return [];
         }
@@ -29,7 +31,8 @@ export const getTaskCollection = createSelector(
         const objects = _.map(tasks, (task) => {
             return _.assign({}, task, {
                 _job: _.find(jobs, ['id', task.job]),
-                _status: _.find(statuses, ['id', task.status])
+                _status: _.find(statuses, ['id', task.status]),
+                _user: _.find(users, ['id', task.created_by])
             });
         });
         return _.orderBy(objects, ['order'], ['asc']);
