@@ -26,6 +26,5 @@ class TaskSerializer(taggit_serializers.TaggitSerializer, serializers.ModelSeria
         read_only_fields = ('created_by',)
 
     def create(self, validated_data):
-        if 'created_by' not in validated_data:
-            validated_data['created_by'] = self.context['request'].user
-        return super(TaskSerializer, self).create(validated_data)
+        validated_data['created_by'] = self.context['request'].user
+        return super().create(validated_data)

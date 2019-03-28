@@ -2,21 +2,23 @@
 
 from django.conf import settings
 from django.db import migrations, models
-import django.db.models.deletion
 
-from reversion.models import Version
+import django.db.models.deletion
 
 
 def set_default_created_by(apps, schema_editor):
-    User = apps.get_model('authentication', 'User')
+    Version = apps.get_model('reversion', 'Version')
     Task = apps.get_model('wip', 'Task')
+    ContentType = apps.get_model('contenttypes', 'ContentType')
 
-    for task in Task.objects.all():
-        initial_revision = Version.objects.get_for_object(task).first()
+    db_alias = schema_editor.connection.alias
+
+    for task in Task.objects.using(db_alias).all():
+        content_type = ContentType.objects.get_for_model(task)
+        initial_revision = Version.objects.using(db_alias).filter(object_id=task.pk, content_type_id=content_type.pk).first()
 
         if initial_revision and initial_revision.revision and initial_revision.revision.user:
-            user = User.objects.get(pk=initial_revision.revision.user.pk)
-            task.created_by = user
+            task.created_by = initial_revision.revision.user
             task.save()
 
 
