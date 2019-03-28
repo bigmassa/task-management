@@ -3,6 +3,8 @@ from django.template import RequestContext
 from django.test import RequestFactory
 from django.utils import timezone
 from rest_framework import serializers
+from rest_framework.test import APIRequestFactory, force_authenticate
+from rest_framework.request import Request
 
 from authentication.models import User
 from tests.test_case import AppTestCase
@@ -65,9 +67,9 @@ class TestSerializer(AppTestCase):
     # validation
 
     def test_user_without_correct_perm_cannot_save_for_another_user(self):
-        request = RequestFactory().get('/')
-        request.user = self.create_user()
-        context_instance = RequestContext(request)
+        request = APIRequestFactory().get('/')
+        force_authenticate(request, user=self.create_user())
+        context_instance = {'request': Request(request)}
 
         user = User.objects.first()
         job = Job.objects.first()
