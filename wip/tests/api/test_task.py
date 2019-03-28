@@ -35,6 +35,7 @@ class TestAPI(AppTestCase):
     def test_post(self):
         del self.test_object_data['id']
         del self.test_object_data['created_at']
+        del self.test_object_data['created_by']
         del self.test_object_data['is_overdue']
         self.test_object_data['title'] = 'some title'
         response = self.client.post(self.base_url, self.test_object_data, format='json')

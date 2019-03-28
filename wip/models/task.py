@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models, transaction
 from django.db.models.manager import BaseManager
 from django.db.models.signals import post_save
@@ -35,6 +36,11 @@ class Task(models.Model):
     )
     created_at = models.DateTimeField(
         auto_now_add=True
+    )
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True
     )
     job = models.ForeignKey(
         'wip.Job',

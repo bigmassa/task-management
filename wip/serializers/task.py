@@ -5,6 +5,7 @@ from wip.models import Task
 
 
 class TaskSerializer(taggit_serializers.TaggitSerializer, serializers.ModelSerializer):
+
     class Meta:
         model = Task
         fields = [
@@ -12,6 +13,7 @@ class TaskSerializer(taggit_serializers.TaggitSerializer, serializers.ModelSeria
             'title',
             'description',
             'created_at',
+            'created_by',
             'job',
             'status',
             'target_date',
@@ -21,3 +23,9 @@ class TaskSerializer(taggit_serializers.TaggitSerializer, serializers.ModelSeria
             'is_overdue',
             'order'
         ]
+        read_only_fields = ('created_by',)
+
+    def create(self, validated_data):
+        if 'created_by' not in validated_data:
+            validated_data['created_by'] = self.context['request'].user
+        return super(TaskSerializer, self).create(validated_data)

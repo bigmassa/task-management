@@ -22,6 +22,7 @@ class TestSerializer(AppTestCase):
                 'title',
                 'description',
                 'created_at',
+                'created_by',
                 'job',
                 'status',
                 'target_date',
@@ -31,6 +32,12 @@ class TestSerializer(AppTestCase):
                 'is_overdue',
                 'order'
             ]
+        )
+
+    def test_readonly_fields(self):
+        self.assertEqual(
+            TaskSerializer.Meta.read_only_fields,
+            ('created_by',)
         )
 
     def test_serialized_data(self):
@@ -45,6 +52,7 @@ class TestSerializer(AppTestCase):
                 'title': instance.title,
                 'description': instance.description,
                 'created_at': instance.created_at.isoformat()[:-6] + 'Z',
+                'created_by': instance.created_by.pk,
                 'job': instance.job.pk,
                 'status': instance.status.pk,
                 'target_date': instance.target_date.isoformat(),
