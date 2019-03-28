@@ -1,4 +1,5 @@
 import { IJob } from './job';
+import { IUser } from './user';
 import { ITaskStatus } from './taskstatus';
 import { reduceState } from '../generics';
 import { ITaskAssignee } from './taskassignee';
@@ -8,6 +9,7 @@ export interface ITask {
     title: string;
     description?: string;
     created_at?: string;
+    created_by?: number;
     job: number;
     status: number;
     target_date?: string;
@@ -19,6 +21,7 @@ export interface ITask {
     _assignees?: ITaskAssignee[]; 
     _job?: IJob;
     _status?: ITaskStatus;
+    _user?: IUser;
 }
 
 export type State = ITask[];

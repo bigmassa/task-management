@@ -5,6 +5,7 @@ from django.utils import timezone
 
 from taggit.managers import TaggableManager
 
+from authentication.models import User
 from tests.test_case import AppTestCase
 from wip.models import Job, Task, TaskStatus
 from wip.models.task import TaskManager
@@ -28,6 +29,15 @@ class TestModel(AppTestCase):
         field = Task._meta.get_field('created_at')
         self.assertModelField(field, models.DateTimeField, blank=True)
         self.assertTrue(field.auto_now_add)
+
+    def test_created_by(self):
+        field = Task._meta.get_field('created_by')
+        self.assertModelPKField(
+            field,
+            User,
+            on_delete=models.SET_NULL,
+            null=True
+        )
 
     def test_job(self):
         field = Task._meta.get_field('job')
