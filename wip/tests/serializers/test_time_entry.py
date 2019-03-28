@@ -90,10 +90,11 @@ class TestSerializer(AppTestCase):
 
     def test_user_with_correct_perm_can_save_for_another_user(self):
         request = RequestFactory().get('/')
-        request.user = self.create_user()
+        force_authenticate(request, user=self.create_user())
+        context_instance = {'request': Request(request)}
+
         permission = Permission.objects.get(codename='manage_time_entry')
-        request.user.user_permissions.add(permission)
-        context_instance = RequestContext(request)
+        context_instance['request'].user.user_permissions.add(permission)
 
         user = User.objects.first()
         job = Job.objects.first()
