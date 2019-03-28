@@ -24,7 +24,7 @@ class TimeEntrySerializer(serializers.ModelSerializer):
         ]
 
     def _user(self):
-        request = getattr(self.context, 'request', None)
+        request = self.context.get('request')
         if request:
             return request.user
 
