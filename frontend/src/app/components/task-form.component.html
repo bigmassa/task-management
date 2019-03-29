@@ -32,10 +32,10 @@
         <div class="container px-2 py-2" *ngIf="activeTab == 'detail'">
             <div class="row mb-1h">
                 <div class="col">
-                    <ng-container *ngIf="task._user?.full_name as name">
-                        <p class="mb-h"><strong>Created by</strong></p>
-                        <p>{{ name }}</p>
-                    </ng-container>
+                    <p class="mb-1h">
+                        Created on <strong>{{ task | get:'created_at' | date:"dd/MM/yyy" }}</strong>
+                        <ng-container *ngIf="task._user?.full_name as name"> by <strong>{{ name }}</strong></ng-container>
+                    </p>
 
                     <p class="mb-h"><strong>Assignees</strong></p>
                     <div *ngFor="let assignee of taskAssignees$ | async" class="d-inline-block text-center mr-h">
