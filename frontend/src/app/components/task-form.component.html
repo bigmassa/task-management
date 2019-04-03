@@ -3,6 +3,7 @@
         <div class="container b-secondary px-2 py-2">
             <div class="row">
                 <div class="col-12">
+                    <p class="small muted">{{ task | get:'_job._client.name' }} / {{ task | get:'_job.title' }}</p>
                     <textarea autoResize rows="1" class="toggleable"
                         [formControl]="titleForm.controls.title"
                         (blur)="titleForm.dirty ? titleForm.save($event) : false"
@@ -10,7 +11,6 @@
                     </textarea>
                 </div>
                 <div class="col-9">
-                    <p class="small muted">{{ task | get:'_job._client.name' }} / {{ task | get:'_job.title' }}</p>
                 </div>
                 <div class="col-3">
                     <select class="toggleable" [formControl]="statusForm.controls.status" (blur)="statusForm.save($event)">
@@ -32,11 +32,6 @@
         <div class="container px-2 py-2" *ngIf="activeTab == 'detail'">
             <div class="row mb-1h">
                 <div class="col">
-                    <p class="mb-1h">
-                        Created on <strong>{{ task | get:'created_at' | date:"dd/MM/yyy" }}</strong>
-                        <ng-container *ngIf="task._user?.full_name as name"> by <strong>{{ name }}</strong></ng-container>
-                    </p>
-
                     <p class="mb-h"><strong>Assignees</strong></p>
                     <div *ngFor="let assignee of taskAssignees$ | async" class="d-inline-block text-center mr-h">
                         <div avatar [id]="assignee.user" class="avatar pointer d-block" (click)="editAssignee(assignee)"></div>
@@ -122,42 +117,39 @@
                 </div>
             </div>
             <div class="row mb-1h">
-                <div class="col-12">
-                    <p class="mb-h"><strong>Not Chargeable</strong></p>
-                </div>
-                <div class="col">
-                    <div class="checkbox">
+                <div class="col-3">
+                    <span class="checkbox">
                         <label>
                             <input type="checkbox" [formControl]="notChargeableForm.controls.not_chargeable">
                             <span></span>
+                            <strong class="ml-h">Not Chargeable</strong>
                         </label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="text-right" *ngIf="notChargeableForm.dirty">
+                    </span>
+                    <div class="mt-1" *ngIf="notChargeableForm.dirty">
                         <button class="button" (click)="notChargeableForm.save($event)">Save</button>
                         <button class="button button-clear" (click)="notChargeableForm.cancel($event)">Cancel</button>
                     </div>
                 </div>
-            </div>
-            <div class="row mb-1h">
-                <div class="col-12">
-                    <p class="mb-h"><strong>Closed</strong></p>
-                </div>
-                <div class="col">
-                    <p>Closing the task means its no longer available to add time.</p>
-                    <div class="checkbox">
+                <div class="col-3">
+                    <span class="checkbox">
                         <label>
                             <input type="checkbox" [formControl]="closedForm.controls.closed">
                             <span></span>
+                            <strong class="ml-h">Closed</strong>
                         </label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="text-right" *ngIf="closedForm.dirty">
+                    </span>
+                    <div class="mt-1" *ngIf="closedForm.dirty">
                         <button class="button" (click)="closedForm.save($event)">Save</button>
                         <button class="button button-clear" (click)="closedForm.cancel($event)">Cancel</button>
                     </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <p class="m-0 small muted">
+                        Created on <strong>{{ task | get:'created_at' | date:"dd/MM/yyy" }}</strong>
+                        <ng-container *ngIf="task._user?.full_name as name"> by <strong>{{ name }}</strong></ng-container>
+                    </p>
                 </div>
             </div>
         </div>
