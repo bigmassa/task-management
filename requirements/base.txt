@@ -11,7 +11,7 @@ django-taggit
 django-taggit-serializer
 djangorestframework
 flatbuffers
-huey[backends]
+huey[backends]<2.0.0
 markdown
 pillow
 psycopg2-binary
