@@ -1,5 +1,7 @@
+from datetime import datetime
+
 from django.urls import reverse
-from django.utils import timezone
+from django.utils.timezone import make_aware
 from rest_framework import status
 from rest_framework.test import APIClient
 
@@ -24,8 +26,8 @@ class TestAPI(AppTestCase):
         job = Job.objects.first()
         self.test_object = TimeEntry.objects.create(
             task=job.tasks.first(),
-            started_at=timezone.datetime(2018, 1, 1, 9, 0, 0),
-            ended_at=timezone.datetime(2018, 1, 1, 9, 15, 0),
+            started_at=make_aware(datetime(2019, 4, 1, 9, 0, 0)),
+            ended_at=make_aware(datetime(2019, 4, 1, 9, 15, 0)),
             user=self.user,
             comments='some comments'
         )

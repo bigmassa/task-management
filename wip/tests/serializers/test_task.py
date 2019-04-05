@@ -1,3 +1,4 @@
+from django.utils.timezone import localtime
 from rest_framework import serializers
 
 from tests.test_case import AppTestCase
@@ -51,13 +52,13 @@ class TestSerializer(AppTestCase):
                 'id': instance.pk,
                 'title': instance.title,
                 'description': instance.description,
-                'created_at': instance.created_at.isoformat()[:-6] + 'Z',
+                'created_at': localtime(instance.created_at).isoformat(),
                 'created_by': instance.created_by.pk,
                 'job': instance.job.pk,
                 'status': instance.status.pk,
                 'target_date': instance.target_date.isoformat(),
                 'closed': instance.closed,
-                'closed_date': instance.closed_date.isoformat()[:-6] + 'Z',
+                'closed_date': localtime(instance.closed_date).isoformat(),
                 'not_chargeable': instance.not_chargeable,
                 'is_overdue': instance.is_overdue,
                 'order': instance.order
