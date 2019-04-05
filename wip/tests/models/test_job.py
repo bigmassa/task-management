@@ -1,7 +1,8 @@
+from datetime import datetime
 from decimal import Decimal
 
 from django.db import models
-from django.utils import timezone
+from django.utils.timezone import make_aware
 
 from tests.test_case import AppTestCase
 from wip.fields import ColorField
@@ -80,14 +81,14 @@ class ModelTests(AppTestCase):
         job = Job.objects.get(pk=1)
         TimeEntry.objects.create(
             task=job.tasks.first(),
-            started_at=timezone.datetime(2018, 1, 1, 9, 0, 0),
-            ended_at=timezone.datetime(2018, 1, 1, 9, 15, 0),
+            started_at=make_aware(datetime(2019, 4, 1, 9, 0, 0)),
+            ended_at=make_aware(datetime(2019, 4, 1, 9, 15, 0)),
             user=user
         )
         TimeEntry.objects.create(
             task=job.tasks.first(),
-            started_at=timezone.datetime(2018, 1, 2, 9, 0, 0),
-            ended_at=timezone.datetime(2018, 1, 2, 9, 15, 0),
+            started_at=make_aware(datetime(2019, 4, 1, 9, 0, 0)),
+            ended_at=make_aware(datetime(2019, 4, 1, 9, 15, 0)),
             user=user
         )
 

@@ -1,8 +1,9 @@
 import csv
 import io
+from datetime import datetime
 
 from django.urls import reverse
-from django.utils import timezone
+from django.utils.timezone import make_aware
 
 from authentication.models import User
 from tests.test_case import AppTestCase
@@ -21,8 +22,8 @@ class TestView(AppTestCase):
         job = Job.objects.first()
         TimeEntry.objects.create(
             task=job.tasks.first(),
-            started_at=timezone.datetime(2018, 1, 2, 9, 0, 0),
-            ended_at=timezone.datetime(2018, 1, 2, 9, 15, 0),
+            started_at=make_aware(datetime(2019, 4, 1, 9, 0, 0)),
+            ended_at=make_aware(datetime(2019, 4, 1, 9, 15, 0)),
             user=self.user,
             comments='some comments'
         )
@@ -39,8 +40,8 @@ class TestView(AppTestCase):
 
     def test_post_gets_csv(self):
         data = {
-            'date_from': '01/01/2018',
-            'date_to': '31/01/2018'
+            'date_from': '01/04/2019',
+            'date_to': '02/04/2019'
         }
         self.client.force_login(self.user)
         response = self.client.post(self.url, data)
@@ -56,7 +57,7 @@ class TestView(AppTestCase):
                 '0.25',
                 'UT',
                 '',
-                '02/01/2018',
+                '01/04/2019',
                 'AU',
                 '',
                 '',

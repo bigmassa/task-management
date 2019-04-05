@@ -1,3 +1,4 @@
+from django.utils.timezone import localtime
 from rest_framework import serializers
 
 from tests.test_case import AppTestCase
@@ -41,7 +42,7 @@ class TestSerializer(AppTestCase):
                 'id': instance.pk,
                 'title': instance.title,
                 'description': instance.description,
-                'created_at': instance.created_at.isoformat()[:-6] + 'Z',
+                'created_at': localtime(instance.created_at).isoformat(),
                 'client': instance.client.pk,
                 'type': instance.type.pk,
                 'estimated_hours': str(instance.estimated_hours),

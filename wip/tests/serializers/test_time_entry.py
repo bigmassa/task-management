@@ -1,7 +1,9 @@
+from datetime import datetime
+
 from django.contrib.auth.models import Permission
 from django.template import RequestContext
 from django.test import RequestFactory
-from django.utils import timezone
+from django.utils.timezone import localtime, make_aware
 from rest_framework import serializers
 from rest_framework.test import APIRequestFactory, force_authenticate
 from rest_framework.request import Request
@@ -42,25 +44,25 @@ class TestSerializer(AppTestCase):
         job = Job.objects.first()
         instance = TimeEntry.objects.create(
             task=job.tasks.first(),
-            started_at=timezone.datetime(2018, 1, 1, 9, 0, 0),
-            ended_at=timezone.datetime(2018, 1, 1, 9, 15, 0),
+            started_at=make_aware(datetime(2019, 4, 1, 9, 0, 0)),
+            ended_at=make_aware(datetime(2019, 4, 1, 9, 15, 0)),
             user=user,
             signed_off=True,
-            signed_off_date=timezone.datetime(2018, 1, 2, 9, 0, 0)
+            signed_off_date=make_aware(datetime(2019, 4, 1, 9, 15, 0)),
         )
         serializer = TimeEntrySerializer(instance=instance)
         self.assertEqual(
             serializer.data,
             {
                 'id': instance.pk,
-                'started_at': instance.started_at.isoformat() + 'Z',
-                'ended_at': instance.ended_at.isoformat() + 'Z',
+                'started_at': localtime(instance.started_at).isoformat(),
+                'ended_at': localtime(instance.ended_at).isoformat(),
                 'comments': instance.comments,
                 'task': instance.task.pk,
                 'user': instance.user.pk,
                 'duration': '00:15:00',
                 'signed_off': instance.signed_off,
-                'signed_off_date': instance.signed_off_date.isoformat() + 'Z'
+                'signed_off_date': localtime(instance.signed_off_date).isoformat()
             }
         )
 
@@ -76,8 +78,8 @@ class TestSerializer(AppTestCase):
 
         data = {
             'task': job.tasks.first().pk,
-            'started_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
-            'ended_at': timezone.datetime(2018, 1, 1, 10, 0, 0),
+            'started_at': make_aware(datetime(2019, 4, 1, 9, 0, 0)),
+            'ended_at': make_aware(datetime(2019, 4, 1, 9, 15, 0)),
             'user': user.pk
         }
         serializer = TimeEntrySerializer(data=data, context=context_instance)
@@ -101,8 +103,8 @@ class TestSerializer(AppTestCase):
 
         data = {
             'task': job.tasks.first().pk,
-            'started_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
-            'ended_at': timezone.datetime(2018, 1, 1, 10, 0, 0),
+            'started_at': make_aware(datetime(2019, 4, 1, 9, 0, 0)),
+            'ended_at': make_aware(datetime(2019, 4, 1, 9, 15, 0)),
             'user': user.pk
         }
         serializer = TimeEntrySerializer(data=data, context=context_instance)
@@ -118,8 +120,8 @@ class TestSerializer(AppTestCase):
 
         data = {
             'task': job.tasks.first().pk,
-            'started_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
-            'ended_at': timezone.datetime(2018, 1, 1, 10, 0, 0),
+            'started_at': make_aware(datetime(2019, 4, 1, 9, 0, 0)),
+            'ended_at': make_aware(datetime(2019, 4, 1, 9, 15, 0)),
             'user': request.user.pk
         }
         serializer = TimeEntrySerializer(data=data, context=context_instance)
@@ -131,8 +133,8 @@ class TestSerializer(AppTestCase):
         job = Job.objects.first()
         data = {
             'task': job.tasks.first().pk,
-            'started_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
-            'ended_at': timezone.datetime(2018, 1, 2, 0, 0, 0),
+            'started_at': make_aware(datetime(2019, 4, 1, 9, 0, 0)),
+            'ended_at': make_aware(datetime(2019, 4, 2, 9, 0, 0)),
             'user': user.pk
         }
         serializer = TimeEntrySerializer(data=data)
@@ -147,8 +149,8 @@ class TestSerializer(AppTestCase):
         job = Job.objects.first()
         data = {
             'task': job.tasks.first().pk,
-            'started_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
-            'ended_at': timezone.datetime(2018, 1, 1, 9, 0, 0),
+            'started_at': make_aware(datetime(2019, 4, 1, 9, 0, 0)),
+            'ended_at': make_aware(datetime(2019, 4, 1, 8, 0, 0)),
             'user': user.pk
         }
         serializer = TimeEntrySerializer(data=data)

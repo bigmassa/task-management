@@ -3,7 +3,9 @@ import { DropzoneModule } from 'ngx-dropzone-wrapper';
 import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MAT_DATE_LOCALE, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import {
+    DateAdapter, MAT_DATE_FORMATS, MatDatepickerModule, MatNativeDateModule
+} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -28,7 +30,6 @@ import { JobRelationshipFormComponent } from './components/job-relationship-form
 import { JobComponent } from './components/job.component';
 import { LoadingSplashComponent } from './components/loading-splash.component';
 import { LogoComponent } from './components/logo';
-import { UserContentComponent } from './components/user-content.component';
 import { NotFoundComponent } from './components/not-found.component';
 import { SearchComponent } from './components/search.component';
 import { TabsComponent } from './components/tabs.component';
@@ -39,6 +40,8 @@ import { TaskboardComponent } from './components/taskboard.component';
 import { TimeEntryFormComponent } from './components/time-entry-form.component';
 import { TimesheetSignoffComponent } from './components/time-sheet-signoff.component';
 import { TimesheetComponent } from './components/time-sheet.component';
+import { UserContentComponent } from './components/user-content.component';
+import { APP_DATE_FORMATS, AppDateAdapter } from './dates';
 import { AutofocusDirective } from './directives/auto-focus.directive';
 import { AutoResizeDirective } from './directives/auto-resize.directive';
 import { AutoScrollDirective } from './directives/auto-scroll.directive';
@@ -49,12 +52,12 @@ import { GetPipe } from './pipes/get.pipe';
 import { JobSearchPipe } from './pipes/job-search.pipe';
 import { OpenJobsPipe } from './pipes/open-jobs.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
-import { TaskSearchPipe } from './pipes/task-search.pipe';
-import { TasksByStatusPipe } from './pipes/tasks-by-status.pipe';
-import { TasksFilterStatusPipe } from './pipes/tasks-filter-status.pipe';
 import { ShowStatusOnDashboardPipe } from './pipes/show-status-on-dashboard.pipe';
 import { TaskHasStatusPipe } from './pipes/task-has-status.pipe';
 import { TaskIsOverduePipe } from './pipes/task-is-overdue.pipe';
+import { TaskSearchPipe } from './pipes/task-search.pipe';
+import { TasksByStatusPipe } from './pipes/tasks-by-status.pipe';
+import { TasksFilterStatusPipe } from './pipes/tasks-filter-status.pipe';
 import { LoadingInterceptor } from './services/interceptors';
 import { effects } from './state/effects';
 import { reducers } from './state/state';
@@ -126,7 +129,8 @@ import { reducers } from './state/state';
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
-        { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
+        { provide: DateAdapter, useClass: AppDateAdapter},
+        { provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS},
     ],
     bootstrap: [AppComponent]
 })

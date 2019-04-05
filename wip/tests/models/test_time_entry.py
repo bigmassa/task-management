@@ -1,7 +1,7 @@
-import datetime
+from datetime import datetime, timedelta
 
 from django.db import models
-from django.utils import timezone
+from django.utils.timezone import make_aware
 
 from authentication.models import User
 from tests.test_case import AppTestCase
@@ -50,7 +50,7 @@ class ModelTests(AppTestCase):
 
     def test_duration(self):
         entry = TimeEntry(
-            started_at=timezone.datetime(2018, 1, 1, 9, 0, 0),
-            ended_at=timezone.datetime(2018, 1, 1, 9, 15, 0)
+            started_at=make_aware(datetime(2019, 4, 1, 9, 0, 0)),
+            ended_at=make_aware(datetime(2019, 4, 1, 9, 15, 0)),
         )
-        self.assertEqual(entry.duration, datetime.timedelta(0, 900))
+        self.assertEqual(entry.duration, timedelta(0, 900))
