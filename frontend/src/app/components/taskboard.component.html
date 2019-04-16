@@ -52,9 +52,9 @@
             </thead>
             <tbody>
                 <tr class="pointer" [routerLink]="['/clients', task._job.client, 'jobs', task.job]" [queryParams]="{task: task.id}" *ngFor="let task of tasks$ | async | tasksFilterStatus : filteredStatuses">
-                    <td>{{ task | get:'job' }}</td>
-                    <td>{{ task | get:'_job._client.name' }}</td>
-                    <td>{{ task | get:'_job.title' }}</td>
+                    <td class="keep-min-width">{{ task | get:'job' }}</td>
+                    <td><span class="underline-dotted" [routerLink]="['/clients', task._job.client]">{{ task | get:'_job._client.name' }}</span></td>
+                    <td><span class="underline-dotted" [routerLink]="['/clients', task._job.client, 'jobs', task.job]">{{ task | get:'_job.title' }}</span></td>
                     <td>{{ task | get:'title' }}</td>
                     <td class="keep-min-width">{{ task | get:'_status.title' }}</td>
                     <td class="keep-min-width">{{ task | get:'target_date' }}</td>
