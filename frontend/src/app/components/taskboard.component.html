@@ -29,42 +29,38 @@
         <table class="table-hover table-headed margin-zero">
             <thead>
                 <tr>
-                    <th class="keep-min-width pointer" (click)="orderTasksBy('id')">
-                        ID <i *ngIf="orderBy == 'id'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
-                    </th>
-                    <th class="keep-min-width pointer" (click)="orderTasksBy('target_date')">
-                        Target Date <i *ngIf="orderBy == 'target_date'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
-                    </th>
-                    <th class="pointer" (click)="orderTasksBy('title')">
-                        Title <i *ngIf="orderBy == 'title'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
+                    <th class="pointer" (click)="orderTasksBy('job')">
+                        Job No. <i *ngIf="orderBy == 'job'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
                     </th>
                     <th class="pointer" (click)="orderTasksBy('_job._client.name')">
                         Client <i *ngIf="orderBy == '_job._client.name'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
                     </th>
-                    <th class="pointer" (click)="orderTasksBy('job')">
-                        Job No. <i *ngIf="orderBy == 'job'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
-                    </th>
                     <th class="pointer" (click)="orderTasksBy('_job.title')">
                         Job <i *ngIf="orderBy == '_job.title'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
                     </th>
-                    <th class="keep-min-width">Assignees</th>
+                    <th class="pointer" (click)="orderTasksBy('title')">
+                        Title <i *ngIf="orderBy == 'title'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
+                    </th>
                     <th class="keep-min-width pointer" (click)="orderTasksBy('_status.order')">
                         Status <i *ngIf="orderBy == '_status.order'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
                     </th>
+                    <th class="keep-min-width pointer" (click)="orderTasksBy('target_date')">
+                        Target Date <i *ngIf="orderBy == 'target_date'" [class.icon-up-dir]="orderType == 'asc'" [class.icon-down-dir]="orderType == 'desc'"></i>
+                    </th>
+                    <th class="keep-min-width">Assignees</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="pointer" [routerLink]="['/clients', task._job.client, 'jobs', task.job]" [queryParams]="{task: task.id}" *ngFor="let task of tasks$ | async | tasksFilterStatus : filteredStatuses">
-                    <td class="keep-min-width">{{ task | get:'id' }}</td>
-                    <td class="keep-min-width">{{ task | get:'target_date' }}</td>
+                    <td class="keep-min-width">{{ task | get:'job' }}</td>
+                    <td><span class="underline-dotted" [routerLink]="['/clients', task._job.client]">{{ task | get:'_job._client.name' }}</span></td>
+                    <td><span class="underline-dotted" [routerLink]="['/clients', task._job.client, 'jobs', task.job]">{{ task | get:'_job.title' }}</span></td>
                     <td>{{ task | get:'title' }}</td>
-                    <td>{{ task | get:'_job._client.name' }}</td>
-                    <td>{{ task | get:'job' }}</td>
-                    <td>{{ task | get:'_job.title' }}</td>
+                    <td class="keep-min-width">{{ task | get:'_status.title' }}</td>
+                    <td class="keep-min-width">{{ task | get:'target_date' }}</td>
                     <td class="keep-min-width">
                         <div avatar [id]="assignee.user" class="avatar avatar-small mr-h" *ngFor="let assignee of task._assignees"></div>
                     </td>
-                    <td class="keep-min-width">{{ task | get:'_status.title' }}</td>
                 </tr>
             </tbody>
         </table>
