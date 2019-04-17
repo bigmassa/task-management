@@ -54,8 +54,9 @@ export function reducer(state = initialState, action: any): State {
         case `${actionPrefix} TASKBOARD_TOGGLE_STATUS`: {
             const index = _.indexOf(state.taskboard_statuses, action.payload);
             let statuses: number[] = [];
-            if (index >= 0) {
-                statuses = state.taskboard_statuses.slice(0, index);
+            if (index > -1) {
+                state.taskboard_statuses.splice(index, 1);
+                statuses = state.taskboard_statuses;
             } else {
                 statuses = [...state.taskboard_statuses, action.payload];
             }
