@@ -16,11 +16,13 @@ class DateFilterForm(forms.Form):
     """ form to include a date range """
     date_from = forms.DateField(
         widget=DatePicker,
-        input_formats=('%d/%m/%Y',)
+        input_formats=('%d/%m/%Y',),
+        required=False
     )
     date_to = forms.DateField(
         widget=DatePicker,
-        input_formats=('%d/%m/%Y',)
+        input_formats=('%d/%m/%Y',),
+        required=False
     )
 
 
