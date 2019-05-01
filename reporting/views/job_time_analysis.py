@@ -13,7 +13,7 @@ class JobTimeAnalysis(LoginRequiredMixin, TemplateView):
     date_to = None
 
     def dispatch(self, request, *args, **kwargs):
-        self.default_dates = self.get_default_dates() 
+        self.default_dates = self.get_default_dates()
         return super().dispatch(request, *args, **kwargs)
 
     def get_default_dates(self):
