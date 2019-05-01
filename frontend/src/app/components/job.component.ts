@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import * as actions from '../state/actions';
+import * as moment from 'moment';
 import { ActionsSubject, select, Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { AppState, getTabState } from '../state/state';
@@ -59,6 +60,8 @@ export class JobComponent implements OnDestroy, OnInit {
 
     taskPluralMapping: {[k: string]: string} 
         = {'=1': 'task', 'other': 'tasks'};
+
+    const jobTimeAnalysisUrl = '/reporting/job-time-analysis/';
 
     private subscriptions: Subscription[] = [];
 
@@ -169,4 +172,29 @@ export class JobComponent implements OnDestroy, OnInit {
         this.store.dispatch({type: actions.JobRecurringCostActions.REMOVE, payload});
     }
 
+    // reporting
+
+    displayTimeReport(job: IJob) {
+        this.openNewTab(`${this.jobTimeAnalysisUrl}?client=${job.client}&job=${job.id}`);
+    }
+
+    displayBillingReport(job: IJob) {
+        var path_components = [
+            `client=${job.client}`,
+            `job=${job.id}`
+        ];
+
+        if (job.billed_to != null) {
+            var from = moment(job.billed_to)
+                .add(1, 'days')
+                .format('DD/MM/YYYY');
+            path_components.push(`date_from=${encodeURIComponent(from)}`);
+        }
+
+        this.openNewTab(`${this.jobTimeAnalysisUrl}?${path_components.join('&')}`);
+    }
+
+    openNewTab(url: string) {
+        window.open(url, '_blank');
+    }
 }

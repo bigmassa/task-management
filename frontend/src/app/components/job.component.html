@@ -66,7 +66,11 @@
                     <div class="panel">
                         <p class="strong">Details</p>
                         <p class="strong margin-zero">Time Spent (hrs)</p>
-                        <p [class.c-red]="timings.is_over_allocated_hours" *ngIf="timings$ | async as timings">{{ timings.time_spent_hours }} of {{ timings.allocated_hours }}</p>
+                        <p [class.c-red]="timings.is_over_allocated_hours" *ngIf="timings$ | async as timings">
+                            <span (click)="displayTimeReport(job)" class="underline-dotted pointer">
+                                {{ timings.time_spent_hours }} of {{ timings.allocated_hours }}
+                            </span>
+                        </p>
                         <p class="strong margin-zero">Estimated (hrs)</p>
                         <p>{{ job | get:'estimated_hours' }}</p>
                         <p class="strong margin-zero">Type</p>
@@ -76,7 +80,11 @@
                         <p class="strong margin-zero">Created at</p>
                         <p>{{ job | get:'created_at' | date:'yyyy-MM-dd' }}</p>
                         <p class="strong margin-zero">Billed To</p>
-                        <p>{{ job | get:'billed_to' }}</p>
+                        <p>
+                            <span (click)="displayBillingReport(job)" class="underline-dotted pointer">
+                                {{ job | get:'billed_to' }}
+                            </span>
+                        </p>
                         <p class="strong margin-zero">Slack Channel ID</p>
                         <p>{{ job | get:'slack_channel_id' }}</p>
                     </div>
