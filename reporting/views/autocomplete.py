@@ -1,7 +1,7 @@
 from dal import autocomplete
 
 from django.db.models import Q
-from wip.models import Client, Job
+from wip.models import Client, Job, Task
 
 
 class AutoCompleteClient(autocomplete.Select2QuerySetView):
@@ -50,6 +50,38 @@ class AutoCompleteJob(autocomplete.Select2QuerySetView):
 
     def get_selected_result_label(self, item):
         return item.full_title
+
+    def has_add_permission(self, request):
+        return False
+
+
+class AutoCompleteTask(autocomplete.Select2QuerySetView):
+    model = Task
+    paginate_by = 50
+
+    def get_queryset(self):
+        if not self.request.user.is_authenticated:
+            return self.model.objects.none()
+
+        qs = self.model.objects.all()
+
+        job = self.forwarded.get('job', None)
+
+        if job:
+            qs = qs.filter(job_id=job)
+        else:
+            qs = self.model.objects.none()
+
+        if self.q:
+            qs = qs.filter(Q(pk__icontains=self.q) | Q(title__icontains=self.q))
+
+        return qs
+
+    def get_result_label(self, item):
+        return item.title
+
+    def get_selected_result_label(self, item):
+        return item.title
 
     def has_add_permission(self, request):
         return False

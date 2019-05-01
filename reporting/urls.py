@@ -14,6 +14,9 @@ urlpatterns = [
     path('autocomplete/jobs/',
          views.AutoCompleteJob.as_view(),
          name='autocomplete-job'),
+    path('autocomplete/tasks/',
+         views.AutoCompleteTask.as_view(),
+         name='autocomplete-task'),
     path('job-time-analysis/',
          views.JobTimeAnalysis.as_view(),
          name='job-time-analysis'),
@@ -23,4 +26,7 @@ urlpatterns = [
     path('timesheet-analysis/',
          views.TimesheetAnalysis.as_view(),
          name='timesheet-analysis'),
+    path('task-analysis/',
+         views.TaskAnalysis.as_view(),
+         name='task-analysis'),
 ]

@@ -3,7 +3,7 @@ from django import forms
 
 from authentication.models import User
 from reporting.forms.widgets import DatePicker
-from wip.models import Client, Job
+from wip.models import Client, Job, Task
 
 
 class UserModelChoiceField(forms.ModelChoiceField):
@@ -71,4 +71,17 @@ class TimesheetAnalysisFilterForm(JobFilterForm, DateFilterForm):
         queryset=User.objects.filter(is_active=True),
         required=False,
         empty_label='-- All --'
+    )
+
+
+class TaskAnalysisFilterForm(JobFilterForm, DateFilterForm):
+    user = UserModelChoiceField(
+        queryset=User.objects.filter(is_active=True),
+        required=False,
+        empty_label='-- All --'
+    )
+    task = forms.ModelChoiceField(
+        queryset=Task.objects.all(),
+        widget=autocomplete.ModelSelect2('reporting:autocomplete-task', forward=['job']),
+        required=True
     )

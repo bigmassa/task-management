@@ -24,6 +24,10 @@
             <p class="h3"><a href="{% url 'reporting:timesheet-analysis' %}" class="underline-dotted">{% trans 'Timesheet Analysis' %}</a></p>
             <p>{% blocktrans %}Report that summarizes timesheet entries by user, task, job and client.{% endblocktrans %}</p>
         </li>
+        <li>
+            <p class="h3"><a href="{% url 'reporting:task-analysis' %}" class="underline-dotted">{% trans 'Task Analysis' %}</a></p>
+            <p>{% blocktrans %}Report that summarizes time spent on a task.{% endblocktrans %}</p>
+        </li>
     </ul>
 </div>
 {% endblock %}

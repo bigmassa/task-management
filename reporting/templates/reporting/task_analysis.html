@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load i18n reporting_tags static wip_tags %}
+{% block page_title %}Reporting - Task Analysis{% endblock %}
+{% block body_class %}{% endblock %}
+{% block content %}
+{% include 'reporting/partials/header.html' %}
+<div class="page-header py-2">
+    <div class="container-fluid d-flex align-items-center">
+        <div class="h2">{% trans 'Task Analysis' %}</div>
+        <div class="page-header-actions"></div>
+    </div>
+</div>
+<div class="container-fluid inner-content">
+    <div class="panel">
+        <form class="filter-form" method="GET" novalidate>
+            <div class="row">
+                <div class="col-12 col-lg-3">
+                    {{ form.date_from.label_tag }}
+                    {{ form.date_from }}
+                    {{ form.date_from.errors }}
+                </div>
+                <div class="col-12 col-lg-3">
+                    {{ form.date_to.label_tag }}
+                    {{ form.date_to }}
+                    {{ form.date_to.errors }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-3">
+                    {{ form.client.label_tag }}
+                    {{ form.client }}
+                    {{ form.client.errors }}
+                </div>
+                <div class="col-12 col-lg-3">
+                    {{ form.job.label_tag }}
+                    {{ form.job }}
+                    {{ form.job.errors }}
+                </div>
+                <div class="col-12 col-lg-3">
+                    {{ form.task.label_tag }}
+                    {{ form.task }}
+                    {{ form.task.errors }}
+                </div>
+                <div class="col-12 col-lg-3">
+                    {{ form.user.label_tag }}
+                    {{ form.user }}
+                    {{ form.user.errors }}
+                </div>
+            </div>
+            <hr/>
+            <div class="row pt-1-5">
+                <div class="col text-right">
+                    <button class="button button-primary" type="submit">{% trans 'Refresh' %}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="panel">
+        <h3>{% trans 'Time by Staff' %}</h3>
+        <table class="table-headed table-hover">
+            <thead>
+                <tr>
+                    <th>{% trans 'User' %}</th>
+                    <th class="keep-min-width">{% trans 'Total (hrs)' %}</th>
+                    <th class="keep-min-width">{% trans 'Chargeable (hrs)' %}</th>
+                    <th class="keep-min-width">{% trans 'Chargeable (%)' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in by_staff %}
+                    <tr class="pointer filter-user" data-id="{{ user.id }}">
+                        <td>{{ user.get_full_name }}</td>
+                        <td class="text-right">{{ user.total_time|duration_decimal|default:'-' }}</td>
+                        <td class="text-right">{{ user.chargeable_time|duration_decimal|default:'-' }}</td>
+                        <td class="text-right">{{ user.chargeable_time|divide:user.total_time|multiply:100|floatformat:0 }}%</td>
+                    </tr>
+                {% empty %}
+                    <tr><td colspan="4">{% trans 'No records found' %}</td></tr>
+                {% endfor %}
+            </tbody>
+            {% if totals %}
+            <tfoot>
+                <tr class="strong">
+                    <td>{% trans 'Total' %}</td>
+                    <td class="text-right">{{ totals.total_time|duration_decimal|default:'-' }}</td>
+                    <td class="text-right">{{ totals.chargeable_time|duration_decimal|default:'-' }}</td>
+                    <td class="text-right">{{ totals.chargeable_time|divide:totals.total_time|multiply:100|floatformat:0 }}%</td>
+                </tr>
+            </tfoot>
+            {% endif %}
+        </table>
+    </div>
+
+    <div class="panel">
+        <h3>{% trans 'Time by Task' %}</h3>
+        <table class="table-headed table-hover">
+            <thead>
+                <tr>
+                    <th>{% trans 'User' %}</th>
+                    <th>{% trans 'Date' %}</th>
+                    <th>{% trans 'Time' %}</th>
+                    <th>{% trans 'Duration' %}</th>
+                    <th>{% trans 'Comments' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.user.get_full_name }}</td>
+                    <td>{{ entry.started_at|date:"d/m/Y" }}</td>
+                    <td>{{ entry.started_at|time:"H:i" }} to {{ entry.ended_at|time:"H:i" }}</td>
+                    <td>{{ entry.duration|duration_decimal }}</td>
+                    <td>{{ entry.comments|default:'-'|linebreaksbr }}</td>
+                </tr>
+                {% empty %}
+                    <tr><td colspan="4">{% trans 'No records found' %}</td></tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr><td colspan="4"></td></tr>
+            </tfoot>
+        </table>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+    {{ form.media }}
+    <script>
+        function show(id) {
+            $('tr[data-id="'+id+'"] .toggle').addClass('icon-down-dir');
+            $('tr[data-id="'+id+'"] .toggle').removeClass('icon-right-dir');
+            $('tr[data-parent="'+id+'"]').show();
+        }
+        function hide(id) {
+            $('tr[data-id="'+id+'"] .toggle').addClass('icon-right-dir');
+            $('tr[data-id="'+id+'"] .toggle').removeClass('icon-down-dir');
+            $('tr[data-parent="'+id+'"]').hide();
+            $('tr[data-parent="'+id+'"]').each(function() {
+                if ($(this).data('id')) {
+                    hide($(this).data('id'));
+                }
+            })
+        }
+        $(document).on('click', 'tr[data-id]', function() {
+            var id = $(this).data('id');
+            var hiddenChildren = $(this).parent().find('tr[data-parent="'+id+'"]:hidden');
+            if (hiddenChildren.length > 0) {
+                show(id);
+            } else {
+                hide(id);
+            }
+        })
+        $(document).on('click', '.filter-user', function(e) {
+            var id = $(this).data('id');
+            $('.filter-form #id_user').val(id);
+            $('.filter-form').submit();
+        });
+    </script>
+{% endblock %}
