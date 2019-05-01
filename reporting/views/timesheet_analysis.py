@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db.models import F, Q, Prefetch, Sum
+from django.db.models import F, Q, Prefetch, Sum, Min, Max
 from django.views.generic import TemplateView
 
 from authentication.models import User
@@ -9,6 +9,24 @@ from wip.models import Client, Job, Task, TimeEntry
 
 class TimesheetAnalysis(LoginRequiredMixin, TemplateView):
     template_name = 'reporting/timesheet_analysis.html'
+    date_from = None
+    date_to = None
+
+    def dispatch(self, request, *args, **kwargs):
+        self.default_dates = self.get_default_dates()
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_default_dates(self):
+        return TimeEntry.objects.aggregate(
+            from_date=Min('started_at__date'), to_date=Max('ended_at__date')
+        )
+
+    def assign_form_dates_or_default(self, form):
+        if self.date_from is None:
+            self.date_from = form.cleaned_data.get('date_from') or self.default_dates['from_date']
+
+        if self.date_to is None:
+            self.date_to = form.cleaned_data.get('date_to') or self.default_dates['to_date']
 
     def get_filter_form(self):
         if 'date_from' in self.request.GET:
@@ -21,8 +39,10 @@ class TimesheetAnalysis(LoginRequiredMixin, TemplateView):
         form = self.get_filter_form()
 
         if form.is_valid():
-            date_from = form.cleaned_data['date_from']
-            date_to = form.cleaned_data['date_to']
+            self.assign_form_dates_or_default(form)
+
+            date_from = self.date_from
+            date_to = self.date_to
             client = form.cleaned_data.get('client')
             job = form.cleaned_data.get('job')
             user = form.cleaned_data.get('user')
@@ -54,8 +74,10 @@ class TimesheetAnalysis(LoginRequiredMixin, TemplateView):
         form = self.get_filter_form()
 
         if form.is_valid():
-            date_from = form.cleaned_data['date_from']
-            date_to = form.cleaned_data['date_to']
+            self.assign_form_dates_or_default(form)
+
+            date_from = self.date_from
+            date_to = self.date_to
             client = form.cleaned_data.get('client')
             job = form.cleaned_data.get('job')
             user = form.cleaned_data.get('user')
@@ -90,8 +112,10 @@ class TimesheetAnalysis(LoginRequiredMixin, TemplateView):
         form = self.get_filter_form()
 
         if form.is_valid():
-            date_from = form.cleaned_data['date_from']
-            date_to = form.cleaned_data['date_to']
+            self.assign_form_dates_or_default(form)
+
+            date_from = self.date_from
+            date_to = self.date_to
             client = form.cleaned_data.get('client')
             job = form.cleaned_data.get('job')
             user = form.cleaned_data.get('user')
