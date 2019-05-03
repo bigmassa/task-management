@@ -13,6 +13,7 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password', )}),
         ('Personal info', {'fields': ('first_name', 'last_name', )}),
+        ('Notification settings', {'fields': ('slack_id', 'requires_timesheet_reminders', )}),
         ('Important dates', {'fields': ('last_login', )}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', )}),
         ('Gradwell', {'fields': ('gradwell_token', 'gradwell_extension', )}),

@@ -73,6 +73,18 @@ class User(AbstractBaseUser, PermissionsMixin):
         null=True,
         blank=True
     )
+    slack_id = models.CharField(
+        max_length=9,
+        null=True,
+        blank=True
+    )
+    requires_timesheet_reminders = models.BooleanField(
+        _('Timesheet reminders'),
+        default=False,
+        help_text=_(
+            'Designates whether this user requires a nudge to remind them fill in their timesheet. '
+        ),
+    )
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name']
