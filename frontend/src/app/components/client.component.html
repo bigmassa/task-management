@@ -81,11 +81,11 @@
                                                 <p class="strong mt-1h mb-0" >Phone Number</p>
                                                 <p class="m-0"><a class="underline-dotted" href="tel://{{ phone }}">{{ phone }}</a></p>
                                             </ng-container>
-                                            <ng-container *ngIf="contact.mobile as mobile">
+                                            <ng-container *ngIf="contact.mobile_number as mobile">
                                                 <p class="strong mt-1h mb-0">Mobile Number</p>
                                                 <p class="m-0"><a class="underline-dotted" href="tel://{{ mobile }}">{{ mobile }}</a></p>
                                             </ng-container>
-                                            <ng-container *ngIf="contact._position.title as position">
+                                            <ng-container *ngIf="contact._position?.title as position">
                                                 <p class="strong mt-1h mb-0">Position</p>
                                                 <p class="m-0">{{ position }}</p>
                                             </ng-container>
