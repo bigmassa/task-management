@@ -61,7 +61,7 @@ export class JobComponent implements OnDestroy, OnInit {
     taskPluralMapping: {[k: string]: string} 
         = {'=1': 'task', 'other': 'tasks'};
 
-    const jobTimeAnalysisUrl = '/reporting/job-time-analysis/';
+    readonly jobTimeAnalysisUrl = '/reporting/job-time-analysis/';
 
     private subscriptions: Subscription[] = [];
 
