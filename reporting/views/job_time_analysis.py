@@ -1,17 +1,35 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db.models import F, Q, Sum
+from django.db.models import F, Q, Sum, Min, Max
 from django.views.generic import TemplateView
 
 from authentication.models import User
 from reporting.forms import JobTimeAnalysisFilterForm
-from wip.models import Task
+from wip.models import Task, TimeEntry
 
 
 class JobTimeAnalysis(LoginRequiredMixin, TemplateView):
     template_name = 'reporting/job_time_analysis.html'
+    date_from = None
+    date_to = None
+
+    def dispatch(self, request, *args, **kwargs):
+        self.default_dates = self.get_default_dates()
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_default_dates(self):
+        return TimeEntry.objects.aggregate(
+            from_date=Min('started_at__date'), to_date=Max('ended_at__date')
+        )
+
+    def assign_form_dates_or_default(self, form):
+        if self.date_from is None:
+            self.date_from = form.cleaned_data.get('date_from') or self.default_dates['from_date']
+
+        if self.date_to is None:
+            self.date_to = form.cleaned_data.get('date_to') or self.default_dates['to_date']
 
     def get_filter_form(self):
-        if 'date_from' in self.request.GET:
+        if 'job' in self.request.GET:
             return JobTimeAnalysisFilterForm(self.request.GET)
         return JobTimeAnalysisFilterForm()
 
@@ -21,9 +39,12 @@ class JobTimeAnalysis(LoginRequiredMixin, TemplateView):
         form = self.get_filter_form()
 
         if form.is_valid():
-            date_from = form.cleaned_data['date_from']
-            date_to = form.cleaned_data['date_to']
+            self.assign_form_dates_or_default(form)
+
+            date_from = self.date_from
+            date_to = self.date_to
             job = form.cleaned_data['job']
+
             return (
                 User.objects
                 .annotate(
@@ -45,9 +66,12 @@ class JobTimeAnalysis(LoginRequiredMixin, TemplateView):
         form = self.get_filter_form()
 
         if form.is_valid():
-            date_from = form.cleaned_data['date_from']
-            date_to = form.cleaned_data['date_to']
+            self.assign_form_dates_or_default(form)
+
+            date_from = self.date_from
+            date_to = self.date_to
             job = form.cleaned_data['job']
+
             return (
                 Task.objects
                 .annotate(
