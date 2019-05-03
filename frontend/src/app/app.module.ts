@@ -22,6 +22,8 @@ import { ClientDeleteComponent } from './components/client-delete.component';
 import { ClientDetailFormComponent } from './components/client-detail-form.component';
 import { ClientListComponent } from './components/client-list.component';
 import { ClientComponent } from './components/client.component';
+import { DashboardPanelComponent } from './components/dashboard-panel.component';
+import { DashboardStatisticComponent } from './components/dashboard-statistic.component';
 import { JobBoardColumnComponent } from './components/job-board-column.component';
 import { JobDeleteComponent } from './components/job-delete.component';
 import { JobDetailFormComponent } from './components/job-detail-form.component';
@@ -77,6 +79,8 @@ import { reducers } from './state/state';
         ClientDetailFormComponent,
         ClientListComponent,
         ClientSearchPipe,
+        DashboardPanelComponent,
+        DashboardStatisticComponent,
         FormErrorDirective,
         GetPipe,
         JobBoardColumnComponent,

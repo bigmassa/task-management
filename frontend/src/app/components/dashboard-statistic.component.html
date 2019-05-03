@@ -1,0 +1,13 @@
+<div class="panel">
+    <div class="row align-items-center">
+        <div *ngIf="icon" class="col-3">
+            <span [style.color]="colour" class="{{ icon }} h2 circle-border"></span>
+        </div>
+        <div class="col">
+            <p class="statistic mb-0">{{ statistic }}</p>
+            <p class="muted mb-0"><strong>
+                {{ description }}
+            </strong></p>
+        </div>
+    </div>
+</div>

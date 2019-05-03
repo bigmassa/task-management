@@ -15,7 +15,6 @@ import { Observable, Subscription } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 
 
-
 @Component({
     templateUrl: './client.component.html'
 })
@@ -33,6 +32,9 @@ export class ClientComponent implements OnDestroy, OnInit {
     openOrderType: string = 'asc';
     closedOrderBy: string = 'id';
     closedOrderType: string = 'asc';
+
+    jobPluralMapping: {[k: string]: string} 
+        = {'=1': 'job', 'other': 'jobs'}; 
 
     private subscriptions: Subscription[] = [];
 

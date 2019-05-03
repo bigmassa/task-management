@@ -64,6 +64,10 @@ $spacers: (
   white-space: pre-wrap;
 }
 
+.wb-break-word {
+  word-break: break-word;
+}
+
 .border-style-dotted {
   border-style: dotted !important;
 }

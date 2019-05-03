@@ -125,6 +125,18 @@
       "css": "hourglass-2",
       "code": 62034,
       "src": "fontawesome"
+    },
+    {
+      "uid": "04ff8d6592fe548b332b27ed87ce397a",
+      "css": "box",
+      "code": 61831,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "c95735c17a10af81448c7fed98a04546",
+      "css": "folder-open",
+      "code": 59406,
+      "src": "fontawesome"
     }
   ]
 }

@@ -32,39 +32,26 @@
         <div *ngIf="selectedTab.title == 'Dashboard'">
             <div class="row">
                 <div class="col-lg-3 col-sm-6" *ngFor="let status of statuses$ | async | showStatusOnDashboard">
-                    <div class="panel">
-                        <div class="row align-items-center">
-                            <div *ngIf="status.icon" class="col-3">
-                                <span [ngClass]="status.icon" [style.color]="status.colour" class="h2 circle-border"></span>
-                            </div>
-                            <div class="col">
-                                <p class="statistic mb-0">{{ (tasks$ | async | taskHasStatus:status.id).length }}</p>
-                                <p class="muted mb-0"><strong>
-                                    {{ status.title }} {{ (tasks$ | async | taskHasStatus:status.id).length | i18nPlural: taskPluralMapping }}
-                                </strong></p>
-                            </div>
-                        </div>
-                    </div>
+                    <dashboard-statistic 
+                        [icon]="status.icon"
+                        [colour]="status.colour"
+                        [statistic]="(tasks$ | async | taskHasStatus:status.id).length"
+                        description="{{ status.title }} {{ (tasks$ | async | taskHasStatus:status.id).length | i18nPlural: taskPluralMapping }} ">
+                    </dashboard-statistic>
                 </div>
                 <div class="col-lg-3 col-sm-6">
-                    <div class="panel">
-                        <div class="row align-items-center">
-                            <div class="col-3">
-                                <span class="h2 icon-attention-alt c-red circle-border"></span>
-                            </div>
-                            <div class="col">
-                                <p class="statistic mb-0">{{ (tasks$ | async | taskIsOverdue).length }}</p>
-                                <p class="muted mb-0"><strong>Overdue tasks</strong></p>
-                            </div>
-                        </div>
-                    </div>
+                    <dashboard-statistic
+                        icon="icon-attention-alt"
+                        colour="red"
+                        [statistic]="(tasks$ | async | taskIsOverdue).length"
+                        description="Overdue tasks">
+                    </dashboard-statistic>
                 </div>
             </div>
             
             <div class="row">
                 <div class="col-lg-3"> <!-- Left column -->
-                    <div class="panel">
-                        <p class="strong">Details</p>
+                    <dashboard-panel description="Details">
                         <p class="strong margin-zero">Time Spent (hrs)</p>
                         <p [class.c-red]="timings.is_over_allocated_hours" *ngIf="timings$ | async as timings">
                             <span (click)="displayTimeReport(job)" class="underline-dotted pointer">
@@ -87,32 +74,32 @@
                         </p>
                         <p class="strong margin-zero">Slack Channel ID</p>
                         <p>{{ job | get:'slack_channel_id' }}</p>
-                    </div>
+                    </dashboard-panel>
                 </div>
                 
                 <div class="col"> <!-- Center column  -->
                     <div class="row">
                         <div class="col">
-                            <div class="panel">
-                                <p class="strong">Description</p>
+                            <dashboard-panel description="Description">
                                 <p class="ws-pre-wrap">{{ job | get:'description' }}</p>
-                            </div>
+                            </dashboard-panel>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col" *ngIf="notes$ | async as notes">
-                            <div class="panel">
-                                <p class="strong m-0">Recent Notes</p>
+                            <dashboard-panel description="Notes">
                                 <div *ngIf="notes.length > 0; else dashboardEmptyNotes"></div>
                                 <ng-container *ngFor="let note of notes | slice:0:3">
                                     <div class="row" *ngIf="getOrCreateEditNoteForm(note) as form">
                                         <user-content
                                         [user_id]="note.user"
                                         [title]="note._user.full_name" 
-                                        [subtitle]="note.updated_at | date:'MMM d, y, h:mm a'">{{ note.note }}</user-content>
+                                        [subtitle]="note.updated_at | date:'MMM d, y, h:mm a'">
+                                            <div class="ws-pre-wrap">{{ note.note }}</div>
+                                        </user-content>
                                     </div>
                                 </ng-container>
-                            </div>
+                            </dashboard-panel>
                         </div>
                     </div>
                 </div>
@@ -120,8 +107,7 @@
                 <div class="col-lg-3"> <!-- Right column -->
                     <div class="row">
                         <div class="col" *ngIf="relationships$ | async as relationships">
-                            <div class="panel">
-                                <p class="strong m-0">Relationships</p>
+                            <dashboard-panel description="Relationships">
                                 <div *ngIf="relationships.length > 0; else dashboardEmptyRelationships"></div>
                                 <ng-container *ngFor="let relationship of relationships">
                                     <div class="row">
@@ -131,13 +117,12 @@
                                         [subtitle]="relationship | get:'_relationship.title'"></user-content>
                                     </div>
                                 </ng-container>
-                            </div>
+                            </dashboard-panel>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="panel">
-                                <p class="strong m-0">Recurring Costs</p>
+                            <dashboard-panel description="Recurring Costs">
                                 <ng-container *ngIf="recurringCosts$ | async as recurringCosts">
                                     <div *ngIf="recurringCosts.length > 0; else dashboardEmptyRecurringCosts">
                                         <div class="mt-1h" *ngFor="let recurringCost of recurringCosts">
@@ -149,7 +134,7 @@
                                         </div>
                                     </div>
                                 </ng-container>
-                            </div>
+                            </dashboard-panel>
                         </div>
                     </div>
                 </div>
