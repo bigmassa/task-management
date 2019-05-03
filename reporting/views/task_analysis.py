@@ -37,108 +37,95 @@ class TaskAnalysis(LoginRequiredMixin, TemplateView):
         """ Get time by staff for the allocated period """
 
         form = self.get_filter_form()
+        if not form.is_valid():
+            return TimeEntry.objects.none()
 
-        if form.is_valid():
-            self.assign_form_dates_or_default(form)
+        self.assign_form_dates_or_default(form)
 
-            date_from = self.date_from 
-            date_to = self.date_to
-            client = form.cleaned_data.get('client')
-            job = form.cleaned_data.get('job')
-            task = form.cleaned_data.get('task')
-            user = form.cleaned_data.get('user')
+        date_from = self.date_from
+        date_to = self.date_to
+        task = form.cleaned_data.get('task')
+        user = form.cleaned_data.get('user')
 
-            filters = Q().add(Q(started_at__date__range=(date_from, date_to)), Q.AND)
-            if client:
-                filters.add(Q(task__job__client=client), Q.AND)
-            if job:
-                filters.add(Q(task__job=job), Q.AND)
-            if task:
-                filters.add(Q(task=task.pk), Q.AND)
-            if user:
-                filters.add(Q(user=user), Q.AND)
+        filters = Q().add(Q(started_at__date__range=(date_from, date_to)), Q.AND)
+        if task:
+            filters.add(Q(task=task.pk), Q.AND)
+        if user:
+            filters.add(Q(user=user), Q.AND)
 
-            return (
-                TimeEntry.objects
-                .filter(filters)
-                .aggregate(
-                    total_time=Sum(F('ended_at') - F('started_at')),
-                    chargeable_time=Sum(
-                        F('ended_at') - F('started_at'),
-                        filter=Q(task__not_chargeable=False)
-                    )
+        return (
+            TimeEntry.objects
+            .filter(filters)
+            .aggregate(
+                total_time=Sum(F('ended_at') - F('started_at')),
+                chargeable_time=Sum(
+                    F('ended_at') - F('started_at'),
+                    filter=Q(task__not_chargeable=False)
                 )
             )
-        return TimeEntry.objects.none()
+        )
 
     def get_time_by_staff(self):
         """ Get time by staff for the allocated period """
 
         form = self.get_filter_form()
+        if not form.is_valid():
+            return User.objects.none()
 
-        if form.is_valid():
-            self.assign_form_dates_or_default(form)
+        self.assign_form_dates_or_default(form)
 
-            date_from = self.date_from 
-            date_to = self.date_to
-            client = form.cleaned_data.get('client')
-            job = form.cleaned_data.get('job')
-            task = form.cleaned_data.get('task')
-            user = form.cleaned_data.get('user')
+        date_from = self.date_from
+        date_to = self.date_to
+        task = form.cleaned_data.get('task')
+        user = form.cleaned_data.get('user')
 
-            filters = Q().add(Q(time_entries__started_at__date__range=(date_from, date_to)), Q.AND)
-            if client:
-                filters.add(Q(time_entries__task__job__client=client), Q.AND)
-            if job:
-                filters.add(Q(time_entries__task__job=job), Q.AND)
-            if user:
-                filters.add(Q(time_entries__user=user), Q.AND)
+        filters = Q().add(Q(time_entries__started_at__date__range=(date_from, date_to)), Q.AND)
+        if task:
+            filters.add(Q(time_entries__task=task.pk), Q.AND)
+        if user:
+            filters.add(Q(time_entries__user=user), Q.AND)
 
-            return (
-                User.objects
-                .annotate(
-                    total_time=Sum(
-                        F('time_entries__ended_at') - F('time_entries__started_at'),
-                        filter=filters
-                    ),
-                    chargeable_time=Sum(
-                        F('time_entries__ended_at') - F('time_entries__started_at'),
-                        filter=filters & Q(time_entries__task__not_chargeable=False)
-                    )
+        return (
+            User.objects
+            .annotate(
+                total_time=Sum(
+                    F('time_entries__ended_at') - F('time_entries__started_at'),
+                    filter=filters
+                ),
+                chargeable_time=Sum(
+                    F('time_entries__ended_at') - F('time_entries__started_at'),
+                    filter=filters & Q(time_entries__task__not_chargeable=False)
                 )
-                .filter(total_time__isnull=False)
             )
-        return User.objects.none()
+            .filter(total_time__isnull=False)
+        )
 
     def get_time_entries(self):
         """ Get time by task for the allocated period """
 
         form = self.get_filter_form()
+        if not form.is_valid():
+            return TimeEntry.objects.none()
 
-        if form.is_valid():
-            self.assign_form_dates_or_default(form)
+        self.assign_form_dates_or_default(form)
 
-            date_from = self.date_from 
-            date_to = self.date_to
-            client = form.cleaned_data.get('client')
-            job = form.cleaned_data.get('job')
-            task = form.cleaned_data.get('task')
-            user = form.cleaned_data.get('user')
+        date_from = self.date_from
+        date_to = self.date_to
+        task = form.cleaned_data.get('task')
+        user = form.cleaned_data.get('user')
 
-            time_entry_filters = Q().add(Q(started_at__date__range=(date_from, date_to)), Q.AND)
-            if user:
-                time_entry_filters.add(Q(user=user), Q.AND)
+        time_entry_filters = Q().add(Q(started_at__date__range=(date_from, date_to)), Q.AND)
+        if task:
+            time_entry_filters.add(Q(task=task.pk), Q.AND)
+        if user:
+            time_entry_filters.add(Q(user=user), Q.AND)
 
-            entries = (
-                TimeEntry.objects
-                .filter(time_entry_filters)
-                .order_by('user', 'started_at')
-                .select_related('user')
-            )
-
-            return entries 
-            
-        return TimeEntry.objects.none()
+        return (
+            TimeEntry.objects
+            .filter(time_entry_filters)
+            .order_by('user', 'started_at')
+            .select_related('user')
+        )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -148,4 +135,5 @@ class TaskAnalysis(LoginRequiredMixin, TemplateView):
             'by_staff': self.get_time_by_staff(),
             'entries': self.get_time_entries()
         })
+
         return context
