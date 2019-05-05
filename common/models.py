@@ -34,6 +34,10 @@ class WIPSettings(SingletonModel):
         max_length=255,
         help_text='Use the OAuth Access Token found in the Slack integration.'
     )
+    timesheet_check_range = models.PositiveIntegerField(
+        default=7,
+        help_text='Specifies the number of days to check for missing past timesheet entries.'
+    )
 
     class Meta:
         verbose_name_plural = 'WIP settings'
