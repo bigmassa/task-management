@@ -62,6 +62,15 @@ class ModelTests(AppTestCase):
         self.assertModelField(field, models.CharField, null=True, blank=True)
         self.assertEqual(field.max_length, 50)
 
+    def test_slack_id(self):
+        field = User._meta.get_field('slack_id')
+        self.assertModelField(field, models.CharField, null=True, blank=True)
+        self.assertEqual(field.max_length, 9)
+
+    def test_requries_timesheet_reminders(self):
+        field = User._meta.get_field('requires_timesheet_reminders')
+        self.assertModelField(field, models.BooleanField, default=False)
+
     ##################################
     # auth only specifics            #
     ##################################

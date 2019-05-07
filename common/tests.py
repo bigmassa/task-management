@@ -10,3 +10,12 @@ class WIPSettingsTests(AppTestCase):
         self.assertModelField(field, models.CharField)
         self.assertEqual(field.max_length, 255)
         self.assertEqual(field.help_text, 'Use the OAuth Access Token found in the Slack integration.')
+
+    def test_timesheet_check_range(self):
+        field = WIPSettings._meta.get_field('timesheet_check_range')
+        self.assertModelField(field, models.PositiveIntegerField)
+        self.assertEqual(field.default, 7)
+        self.assertEqual(
+            field.help_text,
+            'Specifies the number of days to check for missing past timesheet entries.'
+        )
