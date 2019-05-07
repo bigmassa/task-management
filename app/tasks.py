@@ -96,7 +96,7 @@ def send_task_slack_notification(task):
     })
 
 
-@db_periodic_task(crontab(day_of_week='1,2,3,4,5', hour='9-18/2'))
+@db_periodic_task(crontab(day_of_week='1,2,3,4,5', hour='9,11,13,15,17'))
 def check_timesheets():
     """ Check timesheet entries for all active users. """
     from wip.models import TimeEntry
