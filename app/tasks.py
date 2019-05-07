@@ -121,6 +121,7 @@ def check_timesheets():
         incomplete_time_entries = (
             TimeEntry.objects
             .filter(
+                user_id=user.pk,
                 ended_at__date__range=(cutoff, yesterday),
                 signed_off=False
             )
@@ -141,6 +142,7 @@ def check_timesheets():
             TimeEntry.objects
             .values('ended_at__date')
             .filter(
+                user_id=user.pk,
                 ended_at__date__range=(cutoff, yesterday),
                 signed_off=True
             )
