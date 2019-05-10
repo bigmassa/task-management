@@ -96,16 +96,17 @@ def send_task_slack_notification(task):
     })
 
 
-@db_periodic_task(crontab(day_of_week='1,2,3,4,5', hour='9,11,13,15,17'))
+@db_periodic_task(crontab(minute='0', hour='8,10,12,14,16', day_of_week='1,2,3,4,5'))
 def check_timesheets():
     """ Check timesheet entries for all active users. """
+    # TODO: The time schedule above is UTC, this needs changing in future
+
     from wip.models import TimeEntry
     settings = WIPSettings.load()
 
     working_week_days = 5
-    today = datetime.today()
-    yesterday = today - timedelta(days=1)
-    cutoff = today - timedelta(days=settings.timesheet_check_range)
+    yesterday = datetime.today() - timedelta(days=1)
+    cutoff = yesterday - timedelta(days=settings.timesheet_check_range)
 
     eligible_users_to_remind = User.objects.filter(
         is_active=True,
@@ -134,7 +135,7 @@ def check_timesheets():
             timesheet_reminder(
                 user.slack_id, user.get_full_name(), settings.timesheet_check_range
             )
-            return
+            continue
 
         # If the user has signed off timesheet entries, check
         # if there are 5 days' worth of them.
@@ -151,7 +152,7 @@ def check_timesheets():
 
         finished_days = len(completed_time_entries)
         if finished_days >= working_week_days:
-            return
+            continue
 
         timesheet_reminder(
             user.slack_id, user.get_full_name(), settings.timesheet_check_range
@@ -159,8 +160,8 @@ def check_timesheets():
 
 
 def timesheet_reminder(channel, name, check_range):
-    post_slack_message(
-        {
+    post_slack_message.schedule(
+        args=({
             "channel": channel,
             "attachments": [
                 {
@@ -173,10 +174,12 @@ def timesheet_reminder(channel, name, check_range):
                     "ts": datetime.now().timestamp()
                 }
             ]
-        }
+        },),
+        delay=2
     )
 
 
+@task(retries=3, retry_delay=10)
 def post_slack_message(payload):
     settings = WIPSettings.load()
     requests.post(
