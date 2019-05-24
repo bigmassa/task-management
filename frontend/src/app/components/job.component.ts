@@ -61,7 +61,7 @@ export class JobComponent implements OnDestroy, OnInit {
     taskPluralMapping: {[k: string]: string} 
         = {'=1': 'task', 'other': 'tasks'};
 
-    readonly jobTimeAnalysisUrl = '/reporting/job-time-analysis/';
+    readonly timeAnalysisUrl = '/reporting/timesheet-analysis/';
 
     private subscriptions: Subscription[] = [];
 
@@ -175,7 +175,7 @@ export class JobComponent implements OnDestroy, OnInit {
     // reporting
 
     displayTimeReport(job: IJob) {
-        this.openNewTab(`${this.jobTimeAnalysisUrl}?client=${job.client}&job=${job.id}`);
+        this.openNewTab(`${this.timeAnalysisUrl}?client=${job.client}&job=${job.id}`);
     }
 
     displayBillingReport(job: IJob) {
@@ -191,7 +191,7 @@ export class JobComponent implements OnDestroy, OnInit {
             path_components.push(`date_from=${encodeURIComponent(from)}`);
         }
 
-        this.openNewTab(`${this.jobTimeAnalysisUrl}?${path_components.join('&')}`);
+        this.openNewTab(`${this.timeAnalysisUrl}?${path_components.join('&')}`);
     }
 
     openNewTab(url: string) {

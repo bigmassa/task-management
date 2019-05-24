@@ -29,7 +29,7 @@ class TimesheetAnalysis(LoginRequiredMixin, TemplateView):
             self.date_to = form.cleaned_data.get('date_to') or self.default_dates['to_date']
 
     def get_filter_form(self):
-        if 'date_from' in self.request.GET:
+        if 'job' in self.request.GET:
             return TimesheetAnalysisFilterForm(self.request.GET)
         return TimesheetAnalysisFilterForm()
 
