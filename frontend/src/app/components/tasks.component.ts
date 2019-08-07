@@ -14,9 +14,9 @@ import { getActiveUsers } from '../state/selectors/user';
 import { AppState, getFilterState, getMeState, getTaskStatusState } from '../state/state';
 
 @Component({
-    templateUrl: './taskboard.component.html'
+    templateUrl: './tasks.component.html'
 })
-export class TaskboardComponent implements OnDestroy {
+export class TasksComponent implements OnDestroy {
 
     filteredStatuses: number[];
     orderBy: string;
@@ -24,6 +24,7 @@ export class TaskboardComponent implements OnDestroy {
     searchTerms: string[] = [];
     selectedUserId: number;
     subscriptions: Subscription[] = [];
+    selectedStyle: string = 'Board';
     
     filters$: Observable<IFilter>;
     taskStatuses$: Observable<ITaskStatus[]>;
@@ -88,4 +89,7 @@ export class TaskboardComponent implements OnDestroy {
         this.store.dispatch({type: actions.FilterActions.TASKBOARD_TOGGLE_STATUS, payload: id});
     }
 
+    switchStyle = (style: string) => {
+        this.selectedStyle = style;
+    }
 }

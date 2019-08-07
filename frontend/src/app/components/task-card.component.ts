@@ -25,6 +25,7 @@ import { select, Store } from '@ngrx/store';
 })
 export class TaskCardComponent implements OnChanges {
     @Input() id: number;
+    @Input() show_job_details: boolean;
 
     assignees$: Observable<ITaskAssignee[]>;
     task$: Observable<ITask>;
@@ -37,6 +38,7 @@ export class TaskCardComponent implements OnChanges {
         if (_.has(changes, 'id.currentValue')) {
             this.assignees$ = this.store.pipe(select(getTaskAssigneesForTask(this.id)));
             this.task$ = this.store.pipe(select(getTaskById(this.id)));
+
             this.taskTags$ = this.store.pipe(select(getTaskTagsForTask(this.id)));
             this.timing$ = this.store.pipe(select(getTaskTimingsById(this.id)));
         }

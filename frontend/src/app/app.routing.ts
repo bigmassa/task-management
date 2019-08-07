@@ -12,11 +12,11 @@ import { JobRecurringCostFormComponent } from './components/job-recurring-cost-f
 import { JobRelationshipFormComponent } from './components/job-relationship-form.component';
 import { JobComponent } from './components/job.component';
 import { NotFoundComponent } from './components/not-found.component';
-import { TaskboardComponent } from './components/taskboard.component';
+import { TasksComponent } from './components/tasks.component';
 import { TimesheetComponent } from './components/time-sheet.component';
 
 const routes: Routes = [
-    { path: '', component: TaskboardComponent },
+    { path: '', component: TasksComponent },
     { path: 'clients', component: ClientListComponent},
     { path: 'clients/new', component: ClientDetailFormComponent},
     { path: 'clients/:id', component: ClientComponent},

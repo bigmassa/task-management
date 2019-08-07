@@ -1,5 +1,8 @@
-<div class="button button-shadylady button-outline border-style-dotted mt-h mb-1" (click)="newTask()">
+<div *ngIf="!readonly" class="button button-shadylady button-outline border-style-dotted mt-h mb-1" (click)="newTask()">
     <i class="icon-plus"></i> {{ status.title }}
+</div>
+<div *ngIf="readonly" class="button button-shadylady button-outline border-style-dotted mt-h mb-1">
+    {{ status.title }}
 </div>
 
 <div class="board-card" *ngIf="newFormOpen">
@@ -16,6 +19,7 @@
         [id]="task.id"
         ngxDraggable
         [model]="task"
+        [show_job_details]="show_job_details"
         (click)="selectedTaskId=task.id"
         *ngFor="let task of tasks">
     </div>

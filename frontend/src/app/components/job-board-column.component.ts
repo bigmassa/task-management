@@ -25,6 +25,8 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
     @Input() jobId: number;
     @Input() status: ITaskStatus;
     @Input() tasks: ITask[];
+    @Input() show_job_details: boolean;
+    @Input() readonly: boolean;
 
     newForm: TaskCreateForm;
     newFormOpen = false;

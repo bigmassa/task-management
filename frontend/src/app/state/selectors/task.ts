@@ -14,8 +14,13 @@ export const getTaskAssigneesForTask = (id) => createSelector(
 );
 
 export const getTaskById = (id) => createSelector(
+    getJobCollection,
     getTaskState,
-    (tasks) => _.find(tasks, ['id', id])
+    (jobs, tasks) => {
+        var task = _.find(tasks, ['id', id]);
+        task._job = _.find(jobs, ['id', task.job]);
+        return task;
+    }
 );
 
 export const getTaskCollection = createSelector(
