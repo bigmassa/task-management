@@ -1,29 +1,40 @@
 <div [class.flex-fill-container]="selectedStyle == 'Board'">
     <div class="page-header py-2">
-        <div class="container-fluid d-flex align-items-center">
-            <div class="h2">Tasks</div>
-            <p class="c-white mb-0 ml-2 mt-0.5">
-                <span class="pointer" [ngClass]="{'underline-dotted': selectedStyle != 'Board'}" (click)="switchStyle('Board')">Board</span> / 
-                <span class="pointer" [ngClass]="{'underline-dotted': selectedStyle != 'List'}" (click)="switchStyle('List')">List</span>
-            </p>
-            <div class="page-header-actions">
-                <select [(ngModel)]="selectedUserId" (ngModelChange)="refetchTasks()" class="mb-0">
-                    <option *ngFor="let user of users$ | async" [ngValue]="user.id">{{ user.full_name }}</option>
-                </select>
+        <div class="container-fluid align-items-center">
+            <div class="row">
+                <div class="col-12 d-flex">
+                    <div class="h2">Tasks</div>
+                    <p class="c-white mb-0 ml-2 mt-0.5">
+                        <span class="pointer" [ngClass]="{'underline-dotted': selectedStyle != 'Board'}" (click)="switchStyle('Board')">Board</span> / 
+                        <span class="pointer" [ngClass]="{'underline-dotted': selectedStyle != 'List'}" (click)="switchStyle('List')">List</span>
+                    </p>
+                    <div class="page-header-actions">
+                        <select [(ngModel)]="selectedUserId" (ngModelChange)="refetchTasks()" class="mb-0">
+                            <option *ngFor="let user of users$ | async" [ngValue]="user.id">{{ user.full_name }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <search [(ngModel)]="searchTerms" (ngModelChange)="setSearch()"></search>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="container-fluid ov-hidden full-height" *ngIf="selectedStyle == 'Board'">
-        <div class="board-column-wrapper" autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40">
-            <div class="board-column"
-            job-board-column
-            [jobId]="jobId"
-            [status]="status"
-            [tasks]="tasks$ | async | tasksByStatus:status.id"
-            [show_job_details]="true"
-            [readonly]="true"
-            *ngFor="let status of taskStatuses$ | async"></div>
+        <div class="row align-items-center full-height">
+            <div class="board-column-wrapper" autoScroll [scrollMargin]="100" [scrollMaxSpeed]="40">
+                <div class="board-column"
+                job-board-column
+                [jobId]="jobId"
+                [status]="status"
+                [tasks]="tasks$ | async | tasksByStatus:status.id"
+                [show_job_details]="true"
+                [readonly]="true"
+                *ngFor="let status of taskStatuses$ | async"></div>
+            </div>
         </div>
         <div task-form [id]="selectedTaskId" (close)="selectedTaskId = null" *ngIf="selectedTaskId != null"></div>
     </div>
@@ -31,18 +42,13 @@
     <div class="container-fluid inner-content" *ngIf="selectedStyle == 'List'">
         <div class="panel">
             <div class="row align-items-center">
-                <div class="col-4">
-                    <search [(ngModel)]="searchTerms" (ngModelChange)="setSearch()"></search>
-                </div>
-                <div class="col-8">
-                    <div class="row">
-                        <div class="checkbox" *ngFor="let status of taskStatuses$ | async">
-                            <label>
-                                {{ status.title }} ({{ (tasks$ | async | taskHasStatus:status.id).length }})
-                                <input type="checkbox" (click)="toggleStatus(status.id)" [checked]="(filters$ | async).taskboard_statuses.indexOf(status.id) != -1">
-                                <span></span>
-                            </label>
-                        </div>
+                <div class="col-12 d-flex">
+                    <div class="checkbox" *ngFor="let status of taskStatuses$ | async">
+                        <label>
+                            {{ status.title }} ({{ (tasks$ | async | taskHasStatus:status.id).length }})
+                            <input type="checkbox" (click)="toggleStatus(status.id)" [checked]="(filters$ | async).taskboard_statuses.indexOf(status.id) != -1">
+                            <span></span>
+                        </label>
                     </div>
                 </div>
             </div>
