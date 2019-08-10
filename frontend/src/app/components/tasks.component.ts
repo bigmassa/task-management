@@ -64,7 +64,9 @@ export class TasksComponent implements OnDestroy {
     }
 
     refetchTasks() {
-        this.tasks$ = this.store.pipe(select(getTasksForTaskBoardForUser(this.selectedUserId)));
+        var ignoreOrdering = this.selectedStyle == 'Board';
+        this.tasks$ = this.store.pipe(
+            select(getTasksForTaskBoardForUser(this.selectedUserId, ignoreOrdering)));
     }
 
     orderTasksBy(by: string) {
@@ -91,5 +93,6 @@ export class TasksComponent implements OnDestroy {
 
     switchStyle = (style: string) => {
         this.selectedStyle = style;
+        this.refetchTasks();
     }
 }
