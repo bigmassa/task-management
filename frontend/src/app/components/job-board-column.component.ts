@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import * as actions from '../state/actions';
-import { ActionsSubject, Store } from '@ngrx/store';
+import { ActionsSubject, Store, select } from '@ngrx/store';
 import { AppState } from '../state/state';
 import {
     Component,
@@ -14,7 +14,8 @@ import { ITaskStatus } from '../state/reducers/taskstatus';
 import { Subscription } from 'rxjs';
 import { TaskCreateForm } from '../forms/task-create.form';
 import { DrakeStoreService } from '@swimlane/ngx-dnd';
-import { calculateOrder } from '../utils/task';
+import { getMeState } from '../state/state';
+import { calculateOrder, calculateTaskBoardOrder } from '../utils/task';
 
 @Component({
     selector: 'job-board-column, [job-board-column]',
@@ -28,6 +29,7 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
     @Input() show_job_details: boolean;
     @Input() readonly: boolean;
 
+    currentUserId: number;
     newForm: TaskCreateForm;
     newFormOpen = false;
     selectedTaskId: number = null;
@@ -42,11 +44,24 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
 
     ngOnInit() {
         this.newForm = new TaskCreateForm(this.store, this.actionsSubject);
-        this.subscriptions.push(this.newForm.formSaved.subscribe(() => this.newFormOpen = false));
+        this.subscriptions.push(
+            this.newForm.formSaved.subscribe(() => this.newFormOpen = false),
+            this.store.pipe(select(getMeState)).subscribe(me => {
+                this.currentUserId = me.id;
+            })
+        );
     }
 
     dropTask(event: any) {
-        let order = calculateOrder(event.dropIndex, this.tasks, event.value);
+        if (this.readonly) {
+            this.changePersonalOrder(event);
+        } else {
+            this.changeOrder(event);
+        }
+    }
+
+    changeOrder(event: any) {
+        let order = calculateOrder(event.dropIndex, this.tasks);
         // dispatch an action to patch the task's new order and status
         const payload = {
             id: event.value.id,
@@ -54,6 +69,26 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
             order: order
         }
         this.store.dispatch({type: actions.TaskActions.PATCH, payload});
+    }
+
+    changePersonalOrder(event: any) {
+        let task = event.value as ITask;
+        let assignee = _.find(task._assignees, ['user', this.currentUserId]);
+        let order = calculateTaskBoardOrder(event.dropIndex, this.tasks, assignee);
+
+        // dispatch an action to patch the task's new order and status
+        const assigneePayload = {
+            id: assignee.id,
+            board_order: order
+        }
+
+        const taskPayload = {
+            id: task.id,
+            status: this.status.id,
+        }
+
+        this.store.dispatch({type: actions.TaskAssigneeActions.PATCH, payload: assigneePayload});
+        this.store.dispatch({type: actions.TaskActions.PATCH, payload: taskPayload});
     }
 
     @HostListener('document:keydown.escape', ['$event']) 

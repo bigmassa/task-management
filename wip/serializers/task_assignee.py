@@ -10,5 +10,6 @@ class TaskAssigneeSerializer(serializers.ModelSerializer):
             'id',
             'task',
             'user',
-            'allocated_hours'
+            'allocated_hours',
+            'board_order'
         ]

@@ -9,7 +9,7 @@ import { IFilter } from '../state/reducers/filter';
 import { ITask } from '../state/reducers/task';
 import { ITaskStatus } from '../state/reducers/taskstatus';
 import { IUser } from '../state/reducers/user';
-import { getTasksForTaskBoardForUser } from '../state/selectors/taskboard';
+import { getTasksForTaskBoardForUser, getTasksForTaskListForUser } from '../state/selectors/taskboard';
 import { getActiveUsers } from '../state/selectors/user';
 import { AppState, getFilterState, getMeState, getTaskStatusState } from '../state/state';
 
@@ -64,9 +64,13 @@ export class TasksComponent implements OnDestroy {
     }
 
     refetchTasks() {
-        var ignoreOrdering = this.selectedStyle == 'Board';
-        this.tasks$ = this.store.pipe(
-            select(getTasksForTaskBoardForUser(this.selectedUserId, ignoreOrdering)));
+        if (this.selectedStyle == 'Board') {
+            this.tasks$ = this.store.pipe(
+                select(getTasksForTaskBoardForUser(this.selectedUserId)));
+        } else {
+            this.tasks$ = this.store.pipe(
+                select(getTasksForTaskListForUser(this.selectedUserId)));
+        }
     }
 
     orderTasksBy(by: string) {

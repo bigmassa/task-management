@@ -5,6 +5,7 @@ export interface ITaskAssignee {
     task: number;
     user: number;
     allocated_hours: string;
+    board_order: number;
 }
 
 export type State = ITaskAssignee[];

@@ -52,7 +52,7 @@ export class TaskStatusForm extends BaseForm {
             tasks => {
                 tasks = _.filter(tasks, ['status', this.value.status]);
                 tasks = [this.value, ...tasks];
-                const order = calculateOrder(0, tasks, this.value);
+                const order = calculateOrder(0, tasks);
                 this.controls.order.setValue(order);
             }
         )
