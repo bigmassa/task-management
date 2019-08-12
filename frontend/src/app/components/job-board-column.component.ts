@@ -82,12 +82,15 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
             board_order: order
         }
 
+        this.store.dispatch({type: actions.TaskAssigneeActions.PATCH, payload: assigneePayload});
+
+        if (task.status == this.status.id) return;
+
         const taskPayload = {
             id: task.id,
-            status: this.status.id,
+            status: this.status.id
         }
-
-        this.store.dispatch({type: actions.TaskAssigneeActions.PATCH, payload: assigneePayload});
+        
         this.store.dispatch({type: actions.TaskActions.PATCH, payload: taskPayload});
     }
 
