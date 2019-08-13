@@ -1,5 +1,11 @@
 <div class="board-card d-flex flex-column pointer" *ngIf="task$ | async as task">
-    <p *ngIf="show_job_details" class="small muted">{{ task | get:'_job._client.name' }} / {{ task | get:'_job.title' }}</p>
+    <ng-container *ngIf="show_job_details">
+        <p class="small muted d-flex align-items-center mb-1">
+            <span class="color-indicator" [style.backgroundColor]="task._job._client.colour"></span>
+            {{ task | get:'_job._client.name' }} / {{ task | get:'_job.title' }}
+        </p>
+    </ng-container>
+
     <p class="board-card-desc">
         <span class="small strong uppercase b-whitelilac px-h" *ngIf="task.closed">closed</span>
         {{ task.title }}

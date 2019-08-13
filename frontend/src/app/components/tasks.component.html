@@ -1,14 +1,17 @@
 <div [class.flex-fill-container]="selectedStyle == 'Board'">
     <div class="page-header py-2">
-        <div class="container-fluid align-items-center">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-12 d-flex">
-                    <div class="h2">Tasks</div>
-                    <p class="c-white mb-0 ml-2 mt-0.5">
-                        <span class="pointer" [ngClass]="{'underline-dotted': selectedStyle != 'Board'}" (click)="switchStyle('Board')">Board</span> / 
-                        <span class="pointer" [ngClass]="{'underline-dotted': selectedStyle != 'List'}" (click)="switchStyle('List')">List</span>
-                    </p>
-                    <div class="page-header-actions">
+                <div class="col-12 d-flex align-items-center">
+                    <div class="d-flex">
+                        <div class="h2">Tasks</div>
+                        <p class="c-white mb-0 ml-2 mt-0.5">
+                            <span class="pointer" [ngClass]="{'underline-dotted': selectedStyle != 'Board'}" (click)="switchStyle('Board')">Board</span> / 
+                            <span class="pointer" [ngClass]="{'underline-dotted': selectedStyle != 'List'}" (click)="switchStyle('List')">List</span>
+                        </p>
+                    </div>
+                    
+                    <div class="page-header-actions d-flex">
                         <select [(ngModel)]="selectedUserId" (ngModelChange)="refetchTasks()" class="mb-0">
                             <option *ngFor="let user of users$ | async" [ngValue]="user.id">{{ user.full_name }}</option>
                         </select>
@@ -17,7 +20,7 @@
             </div>
             <div class="row">
                 <div class="col-4">
-                    <search [(ngModel)]="searchTerms" (ngModelChange)="setSearch()"></search>
+                    <search class="mr-2" [(ngModel)]="searchTerms" (ngModelChange)="setSearch()"></search>
                 </div>
             </div>
         </div>
