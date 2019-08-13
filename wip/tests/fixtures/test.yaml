@@ -175,7 +175,8 @@
     fields: {
       task: 1,
       user: 1,
-      allocated_hours: "10.00"
+      allocated_hours: "10.00",
+      board_order: 16342
     }
 
 -
