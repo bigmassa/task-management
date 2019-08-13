@@ -2541,6 +2541,7 @@ a.c-lightgrey:hover {
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 999;
   display: none;
   overflow-y: auto;
   background-color: rgba(41, 44, 54, 0.87);
