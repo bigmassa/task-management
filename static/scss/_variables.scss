@@ -67,9 +67,9 @@ $table-hover-color:             rgb(254, 249, 232);
 
 // z-indexes
 $z-layers: (
+  "modal": 12,
   "top": 11,
-  "tabs": 10,
-  "modal": 999
+  "tabs": 10
 );
 
 
