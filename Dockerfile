@@ -24,6 +24,7 @@ RUN         set -ex \
                 gcc \
                 git \
                 libc-dev \
+                libffi-dev \
                 linux-headers \
                 musl-dev \
                 postgresql-dev \

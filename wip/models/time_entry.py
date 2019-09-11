@@ -98,7 +98,7 @@ def model_pre_save(sender, instance, **kwargs):
 def update_time_spent_hours(instance, **kwargs):
     def do():
         """
-        We need to ensure we update the timings for task this time entry 
+        We need to ensure we update the timings for task this time entry
         used to belong to incase it changes.
         """
         from wip.models import TaskTiming
