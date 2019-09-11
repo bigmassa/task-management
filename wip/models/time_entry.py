@@ -2,7 +2,7 @@ from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.db import models, transaction
 from django.db.models.manager import BaseManager
-from django.db.models.signals import post_delete, post_save
+from django.db.models.signals import post_delete, post_save, pre_save
 from django.dispatch import receiver
 from django.utils import timezone
 
@@ -85,19 +85,41 @@ class TimeEntry(models.Model):
         return self.ended_at - self.started_at
 
 
+@receiver(pre_save, sender=TimeEntry)
+def model_pre_save(sender, instance, **kwargs):
+    try:
+        instance._pre_save_task_id = TimeEntry.objects.get(id=instance.id).task_id
+    except ObjectDoesNotExist:
+        instance._pre_save_task_id = None
+
+
 @receiver(post_save, sender=TimeEntry)
 @receiver(post_delete, sender=TimeEntry)
 def update_time_spent_hours(instance, **kwargs):
     def do():
+        """
+        We need to ensure we update the timings for task this time entry 
+        used to belong to incase it changes.
+        """
         from wip.models import TaskTiming
 
-        try:
-            timing = TaskTiming.objects.with_calculated().get(task_id=instance.task_id)
-            time_spent = duration_to_decimal_hrs(timing.qs_time_spent_hours)
-            if timing.time_spent_hours != time_spent:
-                timing.time_spent_hours = time_spent
-                timing.save()
-        except ObjectDoesNotExist:
-            pass
+        # check ids to avoid running twice for the same task
+        if getattr(instance, "_pre_save_task_id", None) == instance.task_id:
+            task_ids = [instance.task_id]
+        else:
+            task_ids = [getattr(instance, "_pre_save_task_id", None), instance.task_id]
+
+        for tid in task_ids:
+            if not tid:
+                continue
+
+            try:
+                timing = TaskTiming.objects.with_calculated().get(task_id=tid)
+                time_spent = duration_to_decimal_hrs(timing.qs_time_spent_hours)
+                if timing.time_spent_hours != time_spent:
+                    timing.time_spent_hours = time_spent
+                    timing.save()
+            except ObjectDoesNotExist:
+                pass
 
     transaction.on_commit(do)
