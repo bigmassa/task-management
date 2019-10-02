@@ -9,14 +9,14 @@ import { IFilter } from '../state/reducers/filter';
 import { ITask } from '../state/reducers/task';
 import { ITaskStatus } from '../state/reducers/taskstatus';
 import { IUser } from '../state/reducers/user';
-import { getTasksForTaskBoardForUser } from '../state/selectors/taskboard';
+import { getTasksForTaskBoardForUser, getTasksForTaskListForUser } from '../state/selectors/taskboard';
 import { getActiveUsers } from '../state/selectors/user';
 import { AppState, getFilterState, getMeState, getTaskStatusState } from '../state/state';
 
 @Component({
-    templateUrl: './taskboard.component.html'
+    templateUrl: './tasks.component.html'
 })
-export class TaskboardComponent implements OnDestroy {
+export class TasksComponent implements OnDestroy {
 
     filteredStatuses: number[];
     orderBy: string;
@@ -24,6 +24,7 @@ export class TaskboardComponent implements OnDestroy {
     searchTerms: string[] = [];
     selectedUserId: number;
     subscriptions: Subscription[] = [];
+    selectedStyle: string = 'Board';
     
     filters$: Observable<IFilter>;
     taskStatuses$: Observable<ITaskStatus[]>;
@@ -63,7 +64,13 @@ export class TaskboardComponent implements OnDestroy {
     }
 
     refetchTasks() {
-        this.tasks$ = this.store.pipe(select(getTasksForTaskBoardForUser(this.selectedUserId)));
+        if (this.selectedStyle == 'Board') {
+            this.tasks$ = this.store.pipe(
+                select(getTasksForTaskBoardForUser(this.selectedUserId)));
+        } else {
+            this.tasks$ = this.store.pipe(
+                select(getTasksForTaskListForUser(this.selectedUserId)));
+        }
     }
 
     orderTasksBy(by: string) {
@@ -88,4 +95,8 @@ export class TaskboardComponent implements OnDestroy {
         this.store.dispatch({type: actions.FilterActions.TASKBOARD_TOGGLE_STATUS, payload: id});
     }
 
+    switchStyle = (style: string) => {
+        this.selectedStyle = style;
+        this.refetchTasks();
+    }
 }

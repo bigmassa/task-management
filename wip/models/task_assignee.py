@@ -37,6 +37,10 @@ class TaskAssignee(models.Model):
         max_digits=10,
         decimal_places=2
     )
+    board_order = models.FloatField(
+        default=16384,
+        help_text='Task order for this assignee on the personal task board'
+    )
 
     objects = TaskAssigneeManager()
 

@@ -24,6 +24,12 @@ class ModelTests(AppTestCase):
         self.assertEqual(field.max_digits, 10)
         self.assertEqual(field.decimal_places, 2)
 
+    def test_board_order(self):
+        field = TaskAssignee._meta.get_field('board_order')
+        self.assertModelField(field, models.FloatField)
+        self.assertEqual(field.default, 16384)
+        self.assertEqual(field.help_text, 'Task order for this assignee on the personal task board')
+
     # meta
 
     def test_ordering(self):

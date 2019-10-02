@@ -38,7 +38,7 @@ import { TabsComponent } from './components/tabs.component';
 import { TagComponent } from './components/tag.component';
 import { TaskCardComponent } from './components/task-card.component';
 import { TaskFormComponent } from './components/task-form.component';
-import { TaskboardComponent } from './components/taskboard.component';
+import { TasksComponent } from './components/tasks.component';
 import { TimeEntryFormComponent } from './components/time-entry-form.component';
 import { TimesheetSignoffComponent } from './components/time-sheet-signoff.component';
 import { TimesheetComponent } from './components/time-sheet.component';
@@ -98,7 +98,7 @@ import { reducers } from './state/state';
         SearchComponent,
         TabsComponent,
         TagComponent,
-        TaskboardComponent,
+        TasksComponent,
         TaskCardComponent,
         TaskFormComponent,
         TasksByStatusPipe,
