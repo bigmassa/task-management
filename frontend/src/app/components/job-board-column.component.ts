@@ -28,8 +28,8 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
     @Input() tasks: ITask[];
     @Input() show_job_details: boolean;
     @Input() readonly: boolean;
+    @Input() selected_user_id: number;
 
-    currentUserId: number;
     newForm: TaskCreateForm;
     newFormOpen = false;
     selectedTaskId: number = null;
@@ -45,10 +45,7 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
     ngOnInit() {
         this.newForm = new TaskCreateForm(this.store, this.actionsSubject);
         this.subscriptions.push(
-            this.newForm.formSaved.subscribe(() => this.newFormOpen = false),
-            this.store.pipe(select(getMeState)).subscribe(me => {
-                this.currentUserId = me.id;
-            })
+            this.newForm.formSaved.subscribe(() => this.newFormOpen = false)
         );
     }
 
@@ -73,7 +70,7 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
 
     changePersonalOrder(event: any) {
         let task = event.value as ITask;
-        let assignee = _.find(task._assignees, ['user', this.currentUserId]);
+        let assignee = _.find(task._assignees, ['user', this.selected_user_id]);
         let order = calculateTaskBoardOrder(event.dropIndex, this.tasks, assignee);
 
         // dispatch an action to patch the task's new order and status
@@ -117,5 +114,4 @@ export class JobBoardColumnComponent implements OnDestroy, OnInit {
     ngOnDestroy() {
         _.each(this.subscriptions, s => s.unsubscribe());
     }
-
 }

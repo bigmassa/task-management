@@ -36,6 +36,7 @@
                 [tasks]="tasks$ | async | tasksByStatus:status.id"
                 [show_job_details]="true"
                 [readonly]="true"
+                [selected_user_id]="selectedUserId"
                 *ngFor="let status of taskStatuses$ | async"></div>
             </div>
         </div>
