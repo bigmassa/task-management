@@ -26,7 +26,7 @@ RUN         npm run build:prod
 ### STAGE 2: Setup Django ###
 
 # Dockerfile
-FROM        python:3.6-alpine
+FROM        python:3.7-alpine
 
 # Build args
 ARG         REQUIREMENTS_FILE=/build/requirements/base.txt
