@@ -4,8 +4,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule, HttpClientXsrfModule } from '@angu
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-    DateAdapter, MAT_DATE_FORMATS, MatDatepickerModule, MatNativeDateModule
+    DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatDatepickerModule, MatNativeDateModule
 } from '@angular/material';
+import { MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -43,7 +44,7 @@ import { TimeEntryFormComponent } from './components/time-entry-form.component';
 import { TimesheetSignoffComponent } from './components/time-sheet-signoff.component';
 import { TimesheetComponent } from './components/time-sheet.component';
 import { UserContentComponent } from './components/user-content.component';
-import { APP_DATE_FORMATS, AppDateAdapter } from './dates';
+import { MomentUtcDateAdapter } from './dates';
 import { AutofocusDirective } from './directives/auto-focus.directive';
 import { AutoResizeDirective } from './directives/auto-resize.directive';
 import { AutoScrollDirective } from './directives/auto-scroll.directive';
@@ -133,8 +134,9 @@ import { reducers } from './state/state';
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
-        { provide: DateAdapter, useClass: AppDateAdapter},
-        { provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS},
+        { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+        { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
+        { provide: DateAdapter, useClass: MomentUtcDateAdapter },
     ],
     bootstrap: [AppComponent]
 })
