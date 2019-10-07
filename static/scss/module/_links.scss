@@ -13,6 +13,15 @@
   border-color: color("white");
 }
 
+.text-link {
+  @extend .underline-dotted;
+  @extend .pointer;
+}
+
+.text-link.active {
+  cursor: default;
+  border-bottom: none;
+}
 
 @each $name, $color in $colors {
 
