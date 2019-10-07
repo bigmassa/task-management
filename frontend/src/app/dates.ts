@@ -1,31 +1,35 @@
-import { NativeDateAdapter } from "@angular/material";
+import * as moment from 'moment';
 
-export const APP_DATE_FORMATS = {
-    parse: {
-        dateInput: {month: 'short', year: 'numeric', day: 'numeric'}
-    },
-    display: {
-        // dateInput: { month: 'short', year: 'numeric', day: 'numeric' },
-        dateInput: 'input',
-        monthYearLabel: {year: 'numeric', month: 'short'},
-        dateA11yLabel: {year: 'numeric', month: 'long', day: 'numeric'},
-        monthYearA11yLabel: {year: 'numeric', month: 'long'},
-    }
-};
+import { Inject, Injectable, Optional } from '@angular/core';
+import { MAT_DATE_LOCALE } from '@angular/material';
+import { Moment } from 'moment';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
 
-export class AppDateAdapter extends NativeDateAdapter {
-    format(date: Date, displayFormat: Object): string {
-        if (displayFormat == "input") {
-            let day = date.getDate();
-            let month = date.getMonth() + 1;
-            let year = date.getFullYear();
-            return this._to2digit(day) + '/' + this._to2digit(month) + '/' + year;
-        } else {
-            return date.toDateString();
-        }
+@Injectable()
+export class MomentUtcDateAdapter extends MomentDateAdapter {
+
+  constructor(@Optional() @Inject(MAT_DATE_LOCALE) dateLocale: string) {
+    super(dateLocale);
+  }
+
+  createDate(year: number, month: number, date: number): Moment {
+    // Moment.js will create an invalid date if any of the components are out of bounds, but we
+    // explicitly check each case so we can throw more descriptive errors.
+    if (month < 0 || month > 11) {
+      throw Error(`Invalid month index "${month}". Month index has to be between 0 and 11.`);
     }
- 
-    private _to2digit(n: number) {
-        return ('00' + n).slice(-2);
-    } 
+
+    if (date < 1) {
+      throw Error(`Invalid date "${date}". Date has to be greater than 0.`);
+    }
+
+    let result = moment.utc({ year, month, date }).locale(this.locale);
+
+    // If the result isn't valid, the date must have been out of bounds for this month.
+    if (!result.isValid()) {
+      throw Error(`Invalid date "${date}" for month with index "${month}".`);
+    }
+
+    return result;
+  }
 }
