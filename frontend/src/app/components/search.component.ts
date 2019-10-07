@@ -13,7 +13,7 @@ const SEARCH_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'search, [search]',
     template: `
-    <div class="icon-input mb-0">
+    <div class="icon-input">
         <input name="search" type="search" placeholder="Search" [(ngModel)]="searchVal" (ngModelChange)="searchChange($event)">
         <span class="icon-search"></span>
     </div>
