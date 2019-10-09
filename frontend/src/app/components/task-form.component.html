@@ -3,7 +3,14 @@
         <div class="container b-secondary px-2 py-2">
             <div class="row">
                 <div class="col-12">
-                    <p class="small muted">{{ task | get:'_job._client.name' }} / {{ task | get:'_job.title' }}</p>
+                    <p class="small muted">
+                        <span class="text-link" [routerLink]="['/clients', task._job.client]" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">
+                            {{ task | get:'_job._client.name' }}
+                        </span> / 
+                        <span class="text-link" [routerLink]="['/clients', task._job.client, 'jobs', task.job]" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">
+                            {{ task | get:'_job.title' }}
+                        </span>
+                    </p>
                     <textarea autoResize rows="1" class="toggleable"
                         [formControl]="titleForm.controls.title"
                         (blur)="titleForm.dirty ? titleForm.save($event) : false"
