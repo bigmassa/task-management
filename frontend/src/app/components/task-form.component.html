@@ -118,9 +118,11 @@
             <div class="row mb-1h">
                 <div class="col">
                     <p class="mb-h"><strong>Description</strong></p>
-                    <textarea autoResize class="toggleable" rows="2"
+                    <markdown-field [text]="descriptionForm.controls.description.value">
+                        <textarea autoResize rows="2"
                         [formControl]="descriptionForm.controls.description"
                         (blur)="descriptionForm.dirty ? descriptionForm.save($event) : false"></textarea>
+                    </markdown-field>
                 </div>
             </div>
             <div class="row mb-1h">

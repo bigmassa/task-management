@@ -45,6 +45,7 @@ import { TimeEntryFormComponent } from './components/time-entry-form.component';
 import { TimesheetSignoffComponent } from './components/time-sheet-signoff.component';
 import { TimesheetComponent } from './components/time-sheet.component';
 import { UserContentComponent } from './components/user-content.component';
+import { MarkdownField } from './components/markdown-field.component';
 import { MomentUtcDateAdapter } from './dates';
 import { AutofocusDirective } from './directives/auto-focus.directive';
 import { AutoResizeDirective } from './directives/auto-resize.directive';
@@ -113,6 +114,7 @@ export function markedOptions(): MarkedOptions {
         JobSearchPipe,
         LoadingSplashComponent,
         LogoComponent,
+        MarkdownField,
         NotFoundComponent,
         OpenJobsPipe,
         OrderByPipe,

@@ -907,6 +907,10 @@
 html {
   font-size: 62.5%;
   line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -2079,6 +2083,16 @@ select.toggleable:not(:focus):not(.ng-dirty):not([aria-owns]) {
 
 textarea {
   display: block;
+}
+
+.markdown-container {
+  padding: .8rem 1rem;
+  font-family: inherit;
+  line-height: 1.5;
+  color: #3e3e3e;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: .25rem;
 }
 
 .input-small {
