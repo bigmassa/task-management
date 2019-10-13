@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
+import { MarkdownModule, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
@@ -64,6 +65,25 @@ import { TasksFilterStatusPipe } from './pipes/tasks-filter-status.pipe';
 import { LoadingInterceptor } from './services/interceptors';
 import { effects } from './state/effects';
 import { reducers } from './state/state';
+
+export function markedOptions(): MarkedOptions {
+    const renderer = new MarkedRenderer();
+
+    renderer.blockquote = (text: string) => {
+        return '<blockquote class="blockquote"><p>' + text + '</p></blockquote>';
+    };
+
+    return {
+        renderer: renderer,
+        gfm: true,
+        tables: true,
+        breaks: false,
+        pedantic: false,
+        sanitize: false,
+        smartLists: true,
+        smartypants: false,
+    };
+}
 
 @NgModule({
     declarations: [
@@ -128,6 +148,13 @@ import { reducers } from './state/state';
         MatDatepickerModule,
         MatNativeDateModule,
         NgxDnDModule,
+        MarkdownModule.forRoot({
+
+            markedOptions: {
+                provide: MarkedOptions,
+                useFactory: markedOptions,
+            },
+        }),
         ReactiveFormsModule,
         RouterModule,
         StoreModule.forRoot(reducers)

@@ -36,6 +36,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "ngx-dropzone-wrapper": "^7.2.1",
+    "ngx-markdown": "^8.2.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
