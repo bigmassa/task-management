@@ -41,7 +41,8 @@ export class TaskTargetDateForm extends BaseForm {
 
     getValuePayload() {
         return _.assign({}, this.value, {
-            target_date: this.value.target_date ? this.value.target_date.toISOString().slice(0, 10) : this.value.target_date
+            target_date: this.value.target_date !== null ?
+                this.value.target_date.toISOString().slice(0, 10) : this.value.target_date
         })
     }
 }

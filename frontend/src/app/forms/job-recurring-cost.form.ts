@@ -54,7 +54,8 @@ export class JobRecurringCostForm extends BaseForm {
 
     getValuePayload() {
         return _.assign({}, this.value, {
-            last_invoiced_date: this.value.last_invoiced_date ? this.value.last_invoiced_date.toISOString().slice(0, 10) : this.value.last_invoiced_date
+            last_invoiced_date: this.value.last_invoiced_date !== null ?
+                this.value.last_invoiced_date.toISOString().slice(0, 10) : this.value.last_invoiced_date
         })
     }
 }

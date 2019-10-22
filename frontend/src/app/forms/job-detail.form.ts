@@ -60,7 +60,8 @@ export class JobDetailForm extends BaseForm {
 
     getValuePayload() {
         return _.assign({}, this.value, {
-            billed_to: this.value.billed_to ? this.value.billed_to.toISOString().slice(0, 10) : this.value.billed_to
+            billed_to: this.value.billed_to !== null ?
+                this.value.billed_to.toISOString().slice(0, 10) : this.value.billed_to
         })
     }
 }
