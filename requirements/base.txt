@@ -2,7 +2,7 @@ boto3
 channels
 channels_redis
 coreapi
-django
+django<3
 django-autocomplete-light
 django-filter
 django-reversion
