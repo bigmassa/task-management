@@ -32,7 +32,7 @@ export const getTasksForTaskBoardForUser = (user: number) => createSelector(
 )
 
 const getMappedTasksForUser = (tasks: ITask[], user: number, filters: IFilter, assignees: ITaskAssignee[]) => {
-    let objs = tasks;
+    let objs = _.filter(tasks, t => !t._job._status.closed);
     
     // only tasks assigned to user
     let ids = _.map(_.filter(assignees, ['user', user]), 'task');
@@ -52,7 +52,7 @@ const getMappedTasksForUser = (tasks: ITask[], user: number, filters: IFilter, a
 }
 
 const getMappedAssigneesForUser = (tasks: ITask[], user: number, filters: IFilter, assignees: ITaskAssignee[]) => {
-    let objs = tasks;
+    let objs = _.filter(tasks, t => !t._job._status.closed);
 
     // only tasks assigned to user
     let filteredAssignees = _.orderBy(_.filter(assignees, ['user', user]), ['board_order'], ['asc']);
