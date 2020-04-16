@@ -9,7 +9,7 @@ django-reversion
 django-storages
 django-taggit
 django-taggit-serializer
-djangorestframework
+djangorestframework<3.11.0
 flatbuffers
 huey[backends]<2.0.0
 markdown
